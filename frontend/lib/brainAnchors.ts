@@ -128,6 +128,17 @@ export const brainAnchors: Record<RoomId, BrainAnchor> = {
     meshResolution: "fsaverage5",
     visible: true,
   },
+  tours: {
+    // Tour player owns the brain. The index page and the player both
+    // share this anchor as a starting frame — the player then writes
+    // per-scene transforms over the top.
+    position: [-0.3, 0, 0],
+    scale: 1.0,
+    rotation: [0, 0, 0],
+    lighting: "cinematic",
+    meshResolution: "fsaverage6",
+    visible: true,
+  },
 };
 
 export function anchorFor(room: RoomId): BrainAnchor {

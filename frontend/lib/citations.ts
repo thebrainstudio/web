@@ -559,6 +559,62 @@ export const citations: Record<string, Citation> = {
     journal: "Annals of the New York Academy of Sciences",
     doi: "10.1111/j.1749-6632.2010.05445.x",
   },
+
+  // --- Atlas v3 (vmpfc / dmpfc / agl_left) ----------------------------
+  "amodio-frith-2006-meeting-minds": {
+    id: "amodio-frith-2006-meeting-minds",
+    authors: "Amodio, D. M., & Frith, C. D.",
+    year: 2006,
+    title:
+      "Meeting of minds: the medial frontal cortex and social cognition.",
+    journal: "Nature Reviews Neuroscience",
+    doi: "10.1038/nrn1884",
+  },
+  "schurz-2014-fractionating-tom": {
+    id: "schurz-2014-fractionating-tom",
+    authors:
+      "Schurz, M., Radua, J., Aichhorn, M., Richlan, F., & Perner, J.",
+    year: 2014,
+    title:
+      "Fractionating theory of mind: a meta-analysis of functional brain imaging studies.",
+    journal: "Neuroscience and Biobehavioral Reviews",
+    doi: "10.1016/j.neubiorev.2014.01.009",
+  },
+  "hare-camerer-rangel-2009-self-control-vmpfc": {
+    id: "hare-camerer-rangel-2009-self-control-vmpfc",
+    authors: "Hare, T. A., Camerer, C. F., & Rangel, A.",
+    year: 2009,
+    title:
+      "Self-control in decision-making involves modulation of the vmPFC valuation system.",
+    journal: "Science",
+    doi: "10.1126/science.1168450",
+  },
+  "seghier-2013-angular-gyrus": {
+    id: "seghier-2013-angular-gyrus",
+    authors: "Seghier, M. L.",
+    year: 2013,
+    title: "The angular gyrus: multiple functions and multiple subdivisions.",
+    journal: "The Neuroscientist",
+    doi: "10.1177/1073858412440596",
+  },
+  "bechara-damasio-2005-iowa-gambling": {
+    id: "bechara-damasio-2005-iowa-gambling",
+    authors: "Bechara, A., & Damasio, A. R.",
+    year: 2005,
+    title:
+      "The somatic marker hypothesis: A neural theory of economic decision.",
+    journal: "Games and Economic Behavior",
+    doi: "10.1016/j.geb.2004.06.010",
+  },
+  "saxe-kanwisher-2003-tpj": {
+    id: "saxe-kanwisher-2003-tpj",
+    authors: "Saxe, R., & Kanwisher, N.",
+    year: 2003,
+    title:
+      "People thinking about thinking people: the role of the temporo-parietal junction in 'theory of mind.'",
+    journal: "NeuroImage",
+    doi: "10.1016/s1053-8119(03)00230-1",
+  },
 };
 
 export function getCitation(id: string): Citation | undefined {

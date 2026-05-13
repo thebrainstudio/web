@@ -33,9 +33,10 @@ const KIND_LABEL: Record<SearchKind, string> = {
   bridge: "Bridge",
   essay: "Essay",
   concept: "Concept",
+  tour: "Tour",
 };
 
-const KIND_ORDER: SearchKind[] = ["region", "bridge", "room", "essay", "concept"];
+const KIND_ORDER: SearchKind[] = ["region", "bridge", "tour", "room", "essay", "concept"];
 
 // Suggested entries when no query is typed. Hand-picked so the
 // empty palette is a small tour of what's reachable.
@@ -123,6 +124,7 @@ export default function SearchPalette() {
       room: [],
       essay: [],
       concept: [],
+      tour: [],
     };
     for (const r of results) map[r.kind].push(r);
     return map;

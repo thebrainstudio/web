@@ -90,6 +90,14 @@ const ROOM_ATMOSPHERE: Record<RoomId, RoomAtmosphere> = {
       "radial-gradient(ellipse 1200px 900px at 30% 0%, rgba(232, 160, 74, 0.08) 0%, transparent 60%), radial-gradient(ellipse 1000px 700px at 80% 95%, rgba(92, 200, 214, 0.05) 0%, transparent 60%)",
     opacity: 0.9,
   },
+  tours: {
+    // The tour player needs the cleanest possible reading background
+    // — a single soft warmth at the top of the screen, nothing
+    // competing with the brain animation and the narration column.
+    backgroundImage:
+      "radial-gradient(ellipse 1400px 1000px at 50% -8%, rgba(232, 160, 74, 0.08) 0%, rgba(201, 169, 97, 0.03) 35%, transparent 70%)",
+    opacity: 0.85,
+  },
 };
 
 function prefersReducedMotion(): boolean {

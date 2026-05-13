@@ -26,6 +26,9 @@ import { pccAtlas } from "./pcc";
 import { pstgLeftAtlas } from "./pstg_left";
 import { amygLeftAtlas } from "./amyg_left";
 import { precuneusAtlas } from "./precuneus";
+import { vmpfcAtlas } from "./vmpfc";
+import { dmpfcAtlas } from "./dmpfc";
+import { aglLeftAtlas } from "./agl_left";
 
 /**
  * Helper for creating a stub entry. Yeo network and one-line
@@ -108,13 +111,7 @@ export const atlasEntries: Record<RegionId, AtlasEntry> = {
     ["atl_left", "mtg_right", "ifg_right"],
     "binder-desai-2011-semantic-system",
   ),
-  agl_left: stub(
-    "agl_left",
-    "Angular gyrus (left)",
-    "DefaultMode",
-    ["agl_right", "mtg_left", "pstg_left", "pcc"],
-    "buckner-2008-default-network",
-  ),
+  agl_left: aglLeftAtlas,
   agl_right: stub(
     "agl_right",
     "Angular gyrus (right)",
@@ -140,20 +137,8 @@ export const atlasEntries: Record<RegionId, AtlasEntry> = {
   ),
 
   // Default mode + control
-  vmpfc: stub(
-    "vmpfc",
-    "Ventromedial prefrontal cortex",
-    "DefaultMode",
-    ["dmpfc", "pcc", "amyg_left", "amyg_right"],
-    "buckner-2008-default-network",
-  ),
-  dmpfc: stub(
-    "dmpfc",
-    "Dorsomedial prefrontal cortex",
-    "FrontoparietalControl",
-    ["vmpfc", "pcc"],
-    "buckner-2008-default-network",
-  ),
+  vmpfc: vmpfcAtlas,
+  dmpfc: dmpfcAtlas,
 
   pcc: pccAtlas,
   precuneus: precuneusAtlas,

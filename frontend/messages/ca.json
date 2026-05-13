@@ -295,6 +295,23 @@
     "bibliographyIntro": "Each citation here was confirmed against PubMed or its original journal record. Hover any superscript in the prose above to see its source; this list is the full set, in order of first mention.",
     "footerNote": "Bridges · cite or omit"
   },
+  "tours": {
+    "label": "Guided Tours",
+    "title": "Choreographed brain experiences.",
+    "intro": "Two- to three-minute tours in which the brain animates through a sequence of activations while a calm narration walks beside it. Watch, don't navigate — the tour unfolds at its own pace.",
+    "tour": "Tour",
+    "duration": "Duration",
+    "openTour": "Open the tour",
+    "scene": "Scene",
+    "pause": "Pause",
+    "play": "Play",
+    "restart": "Restart",
+    "ended": "Tour complete.",
+    "continueLabel": "Continue exploring",
+    "emptyState": "No tours available yet.",
+    "comingSoon": "More tours are forthcoming: how you read this sentence (language network), when something matters (salience), what's still you when you stop trying (default mode), how a face becomes someone you know (face processing), and hearing music (auditory and reward).",
+    "footerNote": "Guided Tours · the brain in motion"
+  },
   "fieldNotes": {
     "label": "Notes de Camp",
     "display": "Assajos des de la costura entre la ment i el cervell.",

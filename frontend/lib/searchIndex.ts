@@ -22,13 +22,16 @@ import { regions, regionById, type RegionId } from "./regions";
 import { atlasEntries } from "@/content/atlas";
 import { BRIDGE_SECTIONS, REGION_BRIDGE_LINKS } from "./bridges";
 import { YEO_NETWORKS } from "./atlas";
+import { tours } from "@/content/tours";
+import { tourDuration } from "./tours";
 
 export type SearchKind =
   | "region"
   | "bridge"
   | "room"
   | "essay"
-  | "concept";
+  | "concept"
+  | "tour";
 
 export type SearchEntry = {
   id: string;
@@ -165,7 +168,32 @@ const roomEntries: SearchEntry[] = [
       "solms",
     ],
   },
+  {
+    id: "room:tours",
+    kind: "room",
+    title: "Guided Tours",
+    subtitle: "Choreographed 2-minute brain experiences",
+    href: "/tours",
+    keywords: ["tours", "guided", "narration", "cinematic"],
+  },
 ];
+
+function buildTourEntries(): SearchEntry[] {
+  return tours.map((tour) => ({
+    id: `tour:${tour.id}`,
+    kind: "tour" as const,
+    title: tour.title,
+    subtitle: `${Math.round(tourDuration(tour) / 60)} min · ${tour.subtitle}`,
+    href: `/tours/${tour.id}`,
+    keywords: [
+      tour.title.toLowerCase(),
+      tour.subtitle.toLowerCase(),
+      "tour",
+      "guided",
+      "narration",
+    ],
+  }));
+}
 
 /**
  * Per-region keywords. Names from the brief's reference list (Broca,
@@ -498,6 +526,7 @@ export const searchIndex: SearchEntry[] = [
   ...roomEntries,
   ...buildRegionEntries(),
   ...buildBridgeEntries(),
+  ...buildTourEntries(),
   ...essayEntries,
   ...conceptEntries,
 ];
@@ -548,6 +577,7 @@ export function groupByKind(entries: SearchEntry[]): Record<SearchKind, SearchEn
     room: [],
     essay: [],
     concept: [],
+    tour: [],
   };
   for (const e of entries) out[e.kind].push(e);
   return out;
