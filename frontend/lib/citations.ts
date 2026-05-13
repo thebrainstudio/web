@@ -615,6 +615,36 @@ export const citations: Record<string, Citation> = {
     journal: "NeuroImage",
     doi: "10.1016/s1053-8119(03)00230-1",
   },
+
+  // --- Atlas v4 (atl_left / mtg_left / hg_left) -----------------------
+  "patterson-2007-where-semantic-knowledge": {
+    id: "patterson-2007-where-semantic-knowledge",
+    authors: "Patterson, K., Nestor, P. J., & Rogers, T. T.",
+    year: 2007,
+    title:
+      "Where do you know what you know? The representation of semantic knowledge in the human brain.",
+    journal: "Nature Reviews Neuroscience",
+    doi: "10.1038/nrn2277",
+  },
+  "lambon-ralph-2017-controlled-semantic": {
+    id: "lambon-ralph-2017-controlled-semantic",
+    authors:
+      "Lambon Ralph, M. A., Jefferies, E., Patterson, K., & Rogers, T. T.",
+    year: 2017,
+    title: "The neural and computational bases of semantic cognition.",
+    journal: "Nature Reviews Neuroscience",
+    doi: "10.1038/nrn.2016.150",
+  },
+  "da-costa-2011-tonotopy-heschl": {
+    id: "da-costa-2011-tonotopy-heschl",
+    authors:
+      "Da Costa, S., van der Zwaag, W., Marques, J. P., Frackowiak, R. S. J., Clarke, S., & Saenz, M.",
+    year: 2011,
+    title:
+      "Human primary auditory cortex follows the shape of Heschl's gyrus.",
+    journal: "Journal of Neuroscience",
+    doi: "10.1523/JNEUROSCI.2000-11.2011",
+  },
 };
 
 export function getCitation(id: string): Citation | undefined {

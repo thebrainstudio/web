@@ -6,8 +6,12 @@
 
 import type { Tour } from "@/lib/tours";
 import { actOfRememberingTour } from "./the-act-of-remembering";
+import { howYouReadThisSentenceTour } from "./how-you-read-this-sentence";
 
-export const tours: Tour[] = [actOfRememberingTour];
+export const tours: Tour[] = [
+  howYouReadThisSentenceTour,
+  actOfRememberingTour,
+];
 
 export const toursById: Record<string, Tour> = Object.fromEntries(
   tours.map((t) => [t.id, t]),

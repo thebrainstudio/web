@@ -29,6 +29,9 @@ import { precuneusAtlas } from "./precuneus";
 import { vmpfcAtlas } from "./vmpfc";
 import { dmpfcAtlas } from "./dmpfc";
 import { aglLeftAtlas } from "./agl_left";
+import { atlLeftAtlas } from "./atl_left";
+import { mtgLeftAtlas } from "./mtg_left";
+import { hgLeftAtlas } from "./hg_left";
 
 /**
  * Helper for creating a stub entry. Yeo network and one-line
@@ -83,13 +86,7 @@ export const atlasEntries: Record<RegionId, AtlasEntry> = {
     ["pstg_left", "mtg_right", "hg_right"],
     "hickok-poeppel-2007-dual-stream",
   ),
-  mtg_left: stub(
-    "mtg_left",
-    "Middle temporal gyrus (left)",
-    "DefaultMode",
-    ["mtg_right", "pstg_left", "atl_left", "agl_left"],
-    "binder-desai-2011-semantic-system",
-  ),
+  mtg_left: mtgLeftAtlas,
   mtg_right: stub(
     "mtg_right",
     "Middle temporal gyrus (right)",
@@ -97,13 +94,7 @@ export const atlasEntries: Record<RegionId, AtlasEntry> = {
     ["mtg_left", "pstg_right", "atl_right"],
     "binder-desai-2011-semantic-system",
   ),
-  atl_left: stub(
-    "atl_left",
-    "Anterior temporal lobe (left)",
-    "DefaultMode",
-    ["atl_right", "mtg_left", "ifg_left"],
-    "binder-desai-2011-semantic-system",
-  ),
+  atl_left: atlLeftAtlas,
   atl_right: stub(
     "atl_right",
     "Anterior temporal lobe (right)",
@@ -121,13 +112,7 @@ export const atlasEntries: Record<RegionId, AtlasEntry> = {
   ),
 
   // Auditory
-  hg_left: stub(
-    "hg_left",
-    "Heschl's gyrus / primary auditory cortex (left)",
-    "Auditory",
-    ["pstg_left", "hg_right"],
-    "kell-2018-auditory-task-network",
-  ),
+  hg_left: hgLeftAtlas,
   hg_right: stub(
     "hg_right",
     "Heschl's gyrus / primary auditory cortex (right)",
