@@ -102,26 +102,13 @@ export default async function ArchetypesPage({
       </section>
 
       {/* Shipped archetypes */}
-      {shipped.map((arch, i) => {
-        const proseKey = arch.prose_id ?? arch.id;
-        let title = arch.title;
-        let subtitle = arch.subtitle;
-        let paragraphs: string[] | null = null;
-        try {
-          title = t(`prose.${proseKey}.title`);
-          subtitle = t(`prose.${proseKey}.subtitle`);
-          const p = t.raw(`prose.${proseKey}.paragraphs`);
-          if (Array.isArray(p)) paragraphs = p as string[];
-        } catch {
-          /* fallback to manifest + TS prose */
-        }
-        return (
+      {shipped.map((arch, i) => (
         <ArchetypeScene
           key={arch.id}
           archetype={arch}
-          title={title}
-          subtitle={subtitle}
-          paragraphs={paragraphs}
+          title={readArchetypeProse(t, arch).title}
+          subtitle={readArchetypeProse(t, arch).subtitle}
+          paragraphs={readArchetypeProse(t, arch).paragraphs}
           flip={i % 2 === 1}
           mandalaSrc={
             i % 2 === 0
@@ -129,8 +116,7 @@ export default async function ArchetypesPage({
               : "/mandalas/hildegard_codex.jpg"
           }
         />
-        );
-      })}
+      ))}
 
       {/* Upcoming archetypes (TODO_IMAGE) */}
       {upcoming.length > 0 && (
@@ -395,4 +381,28 @@ function ArchetypeScene({
       </div>
     </section>
   );
+}
+
+/**
+ * Look up locale-aware title/subtitle/paragraphs for an archetype.
+ * Falls back to the manifest data when the translation namespace
+ * doesn't define the key.
+ */
+function readArchetypeProse(
+  t: Awaited<ReturnType<typeof getTranslations<"archetypes">>>,
+  arch: ManifestArchetype,
+): { title: string; subtitle: string; paragraphs: string[] | null } {
+  const proseKey = arch.prose_id ?? arch.id;
+  let title = arch.title;
+  let subtitle = arch.subtitle;
+  let paragraphs: string[] | null = null;
+  try {
+    title = t(`prose.${proseKey}.title`);
+    subtitle = t(`prose.${proseKey}.subtitle`);
+    const p = t.raw(`prose.${proseKey}.paragraphs`);
+    if (Array.isArray(p)) paragraphs = p as string[];
+  } catch {
+    /* fallback */
+  }
+  return { title, subtitle, paragraphs };
 }

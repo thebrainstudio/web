@@ -249,20 +249,30 @@ export default function CellularPage() {
           <div className="md:col-span-7">
             <div className="aspect-square w-full overflow-hidden rounded-sm bg-navy-deep">
               <Canvas
-                camera={{ position: [0, 0, 3.2], fov: 38 }}
+                camera={{ position: [-0.3, 0.25, 2.8], fov: 58 }}
                 dpr={[1, 2]}
-                gl={{ antialias: true, alpha: true }}
+                gl={{ antialias: true, alpha: true, preserveDrawingBuffer: false }}
               >
                 <Suspense fallback={null}>
-                  <ambientLight intensity={0.45} color={"#1a2444"} />
-                  <directionalLight position={[3, 4, 5]} intensity={1.2} color={"#5cc8d6"} />
-                  <directionalLight position={[-4, -2, -2]} intensity={0.5} color={"#c9a961"} />
+                  {/* Three-point cinematic rig for the synapse:
+                      key (cool above-left), rim (warm below-right), low fill. */}
+                  <ambientLight intensity={0.15} color={"#1a2444"} />
+                  <directionalLight
+                    position={[-2, 3, 4]}
+                    intensity={1.2}
+                    color={"#c0e0ff"}
+                  />
+                  <directionalLight
+                    position={[3, -2, -1.5]}
+                    intensity={0.6}
+                    color={"#e8a04a"}
+                  />
                   <Synapse nt={nt} triggerCount={triggerCount} speed={speed} />
                   <EffectComposer enableNormalPass={false}>
                     <Bloom
-                      intensity={0.9}
-                      luminanceThreshold={0.32}
-                      luminanceSmoothing={0.2}
+                      intensity={0.85}
+                      luminanceThreshold={0.55}
+                      luminanceSmoothing={0.22}
                       mipmapBlur
                     />
                   </EffectComposer>
