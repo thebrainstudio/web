@@ -302,6 +302,19 @@
     "bibliographyLabel": "Bibliography",
     "bibliographyHeading": "Every empirical claim, traceable.",
     "bibliographyIntro": "Each citation here was confirmed against PubMed or its original journal record. Hover any superscript in the prose above to see its source; this list is the full set, in order of first mention.",
+    "network": {
+      "label": "The network at a glance",
+      "heading": "Every region, every bridge, on one page.",
+      "intro": "Twenty regions on the left, the Bridges sections that any region points into on the right. Brass lines are tight bridges; bone lines are partial; dashed lines are distant. The page below expands every line in detail; this diagram is the index.",
+      "compactIntro": "Twenty regions, the bridge each points into, the empirical strength of each connection. Hover any line to read it; click to land in the corresponding Bridges section.",
+      "svgLabel": "Diagram: 20 brain regions connected by lines to the Bridges page sections they engage, weighted by empirical bridge strength.",
+      "filter": {
+        "all": "All",
+        "tightOnly": "Tight only",
+        "tightAndPartial": "Tight + partial",
+        "distantOnly": "Distant only"
+      }
+    },
     "footerNote": "Bridges · cite or omit"
   },
   "tours": {

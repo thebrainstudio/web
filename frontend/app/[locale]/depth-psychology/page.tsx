@@ -1,4 +1,5 @@
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
+import BridgesNetwork from "@/components/bridges/BridgesNetwork";
 import {
   Body,
   Caption,
@@ -223,6 +224,13 @@ export default async function DepthPsychologyLanding({
             ))}
           </div>
         </div>
+      </section>
+
+      {/* The bridge network — single graphic summarizing every
+          region → section mapping. A teaser for the full Bridges
+          page; clicking any edge or section node navigates into it. */}
+      <section className="relative border-t border-bone-cream/10 px-6 py-20 md:px-10 md:py-28">
+        <BridgesNetwork variant="compact" />
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">

@@ -1,5 +1,6 @@
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import BridgeStrengthBadge from "@/components/bridges/BridgeStrengthBadge";
+import BridgesNetwork from "@/components/bridges/BridgesNetwork";
 import Prose from "@/components/atlas/Prose";
 import {
   Body,
@@ -122,6 +123,11 @@ export default async function BridgesPage({
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Network — the single graphic summarizing every bridge */}
+      <section className="relative px-6 py-16 md:px-10 md:py-20">
+        <BridgesNetwork variant="full" />
       </section>
 
       {/* Sections */}
