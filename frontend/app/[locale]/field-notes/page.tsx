@@ -19,12 +19,13 @@ export default async function FieldNotesIndex({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "fieldNotes" });
+  const tEssays = await getTranslations({ locale, namespace: "essays" });
 
   const essays = [
     {
       slug: essayHippocampus.slug,
-      title: essayHippocampus.title,
-      summary: essayHippocampus.summary,
+      title: tEssays("hippocampus.title"),
+      summary: tEssays("hippocampus.summary"),
       wordCount: essayHippocampus.wordCount,
       readMinutes: essayHippocampus.readMinutes,
       publishedAt: essayHippocampus.publishedAt,
@@ -32,8 +33,8 @@ export default async function FieldNotesIndex({
     },
     {
       slug: essayWhatBrainKnows.slug,
-      title: essayWhatBrainKnows.title,
-      summary: essayWhatBrainKnows.summary,
+      title: tEssays("whatBrainKnows.title"),
+      summary: tEssays("whatBrainKnows.summary"),
       wordCount: essayWhatBrainKnows.wordCount,
       readMinutes: essayWhatBrainKnows.readMinutes,
       publishedAt: essayWhatBrainKnows.publishedAt,

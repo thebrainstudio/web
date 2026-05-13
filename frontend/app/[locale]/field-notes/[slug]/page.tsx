@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { notFound } from "next/navigation";
 import { use } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Mandala from "@/components/decoration/Mandala";
 import {
@@ -16,9 +17,25 @@ import {
 import { essayHippocampus } from "@/content/field-notes/hippocampus";
 import { essayWhatBrainKnows } from "@/content/field-notes/what-the-brain-knows";
 
-const essaysBySlug: Record<string, typeof essayHippocampus> = {
-  [essayHippocampus.slug]: essayHippocampus,
-  [essayWhatBrainKnows.slug]: essayWhatBrainKnows,
+/**
+ * Slug → essay-metadata map. Metadata (slug, wordCount, readMinutes,
+ * publishedAt, citations) is invariant across locales and stays in the
+ * TS file. The locale-aware bits — title, summary, paragraph bodies —
+ * are pulled from the `essays.<key>` translation namespace at render time.
+ */
+const ESSAY_META = {
+  [essayHippocampus.slug]: {
+    key: "hippocampus" as const,
+    wordCount: essayHippocampus.wordCount,
+    readMinutes: essayHippocampus.readMinutes,
+    publishedAt: essayHippocampus.publishedAt,
+  },
+  [essayWhatBrainKnows.slug]: {
+    key: "whatBrainKnows" as const,
+    wordCount: essayWhatBrainKnows.wordCount,
+    readMinutes: essayWhatBrainKnows.readMinutes,
+    publishedAt: essayWhatBrainKnows.publishedAt,
+  },
 };
 
 export default function FieldNoteReader({
@@ -27,12 +44,14 @@ export default function FieldNoteReader({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = use(params);
-  const essay = essaysBySlug[slug];
+  const meta = ESSAY_META[slug as keyof typeof ESSAY_META];
+  const t = useTranslations("essays");
+  const tField = useTranslations("fieldNotes");
 
   const [readingProgress, setReadingProgress] = useState(0);
 
   useEffect(() => {
-    if (!essay) return;
+    if (!meta) return;
     const onScroll = () => {
       const doc = document.documentElement;
       const max = doc.scrollHeight - window.innerHeight;
@@ -42,11 +61,13 @@ export default function FieldNoteReader({
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, [essay]);
+  }, [meta]);
 
-  if (!essay) {
+  if (!meta) {
     notFound();
   }
+
+  const paragraphs = t.raw(`${meta.key}.paragraphs`) as string[];
 
   return (
     <main className="relative min-h-screen px-6 pt-36 pb-32 md:px-10 md:pt-44">
@@ -71,28 +92,24 @@ export default function FieldNoteReader({
 
       <article className="mx-auto max-w-[42rem]">
         <Caption uppercase className="text-brass">
-          Field Note
+          {t("fieldNote")}
         </Caption>
         <Display italic className="mt-8">
-          {essay.title}
+          {t(`${meta.key}.title`)}
         </Display>
         <Body italic className="text-bone-cream/60 mt-6">
-          {essay.summary}
+          {t(`${meta.key}.summary`)}
         </Body>
         <Mono variant="label" className="text-bone-cream/40 mt-8 block">
-          {essay.wordCount.toLocaleString()} words · {essay.readMinutes} min read ·{" "}
-          {essay.publishedAt}
+          {meta.wordCount.toLocaleString()} {tField("words")} · {meta.readMinutes} {tField("minRead")} ·{" "}
+          {meta.publishedAt}
         </Mono>
 
         <div className="mt-14 space-y-6">
-          {essay.paragraphs.map((p, i) => (
+          {paragraphs.map((p, i) => (
             <Body
               key={i}
-              className={
-                i === 0
-                  ? "text-bone-cream/85"
-                  : "text-bone-cream/80"
-              }
+              className={i === 0 ? "text-bone-cream/85" : "text-bone-cream/80"}
             >
               {p}
             </Body>
@@ -100,7 +117,7 @@ export default function FieldNoteReader({
         </div>
 
         <p className="mt-16 text-center">
-          <Hand className="text-cyan-glow">— end of the note</Hand>
+          <Hand className="text-cyan-glow">{t("endOfNote")}</Hand>
         </p>
 
         <div className="mt-12 space-y-4 text-center">
@@ -109,7 +126,7 @@ export default function FieldNoteReader({
               href="/field-notes"
               className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
             >
-              <Body italic>More field notes</Body>
+              <Body italic>{t("moreFieldNotes")}</Body>
             </Link>
           </div>
           <div>
@@ -117,7 +134,7 @@ export default function FieldNoteReader({
               href="/threshold"
               className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
             >
-              <Body italic>Return to the threshold</Body>
+              <Body italic>{t("returnThreshold")}</Body>
             </Link>
           </div>
         </div>
