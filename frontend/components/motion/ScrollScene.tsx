@@ -4,6 +4,7 @@ import { useEffect, useRef, type ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useBrainStageStore } from "@/store/useBrainStageStore";
+import { getTransitionPhase, useTransitionState } from "@/lib/transitionState";
 import type { ScrollSceneConfig } from "@/lib/scrollScenes";
 
 type Props = ScrollSceneConfig & {
@@ -42,7 +43,18 @@ export default function ScrollScene({
     if (!ref.current) return;
     gsap.registerPlugin(ScrollTrigger);
 
+    // The orchestrator owns the brain during the room-to-room
+    // transition window. We back off while phase !== "idle" so the
+    // scenic anchor isn't clobbered mid-glide. As soon as the phase
+    // returns to idle, we replay the current scene's apply() if it
+    // is still within the trigger range, so the user doesn't end up
+    // looking at the wrong anchor on a freshly-landed page.
+    let queued = false;
     const apply = () => {
+      if (getTransitionPhase() !== "idle") {
+        queued = true;
+        return;
+      }
       if (debug) console.log("[ScrollScene]", id);
       setTransform({
         position: brain.position,
@@ -64,8 +76,18 @@ export default function ScrollScene({
       onEnterBack: apply,
     });
 
+    // Replay if a queued apply was suppressed during a transition.
+    const unsub = useTransitionState.subscribe((state) => {
+      if (state.phase === "idle" && queued) {
+        queued = false;
+        // Only fire if our trigger is currently within range.
+        if (trigger.isActive) apply();
+      }
+    });
+
     return () => {
       trigger.kill();
+      unsub();
     };
   }, [
     id,

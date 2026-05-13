@@ -6,6 +6,8 @@ import BrainStage from "@/components/brain/BrainStage";
 import RegionAnnouncer from "@/components/brain/RegionAnnouncer";
 import FilmGrain from "@/components/atmospheric/FilmGrain";
 import DeferredClient from "@/components/client/DeferredClient";
+import TransitionOrchestrator from "@/components/motion/TransitionOrchestrator";
+import PersistentAtmosphere from "@/components/atmospheric/PersistentAtmosphere";
 
 /**
  * Root layout. Hosts the persistent shell that must survive every
@@ -59,7 +61,12 @@ export default function RootLayout({
     <html lang="en" className={`${fontVariables} h-full`} suppressHydrationWarning>
       <body className="text-bone-cream min-h-full antialiased">
         <SmoothScroll>
+          {/* Persistent atmosphere paints first so the brain canvas
+              composites on top of it. Stacking order at z-0:
+              atmosphere → brain stage → content (z-10+). */}
+          <PersistentAtmosphere />
           <BrainStage />
+          <TransitionOrchestrator />
           {children}
           <RegionAnnouncer />
           <DeferredClient />
