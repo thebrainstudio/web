@@ -25,6 +25,7 @@ import { YEO_NETWORKS } from "./atlas";
 import { tours } from "@/content/tours";
 import { tourDuration } from "./tours";
 import { depthPsychologyPages } from "@/content/depth-psychology";
+import { TRACTS, TRACT_ORDER } from "./tracts";
 
 export type SearchKind =
   | "region"
@@ -197,6 +198,30 @@ const roomEntries: SearchEntry[] = [
     ],
   },
 ];
+
+function buildTractEntries(): SearchEntry[] {
+  return TRACT_ORDER.map((id) => {
+    const tract = TRACTS[id];
+    // Tracts link to the Atlas page of the first endpoint region —
+    // from there the Connectome panel surfaces the tract's toggle.
+    const [endpoint] = tract.endpoints;
+    return {
+      id: `tract:${id}`,
+      kind: "concept" as const,
+      title: tract.displayName,
+      subtitle: `Tract · endpoints: ${tract.endpoints.join(" ↔ ")}`,
+      href: `/atlas/${endpoint}`,
+      keywords: [
+        tract.displayName.toLowerCase(),
+        "tract",
+        "white matter",
+        "connectome",
+        ...tract.endpoints,
+        ...(tract.relatedDisorders ?? []).map((d) => d.toLowerCase()),
+      ],
+    };
+  });
+}
 
 function buildDepthPsychologyEntries(): SearchEntry[] {
   return depthPsychologyPages.map((page) => ({
@@ -565,6 +590,7 @@ export const searchIndex: SearchEntry[] = [
   ...buildBridgeEntries(),
   ...buildTourEntries(),
   ...buildDepthPsychologyEntries(),
+  ...buildTractEntries(),
   ...essayEntries,
   ...conceptEntries,
 ];

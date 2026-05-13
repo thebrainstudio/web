@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import Prose from "@/components/atlas/Prose";
 import BridgeStrengthBadge from "@/components/bridges/BridgeStrengthBadge";
+import ConnectomePanel from "@/components/brain/ConnectomePanel";
 import {
   Body,
   Caption,
@@ -278,6 +279,9 @@ export default async function AtlasRegionPage({
                   {network.shortDescription}
                 </Caption>
               </div>
+
+              {/* Connectome — interactive tract overlay */}
+              <ConnectomePanel regionId={region.id} />
 
               {/* Adjacent regions */}
               {entry.adjacentRegions.length > 0 && (

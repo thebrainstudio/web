@@ -9,6 +9,7 @@ import {
   type MeshResolution,
 } from "@/store/useBrainStageStore";
 import type { RegionId } from "@/lib/regions";
+import Tracts from "./Tracts";
 
 /**
  * Anatomical fsaverage mesh as the primary brain visualization.
@@ -325,6 +326,12 @@ export default function BrainAnatomy() {
         key={meshRes}
         resolution={meshRes}
       />
+      {/* White-matter tracts. Mounted as a sibling of the mesh so it
+          inherits the brain group's position, scale, rotation, and the
+          slow continuous Y rotation. The Tracts component owns its
+          own opacity tweening; opacity is 0 until the connectome
+          state surfaces a tract id. */}
+      <Tracts />
     </group>
   );
 }

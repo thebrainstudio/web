@@ -274,7 +274,16 @@
       "descend": "Descend to cellular view",
       "sources": "Sources",
       "lastReviewed": "Last reviewed {date}",
-      "wordCount": "{count} words"
+      "wordCount": "{count} words",
+      "connectome": "Connectome"
+    },
+    "connectome": {
+      "connectedIntro": "White-matter tracts with an endpoint in this region. Toggle one to see it inside the brain above.",
+      "unconnectedIntro": "No canonical tract has this region as one of its endpoints in our 8-tract set. Use \"Show all\" to view the wider connectome anyway.",
+      "showAll": "Show all tracts",
+      "hideAll": "Hide all tracts",
+      "clear": "Clear",
+      "disclosure": "Geometry is stylized — quadratic Bezier curves between region positions, not real diffusion-MRI tractography. Endpoints, function, and discovery credits are faithful to the literature."
     },
     "footerNote": "Region Atlas · cite or omit",
     "bridgeCard": {

@@ -680,6 +680,26 @@ export const citations: Record<string, Citation> = {
     journal: "Nature Reviews Neuroscience",
     doi: "10.1038/nrn3292",
   },
+
+  // --- Connectome layer ----------------------------------------------
+  "catani-2002-virtual-dissection": {
+    id: "catani-2002-virtual-dissection",
+    authors: "Catani, M., Howard, R. J., Pajevic, S., & Jones, D. K.",
+    year: 2002,
+    title:
+      "Virtual in vivo interactive dissection of white matter fasciculi in the human brain.",
+    journal: "NeuroImage",
+    doi: "10.1006/nimg.2002.1136",
+  },
+  "catani-2008-tractography-atlas": {
+    id: "catani-2008-tractography-atlas",
+    authors: "Catani, M., & Thiebaut de Schotten, M.",
+    year: 2008,
+    title:
+      "A diffusion tensor imaging tractography atlas for virtual in vivo dissections.",
+    journal: "Cortex",
+    doi: "10.1016/j.cortex.2008.05.004",
+  },
 };
 
 export function getCitation(id: string): Citation | undefined {
