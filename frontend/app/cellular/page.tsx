@@ -19,6 +19,7 @@ import {
   Heading,
   Mono,
 } from "@/components/typography/Typography";
+import { useBrainStageStore } from "@/store/useBrainStageStore";
 
 type ManifestEntry = {
   nmo_id: number;
@@ -98,6 +99,15 @@ export default function CellularPage() {
   const [triggerCount, setTriggerCount] = useState(0);
   const [speed, setSpeed] = useState(1);
   const [stepIdx, setStepIdx] = useState(0);
+  const setVisible = useBrainStageStore((s) => s.setVisible);
+
+  // Hide the persistent macro brain while this page is mounted — the
+  // cellular canvases stand alone and the cortical render would only bleed
+  // through the dark backgrounds.
+  useEffect(() => {
+    setVisible(false);
+    return () => setVisible(true);
+  }, [setVisible]);
 
   useEffect(() => {
     fetch("/cellular/manifest.json")
@@ -161,7 +171,7 @@ export default function CellularPage() {
       <section className="relative px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 md:grid-cols-12 md:gap-10">
           <div className="md:col-span-7">
-            <div className="aspect-square w-full overflow-hidden rounded-sm bg-navy-deep/40">
+            <div className="aspect-square w-full overflow-hidden rounded-sm bg-navy-deep">
               <Canvas
                 camera={{ position: [0, 0, 3.2], fov: 35 }}
                 dpr={[1, 2]}
@@ -278,7 +288,7 @@ export default function CellularPage() {
       <section className="relative px-6 py-12 md:px-10 md:py-20">
         <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 md:grid-cols-12 md:gap-10">
           <div className="md:col-span-7">
-            <div className="aspect-square w-full overflow-hidden rounded-sm bg-navy-deep/40">
+            <div className="aspect-square w-full overflow-hidden rounded-sm bg-navy-deep">
               <Canvas
                 camera={{ position: [0, 0, 3.2], fov: 38 }}
                 dpr={[1, 2]}

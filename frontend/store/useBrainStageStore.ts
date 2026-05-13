@@ -33,6 +33,7 @@ export type BrainStageState = {
   setLighting: (preset: BrainLightingPreset) => void;
   setActivations: (a: RegionActivations) => void;
   setMeshResolution: (r: MeshResolution) => void;
+  setVisible: (v: boolean) => void;
   resetIdle: () => void;
 };
 
@@ -59,6 +60,8 @@ export const useBrainStageStore = create<BrainStageState>((set) => ({
   setActivations: (a) => set({ targetActivations: a }),
 
   setMeshResolution: (r) => set({ meshResolution: r }),
+
+  setVisible: (v: boolean) => set({ visible: v }),
 
   resetIdle: () => set({ targetActivations: idleActivations }),
 }));

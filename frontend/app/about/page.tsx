@@ -265,6 +265,141 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* 4b-2 — Where Jung was right, where he was wrong */}
+      <section className="relative px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-[40rem]">
+          <Caption uppercase className="text-brass">
+            Where Jung was right, where he was wrong
+          </Caption>
+          <Heading className="mt-6 font-[200]">
+            He was a person, working with what was in reach.
+          </Heading>
+          <Body className="text-bone-cream/85 mt-10">
+            This site holds Jung&apos;s work seriously without treating
+            him as an oracle. He was a person — brilliant, prolific,
+            wrong about specific things, right about other specific
+            things, the way people who try hard for a long time generally
+            are. Honoring his work means being honest about both columns.
+          </Body>
+
+          <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-10">
+            <div>
+              <Caption uppercase className="text-brass">
+                Where he was right
+              </Caption>
+              <ul className="mt-6 space-y-5">
+                <li>
+                  <Body className="text-bone-cream/85">
+                    That consciousness is the small part of mind, and
+                    most of what produces thought, feeling, and action
+                    happens outside it. Predictive processing,
+                    default-mode work, implicit memory, and automatic
+                    appraisal have made the scale visible.
+                  </Body>
+                </li>
+                <li>
+                  <Body className="text-bone-cream/85">
+                    That memory is reconstruction, not retrieval, and
+                    that the past is continuously rewritten in service
+                    of present meaning. Reconsolidation research has
+                    given this a mechanism.
+                  </Body>
+                </li>
+                <li>
+                  <Body className="text-bone-cream/85">
+                    That disowned content does not vanish — it gets
+                    projected onto others, often with strange intensity,
+                    and the cost of not seeing it grows. Inhibition and
+                    suppression research describes the mechanism for
+                    holding it out; the cost is convergent.
+                  </Body>
+                </li>
+                <li>
+                  <Body className="text-bone-cream/85">
+                    That symbolic and figural cognition is not a
+                    primitive layer beneath rational thought but a
+                    parallel mode of meaning-making with its own
+                    legitimacy. Right-hemisphere narrative + figural
+                    work is real.
+                  </Body>
+                </li>
+                <li>
+                  <Body className="text-bone-cream/85">
+                    That recurring images across cultures — circle,
+                    quaternity, hero, shadow, mother — point at
+                    structural features of how minds organize themselves,
+                    not at coincidence.
+                  </Body>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <Caption uppercase className="text-brass">
+                Where he was wrong, or overreached
+              </Caption>
+              <ul className="mt-6 space-y-5">
+                <li>
+                  <Body className="text-bone-cream/85">
+                    The collective unconscious as a literal inherited
+                    storehouse of ancestral content. Contemporary
+                    biology does not support inherited memory in this
+                    sense. The convergence of imagery across cultures
+                    is better explained by shared cognitive primitives
+                    than by a transgenerational reservoir.
+                  </Body>
+                </li>
+                <li>
+                  <Body className="text-bone-cream/85">
+                    Synchronicity as a meaningful acausal connecting
+                    principle, on a par with causation. The phenomenology
+                    of meaningful coincidence is real — people do
+                    experience it — but the metaphysical claim he made
+                    around it has no scientific foothold.
+                  </Body>
+                </li>
+                <li>
+                  <Body className="text-bone-cream/85">
+                    The strict male/female binary that organized his
+                    anima/animus theory. The underlying observation
+                    about a contrasexual interior figure survives in
+                    weaker form; the binary that framed it has aged
+                    poorly, and contemporary depth-psychological work
+                    has corrected the vocabulary.
+                  </Body>
+                </li>
+                <li>
+                  <Body className="text-bone-cream/85">
+                    Some of his readings of non-Western traditions —
+                    Eastern thought especially — were more about Jung
+                    than about the traditions. He acknowledged this in
+                    parts of his work and missed it in others. His
+                    cultural reach was real but not unlimited.
+                  </Body>
+                </li>
+                <li>
+                  <Body className="text-bone-cream/85">
+                    Specific archetypal figures (wise old man, anima,
+                    animus, trickster) as universal psychological
+                    constants. The figures recur, but the strength of
+                    cross-cultural specificity he claimed is not what
+                    contemporary anthropology actually supports.
+                  </Body>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <Body italic className="text-bone-cream/80 mt-12 text-lg leading-[1.6]">
+            Both columns are part of what makes him still worth reading.
+            A theorist who was right about everything would not have
+            been close enough to the actual texture of mind to be useful.
+            Jung was close. He was sometimes too close to see
+            clearly. He was, in this respect, a person.
+          </Body>
+        </div>
+      </section>
+
       {/* 4c — Further reading */}
       <section className="relative px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[40rem]">

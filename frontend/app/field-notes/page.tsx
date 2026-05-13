@@ -8,6 +8,7 @@ import {
   Mono,
 } from "@/components/typography/Typography";
 import { essayHippocampus } from "@/content/field-notes/hippocampus";
+import { essayWhatBrainKnows } from "@/content/field-notes/what-the-brain-knows";
 
 const essays = [
   {
@@ -20,14 +21,13 @@ const essays = [
     shipped: true,
   },
   {
-    slug: "what-the-brain-knows-before-you-do",
-    title: "What the brain knows before you do",
-    summary:
-      "The asymmetry between predictive processing and conscious awareness — and what changes when you take seriously that you are not the first to know what you know.",
-    wordCount: 1500,
-    readMinutes: 9,
-    publishedAt: "Forthcoming",
-    shipped: false,
+    slug: essayWhatBrainKnows.slug,
+    title: essayWhatBrainKnows.title,
+    summary: essayWhatBrainKnows.summary,
+    wordCount: essayWhatBrainKnows.wordCount,
+    readMinutes: essayWhatBrainKnows.readMinutes,
+    publishedAt: essayWhatBrainKnows.publishedAt,
+    shipped: true,
   },
   {
     slug: "sound-and-the-salience-network",

@@ -14,9 +14,11 @@ import {
   Mono,
 } from "@/components/typography/Typography";
 import { essayHippocampus } from "@/content/field-notes/hippocampus";
+import { essayWhatBrainKnows } from "@/content/field-notes/what-the-brain-knows";
 
 const essaysBySlug: Record<string, typeof essayHippocampus> = {
   [essayHippocampus.slug]: essayHippocampus,
+  [essayWhatBrainKnows.slug]: essayWhatBrainKnows,
 };
 
 export default function FieldNoteReader({

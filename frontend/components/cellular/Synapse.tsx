@@ -1,21 +1,31 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 /**
- * Procedural synapse with neurotransmitter particles. Renders:
- *   - presynaptic bouton (large flattened sphere on the left)
- *   - synaptic cleft (the gap)
- *   - postsynaptic spine (mushroom shape on the right)
- *   - synaptic vesicles inside the bouton (cluster of small spheres)
- *   - particle burst across the cleft when `triggerCount` increments
+ * Anatomically-faithful synapse model. Visible structures:
  *
- * Neurotransmitter type changes the particle color, count, speed, and the
- * burst-vs-trickle release pattern — the educational point is that the
- * same mechanics give very different downstream effects depending on the
- * transmitter and its receptors.
+ *   - Axon stub (far left) along which the action potential travels.
+ *   - Presynaptic bouton — irregular, slightly translucent tissue.
+ *   - Mitochondrion inside the bouton (elongated ovoid).
+ *   - Active zone — darker patch on the bouton's cleft face where
+ *     vesicles dock.
+ *   - Vesicle cluster — docked vesicles (closer to the active zone)
+ *     plus a reserve pool floating behind them. Vesicles emit when
+ *     the AP arrives.
+ *   - Synaptic cleft — faint translucent slab of extracellular space.
+ *   - Postsynaptic spine — irregular mushroom (head + neck + dendrite
+ *     shaft).
+ *   - Postsynaptic density (PSD) — the thicker, darker patch on the
+ *     spine's cleft face where receptors live.
+ *
+ * Particles emerge from the active zone (not the bouton center),
+ * traverse the cleft, and dim as they make PSD contact. Each
+ * neurotransmitter profile changes color, count, travel time, and
+ * release pattern (burst vs. trickle) — the educational point is
+ * that the same mechanics produce very different downstream effects.
  */
 
 export type Neurotransmitter =
@@ -31,9 +41,7 @@ export type NTProfile = {
   effect: string;
   color: string;
   count: number;
-  /** Seconds to traverse the cleft. */
   travel: number;
-  /** "burst" releases all particles at once; "trickle" spreads them out. */
   pattern: "burst" | "trickle";
 };
 
@@ -90,22 +98,28 @@ export const NEUROTRANSMITTERS: Record<Neurotransmitter, NTProfile> = {
 
 type Props = {
   nt: Neurotransmitter;
-  /** Increment this to trigger an action potential + release. */
   triggerCount: number;
-  /** Playback rate. 1 = real-ish (slowed for legibility). */
   speed?: number;
 };
 
 type Particle = {
   active: boolean;
-  start: number;        // seconds, when this particle was released
-  travel: number;       // seconds the particle takes to cross
-  ox: number; oy: number; oz: number; // small random origin offset
-  tx: number; ty: number; tz: number; // small random target offset
+  start: number;
+  travel: number;
+  ox: number; oy: number; oz: number;
+  tx: number; ty: number; tz: number;
 };
 
-const PRESYNAPTIC_X = -0.95;
-const POSTSYNAPTIC_X = 0.55;
+// Geometry constants (kept centralized so structure stays coherent).
+const BOUTON_CENTER_X = -0.85;
+const BOUTON_RADIUS = 0.55;
+const ACTIVE_ZONE_X = BOUTON_CENTER_X + BOUTON_RADIUS * 0.78;
+const CLEFT_LEFT_X = ACTIVE_ZONE_X + 0.02;
+const CLEFT_RIGHT_X = CLEFT_LEFT_X + 0.22;
+const PSD_X = CLEFT_RIGHT_X;
+const SPINE_HEAD_X = PSD_X + 0.22;
+const TISSUE_COLOR = "#3a4264";
+const TISSUE_DARK = "#1c2440";
 
 export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
   const profile = NEUROTRANSMITTERS[nt];
@@ -113,25 +127,73 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
   const particles = useRef<Particle[]>([]);
   const elapsed = useRef(0);
   const lastTrigger = useRef(triggerCount);
-  const apProgress = useRef(-1); // -1 = idle; 0..1 = action-potential progress
+  const apProgress = useRef(-1);
+  const vesicleGlow = useRef(0);
+  const dockedMatsRef = useRef<THREE.MeshStandardMaterial[]>([]);
+  const reserveMatsRef = useRef<THREE.MeshStandardMaterial[]>([]);
 
-  // Vesicle cluster (visual; static positions inside the bouton).
-  const vesicles = useMemo(() => {
+  // Bouton + spine geometries with vertex noise — they should not be
+  // perfect spheres, real boutons are lumpy.
+  const boutonGeom = useMemo(() => {
+    const g = new THREE.IcosahedronGeometry(BOUTON_RADIUS, 4);
+    const pos = g.attributes.position as THREE.BufferAttribute;
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i);
+      const y = pos.getY(i);
+      const z = pos.getZ(i);
+      const n = 1 + (Math.sin(x * 6) * Math.cos(y * 5) + Math.sin(z * 7)) * 0.05;
+      pos.setXYZ(i, x * n, y * n, z * n);
+    }
+    g.computeVertexNormals();
+    return g;
+  }, []);
+
+  const spineGeom = useMemo(() => {
+    const g = new THREE.IcosahedronGeometry(0.28, 4);
+    const pos = g.attributes.position as THREE.BufferAttribute;
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i);
+      const y = pos.getY(i);
+      const z = pos.getZ(i);
+      const n = 1 + (Math.sin(x * 7) * Math.cos(y * 6) + Math.sin(z * 5)) * 0.07;
+      pos.setXYZ(i, x * n, y * n, z * n);
+    }
+    g.computeVertexNormals();
+    return g;
+  }, []);
+
+  // Docked vesicles (close to the active zone) and reserve-pool vesicles
+  // (clustered behind them, deeper in the bouton).
+  const dockedVesicles = useMemo(() => {
     const arr: [number, number, number, number][] = [];
-    for (let i = 0; i < 28; i++) {
-      const u = Math.random() * Math.PI * 2;
-      const v = Math.random() * Math.PI - Math.PI / 2;
-      const r = 0.18 + Math.random() * 0.1;
-      // cluster on the right side of bouton (facing cleft)
-      const cx = PRESYNAPTIC_X + 0.12 + Math.cos(u) * r * 0.35;
-      const cy = Math.sin(v) * r * 0.5;
-      const cz = Math.sin(u) * r * 0.4;
-      arr.push([cx, cy, cz, 0.025 + Math.random() * 0.015]);
+    const dockedCount = 14;
+    for (let i = 0; i < dockedCount; i++) {
+      const ring = i / dockedCount;
+      const ang = ring * Math.PI * 2;
+      const r = 0.08 + Math.random() * 0.06;
+      const vx = ACTIVE_ZONE_X - 0.06 - Math.random() * 0.04;
+      const vy = Math.cos(ang) * r;
+      const vz = Math.sin(ang) * r;
+      arr.push([vx, vy, vz, 0.022 + Math.random() * 0.008]);
     }
     return arr;
   }, []);
 
-  // Particle pool: allocate once, recycle.
+  const reserveVesicles = useMemo(() => {
+    const arr: [number, number, number, number][] = [];
+    for (let i = 0; i < 22; i++) {
+      const u = Math.random() * Math.PI * 2;
+      const v = Math.random() * Math.PI;
+      const r = 0.08 + Math.random() * 0.16;
+      const vx = BOUTON_CENTER_X + Math.cos(u) * Math.sin(v) * r * 0.7 - 0.05;
+      const vy = Math.cos(v) * r * 0.55;
+      const vz = Math.sin(u) * Math.sin(v) * r * 0.55;
+      arr.push([vx, vy, vz, 0.02 + Math.random() * 0.008]);
+    }
+    return arr;
+  }, []);
+
+  // Particle pool.
   const pool = useMemo(() => {
     const POOL = 160;
     const positions = new Float32Array(POOL * 3);
@@ -139,7 +201,7 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
     const sizes = new Float32Array(POOL);
     for (let i = 0; i < POOL; i++) {
       positions[i * 3] = 0;
-      positions[i * 3 + 1] = -10; // park off-screen
+      positions[i * 3 + 1] = -10;
       positions[i * 3 + 2] = 0;
       sizes[i] = 0;
     }
@@ -152,7 +214,6 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
     return { positions, colors, sizes, POOL };
   }, []);
 
-  // Update colors when nt changes.
   useEffect(() => {
     const c = new THREE.Color(profile.color);
     for (let i = 0; i < pool.POOL; i++) {
@@ -166,7 +227,6 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
     }
   }, [nt, profile.color, pool]);
 
-  // Trigger handling.
   useEffect(() => {
     if (triggerCount === lastTrigger.current) return;
     lastTrigger.current = triggerCount;
@@ -176,11 +236,12 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
   useFrame((_, delta) => {
     elapsed.current += delta * speed;
 
-    // Action potential travel: ~200ms from far-left to bouton.
+    // AP travels axon, arrives at bouton.
     if (apProgress.current >= 0 && apProgress.current < 1) {
       apProgress.current = Math.min(1, apProgress.current + delta * speed / 0.25);
+      // Vesicle emissive ramps up as AP arrives.
+      vesicleGlow.current = Math.min(1, vesicleGlow.current + delta * speed * 4);
       if (apProgress.current >= 1) {
-        // AP arrived — release particles.
         const count = profile.count;
         const isBurst = profile.pattern === "burst";
         let released = 0;
@@ -192,18 +253,30 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
             ? Math.random() * 0.05
             : Math.random() * 0.6);
           p.travel = profile.travel * (0.85 + Math.random() * 0.3);
+          // Origin: jitter around the active zone, not the bouton center.
           p.ox = (Math.random() - 0.5) * 0.18;
           p.oy = (Math.random() - 0.5) * 0.22;
           p.oz = (Math.random() - 0.5) * 0.18;
-          p.tx = (Math.random() - 0.5) * 0.2;
-          p.ty = (Math.random() - 0.5) * 0.18;
-          p.tz = (Math.random() - 0.5) * 0.16;
+          p.tx = (Math.random() - 0.5) * 0.18;
+          p.ty = (Math.random() - 0.5) * 0.16;
+          p.tz = (Math.random() - 0.5) * 0.14;
           released++;
         }
       }
+    } else {
+      // Decay glow after release.
+      vesicleGlow.current = Math.max(0, vesicleGlow.current - delta * speed * 1.2);
     }
 
-    // Update particle positions.
+    // Push vesicle glow to materials.
+    const glow = 0.18 + vesicleGlow.current * 0.9;
+    for (const m of dockedMatsRef.current) {
+      if (m) m.emissiveIntensity = glow;
+    }
+    for (const m of reserveMatsRef.current) {
+      if (m) m.emissiveIntensity = glow * 0.55;
+    }
+
     const pos = pool.positions;
     const siz = pool.sizes;
     let dirtyPos = false;
@@ -219,7 +292,6 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
       }
       const t = (elapsed.current - p.start) / p.travel;
       if (t < 0) {
-        // not yet released this frame
         siz[i] = 0;
         continue;
       }
@@ -230,16 +302,18 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
         dirtyPos = dirtySiz = true;
         continue;
       }
-      // Eased lerp from bouton-edge to spine-edge with small arc.
       const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-      const x = (PRESYNAPTIC_X + 0.22 + p.ox) +
-        ((POSTSYNAPTIC_X - 0.15 + p.tx) - (PRESYNAPTIC_X + 0.22 + p.ox)) * e;
-      const y = p.oy + (p.ty - p.oy) * e + Math.sin(t * Math.PI) * 0.05;
+      const startX = ACTIVE_ZONE_X + p.ox * 0.1;
+      const endX = PSD_X - 0.02 + p.tx * 0.1;
+      const x = startX + (endX - startX) * e;
+      const y = p.oy + (p.ty - p.oy) * e + Math.sin(t * Math.PI) * 0.04;
       const z = p.oz + (p.tz - p.oz) * e;
       pos[i * 3] = x;
       pos[i * 3 + 1] = y;
       pos[i * 3 + 2] = z;
-      siz[i] = 0.06 + (1 - Math.abs(t - 0.5) * 2) * 0.04;
+      // Size fades on PSD contact (dim as they bind).
+      const dimming = t > 0.85 ? (1 - (t - 0.85) / 0.15) : 1;
+      siz[i] = (0.05 + (1 - Math.abs(t - 0.5) * 2) * 0.04) * dimming;
       dirtyPos = true;
       dirtySiz = true;
     }
@@ -250,7 +324,6 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
     }
   });
 
-  // Particle geometry.
   const particlesGeom = useMemo(() => {
     const g = new THREE.BufferGeometry();
     g.setAttribute("position", new THREE.BufferAttribute(pool.positions, 3));
@@ -259,58 +332,175 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
     return g;
   }, [pool]);
 
+  // Reset material refs each render.
+  dockedMatsRef.current = [];
+  reserveMatsRef.current = [];
+
   return (
     <group>
-      {/* Presynaptic bouton */}
-      <mesh position={[PRESYNAPTIC_X, 0, 0]} scale={[0.55, 0.5, 0.55]}>
-        <sphereGeometry args={[1, 48, 48]} />
+      {/* Axon stub (presynaptic terminal stalk) */}
+      <mesh
+        position={[BOUTON_CENTER_X - 0.85, 0, 0]}
+        rotation={[0, 0, Math.PI / 2]}
+      >
+        <cylinderGeometry args={[0.085, 0.085, 1.1, 18]} />
         <meshStandardMaterial
-          color={"#2a3454"}
-          emissive={"#1e6cff"}
-          emissiveIntensity={0.18}
-          roughness={0.5}
-          metalness={0.1}
+          color={TISSUE_COLOR}
+          roughness={0.7}
+          metalness={0.0}
         />
       </mesh>
 
-      {/* Vesicles inside bouton */}
-      {vesicles.map(([vx, vy, vz, vr], i) => (
-        <mesh key={i} position={[vx, vy, vz]}>
-          <sphereGeometry args={[vr, 12, 12]} />
+      {/* Action-potential bright bead traveling down the axon */}
+      <ActionPotentialBead progress={apProgress} />
+
+      {/* Presynaptic bouton — irregular, tissue-textured */}
+      <mesh geometry={boutonGeom} position={[BOUTON_CENTER_X, 0, 0]}>
+        <meshPhysicalMaterial
+          color={TISSUE_COLOR}
+          emissive={"#1e3a6e"}
+          emissiveIntensity={0.08}
+          roughness={0.45}
+          metalness={0.05}
+          clearcoat={0.4}
+          clearcoatRoughness={0.6}
+          transmission={0.12}
+          thickness={0.4}
+        />
+      </mesh>
+
+      {/* Mitochondrion inside the bouton — elongated ovoid */}
+      <mesh
+        position={[BOUTON_CENTER_X - 0.16, 0.06, 0.05]}
+        rotation={[0, 0, 0.35]}
+        scale={[0.22, 0.085, 0.085]}
+      >
+        <sphereGeometry args={[1, 22, 14]} />
+        <meshStandardMaterial
+          color={"#5a4030"}
+          emissive={"#3a2418"}
+          emissiveIntensity={0.18}
+          roughness={0.55}
+        />
+      </mesh>
+
+      {/* Active zone — dark patch on the bouton's cleft face */}
+      <mesh
+        position={[ACTIVE_ZONE_X + 0.005, 0, 0]}
+        rotation={[0, Math.PI / 2, 0]}
+      >
+        <circleGeometry args={[0.16, 28]} />
+        <meshStandardMaterial
+          color={TISSUE_DARK}
+          roughness={0.85}
+          side={THREE.DoubleSide}
+        />
+      </mesh>
+
+      {/* Docked vesicles — closer to the active zone */}
+      {dockedVesicles.map(([vx, vy, vz, vr], i) => (
+        <mesh key={`d-${i}`} position={[vx, vy, vz]}>
+          <sphereGeometry args={[vr, 14, 14]} />
           <meshStandardMaterial
+            ref={(m) => {
+              if (m) dockedMatsRef.current.push(m);
+            }}
             color={profile.color}
             emissive={profile.color}
-            emissiveIntensity={0.4}
+            emissiveIntensity={0.25}
             roughness={0.3}
           />
         </mesh>
       ))}
 
-      {/* Postsynaptic spine (mushroom shape) */}
-      <mesh position={[POSTSYNAPTIC_X + 0.08, 0, 0]} scale={[0.25, 0.25, 0.25]}>
-        <sphereGeometry args={[1, 32, 32]} />
+      {/* Reserve-pool vesicles — deeper in the bouton */}
+      {reserveVesicles.map(([vx, vy, vz, vr], i) => (
+        <mesh key={`r-${i}`} position={[vx, vy, vz]}>
+          <sphereGeometry args={[vr, 12, 12]} />
+          <meshStandardMaterial
+            ref={(m) => {
+              if (m) reserveMatsRef.current.push(m);
+            }}
+            color={profile.color}
+            emissive={profile.color}
+            emissiveIntensity={0.12}
+            roughness={0.35}
+          />
+        </mesh>
+      ))}
+
+      {/* Synaptic cleft — faint translucent slab in the gap */}
+      <mesh
+        position={[(CLEFT_LEFT_X + CLEFT_RIGHT_X) / 2, 0, 0]}
+      >
+        <boxGeometry args={[CLEFT_RIGHT_X - CLEFT_LEFT_X, 0.55, 0.55]} />
         <meshStandardMaterial
-          color={"#2a3454"}
-          emissive={"#3d4a66"}
-          emissiveIntensity={0.18}
-          roughness={0.5}
-          metalness={0.1}
+          color={"#5cc8d6"}
+          emissive={"#1a4a55"}
+          emissiveIntensity={0.05}
+          transparent
+          opacity={0.05}
+          depthWrite={false}
         />
       </mesh>
-      {/* Spine stem */}
+
+      {/* Postsynaptic density (PSD) — dark thick patch on the spine's cleft face */}
       <mesh
-        position={[POSTSYNAPTIC_X + 0.32, 0, 0]}
-        rotation={[0, 0, Math.PI / 2]}
-        scale={[0.08, 0.4, 0.08]}
+        position={[PSD_X - 0.005, 0, 0]}
+        rotation={[0, Math.PI / 2, 0]}
       >
-        <cylinderGeometry args={[1, 1, 1, 16]} />
-        <meshStandardMaterial color={"#2a3454"} roughness={0.6} />
+        <circleGeometry args={[0.18, 28]} />
+        <meshStandardMaterial
+          color={"#0b1024"}
+          emissive={"#142046"}
+          emissiveIntensity={0.12}
+          roughness={0.9}
+          side={THREE.DoubleSide}
+        />
       </mesh>
 
-      {/* Action-potential wave: a small bright sphere traveling toward the bouton */}
-      <ActionPotentialWave progress={apProgress} />
+      {/* Spine head — irregular mushroom */}
+      <mesh geometry={spineGeom} position={[SPINE_HEAD_X, 0, 0]}>
+        <meshPhysicalMaterial
+          color={TISSUE_COLOR}
+          emissive={"#1e3a6e"}
+          emissiveIntensity={0.08}
+          roughness={0.5}
+          metalness={0.05}
+          clearcoat={0.35}
+          clearcoatRoughness={0.6}
+          transmission={0.1}
+          thickness={0.3}
+        />
+      </mesh>
 
-      {/* Particles */}
+      {/* Spine neck — thin stalk from head to dendrite */}
+      <mesh
+        position={[SPINE_HEAD_X + 0.28, 0, 0]}
+        rotation={[0, 0, Math.PI / 2]}
+      >
+        <cylinderGeometry args={[0.055, 0.07, 0.34, 18]} />
+        <meshStandardMaterial
+          color={TISSUE_COLOR}
+          roughness={0.55}
+        />
+      </mesh>
+
+      {/* Dendrite shaft — thick parent process the spine sits on */}
+      <mesh
+        position={[SPINE_HEAD_X + 0.62, 0, 0]}
+        rotation={[0, 0, Math.PI / 2]}
+      >
+        <cylinderGeometry args={[0.18, 0.18, 0.55, 22]} />
+        <meshStandardMaterial
+          color={TISSUE_COLOR}
+          emissive={"#1e3a6e"}
+          emissiveIntensity={0.05}
+          roughness={0.55}
+        />
+      </mesh>
+
+      {/* Neurotransmitter particles */}
       <points ref={pointsRef} geometry={particlesGeom}>
         <pointsMaterial
           vertexColors
@@ -325,7 +515,7 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
   );
 }
 
-function ActionPotentialWave({ progress }: { progress: { current: number } }) {
+function ActionPotentialBead({ progress }: { progress: { current: number } }) {
   const ref = useRef<THREE.Mesh>(null);
   useFrame(() => {
     const m = ref.current;
@@ -335,20 +525,20 @@ function ActionPotentialWave({ progress }: { progress: { current: number } }) {
       return;
     }
     m.visible = true;
-    // From far left (-2.5) to bouton (-0.95) along x.
-    const x = -2.5 + (-0.95 + 0.1 - -2.5) * progress.current;
-    m.position.x = x;
-    const intensity = (1 - Math.abs(progress.current - 0.5) * 2) * 0.6 + 0.4;
-    (m.material as THREE.MeshStandardMaterial).emissiveIntensity = intensity * 2.2;
-    m.scale.setScalar(0.08 + intensity * 0.08);
+    const startX = BOUTON_CENTER_X - 1.35;
+    const endX = BOUTON_CENTER_X - BOUTON_RADIUS * 0.85;
+    m.position.x = startX + (endX - startX) * progress.current;
+    const intensity = (1 - Math.abs(progress.current - 0.5) * 2) * 0.7 + 0.5;
+    (m.material as THREE.MeshStandardMaterial).emissiveIntensity = intensity * 3.0;
+    m.scale.setScalar(0.075 + intensity * 0.06);
   });
   return (
-    <mesh ref={ref} position={[-2.5, 0, 0]} visible={false}>
-      <sphereGeometry args={[1, 16, 16]} />
+    <mesh ref={ref} position={[BOUTON_CENTER_X - 1.35, 0, 0]} visible={false}>
+      <sphereGeometry args={[1, 18, 18]} />
       <meshStandardMaterial
         color={"#fde047"}
         emissive={"#fde047"}
-        emissiveIntensity={2.0}
+        emissiveIntensity={2.5}
         roughness={0.3}
       />
     </mesh>
