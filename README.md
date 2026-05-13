@@ -43,13 +43,17 @@ pip install -r requirements.txt
 |-------|--------|
 | 1 — Foundation (Next, Tailwind, fonts, Lenis+GSAP, persistent canvas, FastAPI shell, Vercel) | ✅ shipped |
 | 2 — 3D brain (20-region constellation, 3 lighting presets, citations) | ✅ shipped |
-| 3 — Scroll-as-camera system (ScrollScene, PinnedSequence, ParallaxLayer) | ✅ shipped |
+| 3 — Scroll-as-camera system | ✅ shipped |
 | 4 — Home page cinema (5 shots) | ✅ shipped |
-| 5 — Brain Mirror room | future |
-| 6 — NeuroMusic Lab room | future |
-| 7 — Cross-Cultural Brain room | future |
-| 8 — Nav polish + page transitions hardening | future |
-| 9 — About page (long-form scroll essay) | future |
-| 10 — TRIBE inference wired (uses cached checkpoint) | future |
-| 11 — Polish, perf, accessibility | future |
-| 12 — Final verification + walkthrough doc | future |
+| ✦ — Typography system + atmospheric depth (3 layers) | ✅ shipped |
+| 5 — Brain Mirror room (input → reveal → save PNG) | ✅ shipped |
+| 6 — NeuroMusic Lab (Library / Compare / Upload + timeline scrubber + insight essays) | ✅ shipped |
+| 7 — Cross-Cultural Brain (Thai/English pairs + dual brain maps + divergence) | ✅ shipped |
+| 8 — Nav polish + mobile sheet + loading.tsx + transition hardening | ✅ shipped |
+| 9 — About long-form scroll essay (citations + credits + roadmap) | ✅ shipped |
+| 10 — TRIBE inference scaffold (loader + Colab script + graceful fallback) | ✅ shipped |
+| 11 — error/404/skip-link/RegionAnnouncer accessibility pass | ✅ shipped |
+| 12 — Final verification + WALKTHROUGH.md | ✅ shipped |
+
+See [WALKTHROUGH.md](WALKTHROUGH.md) for what every route does and what
+remains stubbed.
