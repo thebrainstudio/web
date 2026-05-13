@@ -17,7 +17,7 @@
     "fieldNotes": "บันทึกภาคสนาม",
     "about": "เกี่ยวกับ",
     "muteAria": "ปิดเสียงบรรยากาศ",
-    "searchAria": "Search The Brain Studio (Ctrl-K)",
+    "searchAria": "ค้นหาใน The Brain Studio (Ctrl-K)",
     "unmuteAria": "เปิดเสียงบรรยากาศ",
     "githubAria": "ดูซอร์สโค้ดบน GitHub",
     "openMenu": "เปิดเมนู",
@@ -149,6 +149,7 @@
       "body": "วางเมาส์เพื่อรู้สึกถึงรูปแบบ คลิกเพื่อโหลดเข้าสู่กระจกด้านบน"
     },
     "examplesHeading": "ข้อความสามชิ้นที่ทำให้เราประหลาดใจ",
+    "openInAtlas": "เปิดในแอตลาส",
     "footerStudio": "The Brain Studio",
     "footerNote": "คำทำนายจำลองภายในเครื่อง"
   },
@@ -192,8 +193,8 @@
   "essays": {
     "fieldNote": "บันทึกภาคสนาม",
     "endOfNote": "— จบบันทึก",
-    "relatedBridgeLabel": "Related bridge",
-    "relatedBridgeOpen": "Continue in the Bridges page",
+    "relatedBridgeLabel": "สะพานที่เกี่ยวข้อง",
+    "relatedBridgeOpen": "อ่านต่อในหน้าสะพาน",
     "moreFieldNotes": "บันทึกภาคสนามอื่น ๆ",
     "returnThreshold": "กลับไปยังธรณีประตู",
     "hippocampus": {
@@ -240,143 +241,143 @@
     }
   },
   "atlas": {
-    "label": "Region Atlas",
-    "title": "The brain, room by room.",
-    "intro": "Twenty regions, written carefully. Each page holds the anatomy, the function as the literature currently tells it, the cell types underneath, the connections that route the signal, the clinical context, the history of who first noticed, and the thread of meaning the depth-psychological reading wants nearby.",
-    "statusNote": "{complete} of {total} pages are complete. The others render their architecture while their prose is written.",
-    "inProgress": "Under review",
-    "openCard": "Open",
-    "previewCard": "Preview",
-    "emptySection": "This section is being written. The architecture below — sidebar metadata, citation discipline, network membership — is in place.",
+    "label": "แอตลาสบริเวณสมอง",
+    "title": "สมอง, ทีละห้อง",
+    "intro": "ยี่สิบบริเวณ เขียนอย่างพิถีพิถัน แต่ละหน้าถือกายวิภาคศาสตร์ ฟังก์ชันตามที่วรรณกรรมปัจจุบันบรรยายไว้ ชนิดของเซลล์ที่อยู่ข้างใต้ การเชื่อมต่อที่ส่งสัญญาณ บริบททางคลินิก ประวัติของผู้สังเกตเห็นเป็นคนแรก และเส้นด้ายของความหมายที่การอ่านจากจิตวิทยาเชิงลึกอยากให้อยู่ใกล้",
+    "statusNote": "{complete} จาก {total} หน้าเสร็จสมบูรณ์แล้ว หน้าที่เหลือแสดงสถาปัตยกรรมไว้ในระหว่างที่งานเขียนกำลังถูกร่างขึ้น",
+    "inProgress": "อยู่ระหว่างการตรวจทาน",
+    "openCard": "เปิด",
+    "previewCard": "ดูตัวอย่าง",
+    "emptySection": "ส่วนนี้กำลังถูกเขียน สถาปัตยกรรมด้านล่าง — ข้อมูลแถบข้าง ระเบียบการอ้างอิง การเป็นสมาชิกของเครือข่าย — อยู่ในที่ของมันแล้ว",
     "inProgressBanner": {
-      "label": "Under careful review",
-      "body": "This page's prose hasn't been written yet. Architecture and metadata are in place; full sections are forthcoming."
+      "label": "อยู่ระหว่างการตรวจทานอย่างพิถีพิถัน",
+      "body": "งานเขียนของหน้านี้ยังไม่ได้เขียน สถาปัตยกรรมและข้อมูลกำกับอยู่ในที่แล้ว ส่วนเนื้อหาเต็มจะตามมา"
     },
     "breadcrumb": {
       "studio": "The Brain Studio",
-      "atlas": "Atlas"
+      "atlas": "แอตลาส"
     },
     "sections": {
-      "anatomy": "Anatomy & landmarks",
-      "function": "Function",
-      "cells": "Cell types",
-      "connections": "Connections",
-      "clinical": "In clinical context",
-      "discovery": "History of discovery",
-      "thread": "The thread"
+      "anatomy": "กายวิภาคและจุดสังเกต",
+      "function": "ฟังก์ชัน",
+      "cells": "ชนิดของเซลล์",
+      "connections": "การเชื่อมต่อ",
+      "clinical": "ในบริบททางคลินิก",
+      "discovery": "ประวัติการค้นพบ",
+      "thread": "เส้นด้าย"
     },
     "sidebar": {
-      "network": "Network",
-      "adjacent": "Adjacent regions",
-      "disorders": "Implicated in",
-      "cells": "Cell types here",
-      "descend": "Descend to cellular view",
-      "sources": "Sources",
-      "lastReviewed": "Last reviewed {date}",
-      "wordCount": "{count} words",
-      "connectome": "Connectome"
+      "network": "เครือข่าย",
+      "adjacent": "บริเวณที่อยู่ติดกัน",
+      "disorders": "เกี่ยวข้องกับ",
+      "cells": "ชนิดของเซลล์ที่นี่",
+      "descend": "ลงสู่ระดับเซลล์",
+      "sources": "แหล่งอ้างอิง",
+      "lastReviewed": "ตรวจทานครั้งล่าสุด {date}",
+      "wordCount": "{count} คำ",
+      "connectome": "คอนเนกโทม"
     },
     "connectome": {
-      "connectedIntro": "White-matter tracts with an endpoint in this region. Toggle one to see it inside the brain above.",
-      "unconnectedIntro": "No canonical tract has this region as one of its endpoints in our 8-tract set. Use \"Show all\" to view the wider connectome anyway.",
-      "showAll": "Show all tracts",
-      "hideAll": "Hide all tracts",
-      "clear": "Clear",
-      "disclosure": "Geometry is stylized — quadratic Bezier curves between region positions, not real diffusion-MRI tractography. Endpoints, function, and discovery credits are faithful to the literature."
+      "connectedIntro": "เส้นใยเนื้อขาวที่มีปลายอยู่ในบริเวณนี้ เปิดดูเส้นหนึ่งเพื่อเห็นมันภายในสมองด้านบน",
+      "unconnectedIntro": "ไม่มีเส้นใยมาตรฐานเส้นใดที่มีบริเวณนี้เป็นหนึ่งในปลายของชุดเส้นใย 8 เส้นของเรา ใช้ \"แสดงทั้งหมด\" เพื่อดูคอนเนกโทมที่กว้างขึ้นอยู่ดี",
+      "showAll": "แสดงเส้นใยทั้งหมด",
+      "hideAll": "ซ่อนเส้นใยทั้งหมด",
+      "clear": "ล้าง",
+      "disclosure": "เรขาคณิตเป็นแบบประยุกต์ — เส้นโค้ง Bézier กำลังสองระหว่างตำแหน่งของบริเวณ ไม่ใช่ tractography จาก diffusion-MRI จริง ปลาย ฟังก์ชัน และเครดิตการค้นพบยึดตามวรรณกรรม"
     },
-    "footerNote": "Region Atlas · cite or omit",
+    "footerNote": "แอตลาสบริเวณสมอง · อ้างอิงหรือเว้น",
     "bridgeCard": {
-      "label": "Bridge to depth psychology",
-      "open": "Open in the Bridges page"
+      "label": "สะพานสู่จิตวิทยาเชิงลึก",
+      "open": "เปิดในหน้าสะพาน"
     }
   },
   "bridges": {
-    "label": "Bridges",
-    "title": "Where neuroscience and depth psychology touch — and where they don't.",
-    "subtitle": "Eleven sections mapping the bridges between mechanism and meaning. Some are tight; some are partial; some do not exist at all. Naming each honestly is the page's discipline.",
-    "legendLabel": "Strength legend",
+    "label": "สะพาน",
+    "title": "จุดที่ประสาทวิทยาและจิตวิทยาเชิงลึกสัมผัสกัน — และจุดที่ไม่สัมผัส",
+    "subtitle": "สิบเอ็ดส่วนทำแผนที่สะพานระหว่างกลไกและความหมาย บางสะพานใกล้ชิด บางสะพานก็เพียงบางส่วน และบางสะพานไม่มีเลย การเรียกชื่อแต่ละสะพานอย่างซื่อตรงคือระเบียบของหน้านี้",
+    "legendLabel": "คำอธิบายความเข้ม",
     "breadcrumb": {
       "studio": "The Brain Studio",
-      "bridges": "Bridges"
+      "bridges": "สะพาน"
     },
-    "bibliographyLabel": "Bibliography",
-    "bibliographyHeading": "Every empirical claim, traceable.",
-    "bibliographyIntro": "Each citation here was confirmed against PubMed or its original journal record. Hover any superscript in the prose above to see its source; this list is the full set, in order of first mention.",
+    "bibliographyLabel": "บรรณานุกรม",
+    "bibliographyHeading": "ทุกข้ออ้างเชิงประจักษ์ ตรวจสอบย้อนได้",
+    "bibliographyIntro": "การอ้างอิงทุกชิ้นที่นี่ได้รับการยืนยันกับ PubMed หรือบันทึกต้นฉบับของวารสาร วางเมาส์เหนือเลขยกใดก็ได้ในงานเขียนด้านบนเพื่อดูแหล่งที่มา รายการนี้คือชุดเต็ม เรียงตามลำดับที่กล่าวถึงครั้งแรก",
     "network": {
-      "label": "The network at a glance",
-      "heading": "Every region, every bridge, on one page.",
-      "intro": "Twenty regions on the left, the Bridges sections that any region points into on the right. Brass lines are tight bridges; bone lines are partial; dashed lines are distant. The page below expands every line in detail; this diagram is the index.",
-      "compactIntro": "Twenty regions, the bridge each points into, the empirical strength of each connection. Hover any line to read it; click to land in the corresponding Bridges section.",
-      "svgLabel": "Diagram: 20 brain regions connected by lines to the Bridges page sections they engage, weighted by empirical bridge strength.",
+      "label": "เครือข่ายในภาพรวม",
+      "heading": "ทุกบริเวณ ทุกสะพาน บนหน้าเดียว",
+      "intro": "ยี่สิบบริเวณอยู่ทางซ้าย ส่วนของสะพานที่บริเวณใดก็ตามชี้ไปอยู่ทางขวา เส้นทองเหลืองคือสะพานใกล้ชิด เส้นกระดูกคือสะพานบางส่วน เส้นประคือสะพานห่างไกล หน้าด้านล่างขยายทุกเส้นโดยละเอียด แผนภาพนี้เป็นดัชนี",
+      "compactIntro": "ยี่สิบบริเวณ สะพานที่แต่ละบริเวณชี้ไป ความเข้มเชิงประจักษ์ของการเชื่อมโยงแต่ละเส้น วางเมาส์เหนือเส้นใดก็ได้เพื่ออ่าน คลิกเพื่อไปยังส่วนสะพานที่เกี่ยวข้อง",
+      "svgLabel": "แผนภาพ: 20 บริเวณสมองเชื่อมด้วยเส้นไปยังส่วนของหน้าสะพานที่เกี่ยวข้อง ถ่วงน้ำหนักตามความเข้มเชิงประจักษ์ของสะพาน",
       "filter": {
-        "all": "All",
-        "tightOnly": "Tight only",
-        "tightAndPartial": "Tight + partial",
-        "distantOnly": "Distant only"
+        "all": "ทั้งหมด",
+        "tightOnly": "ใกล้ชิดเท่านั้น",
+        "tightAndPartial": "ใกล้ชิด + บางส่วน",
+        "distantOnly": "ห่างไกลเท่านั้น"
       }
     },
-    "footerNote": "Bridges · cite or omit"
+    "footerNote": "สะพาน · อ้างอิงหรือเว้น"
   },
   "tours": {
-    "label": "Guided Tours",
-    "title": "Choreographed brain experiences.",
-    "intro": "Two- to three-minute tours in which the brain animates through a sequence of activations while a calm narration walks beside it. Watch, don't navigate — the tour unfolds at its own pace.",
-    "tour": "Tour",
-    "duration": "Duration",
-    "openTour": "Open the tour",
-    "scene": "Scene",
-    "pause": "Pause",
-    "play": "Play",
-    "restart": "Restart",
-    "ended": "Tour complete.",
-    "continueLabel": "Continue exploring",
-    "emptyState": "No tours available yet.",
-    "comingSoon": "More tours are forthcoming: how you read this sentence (language network), when something matters (salience), what's still you when you stop trying (default mode), how a face becomes someone you know (face processing), and hearing music (auditory and reward).",
-    "footerNote": "Guided Tours · the brain in motion"
+    "label": "ทัวร์นำชม",
+    "title": "ประสบการณ์สมองที่ออกแบบไว้",
+    "intro": "ทัวร์สองถึงสามนาทีที่สมองค่อย ๆ เคลื่อนไหวผ่านลำดับการกระตุ้น โดยมีคำบรรยายอันสงบนิ่งเดินเคียงข้าง ดู ไม่ต้องเดินไปไหน — ทัวร์ทอดตัวออกตามจังหวะของมันเอง",
+    "tour": "ทัวร์",
+    "duration": "ระยะเวลา",
+    "openTour": "เปิดทัวร์",
+    "scene": "ฉาก",
+    "pause": "หยุดชั่วคราว",
+    "play": "เล่น",
+    "restart": "เริ่มใหม่",
+    "ended": "ทัวร์จบแล้ว",
+    "continueLabel": "สำรวจต่อ",
+    "emptyState": "ยังไม่มีทัวร์",
+    "comingSoon": "ทัวร์อื่น ๆ กำลังจะมาถึง: คุณอ่านประโยคนี้อย่างไร (เครือข่ายภาษา) เมื่อบางสิ่งสำคัญ (ความสำคัญ) อะไรที่ยังเป็นคุณเมื่อคุณหยุดพยายาม (default mode) ใบหน้ากลายเป็นคนที่คุณรู้จักได้อย่างไร (การประมวลใบหน้า) และการได้ยินดนตรี (การได้ยินและรางวัล)",
+    "footerNote": "ทัวร์นำชม · สมองในการเคลื่อนไหว"
   },
   "depthPsychology": {
-    "label": "Depth Psychology",
-    "title": "The other half of the conversation.",
-    "intro": "Neuroscience gives us mechanism. Depth psychology gives us meaning. The pages in this section take the depth-psychological tradition seriously without losing the empirical discipline the rest of the site keeps. Where the bridges hold, they are named. Where they don't, the page says so.",
-    "minRead": "min read",
-    "words": "words",
-    "openPage": "Open",
-    "backToIndex": "Back to Depth Psychology",
+    "label": "จิตวิทยาเชิงลึก",
+    "title": "อีกครึ่งหนึ่งของบทสนทนา",
+    "intro": "ประสาทวิทยาให้กลไก จิตวิทยาเชิงลึกให้ความหมาย หน้าทั้งหลายในส่วนนี้ถือธรรมเนียมของจิตวิทยาเชิงลึกอย่างจริงจัง โดยไม่ละทิ้งระเบียบเชิงประจักษ์ที่ส่วนอื่นของเว็บไซต์ยึดถือ จุดที่สะพานยึดได้ ก็เรียกชื่อมัน จุดที่สะพานยึดไม่ได้ หน้านี้ก็พูดอย่างนั้น",
+    "minRead": "นาทีอ่าน",
+    "words": "คำ",
+    "openPage": "เปิด",
+    "backToIndex": "กลับไปยังจิตวิทยาเชิงลึก",
     "featured": {
-      "label": "Featured · the synthesizing index",
-      "title": "Bridges",
-      "subtitle": "Where neuroscience and depth psychology touch — and where they don't.",
-      "blurb": "Eleven sections rating the empirical correspondence between specific neural mechanisms and specific depth-psychological concepts. Tight, partial, distant, none — each bridge named honestly. Read this first.",
-      "open": "Open the Bridges page"
+      "label": "บทเด่น · ดัชนีสังเคราะห์",
+      "title": "สะพาน",
+      "subtitle": "จุดที่ประสาทวิทยาและจิตวิทยาเชิงลึกสัมผัสกัน — และจุดที่ไม่สัมผัส",
+      "blurb": "สิบเอ็ดส่วนประเมินความสอดคล้องเชิงประจักษ์ระหว่างกลไกประสาทเฉพาะกับแนวคิดจิตวิทยาเชิงลึกเฉพาะ ใกล้ชิด บางส่วน ห่างไกล ไม่มี — แต่ละสะพานถูกเรียกชื่ออย่างซื่อตรง อ่านส่วนนี้ก่อน",
+      "open": "เปิดหน้าสะพาน"
     },
     "longForm": {
-      "label": "Long-form",
-      "heading": "Jung, Reich, Perls — written for the careful reader."
+      "label": "งานเขียนยาว",
+      "heading": "จุง ไรช์ เพิร์ลส — เขียนให้แก่ผู้อ่านที่ใส่ใจ"
     },
     "existing": {
-      "label": "Adjacent essays",
-      "heading": "The contemplative layer.",
+      "label": "บทความที่อยู่ใกล้เคียง",
+      "heading": "ชั้นแห่งการพินิจ",
       "threshold": {
-        "label": "Essay",
-        "title": "The Threshold",
-        "blurb": "A contemplative essay that sits between the macro and the cellular views of the site. Three movements; about ten minutes."
+        "label": "บทความ",
+        "title": "ธรณีประตู",
+        "blurb": "บทความเชิงพินิจที่อยู่ระหว่างมุมมองภาพรวมและมุมมองระดับเซลล์ของเว็บไซต์ สามท่อน ประมาณสิบนาที"
       },
       "archetypes": {
-        "label": "Essay + gallery",
-        "title": "The Archetypes",
-        "blurb": "Jungian images paired with anatomical neuroscience. A reading of how the inherited symbolic vocabulary of culture meets the cortical machinery that received it."
+        "label": "บทความ + แกลเลอรี",
+        "title": "แม่แบบจิต",
+        "blurb": "ภาพแบบจุงคู่กับประสาทวิทยาทางกายวิภาค การอ่านว่าคำศัพท์เชิงสัญลักษณ์ที่วัฒนธรรมสืบทอดมาพบกับเครื่องจักรของคอร์เทกซ์ที่รับมันไว้ได้อย่างไร"
       },
       "fieldNotes": {
-        "label": "Essay collection",
-        "title": "Field Notes",
-        "blurb": "Long-form pieces from the seam between mind and brain. The hippocampus and the act of remembering. What the brain knows before you do."
+        "label": "ชุดบทความ",
+        "title": "บันทึกภาคสนาม",
+        "blurb": "งานเขียนยาวจากรอยต่อระหว่างจิตใจกับสมอง ฮิปโปแคมปัสกับการกระทำของการระลึก สิ่งที่สมองรู้ก่อนคุณ"
       }
     },
     "sidebar": {
-      "bridges": "Related Bridges sections",
-      "atlas": "Related Atlas regions"
+      "bridges": "ส่วนของสะพานที่เกี่ยวข้อง",
+      "atlas": "บริเวณในแอตลาสที่เกี่ยวข้อง"
     },
-    "footerNote": "Depth Psychology · the careful register"
+    "footerNote": "จิตวิทยาเชิงลึก · ระดับเสียงอันพิถีพิถัน"
   },
   "fieldNotes": {
     "label": "บันทึกภาคสนาม",
@@ -888,38 +889,38 @@
       "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences กรุงเทพฯ และข้อความไทยที่ใช้คู่กันมาจากที่นี่"
     },
     "howToUse": {
-      "label": "How to use this brain",
-      "heading": "A short guide to the affordances.",
-      "intro": "The site has more entry points than the home page suggests. The list below names the discoverable ones — the small affordances that turn a beautiful piece into a navigable research instrument.",
+      "label": "วิธีใช้สมองนี้",
+      "heading": "คู่มือสั้นสำหรับตัวเลือกการใช้งาน",
+      "intro": "เว็บไซต์มีจุดเข้าหลายแห่งกว่าที่หน้าแรกบอก รายการด้านล่างเรียกชื่อตัวเลือกที่ค้นพบได้ — ตัวเลือกเล็ก ๆ ที่เปลี่ยนผลงานชิ้นงดงามให้กลายเป็นเครื่องมือวิจัยที่ใช้สำรวจได้",
       "search": {
-        "label": "Search",
-        "body": "Press Cmd-K (or Ctrl-K on Windows / Linux) anywhere on the site to open a keyboard-first search palette. It indexes every region, every Bridges section, every tour, every long-form essay, and a small set of cross-cutting concepts. Type a researcher's surname, a disorder, a Jungian concept, a brain region — the palette finds it."
+        "label": "ค้นหา",
+        "body": "กด Cmd-K (หรือ Ctrl-K บน Windows / Linux) ที่ใดก็ได้บนเว็บไซต์เพื่อเปิดแถบค้นหาที่ใช้คีย์บอร์ดเป็นหลัก แถบนี้ทำดัชนีของทุกบริเวณ ทุกส่วนของสะพาน ทุกทัวร์ บทความยาวทุกชิ้น และชุดเล็ก ๆ ของแนวคิดที่ตัดข้ามกัน พิมพ์นามสกุลของนักวิจัย ชื่อโรค แนวคิดของจุง หรือบริเวณของสมอง — แถบนี้จะหาเจอ"
       },
       "atlas": {
-        "label": "Atlas",
-        "body": "The Region Atlas has twenty pages, one per region we surface. Each page carries seven sections: anatomy, function, cell types, connections, clinical context, history of discovery, and the depth-psychological thread. Every functional claim cites a peer-reviewed primary source; hover any superscript in the prose to see the reference."
+        "label": "แอตลาส",
+        "body": "แอตลาสบริเวณสมองมียี่สิบหน้า หน้าละหนึ่งบริเวณที่เราเปิดออก แต่ละหน้าถือเจ็ดส่วน: กายวิภาค ฟังก์ชัน ชนิดของเซลล์ การเชื่อมต่อ บริบททางคลินิก ประวัติการค้นพบ และเส้นด้ายจากจิตวิทยาเชิงลึก ทุกข้ออ้างเกี่ยวกับฟังก์ชันอ้างอิงแหล่งปฐมภูมิที่ผ่านการตรวจทาน วางเมาส์เหนือเลขยกใด ๆ ในงานเขียนเพื่อดูเอกสารอ้างอิง"
       },
       "bridges": {
-        "label": "Bridges",
-        "body": "Where neuroscience and depth psychology touch, the Bridges page rates the empirical correspondence — tight, partial, distant, or none. Each Atlas page's Thread section carries a bridge-strength card linking to the matching Bridges section. Following the cards is the cleanest way to see how the two layers of the site interlock."
+        "label": "สะพาน",
+        "body": "ในจุดที่ประสาทวิทยาและจิตวิทยาเชิงลึกสัมผัสกัน หน้าสะพานประเมินความสอดคล้องเชิงประจักษ์ — ใกล้ชิด บางส่วน ห่างไกล หรือไม่มี ส่วนเส้นด้ายของแต่ละหน้าในแอตลาสมีการ์ดบอกความเข้มของสะพานที่เชื่อมไปยังส่วนของสะพานที่ตรงกัน การเดินตามการ์ดคือทางที่สะอาดที่สุดในการเห็นว่าสองชั้นของเว็บไซต์ประสานกันอย่างไร"
       },
       "connectome": {
-        "label": "Connectome",
-        "body": "Each Atlas page has a Connectome panel in the sidebar listing the white-matter tracts that have an endpoint in this region. Toggle a tract and it appears inside the persistent brain as a glowing curve. The geometry is stylized; the endpoints, function, and discovery credits are faithful to the literature."
+        "label": "คอนเนกโทม",
+        "body": "แต่ละหน้าในแอตลาสมีแถบคอนเนกโทมในแถบข้างที่แสดงรายการเส้นใยเนื้อขาวซึ่งมีปลายอยู่ในบริเวณนั้น เปิดเส้นใย และมันจะปรากฏภายในสมองที่อยู่ค้างในฐานะเส้นโค้งเรืองแสง เรขาคณิตเป็นแบบประยุกต์ ส่วนปลาย ฟังก์ชัน และเครดิตการค้นพบยึดตามวรรณกรรม"
       },
       "cellular": {
-        "label": "Cellular descent",
-        "body": "The Cellular View is the deepest scale on the site — reconstructed individual neurons and a frame-by-frame synapse simulation with selectable neurotransmitter. The macro brain is hidden while you are there so the cellular canvases own the visual field; clicking back into any room restores it."
+        "label": "การลงสู่ระดับเซลล์",
+        "body": "มุมมองระดับเซลล์คือสเกลที่ลึกที่สุดของเว็บไซต์ — เซลล์ประสาทเดี่ยวที่สร้างขึ้นใหม่ และการจำลองจุดประสานประสาทเฟรมต่อเฟรม โดยเลือกสารสื่อประสาทได้ สมองในภาพรวมถูกซ่อนขณะที่คุณอยู่ที่นั่น เพื่อให้ผืนผ้าใบระดับเซลล์ครอบครองสายตา การคลิกกลับเข้าห้องใดก็ตามจะคืนสมองให้กลับมา"
       },
       "tours": {
-        "label": "Guided Tours",
-        "body": "Six choreographed two-to-three-minute experiences in which the brain animates through a sequence of activations with synchronized narration. Watch them rather than navigate them — the pacing is deliberate. Each tour links into the Bridges page or the relevant Atlas region at the end."
+        "label": "ทัวร์นำชม",
+        "body": "หกประสบการณ์ที่ออกแบบไว้ ยาวสองถึงสามนาที สมองค่อย ๆ เคลื่อนไหวผ่านลำดับการกระตุ้นพร้อมคำบรรยายที่ซิงโครไนซ์ ดูพวกมัน ไม่ต้องเดินผ่าน — จังหวะเป็นไปอย่างจงใจ ทัวร์แต่ละอันเชื่อมเข้ากับหน้าสะพานหรือบริเวณในแอตลาสที่เกี่ยวข้องในตอนจบ"
       },
       "depthPsychology": {
-        "label": "Depth Psychology",
-        "body": "A separate section for the depth-psychological layer of the site: Bridges as the synthesizing index, long-form pages on Aion, the Red Book, and Gestalt therapy, and adjacent essays in Field Notes, Threshold, and Archetypes. The voice is restrained and the cross-references back to the empirical side are explicit."
+        "label": "จิตวิทยาเชิงลึก",
+        "body": "ส่วนแยกสำหรับชั้นจิตวิทยาเชิงลึกของเว็บไซต์: สะพานในฐานะดัชนีสังเคราะห์ หน้างานเขียนยาวเกี่ยวกับ Aion, Red Book, และ Gestalt therapy รวมทั้งบทความที่อยู่ใกล้เคียงในบันทึกภาคสนาม ธรณีประตู และแม่แบบจิต น้ำเสียงสำรวม และการอ้างอิงข้ามกลับไปยังฝั่งเชิงประจักษ์เป็นไปอย่างชัดเจน"
       },
-      "closing": "None of this is hidden. None of it is gamified. The affordances are here for the reader who wants them; the reader who doesn't can ignore them and have the cinematic version of the site instead."
+      "closing": "ไม่มีสิ่งใดในนี้ที่ถูกซ่อน ไม่มีสิ่งใดถูกทำให้เป็นเกม ตัวเลือกเหล่านี้อยู่ที่นี่สำหรับผู้อ่านที่ต้องการ ผู้อ่านที่ไม่ต้องการสามารถมองข้ามและรับเว็บไซต์ในเวอร์ชันภาพยนตร์แทนได้"
     },
     "roadmap": {
       "label": "แผนทาง",
