@@ -17,7 +17,7 @@
     "fieldNotes": "フィールドノート",
     "about": "このサイトについて",
     "muteAria": "環境音を消音",
-    "searchAria": "Search The Brain Studio (Ctrl-K)",
+    "searchAria": "The Brain Studio を検索 (Ctrl-K)",
     "unmuteAria": "環境音を有効化",
     "githubAria": "GitHub のソースコード",
     "openMenu": "メニューを開く",
@@ -149,6 +149,7 @@
       "body": "カーソルを乗せて模様を感じてください。クリックすると上のミラーに読み込まれます。"
     },
     "examplesHeading": "私たちを驚かせた三つの文章",
+    "openInAtlas": "アトラスで開く",
     "footerStudio": "The Brain Studio",
     "footerNote": "予測はローカルでシミュレートされています"
   },
@@ -192,8 +193,8 @@
   "essays": {
     "fieldNote": "フィールドノート",
     "endOfNote": "— ノートの終わりに",
-    "relatedBridgeLabel": "Related bridge",
-    "relatedBridgeOpen": "Continue in the Bridges page",
+    "relatedBridgeLabel": "関連する橋",
+    "relatedBridgeOpen": "「橋」のページへ続く",
     "moreFieldNotes": "もっとフィールドノートを読む",
     "returnThreshold": "閾値へ戻る",
     "hippocampus": {
@@ -240,143 +241,143 @@
     }
   },
   "atlas": {
-    "label": "Region Atlas",
-    "title": "The brain, room by room.",
-    "intro": "Twenty regions, written carefully. Each page holds the anatomy, the function as the literature currently tells it, the cell types underneath, the connections that route the signal, the clinical context, the history of who first noticed, and the thread of meaning the depth-psychological reading wants nearby.",
-    "statusNote": "{complete} of {total} pages are complete. The others render their architecture while their prose is written.",
-    "inProgress": "Under review",
-    "openCard": "Open",
-    "previewCard": "Preview",
-    "emptySection": "This section is being written. The architecture below — sidebar metadata, citation discipline, network membership — is in place.",
+    "label": "領域アトラス",
+    "title": "脳を、部屋ごとに。",
+    "intro": "二十の領域を、丁寧に書きました。それぞれのページは、解剖、現在の文献が語る機能、その下にある細胞種、信号を運ぶ結合、臨床的文脈、最初に気づいた人の歴史、そして深層心理学的な読みが近くに置きたがる意味の糸を抱えています。",
+    "statusNote": "{total} ページ中 {complete} ページが完成しています。残りは文章が書かれるあいだ、構造を表示しています。",
+    "inProgress": "校閲中",
+    "openCard": "開く",
+    "previewCard": "プレビュー",
+    "emptySection": "このセクションは執筆中です。下の構造 — サイドバーのメタデータ、引用の規律、ネットワークへの所属 — はすでに整っています。",
     "inProgressBanner": {
-      "label": "Under careful review",
-      "body": "This page's prose hasn't been written yet. Architecture and metadata are in place; full sections are forthcoming."
+      "label": "丁寧に校閲中",
+      "body": "このページの文章はまだ書かれていません。構造とメタデータは整っており、本文は順次追加されます。"
     },
     "breadcrumb": {
       "studio": "The Brain Studio",
-      "atlas": "Atlas"
+      "atlas": "アトラス"
     },
     "sections": {
-      "anatomy": "Anatomy & landmarks",
-      "function": "Function",
-      "cells": "Cell types",
-      "connections": "Connections",
-      "clinical": "In clinical context",
-      "discovery": "History of discovery",
-      "thread": "The thread"
+      "anatomy": "解剖と目印",
+      "function": "機能",
+      "cells": "細胞種",
+      "connections": "結合",
+      "clinical": "臨床的文脈において",
+      "discovery": "発見の歴史",
+      "thread": "糸"
     },
     "sidebar": {
-      "network": "Network",
-      "adjacent": "Adjacent regions",
-      "disorders": "Implicated in",
-      "cells": "Cell types here",
-      "descend": "Descend to cellular view",
-      "sources": "Sources",
-      "lastReviewed": "Last reviewed {date}",
-      "wordCount": "{count} words",
-      "connectome": "Connectome"
+      "network": "ネットワーク",
+      "adjacent": "隣接する領域",
+      "disorders": "関与する状態",
+      "cells": "ここにある細胞種",
+      "descend": "細胞レベルへ下る",
+      "sources": "出典",
+      "lastReviewed": "最終校閲 {date}",
+      "wordCount": "{count} 語",
+      "connectome": "コネクトーム"
     },
     "connectome": {
-      "connectedIntro": "White-matter tracts with an endpoint in this region. Toggle one to see it inside the brain above.",
-      "unconnectedIntro": "No canonical tract has this region as one of its endpoints in our 8-tract set. Use \"Show all\" to view the wider connectome anyway.",
-      "showAll": "Show all tracts",
-      "hideAll": "Hide all tracts",
-      "clear": "Clear",
-      "disclosure": "Geometry is stylized — quadratic Bezier curves between region positions, not real diffusion-MRI tractography. Endpoints, function, and discovery credits are faithful to the literature."
+      "connectedIntro": "この領域に終端を持つ白質線維。ひとつ切り替えると、上の脳の内部で見えるようになります。",
+      "unconnectedIntro": "本サイトの 8 線維セットのうち、この領域を終端の一つに持つ正典的な線維はありません。「すべて表示」で、より広いコネクトームをご覧いただけます。",
+      "showAll": "すべての線維を表示",
+      "hideAll": "すべての線維を隠す",
+      "clear": "クリア",
+      "disclosure": "形状はスタイライズされています — 領域の位置間を結ぶ二次 Bézier 曲線であって、実際の diffusion-MRI トラクトグラフィーではありません。終端、機能、発見のクレジットは文献に忠実です。"
     },
-    "footerNote": "Region Atlas · cite or omit",
+    "footerNote": "領域アトラス · 引用、さもなくば省略",
     "bridgeCard": {
-      "label": "Bridge to depth psychology",
-      "open": "Open in the Bridges page"
+      "label": "深層心理学への橋",
+      "open": "「橋」のページで開く"
     }
   },
   "bridges": {
-    "label": "Bridges",
-    "title": "Where neuroscience and depth psychology touch — and where they don't.",
-    "subtitle": "Eleven sections mapping the bridges between mechanism and meaning. Some are tight; some are partial; some do not exist at all. Naming each honestly is the page's discipline.",
-    "legendLabel": "Strength legend",
+    "label": "橋",
+    "title": "神経科学と深層心理学が触れあう場所 — そして、触れあわない場所。",
+    "subtitle": "機構と意味のあいだの橋を描く十一の節。密接なものもあれば、部分的なもの、まったく存在しないものもあります。それぞれを正直に名づけることが、このページの規律です。",
+    "legendLabel": "強度の凡例",
     "breadcrumb": {
       "studio": "The Brain Studio",
-      "bridges": "Bridges"
+      "bridges": "橋"
     },
-    "bibliographyLabel": "Bibliography",
-    "bibliographyHeading": "Every empirical claim, traceable.",
-    "bibliographyIntro": "Each citation here was confirmed against PubMed or its original journal record. Hover any superscript in the prose above to see its source; this list is the full set, in order of first mention.",
+    "bibliographyLabel": "参考文献",
+    "bibliographyHeading": "すべての経験的主張を、辿れるかたちで。",
+    "bibliographyIntro": "ここに挙げた引用はすべて、PubMed または元のジャーナル記録に照らして確認しました。本文中の上付き番号にカーソルを乗せると出典が表示されます。このリストは、初出順の完全な集合です。",
     "network": {
-      "label": "The network at a glance",
-      "heading": "Every region, every bridge, on one page.",
-      "intro": "Twenty regions on the left, the Bridges sections that any region points into on the right. Brass lines are tight bridges; bone lines are partial; dashed lines are distant. The page below expands every line in detail; this diagram is the index.",
-      "compactIntro": "Twenty regions, the bridge each points into, the empirical strength of each connection. Hover any line to read it; click to land in the corresponding Bridges section.",
-      "svgLabel": "Diagram: 20 brain regions connected by lines to the Bridges page sections they engage, weighted by empirical bridge strength.",
+      "label": "ひと目で見るネットワーク",
+      "heading": "あらゆる領域、あらゆる橋を、一枚のページに。",
+      "intro": "左に二十の領域、右に各領域が指し示す「橋」のセクション。真鍮色の線は密接な橋、骨色の線は部分的な橋、点線は遠い橋を表します。下のページが各線を詳細に展開し、この図はその索引となります。",
+      "compactIntro": "二十の領域、それぞれが指す橋、各結合の経験的強度。線にカーソルを乗せて読み、クリックして対応する「橋」のセクションへ。",
+      "svgLabel": "図: 20 の脳領域が、関与する「橋」のページのセクションへ線で結ばれ、経験的な橋の強度で重み付けされています。",
       "filter": {
-        "all": "All",
-        "tightOnly": "Tight only",
-        "tightAndPartial": "Tight + partial",
-        "distantOnly": "Distant only"
+        "all": "すべて",
+        "tightOnly": "密接のみ",
+        "tightAndPartial": "密接 + 部分的",
+        "distantOnly": "遠いのみ"
       }
     },
-    "footerNote": "Bridges · cite or omit"
+    "footerNote": "橋 · 引用、さもなくば省略"
   },
   "tours": {
-    "label": "Guided Tours",
-    "title": "Choreographed brain experiences.",
-    "intro": "Two- to three-minute tours in which the brain animates through a sequence of activations while a calm narration walks beside it. Watch, don't navigate — the tour unfolds at its own pace.",
-    "tour": "Tour",
-    "duration": "Duration",
-    "openTour": "Open the tour",
-    "scene": "Scene",
-    "pause": "Pause",
-    "play": "Play",
-    "restart": "Restart",
-    "ended": "Tour complete.",
-    "continueLabel": "Continue exploring",
-    "emptyState": "No tours available yet.",
-    "comingSoon": "More tours are forthcoming: how you read this sentence (language network), when something matters (salience), what's still you when you stop trying (default mode), how a face becomes someone you know (face processing), and hearing music (auditory and reward).",
-    "footerNote": "Guided Tours · the brain in motion"
+    "label": "ガイドツアー",
+    "title": "振り付けられた脳の体験。",
+    "intro": "二〜三分のツアー。脳が活性のシーケンスを通してアニメーションするあいだ、静かなナレーションがその傍らを歩きます。操作するのではなく、見てください — ツアーは自らのペースで展開します。",
+    "tour": "ツアー",
+    "duration": "所要時間",
+    "openTour": "ツアーを開く",
+    "scene": "シーン",
+    "pause": "一時停止",
+    "play": "再生",
+    "restart": "最初から",
+    "ended": "ツアーが終了しました。",
+    "continueLabel": "探索を続ける",
+    "emptyState": "ツアーはまだ用意されていません。",
+    "comingSoon": "今後のツアー: この文をどう読むか(言語ネットワーク)、何かが大切に感じられる時(顕著性)、努めるのをやめても残るあなた(デフォルトモード)、顔がやがて「知っている誰か」になるまで(顔の処理)、そして音楽を聴くこと(聴覚と報酬)。",
+    "footerNote": "ガイドツアー · 動いている脳"
   },
   "depthPsychology": {
-    "label": "Depth Psychology",
-    "title": "The other half of the conversation.",
-    "intro": "Neuroscience gives us mechanism. Depth psychology gives us meaning. The pages in this section take the depth-psychological tradition seriously without losing the empirical discipline the rest of the site keeps. Where the bridges hold, they are named. Where they don't, the page says so.",
-    "minRead": "min read",
-    "words": "words",
-    "openPage": "Open",
-    "backToIndex": "Back to Depth Psychology",
+    "label": "深層心理学",
+    "title": "対話のもう半分。",
+    "intro": "神経科学は私たちに機構を与え、深層心理学は意味を与えます。このセクションのページは、サイトの他の部分が守る経験的な規律を失わないまま、深層心理学の伝統を真剣に受け取ります。橋が成り立つところでは、それを名づけます。成り立たないところでは、ページがそう告げます。",
+    "minRead": "分で読了",
+    "words": "語",
+    "openPage": "開く",
+    "backToIndex": "深層心理学へ戻る",
     "featured": {
-      "label": "Featured · the synthesizing index",
-      "title": "Bridges",
-      "subtitle": "Where neuroscience and depth psychology touch — and where they don't.",
-      "blurb": "Eleven sections rating the empirical correspondence between specific neural mechanisms and specific depth-psychological concepts. Tight, partial, distant, none — each bridge named honestly. Read this first.",
-      "open": "Open the Bridges page"
+      "label": "注目 · 統合する索引",
+      "title": "橋",
+      "subtitle": "神経科学と深層心理学が触れあう場所 — そして、触れあわない場所。",
+      "blurb": "特定の神経機構と特定の深層心理学的概念とのあいだの経験的な対応を評価する十一の節。密接、部分的、遠い、なし — それぞれの橋を正直に名づけました。最初にお読みください。",
+      "open": "「橋」のページを開く"
     },
     "longForm": {
-      "label": "Long-form",
-      "heading": "Jung, Reich, Perls — written for the careful reader."
+      "label": "長文",
+      "heading": "ユング、ライヒ、パールズ — 丁寧な読者のために書かれた文章。"
     },
     "existing": {
-      "label": "Adjacent essays",
-      "heading": "The contemplative layer.",
+      "label": "近接するエッセイ",
+      "heading": "観想の層。",
       "threshold": {
-        "label": "Essay",
-        "title": "The Threshold",
-        "blurb": "A contemplative essay that sits between the macro and the cellular views of the site. Three movements; about ten minutes."
+        "label": "エッセイ",
+        "title": "閾値",
+        "blurb": "サイトのマクロな見方と細胞レベルの見方のあいだに位置する観想的なエッセイ。三楽章、約十分。"
       },
       "archetypes": {
-        "label": "Essay + gallery",
-        "title": "The Archetypes",
-        "blurb": "Jungian images paired with anatomical neuroscience. A reading of how the inherited symbolic vocabulary of culture meets the cortical machinery that received it."
+        "label": "エッセイ + ギャラリー",
+        "title": "元型",
+        "blurb": "ユング的なイメージと解剖学的神経科学を並べた一篇。文化が継いできた象徴の語彙が、それを受け取った皮質の機構と出会う様を読み解きます。"
       },
       "fieldNotes": {
-        "label": "Essay collection",
-        "title": "Field Notes",
-        "blurb": "Long-form pieces from the seam between mind and brain. The hippocampus and the act of remembering. What the brain knows before you do."
+        "label": "エッセイ集",
+        "title": "フィールドノート",
+        "blurb": "心と脳のあわいから書かれた長文。海馬と想起という行為。あなたより先に脳が知っていること。"
       }
     },
     "sidebar": {
-      "bridges": "Related Bridges sections",
-      "atlas": "Related Atlas regions"
+      "bridges": "関連する「橋」のセクション",
+      "atlas": "関連するアトラスの領域"
     },
-    "footerNote": "Depth Psychology · the careful register"
+    "footerNote": "深層心理学 · 控えめな調"
   },
   "fieldNotes": {
     "label": "フィールドノート",
@@ -888,38 +889,38 @@
       "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences。バンコクと、タイ語の刺激対はここから来ています。"
     },
     "howToUse": {
-      "label": "How to use this brain",
-      "heading": "A short guide to the affordances.",
-      "intro": "The site has more entry points than the home page suggests. The list below names the discoverable ones — the small affordances that turn a beautiful piece into a navigable research instrument.",
+      "label": "この脳の使い方",
+      "heading": "アフォーダンスの短い案内。",
+      "intro": "サイトには、ホームページが示唆する以上の入り口があります。下のリストは、見つけられるものを名づけます — 美しい作品を、行き来できる研究器具へと変える、小さなアフォーダンスたちです。",
       "search": {
-        "label": "Search",
-        "body": "Press Cmd-K (or Ctrl-K on Windows / Linux) anywhere on the site to open a keyboard-first search palette. It indexes every region, every Bridges section, every tour, every long-form essay, and a small set of cross-cutting concepts. Type a researcher's surname, a disorder, a Jungian concept, a brain region — the palette finds it."
+        "label": "検索",
+        "body": "サイト上のどこでも Cmd-K(Windows / Linux では Ctrl-K)を押すと、キーボード優先の検索パレットが開きます。すべての領域、「橋」の節、ツアー、長文エッセイ、そして領域横断的な概念の小さな集合に索引が付いています。研究者の姓、疾患名、ユング的な概念、脳の領域 — どれを入力しても、パレットが見つけます。"
       },
       "atlas": {
-        "label": "Atlas",
-        "body": "The Region Atlas has twenty pages, one per region we surface. Each page carries seven sections: anatomy, function, cell types, connections, clinical context, history of discovery, and the depth-psychological thread. Every functional claim cites a peer-reviewed primary source; hover any superscript in the prose to see the reference."
+        "label": "アトラス",
+        "body": "領域アトラスには二十ページ、扱う領域ごとに一つずつあります。各ページは七つの節を運びます: 解剖、機能、細胞種、結合、臨床的文脈、発見の歴史、そして深層心理学的な糸。機能についての主張はすべて査読付きの一次資料を引用しています。本文の上付き番号にカーソルを乗せると参照元が表示されます。"
       },
       "bridges": {
-        "label": "Bridges",
-        "body": "Where neuroscience and depth psychology touch, the Bridges page rates the empirical correspondence — tight, partial, distant, or none. Each Atlas page's Thread section carries a bridge-strength card linking to the matching Bridges section. Following the cards is the cleanest way to see how the two layers of the site interlock."
+        "label": "橋",
+        "body": "神経科学と深層心理学が触れあう場所で、「橋」のページは経験的な対応を評価します — 密接、部分的、遠い、あるいは、なし。アトラスの各ページの「糸」の節には、対応する「橋」のセクションへ繋がる橋の強度カードが置かれています。このカードを辿るのが、サイトの二つの層がどう噛み合うかを見る最も澄んだ道です。"
       },
       "connectome": {
-        "label": "Connectome",
-        "body": "Each Atlas page has a Connectome panel in the sidebar listing the white-matter tracts that have an endpoint in this region. Toggle a tract and it appears inside the persistent brain as a glowing curve. The geometry is stylized; the endpoints, function, and discovery credits are faithful to the literature."
+        "label": "コネクトーム",
+        "body": "アトラスの各ページのサイドバーには、この領域に終端を持つ白質線維を一覧するコネクトームのパネルがあります。線維を切り替えると、持続する脳の中に光るカーブとして現れます。形状はスタイライズされていますが、終端、機能、発見のクレジットは文献に忠実です。"
       },
       "cellular": {
-        "label": "Cellular descent",
-        "body": "The Cellular View is the deepest scale on the site — reconstructed individual neurons and a frame-by-frame synapse simulation with selectable neurotransmitter. The macro brain is hidden while you are there so the cellular canvases own the visual field; clicking back into any room restores it."
+        "label": "細胞レベルへの下降",
+        "body": "細胞レベルの見方は、サイトで最も深い縮尺です — 再構成された個々のニューロンと、神経伝達物質を選べるフレーム単位のシナプス・シミュレーション。そこにいる間はマクロな脳は隠され、細胞のキャンバスが視野を占めます。どの部屋に戻るクリックでも、脳は元に戻ります。"
       },
       "tours": {
-        "label": "Guided Tours",
-        "body": "Six choreographed two-to-three-minute experiences in which the brain animates through a sequence of activations with synchronized narration. Watch them rather than navigate them — the pacing is deliberate. Each tour links into the Bridges page or the relevant Atlas region at the end."
+        "label": "ガイドツアー",
+        "body": "二〜三分の振り付けられた六つの体験。脳が活性のシーケンスを通してアニメーションし、それと同期したナレーションが流れます。操作するのではなく、見てください — リズムは意図されています。各ツアーは終わりに「橋」のページや関連するアトラスの領域へとつながります。"
       },
       "depthPsychology": {
-        "label": "Depth Psychology",
-        "body": "A separate section for the depth-psychological layer of the site: Bridges as the synthesizing index, long-form pages on Aion, the Red Book, and Gestalt therapy, and adjacent essays in Field Notes, Threshold, and Archetypes. The voice is restrained and the cross-references back to the empirical side are explicit."
+        "label": "深層心理学",
+        "body": "深層心理学の層のための独立した区画です。統合する索引としての「橋」、Aion、Red Book、ゲシュタルト療法を扱う長文ページ、そしてフィールドノート、閾値、元型に近接するエッセイ。声は控えめで、経験的な側への相互参照は明示的です。"
       },
-      "closing": "None of this is hidden. None of it is gamified. The affordances are here for the reader who wants them; the reader who doesn't can ignore them and have the cinematic version of the site instead."
+      "closing": "ここにあるものはどれも隠されていません。どれもゲーム化されていません。アフォーダンスは、欲しい読者のためにここにあります。欲しくない読者は無視して、サイトの映画的な版をそのまま受け取ってくださって構いません。"
     },
     "roadmap": {
       "label": "ロードマップ",
