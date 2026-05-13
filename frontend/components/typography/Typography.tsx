@@ -116,13 +116,14 @@ export const Body = forwardRef<HTMLElement, BodyProps>(
 type CaptionProps = {
   children: ReactNode;
   uppercase?: boolean;
+  italic?: boolean;
   as?: "span" | "p" | "div";
   className?: string;
 } & CommonRest;
 
 export const Caption = forwardRef<HTMLElement, CaptionProps>(
   function Caption(
-    { children, uppercase, as = "span", className, ...rest },
+    { children, uppercase, italic, as = "span", className, ...rest },
     ref,
   ) {
     return createElement(
@@ -134,6 +135,7 @@ export const Caption = forwardRef<HTMLElement, CaptionProps>(
           "text-caption",
           "font-[400]",
           uppercase && "uppercase tracking-[0.28em]",
+          italic && "italic",
           className,
         ),
         ...rest,

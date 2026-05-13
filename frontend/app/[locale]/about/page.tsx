@@ -423,6 +423,56 @@ export default async function AboutPage({
         </div>
       </section>
 
+      {/* 6b — How to use this brain (added with the connectome + bridges build) */}
+      <section className="relative px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-[920px]">
+          <Caption uppercase className="text-brass">
+            {t("howToUse.label")}
+          </Caption>
+          <Heading className="mt-6 font-[200]">
+            {t("howToUse.heading")}
+          </Heading>
+          <Body italic className="text-bone-cream/65 mt-6 max-w-[36rem]">
+            {t("howToUse.intro")}
+          </Body>
+
+          <ul className="mt-12 space-y-8">
+            {(
+              [
+                "search",
+                "atlas",
+                "bridges",
+                "connectome",
+                "cellular",
+                "tours",
+                "depthPsychology",
+              ] as const
+            ).map((key) => (
+              <li
+                key={key}
+                className="grid grid-cols-1 gap-2 md:grid-cols-12 md:gap-6"
+              >
+                <Caption
+                  uppercase
+                  className="text-brass tracking-[0.22em] md:col-span-3"
+                >
+                  {t(`howToUse.${key}.label`)}
+                </Caption>
+                <div className="md:col-span-9">
+                  <Body className="text-bone-cream/85">
+                    {t(`howToUse.${key}.body`)}
+                  </Body>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <Body italic className="text-bone-cream/55 mt-12 max-w-[36rem]">
+            {t("howToUse.closing")}
+          </Body>
+        </div>
+      </section>
+
       {/* 7 — Roadmap */}
       <section className="relative px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[920px]">

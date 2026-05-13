@@ -874,6 +874,40 @@
       "homeTitle": "จุฬาลงกรณ์ JIPP",
       "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences กรุงเทพฯ และข้อความไทยที่ใช้คู่กันมาจากที่นี่"
     },
+    "howToUse": {
+      "label": "How to use this brain",
+      "heading": "A short guide to the affordances.",
+      "intro": "The site has more entry points than the home page suggests. The list below names the discoverable ones — the small affordances that turn a beautiful piece into a navigable research instrument.",
+      "search": {
+        "label": "Search",
+        "body": "Press Cmd-K (or Ctrl-K on Windows / Linux) anywhere on the site to open a keyboard-first search palette. It indexes every region, every Bridges section, every tour, every long-form essay, and a small set of cross-cutting concepts. Type a researcher's surname, a disorder, a Jungian concept, a brain region — the palette finds it."
+      },
+      "atlas": {
+        "label": "Atlas",
+        "body": "The Region Atlas has twenty pages, one per region we surface. Each page carries seven sections: anatomy, function, cell types, connections, clinical context, history of discovery, and the depth-psychological thread. Every functional claim cites a peer-reviewed primary source; hover any superscript in the prose to see the reference."
+      },
+      "bridges": {
+        "label": "Bridges",
+        "body": "Where neuroscience and depth psychology touch, the Bridges page rates the empirical correspondence — tight, partial, distant, or none. Each Atlas page's Thread section carries a bridge-strength card linking to the matching Bridges section. Following the cards is the cleanest way to see how the two layers of the site interlock."
+      },
+      "connectome": {
+        "label": "Connectome",
+        "body": "Each Atlas page has a Connectome panel in the sidebar listing the white-matter tracts that have an endpoint in this region. Toggle a tract and it appears inside the persistent brain as a glowing curve. The geometry is stylized; the endpoints, function, and discovery credits are faithful to the literature."
+      },
+      "cellular": {
+        "label": "Cellular descent",
+        "body": "The Cellular View is the deepest scale on the site — reconstructed individual neurons and a frame-by-frame synapse simulation with selectable neurotransmitter. The macro brain is hidden while you are there so the cellular canvases own the visual field; clicking back into any room restores it."
+      },
+      "tours": {
+        "label": "Guided Tours",
+        "body": "Six choreographed two-to-three-minute experiences in which the brain animates through a sequence of activations with synchronized narration. Watch them rather than navigate them — the pacing is deliberate. Each tour links into the Bridges page or the relevant Atlas region at the end."
+      },
+      "depthPsychology": {
+        "label": "Depth Psychology",
+        "body": "A separate section for the depth-psychological layer of the site: Bridges as the synthesizing index, long-form pages on Aion, the Red Book, and Gestalt therapy, and adjacent essays in Field Notes, Threshold, and Archetypes. The voice is restrained and the cross-references back to the empirical side are explicit."
+      },
+      "closing": "None of this is hidden. None of it is gamified. The affordances are here for the reader who wants them; the reader who doesn't can ignore them and have the cinematic version of the site instead."
+    },
     "roadmap": {
       "label": "แผนทาง",
       "heading": "สิ่งที่ยังรอการสร้าง",
