@@ -3,24 +3,27 @@
 import { create } from "zustand";
 
 export type BrainLightingPreset = "cinematic" | "warm" | "clinical";
+export type MeshResolution = "fsaverage5" | "fsaverage6";
 
 export type Vec3 = readonly [number, number, number];
 
 export type RegionActivations = Readonly<Record<string, number>>;
 
 export type BrainStageState = {
-  /** Position in world units. */
   targetPosition: Vec3;
-  /** Uniform scale. */
   targetScale: number;
-  /** Euler rotation in radians. */
   targetRotation: Vec3;
-  /** Lighting preset name. */
   lighting: BrainLightingPreset;
-  /** Per-region activation 0..1. Region ids match `lib/regions.ts`. */
   targetActivations: RegionActivations;
-  /** Whether to show the brain at all (e.g. fade out during error states). */
   visible: boolean;
+  /**
+   * Which fsaverage mesh resolution the BrainAnatomy is currently rendering.
+   * 'fsaverage6' (~82k vertices) is used for hero cinematic moments — home
+   * and about. 'fsaverage5' (~20k vertices) is the interactive workhorse —
+   * Mirror / Music / Cross-Cultural. Pages set this in their ScrollScene
+   * effect; the BrainAnatomy lazy-loads the GLB it needs.
+   */
+  meshResolution: MeshResolution;
 
   setTransform: (t: {
     position?: Vec3;
@@ -29,6 +32,7 @@ export type BrainStageState = {
   }) => void;
   setLighting: (preset: BrainLightingPreset) => void;
   setActivations: (a: RegionActivations) => void;
+  setMeshResolution: (r: MeshResolution) => void;
   resetIdle: () => void;
 };
 
@@ -41,6 +45,7 @@ export const useBrainStageStore = create<BrainStageState>((set) => ({
   lighting: "cinematic",
   targetActivations: idleActivations,
   visible: true,
+  meshResolution: "fsaverage5",
 
   setTransform: ({ position, scale, rotation }) =>
     set((s) => ({
@@ -52,6 +57,8 @@ export const useBrainStageStore = create<BrainStageState>((set) => ({
   setLighting: (preset) => set({ lighting: preset }),
 
   setActivations: (a) => set({ targetActivations: a }),
+
+  setMeshResolution: (r) => set({ meshResolution: r }),
 
   resetIdle: () => set({ targetActivations: idleActivations }),
 }));

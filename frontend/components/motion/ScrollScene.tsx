@@ -26,6 +26,7 @@ export default function ScrollScene({
   id,
   brain,
   lighting,
+  meshResolution,
   children,
   className,
   debug,
@@ -35,6 +36,7 @@ export default function ScrollScene({
   const setTransform = useBrainStageStore((s) => s.setTransform);
   const setLighting = useBrainStageStore((s) => s.setLighting);
   const setActivations = useBrainStageStore((s) => s.setActivations);
+  const setMeshResolution = useBrainStageStore((s) => s.setMeshResolution);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -51,6 +53,7 @@ export default function ScrollScene({
       if (brain.activations) {
         setActivations(brain.activations as Record<string, number>);
       }
+      if (meshResolution) setMeshResolution(meshResolution);
     };
 
     const trigger = ScrollTrigger.create({
@@ -71,9 +74,11 @@ export default function ScrollScene({
     brain.rotation,
     brain.activations,
     lighting,
+    meshResolution,
     setTransform,
     setLighting,
     setActivations,
+    setMeshResolution,
     debug,
   ]);
 

@@ -7,7 +7,11 @@
  */
 
 import type { RegionId } from "./regions";
-import type { BrainLightingPreset, Vec3 } from "@/store/useBrainStageStore";
+import type {
+  BrainLightingPreset,
+  MeshResolution,
+  Vec3,
+} from "@/store/useBrainStageStore";
 import { signaturePatterns } from "./regions";
 
 export type ScrollSceneConfig = {
@@ -19,6 +23,13 @@ export type ScrollSceneConfig = {
     activations?: Partial<Record<RegionId, number>>;
   };
   lighting?: BrainLightingPreset;
+  /**
+   * Which fsaverage resolution the brain should render at while this scene
+   * is in view. Default is the interactive workhorse `fsaverage5`.
+   * Hero cinematic moments (home Shot 1, about closing) request
+   * `fsaverage6` for the higher polygon density.
+   */
+  meshResolution?: MeshResolution;
 };
 
 /**
@@ -29,6 +40,7 @@ export type ScrollSceneConfig = {
  */
 export const homeScrollChoreography: ScrollSceneConfig[] = [
   // Shot 1 — Cold open. Brain at center, large, materializing.
+  // Hero shot → fsaverage6 (denser mesh, more cinematic shadow detail).
   {
     id: "shot-cold-open",
     brain: {
@@ -38,6 +50,7 @@ export const homeScrollChoreography: ScrollSceneConfig[] = [
       activations: {},
     },
     lighting: "cinematic",
+    meshResolution: "fsaverage6",
   },
   // Shot 2 — Brain glides to the left third, scales down. Warm lighting.
   {
@@ -73,7 +86,7 @@ export const homeScrollChoreography: ScrollSceneConfig[] = [
     },
     lighting: "cinematic",
   },
-  // Shot 5 — Re-center, large, "Begin."
+  // Shot 5 — Re-center, large, "Begin." Hero again → fsaverage6.
   {
     id: "shot-begin",
     brain: {
@@ -83,6 +96,7 @@ export const homeScrollChoreography: ScrollSceneConfig[] = [
       activations: {},
     },
     lighting: "cinematic",
+    meshResolution: "fsaverage6",
   },
 ];
 

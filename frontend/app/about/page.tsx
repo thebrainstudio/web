@@ -39,6 +39,7 @@ export default function AboutPage() {
           activations: {},
         }}
         lighting="cinematic"
+        meshResolution="fsaverage6"
         className="relative flex min-h-[90vh] items-center px-6 pt-36 md:px-10 md:pt-44"
       >
         <div className="mx-auto max-w-[44rem]">
@@ -301,6 +302,7 @@ export default function AboutPage() {
           activations: {},
         }}
         lighting="warm"
+        meshResolution="fsaverage6"
         className="relative flex min-h-[80vh] items-center px-6 pb-24 md:px-10"
       >
         <AtmosphericGlow
