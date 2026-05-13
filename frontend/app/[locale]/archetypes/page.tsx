@@ -1,6 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 import { Link } from "@/i18n/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import Mandala from "@/components/decoration/Mandala";
 import AttributedImage from "@/components/content/AttributedImage";
@@ -63,7 +64,14 @@ async function loadManifest(): Promise<Manifest> {
   return JSON.parse(raw) as Manifest;
 }
 
-export default async function ArchetypesPage() {
+export default async function ArchetypesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "archetypes" });
   const manifest = await loadManifest();
   const shipped = manifest.archetypes.filter((a) => a.shipped);
   const upcoming = manifest.archetypes.filter((a) => !a.shipped);
@@ -82,16 +90,13 @@ export default async function ArchetypesPage() {
         />
         <div className="mx-auto max-w-[44rem] text-center">
           <Caption uppercase className="text-brass">
-            The Archetypes
+            {t("label")}
           </Caption>
           <Display italic className="mt-10">
-            There are figures in the psyche that are not you.
+            {t("opening")}
           </Display>
           <Body className="text-bone-cream/65 mt-10">
-            Carl Jung gave them names. Six are shown here, each illustrated
-            with a real artifact from the visual tradition Jung drew on —
-            paintings and manuscripts whose creators died long before he
-            did. None of the images are Jung&apos;s own work.
+            {t("openingBody")}
           </Body>
         </div>
       </section>
@@ -115,14 +120,11 @@ export default async function ArchetypesPage() {
         <section className="relative px-6 py-24 md:px-10 md:py-32">
           <div className="mx-auto max-w-[44rem]">
             <Caption uppercase className="text-brass">
-              Coming to this room
+              {t("upcomingLabel")}
             </Caption>
-            <Heading className="mt-6 font-[200]">Three more archetypes are scheduled.</Heading>
+            <Heading className="mt-6 font-[200]">{t("upcomingHeading")}</Heading>
             <Body className="text-bone-cream/65 mt-6">
-              Each of the following needs a verified public-domain artwork
-              sourced before it can ship. The discipline of this room is
-              that no archetype enters without an artifact whose
-              provenance is documented and visible.
+              {t("upcomingBody")}
             </Body>
             <ul className="mt-10 space-y-8">
               {upcoming.map((a) => (
@@ -134,7 +136,7 @@ export default async function ArchetypesPage() {
                     {a.subtitle}
                   </Body>
                   <Mono variant="label" className="text-bone-cream/45 mt-3 block">
-                    TODO_IMAGE · {a.todo_note}
+                    {t("todoImage")} · {a.todo_note}
                   </Mono>
                 </li>
               ))}
@@ -155,33 +157,17 @@ export default async function ArchetypesPage() {
         />
         <div className="mx-auto max-w-[42rem]">
           <Caption uppercase className="text-brass">
-            On mandalas
+            {t("mandalasLabel")}
           </Caption>
           <Display italic className="mt-10">
-            How to look at a circle that is also a portrait of a psyche.
+            {t("mandalasDisplay")}
           </Display>
 
           <Body className="text-bone-cream/85 mt-12">
-            Jung started painting mandalas before he had a theory of them.
-            Through the years of his break with Freud and his slow descent
-            into what he later called his confrontation with the
-            unconscious, circular images appeared in his notebooks — first
-            as something he was compelled to draw, then as something his
-            patients independently produced during periods of psychic
-            upheaval, and finally as something he recognized across the
-            visual traditions of medieval Europe, Tibetan Buddhism,
-            alchemical manuscripts, Hindu yantras, Hildegard&apos;s
-            illuminations, and the rose windows of cathedrals he had
-            never planned to study.
+            {t("mandalasBody1")}
           </Body>
           <Body className="text-bone-cream/85 mt-6">
-            What he came to believe, with appropriate hedging, was that
-            the mandala is the symbolic expression of what he called the
-            Self — the whole psyche of which the conscious ego is a small
-            part. Not the metaphysical Self of any one tradition, but a
-            pattern the psyche reaches for when it needs to organize
-            itself: a center, a containment, a quaternity, an integration
-            of opposites held in a single field.
+            {t("mandalasBody2")}
           </Body>
 
           {/* Two mandalas, side by side, with their full provenance */}
@@ -219,112 +205,38 @@ export default async function ArchetypesPage() {
           </div>
 
           <Heading className="text-brass mt-20 font-[200]">
-            How to look at one.
+            {t("howToLookHeading")}
           </Heading>
           <Body className="text-bone-cream/85 mt-8">
-            Jung had a practical method for looking at a mandala, his
-            patients&apos; or his own. The point was not interpretation in
-            the usual sense — not a key that decodes the image — but a
-            slower attending that lets the image do its work. Four
-            questions, asked roughly in order:
+            {t("howToLookBody")}
           </Body>
           <ol className="mt-8 space-y-6 [counter-reset:mandala]">
-            <li className="grid grid-cols-[3rem_1fr] items-baseline gap-4">
-              <Mono variant="label" className="text-brass">
-                01
-              </Mono>
-              <Body className="text-bone-cream/85">
-                <span className="text-brass font-[400]">What is at the center?</span>{" "}
-                Sometimes a figure, sometimes a flame, sometimes an empty
-                point, sometimes nothing identifiable at all. The center
-                is what the rest of the image is organized around. Whether
-                it is occupied or empty, occupied by what, empty in what
-                way — these matter.
-              </Body>
-            </li>
-            <li className="grid grid-cols-[3rem_1fr] items-baseline gap-4">
-              <Mono variant="label" className="text-brass">
-                02
-              </Mono>
-              <Body className="text-bone-cream/85">
-                <span className="text-brass font-[400]">What four things are around the center?</span>{" "}
-                Mandalas across traditions tend toward quaternity — four
-                directions, four elements, four evangelists, four
-                functions of consciousness in Jung&apos;s own typology.
-                The four are not arbitrary; they are the rhythm by which
-                the center is mapped into the field. Notice whether the
-                four are balanced or one is heavier, whether one is
-                missing, whether they repeat into eight or sixteen.
-              </Body>
-            </li>
-            <li className="grid grid-cols-[3rem_1fr] items-baseline gap-4">
-              <Mono variant="label" className="text-brass">
-                03
-              </Mono>
-              <Body className="text-bone-cream/85">
-                <span className="text-brass font-[400]">What contains it?</span>{" "}
-                Mandalas have boundaries — circles, walls, gates, sacred
-                precincts. The boundary holds energy that would otherwise
-                disperse. In the felt experience of looking, the
-                containment is what makes the center possible. Without
-                edge there is no center.
-              </Body>
-            </li>
-            <li className="grid grid-cols-[3rem_1fr] items-baseline gap-4">
-              <Mono variant="label" className="text-brass">
-                04
-              </Mono>
-              <Body className="text-bone-cream/85">
-                <span className="text-brass font-[400]">Where does it break?</span>{" "}
-                A working mandala is almost never perfectly symmetric. A
-                crack in the boundary, a missing quadrant, a figure
-                pulling sideways out of the frame. Jung paid close
-                attention to these — not as flaws but as the place where
-                the integration is incomplete and where the next work is
-                waiting.
-              </Body>
-            </li>
+            {([
+              ["01", t("look1Title"), t("look1")],
+              ["02", t("look2Title"), t("look2")],
+              ["03", t("look3Title"), t("look3")],
+              ["04", t("look4Title"), t("look4")],
+            ] as const).map(([n, title, body]) => (
+              <li key={n} className="grid grid-cols-[3rem_1fr] items-baseline gap-4">
+                <Mono variant="label" className="text-brass">{n}</Mono>
+                <Body className="text-bone-cream/85">
+                  <span className="text-brass font-[400]">{title}</span> {body}
+                </Body>
+              </li>
+            ))}
           </ol>
 
           <Heading className="text-brass mt-20 font-[200]">
-            Why Jung kept coming back.
+            {t("whyHeading")}
           </Heading>
-          <Body className="text-bone-cream/85 mt-8">
-            What Jung claimed about mandalas, and what he hedged about
-            them, are worth separating. He claimed that mandalas appear
-            spontaneously when the psyche is reorganizing itself — that
-            they are part of the actual work of individuation, not just
-            illustrations of it. He claimed that drawing them was a way
-            to participate in that reorganization. He claimed the
-            quaternity structure was not random but expressed something
-            structural about how consciousness orients itself.
-          </Body>
-          <Body className="text-bone-cream/85 mt-6">
-            What he hedged was metaphysics. He did not claim the mandala
-            was a portal to anything. He did not claim it was magical, or
-            that drawing one would heal you. He treated mandalas as
-            clinical data — observed reliably enough across patients and
-            traditions to deserve careful description, and reserved
-            judgment about anything beyond that. The wellness industry,
-            in its appropriation, has dropped the hedge and kept the
-            mystery, which is the wrong half to keep.
-          </Body>
-          <Body className="text-bone-cream/85 mt-6">
-            Looking at Fludd&apos;s engraving above or the Hildegard
-            codex beside it, both made centuries before Jung was born,
-            you can see what he was pointing at without endorsing the
-            cosmologies they came from. A center. A quaternity. A
-            containment. A break in the symmetry somewhere that lets the
-            life of the image stay alive. The work of looking is real
-            even when the metaphysics is contested.
-          </Body>
+          <Body className="text-bone-cream/85 mt-8">{t("whyBody1")}</Body>
+          <Body className="text-bone-cream/85 mt-6">{t("whyBody2")}</Body>
+          <Body className="text-bone-cream/85 mt-6">{t("whyBody3")}</Body>
           <Body italic className="text-bone-cream/80 mt-10 text-lg leading-[1.6]">
-            A mandala is not a picture of a finished self. It is a picture
-            of a self being worked on, sometimes by hands that did not
-            know what they were drawing until it was drawn.
+            {t("mandalasItalic")}
           </Body>
           <Mono variant="label" className="text-bone-cream/40 mt-14 block">
-            On Mandalas · ~700 words · 4 min read
+            {t("mandalasMeta")}
           </Mono>
         </div>
       </section>
@@ -333,21 +245,13 @@ export default async function ArchetypesPage() {
       <section className="relative px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[1280px]">
           <Caption uppercase className="text-brass">
-            Mandalas from many traditions
+            {t("manyLabel")}
           </Caption>
           <Heading className="mt-6 font-[200]">
-            Same shape, different vocabularies.
+            {t("manyHeading")}
           </Heading>
           <Body className="text-bone-cream/65 mt-6 max-w-[42rem]">
-            Jung observed that mandalic forms recur across cultures with
-            no plausible chain of transmission between them. Medieval
-            Christian rose windows. Tibetan dependent-origination wheels.
-            The Sri Yantra. The Mexica Sun Stone. European alchemical
-            engravings. Same shape, organized differently, used for
-            different work. The convergence interested him for the rest
-            of his life. Below are seven, with what depth psychology
-            sees in each — and what published neuroimaging literature
-            would predict your brain to do while looking at them.
+            {t("manyBody")}
           </Body>
 
           <div className="mt-16">
@@ -368,21 +272,10 @@ export default async function ArchetypesPage() {
           size="w-[42rem]"
         />
         <div className="mx-auto max-w-[40rem]">
-          <Body className="text-bone-cream/80">
-            These are not parts of the brain. They are not regions on a
-            scan. They are patterns in the felt life of being a self —
-            patterns old enough to have shown up in every culture&apos;s
-            mythology, recurring enough to have made one psychologist try
-            to give them names.
-          </Body>
-          <Body className="text-bone-cream/75 mt-6">
-            Some of what Jung saw has been confirmed in different language
-            by neuroscience. Some has not. Much of it lives in a register
-            where neither neuroscience nor depth psychology can fully
-            claim the territory.
-          </Body>
+          <Body className="text-bone-cream/80">{t("closing1")}</Body>
+          <Body className="text-bone-cream/75 mt-6">{t("closing2")}</Body>
           <Body italic className="text-bone-cream/85 mt-8 text-lg">
-            This is what makes them worth keeping both languages alive for.
+            {t("closingItalic")}
           </Body>
           <div className="mt-14 space-y-4">
             <div>
@@ -390,7 +283,7 @@ export default async function ArchetypesPage() {
                 href="/threshold"
                 className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
               >
-                <Body italic>Return to the threshold</Body>
+                <Body italic>{t("linkThreshold")}</Body>
               </Link>
             </div>
             <div>
@@ -398,7 +291,7 @@ export default async function ArchetypesPage() {
                 href="/field-notes"
                 className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
               >
-                <Body italic>Read the field notes</Body>
+                <Body italic>{t("linkFieldNotes")}</Body>
               </Link>
             </div>
             <div>
@@ -406,7 +299,7 @@ export default async function ArchetypesPage() {
                 href="/"
                 className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
               >
-                <Body italic>Return to the surface</Body>
+                <Body italic>{t("linkHome")}</Body>
               </Link>
             </div>
           </div>
@@ -415,7 +308,7 @@ export default async function ArchetypesPage() {
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
         <Caption uppercase className="text-bone-cream/40">
-          Sources · all artworks public domain · provenance under each ⓘ
+          {t("footer")}
         </Caption>
       </footer>
     </>

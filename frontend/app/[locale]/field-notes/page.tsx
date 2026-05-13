@@ -9,39 +9,47 @@ import {
 } from "@/components/typography/Typography";
 import { essayHippocampus } from "@/content/field-notes/hippocampus";
 import { essayWhatBrainKnows } from "@/content/field-notes/what-the-brain-knows";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-const essays = [
-  {
-    slug: essayHippocampus.slug,
-    title: essayHippocampus.title,
-    summary: essayHippocampus.summary,
-    wordCount: essayHippocampus.wordCount,
-    readMinutes: essayHippocampus.readMinutes,
-    publishedAt: essayHippocampus.publishedAt,
-    shipped: true,
-  },
-  {
-    slug: essayWhatBrainKnows.slug,
-    title: essayWhatBrainKnows.title,
-    summary: essayWhatBrainKnows.summary,
-    wordCount: essayWhatBrainKnows.wordCount,
-    readMinutes: essayWhatBrainKnows.readMinutes,
-    publishedAt: essayWhatBrainKnows.publishedAt,
-    shipped: true,
-  },
-  {
-    slug: "sound-and-the-salience-network",
-    title: "Sound and the salience network",
-    summary:
-      "Why particular pieces of music seem to arrive with weight — auditory cortex, default-mode involvement, and what Jung called the numinous.",
-    wordCount: 1400,
-    readMinutes: 8,
-    publishedAt: "Forthcoming",
-    shipped: false,
-  },
-];
+export default async function FieldNotesIndex({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "fieldNotes" });
 
-export default function FieldNotesIndex() {
+  const essays = [
+    {
+      slug: essayHippocampus.slug,
+      title: essayHippocampus.title,
+      summary: essayHippocampus.summary,
+      wordCount: essayHippocampus.wordCount,
+      readMinutes: essayHippocampus.readMinutes,
+      publishedAt: essayHippocampus.publishedAt,
+      shipped: true,
+    },
+    {
+      slug: essayWhatBrainKnows.slug,
+      title: essayWhatBrainKnows.title,
+      summary: essayWhatBrainKnows.summary,
+      wordCount: essayWhatBrainKnows.wordCount,
+      readMinutes: essayWhatBrainKnows.readMinutes,
+      publishedAt: essayWhatBrainKnows.publishedAt,
+      shipped: true,
+    },
+    {
+      slug: "sound-and-the-salience-network",
+      title: t("essay3.title"),
+      summary: t("essay3.summary"),
+      wordCount: 1400,
+      readMinutes: 8,
+      publishedAt: t("forthcoming"),
+      shipped: false,
+    },
+  ];
+
   return (
     <main className="relative min-h-screen px-6 pt-36 pb-32 md:px-10 md:pt-44">
       <Mandala
@@ -54,16 +62,13 @@ export default function FieldNotesIndex() {
       />
       <div className="mx-auto max-w-[44rem]">
         <Caption uppercase className="text-brass">
-          Field Notes
+          {t("label")}
         </Caption>
         <Display italic className="mt-10">
-          Essays from the seam between mind and brain.
+          {t("display")}
         </Display>
         <Body className="text-bone-cream/65 mt-10 max-w-[36rem]">
-          Longer pieces of writing, hedged carefully, intended to be read
-          rather than skimmed. Each essay holds two languages — neuroscience
-          and depth psychology — in parallel, without collapsing one into
-          the other.
+          {t("intro")}
         </Body>
 
         <ol className="mt-20 space-y-14">
@@ -95,13 +100,13 @@ export default function FieldNotesIndex() {
               </Body>
               <div className="mt-4">
                 <Mono variant="label" className="text-bone-cream/45">
-                  {e.wordCount.toLocaleString()} words · {e.readMinutes} min read ·{" "}
+                  {e.wordCount.toLocaleString()} {t("words")} · {e.readMinutes} {t("minRead")} ·{" "}
                   {e.publishedAt}
                 </Mono>
               </div>
               {!e.shipped && (
                 <Mono variant="label" className="text-bone-cream/35 mt-2 block">
-                  Forthcoming
+                  {t("forthcoming")}
                 </Mono>
               )}
             </li>
