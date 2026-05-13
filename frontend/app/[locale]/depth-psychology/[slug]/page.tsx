@@ -10,7 +10,7 @@ import {
 } from "@/components/typography/Typography";
 import {
   depthPsychologyPages,
-  depthPsychologyPageBySlug,
+  depthPsychologyPageBySlugAndLocale,
 } from "@/content/depth-psychology";
 import { BRIDGE_SECTIONS } from "@/lib/bridges";
 import { regionById } from "@/lib/regions";
@@ -70,7 +70,7 @@ export default async function DepthPsychologyPage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const entry = depthPsychologyPageBySlug(slug);
+  const entry = depthPsychologyPageBySlugAndLocale(slug, locale);
   if (!entry) notFound();
   const t = await getTranslations({ locale, namespace: "depthPsychology" });
   const tRegions = await getTranslations({ locale, namespace: "regions" });

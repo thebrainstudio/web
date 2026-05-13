@@ -8,7 +8,7 @@ import {
   Mono,
 } from "@/components/typography/Typography";
 import { Link } from "@/i18n/navigation";
-import { depthPsychologyPages } from "@/content/depth-psychology";
+import { depthPsychologyPagesForLocale } from "@/content/depth-psychology";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 /**
@@ -32,6 +32,7 @@ export default async function DepthPsychologyLanding({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "depthPsychology" });
+  const pagesForLocale = depthPsychologyPagesForLocale(locale);
 
   // Existing pages alongside the new long-form entries.
   const existingPages = [
@@ -140,7 +141,7 @@ export default async function DepthPsychologyLanding({
             {t("longForm.heading")}
           </Heading>
           <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
-            {depthPsychologyPages.map((page) => (
+            {pagesForLocale.map((page) => (
               <Link
                 key={page.slug}
                 href={`/depth-psychology/${page.slug}` as never}
