@@ -89,13 +89,11 @@ export default async function AtlasIndex({
                     className="inline-block h-3 w-3 translate-y-[-2px] rounded-full"
                     style={{ backgroundColor: info.accent }}
                   />
-                  <Heading
-                    as="h2"
-                    className="font-[200]"
-                    style={{ color: info.accent }}
-                  >
-                    {info.displayName}
-                  </Heading>
+                  <span style={{ color: info.accent }}>
+                    <Heading as="h2" className="font-[200]">
+                      {info.displayName}
+                    </Heading>
+                  </span>
                 </div>
                 <Caption className="text-bone-cream/55 mt-2 block max-w-[28rem]">
                   {info.shortDescription}

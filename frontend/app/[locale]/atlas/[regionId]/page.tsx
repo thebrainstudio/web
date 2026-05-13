@@ -150,13 +150,11 @@ export default async function AtlasRegionPage({
               className="inline-block h-3 w-3 translate-y-[-2px] rounded-full"
               style={{ backgroundColor: network.accent }}
             />
-            <Caption
-              uppercase
-              className="tracking-[0.22em]"
-              style={{ color: network.accent }}
-            >
-              {network.displayName}
-            </Caption>
+            <span style={{ color: network.accent }}>
+              <Caption uppercase className="tracking-[0.22em]">
+                {network.displayName}
+              </Caption>
+            </span>
           </div>
           <Display italic className="mt-6">
             {tRegions(`${region.id}.displayName`)}
@@ -240,9 +238,9 @@ export default async function AtlasRegionPage({
                 <Caption uppercase className="text-brass tracking-[0.18em]">
                   {t("sidebar.network")}
                 </Caption>
-                <Body className="text-bone-cream/80 mt-2" style={{ color: network.accent }}>
-                  {network.displayName}
-                </Body>
+                <div className="mt-2" style={{ color: network.accent }}>
+                  <Body>{network.displayName}</Body>
+                </div>
                 <Caption className="text-bone-cream/50 mt-1 block max-w-[18rem]">
                   {network.shortDescription}
                 </Caption>
