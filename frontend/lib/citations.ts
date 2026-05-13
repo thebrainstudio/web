@@ -524,6 +524,41 @@ export const citations: Record<string, Citation> = {
     title: "Das Heilige (translated 1923 as The Idea of the Holy).",
     journal: "Oxford University Press (English ed.)",
   },
+
+  // --- Atlas v2 (pstg_left / amyg_left / precuneus) -------------------
+  "wernicke-1874-aphasic-symptom-complex": {
+    id: "wernicke-1874-aphasic-symptom-complex",
+    authors: "Wernicke, C.",
+    year: 1874,
+    title: "Der aphasische Symptomencomplex.",
+    journal: "Cohn & Weigert, Breslau",
+  },
+  "cavanna-trimble-2006-precuneus-review": {
+    id: "cavanna-trimble-2006-precuneus-review",
+    authors: "Cavanna, A. E., & Trimble, M. R.",
+    year: 2006,
+    title:
+      "The precuneus: a review of its functional anatomy and behavioural correlates.",
+    journal: "Brain",
+    doi: "10.1093/brain/awl004",
+  },
+  "phelps-ledoux-2005-amygdala-contributions": {
+    id: "phelps-ledoux-2005-amygdala-contributions",
+    authors: "Phelps, E. A., & LeDoux, J. E.",
+    year: 2005,
+    title:
+      "Contributions of the amygdala to emotion processing: from animal models to human behavior.",
+    journal: "Neuron",
+    doi: "10.1016/j.neuron.2005.09.025",
+  },
+  "adolphs-2010-amygdala-social": {
+    id: "adolphs-2010-amygdala-social",
+    authors: "Adolphs, R.",
+    year: 2010,
+    title: "What does the amygdala contribute to social cognition?",
+    journal: "Annals of the New York Academy of Sciences",
+    doi: "10.1111/j.1749-6632.2010.05445.x",
+  },
 };
 
 export function getCitation(id: string): Citation | undefined {

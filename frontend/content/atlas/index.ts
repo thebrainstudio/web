@@ -23,6 +23,9 @@ import type { RegionId } from "@/lib/regions";
 import { hippLeftAtlas } from "./hipp_left";
 import { ifgLeftAtlas } from "./ifg_left";
 import { pccAtlas } from "./pcc";
+import { pstgLeftAtlas } from "./pstg_left";
+import { amygLeftAtlas } from "./amyg_left";
+import { precuneusAtlas } from "./precuneus";
 
 /**
  * Helper for creating a stub entry. Yeo network and one-line
@@ -69,13 +72,7 @@ export const atlasEntries: Record<RegionId, AtlasEntry> = {
     ["ifg_left", "mtg_right", "pstg_right"],
     "hagoort-2014-language-architecture",
   ),
-  pstg_left: stub(
-    "pstg_left",
-    "Posterior superior temporal gyrus (left) — Wernicke's region",
-    "Auditory",
-    ["pstg_right", "mtg_left", "ifg_left", "hg_left"],
-    "hickok-poeppel-2007-dual-stream",
-  ),
+  pstg_left: pstgLeftAtlas,
   pstg_right: stub(
     "pstg_right",
     "Posterior superior temporal gyrus (right)",
@@ -159,22 +156,10 @@ export const atlasEntries: Record<RegionId, AtlasEntry> = {
   ),
 
   pcc: pccAtlas,
-  precuneus: stub(
-    "precuneus",
-    "Precuneus",
-    "DefaultMode",
-    ["pcc", "agl_left", "agl_right"],
-    "fransson-2008-pcc-hub",
-  ),
+  precuneus: precuneusAtlas,
 
   // Limbic
-  amyg_left: stub(
-    "amyg_left",
-    "Amygdala (left)",
-    "Limbic",
-    ["amyg_right", "hipp_left", "vmpfc"],
-    "ledoux-2014-coming-to-terms-with-fear",
-  ),
+  amyg_left: amygLeftAtlas,
   amyg_right: stub(
     "amyg_right",
     "Amygdala (right)",
