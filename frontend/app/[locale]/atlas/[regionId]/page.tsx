@@ -342,7 +342,7 @@ export default async function AtlasRegionPage({
                                 className="text-bone-cream/55 hover:text-brass transition-colors duration-150"
                                 data-hover
                               >
-                                <Caption italic className="block">
+                                <Caption className="block italic">
                                   {c.title}
                                 </Caption>
                                 <Caption className="mt-0.5 block">
@@ -351,7 +351,7 @@ export default async function AtlasRegionPage({
                               </a>
                             ) : (
                               <>
-                                <Caption italic className="text-bone-cream/55 block">
+                                <Caption className="text-bone-cream/55 block italic">
                                   {c.title}
                                 </Caption>
                                 <Caption className="text-bone-cream/55 mt-0.5 block">

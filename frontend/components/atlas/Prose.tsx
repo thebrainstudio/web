@@ -103,7 +103,7 @@ function CitationMarker({
             <Caption className="text-bone-cream/85 mt-1 block">
               {citation.authors} <span className="text-bone-cream/55">({citation.year})</span>
             </Caption>
-            <Caption italic className="text-bone-cream/85 mt-1 block">
+            <Caption className="text-bone-cream/85 mt-1 block italic">
               {citation.title}
             </Caption>
             <Caption className="text-bone-cream/55 mt-1 block">
