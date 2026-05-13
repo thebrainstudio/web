@@ -22,11 +22,17 @@ const AmbientDrone = dynamic(
   { ssr: false, loading: () => null },
 );
 
+const SearchPalette = dynamic(
+  () => import("@/components/search/SearchPalette"),
+  { ssr: false, loading: () => null },
+);
+
 export default function DeferredClient() {
   return (
     <>
       <CursorFollower />
       <AmbientDrone />
+      <SearchPalette />
     </>
   );
 }

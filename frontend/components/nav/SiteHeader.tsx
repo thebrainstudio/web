@@ -22,6 +22,25 @@ function GithubMark({ size = 18 }: { size?: number }) {
   );
 }
 
+function SearchIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <circle cx="11" cy="11" r="7" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
+
 function MuteIcon({ muted, size = 16 }: { muted: boolean; size?: number }) {
   return (
     <svg
@@ -196,6 +215,19 @@ export default function SiteHeader() {
           <li>
             <button
               type="button"
+              onClick={() =>
+                window.dispatchEvent(new CustomEvent("brain-studio:open-search"))
+              }
+              aria-label="Search The Brain Studio (Ctrl-K)"
+              data-hover
+              className="text-bone-cream/70 transition-colors duration-200 hover:text-brass"
+            >
+              <SearchIcon />
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
               onClick={toggleAmbient}
               aria-label={muted ? t("unmuteAria") : t("muteAria")}
               aria-pressed={!muted}
@@ -217,9 +249,19 @@ export default function SiteHeader() {
           </li>
         </ul>
 
-        {/* Mobile: language + mute + menu */}
+        {/* Mobile: language + search + mute + menu */}
         <div className="flex items-center gap-3 md:hidden">
           <LanguageSelector compact />
+          <button
+            type="button"
+            onClick={() =>
+              window.dispatchEvent(new CustomEvent("brain-studio:open-search"))
+            }
+            aria-label="Search The Brain Studio (Ctrl-K)"
+            className="text-bone-cream/70"
+          >
+            <SearchIcon />
+          </button>
           <button
             type="button"
             onClick={toggleAmbient}

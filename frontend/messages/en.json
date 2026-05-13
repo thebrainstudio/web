@@ -18,6 +18,7 @@
     "about": "About",
     "muteAria": "Mute ambient",
     "unmuteAria": "Unmute ambient",
+    "searchAria": "Search The Brain Studio (Ctrl-K)",
     "githubAria": "Source on GitHub",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
