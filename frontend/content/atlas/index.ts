@@ -162,6 +162,15 @@ import { amygRightAtlasZhCn } from "./zh-CN/amyg_right";
 import { hippLeftAtlasZhCn } from "./zh-CN/hipp_left";
 import { hippRightAtlasZhCn } from "./zh-CN/hipp_right";
 
+// "The thread" Jungian one-liners per locale.
+import { atlasThreadsEs } from "./es/threads";
+import { atlasThreadsCa } from "./ca/threads";
+import { atlasThreadsTh } from "./th/threads";
+import { atlasThreadsJa } from "./ja/threads";
+import { atlasThreadsZhCn } from "./zh-CN/threads";
+
+import { regionById } from "@/lib/regions";
+
 /**
  * Helper for creating a stub entry. Retained for the convenience of
  * any future additions or temporary reverts; not used in this file
@@ -392,6 +401,32 @@ export function atlasEntriesForLocale(
     out[id] = atlasEntryForLocale(id, locale);
   }
   return out;
+}
+
+/**
+ * Per-locale "the thread" Jungian/depth-psychological one-liner overlays.
+ * Falls through to the canonical English value on `regions.ts` when the
+ * locale lacks a translation.
+ */
+const threadsByLocale: Record<string, Partial<Record<RegionId, string>>> = {
+  es: atlasThreadsEs,
+  ca: atlasThreadsCa,
+  th: atlasThreadsTh,
+  ja: atlasThreadsJa,
+  "zh-CN": atlasThreadsZhCn,
+};
+
+/**
+ * Locale-aware "the thread" lookup. Returns the localized Jungian/depth-
+ * psychological one-liner for a region, falling back to the canonical
+ * English value sourced from `lib/regions.ts` when the locale lacks an
+ * overlay.
+ */
+export function theThreadForLocale(
+  id: RegionId,
+  locale: string,
+): string | undefined {
+  return threadsByLocale[locale]?.[id] ?? regionById[id]?.theThread;
 }
 
 /** Legacy English-only lookup. New code should prefer the locale-aware variant. */

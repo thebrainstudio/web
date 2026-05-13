@@ -12,7 +12,7 @@ import {
   Mono,
 } from "@/components/typography/Typography";
 import { regions, regionById, type RegionId } from "@/lib/regions";
-import { atlasEntryForLocale } from "@/content/atlas";
+import { atlasEntryForLocale, theThreadForLocale } from "@/content/atlas";
 import {
   YEO_NETWORKS,
   allCitationsForEntry,
@@ -65,6 +65,7 @@ export default async function AtlasRegionPage({
   const region = regionById[regionId as RegionId];
   if (!region) notFound();
   const entry = atlasEntryForLocale(region.id, locale);
+  const localizedThread = theThreadForLocale(region.id, locale);
 
   const t = await getTranslations({ locale, namespace: "atlas" });
   const tRegions = await getTranslations({ locale, namespace: "regions" });
@@ -220,14 +221,14 @@ export default async function AtlasRegionPage({
               );
             })}
 
-            {/* The Thread — pulled from regions.ts, not from the entry */}
-            {region.theThread && (
+            {/* The Thread — pulled from regions.ts with per-locale overlay */}
+            {localizedThread && (
               <article id="thread" className="mt-8">
                 <Heading as="h2" className="font-[200]">
                   {t("sections.thread")}
                 </Heading>
                 <Body italic className="text-bone-cream/75 mt-6 max-w-[34rem] leading-[1.7]">
-                  {region.theThread}
+                  {localizedThread}
                 </Body>
                 {(() => {
                   const link = REGION_BRIDGE_LINKS[region.id];
