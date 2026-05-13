@@ -81,6 +81,15 @@ const ROOM_ATMOSPHERE: Record<RoomId, RoomAtmosphere> = {
       "radial-gradient(ellipse 1300px 1000px at 50% -3%, rgba(232, 160, 74, 0.08) 0%, rgba(201, 169, 97, 0.03) 38%, transparent 70%)",
     opacity: 0.85,
   },
+  bridges: {
+    // Bridges sits between the neuroscience and depth-psychology
+    // sides of the site. The atmosphere blends a warm top glow with
+    // a cool counterpoint at the lower-right — visually signalling
+    // the two-language framing of the page.
+    backgroundImage:
+      "radial-gradient(ellipse 1200px 900px at 30% 0%, rgba(232, 160, 74, 0.08) 0%, transparent 60%), radial-gradient(ellipse 1000px 700px at 80% 95%, rgba(92, 200, 214, 0.05) 0%, transparent 60%)",
+    opacity: 0.9,
+  },
 };
 
 function prefersReducedMotion(): boolean {

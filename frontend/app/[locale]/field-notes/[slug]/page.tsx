@@ -29,12 +29,19 @@ const ESSAY_META = {
     wordCount: essayHippocampus.wordCount,
     readMinutes: essayHippocampus.readMinutes,
     publishedAt: essayHippocampus.publishedAt,
+    /**
+     * The Bridges-page section this essay sits adjacent to.
+     * "memory-reconstruction" is the cleanest convergence section,
+     * which is what the hippocampus essay is about.
+     */
+    bridgeSection: "memory-reconstruction" as const,
   },
   [essayWhatBrainKnows.slug]: {
     key: "whatBrainKnows" as const,
     wordCount: essayWhatBrainKnows.wordCount,
     readMinutes: essayWhatBrainKnows.readMinutes,
     publishedAt: essayWhatBrainKnows.publishedAt,
+    bridgeSection: "implicit-cognition-unconscious" as const,
   },
 };
 
@@ -119,6 +126,23 @@ export default function FieldNoteReader({
         <p className="mt-16 text-center">
           <Hand className="text-cyan-glow">{t("endOfNote")}</Hand>
         </p>
+
+        {meta.bridgeSection && (
+          <div className="border-brass/30 mx-auto mt-12 max-w-[34rem] rounded-sm border px-6 py-5 text-left">
+            <Caption uppercase className="text-brass tracking-[0.18em]">
+              {t("relatedBridgeLabel")}
+            </Caption>
+            <Link
+              href={`/bridges#${meta.bridgeSection}` as never}
+              prefetch
+              className="hover:text-brass mt-2 inline-flex items-center gap-2 text-bone-cream/80 transition-colors duration-200"
+              data-hover
+            >
+              <Body italic>{t("relatedBridgeOpen")}</Body>
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
+        )}
 
         <div className="mt-12 space-y-4 text-center">
           <div>

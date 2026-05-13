@@ -117,6 +117,17 @@ export const brainAnchors: Record<RoomId, BrainAnchor> = {
     meshResolution: "fsaverage5",
     visible: true,
   },
+  bridges: {
+    // Bridges is a prose-dominant essay; the brain sits small in the
+    // upper-right like a reference figure in a printed paper. No
+    // activations are applied by the page itself.
+    position: [1.2, 0.55, 0],
+    scale: 0.28,
+    rotation: [0, -0.22, 0],
+    lighting: "cinematic",
+    meshResolution: "fsaverage5",
+    visible: true,
+  },
 };
 
 export function anchorFor(room: RoomId): BrainAnchor {

@@ -28,7 +28,8 @@ export type RoomId =
   | "cellular"
   | "about"
   | "field-notes"
-  | "atlas";
+  | "atlas"
+  | "bridges";
 
 export const ALL_ROOM_IDS: readonly RoomId[] = [
   "home",
@@ -41,6 +42,7 @@ export const ALL_ROOM_IDS: readonly RoomId[] = [
   "about",
   "field-notes",
   "atlas",
+  "bridges",
 ];
 
 /**
@@ -76,6 +78,7 @@ export const ROOM_DEPTH: Record<RoomId, number> = {
   about: 1,
   "field-notes": 1,
   atlas: 1,
+  bridges: 1,
   threshold: 2,
   archetypes: 2,
   cellular: 3,
@@ -110,4 +113,5 @@ export const ROOM_HREF: Record<RoomId, string> = {
   about: "/about",
   "field-notes": "/field-notes",
   atlas: "/atlas",
+  bridges: "/bridges",
 };

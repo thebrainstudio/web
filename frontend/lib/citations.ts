@@ -373,6 +373,157 @@ export const citations: Record<string, Citation> = {
     title: "Principles of Neural Science (6th edition).",
     journal: "McGraw Hill",
   },
+
+  // --- Bridges page citations -----------------------------------------
+  // All confirmed against PubMed (May 2026). Citation strings copy the
+  // canonical formatting from each journal's record. DOIs are exact.
+  "carhart-harris-friston-2010-default-mode-ego": {
+    id: "carhart-harris-friston-2010-default-mode-ego",
+    authors: "Carhart-Harris, R. L., & Friston, K. J.",
+    year: 2010,
+    title:
+      "The default-mode, ego-functions and free-energy: a neurobiological account of Freudian ideas.",
+    journal: "Brain",
+    doi: "10.1093/brain/awq010",
+  },
+  "northoff-2006-self-referential-meta": {
+    id: "northoff-2006-self-referential-meta",
+    authors:
+      "Northoff, G., Heinzel, A., de Greck, M., Bermpohl, F., Dobrowolny, H., & Panksepp, J.",
+    year: 2006,
+    title:
+      "Self-referential processing in our brain — a meta-analysis of imaging studies on the self.",
+    journal: "NeuroImage",
+    doi: "10.1016/j.neuroimage.2005.12.002",
+  },
+  "anderson-2004-suppression-unwanted": {
+    id: "anderson-2004-suppression-unwanted",
+    authors:
+      "Anderson, M. C., Ochsner, K. N., Kuhl, B., Cooper, J., Robertson, E., Gabrieli, S. W., Glover, G. H., & Gabrieli, J. D. E.",
+    year: 2004,
+    title: "Neural systems underlying the suppression of unwanted memories.",
+    journal: "Science",
+    doi: "10.1126/science.1089504",
+  },
+  "nader-2000-fear-memories-reconsolidation": {
+    id: "nader-2000-fear-memories-reconsolidation",
+    authors: "Nader, K., Schafe, G. E., & LeDoux, J. E.",
+    year: 2000,
+    title:
+      "Fear memories require protein synthesis in the amygdala for reconsolidation after retrieval.",
+    journal: "Nature",
+    doi: "10.1038/35021052",
+  },
+  "seeley-2007-salience-network": {
+    id: "seeley-2007-salience-network",
+    authors:
+      "Seeley, W. W., Menon, V., Schatzberg, A. F., Keller, J., Glover, G. H., Kenna, H., Reiss, A. L., & Greicius, M. D.",
+    year: 2007,
+    title:
+      "Dissociable intrinsic connectivity networks for salience processing and executive control.",
+    journal: "Journal of Neuroscience",
+    doi: "10.1523/JNEUROSCI.5587-06.2007",
+  },
+  "lebedev-2015-ego-dissolution-psilocybin": {
+    id: "lebedev-2015-ego-dissolution-psilocybin",
+    authors:
+      "Lebedev, A. V., Lövdén, M., Rosenthal, G., Feilding, A., Nutt, D. J., & Carhart-Harris, R. L.",
+    year: 2015,
+    title:
+      "Finding the self by losing the self: Neural correlates of ego-dissolution under psilocybin.",
+    journal: "Human Brain Mapping",
+    doi: "10.1002/hbm.22833",
+  },
+  "carhart-harris-2014-entropic-brain": {
+    id: "carhart-harris-2014-entropic-brain",
+    authors:
+      "Carhart-Harris, R. L., Leech, R., Hellyer, P. J., Shanahan, M., Feilding, A., Tagliazucchi, E., Chialvo, D. R., & Nutt, D.",
+    year: 2014,
+    title:
+      "The entropic brain: a theory of conscious states informed by neuroimaging research with psychedelic drugs.",
+    journal: "Frontiers in Human Neuroscience",
+    doi: "10.3389/fnhum.2014.00020",
+  },
+  "westen-1998-scientific-legacy-freud": {
+    id: "westen-1998-scientific-legacy-freud",
+    authors: "Westen, D.",
+    year: 1998,
+    title:
+      "The scientific legacy of Sigmund Freud: toward a psychodynamically informed psychological science.",
+    journal: "Psychological Bulletin",
+    doi: "10.1037/0033-2909.124.3.333",
+  },
+  "schacter-1987-implicit-memory": {
+    id: "schacter-1987-implicit-memory",
+    authors: "Schacter, D. L.",
+    year: 1987,
+    title: "Implicit memory: history and current status.",
+    journal:
+      "Journal of Experimental Psychology: Learning, Memory, and Cognition",
+    doi: "10.1037/0278-7393.13.3.501",
+  },
+  "bargh-chartrand-1999-automaticity": {
+    id: "bargh-chartrand-1999-automaticity",
+    authors: "Bargh, J. A., & Chartrand, T. L.",
+    year: 1999,
+    title: "The unbearable automaticity of being.",
+    journal: "American Psychologist",
+    doi: "10.1037/0003-066X.54.7.462",
+  },
+  "panksepp-1998-affective-neuroscience": {
+    id: "panksepp-1998-affective-neuroscience",
+    authors: "Panksepp, J.",
+    year: 1998,
+    title:
+      "Affective Neuroscience: The Foundations of Human and Animal Emotions.",
+    journal: "Oxford University Press",
+  },
+  "panksepp-biven-2012-archaeology-mind": {
+    id: "panksepp-biven-2012-archaeology-mind",
+    authors: "Panksepp, J., & Biven, L.",
+    year: 2012,
+    title:
+      "The Archaeology of Mind: Neuroevolutionary Origins of Human Emotions.",
+    journal: "W. W. Norton",
+  },
+  "critchley-garfinkel-2017-interoception-emotion": {
+    id: "critchley-garfinkel-2017-interoception-emotion",
+    authors: "Critchley, H. D., & Garfinkel, S. N.",
+    year: 2017,
+    title: "Interoception and emotion.",
+    journal: "Current Opinion in Psychology",
+    doi: "10.1016/j.copsyc.2017.04.020",
+  },
+  "lakoff-johnson-1999-philosophy-flesh": {
+    id: "lakoff-johnson-1999-philosophy-flesh",
+    authors: "Lakoff, G., & Johnson, M.",
+    year: 1999,
+    title:
+      "Philosophy in the Flesh: The Embodied Mind and its Challenge to Western Thought.",
+    journal: "Basic Books",
+  },
+  "tooby-cosmides-1992-evolutionary-psychology": {
+    id: "tooby-cosmides-1992-evolutionary-psychology",
+    authors: "Tooby, J., & Cosmides, L.",
+    year: 1992,
+    title: "The psychological foundations of culture.",
+    journal:
+      "In: The Adapted Mind (Barkow, Cosmides & Tooby, eds.), Oxford University Press",
+  },
+  "schacter-2001-seven-sins": {
+    id: "schacter-2001-seven-sins",
+    authors: "Schacter, D. L.",
+    year: 2001,
+    title: "The Seven Sins of Memory: How the Mind Forgets and Remembers.",
+    journal: "Houghton Mifflin",
+  },
+  "otto-1917-idea-of-holy": {
+    id: "otto-1917-idea-of-holy",
+    authors: "Otto, R.",
+    year: 1917,
+    title: "Das Heilige (translated 1923 as The Idea of the Holy).",
+    journal: "Oxford University Press (English ed.)",
+  },
 };
 
 export function getCitation(id: string): Citation | undefined {

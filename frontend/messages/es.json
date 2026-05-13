@@ -191,6 +191,8 @@
   "essays": {
     "fieldNote": "Nota de campo",
     "endOfNote": "— fin de la nota",
+    "relatedBridgeLabel": "Related bridge",
+    "relatedBridgeOpen": "Continue in the Bridges page",
     "moreFieldNotes": "Más notas de campo",
     "returnThreshold": "Volver al umbral",
     "hippocampus": {
@@ -272,7 +274,25 @@
       "lastReviewed": "Last reviewed {date}",
       "wordCount": "{count} words"
     },
-    "footerNote": "Region Atlas · cite or omit"
+    "footerNote": "Region Atlas · cite or omit",
+    "bridgeCard": {
+      "label": "Bridge to depth psychology",
+      "open": "Open in the Bridges page"
+    }
+  },
+  "bridges": {
+    "label": "Bridges",
+    "title": "Where neuroscience and depth psychology touch — and where they don't.",
+    "subtitle": "Eleven sections mapping the bridges between mechanism and meaning. Some are tight; some are partial; some do not exist at all. Naming each honestly is the page's discipline.",
+    "legendLabel": "Strength legend",
+    "breadcrumb": {
+      "studio": "The Brain Studio",
+      "bridges": "Bridges"
+    },
+    "bibliographyLabel": "Bibliography",
+    "bibliographyHeading": "Every empirical claim, traceable.",
+    "bibliographyIntro": "Each citation here was confirmed against PubMed or its original journal record. Hover any superscript in the prose above to see its source; this list is the full set, in order of first mention.",
+    "footerNote": "Bridges · cite or omit"
   },
   "fieldNotes": {
     "label": "Cuaderno de Campo",

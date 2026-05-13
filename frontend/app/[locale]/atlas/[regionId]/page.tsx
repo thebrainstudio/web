@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import Prose from "@/components/atlas/Prose";
+import BridgeStrengthBadge from "@/components/bridges/BridgeStrengthBadge";
 import {
   Body,
   Caption,
@@ -17,6 +18,7 @@ import {
   citationsForSection,
   wordCount,
 } from "@/lib/atlas";
+import { REGION_BRIDGE_LINKS, BRIDGE_SECTIONS } from "@/lib/bridges";
 import { citations } from "@/lib/citations";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { locales } from "@/i18n/locales";
@@ -226,6 +228,37 @@ export default async function AtlasRegionPage({
                 <Body italic className="text-bone-cream/75 mt-6 max-w-[34rem] leading-[1.7]">
                   {region.theThread}
                 </Body>
+                {(() => {
+                  const link = REGION_BRIDGE_LINKS[region.id];
+                  if (!link) return null;
+                  const section = BRIDGE_SECTIONS.find((s) => s.id === link.section);
+                  if (!section) return null;
+                  return (
+                    <Link
+                      href={`/bridges#${link.section}` as never}
+                      prefetch
+                      data-hover
+                      className="border-brass/30 hover:border-brass/60 mt-10 block max-w-[36rem] rounded-sm border px-5 py-4 transition-colors duration-200"
+                    >
+                      <div className="flex items-baseline gap-3">
+                        <BridgeStrengthBadge strength={link.strength} />
+                        <Caption
+                          uppercase
+                          className="text-brass tracking-[0.18em]"
+                        >
+                          {t("bridgeCard.label")}
+                        </Caption>
+                      </div>
+                      <Body className="text-bone-cream/80 mt-3">
+                        {section.heading}
+                      </Body>
+                      <Caption className="text-bone-cream/55 mt-2 inline-flex items-center gap-2">
+                        {t("bridgeCard.open")}
+                        <span aria-hidden>→</span>
+                      </Caption>
+                    </Link>
+                  );
+                })()}
               </article>
             )}
           </div>
