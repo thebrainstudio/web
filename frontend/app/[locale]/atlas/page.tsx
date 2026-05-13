@@ -69,7 +69,7 @@ export default async function AtlasIndex({
           <Body className="text-bone-cream/65 mt-8 max-w-[36rem]">
             {t("intro")}
           </Body>
-          <Caption className="text-bone-cream/45 mt-6 block max-w-[36rem]" italic>
+          <Caption className="text-bone-cream/45 mt-6 block max-w-[36rem] italic">
             {t("statusNote", { complete: completeCount, total: regions.length })}
           </Caption>
         </div>
