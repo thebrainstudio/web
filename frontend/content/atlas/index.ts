@@ -118,6 +118,28 @@ import { amygRightAtlasTh } from "./th/amyg_right";
 import { hippLeftAtlasTh } from "./th/hipp_left";
 import { hippRightAtlasTh } from "./th/hipp_right";
 
+// Japanese translations.
+import { ifgLeftAtlasJa } from "./ja/ifg_left";
+import { ifgRightAtlasJa } from "./ja/ifg_right";
+import { pstgLeftAtlasJa } from "./ja/pstg_left";
+import { pstgRightAtlasJa } from "./ja/pstg_right";
+import { mtgLeftAtlasJa } from "./ja/mtg_left";
+import { mtgRightAtlasJa } from "./ja/mtg_right";
+import { atlLeftAtlasJa } from "./ja/atl_left";
+import { atlRightAtlasJa } from "./ja/atl_right";
+import { aglLeftAtlasJa } from "./ja/agl_left";
+import { aglRightAtlasJa } from "./ja/agl_right";
+import { hgLeftAtlasJa } from "./ja/hg_left";
+import { hgRightAtlasJa } from "./ja/hg_right";
+import { vmpfcAtlasJa } from "./ja/vmpfc";
+import { dmpfcAtlasJa } from "./ja/dmpfc";
+import { pccAtlasJa } from "./ja/pcc";
+import { precuneusAtlasJa } from "./ja/precuneus";
+import { amygLeftAtlasJa } from "./ja/amyg_left";
+import { amygRightAtlasJa } from "./ja/amyg_right";
+import { hippLeftAtlasJa } from "./ja/hipp_left";
+import { hippRightAtlasJa } from "./ja/hipp_right";
+
 /**
  * Helper for creating a stub entry. Retained for the convenience of
  * any future additions or temporary reverts; not used in this file
@@ -257,6 +279,28 @@ const translationsByLocale: Record<
     amyg_right: amygRightAtlasTh,
     hipp_left: hippLeftAtlasTh,
     hipp_right: hippRightAtlasTh,
+  },
+  ja: {
+    ifg_left: ifgLeftAtlasJa,
+    ifg_right: ifgRightAtlasJa,
+    pstg_left: pstgLeftAtlasJa,
+    pstg_right: pstgRightAtlasJa,
+    mtg_left: mtgLeftAtlasJa,
+    mtg_right: mtgRightAtlasJa,
+    atl_left: atlLeftAtlasJa,
+    atl_right: atlRightAtlasJa,
+    agl_left: aglLeftAtlasJa,
+    agl_right: aglRightAtlasJa,
+    hg_left: hgLeftAtlasJa,
+    hg_right: hgRightAtlasJa,
+    vmpfc: vmpfcAtlasJa,
+    dmpfc: dmpfcAtlasJa,
+    pcc: pccAtlasJa,
+    precuneus: precuneusAtlasJa,
+    amyg_left: amygLeftAtlasJa,
+    amyg_right: amygRightAtlasJa,
+    hipp_left: hippLeftAtlasJa,
+    hipp_right: hippRightAtlasJa,
   },
 };
 
