@@ -645,6 +645,41 @@ export const citations: Record<string, Citation> = {
     journal: "Journal of Neuroscience",
     doi: "10.1523/JNEUROSCI.2000-11.2011",
   },
+
+  // --- Atlas v5: right-hemisphere pages -------------------------------
+  "zatorre-belin-2001-spectral-temporal": {
+    id: "zatorre-belin-2001-spectral-temporal",
+    authors: "Zatorre, R. J., & Belin, P.",
+    year: 2001,
+    title: "Spectral and temporal processing in human auditory cortex.",
+    journal: "Cerebral Cortex",
+    doi: "10.1093/cercor/11.10.946",
+  },
+  "hassabis-maguire-2007-scene-construction": {
+    id: "hassabis-maguire-2007-scene-construction",
+    authors: "Hassabis, D., & Maguire, E. A.",
+    year: 2007,
+    title: "Deconstructing episodic memory with construction.",
+    journal: "Trends in Cognitive Sciences",
+    doi: "10.1016/j.tics.2007.05.001",
+  },
+  "olson-2007-enigmatic-temporal-pole": {
+    id: "olson-2007-enigmatic-temporal-pole",
+    authors: "Olson, I. R., Plotzker, A., & Ezzyat, Y.",
+    year: 2007,
+    title:
+      "The Enigmatic temporal pole: a review of findings on social and emotional processing.",
+    journal: "Brain",
+    doi: "10.1093/brain/awm052",
+  },
+  "blanke-2012-bodily-self": {
+    id: "blanke-2012-bodily-self",
+    authors: "Blanke, O.",
+    year: 2012,
+    title: "Multisensory brain mechanisms of bodily self-consciousness.",
+    journal: "Nature Reviews Neuroscience",
+    doi: "10.1038/nrn3292",
+  },
 };
 
 export function getCitation(id: string): Citation | undefined {

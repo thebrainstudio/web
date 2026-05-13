@@ -1,14 +1,12 @@
 /**
  * Atlas content registry.
  *
- * Each of the 20 regions has an `AtlasEntry`. Three are complete and
- * carry the full seven-section prose with citations. The other 17 are
- * stubs — architecturally correct metadata + empty section arrays —
- * which render with a "Under careful review" banner until the prose
- * is written. Adding prose to a stub: edit its file, fill the seven
- * sections, switch `status` from "in-progress" to "complete".
+ * Each of the 20 regions has an `AtlasEntry`. All 20 are now complete
+ * with full seven-section prose and PubMed-verified citations. The
+ * `stub()` helper is preserved for the convenience of future
+ * additions or temporary reverts.
  *
- * Authoring discipline (read before adding to a stub):
+ * Authoring discipline (read before editing any page):
  *   - Cite every functional claim. Use `[cite:id]` markers; the
  *     citation id must exist in lib/citations.ts.
  *   - Hedge appropriately. "Implicated in" not "responsible for".
@@ -20,6 +18,8 @@
 
 import type { AtlasEntry, YeoNetwork } from "@/lib/atlas";
 import type { RegionId } from "@/lib/regions";
+
+// Left-hemisphere pages.
 import { hippLeftAtlas } from "./hipp_left";
 import { ifgLeftAtlas } from "./ifg_left";
 import { pccAtlas } from "./pcc";
@@ -33,10 +33,20 @@ import { atlLeftAtlas } from "./atl_left";
 import { mtgLeftAtlas } from "./mtg_left";
 import { hgLeftAtlas } from "./hg_left";
 
+// Right-hemisphere pages.
+import { ifgRightAtlas } from "./ifg_right";
+import { pstgRightAtlas } from "./pstg_right";
+import { mtgRightAtlas } from "./mtg_right";
+import { atlRightAtlas } from "./atl_right";
+import { aglRightAtlas } from "./agl_right";
+import { hgRightAtlas } from "./hg_right";
+import { amygRightAtlas } from "./amyg_right";
+import { hippRightAtlas } from "./hipp_right";
+
 /**
- * Helper for creating a stub entry. Yeo network and one-line
- * disorder list are accurate even on stubs — the page UI surfaces
- * them in the sidebar and grouping immediately.
+ * Helper for creating a stub entry. Retained for the convenience of
+ * any future additions or temporary reverts; not used in this file
+ * any longer because every region is complete.
  */
 function stub(
   id: RegionId,
@@ -67,84 +77,36 @@ function stub(
     historyOfDiscovery: { paragraphs: [] },
   };
 }
+void stub;
 
 export const atlasEntries: Record<RegionId, AtlasEntry> = {
-  // Language network — left hemisphere dominant
+  // Language network — perisylvian regions
   ifg_left: ifgLeftAtlas,
-  ifg_right: stub(
-    "ifg_right",
-    "Right inferior frontal gyrus",
-    "FrontoparietalControl",
-    ["ifg_left", "mtg_right", "pstg_right"],
-    "hagoort-2014-language-architecture",
-  ),
+  ifg_right: ifgRightAtlas,
   pstg_left: pstgLeftAtlas,
-  pstg_right: stub(
-    "pstg_right",
-    "Posterior superior temporal gyrus (right)",
-    "Auditory",
-    ["pstg_left", "mtg_right", "hg_right"],
-    "hickok-poeppel-2007-dual-stream",
-  ),
+  pstg_right: pstgRightAtlas,
   mtg_left: mtgLeftAtlas,
-  mtg_right: stub(
-    "mtg_right",
-    "Middle temporal gyrus (right)",
-    "DefaultMode",
-    ["mtg_left", "pstg_right", "atl_right"],
-    "binder-desai-2011-semantic-system",
-  ),
+  mtg_right: mtgRightAtlas,
   atl_left: atlLeftAtlas,
-  atl_right: stub(
-    "atl_right",
-    "Anterior temporal lobe (right)",
-    "DefaultMode",
-    ["atl_left", "mtg_right", "ifg_right"],
-    "binder-desai-2011-semantic-system",
-  ),
+  atl_right: atlRightAtlas,
   agl_left: aglLeftAtlas,
-  agl_right: stub(
-    "agl_right",
-    "Angular gyrus (right)",
-    "DefaultMode",
-    ["agl_left", "mtg_right", "pcc"],
-    "buckner-2008-default-network",
-  ),
+  agl_right: aglRightAtlas,
 
   // Auditory
   hg_left: hgLeftAtlas,
-  hg_right: stub(
-    "hg_right",
-    "Heschl's gyrus / primary auditory cortex (right)",
-    "Auditory",
-    ["pstg_right", "hg_left"],
-    "kell-2018-auditory-task-network",
-  ),
+  hg_right: hgRightAtlas,
 
   // Default mode + control
   vmpfc: vmpfcAtlas,
   dmpfc: dmpfcAtlas,
-
   pcc: pccAtlas,
   precuneus: precuneusAtlas,
 
   // Limbic
   amyg_left: amygLeftAtlas,
-  amyg_right: stub(
-    "amyg_right",
-    "Amygdala (right)",
-    "Limbic",
-    ["amyg_left", "hipp_right", "vmpfc"],
-    "ledoux-2014-coming-to-terms-with-fear",
-  ),
+  amyg_right: amygRightAtlas,
   hipp_left: hippLeftAtlas,
-  hipp_right: stub(
-    "hipp_right",
-    "Hippocampus (right)",
-    "Limbic",
-    ["hipp_left", "amyg_right", "atl_right", "precuneus"],
-    "scoville-milner-1957-hm",
-  ),
+  hipp_right: hippRightAtlas,
 };
 
 export function atlasEntryFor(id: RegionId): AtlasEntry {
