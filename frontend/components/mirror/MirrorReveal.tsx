@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { regionById, type RegionId } from "@/lib/regions";
 import {
   Caption,
@@ -78,6 +79,19 @@ export default function MirrorReveal({ topRegions }: Props) {
                   <Body italic className="text-bone-cream/60 mt-4 max-w-[34rem]">
                     {tr(tRegions, `${entry.id}.poeticGloss`, r.poeticGloss)}
                   </Body>
+                  <Link
+                    href={`/atlas/${entry.id}`}
+                    prefetch
+                    data-hover
+                    className="text-brass hover:text-amber-soft mt-5 inline-flex items-center gap-2 transition-colors duration-150"
+                  >
+                    <Caption uppercase className="tracking-[0.18em]">
+                      {tr(tMirror, "openInAtlas", "Open in atlas")}
+                    </Caption>
+                    <span aria-hidden className="text-[0.95em]">
+                      →
+                    </span>
+                  </Link>
                 </div>
                 <div className="md:col-span-5 md:text-right">
                   <Mono

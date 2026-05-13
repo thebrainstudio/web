@@ -74,6 +74,13 @@ const ROOM_ATMOSPHERE: Record<RoomId, RoomAtmosphere> = {
       "radial-gradient(ellipse 1200px 900px at 22% 18%, rgba(232, 160, 74, 0.07) 0%, rgba(201, 169, 97, 0.03) 38%, transparent 70%)",
     opacity: 0.8,
   },
+  atlas: {
+    // Atlas is the reference layer — quieter than the rooms, with a
+    // small warm glow at the top so the navy doesn't read as void.
+    backgroundImage:
+      "radial-gradient(ellipse 1300px 1000px at 50% -3%, rgba(232, 160, 74, 0.08) 0%, rgba(201, 169, 97, 0.03) 38%, transparent 70%)",
+    opacity: 0.85,
+  },
 };
 
 function prefersReducedMotion(): boolean {

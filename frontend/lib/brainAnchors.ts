@@ -105,6 +105,18 @@ export const brainAnchors: Record<RoomId, BrainAnchor> = {
     meshResolution: "fsaverage5",
     visible: true,
   },
+  atlas: {
+    // Atlas pages render dense long-form prose; the persistent brain
+    // glides to the upper-right as a small reference rather than the
+    // page's centerpiece. Region-specific highlighting is applied
+    // by the page itself via setActivations.
+    position: [1.15, 0.55, 0],
+    scale: 0.32,
+    rotation: [0, -0.18, 0],
+    lighting: "cinematic",
+    meshResolution: "fsaverage5",
+    visible: true,
+  },
 };
 
 export function anchorFor(room: RoomId): BrainAnchor {

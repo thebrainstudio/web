@@ -148,6 +148,7 @@
       "body": "Hover one to feel the pattern. Click to load it into the mirror above."
     },
     "examplesHeading": "Three texts that surprised us",
+    "openInAtlas": "Open in atlas",
     "footerStudio": "The Brain Studio",
     "footerNote": "Predictions simulated locally"
   },
@@ -235,6 +236,44 @@
         "The interesting work is not the conclusion. It is what you do with the asymmetry once you have stopped pretending it isn't there."
       ]
     }
+  },
+  "atlas": {
+    "label": "Region Atlas",
+    "title": "The brain, room by room.",
+    "intro": "Twenty regions, written carefully. Each page holds the anatomy, the function as the literature currently tells it, the cell types underneath, the connections that route the signal, the clinical context, the history of who first noticed, and the thread of meaning the depth-psychological reading wants nearby.",
+    "statusNote": "{complete} of {total} pages are complete. The others render their architecture while their prose is written.",
+    "inProgress": "Under review",
+    "openCard": "Open",
+    "previewCard": "Preview",
+    "emptySection": "This section is being written. The architecture below — sidebar metadata, citation discipline, network membership — is in place.",
+    "inProgressBanner": {
+      "label": "Under careful review",
+      "body": "This page's prose hasn't been written yet. Architecture and metadata are in place; full sections are forthcoming."
+    },
+    "breadcrumb": {
+      "studio": "The Brain Studio",
+      "atlas": "Atlas"
+    },
+    "sections": {
+      "anatomy": "Anatomy & landmarks",
+      "function": "Function",
+      "cells": "Cell types",
+      "connections": "Connections",
+      "clinical": "In clinical context",
+      "discovery": "History of discovery",
+      "thread": "The thread"
+    },
+    "sidebar": {
+      "network": "Network",
+      "adjacent": "Adjacent regions",
+      "disorders": "Implicated in",
+      "cells": "Cell types here",
+      "descend": "Descend to cellular view",
+      "sources": "Sources",
+      "lastReviewed": "Last reviewed {date}",
+      "wordCount": "{count} words"
+    },
+    "footerNote": "Region Atlas · cite or omit"
   },
   "fieldNotes": {
     "label": "Field Notes",
