@@ -16,9 +16,29 @@ import FilmGrain from "@/components/atmospheric/FilmGrain";
 import { Caption } from "@/components/typography/Typography";
 
 export const metadata: Metadata = {
-  title: "The Brain Studio",
+  metadataBase: new URL("https://brain-studio-kappa.vercel.app"),
+  title: {
+    default: "The Brain Studio",
+    template: "%s · The Brain Studio",
+  },
   description:
-    "A cinematic experiment in seeing the mind through a brain-encoding model.",
+    "A cinematic experiment in seeing the mind through a brain-encoding model. Three rooms — language, music, and the limits of translation.",
+  openGraph: {
+    title: "The Brain Studio",
+    description:
+      "A cinematic experiment in seeing the mind through a brain-encoding model.",
+    url: "https://brain-studio-kappa.vercel.app",
+    siteName: "The Brain Studio",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Brain Studio",
+    description:
+      "A cinematic experiment in seeing the mind through a brain-encoding model.",
+  },
+  authors: [{ name: "Frank Caules" }],
+  category: "experiment",
 };
 
 const fontClass = [

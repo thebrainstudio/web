@@ -192,7 +192,7 @@ export default function SiteHeader() {
           </li>
           <li>
             <a
-              href="https://github.com"
+              href="https://github.com/frankcaules"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Source on GitHub"
@@ -258,7 +258,7 @@ export default function SiteHeader() {
           })}
           <li className="border-bone-cream/10 border-t pt-3">
             <a
-              href="https://github.com"
+              href="https://github.com/frankcaules"
               target="_blank"
               rel="noopener noreferrer"
               className="text-bone-cream/70 inline-flex items-center gap-2 transition-colors duration-200 hover:text-brass"

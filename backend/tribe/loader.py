@@ -174,27 +174,31 @@ class TribePredictor:
         self.info = info
         self.engine = engine
 
+    _engine_singleton: Any = None  # RealTribeEngine when initialized
+
     def predict(self, text: str) -> dict[str, float]:
         if self.engine != "real":
             raise NotImplementedError(
-                "TRIBE forward pass requires Meta's `tribe` Python package "
-                "(github.com/facebookresearch — currently private) and "
-                "Llama-3.2-3B locally. Checkpoint is staged at "
-                f"{self.info.path}, hidden={self.info.hidden_size}, "
-                f"layers={self.info.n_layers}, text_backbone="
-                f"{self.info.text_backbone}. Engine still 'stub'."
+                "TRIBE engine in 'stub' mode. Set TRIBE_ENGINE=real and "
+                "install transformers + accept the Llama-3.2-3B license "
+                "(huggingface-cli login) to enable real inference. "
+                f"Checkpoint staged at {self.info.path}, "
+                f"hidden={self.info.hidden_size}, layers={self.info.n_layers}, "
+                f"text_backbone={self.info.text_backbone}."
             )
-        # When Phase 11 lands:
-        #   1. Import tribe.models.FmriEncoder
-        #   2. Build it from self.info.config (or directly from yaml)
-        #   3. Load self.info.path into it
-        #   4. Tokenize `text` with Llama-3.2-3B, extract layers 0.5/0.75/1.0,
-        #      group_mean aggregate.
-        #   5. Forward through FmriEncoder.
-        #   6. Project the fsaverage5 vertex predictions onto our 20-region
-        #      atlas (see `tribe/region_mapping.py` — to be written).
-        #   7. Return {region_id: activation_0_to_1, ...}
-        raise NotImplementedError("real engine not wired in this session")
+        # Lazy-construct the real engine on first call so the import cost
+        # (torch + transformers + ~6 GB Llama load) is amortized.
+        if TribePredictor._engine_singleton is None:
+            from .predict import RealTribeEngine
+            TribePredictor._engine_singleton = RealTribeEngine(self.info.path)
+        result = TribePredictor._engine_singleton.infer(text)
+        if result is None:
+            raise NotImplementedError(
+                "Real TRIBE inference failed to initialize. Most likely "
+                "transformers isn't installed, or you haven't accepted the "
+                "Llama-3.2-3B license. See backend/tribe/predict.py."
+            )
+        return result
 
 
 def make_predictor() -> TribePredictor | None:

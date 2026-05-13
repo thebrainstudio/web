@@ -1,35 +1,46 @@
-import { Fraunces, JetBrains_Mono, Caveat, Noto_Serif_Thai } from "next/font/google";
+import {
+  Fraunces,
+  JetBrains_Mono,
+  Caveat,
+  Noto_Serif_Thai,
+} from "next/font/google";
 
 /**
  * Three-font system (plus a Thai fallback).
  *
- *   --font-editorial   — the one content typeface for all running text:
- *                        display headings, headings, body, captions.
- *                        Slot: this project's design language calls for
- *                        PP Editorial New (proprietary, Pangram Pangram).
- *                        We currently shim with **Fraunces** (Google Fonts,
- *                        SIL OFL) — a variable serif with opt-in italic,
- *                        optical size, and soft axis. Closest free match.
- *                        To swap in real PP Editorial New: add @font-face
- *                        declarations in globals.css pointing at your
- *                        licensed files and assign them to --font-editorial.
+ *   --font-editorial   The single content typeface for display, headings,
+ *                      body, and captions. The design language calls for
+ *                      PP Editorial New (proprietary, Pangram Pangram).
+ *                      Currently shimmed with **Fraunces**, configured
+ *                      below to match PP Editorial New's character as
+ *                      closely as the free-font space allows:
+ *                        - opsz axis on  (optical sizing)
+ *                        - SOFT axis on  (gentle terminal softness)
+ *                        - italic style requested so italic shapes
+ *                          ship in the same `--font-editorial` family
+ *                          (no separate font for italic)
+ *                        - weight range 200–500 (ultralight to medium)
+ *                      To swap in licensed PP Editorial New, see
+ *                      app/fonts.local.example.ts.
  *
- *   --font-mono        — JetBrains Mono. Numerical and technical text only.
+ *   --font-mono        JetBrains Mono — numerical / technical text only.
  *
- *   --font-hand        — Caveat. Marginalia and ONLY marginalia.
- *                        Hard-limited to 10 instances per page (see
- *                        components/typography/Typography.tsx).
+ *   --font-hand        Caveat — marginalia only (`<Hand>` 10-instance cap).
  *
- *   --font-thai        — Noto Serif Thai. Automatic fallback for Thai
- *                        glyphs in any text that mixes Latin and Thai.
+ *   --font-thai        Noto Serif Thai — automatic Thai glyph fallback.
  */
 
 export const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-editorial",
-  axes: ["opsz", "SOFT"],
+  // Fraunces is variable — request both italic styles and the axes that
+  // shape its editorial character. `weight` is intentionally omitted
+  // (Tailwind v4 + next/font requires that when axes are present).
   style: ["normal", "italic"],
+  axes: ["opsz", "SOFT"],
+  preload: true,
+  fallback: ["Iowan Old Style", "Georgia", "ui-serif", "serif"],
 });
 
 export const jetbrainsMono = JetBrains_Mono({
@@ -37,6 +48,7 @@ export const jetbrainsMono = JetBrains_Mono({
   display: "swap",
   variable: "--font-mono",
   weight: ["400", "500"],
+  preload: false,
 });
 
 export const caveat = Caveat({
@@ -44,6 +56,7 @@ export const caveat = Caveat({
   display: "swap",
   variable: "--font-hand",
   weight: ["400"],
+  preload: false,
 });
 
 export const notoSerifThai = Noto_Serif_Thai({
@@ -51,6 +64,7 @@ export const notoSerifThai = Noto_Serif_Thai({
   display: "swap",
   variable: "--font-thai",
   weight: ["400", "500"],
+  preload: false,
 });
 
 export const fontVariables = [
