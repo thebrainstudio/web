@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { easeCinematic } from "@/lib/animations";
 import { useBrainStageStore } from "@/store/useBrainStageStore";
 import { fakePredict, type Prediction } from "@/lib/fakePredictor";
+import { inferText } from "@/lib/tribeClient";
 import MirrorLoadingMessage from "./MirrorLoadingMessage";
 
 type Props = {
@@ -51,14 +52,21 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
       setActivations(pred.activations as Record<string, number>);
     }, 300);
 
-    settleTimer.current = window.setTimeout(() => {
-      const pred = fakePredict(value);
-      setActivations(pred.activations as Record<string, number>);
-      onPrediction(value, pred);
+    const controller = new AbortController();
+    settleTimer.current = window.setTimeout(async () => {
+      // Try real TRIBE inference first; fall back to the local predictor.
+      const remote = await inferText(value, { signal: controller.signal });
+      const local = fakePredict(value);
+      const merged: Prediction = remote
+        ? { activations: remote.regions, features: local.features }
+        : local;
+      setActivations(merged.activations as Record<string, number>);
+      onPrediction(value, merged);
       setSettling(false);
     }, 900);
 
     return () => {
+      controller.abort();
       if (liveTimer.current) window.clearTimeout(liveTimer.current);
       if (settleTimer.current) window.clearTimeout(settleTimer.current);
     };

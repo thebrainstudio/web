@@ -3,3 +3,12 @@ uvicorn[standard]>=0.32,<0.40
 pydantic>=2.9,<3
 python-dotenv>=1.0,<2
 numpy>=1.26,<3
+pyyaml>=6.0,<7
+
+# Optional: only needed when TRIBE_ENGINE=real. Comment out for the
+# serverless free-tier deployment (Render) where GPUs and the large
+# packages aren't available.
+# torch>=2.4
+# transformers>=4.45
+# nilearn>=0.10
+# nibabel>=5.2
