@@ -24,6 +24,7 @@ import { BRIDGE_SECTIONS, REGION_BRIDGE_LINKS } from "./bridges";
 import { YEO_NETWORKS } from "./atlas";
 import { tours } from "@/content/tours";
 import { tourDuration } from "./tours";
+import { depthPsychologyPages } from "@/content/depth-psychology";
 
 export type SearchKind =
   | "region"
@@ -176,7 +177,43 @@ const roomEntries: SearchEntry[] = [
     href: "/tours",
     keywords: ["tours", "guided", "narration", "cinematic"],
   },
+  {
+    id: "room:depth-psychology",
+    kind: "room",
+    title: "Depth Psychology",
+    subtitle: "Jung, Gestalt, and the synthesizing layer",
+    href: "/depth-psychology",
+    keywords: [
+      "depth psychology",
+      "jung",
+      "freud",
+      "gestalt",
+      "aion",
+      "shadow",
+      "self",
+      "individuation",
+      "red book",
+      "active imagination",
+    ],
+  },
 ];
+
+function buildDepthPsychologyEntries(): SearchEntry[] {
+  return depthPsychologyPages.map((page) => ({
+    id: `depth:${page.slug}`,
+    kind: "essay" as const,
+    title: page.title,
+    subtitle: `Depth psychology · ${page.readMinutes} min`,
+    href: `/depth-psychology/${page.slug}`,
+    keywords: [
+      page.title.toLowerCase(),
+      page.subtitle.toLowerCase(),
+      "depth psychology",
+      "jung",
+      page.slug.replace(/-/g, " "),
+    ],
+  }));
+}
 
 function buildTourEntries(): SearchEntry[] {
   return tours.map((tour) => ({
@@ -527,6 +564,7 @@ export const searchIndex: SearchEntry[] = [
   ...buildRegionEntries(),
   ...buildBridgeEntries(),
   ...buildTourEntries(),
+  ...buildDepthPsychologyEntries(),
   ...essayEntries,
   ...conceptEntries,
 ];

@@ -312,6 +312,50 @@
     "comingSoon": "More tours are forthcoming: how you read this sentence (language network), when something matters (salience), what's still you when you stop trying (default mode), how a face becomes someone you know (face processing), and hearing music (auditory and reward).",
     "footerNote": "Guided Tours · the brain in motion"
   },
+  "depthPsychology": {
+    "label": "Depth Psychology",
+    "title": "The other half of the conversation.",
+    "intro": "Neuroscience gives us mechanism. Depth psychology gives us meaning. The pages in this section take the depth-psychological tradition seriously without losing the empirical discipline the rest of the site keeps. Where the bridges hold, they are named. Where they don't, the page says so.",
+    "minRead": "min read",
+    "words": "words",
+    "openPage": "Open",
+    "backToIndex": "Back to Depth Psychology",
+    "featured": {
+      "label": "Featured · the synthesizing index",
+      "title": "Bridges",
+      "subtitle": "Where neuroscience and depth psychology touch — and where they don't.",
+      "blurb": "Eleven sections rating the empirical correspondence between specific neural mechanisms and specific depth-psychological concepts. Tight, partial, distant, none — each bridge named honestly. Read this first.",
+      "open": "Open the Bridges page"
+    },
+    "longForm": {
+      "label": "Long-form",
+      "heading": "Jung, Reich, Perls — written for the careful reader."
+    },
+    "existing": {
+      "label": "Adjacent essays",
+      "heading": "The contemplative layer.",
+      "threshold": {
+        "label": "Essay",
+        "title": "The Threshold",
+        "blurb": "A contemplative essay that sits between the macro and the cellular views of the site. Three movements; about ten minutes."
+      },
+      "archetypes": {
+        "label": "Essay + gallery",
+        "title": "The Archetypes",
+        "blurb": "Jungian images paired with anatomical neuroscience. A reading of how the inherited symbolic vocabulary of culture meets the cortical machinery that received it."
+      },
+      "fieldNotes": {
+        "label": "Essay collection",
+        "title": "Field Notes",
+        "blurb": "Long-form pieces from the seam between mind and brain. The hippocampus and the act of remembering. What the brain knows before you do."
+      }
+    },
+    "sidebar": {
+      "bridges": "Related Bridges sections",
+      "atlas": "Related Atlas regions"
+    },
+    "footerNote": "Depth Psychology · the careful register"
+  },
   "fieldNotes": {
     "label": "Cuaderno de Campo",
     "display": "Ensayos desde la costura entre la mente y el cerebro.",

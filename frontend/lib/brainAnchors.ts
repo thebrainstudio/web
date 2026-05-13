@@ -139,6 +139,16 @@ export const brainAnchors: Record<RoomId, BrainAnchor> = {
     meshResolution: "fsaverage6",
     visible: true,
   },
+  "depth-psychology": {
+    // Long-form prose pages; the brain sits small in the upper-right
+    // as a reference figure, like the Bridges and Atlas pages.
+    position: [1.15, 0.5, 0],
+    scale: 0.3,
+    rotation: [0, -0.2, 0],
+    lighting: "warm",
+    meshResolution: "fsaverage5",
+    visible: true,
+  },
 };
 
 export function anchorFor(room: RoomId): BrainAnchor {

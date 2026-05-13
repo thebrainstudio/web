@@ -98,6 +98,15 @@ const ROOM_ATMOSPHERE: Record<RoomId, RoomAtmosphere> = {
       "radial-gradient(ellipse 1400px 1000px at 50% -8%, rgba(232, 160, 74, 0.08) 0%, rgba(201, 169, 97, 0.03) 35%, transparent 70%)",
     opacity: 0.85,
   },
+  "depth-psychology": {
+    // The depth-psychology section reads warmer than the rest of the
+    // site — a soft amber wash that signals reflective territory. The
+    // long-form pages each read as a single sustained piece of writing,
+    // and the atmosphere supports that pacing.
+    backgroundImage:
+      "radial-gradient(ellipse 1300px 1000px at 35% -5%, rgba(232, 160, 74, 0.10) 0%, rgba(201, 169, 97, 0.04) 40%, transparent 72%)",
+    opacity: 0.9,
+  },
 };
 
 function prefersReducedMotion(): boolean {
