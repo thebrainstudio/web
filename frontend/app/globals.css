@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/*
+  THE BRAIN STUDIO — locked design tokens.
+  Palette and easings are the entire palette. No additions.
+*/
+
+@theme {
+  --color-navy-deep: #0a1428;
+  --color-indigo-smoke: #1a2444;
+  --color-bone-cream: #f0e8d8;
+  --color-brass: #c9a961;
+  --color-oxblood: #8b3a3a;
+  --color-cyan-glow: #5cc8d6;
+  --color-amber-soft: #e8a04a;
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-expressive: cubic-bezier(0.83, 0, 0.17, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --breakpoint-2xl: 1440px;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--color-navy-deep);
+  color: var(--color-bone-cream);
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-brass);
+  color: var(--color-navy-deep);
+}
+
+/* Brass focus ring everywhere; no browser blue. */
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Display type defaults — tight tracking on headings */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+/* Tabular numerals when needed in data */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced motion: kill all transitions / animations.
+   Component-level fallbacks should preserve information via crossfade. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

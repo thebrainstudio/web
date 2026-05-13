@@ -1,0 +1,41 @@
+# Node / Next
+node_modules/
+.next/
+out/
+.turbo/
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+# Dependency lock fragments (keep pnpm-lock)
+pnpm-debug.log
+npm-debug.log
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.python-version
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Model weights (the local cache stays in HF cache; don't commit any copies here)
+*.ckpt
+*.pt
+*.safetensors
+*.bin
