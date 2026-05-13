@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Caption } from "@/components/typography/Typography";
 
 function GithubMark({ size = 18 }: { size?: number }) {
   return (
@@ -47,9 +48,8 @@ function MuteIcon({ muted, size = 16 }: { muted: boolean; size?: number }) {
 }
 
 /**
- * Sticky persistent nav.
- * THE BRAIN STUDIO wordmark in Fraunces brass, top-left.
- * Right: room links + About + mute + GitHub.
+ * Sticky persistent nav. Wordmark + room links + mute + GitHub.
+ * All labels rendered through <Caption uppercase> — single text-caption size.
  */
 export default function SiteHeader() {
   const [muted, setMuted] = useState(true);
@@ -74,47 +74,46 @@ export default function SiteHeader() {
         aria-hidden
       />
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-10">
-        <Link
-          href="/"
-          className="font-display text-base tracking-[0.22em] text-brass uppercase"
-        >
-          The Brain Studio
+        <Link href="/" className="text-brass">
+          <Caption uppercase className="text-brass tracking-[0.22em]">
+            The Brain Studio
+          </Caption>
         </Link>
-        <ul className="flex items-center gap-6 text-sm text-bone-cream/80 md:gap-8">
+        <ul className="flex items-center gap-6 text-bone-cream/80 md:gap-8">
           <li>
             <Link
               href="/mirror"
               prefetch
-              className="transition-colors duration-200 hover:text-bone-cream"
+              className="text-bone-cream/80 transition-colors duration-200 hover:text-bone-cream"
             >
-              Mirror
+              <Caption>Mirror</Caption>
             </Link>
           </li>
           <li>
             <Link
               href="/music"
               prefetch
-              className="transition-colors duration-200 hover:text-bone-cream"
+              className="text-bone-cream/80 transition-colors duration-200 hover:text-bone-cream"
             >
-              Music
+              <Caption>Music</Caption>
             </Link>
           </li>
           <li>
             <Link
               href="/crosscultural"
               prefetch
-              className="hidden transition-colors duration-200 hover:text-bone-cream md:inline"
+              className="hidden text-bone-cream/80 transition-colors duration-200 hover:text-bone-cream md:inline"
             >
-              Cross-Cultural
+              <Caption>Cross-Cultural</Caption>
             </Link>
           </li>
           <li>
             <Link
               href="/about"
               prefetch
-              className="transition-colors duration-200 hover:text-bone-cream"
+              className="text-bone-cream/80 transition-colors duration-200 hover:text-bone-cream"
             >
-              About
+              <Caption>About</Caption>
             </Link>
           </li>
           <li>

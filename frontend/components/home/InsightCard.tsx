@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { easeCinematic } from "@/lib/animations";
+import { Heading, Body, Mono } from "@/components/typography/Typography";
 
 type Props = {
   index: number;
@@ -10,8 +11,7 @@ type Props = {
 };
 
 /**
- * Long-form "what you'll learn" card on the home page.
- * Type-and-space hierarchy. No box, no border.
+ * Long-form "what you'll learn" card. Type-and-space hierarchy, no box.
  */
 export default function InsightCard({ index, headline, body }: Props) {
   return (
@@ -23,16 +23,16 @@ export default function InsightCard({ index, headline, body }: Props) {
       className="grid grid-cols-1 gap-6 md:grid-cols-12"
     >
       <div className="md:col-span-1">
-        <span className="font-display text-brass text-xs uppercase tracking-[0.32em] tabular">
+        <Mono variant="label" className="text-brass">
           0{index + 1}
-        </span>
+        </Mono>
       </div>
-      <h3 className="font-display text-bone-cream text-balance text-2xl leading-[1.15] md:col-span-6 md:text-4xl">
+      <Heading as="h3" className="md:col-span-6 md:font-[200] md:text-display md:leading-[1.1]">
         {headline}
-      </h3>
-      <p className="text-bone-cream/65 max-w-[34rem] text-base leading-[1.7] md:col-span-5">
+      </Heading>
+      <Body className="text-bone-cream/65 max-w-[34rem] md:col-span-5">
         {body}
-      </p>
+      </Body>
     </motion.article>
   );
 }

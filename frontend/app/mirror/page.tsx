@@ -1,5 +1,7 @@
 import ScrollScene from "@/components/motion/ScrollScene";
+import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import { signaturePatterns } from "@/lib/regions";
+import { Display, Body, Caption } from "@/components/typography/Typography";
 
 export default function MirrorPage() {
   return (
@@ -14,22 +16,23 @@ export default function MirrorPage() {
       lighting="warm"
       className="relative flex min-h-screen items-center px-6 pt-32 md:px-10"
     >
+      {/* Amber-lamp glow — subtle until a real prediction lights it up.
+          Phase 5 will switch intensity to "pronounced" on prediction return. */}
+      <AtmosphericGlow preset="amber-lamp" position="top" intensity="subtle" />
       <div className="mx-auto max-w-[40rem]">
-        <p className="text-brass font-display text-xs uppercase tracking-[0.36em]">
+        <Caption uppercase as="p" className="text-brass">
           Brain Mirror · Phase 5
-        </p>
-        <h1 className="font-display text-bone-cream mt-8 text-balance text-4xl leading-[1.1] md:text-6xl">
-          Type something. Anything.
-        </h1>
-        <p className="text-bone-cream/65 mt-8 text-base leading-[1.7]">
+        </Caption>
+        <Display className="mt-8">Type something. Anything.</Display>
+        <Body italic className="text-bone-cream/65 mt-8">
           The Brain Mirror is the next room to ship. You&apos;ll paste text,
           and the persistent brain on this screen will warm in the language
           regions the writing recruits — the inferior frontal gyrus, the
           posterior superior temporal gyrus, the anterior temporal lobe.
-        </p>
-        <p className="text-bone-cream/45 mt-10 text-xs uppercase tracking-[0.28em]">
+        </Body>
+        <Caption uppercase as="p" className="text-bone-cream/45 mt-10">
           Coming in the next session.
-        </p>
+        </Caption>
       </div>
     </ScrollScene>
   );

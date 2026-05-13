@@ -2,10 +2,14 @@
 
 /*
   THE BRAIN STUDIO — locked design tokens.
+
   Palette and easings are the entire palette. No additions.
+  Type system is three fonts (editorial / mono / hand) + a Thai fallback.
+  Atmospherics are body wash + film grain + AtmosphericGlow component only.
 */
 
 @theme {
+  /* Locked palette */
   --color-navy-deep: #0a1428;
   --color-indigo-smoke: #1a2444;
   --color-bone-cream: #f0e8d8;
@@ -14,9 +18,38 @@
   --color-cyan-glow: #5cc8d6;
   --color-amber-soft: #e8a04a;
 
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-inter);
+  /* Fonts: editorial does all running text. Mono is for numbers/code only.
+     Hand is for marginalia only (10-instance soft cap). Thai is a fallback
+     applied automatically via the font stack in body. */
+  --font-editorial: var(--font-editorial), "Iowan Old Style", Georgia, serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-hand: var(--font-hand), "Bradley Hand", cursive;
+  --font-thai: var(--font-thai), "Sarabun", serif;
 
+  /* Type scale — four content sizes, no others. Override Tailwind defaults. */
+  --text-display: 4.5rem;        /* 72px — hero only */
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.025em;
+
+  --text-heading: 2rem;          /* 32px — h2, room card titles */
+  --text-heading--line-height: 1.15;
+  --text-heading--letter-spacing: -0.015em;
+
+  --text-body: 1rem;             /* 16px — paragraphs */
+  --text-body--line-height: 1.65;
+  --text-body--letter-spacing: 0em;
+
+  --text-caption: 0.8125rem;     /* 13px — small labels */
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.02em;
+
+  /* Approved weight scale: ultralight (display), regular (everything),
+     medium (mono only). No bold, no semibold. */
+  --font-weight-ultralight: 200;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+
+  /* Easings */
   --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-expressive: cubic-bezier(0.83, 0, 0.17, 1);
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
@@ -24,19 +57,32 @@
   --breakpoint-2xl: 1440px;
 }
 
+/* Atmospheric body wash — pages may override --page-bg-* to redirect. */
 :root {
   color-scheme: dark;
+
+  --page-bg-direction: 180deg;
+  --page-bg-start: #0a1428;
+  --page-bg-mid: #0d162e;
+  --page-bg-end: #11192e;
 }
 
 html,
 body {
-  background: var(--color-navy-deep);
   color: var(--color-bone-cream);
+  min-height: 100vh;
 }
 
 body {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-feature-settings: "ss01", "cv11";
+  background: linear-gradient(
+    var(--page-bg-direction),
+    var(--page-bg-start) 0%,
+    var(--page-bg-mid) 50%,
+    var(--page-bg-end) 100%
+  );
+  background-attachment: fixed;
+  font-family: var(--font-editorial);
+  font-feature-settings: "ss01", "cv11", "ss03";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -46,26 +92,19 @@ body {
   color: var(--color-navy-deep);
 }
 
-/* Brass focus ring everywhere; no browser blue. */
 :focus-visible {
   outline: 2px solid var(--color-brass);
   outline-offset: 4px;
   border-radius: 2px;
 }
 
-/* Display type defaults — tight tracking on headings */
-.font-display {
-  font-family: var(--font-display), Georgia, serif;
-  letter-spacing: -0.02em;
-}
-
-/* Tabular numerals when needed in data */
+/* Tabular numerals where data calls for them. */
 .tabular {
   font-variant-numeric: tabular-nums;
 }
 
-/* Reduced motion: kill all transitions / animations.
-   Component-level fallbacks should preserve information via crossfade. */
+/* Reduced motion: kill transitions/animations. Component-level fallbacks
+   keep crossfades for information continuity. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -74,5 +113,14 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Higher-contrast preference: flatten the wash to the deepest color, drop
+   atmospheric noise (FilmGrain reads this via motion-reduce variant too). */
+@media (prefers-contrast: more) {
+  body {
+    background: var(--color-navy-deep);
+    background-attachment: fixed;
   }
 }

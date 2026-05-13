@@ -6,6 +6,7 @@ import { useCallback } from "react";
 import { useBrainStageStore } from "@/store/useBrainStageStore";
 import type { RegionId } from "@/lib/regions";
 import { easeCinematic } from "@/lib/animations";
+import { Heading, Body, Caption, Mono } from "@/components/typography/Typography";
 
 type Props = {
   title: string;
@@ -16,12 +17,8 @@ type Props = {
 };
 
 /**
- * One of the three room doorways on the home page.
- *
- * On hover, lerps the brain's activations toward this room's signature
- * pattern. On unhover, returns to idle. Click navigates with prefetch.
- *
- * Hierarchy through type and color, never borders.
+ * One of the three home-page doorways. Hover lerps the brain toward the
+ * room's signature pattern. Type-and-space hierarchy; no borders.
  */
 export default function RoomCard({
   title,
@@ -62,21 +59,21 @@ export default function RoomCard({
         className="group relative block"
         data-hover
       >
-        <div className="text-bone-cream/40 text-xs uppercase tracking-[0.32em] tabular">
+        <Mono variant="label" className="text-bone-cream/40 block">
           0{index + 1}
-        </div>
-        <h3 className="font-display text-bone-cream mt-4 text-balance text-3xl leading-[1.1] md:text-4xl">
+        </Mono>
+        <Heading as="h3" className="mt-4 font-[200]">
           {title}
-        </h3>
-        <p className="text-bone-cream/65 mt-4 max-w-[22rem] text-sm leading-[1.65] md:text-base">
+        </Heading>
+        <Body className="text-bone-cream/65 mt-4 max-w-[22rem]">
           {description}
-        </p>
-        <span className="text-brass mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.32em]">
+        </Body>
+        <Caption uppercase className="text-brass mt-6 inline-flex items-center gap-2">
           Enter
           <span aria-hidden className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-2">
             →
           </span>
-        </span>
+        </Caption>
         <span
           aria-hidden
           className="bg-brass absolute -bottom-1 left-0 h-px w-0 transition-[width] duration-500 ease-out group-hover:w-12"

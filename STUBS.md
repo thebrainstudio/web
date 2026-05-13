@@ -35,6 +35,17 @@ What this session left as placeholders. Phases 5–12 will replace these.
 | Screen-reader region announcer on the brain | `aria-live` polite region not yet added; planned in Phase 5 (when activations carry meaning) |
 | GitHub repo URL in nav | placeholder until repo is pushed |
 
+## Typography + atmospherics (second session additions)
+
+| Item | Status / Notes |
+|-|-|
+| PP Editorial New | **Substituted with Fraunces** under the `--font-editorial` CSS variable. PP Editorial New is proprietary (Pangram Pangram); their site gates downloads behind a form I can't submit programmatically. To swap: license the files, drop them under `public/fonts/pp-editorial-new/`, replace the Fraunces import in `app/fonts.ts` with a `localFont({...})` pointing at `variable: "--font-editorial"`. See `docs/typography.md`. |
+| Z-Anatomy brain mesh | **Not integrated.** Tried 5 candidate GitHub URLs — all 404. Z-Anatomy keeps `.blend` files only; their Sketchfab models require API auth I don't have. To add: download `Brain.glb` from their Sketchfab manually, drop at `public/models/brain.glb`, then build a `BrainAnatomy.tsx` that does `useGLTF` and overlays the 20 region markers from `lib/regions.ts` at anatomically correct positions (will need a position re-map). |
+| `<Hand>` 10-instance cap | Wired with dev console warning. Resets on `popstate`. Production silent. |
+| Animated `<AtmosphericGlow>` 2-instance cap | Wired with dev console warning. Currently exactly 2 placements (home hero, about closing). |
+| `app/test-brain` + `app/test-scroll` typography migration | Still raw HTML headings; debug-only routes, lowest priority. |
+| Mirror "reveal" intensity switch | The mirror stub uses `intensity="subtle"`. Phase 5 implementation should toggle to `intensity="pronounced"` (with a CSS-transitioned opacity wrapper) when a prediction returns. |
+
 ## Open content questions for the user
 
 1. **GitHub repo URL** — once pushed, swap the `https://github.com` href in `SiteHeader.tsx` for the real URL.
