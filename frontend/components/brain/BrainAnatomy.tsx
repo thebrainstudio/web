@@ -29,15 +29,42 @@ import type { RegionId } from "@/lib/regions";
  * resolutions; only the geometry swaps.
  */
 
-const IDLE = new THREE.Color("#1a2444");
-const LOW = new THREE.Color("#5cc8d6");
-const MID = new THREE.Color("#e8a04a");
-const HIGH = new THREE.Color("#8b3a3a");
+/*
+ * fMRI / EEG-style activation ramp. Vivid by design — the user reading the
+ * site at a glance should immediately see *where* the brain is reacting.
+ *
+ *   idle  → a warm cool-gray so the brain surface is always legible
+ *           (no more black-blob at rest).
+ *   low   → deep blue   (BOLD signal just above baseline)
+ *   mid-1 → cyan/aqua   (rising activation)
+ *   mid-2 → yellow      (fMRI peak band)
+ *   high  → orange-red  (hot)
+ *
+ * Brain stays visible at rest because IDLE is a real color, not navy black.
+ * Active regions read instantly because the ramp crosses three hue stops.
+ */
+const IDLE = new THREE.Color("#3d4a66");
+const COLD = new THREE.Color("#1e6cff");
+const COOL = new THREE.Color("#22d3ee");
+const WARM = new THREE.Color("#fde047");
+const HOT = new THREE.Color("#ff4f1f");
 
 function activationColor(a: number, out: THREE.Color) {
-  if (a <= 0.01) return out.copy(IDLE);
-  if (a < 0.5) return out.copy(LOW).lerp(MID, a / 0.5);
-  return out.copy(MID).lerp(HIGH, (a - 0.5) / 0.5);
+  if (a <= 0.02) return out.copy(IDLE);
+  if (a < 0.33) {
+    const k = a / 0.33;
+    return out.copy(IDLE).lerp(COLD, k);
+  }
+  if (a < 0.62) {
+    const k = (a - 0.33) / 0.29;
+    return out.copy(COLD).lerp(COOL, k).lerp(WARM, Math.max(0, k - 0.5) * 2);
+  }
+  if (a < 0.84) {
+    const k = (a - 0.62) / 0.22;
+    return out.copy(WARM).lerp(HOT, k * 0.6);
+  }
+  const k = (a - 0.84) / 0.16;
+  return out.copy(WARM).lerp(HOT, 0.6 + k * 0.4);
 }
 
 const MESH_URL: Record<MeshResolution, string> = {
@@ -180,17 +207,40 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
 
   const targetActivations = useBrainStageStore((s) => s.targetActivations);
 
+  const elapsed = useRef(0);
+
+  // 20 regions in a stable order so the ambient phase per-region is consistent
+  // across frames. (Object.keys order on Records is insertion order.)
+  const allRegionList = useMemo<RegionId[]>(
+    () => [
+      "ifg_left","ifg_right","pstg_left","pstg_right","mtg_left","mtg_right",
+      "atl_left","atl_right","agl_left","agl_right","hg_left","hg_right",
+      "vmpfc","dmpfc","pcc","precuneus","amyg_left","amyg_right",
+      "hipp_left","hipp_right",
+    ],
+    [],
+  );
+
   useFrame((_, delta) => {
     if (!geometry || !meshRef.current) return;
-    // Smooth each region's activation.
+    elapsed.current += delta;
+
     const reads: Record<string, number> = targetActivations as Record<string, number>;
-    const allRegions = new Set<RegionId>([
-      ...(Object.keys(reads) as RegionId[]),
-      ...(smoothed.current.keys() as unknown as RegionId[]),
-    ]);
+    const hasExplicit = Object.values(reads).some((v) => (v ?? 0) > 0.02);
+
     const lerp = Math.min(1, delta * 3.5);
-    for (const r of allRegions) {
-      const tgt = reads[r] ?? 0;
+    // Always touch every known region so ambient floors update.
+    for (let i = 0; i < allRegionList.length; i++) {
+      const r = allRegionList[i];
+      // Ambient "EEG drift": a slow per-region phase wave. Keeps the brain
+      // feeling alive when no specific pattern is loaded. Switches off the
+      // moment a real activation comes in so it doesn't dilute the signal.
+      const phase = elapsed.current * 0.55 + i * 0.42;
+      const ambient = hasExplicit
+        ? 0
+        : 0.05 + Math.max(0, Math.sin(phase)) * 0.13;
+      const explicit = reads[r] ?? 0;
+      const tgt = Math.max(explicit, ambient);
       const cur = smoothed.current.get(r) ?? 0;
       smoothed.current.set(r, cur + (tgt - cur) * lerp);
     }
@@ -205,7 +255,6 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
         const a = smoothed.current.get(r) ?? 0;
         activationColor(a, tmpColor);
         const o = i * 3;
-        // Skip rewriting if already very close — micro-optimization.
         if (Math.abs(arr[o] - tmpColor.r) > 0.002) {
           arr[o] = tmpColor.r;
           arr[o + 1] = tmpColor.g;
@@ -216,7 +265,6 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
       if (dirty) colors.needsUpdate = true;
     }
 
-    // Fade-in on mount.
     if (opacity.current < 1.0) {
       opacity.current = Math.min(1.0, opacity.current + delta * 1.6);
       const m = matRef.current;
@@ -233,9 +281,11 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
       <meshStandardMaterial
         ref={matRef}
         vertexColors
-        roughness={0.55}
-        metalness={0.08}
-        envMapIntensity={0.6}
+        roughness={0.42}
+        metalness={0.05}
+        envMapIntensity={0.5}
+        emissive={"#ffffff"}
+        emissiveIntensity={0.18}
         transparent
         opacity={0.001}
         side={THREE.DoubleSide}

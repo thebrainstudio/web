@@ -85,6 +85,12 @@ export default function PinnedSequence({
     Math.max(0, Math.floor(progress * stepCount * 0.9999)),
   );
 
+  // Fade the pinned content out as we approach the end of the pin range,
+  // so it doesn't visually overlap the next section while still pinned at
+  // top: fixed. 0 fade until 0.88, then linear ramp to 0 by 0.98.
+  const fadeOut =
+    progress < 0.88 ? 1 : Math.max(0, 1 - (progress - 0.88) / 0.1);
+
   return (
     <div
       ref={ref}
@@ -101,6 +107,8 @@ export default function PinnedSequence({
           alignItems: "center",
           justifyContent: "center",
           position: "relative",
+          opacity: fadeOut,
+          transition: "opacity 0.18s linear",
         }}
       >
         <AnimatePresence mode="wait">

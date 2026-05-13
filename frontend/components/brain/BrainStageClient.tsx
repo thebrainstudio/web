@@ -25,11 +25,11 @@ export default function BrainStageClient() {
         <BrainAnatomy />
         <EffectComposer enableNormalPass={false}>
           <Bloom
-            intensity={0.55}
-            luminanceThreshold={0.32}
-            luminanceSmoothing={0.18}
+            intensity={0.85}
+            luminanceThreshold={0.42}
+            luminanceSmoothing={0.2}
             mipmapBlur
-            radius={0.7}
+            radius={0.78}
           />
         </EffectComposer>
       </Suspense>
