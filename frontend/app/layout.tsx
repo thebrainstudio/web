@@ -4,6 +4,8 @@ import "./globals.css";
 import SmoothScroll from "@/components/motion/SmoothScroll";
 import BrainStage from "@/components/brain/BrainStage";
 import SiteHeader from "@/components/nav/SiteHeader";
+import CursorFollower from "@/components/motion/CursorFollower";
+import AmbientDrone from "@/components/audio/AmbientDrone";
 
 export const metadata: Metadata = {
   title: "The Brain Studio",
@@ -26,6 +28,8 @@ export default function RootLayout({
           <BrainStage />
           <SiteHeader />
           <main className="relative z-10">{children}</main>
+          <CursorFollower />
+          <AmbientDrone />
         </SmoothScroll>
       </body>
     </html>

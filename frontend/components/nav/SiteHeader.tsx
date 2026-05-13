@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 function GithubMark({ size = 18 }: { size?: number }) {
   return (
@@ -16,14 +17,56 @@ function GithubMark({ size = 18 }: { size?: number }) {
   );
 }
 
+function MuteIcon({ muted, size = 16 }: { muted: boolean; size?: number }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M11 5 6 9H2v6h4l5 4z" />
+      {muted ? (
+        <>
+          <line x1="22" y1="9" x2="16" y2="15" />
+          <line x1="16" y1="9" x2="22" y2="15" />
+        </>
+      ) : (
+        <>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+        </>
+      )}
+    </svg>
+  );
+}
+
 /**
  * Sticky persistent nav.
  * THE BRAIN STUDIO wordmark in Fraunces brass, top-left.
- * Right: room links, About, GitHub icon.
- * (Mute toggle is mounted by AmbientDrone separately to keep audio
- * concerns isolated from the nav.)
+ * Right: room links + About + mute + GitHub.
  */
 export default function SiteHeader() {
+  const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    const sync = (e: Event) => {
+      const detail = (e as CustomEvent<{ muted: boolean }>).detail;
+      setMuted(detail.muted);
+    };
+    window.addEventListener("brain-studio:ambient-state", sync);
+    return () =>
+      window.removeEventListener("brain-studio:ambient-state", sync);
+  }, []);
+
+  const toggleAmbient = () =>
+    window.dispatchEvent(new CustomEvent("brain-studio:toggle-ambient"));
+
   return (
     <header className="fixed inset-x-0 top-0 z-40 backdrop-blur-md">
       <div
@@ -73,6 +116,17 @@ export default function SiteHeader() {
             >
               About
             </Link>
+          </li>
+          <li>
+            <button
+              type="button"
+              onClick={toggleAmbient}
+              aria-label={muted ? "Unmute ambient" : "Mute ambient"}
+              aria-pressed={!muted}
+              className="text-bone-cream/70 transition-colors duration-200 hover:text-brass"
+            >
+              <MuteIcon muted={muted} />
+            </button>
           </li>
           <li>
             <a
