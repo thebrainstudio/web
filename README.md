@@ -1,9 +1,15 @@
 # The Brain Studio
 
+🔗 **Live preview:** https://brain-studio-kappa.vercel.app/
+
 A cinematic educational website powered by Meta's TRIBE v2 brain encoder.
 Three rooms: **Brain Mirror** (paste any text, see your brain "react"),
 **NeuroMusic Lab** (hear how sound moves the mind), and
 **Cross-Cultural Brain** (where the model breaks down across languages).
+
+Debug routes (not in nav):
+- `/test-brain` — per-region activation sliders + lighting preset switcher
+- `/test-scroll` — five-scene scroll camera demo with pinned + parallax
 
 ## Repo layout
 
@@ -35,10 +41,10 @@ pip install -r requirements.txt
 
 | Phase | Status |
 |-------|--------|
-| 1 — Foundation (Next, Tailwind, fonts, Lenis+GSAP, persistent canvas, FastAPI shell, Vercel) | in progress |
-| 2 — 3D brain (real geometry, regions, lighting, citations) | next |
-| 3 — Scroll-as-camera system (ScrollScene, PinnedSequence, ParallaxLayer) | next |
-| 4 — Home page cinema (5 shots) | next |
+| 1 — Foundation (Next, Tailwind, fonts, Lenis+GSAP, persistent canvas, FastAPI shell, Vercel) | ✅ shipped |
+| 2 — 3D brain (20-region constellation, 3 lighting presets, citations) | ✅ shipped |
+| 3 — Scroll-as-camera system (ScrollScene, PinnedSequence, ParallaxLayer) | ✅ shipped |
+| 4 — Home page cinema (5 shots) | ✅ shipped |
 | 5 — Brain Mirror room | future |
 | 6 — NeuroMusic Lab room | future |
 | 7 — Cross-Cultural Brain room | future |
