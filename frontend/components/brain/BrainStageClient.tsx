@@ -14,7 +14,9 @@ export default function BrainStageClient() {
     <Canvas
       camera={{ position: [0, 0, 3.4], fov: 38 }}
       dpr={[1, 2]}
-      gl={{ antialias: true, alpha: true }}
+      // preserveDrawingBuffer enables canvas.toDataURL for the Brain Mirror
+      // "save insight" PNG export. Costs ~5% perf; worth it for the feature.
+      gl={{ antialias: true, alpha: true, preserveDrawingBuffer: true }}
     >
       <Suspense fallback={null}>
         <BrainLighting />
