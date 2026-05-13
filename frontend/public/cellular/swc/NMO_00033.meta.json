@@ -1,0 +1,27 @@
+{
+  "nmo_id": 33,
+  "name": "cnic_077",
+  "region_key": "dmpfc",
+  "role": "Cortical pyramidal cell \u2014 used as a prefrontal proxy.",
+  "surprising": "The architecture that makes a thought about a thought possible.",
+  "neuromorpho_region": [
+    "neocortex",
+    "parietal",
+    "temporal sulcus"
+  ],
+  "cell_type": [
+    "Long projecting",
+    "pyramidal",
+    "principal cell"
+  ],
+  "species": "monkey",
+  "archive": "Wearne_Hof",
+  "reference_pmid": [
+    "12902394",
+    "12204204"
+  ],
+  "source_url": "https://neuromorpho.org/dableFiles/wearne_hof/CNG%20version/cnic_077.CNG.swc",
+  "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=cnic_077",
+  "filename": "NMO_00033.swc",
+  "bytes": 43294
+}

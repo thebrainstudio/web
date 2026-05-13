@@ -1,0 +1,27 @@
+{
+  "nmo_id": 43,
+  "name": "cnic_025",
+  "region_key": "precuneus",
+  "role": "Cerebellar Purkinje cell \u2014 the most visually spectacular reconstruction in the database.",
+  "surprising": "One dendritic arbor receives ~150,000 distinct parallel-fibre synapses.",
+  "neuromorpho_region": [
+    "neocortex",
+    "prefrontal",
+    "layer 3"
+  ],
+  "cell_type": [
+    "Local projecting",
+    "pyramidal",
+    "principal cell"
+  ],
+  "species": "monkey",
+  "archive": "Wearne_Hof",
+  "reference_pmid": [
+    "12902394",
+    "12204204"
+  ],
+  "source_url": "https://neuromorpho.org/dableFiles/wearne_hof/CNG%20version/cnic_025.CNG.swc",
+  "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=cnic_025",
+  "filename": "NMO_00043.swc",
+  "bytes": 44782
+}

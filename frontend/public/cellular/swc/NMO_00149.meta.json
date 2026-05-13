@@ -1,0 +1,24 @@
+{
+  "nmo_id": 149,
+  "name": "n270",
+  "region_key": "agl_left",
+  "role": "Cortical pyramidal cell \u2014 used as an angular-gyrus proxy.",
+  "surprising": "A heteromodal hub where senses translate into ideas.",
+  "neuromorpho_region": [
+    "hippocampus",
+    "dentate gyrus"
+  ],
+  "cell_type": [
+    "granule",
+    "principal cell"
+  ],
+  "species": "rat",
+  "archive": "Turner",
+  "reference_pmid": [
+    "9821633"
+  ],
+  "source_url": "https://neuromorpho.org/dableFiles/turner/CNG%20version/n270.CNG.swc",
+  "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=n270",
+  "filename": "NMO_00149.swc",
+  "bytes": 33543
+}

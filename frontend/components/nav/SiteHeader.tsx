@@ -83,6 +83,7 @@ const navItems: NavItem[] = [
   { href: "/mirror", label: "Mirror" },
   { href: "/music", label: "Music" },
   { href: "/crosscultural", label: "Cross-Cultural" },
+  { href: "/cellular", label: "Cellular" },
   { href: "/about", label: "About" },
 ];
 

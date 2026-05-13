@@ -1,0 +1,24 @@
+{
+  "nmo_id": 227,
+  "name": "c91662",
+  "region_key": "hipp_left",
+  "role": "CA1 pyramidal cell, hippocampus (rat). Amaral lab. The canonical hippocampal neuron.",
+  "surprising": "The cell that knits an afternoon into a memory you can return to.",
+  "neuromorpho_region": [
+    "hippocampus",
+    "CA1"
+  ],
+  "cell_type": [
+    "pyramidal",
+    "principal cell"
+  ],
+  "species": "rat",
+  "archive": "Amaral",
+  "reference_pmid": [
+    "8576427"
+  ],
+  "source_url": "https://neuromorpho.org/dableFiles/amaral/CNG%20version/c91662.CNG.swc",
+  "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=c91662",
+  "filename": "NMO_00227.swc",
+  "bytes": 54984
+}

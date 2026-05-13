@@ -1,0 +1,27 @@
+{
+  "nmo_id": 15,
+  "name": "cnic_046",
+  "region_key": "amyg_left",
+  "role": "Cortical pyramidal cell (proxy for amygdaloid pyramidal; NMO has limited amygdala reconstructions).",
+  "surprising": "The body's salience-detector, built from the same pyramidal template as everywhere else in cortex.",
+  "neuromorpho_region": [
+    "neocortex",
+    "prefrontal",
+    "layer 3"
+  ],
+  "cell_type": [
+    "Local projecting",
+    "pyramidal",
+    "principal cell"
+  ],
+  "species": "monkey",
+  "archive": "Wearne_Hof",
+  "reference_pmid": [
+    "12902394",
+    "12204204"
+  ],
+  "source_url": "https://neuromorpho.org/dableFiles/wearne_hof/CNG%20version/cnic_046.CNG.swc",
+  "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=cnic_046",
+  "filename": "NMO_00015.swc",
+  "bytes": 21442
+}

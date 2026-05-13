@@ -1,0 +1,26 @@
+{
+  "nmo_id": 5515,
+  "name": "16-L5-na",
+  "region_key": "ifg_left",
+  "role": "Layer 5 pyramidal cell, motor cortex (rat).",
+  "surprising": "A switchboard between intention and movement.",
+  "neuromorpho_region": [
+    "neocortex",
+    "frontal",
+    "precentral gyrus",
+    "layer 5"
+  ],
+  "cell_type": [
+    "pyramidal",
+    "principal cell"
+  ],
+  "species": "rat",
+  "archive": "Bikson",
+  "reference_pmid": [
+    "20161507"
+  ],
+  "source_url": "https://neuromorpho.org/dableFiles/bikson/CNG%20version/16-L5-na.CNG.swc",
+  "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=16-L5-na",
+  "filename": "NMO_05515.swc",
+  "bytes": 102452
+}

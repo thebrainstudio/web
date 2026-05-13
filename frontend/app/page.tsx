@@ -135,7 +135,7 @@ export default function Home() {
             </Body>
           </div>
 
-          <div className="mt-20 grid grid-cols-1 gap-14 md:mt-24 md:grid-cols-3 md:gap-10">
+          <div className="mt-20 grid grid-cols-1 gap-14 md:mt-24 md:grid-cols-2 md:gap-10 lg:grid-cols-4">
             <RoomCard
               index={0}
               title="Brain Mirror"
@@ -156,6 +156,13 @@ export default function Home() {
               description="Where the model breaks down across languages — and what the silence reveals."
               href="/crosscultural"
               pattern={signaturePatterns.crosscultural}
+            />
+            <RoomCard
+              index={3}
+              title="Cellular View"
+              description="Descend into real neuron reconstructions and watch a synapse fire."
+              href="/cellular"
+              pattern={signaturePatterns.mirror}
             />
           </div>
         </div>

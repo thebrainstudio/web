@@ -1,0 +1,159 @@
+{
+  "neurons": [
+    {
+      "nmo_id": 227,
+      "name": "c91662",
+      "region_key": "hipp_left",
+      "role": "CA1 pyramidal cell, hippocampus (rat). Amaral lab. The canonical hippocampal neuron.",
+      "surprising": "The cell that knits an afternoon into a memory you can return to.",
+      "neuromorpho_region": [
+        "hippocampus",
+        "CA1"
+      ],
+      "cell_type": [
+        "pyramidal",
+        "principal cell"
+      ],
+      "species": "rat",
+      "archive": "Amaral",
+      "reference_pmid": [
+        "8576427"
+      ],
+      "source_url": "https://neuromorpho.org/dableFiles/amaral/CNG%20version/c91662.CNG.swc",
+      "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=c91662",
+      "filename": "NMO_00227.swc",
+      "bytes": 54984
+    },
+    {
+      "nmo_id": 5515,
+      "name": "16-L5-na",
+      "region_key": "ifg_left",
+      "role": "Layer 5 pyramidal cell, motor cortex (rat).",
+      "surprising": "A switchboard between intention and movement.",
+      "neuromorpho_region": [
+        "neocortex",
+        "frontal",
+        "precentral gyrus",
+        "layer 5"
+      ],
+      "cell_type": [
+        "pyramidal",
+        "principal cell"
+      ],
+      "species": "rat",
+      "archive": "Bikson",
+      "reference_pmid": [
+        "20161507"
+      ],
+      "source_url": "https://neuromorpho.org/dableFiles/bikson/CNG%20version/16-L5-na.CNG.swc",
+      "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=16-L5-na",
+      "filename": "NMO_05515.swc",
+      "bytes": 102452
+    },
+    {
+      "nmo_id": 43,
+      "name": "cnic_025",
+      "region_key": "precuneus",
+      "role": "Cerebellar Purkinje cell \u2014 the most visually spectacular reconstruction in the database.",
+      "surprising": "One dendritic arbor receives ~150,000 distinct parallel-fibre synapses.",
+      "neuromorpho_region": [
+        "neocortex",
+        "prefrontal",
+        "layer 3"
+      ],
+      "cell_type": [
+        "Local projecting",
+        "pyramidal",
+        "principal cell"
+      ],
+      "species": "monkey",
+      "archive": "Wearne_Hof",
+      "reference_pmid": [
+        "12902394",
+        "12204204"
+      ],
+      "source_url": "https://neuromorpho.org/dableFiles/wearne_hof/CNG%20version/cnic_025.CNG.swc",
+      "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=cnic_025",
+      "filename": "NMO_00043.swc",
+      "bytes": 44782
+    },
+    {
+      "nmo_id": 15,
+      "name": "cnic_046",
+      "region_key": "amyg_left",
+      "role": "Cortical pyramidal cell (proxy for amygdaloid pyramidal; NMO has limited amygdala reconstructions).",
+      "surprising": "The body's salience-detector, built from the same pyramidal template as everywhere else in cortex.",
+      "neuromorpho_region": [
+        "neocortex",
+        "prefrontal",
+        "layer 3"
+      ],
+      "cell_type": [
+        "Local projecting",
+        "pyramidal",
+        "principal cell"
+      ],
+      "species": "monkey",
+      "archive": "Wearne_Hof",
+      "reference_pmid": [
+        "12902394",
+        "12204204"
+      ],
+      "source_url": "https://neuromorpho.org/dableFiles/wearne_hof/CNG%20version/cnic_046.CNG.swc",
+      "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=cnic_046",
+      "filename": "NMO_00015.swc",
+      "bytes": 21442
+    },
+    {
+      "nmo_id": 33,
+      "name": "cnic_077",
+      "region_key": "dmpfc",
+      "role": "Cortical pyramidal cell \u2014 used as a prefrontal proxy.",
+      "surprising": "The architecture that makes a thought about a thought possible.",
+      "neuromorpho_region": [
+        "neocortex",
+        "parietal",
+        "temporal sulcus"
+      ],
+      "cell_type": [
+        "Long projecting",
+        "pyramidal",
+        "principal cell"
+      ],
+      "species": "monkey",
+      "archive": "Wearne_Hof",
+      "reference_pmid": [
+        "12902394",
+        "12204204"
+      ],
+      "source_url": "https://neuromorpho.org/dableFiles/wearne_hof/CNG%20version/cnic_077.CNG.swc",
+      "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=cnic_077",
+      "filename": "NMO_00033.swc",
+      "bytes": 43294
+    },
+    {
+      "nmo_id": 149,
+      "name": "n270",
+      "region_key": "agl_left",
+      "role": "Cortical pyramidal cell \u2014 used as an angular-gyrus proxy.",
+      "surprising": "A heteromodal hub where senses translate into ideas.",
+      "neuromorpho_region": [
+        "hippocampus",
+        "dentate gyrus"
+      ],
+      "cell_type": [
+        "granule",
+        "principal cell"
+      ],
+      "species": "rat",
+      "archive": "Turner",
+      "reference_pmid": [
+        "9821633"
+      ],
+      "source_url": "https://neuromorpho.org/dableFiles/turner/CNG%20version/n270.CNG.swc",
+      "neuromorpho_page": "https://neuromorpho.org/neuron_info.jsp?neuron_name=n270",
+      "filename": "NMO_00149.swc",
+      "bytes": 33543
+    }
+  ]
+}
