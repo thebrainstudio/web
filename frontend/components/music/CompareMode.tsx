@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { musicTracks, sampleTimeline } from "@/lib/musicTracks";
 import { Body, Caption } from "@/components/typography/Typography";
 import { useBrainStageStore } from "@/store/useBrainStageStore";
@@ -14,6 +15,7 @@ import TrackPlayer from "./TrackPlayer";
  * brass divider, focused side gets the brass scrubber.
  */
 export default function CompareMode() {
+  const tt = useTranslations("music");
   const [leftId, setLeftId] = useState(musicTracks[0].id);
   const [rightId, setRightId] = useState(musicTracks[1].id);
   const [focused, setFocused] = useState<"left" | "right">("left");
@@ -56,7 +58,7 @@ export default function CompareMode() {
                 : "text-bone-cream/65 hover:text-bone-cream"
             }`}
           >
-            <Caption uppercase>{t.era.split(" ·")[0]}</Caption>
+            <Caption uppercase>{(() => { try { return tt(`tracks.${t.id}.era`).split(" ·")[0]; } catch { return t.era.split(" ·")[0]; } })()}</Caption>
           </button>
         );
       })}

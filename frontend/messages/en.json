@@ -169,7 +169,21 @@
       "headline": "The lullaby remembered first by the body.",
       "body": "The hippocampus carries the scene before the language regions arrive at the lyrics. We learn what a kitchen smells like through music; we learn it again every time we hear the song."
     },
-    "footerNote": "NeuroMusic Lab · timelines simulated locally"
+    "footerNote": "NeuroMusic Lab · timelines simulated locally",
+    "tracks": {
+      "sigur-ros-meditation": {
+        "era": "Post-rock · ambient",
+        "framing": "A slow drone in falsetto. The default-mode network warms the way it does in meditation — not because there's a 'meditation circuit,' but because the listener stops trying to follow."
+      },
+      "coltrane-naima": {
+        "era": "Modal jazz",
+        "framing": "Built on a love letter. Auditory cortex tracks the melody; the amygdala and orbitofrontal regions weight the warmth — feeling and form arriving on the same beat."
+      },
+      "thai-lullaby": {
+        "era": "Thai folk · pentatonic",
+        "framing": "Pentatonic, low-tempo, sung close to the ear. The hippocampus carries the scene before the language regions arrive at the lyrics — the body remembers the song first."
+      }
+    }
   },
   "essays": {
     "fieldNote": "Field Note",
@@ -231,6 +245,51 @@
       "summary": "Why particular pieces of music seem to arrive with weight — auditory cortex, default-mode involvement, and what Jung called the numinous."
     }
   },
+  "mandalas": {
+    "viewerLabel": "What looking at a mandala does to the brain",
+    "viewerIntro": "Pick any mandala below. The brain above (persistent across this site) shifts to the activation pattern published research on contemplative looking would predict for an image of that kind. Not a scan of you. Not a TRIBE prediction. A literature-informed synthesis — pedagogical, not personal.",
+    "jungianReadingLabel": "A Jungian reading",
+    "regionsLabel": "Regions predicted to lift while viewing",
+    "regionsIntro": "The macro brain above is now displaying the literature-informed pattern below. Predicted, not measured. Composed pedagogically from contemplative-attention and visual-symmetry studies — not from TRIBE, which doesn't take images of mandalas as input.",
+    "whyComposition": "Why this composition, briefly: contemplative looking quiets the amygdala's salience pull, lifts the precuneus and PCC (default-mode integration, visuospatial), engages the angular gyri (heteromodal hub), and gently recruits the dmPFC for self-referential processing without strong emotional load. The lowness of the amygdala is part of why this kind of attention feels different from arousal.",
+    "items": {
+      "fludd": {
+        "tradition": "European alchemy",
+        "description": "Robert Fludd's engraving correlates the human microcosm with the cosmic macrocosm. Concentric rings of elements and faculties radiate from a central figure who is both contained by the cosmos and figured as its mirror. Fludd was a 17th-century English physician working in the hermetic-Paracelsian tradition; this image is one of many in his Utriusque Cosmi Historia diagramming the same intuition.",
+        "jungian": "Jung admired Fludd. He read the alchemical tradition as a record of psychological work — the philosopher's stone as a symbol for the integrated Self. The microcosm-macrocosm framing in particular maps onto his claim that the individual psyche and the larger collective patterns are continuous in structure. Fludd's engraving, in Jung's reading, is one of the clearest visual statements that the self being worked on is also a self that already contains the cosmos in miniature."
+      },
+      "hildegard": {
+        "tradition": "Medieval Christian",
+        "description": "A 12th-century illumination from the Hildegard codex, made centuries before Jung was born. The figure of humanity is contained within concentric circles of cosmos. Hildegard's writing accompanied images like this one — visionary texts in which the structure of the world and the structure of the soul were treated as the same diagram seen at different scales.",
+        "jungian": "Jung gave Hildegard credit. Her vision of humanity-in-the-cosmos is, for him, an earlier intuition of what he later named the Self — the whole field within which the conscious ego is one figure among many. The center of the image is not 'the human'; the center is the whole arrangement. Jung's individuation, in this language, is the slow work of recognizing that the cosmos was always already the larger frame."
+      },
+      "bhavachakra": {
+        "tradition": "Tibetan Buddhist",
+        "description": "The Bhavachakra — sometimes rendered as 'the wheel of life,' though 'the wheel of becoming' is closer — depicts the six realms of conditioned existence in its inner ring and the twelve links of dependent origination around its outer rim. Yama, the lord of death, holds the whole wheel; the Buddha stands outside it, pointing the way out. The image is traditionally painted at the entrance of Tibetan monasteries as a teaching device — not as a metaphysical diagram but as a map for what the meditative life is attempting.",
+        "jungian": "Jung was careful about Eastern thought — he both admired it and warned against the Western tendency to appropriate it as decoration. The Bhavachakra is one of the images he read carefully. The wheel as a structure containing all realms of experience, with a center (the three poisons) and a quaternity-multiplied (six realms × twelve links), is recognizable to his framework as a mandala in the strict sense: an organization of psychic territory under a single contained form. What he hedged about was direction. The Bhavachakra suggests an exit — the Buddha pointing out. Jung's individuation suggests integration rather than escape. Different orientations within a shared visual logic."
+      },
+      "sri_yantra": {
+        "tradition": "Hindu (Shri Vidya tradition)",
+        "description": "The Sri Yantra is among the most precisely constructed diagrams in any visual tradition. Nine interlocking triangles — four pointing upward, five pointing downward — generate forty-three smaller triangles around a central bindu, the point. The yantra is used in Shri Vidya tantric practice as both meditative focus and ritual diagram. Its geometric construction is technically demanding; getting the nine triangles to intersect cleanly at the bindu is a non-trivial problem in plane geometry.",
+        "jungian": "The Sri Yantra reads, in Jung's language, as one of the clearest visual statements of his coniunctio — the union of opposites. Triangles upward and triangles downward, in a single resolved figure. He referenced Eastern yantras explicitly when writing about mandalas and was struck by the convergence between this geometric statement of integrated polarity and the spontaneous mandalas his patients were producing in central Europe a thousand years later. Same shape. Different vocabulary. He hedged, again, about whether the convergence meant something metaphysical or whether it meant only that the psyche reaches for the same forms when working on the same problem."
+      },
+      "aztec_sun_stone": {
+        "tradition": "Mexica (Aztec)",
+        "description": "The Piedra del Sol — sometimes called the Aztec Calendar Stone, though it is not strictly a calendar — is a 24-ton basalt monolith carved by Mexica sculptors in the last decades before Spanish contact. Its central face is the god Tonatiuh or the earth-monster Tlaltecuhtli, depending on interpretation. Four directional ages surround the center; an outer ring of glyphs and serpents contains the whole. The stone was buried after the Conquest and rediscovered in Mexico City in 1790; it has been the object of careful scholarly disagreement ever since.",
+        "jungian": "Jung did not write about Mesoamerican imagery with the same depth he gave to alchemy or Tibetan thought; he was honest about the limits of his cultural reach. But the Sun Stone is unmistakably a mandala in his structural sense — a center, a quaternity (the four previous suns), a containment (the cosmic ring of glyphs), a break in symmetry where the cardinal directions disrupt the radial pattern. Whether Jung's framework is the right one for reading a Mexica object is a real question. The structural recognition is honest; the cultural translation requires more care than Jung himself always brought to it. Both can be true."
+      },
+      "chartres_rose": {
+        "tradition": "Gothic Christian",
+        "description": "The North Transept rose window at Chartres, donated by Blanche of Castile c. 1235. Mary occupies the center. The first ring is the four doves of the Holy Spirit and the seven gifts; the next is the kings of Judah; the outermost rings are prophets, angels, and the fleur-de-lis of the donor's house. The whole composition is exactly twelve meters across. It is one of three rose windows at Chartres and is widely held to be among the most theologically and geometrically considered objects of the high medieval period.",
+        "jungian": "Jung read rose windows as Christian mandalas in the strict sense. A center, four (or twelve, the four tripled), a containment, an ordering of figures that places the divine and the human in fixed structural relation. For him the medieval rose window was an extraordinary example of how the same mandala impulse he was observing in his patients had already been articulated, with full theological intent, by twelfth- and thirteenth-century master glassworkers and their patrons. The image is the same shape the unconscious reaches for when it is reorganizing — except here, it has been organized deliberately, by people who knew what they were doing."
+      },
+      "splendor_solis": {
+        "tradition": "European alchemy",
+        "description": "From the Splendor Solis, a 22-plate alchemical manuscript attributed to Salomon Trismosin and illuminated in the late sixteenth century. The drowning king — also called the dissolution or solutio in alchemical literature — is one of the canonical stages of the great work. The crowned ruling principle sinks into water so that something new can form. Each plate of the Splendor Solis is bordered by intricate marginalia; the central image is always doing work, not decoration.",
+        "jungian": "Jung devoted volumes 12, 13, 14, and 16 of his Collected Works to alchemy. He read the manuscripts as the most extensive surviving record of psychological work in the West before the term 'psychological' existed. The drowning king, in his reading, is a precise image: the conscious ego — the ruling principle — has to dissolve, partly and temporarily, for individuation to proceed. The image is not metaphysical chemistry. It is the alchemists trying to say something about transformation that they did not yet have psychological language for. Jung's project, in many ways, was to give them that language while preserving what they had already correctly seen."
+      }
+    }
+  },
   "archetypes": {
     "label": "The Archetypes",
     "opening": "There are figures in the psyche that are not you.",
@@ -268,7 +327,69 @@
     "linkThreshold": "Return to the threshold",
     "linkFieldNotes": "Read the field notes",
     "linkHome": "Return to the surface",
-    "footer": "Sources · all artworks public domain · provenance under each ⓘ"
+    "footer": "Sources · all artworks public domain · provenance under each ⓘ",
+    "prose": {
+      "persona": {
+        "title": "The Persona",
+        "subtitle": "The face you wear, the face you forget you're wearing.",
+        "paragraphs": [
+          "Persona, in the Latin theatre, was the mask the actor held to the face. Jung kept the word for what it pointed at: the face the social world meets. Not pretence exactly. Most of the time the persona is necessary and almost involuntary — the version of you that knows how to be a colleague, a daughter, a customer in a shop. The trouble is not that there is a persona. The trouble is forgetting that it is one.",
+          "The clinical observation is that people who become identified with their persona — who believe the role is the whole — get into a particular kind of difficulty. The unlived parts don't disappear; they accumulate. They show up later as exhaustion, or boredom, or a slow leak of meaning, or the strange fact that a successful life feels like someone else's. Jung gave it a name: the persona inflation.",
+          "Neuroscience has no persona region. What it does have is research on self-monitoring, on the prefrontal effort of maintaining a presented self, on the cost of suppression over time. The mechanism doesn't map cleanly onto Jung's term, but the cost is convergent: a self continuously performed is also a self continuously edited, and the editing has a metabolic price.",
+          "Holbein's lady is composed, finished, sittable. The squirrel on her arm and the starling at her shoulder are accessories of a different order — small private creatures kept close to a public face. What the portrait is asking, very quietly, is which of them is more like her."
+        ]
+      },
+      "shadow": {
+        "title": "The Shadow",
+        "subtitle": "What you have refused to know about yourself.",
+        "paragraphs": [
+          "The shadow is what you have refused to know about yourself. Not the deepest, darkest secret — those you usually know. The shadow is what you can't see because seeing it would require restructuring who you think you are. The cruelty in the gentle person. The neediness in the self-sufficient one. The contempt in the empath.",
+          "Jung's claim was that everyone has one, that it isn't optional, and that pretending otherwise is the principal mechanism by which people do harm. The shadow doesn't go away by being denied; it acts out through projection. What you can't see in yourself, you see everywhere in others — often with a strange intensity that gives the projection away.",
+          "Neuroscience has nothing direct to say about the shadow. There is no shadow region of the brain. But research on inhibition, suppression, and confabulation describes the mechanism by which content is held outside conscious access, and how the cost of holding it grows over time. The phenomenology is Jung's. The cost is real.",
+          "Caravaggio painted himself as Goliath, the head he has the boy hold up by the hair. The self-portrait under defeat is one of the oldest moves in art. What he was looking at — what he made us look at — is what every shadow project finally requires: the willingness to see what you would rather not see, and not look away."
+        ]
+      },
+      "anima": {
+        "title": "The Anima",
+        "subtitle": "The interior figure of the gender you are not.",
+        "paragraphs": [
+          "Jung used anima and animus to name the interior figure of the gender one is not — the contrasexual aspect of the psyche. For men, anima: the inner feminine. For women, animus: the inner masculine. He believed the unintegrated contrasexual figure was where most relational difficulty came from, because the figure gets projected onto actual people and the relationship has to carry weight that doesn't belong to it.",
+          "The terms have aged in complicated ways. The strict binary of masculine and feminine that Jung worked with is not how contemporary psychology speaks. But the underlying observation survives the vocabulary: there is an interior register of one's psyche that does not match one's surface identity, and pretending otherwise has costs. Substitute language as needed. The structure he was pointing at is real.",
+          "Neuroscience again has nothing direct to say about an inner figure of any specific kind. What it does have is decades of research on how strongly we model other minds, how prone we are to projecting our unrecognized parts onto them, and how difficult it is to know whether what we feel about another person is mostly about them or mostly about us.",
+          "Waterhouse painted the Lady of Shalott leaving the tower. She has loosened the chain. She is going toward a death she half-knows. The painting is about an interior figure becoming visible enough to act, and the cost of that visibility. Whatever you call this figure today, the moment she steps into the boat is still a real moment in the felt life of being a self."
+        ]
+      },
+      "self": {
+        "title": "The Self",
+        "subtitle": "The whole of which the conscious self is a small part.",
+        "paragraphs": [
+          "The Self — capitalized — was Jung's term for the whole psyche, including the conscious ego and the much larger unconscious of which the ego is a small lit room. The lifelong work of individuation, for Jung, was the slow, often unwanted process of making more of that whole liveable to consciousness.",
+          "The danger of the word, especially in pop usage, is that it sounds grand. Authentic self. True self. The wellness industry has done damage here. Jung's Self is not a perfected inner essence to be uncovered. It is the larger field a person actually lives inside, much of which they can't see and will never fully see. The work is honest commerce with that field, not arrival.",
+          "Contemporary neuroscience does not endorse the term. What it does offer, increasingly, is evidence that the conscious self is a small fraction of the brain's work — that the default-mode network's quiet activity, implicit memory, predictive processing, and automatic affective appraisal carry most of the load. The architecture is not the metaphysics. But the architecture supports Jung's intuition that consciousness is the small part.",
+          "Hildegard of Bingen painted the figure of humanity contained within concentric circles of cosmos, four centuries before Jung. The Self in her image is not the human at the center; it is the whole arrangement. The center is contained, not central. Jung knew her work. He drew on it. The image earns its place in this room."
+        ]
+      },
+      "wise": {
+        "title": "The Wise Old Man",
+        "subtitle": "The interior guide. Not always old. Not always a man.",
+        "paragraphs": [
+          "The Wise Old Man — Jung's term, with the obvious caveats about gender and age — names the interior figure who carries an authority the conscious ego doesn't possess. The grandfather in the dream who knows what to do. The voice in a difficult decision that arrives uninvited and turns out to be right. The teacher you internalized so completely that you can still consult them years after losing touch.",
+          "Jung's claim was that this figure shows up across cultures and centuries because the psyche genuinely organizes some of its wisdom outside conscious access, and presents it to consciousness in the form of a guide. The figure is real to the experience even when there is no actual elder in the room. Sometimes it appears as an old man, sometimes as a wise woman, sometimes as a child saying something that turns out to be load-bearing. The form varies. The function holds.",
+          "Neuroscience has no direct analogue. What it does suggest is that integration of learning over a lifetime produces patterns of automatic appraisal that the deliberative system can consult almost like an external source. Long-term meditators, expert clinicians, master artisans all describe a similar phenomenology: a knowing that arrives faster than thought. The mechanism is consolidation and pattern-recognition. The felt experience is closer to being advised.",
+          "Rembrandt painted Aristotle's hand on the head of Homer's bust. The living thinker meets the dead poet through touch. The chain of medallions around Aristotle's neck shows Alexander, the student who became another kind of master. The painting is about the inheritance of wisdom across centuries and across mortality — one Wise Old Man recognizing another, with the awareness that he too will become a bust someone else lays a hand on."
+        ]
+      },
+      "trickster": {
+        "title": "The Trickster",
+        "subtitle": "The boundary-crosser. The destroyer who clears the way.",
+        "paragraphs": [
+          "The Trickster is the figure who breaks the rules to show that the rules are arbitrary — and, sometimes, to clear the way for what the rules were keeping out. Hermes and Loki, the medieval Fool, the coyote of certain Native traditions that this site does not appropriate. Jung studied the Trickster carefully because he saw the same figure recur across cultures and across centuries, doing the same disruptive work: revealing the seams of the constructed order by playing on them.",
+          "What the figure protects against is rigidity. A psyche that has organized itself too tightly around a particular self-image needs the Trickster to come along and overturn the table, sometimes humiliatingly, so that the disowned parts can re-enter. The Trickster is rarely admired in the moment. He is often retrospectively necessary.",
+          "Neuroscience has nothing to say about a Trickster. It does have evidence that rigid prediction models break down under enough surprise, that brittle self-concepts crack rather than bend, that what looks like insight often arrives only after a particular kind of disruption. The mechanism doesn't endorse the figure. The function the figure described still happens.",
+          "Bosch's triptych is the Trickster as cosmology. Eden, the strange wide garden where appetite is unleashed, and the consequences. None of the panels is the moral. The Trickster is the whole arrangement — what is crossed, what is crossed again, what cannot be put back the way it was."
+        ]
+      }
+    }
   },
   "threshold": {
     "label": "The Threshold",

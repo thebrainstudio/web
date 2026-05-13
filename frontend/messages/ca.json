@@ -169,7 +169,21 @@
       "headline": "La cançó de bressol que el cos recorda primer.",
       "body": "L'hipocamp porta l'escena abans que les regions del llenguatge arribin a la lletra. Aprenem a què fa olor una cuina a través de la música; ho tornem a aprendre cada cop que sentim la cançó."
     },
-    "footerNote": "Laboratori de NeuroMúsica · línies de temps simulades localment"
+    "footerNote": "Laboratori de NeuroMúsica · línies de temps simulades localment",
+    "tracks": {
+      "sigur-ros-meditation": {
+        "era": "Post-rock · ambient",
+        "framing": "Un drone lent en falset. La xarxa per defecte s'escalfa com en la meditació — no perquè existeixi un 'circuit de meditació', sinó perquè qui escolta deixa d'intentar seguir."
+      },
+      "coltrane-naima": {
+        "era": "Jazz modal",
+        "framing": "Construït sobre una carta d'amor. El còrtex auditiu segueix la melodia; l'amígdala i les regions orbitofrontals pesen la calidesa — sentiment i forma arribant al mateix compàs."
+      },
+      "thai-lullaby": {
+        "era": "Folklore tailandès · pentatònic",
+        "framing": "Pentatònic, lent, cantat a l'oïda. L'hipocamp porta l'escena abans que les regions del llenguatge arribin a la lletra — el cos recorda la cançó primer."
+      }
+    }
   },
   "essays": {
     "fieldNote": "Nota de camp",
@@ -231,6 +245,51 @@
       "summary": "Per què algunes peces musicals semblen arribar amb pes — còrtex auditiva, implicació de la xarxa per defecte, i el que Jung anomenava el numinós."
     }
   },
+  "mandalas": {
+    "viewerLabel": "Què fa mirar un mandala al cervell",
+    "viewerIntro": "Tria qualsevol mandala a sota. El cervell de dalt (persistent a tot el lloc) es desplaça cap al patró d'activació que la literatura publicada sobre la mirada contemplativa prediria per a una imatge així. No és cap escàner teu. No és una predicció de TRIBE. Una síntesi informada per la literatura — pedagògica, no personal.",
+    "jungianReadingLabel": "Una lectura junguiana",
+    "regionsLabel": "Regions que es preveu que s'elevin en mirar",
+    "regionsIntro": "El cervell macro de dalt està mostrant ara el patró informat per la literatura que apareix a sota. Predit, no mesurat. Compost pedagògicament a partir d'estudis d'atenció contemplativa i simetria visual — no a partir de TRIBE, que no pren imatges de mandales com a entrada.",
+    "whyComposition": "Per què aquesta composició, breument: la mirada contemplativa calma l'estirada de saliència de l'amígdala, eleva el precuni i el PCC (integració de la xarxa per defecte, visuoespacial), implica els girs angulars (centre heteromodal) i recluta suaument el dmPFC per al processament autoreferencial sense càrrega emocional forta. La baixa amígdala és part del motiu pel qual aquesta mena d'atenció se sent diferent de l'arousal.",
+    "items": {
+      "fludd": {
+        "tradition": "Alquímia europea",
+        "description": "El gravat de Robert Fludd correlaciona el microcosmos humà amb el macrocosmos còsmic. Anells concèntrics d'elements i facultats irradien des d'una figura central que està alhora continguda pel cosmos i representada com el seu mirall. Fludd va ser un metge anglès del segle XVII que treballava en la tradició hermètico-paracèlsica; aquesta imatge és una de les moltes de la seva Utriusque Cosmi Historia que diagramaven la mateixa intuïció.",
+        "jungian": "Jung admirava Fludd. Va llegir la tradició alquímica com un registre de treball psicològic — la pedra filosofal com a símbol del Si Mateix integrat. El marc microcosmos-macrocosmos en particular encaixa amb la seva afirmació que la psique individual i els patrons col·lectius més grans són continus en estructura. El gravat de Fludd, en la lectura de Jung, és una de les declaracions visuals més clares que el si mateix que s'està treballant és també un si mateix que ja conté el cosmos en miniatura."
+      },
+      "hildegard": {
+        "tradition": "Cristianisme medieval",
+        "description": "Una il·luminació del segle XII del còdex d'Hildegarda, feta segles abans del naixement de Jung. La figura de la humanitat està continguda dins de cercles concèntrics de cosmos. Els escrits d'Hildegarda acompanyaven imatges com aquesta — textos visionaris en què l'estructura del món i l'estructura de l'ànima eren tractades com el mateix diagrama vist a escales diferents.",
+        "jungian": "Jung va donar crèdit a Hildegarda. La seva visió de la humanitat dins del cosmos és, per a ell, una intuïció primerenca del que més tard anomenaria el Si Mateix — tot el camp dins del qual el jo conscient és una figura entre moltes. El centre de la imatge no és 'l'humà'; el centre és tota la disposició. La individuació de Jung, en aquest llenguatge, és la lenta feina de reconèixer que el cosmos ja era sempre el marc més gran."
+      },
+      "bhavachakra": {
+        "tradition": "Budisme tibetà",
+        "description": "El Bhavachakra — a vegades traduït com 'la roda de la vida', tot i que 'la roda del devenir' s'hi acosta més — representa els sis regnes de l'existència condicionada al seu anell interior i els dotze enllaços de la coproducció dependent al voltant de la seva vora exterior. Yama, senyor de la mort, sosté tota la roda; el Buda hi és fora, assenyalant la sortida. La imatge es pinta tradicionalment a l'entrada dels monestirs tibetans com a eina d'ensenyament — no com a diagrama metafísic sinó com a mapa del que la vida meditativa intenta.",
+        "jungian": "Jung va ser curós amb el pensament oriental — l'admirava i alhora alertava contra la tendència occidental d'apropiar-se'l com a decoració. El Bhavachakra és una de les imatges que va llegir amb cura. La roda com a estructura que conté tots els regnes de l'experiència, amb un centre (els tres verins) i una quaternitat multiplicada (sis regnes × dotze enllaços), és recognoscible per al seu marc com un mandala en sentit estricte: una organització del territori psíquic sota una sola forma continguda. El que va matisar va ser la direcció. El Bhavachakra suggereix una sortida — el Buda assenyalant cap enfora. La individuació de Jung suggereix integració en comptes de fugida. Orientacions diferents dins d'una lògica visual compartida."
+      },
+      "sri_yantra": {
+        "tradition": "Hindú (tradició Shri Vidya)",
+        "description": "El Sri Yantra és un dels diagrames construïts amb més precisió en qualsevol tradició visual. Nou triangles entrellaçats — quatre apuntant cap amunt, cinc cap avall — generen quaranta-tres triangles més petits al voltant d'un bindu central, el punt. El yantra s'utilitza en la pràctica tàntrica Shri Vidya com a focus meditatiu i com a diagrama ritual. La seva construcció geomètrica és tècnicament exigent; aconseguir que els nou triangles s'intersequin netament al bindu és un problema no trivial de geometria plana.",
+        "jungian": "El Sri Yantra es llegeix, en el llenguatge de Jung, com una de les declaracions visuals més clares del seu coniunctio — la unió dels oposats. Triangles cap amunt i cap avall, en una sola figura resolta. Jung va fer referència explícita als yantres orientals quan va escriure sobre els mandales i va quedar impactat per la convergència entre aquesta declaració geomètrica de polaritat integrada i els mandales espontanis que els seus pacients produïen a l'Europa central mil anys després. Mateixa forma. Vocabulari diferent. Va matisar, una altra vegada, si la convergència significava alguna cosa metafísica o si només significava que la psique tendeix a les mateixes formes quan treballa sobre el mateix problema."
+      },
+      "aztec_sun_stone": {
+        "tradition": "Mexica (asteca)",
+        "description": "La Piedra del Sol — de vegades anomenada Calendari Asteca, encara que estrictament no és un calendari — és un monòlit de basalt de 24 tones tallat per escultors mexiques en les darreres dècades abans del contacte espanyol. El seu rostre central és el déu Tonatiuh o el monstre de la terra Tlaltecuhtli, segons la interpretació. Quatre eres direccionals envolten el centre; un anell exterior de glifs i serps conté el conjunt. La pedra va ser enterrada després de la Conquesta i redescoberta a la Ciutat de Mèxic el 1790; des d'aleshores ha estat objecte de discrepància acadèmica acurada.",
+        "jungian": "Jung no va escriure sobre la imatgeria mesoamericana amb la profunditat que va donar a l'alquímia o al pensament tibetà; va ser honest sobre els límits del seu abast cultural. Però la Pedra del Sol és inequívocament un mandala en el seu sentit estructural — un centre, una quaternitat (els quatre sols anteriors), una contenció (l'anell còsmic de glifs), una ruptura de simetria on les direccions cardinals trenquen el patró radial. Si el marc de Jung és l'adequat per llegir un objecte mexica és una pregunta real. El reconeixement estructural és honest; la traducció cultural exigeix més cura de la que el mateix Jung sempre va portar. Totes dues coses poden ser veritat."
+      },
+      "chartres_rose": {
+        "tradition": "Cristianisme gòtic",
+        "description": "El rosetó del transepte nord de Chartres, donat per Blanca de Castella c. 1235. Maria ocupa el centre. El primer anell són els quatre coloms de l'Esperit Sant i els set dons; el següent, els reis de Judà; els anells exteriors, profetes, àngels i la flor de lis de la casa de la donant. El conjunt fa exactament dotze metres d'ample. És un dels tres rosetons de Chartres i és àmpliament considerat un dels objectes més acuradament pensats, teològicament i geomètricament, de l'alt medieval.",
+        "jungian": "Jung va llegir els rosetons com a mandales cristians en sentit estricte. Un centre, quatre (o dotze, els quatre triplicats), una contenció, una ordenació de figures que situa el diví i l'humà en una relació estructural fixa. Per a ell, el rosetó medieval era un exemple extraordinari de com el mateix impuls mandàlic que estava observant en els seus pacients ja havia estat articulat, amb propòsit teològic complet, per mestres vitrallers dels segles XII i XIII i els seus mecenes. La imatge té la mateixa forma cap a la qual l'inconscient s'inclina quan es reorganitza — només que aquí ha estat organitzada deliberadament, per persones que sabien què feien."
+      },
+      "splendor_solis": {
+        "tradition": "Alquímia europea",
+        "description": "Del Splendor Solis, un manuscrit alquímic de 22 làmines atribuït a Salomon Trismosin i il·luminat a finals del segle XVI. El rei que s'ofega — també anomenat dissolutio o solutio en la literatura alquímica — és una de les etapes canòniques de la gran obra. El principi governant coronat s'enfonsa a l'aigua perquè alguna cosa nova pugui formar-se. Cada làmina del Splendor Solis està voltada per marginàlia intricada; la imatge central sempre està treballant, no decorant.",
+        "jungian": "Jung va dedicar els volums 12, 13, 14 i 16 de les seves Obres Completes a l'alquímia. Va llegir els manuscrits com el registre més extens de treball psicològic a Occident que sobreviu abans que existís el terme 'psicològic'. El rei que s'ofega, en la seva lectura, és una imatge precisa: el jo conscient — el principi governant — ha de dissoldre's, parcialment i temporalment, perquè la individuació avanci. La imatge no és química metafísica. Són els alquimistes intentant dir alguna cosa sobre la transformació per a la qual encara no tenien llenguatge psicològic. El projecte de Jung, en molts sentits, va ser donar-los aquest llenguatge tot preservant el que ja havien vist correctament."
+      }
+    }
+  },
   "archetypes": {
     "label": "Els Arquetips",
     "opening": "Hi ha figures dins la psique que no ets tu.",
@@ -268,7 +327,69 @@
     "linkThreshold": "Tornar al llindar",
     "linkFieldNotes": "Llegir les notes de camp",
     "linkHome": "Tornar a la superfície",
-    "footer": "Fonts · totes les obres en domini públic · procedència sota cada ⓘ"
+    "footer": "Fonts · totes les obres en domini públic · procedència sota cada ⓘ",
+    "prose": {
+      "persona": {
+        "title": "La Persona",
+        "subtitle": "La cara que portes, la cara que oblides que portes.",
+        "paragraphs": [
+          "Persona, al teatre llatí, era la màscara que l'actor sostenia davant del rostre. Jung va mantenir la paraula pel que assenyalava: la cara amb què el món social es troba. No exactament fingiment. La major part del temps la persona és necessària i gairebé involuntària — la versió de tu que sap ser un company de feina, una filla, un client en una botiga. El problema no és que hi hagi una persona. El problema és oblidar que ho és.",
+          "L'observació clínica és que qui s'identifica amb la seva persona — qui creu que el paper és el tot — entra en una dificultat particular. Les parts no viscudes no desapareixen; s'acumulen. Apareixen després com a esgotament, o avorriment, o una fuita lenta de sentit, o el fet estrany que una vida reeixida es senti com la d'una altra persona. Jung li va donar nom: la inflació de la persona.",
+          "La neurociència no té cap regió de la persona. El que sí té és recerca sobre l'automonitoratge, sobre l'esforç prefrontal de sostenir un jo presentat, sobre el cost de la supressió al llarg del temps. El mecanisme no es correspon netament amb el terme de Jung, però el cost convergeix: un jo contínuament representat és també un jo contínuament editat, i l'edició té un preu metabòlic.",
+          "La dama de Holbein està composta, acabada, posable. L'esquirol al seu braç i l'estornell a la seva espatlla són accessoris d'un altre ordre — petites criatures privades mantingudes prop d'un rostre públic. El que el retrat pregunta, ben fluixet, és quina de les dues s'assembla més a ella."
+        ]
+      },
+      "shadow": {
+        "title": "L'Ombra",
+        "subtitle": "El que t'has negat a saber de tu mateix.",
+        "paragraphs": [
+          "L'ombra és el que t'has negat a saber de tu mateix. No el secret més profund i fosc — aquests sols conèixer-los. L'ombra és el que no pots veure perquè veure-ho exigiria reestructurar qui creus que ets. La crueltat en la persona amable. La necessitat en la que és autosuficient. El menyspreu en l'empàtica.",
+          "Jung afirmava que tothom en té una, que no és opcional, i que pretendre el contrari és el mecanisme principal pel qual la gent fa mal. L'ombra no desapareix quan es nega; es manifesta per projecció. El que no pots veure en tu, ho veus a tot arreu en els altres — sovint amb una intensitat estranya que delata la projecció.",
+          "La neurociència no té res directe a dir sobre l'ombra. No hi ha cap regió d'ombra al cervell. Però la recerca sobre inhibició, supressió i confabulació descriu el mecanisme pel qual contingut és sostingut fora de l'accés conscient, i com el cost de sostenir-lo creix amb el temps. La fenomenologia és de Jung. El cost és real.",
+          "Caravaggio es va pintar com a Goliat, el cap que el noi sosté pels cabells. L'autoretrat sota derrota és un dels gestos més antics de l'art. El que ell mirava — el que ens va fer mirar — és el que tot projecte d'ombra acaba demanant: la disposició a veure el que preferiries no veure, i no apartar la mirada."
+        ]
+      },
+      "anima": {
+        "title": "L'Ànima",
+        "subtitle": "La figura interior del gènere que no ets.",
+        "paragraphs": [
+          "Jung va usar ànima i ànimus per anomenar la figura interior del gènere que un no és — l'aspecte contrasexual de la psique. En els homes, ànima: la feminitat interior. En les dones, ànimus: la masculinitat interior. Creia que la figura contrasexual no integrada era la font de la major part de les dificultats relacionals, perquè la figura es projecta sobre persones reals i la relació ha de sostenir un pes que no li pertany.",
+          "Els termes han envellit de maneres complicades. El binarisme estricte de masculí i femení amb el qual Jung treballava no és com parla la psicologia contemporània. Però l'observació de fons sobreviu al vocabulari: hi ha un registre interior de la psique que no encaixa amb la identitat de superfície, i pretendre el contrari té costos. Substitueix el llenguatge segons calgui. L'estructura que assenyalava és real.",
+          "La neurociència, una altra vegada, no té res directe a dir sobre una figura interior d'un tipus específic. El que sí té són dècades de recerca sobre amb quina força modelem altres ments, com de propensos som a projectar-hi les nostres parts no reconegudes, i com és de difícil saber si el que sentim per una altra persona és sobretot sobre ella o sobretot sobre nosaltres.",
+          "Waterhouse va pintar la Dama de Shalott deixant la torre. Ha afluixat la cadena. Va cap a una mort que coneix a mitges. La pintura tracta d'una figura interior que esdevé prou visible per actuar, i del cost d'aquesta visibilitat. Com se l'anomeni avui, el moment en què puja a la barca segueix sent un moment real en la vida sentida de ser un si mateix."
+        ]
+      },
+      "self": {
+        "title": "El Si Mateix",
+        "subtitle": "El tot del qual el jo conscient és una part petita.",
+        "paragraphs": [
+          "El Si Mateix — en majúscula — va ser el terme de Jung per a la psique sencera, incloent-hi el jo conscient i l'inconscient molt més gran del qual el jo és una petita habitació il·luminada. La feina de tota una vida de la individuació, per a Jung, era el procés lent i sovint no desitjat de fer més habitable a la consciència aquesta totalitat.",
+          "El perill de la paraula, sobretot en ús popular, és que sona grandiosa. Jo autèntic. Veritable jo. La indústria del benestar ha fet mal aquí. El Si Mateix de Jung no és cap essència interior perfeccionada per descobrir. És el camp més ampli dins del qual una persona realment viu, gran part del qual no pot veure i mai no veurà del tot. La feina és comerç honest amb aquest camp, no arribada.",
+          "La neurociència contemporània no avala el terme. El que sí ofereix, cada cop més, és evidència que el jo conscient és una fracció petita de la feina del cervell — que l'activitat silenciosa de la xarxa per defecte, la memòria implícita, el processament predictiu i l'avaluació afectiva automàtica porten la major part de la càrrega. L'arquitectura no és la metafísica. Però l'arquitectura recolza la intuïció de Jung que la consciència és la part petita.",
+          "Hildegarda de Bingen va pintar la figura de la humanitat continguda dins de cercles concèntrics de cosmos, quatre segles abans de Jung. El Si Mateix a la seva imatge no és l'humà al centre; és tota la disposició. El centre està contingut, no és central. Jung coneixia la seva obra. En va beure. La imatge es guanya el seu lloc en aquesta sala."
+        ]
+      },
+      "wise": {
+        "title": "L'Ancià Savi",
+        "subtitle": "La guia interior. No sempre vella. No sempre un home.",
+        "paragraphs": [
+          "L'Ancià Savi — terme de Jung, amb els matisos obvis sobre gènere i edat — anomena la figura interior que sosté una autoritat que el jo conscient no posseeix. L'avi al somni que sap què fer. La veu en una decisió difícil que arriba sense invitació i resulta tenir raó. El mestre que has interioritzat tan completament que encara el pots consultar anys després d'haver perdut el contacte.",
+          "Jung afirmava que aquesta figura apareix entre cultures i segles diferents perquè la psique realment organitza part de la seva saviesa fora de l'accés conscient, i la presenta a la consciència en forma de guia. La figura és real per a l'experiència fins i tot quan no hi ha cap ancià real a l'habitació. De vegades apareix com un home vell, de vegades com una dona sàvia, de vegades com un infant que diu alguna cosa que acaba sostenint la situació. La forma varia. La funció es manté.",
+          "La neurociència no té cap anàleg directe. El que sí suggereix és que la integració d'aprenentatges al llarg d'una vida produeix patrons d'avaluació automàtica que el sistema deliberatiu pot consultar gairebé com una font externa. Meditadors de llarga durada, clínics experts, artesans mestres descriuen una fenomenologia similar: un saber que arriba més de pressa que el pensament. El mecanisme és consolidació i reconeixement de patrons. L'experiència sentida s'assembla més a ser aconsellat.",
+          "Rembrandt va pintar la mà d'Aristòtil sobre el cap del bust d'Homer. El pensador viu troba el poeta mort pel tacte. La cadena de medallons al coll d'Aristòtil mostra Alexandre, el deixeble que va esdevenir un altre tipus de mestre. La pintura parla de l'herència de la saviesa a través dels segles i a través de la mortalitat — un Ancià Savi que en reconeix un altre, conscient que ell també esdevindrà un bust sobre el qual una altra mà es posarà."
+        ]
+      },
+      "trickster": {
+        "title": "El Trapella",
+        "subtitle": "Qui travessa fronteres. El destructor que obre pas.",
+        "paragraphs": [
+          "El Trapella és la figura que trenca les regles per mostrar que les regles són arbitràries — i, de vegades, per obrir pas al que les regles deixaven fora. Hermes i Loki, el Boig medieval, el coiot de certes tradicions natives que aquest lloc no s'apropia. Jung va estudiar el Trapella amb cura perquè veia reaparèixer la mateixa figura entre cultures i al llarg dels segles, fent la mateixa feina disruptiva: revelar les costures de l'ordre construït jugant-hi.",
+          "El que aquesta figura protegeix és contra la rigidesa. Una psique organitzada amb massa estretor al voltant d'una imatge de si mateixa necessita que arribi el Trapella i bolqui la taula, de vegades de manera humiliant, perquè les parts desconegudes puguin reentrar. Al Trapella poques vegades se l'admira en el moment. Sovint és retrospectivament necessari.",
+          "La neurociència no té res a dir sobre cap Trapella. Sí que té evidència que els models de predicció rígids es trenquen davant prou sorpresa, que els autoconceptes fràgils es trenquen abans de doblegar-se, que el que sembla una il·luminació sovint arriba només després d'un tipus particular de disrupció. El mecanisme no avala la figura. La funció que la figura descrivia segueix passant.",
+          "El tríptic del Bosch és el Trapella com a cosmologia. Edèn, l'extens i estrany jardí on s'allibera l'apetit, i les conseqüències. Cap dels plafons és la moralitat. El Trapella és tota la disposició — el que es creua, el que es torna a creuar, el que ja no es pot tornar a posar com era."
+        ]
+      }
+    }
   },
   "threshold": {
     "label": "El Llindar",

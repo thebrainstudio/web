@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { useBrainStageStore } from "@/store/useBrainStageStore";
 import { Caption } from "@/components/typography/Typography";
 import { sampleTimeline, type MusicTrack } from "@/lib/musicTracks";
@@ -16,6 +17,7 @@ type Props = {
  * pattern on the persistent brain; clicking switches the player.
  */
 export default function TrackChooser({ tracks, activeId, onSelect }: Props) {
+  const tt = useTranslations("music");
   const setActivations = useBrainStageStore((s) => s.setActivations);
 
   const previewMid = useCallback(
@@ -46,7 +48,7 @@ export default function TrackChooser({ tracks, activeId, onSelect }: Props) {
                 : "text-bone-cream/70 hover:text-bone-cream"
             }`}
           >
-            <Caption uppercase>{t.era}</Caption>
+            <Caption uppercase>{(() => { try { return tt(`tracks.${t.id}.era`); } catch { return t.era; } })()}</Caption>
           </button>
         );
       })}

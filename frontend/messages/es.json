@@ -169,7 +169,21 @@
       "headline": "La nana que el cuerpo recuerda antes.",
       "body": "El hipocampo lleva la escena antes de que las regiones del lenguaje lleguen a la letra. Aprendemos a qué huele una cocina a través de la música; volvemos a aprenderlo cada vez que oímos la canción."
     },
-    "footerNote": "Laboratorio de NeuroMúsica · líneas de tiempo simuladas localmente"
+    "footerNote": "Laboratorio de NeuroMúsica · líneas de tiempo simuladas localmente",
+    "tracks": {
+      "sigur-ros-meditation": {
+        "era": "Post-rock · ambient",
+        "framing": "Un drone lento en falsete. La red por defecto se calienta como en la meditación — no porque exista un 'circuito de meditación', sino porque quien escucha deja de intentar seguir."
+      },
+      "coltrane-naima": {
+        "era": "Jazz modal",
+        "framing": "Construido sobre una carta de amor. La corteza auditiva sigue la melodía; la amígdala y las regiones orbitofrontales pesan la calidez — sentimiento y forma llegando al mismo compás."
+      },
+      "thai-lullaby": {
+        "era": "Folclore tailandés · pentatónico",
+        "framing": "Pentatónico, lento, cantado al oído. El hipocampo lleva la escena antes de que las regiones del lenguaje lleguen a la letra — el cuerpo recuerda la canción primero."
+      }
+    }
   },
   "essays": {
     "fieldNote": "Nota de campo",
@@ -231,6 +245,51 @@
       "summary": "Por qué ciertas piezas musicales parecen llegar con peso — corteza auditiva, implicación de la red por defecto, y lo que Jung llamó lo numinoso."
     }
   },
+  "mandalas": {
+    "viewerLabel": "Lo que mirar un mandala hace al cerebro",
+    "viewerIntro": "Elige cualquier mandala más abajo. El cerebro de arriba (persistente en todo el sitio) se desplaza al patrón de activación que la literatura publicada sobre mirar contemplativo predeciría para una imagen así. No es un escáner tuyo. No es una predicción de TRIBE. Una síntesis informada por la literatura — pedagógica, no personal.",
+    "jungianReadingLabel": "Una lectura junguiana",
+    "regionsLabel": "Regiones que se prevé que se eleven al mirar",
+    "regionsIntro": "El cerebro macro de arriba está mostrando ahora el patrón informado por la literatura que aparece debajo. Predicho, no medido. Compuesto pedagógicamente a partir de estudios de atención contemplativa y simetría visual — no a partir de TRIBE, que no toma imágenes de mandalas como entrada.",
+    "whyComposition": "Por qué esta composición, brevemente: mirar contemplativo calma el tirón de saliencia de la amígdala, eleva el precúneo y el PCC (integración de la red por defecto, visuoespacial), implica los giros angulares (centro heteromodal), y recluta suavemente el dmPFC para procesamiento autorreferencial sin carga emocional fuerte. La baja amígdala forma parte de por qué este tipo de atención se siente distinto del arousal.",
+    "items": {
+      "fludd": {
+        "tradition": "Alquimia europea",
+        "description": "El grabado de Robert Fludd correlaciona el microcosmos humano con el macrocosmos cósmico. Anillos concéntricos de elementos y facultades irradian desde una figura central que está a la vez contenida por el cosmos y representada como su espejo. Fludd fue un médico inglés del siglo XVII que trabajaba en la tradición hermético-paracélsica; esta imagen es una de las muchas en su Utriusque Cosmi Historia que diagramaban la misma intuición.",
+        "jungian": "Jung admiraba a Fludd. Leyó la tradición alquímica como un registro de trabajo psicológico — la piedra filosofal como símbolo del Sí Mismo integrado. El marco microcosmos-macrocosmos en particular encaja con su afirmación de que la psique individual y los patrones colectivos mayores son continuos en estructura. El grabado de Fludd, en la lectura de Jung, es una de las declaraciones visuales más claras de que el sí mismo que está siendo trabajado es también un sí mismo que ya contiene el cosmos en miniatura."
+      },
+      "hildegard": {
+        "tradition": "Cristianismo medieval",
+        "description": "Una iluminación del siglo XII del códice de Hildegarda, hecha siglos antes de que Jung naciera. La figura de la humanidad está contenida dentro de círculos concéntricos de cosmos. Los escritos de Hildegarda acompañaban imágenes como esta — textos visionarios en los que la estructura del mundo y la estructura del alma se trataban como el mismo diagrama visto a distintas escalas.",
+        "jungian": "Jung le dio crédito a Hildegarda. Su visión de la humanidad-en-el-cosmos es, para él, una intuición temprana de lo que más tarde llamaría el Sí Mismo — todo el campo dentro del cual el yo consciente es una figura entre muchas. El centro de la imagen no es 'el ser humano'; el centro es todo el arreglo. La individuación de Jung, en este lenguaje, es el lento trabajo de reconocer que el cosmos siempre fue ya el marco mayor."
+      },
+      "bhavachakra": {
+        "tradition": "Budismo tibetano",
+        "description": "El Bhavachakra — a veces traducido como 'la rueda de la vida', aunque 'la rueda del devenir' está más cerca — representa los seis reinos de la existencia condicionada en su anillo interior y los doce eslabones de la coproducción dependiente en su borde exterior. Yama, señor de la muerte, sostiene toda la rueda; el Buda está fuera de ella, señalando la salida. La imagen se pinta tradicionalmente a la entrada de los monasterios tibetanos como herramienta de enseñanza — no como diagrama metafísico sino como mapa de lo que la vida meditativa intenta.",
+        "jungian": "Jung fue cuidadoso con el pensamiento oriental — lo admiraba y advertía contra la tendencia occidental de apropiárselo como decoración. El Bhavachakra es una de las imágenes que leyó con cuidado. La rueda como estructura que contiene todos los reinos de la experiencia, con un centro (los tres venenos) y una cuaternidad multiplicada (seis reinos × doce eslabones), es reconocible para su marco como un mandala en sentido estricto: una organización del territorio psíquico bajo una sola forma contenida. Lo que matizó fue la dirección. El Bhavachakra sugiere una salida — el Buda señalando afuera. La individuación de Jung sugiere integración en vez de fuga. Orientaciones distintas dentro de una lógica visual compartida."
+      },
+      "sri_yantra": {
+        "tradition": "Hindú (tradición Shri Vidya)",
+        "description": "El Sri Yantra es uno de los diagramas construidos con mayor precisión en cualquier tradición visual. Nueve triángulos entrelazados — cuatro apuntando hacia arriba, cinco hacia abajo — generan cuarenta y tres triángulos menores alrededor de un bindu central, el punto. El yantra se usa en la práctica tántrica Shri Vidya como foco meditativo y como diagrama ritual. Su construcción geométrica es técnicamente exigente; lograr que los nueve triángulos se intersecten limpiamente en el bindu es un problema no trivial de geometría plana.",
+        "jungian": "El Sri Yantra se lee, en el lenguaje de Jung, como una de las declaraciones visuales más claras de su coniunctio — la unión de los opuestos. Triángulos hacia arriba y hacia abajo, en una sola figura resuelta. Jung se refirió explícitamente a los yantras orientales al escribir sobre los mandalas y le impactó la convergencia entre esta declaración geométrica de polaridad integrada y los mandalas espontáneos que sus pacientes producían en Europa central mil años después. Misma forma. Vocabulario distinto. Matizó, otra vez, si la convergencia significaba algo metafísico o sólo significaba que la psique se inclina hacia las mismas formas cuando trabaja sobre el mismo problema."
+      },
+      "aztec_sun_stone": {
+        "tradition": "Mexica (azteca)",
+        "description": "La Piedra del Sol — a veces llamada Calendario Azteca, aunque estrictamente no es un calendario — es un monolito de basalto de 24 toneladas tallado por escultores mexicas en las últimas décadas antes del contacto español. Su rostro central es el dios Tonatiuh o el monstruo de la tierra Tlaltecuhtli, según la interpretación. Cuatro eras direccionales rodean el centro; un anillo exterior de glifos y serpientes contiene el conjunto. La piedra fue enterrada tras la Conquista y redescubierta en la Ciudad de México en 1790; desde entonces ha sido objeto de cuidadosa discrepancia académica.",
+        "jungian": "Jung no escribió sobre imaginería mesoamericana con la profundidad que dio a la alquimia o al pensamiento tibetano; fue honesto sobre los límites de su alcance cultural. Pero la Piedra del Sol es inequívocamente un mandala en su sentido estructural — un centro, una cuaternidad (los cuatro soles previos), una contención (el anillo cósmico de glifos), una ruptura de simetría donde las direcciones cardinales rompen el patrón radial. Si el marco de Jung es el adecuado para leer un objeto mexica es una pregunta real. El reconocimiento estructural es honesto; la traducción cultural exige más cuidado del que el propio Jung siempre aportó. Ambas cosas pueden ser verdad."
+      },
+      "chartres_rose": {
+        "tradition": "Cristianismo gótico",
+        "description": "El rosetón del transepto norte de Chartres, donado por Blanca de Castilla h. 1235. María ocupa el centro. El primer anillo es las cuatro palomas del Espíritu Santo y los siete dones; el siguiente, los reyes de Judá; los anillos exteriores, profetas, ángeles y la flor de lis de la casa de la donante. El conjunto mide exactamente doce metros de ancho. Es uno de los tres rosetones de Chartres y se considera ampliamente uno de los objetos más cuidadosamente pensados, teológica y geométricamente, del alto medievo.",
+        "jungian": "Jung leyó los rosetones como mandalas cristianos en sentido estricto. Un centro, cuatro (o doce, los cuatro triplicados), una contención, un ordenamiento de figuras que coloca lo divino y lo humano en relación estructural fija. Para él el rosetón medieval era un ejemplo extraordinario de cómo el mismo impulso mandálico que estaba observando en sus pacientes había sido ya articulado, con pleno propósito teológico, por maestros vidrieros de los siglos XII y XIII y sus mecenas. La imagen tiene la misma forma a la que el inconsciente se inclina cuando se reorganiza — sólo que aquí ha sido organizada deliberadamente, por personas que sabían lo que hacían."
+      },
+      "splendor_solis": {
+        "tradition": "Alquimia europea",
+        "description": "Del Splendor Solis, un manuscrito alquímico de 22 láminas atribuido a Salomon Trismosin e iluminado a fines del siglo XVI. El rey que se ahoga — también llamado dissolutio o solutio en la literatura alquímica — es una de las etapas canónicas de la gran obra. El principio gobernante coronado se hunde en el agua para que algo nuevo pueda formarse. Cada lámina del Splendor Solis está bordeada por marginalia intrincada; la imagen central siempre está trabajando, no decorando.",
+        "jungian": "Jung dedicó los volúmenes 12, 13, 14 y 16 de sus Obras Completas a la alquimia. Leyó los manuscritos como el registro más extenso de trabajo psicológico en Occidente que sobrevive antes de que existiera el término 'psicológico'. El rey que se ahoga, en su lectura, es una imagen precisa: el yo consciente — el principio gobernante — tiene que disolverse, parcial y temporalmente, para que la individuación avance. La imagen no es química metafísica. Son los alquimistas tratando de decir algo sobre la transformación que aún no tenían lenguaje psicológico para nombrar. El proyecto de Jung, en muchos sentidos, fue darles ese lenguaje preservando lo que ya habían visto correctamente."
+      }
+    }
+  },
   "archetypes": {
     "label": "Los Arquetipos",
     "opening": "Hay figuras en la psique que no son tú.",
@@ -268,7 +327,69 @@
     "linkThreshold": "Volver al umbral",
     "linkFieldNotes": "Leer las notas de campo",
     "linkHome": "Volver a la superficie",
-    "footer": "Fuentes · todas las obras en dominio público · procedencia bajo cada ⓘ"
+    "footer": "Fuentes · todas las obras en dominio público · procedencia bajo cada ⓘ",
+    "prose": {
+      "persona": {
+        "title": "La Persona",
+        "subtitle": "La cara que llevas, la cara que olvidas que llevas.",
+        "paragraphs": [
+          "Persona, en el teatro latino, era la máscara que el actor sostenía ante el rostro. Jung mantuvo la palabra por lo que señalaba: la cara con la que el mundo social se encuentra. No exactamente fingimiento. La mayor parte del tiempo la persona es necesaria y casi involuntaria — la versión de ti que sabe ser un colega, una hija, un cliente en una tienda. El problema no es que haya una persona. El problema es olvidar que lo es.",
+          "La observación clínica es que quienes se identifican con su persona — quienes creen que el papel es el todo — entran en una dificultad particular. Las partes no vividas no desaparecen; se acumulan. Aparecen después como agotamiento, o aburrimiento, o una lenta fuga de sentido, o el hecho extraño de que una vida exitosa se sienta como la de otra persona. Jung le dio un nombre: la inflación de la persona.",
+          "La neurociencia no tiene una región de la persona. Lo que sí tiene es investigación sobre la automonitorización, sobre el esfuerzo prefrontal de sostener un yo presentado, sobre el coste de la supresión a lo largo del tiempo. El mecanismo no se ajusta limpiamente al término de Jung, pero el coste converge: un yo continuamente representado es también un yo continuamente editado, y la edición tiene un precio metabólico.",
+          "La dama de Holbein está compuesta, terminada, posable. La ardilla en su brazo y el estornino en su hombro son accesorios de otro orden — pequeñas criaturas privadas mantenidas junto a un rostro público. Lo que el retrato pregunta, muy en voz baja, es cuál de ellos se parece más a ella."
+        ]
+      },
+      "shadow": {
+        "title": "La Sombra",
+        "subtitle": "Lo que te has negado a saber sobre ti.",
+        "paragraphs": [
+          "La sombra es lo que te has negado a saber sobre ti. No el secreto más profundo y oscuro — esos sueles conocerlos. La sombra es lo que no puedes ver porque verlo exigiría reestructurar quién crees que eres. La crueldad en la persona amable. La necesidad en la que se basta a sí misma. El desprecio en la empática.",
+          "Jung afirmaba que todo el mundo tiene una, que no es opcional, y que pretender lo contrario es el mecanismo principal por el que la gente hace daño. La sombra no desaparece al ser negada; se manifiesta por proyección. Lo que no puedes ver en ti, lo ves por todas partes en los demás — a menudo con una intensidad extraña que delata la proyección.",
+          "La neurociencia no tiene nada directo que decir sobre la sombra. No hay una región de sombra en el cerebro. Pero la investigación sobre inhibición, supresión y confabulación describe el mecanismo por el cual hay contenido sostenido fuera del acceso consciente, y cómo el coste de sostenerlo crece con el tiempo. La fenomenología es de Jung. El coste es real.",
+          "Caravaggio se pintó a sí mismo como Goliat, la cabeza que el muchacho sostiene por el pelo. El autorretrato bajo derrota es uno de los gestos más antiguos del arte. Lo que él miraba — lo que nos hizo mirar — es lo que todo proyecto de sombra acaba pidiendo: la disposición a ver lo que preferirías no ver, y no apartar la mirada."
+        ]
+      },
+      "anima": {
+        "title": "La Ánima",
+        "subtitle": "La figura interior del género que no eres.",
+        "paragraphs": [
+          "Jung usó ánima y ánimus para nombrar la figura interior del género que uno no es — el aspecto contrasexual de la psique. En los hombres, ánima: la femineidad interior. En las mujeres, ánimus: la masculinidad interior. Creía que la figura contrasexual no integrada era la fuente de la mayor parte de las dificultades relacionales, porque la figura se proyecta sobre personas reales y la relación tiene que sostener un peso que no le pertenece.",
+          "Los términos han envejecido de modos complicados. El binarismo estricto de masculino y femenino con el que Jung trabajaba no es como habla la psicología contemporánea. Pero la observación de fondo sobrevive al vocabulario: hay un registro interior de la psique que no encaja con la identidad de superficie, y pretender lo contrario tiene costes. Sustituye el lenguaje según necesites. La estructura a la que apuntaba es real.",
+          "La neurociencia, otra vez, no tiene nada directo que decir sobre una figura interior de un tipo específico. Lo que sí tiene son décadas de investigación sobre con cuánta fuerza modelamos otras mentes, lo dispuestos que estamos a proyectar nuestras partes no reconocidas sobre ellas, y lo difícil que es saber si lo que sentimos respecto a otra persona es sobre todo sobre ella o sobre todo sobre nosotros.",
+          "Waterhouse pintó a la Dama de Shalott dejando la torre. Ha aflojado la cadena. Va hacia una muerte que medio conoce. La pintura es sobre una figura interior que se vuelve visible lo bastante como para actuar, y el coste de esa visibilidad. Como quiera que llames hoy a esta figura, el momento en que ella sube a la barca sigue siendo un momento real en la vida sentida de ser un sí mismo."
+        ]
+      },
+      "self": {
+        "title": "El Sí Mismo",
+        "subtitle": "El todo del que el yo consciente es una parte pequeña.",
+        "paragraphs": [
+          "El Sí Mismo — en mayúscula — fue el término de Jung para la psique entera, incluyendo el yo consciente y el inconsciente mucho más grande del que el yo es una pequeña habitación iluminada. La obra de toda una vida de la individuación, para Jung, era el proceso lento y a menudo no deseado de hacer más habitable a la conciencia esa totalidad.",
+          "El peligro de la palabra, sobre todo en uso popular, es que suena grandiosa. Yo auténtico. Verdadero yo. La industria del bienestar ha hecho daño aquí. El Sí Mismo de Jung no es una esencia interior perfeccionada que se debe descubrir. Es el campo más amplio dentro del cual una persona realmente vive, mucho del cual no puede ver y nunca verá del todo. El trabajo es comercio honesto con ese campo, no llegada.",
+          "La neurociencia contemporánea no avala el término. Lo que sí ofrece, cada vez más, es evidencia de que el yo consciente es una fracción pequeña del trabajo del cerebro — que la actividad silenciosa de la red por defecto, la memoria implícita, el procesamiento predictivo y la evaluación afectiva automática llevan la mayor parte de la carga. La arquitectura no es la metafísica. Pero la arquitectura apoya la intuición de Jung de que la conciencia es la parte pequeña.",
+          "Hildegarda de Bingen pintó la figura de la humanidad contenida dentro de círculos concéntricos de cosmos, cuatro siglos antes de Jung. El Sí Mismo en su imagen no es el humano en el centro; es todo el arreglo. El centro está contenido, no es central. Jung conocía su obra. Bebió de ella. La imagen se gana su lugar en esta sala."
+        ]
+      },
+      "wise": {
+        "title": "El Anciano Sabio",
+        "subtitle": "La guía interior. No siempre vieja. No siempre un hombre.",
+        "paragraphs": [
+          "El Anciano Sabio — término de Jung, con los matices obvios sobre género y edad — nombra a la figura interior que sostiene una autoridad que el yo consciente no posee. El abuelo en el sueño que sabe qué hacer. La voz en una decisión difícil que llega sin invitación y resulta tener razón. El maestro que has interiorizado tan completamente que aún puedes consultarlo años después de perder contacto.",
+          "Jung afirmaba que esta figura aparece en culturas y siglos distintos porque la psique realmente organiza parte de su sabiduría fuera del acceso consciente, y se la presenta a la conciencia en forma de guía. La figura es real para la experiencia incluso cuando no hay un anciano real en la habitación. A veces aparece como un hombre viejo, a veces como una mujer sabia, a veces como un niño diciendo algo que resulta sostener la situación. La forma varía. La función se mantiene.",
+          "La neurociencia no tiene un análogo directo. Lo que sí sugiere es que la integración de aprendizajes a lo largo de una vida produce patrones de evaluación automática que el sistema deliberativo puede consultar casi como una fuente externa. Meditadores de larga data, clínicos expertos, artesanos maestros describen una fenomenología similar: un saber que llega más rápido que el pensamiento. El mecanismo es consolidación y reconocimiento de patrones. La experiencia sentida se parece más a ser aconsejado.",
+          "Rembrandt pintó la mano de Aristóteles sobre la cabeza del busto de Homero. El pensador vivo se encuentra con el poeta muerto a través del tacto. La cadena de medallones alrededor del cuello de Aristóteles muestra a Alejandro, el discípulo que se convirtió en otro tipo de maestro. La pintura habla de la herencia de la sabiduría a través de los siglos y a través de la mortalidad — un Anciano Sabio que reconoce a otro, con la conciencia de que él también será un busto sobre el que otra mano se posará."
+        ]
+      },
+      "trickster": {
+        "title": "El Burlador",
+        "subtitle": "El que cruza fronteras. El destructor que abre paso.",
+        "paragraphs": [
+          "El Burlador es la figura que rompe las reglas para mostrar que las reglas son arbitrarias — y, a veces, para abrir paso a lo que las reglas dejaban fuera. Hermes y Loki, el Loco medieval, el coyote de ciertas tradiciones nativas que este sitio no se apropia. Jung estudió al Burlador con cuidado porque vio reaparecer la misma figura entre culturas y a lo largo de los siglos, haciendo el mismo trabajo disruptivo: revelar las costuras del orden construido jugando con ellas.",
+          "Lo que esta figura protege es contra la rigidez. Una psique organizada con demasiada estrechez en torno a una imagen de sí misma necesita que llegue el Burlador y vuelque la mesa, a veces de manera humillante, para que las partes desconocidas puedan reentrar. Al Burlador rara vez se le admira en el momento. A menudo es retrospectivamente necesario.",
+          "La neurociencia no tiene nada que decir sobre un Burlador. Sí tiene evidencia de que los modelos de predicción rígidos se rompen ante suficiente sorpresa, de que los autoconceptos frágiles se quiebran antes que doblarse, de que lo que parece una iluminación a menudo llega sólo después de un tipo particular de disrupción. El mecanismo no avala la figura. La función que la figura describía sigue ocurriendo.",
+          "El tríptico del Bosco es el Burlador como cosmología. Edén, el extenso y extraño jardín donde el apetito se desata, y las consecuencias. Ninguno de los paneles es la moraleja. El Burlador es todo el arreglo — lo que se cruza, lo que se cruza de nuevo, lo que ya no se puede volver a poner como estaba."
+        ]
+      }
+    }
   },
   "threshold": {
     "label": "El Umbral",

@@ -102,10 +102,26 @@ export default async function ArchetypesPage({
       </section>
 
       {/* Shipped archetypes */}
-      {shipped.map((arch, i) => (
+      {shipped.map((arch, i) => {
+        const proseKey = arch.prose_id ?? arch.id;
+        let title = arch.title;
+        let subtitle = arch.subtitle;
+        let paragraphs: string[] | null = null;
+        try {
+          title = t(`prose.${proseKey}.title`);
+          subtitle = t(`prose.${proseKey}.subtitle`);
+          const p = t.raw(`prose.${proseKey}.paragraphs`);
+          if (Array.isArray(p)) paragraphs = p as string[];
+        } catch {
+          /* fallback to manifest + TS prose */
+        }
+        return (
         <ArchetypeScene
           key={arch.id}
           archetype={arch}
+          title={title}
+          subtitle={subtitle}
+          paragraphs={paragraphs}
           flip={i % 2 === 1}
           mandalaSrc={
             i % 2 === 0
@@ -113,7 +129,8 @@ export default async function ArchetypesPage({
               : "/mandalas/hildegard_codex.jpg"
           }
         />
-      ))}
+        );
+      })}
 
       {/* Upcoming archetypes (TODO_IMAGE) */}
       {upcoming.length > 0 && (
@@ -317,14 +334,21 @@ export default async function ArchetypesPage({
 
 function ArchetypeScene({
   archetype,
+  title,
+  subtitle,
+  paragraphs,
   flip,
   mandalaSrc,
 }: {
   archetype: ManifestArchetype;
+  title: string;
+  subtitle: string;
+  paragraphs: string[] | null;
   flip: boolean;
   mandalaSrc: string;
 }) {
   const prose = archetypeProse[archetype.prose_id ?? archetype.id];
+  const ps = paragraphs ?? prose?.paragraphs ?? [];
   const img = archetype.primary_image!;
   return (
     <section className="relative px-6 py-28 md:px-10 md:py-40">
@@ -351,17 +375,17 @@ function ArchetypeScene({
         </div>
         <div className="md:col-span-7 md:[direction:ltr]">
           <Caption uppercase className="text-brass">
-            {archetype.title}
+            {title}
           </Caption>
           <Display
             italic
             as="h2"
             className="mt-8 md:!text-[3rem] md:!leading-[1.1]"
           >
-            {archetype.subtitle}
+            {subtitle}
           </Display>
           <div className="mt-10 space-y-6">
-            {prose?.paragraphs.map((p, i) => (
+            {ps.map((p, i) => (
               <Body key={i} className={i === 0 ? "" : "text-bone-cream/80"}>
                 {p}
               </Body>

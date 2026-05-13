@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { useBrainStageStore } from "@/store/useBrainStageStore";
 import {
   Body,
@@ -28,10 +29,13 @@ export default function TrackPlayer({
   primary,
   driveBrain = true,
 }: Props) {
+  const t = useTranslations("music");
   const [time, setTime] = useState(0);
   const [playing, setPlaying] = useState(false);
   const setActivations = useBrainStageStore((s) => s.setActivations);
   const resetIdle = useBrainStageStore((s) => s.resetIdle);
+  const era = (() => { try { return t(`tracks.${track.id}.era`); } catch { return track.era; } })();
+  const framing = (() => { try { return t(`tracks.${track.id}.framing`); } catch { return track.framing; } })();
 
   useEffect(() => {
     if (!driveBrain) return;
@@ -60,7 +64,7 @@ export default function TrackPlayer({
   return (
     <div className="w-full">
       <Caption uppercase className={primary ? "text-brass" : "text-bone-cream/55"}>
-        {track.era}
+        {era}
       </Caption>
       <Heading as="h3" className="mt-3 font-[200]">
         {track.title}
@@ -69,7 +73,7 @@ export default function TrackPlayer({
         {track.attribution}
       </Caption>
       <Body italic className="text-bone-cream/65 mt-6 max-w-[34rem]">
-        {track.framing}
+        {framing}
       </Body>
 
       <div className="mt-10">
