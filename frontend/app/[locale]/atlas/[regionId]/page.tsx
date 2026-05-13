@@ -12,7 +12,7 @@ import {
   Mono,
 } from "@/components/typography/Typography";
 import { regions, regionById, type RegionId } from "@/lib/regions";
-import { atlasEntries } from "@/content/atlas";
+import { atlasEntryForLocale } from "@/content/atlas";
 import {
   YEO_NETWORKS,
   allCitationsForEntry,
@@ -64,7 +64,7 @@ export default async function AtlasRegionPage({
 
   const region = regionById[regionId as RegionId];
   if (!region) notFound();
-  const entry = atlasEntries[region.id];
+  const entry = atlasEntryForLocale(region.id, locale);
 
   const t = await getTranslations({ locale, namespace: "atlas" });
   const tRegions = await getTranslations({ locale, namespace: "regions" });

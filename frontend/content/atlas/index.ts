@@ -1,12 +1,20 @@
 /**
- * Atlas content registry.
+ * Atlas content registry — locale-aware.
  *
- * Each of the 20 regions has an `AtlasEntry`. All 20 are now complete
- * with full seven-section prose and PubMed-verified citations. The
- * `stub()` helper is preserved for the convenience of future
- * additions or temporary reverts.
+ * Each of the 20 regions has a canonical English `AtlasEntry` here.
+ * Per-locale translations live under ./{locale}/{regionId}.ts and
+ * export an `AtlasTranslation` — only the localizable strings
+ * (fullName, disorder names + one-liners, prose section paragraphs).
  *
- * Authoring discipline (read before editing any page):
+ * The merger overlays the locale strings onto the canonical English
+ * entry at lookup time. Missing keys fall back to English per-field,
+ * per-section, per-disorder, so partial coverage is always safe.
+ *
+ * Citation markers `[cite:id]` and Markdown emphasis (*word*) are
+ * preserved verbatim in translated paragraphs so the Prose renderer's
+ * parsers and `citationsForSection` extraction keep working.
+ *
+ * Authoring discipline (read before editing any English page):
  *   - Cite every functional claim. Use `[cite:id]` markers; the
  *     citation id must exist in lib/citations.ts.
  *   - Hedge appropriately. "Implicated in" not "responsible for".
@@ -18,8 +26,9 @@
 
 import type { AtlasEntry, YeoNetwork } from "@/lib/atlas";
 import type { RegionId } from "@/lib/regions";
+import type { AtlasTranslation } from "./types";
 
-// Left-hemisphere pages.
+// Canonical English entries — left-hemisphere pages.
 import { hippLeftAtlas } from "./hipp_left";
 import { ifgLeftAtlas } from "./ifg_left";
 import { pccAtlas } from "./pcc";
@@ -33,7 +42,7 @@ import { atlLeftAtlas } from "./atl_left";
 import { mtgLeftAtlas } from "./mtg_left";
 import { hgLeftAtlas } from "./hg_left";
 
-// Right-hemisphere pages.
+// Canonical English entries — right-hemisphere pages.
 import { ifgRightAtlas } from "./ifg_right";
 import { pstgRightAtlas } from "./pstg_right";
 import { mtgRightAtlas } from "./mtg_right";
@@ -42,6 +51,28 @@ import { aglRightAtlas } from "./agl_right";
 import { hgRightAtlas } from "./hg_right";
 import { amygRightAtlas } from "./amyg_right";
 import { hippRightAtlas } from "./hipp_right";
+
+// Spanish translations.
+import { ifgLeftAtlasEs } from "./es/ifg_left";
+import { ifgRightAtlasEs } from "./es/ifg_right";
+import { pstgLeftAtlasEs } from "./es/pstg_left";
+import { pstgRightAtlasEs } from "./es/pstg_right";
+import { mtgLeftAtlasEs } from "./es/mtg_left";
+import { mtgRightAtlasEs } from "./es/mtg_right";
+import { atlLeftAtlasEs } from "./es/atl_left";
+import { atlRightAtlasEs } from "./es/atl_right";
+import { aglLeftAtlasEs } from "./es/agl_left";
+import { aglRightAtlasEs } from "./es/agl_right";
+import { hgLeftAtlasEs } from "./es/hg_left";
+import { hgRightAtlasEs } from "./es/hg_right";
+import { vmpfcAtlasEs } from "./es/vmpfc";
+import { dmpfcAtlasEs } from "./es/dmpfc";
+import { pccAtlasEs } from "./es/pcc";
+import { precuneusAtlasEs } from "./es/precuneus";
+import { amygLeftAtlasEs } from "./es/amyg_left";
+import { amygRightAtlasEs } from "./es/amyg_right";
+import { hippLeftAtlasEs } from "./es/hipp_left";
+import { hippRightAtlasEs } from "./es/hipp_right";
 
 /**
  * Helper for creating a stub entry. Retained for the convenience of
@@ -109,6 +140,85 @@ export const atlasEntries: Record<RegionId, AtlasEntry> = {
   hipp_right: hippRightAtlas,
 };
 
+/**
+ * Locale → region id → translation overlay. Missing keys fall through
+ * to the canonical English value at lookup time.
+ */
+const translationsByLocale: Record<
+  string,
+  Partial<Record<RegionId, AtlasTranslation>>
+> = {
+  es: {
+    ifg_left: ifgLeftAtlasEs,
+    ifg_right: ifgRightAtlasEs,
+    pstg_left: pstgLeftAtlasEs,
+    pstg_right: pstgRightAtlasEs,
+    mtg_left: mtgLeftAtlasEs,
+    mtg_right: mtgRightAtlasEs,
+    atl_left: atlLeftAtlasEs,
+    atl_right: atlRightAtlasEs,
+    agl_left: aglLeftAtlasEs,
+    agl_right: aglRightAtlasEs,
+    hg_left: hgLeftAtlasEs,
+    hg_right: hgRightAtlasEs,
+    vmpfc: vmpfcAtlasEs,
+    dmpfc: dmpfcAtlasEs,
+    pcc: pccAtlasEs,
+    precuneus: precuneusAtlasEs,
+    amyg_left: amygLeftAtlasEs,
+    amyg_right: amygRightAtlasEs,
+    hipp_left: hippLeftAtlasEs,
+    hipp_right: hippRightAtlasEs,
+  },
+};
+
+function mergeTranslation(
+  base: AtlasEntry,
+  t: AtlasTranslation | undefined,
+): AtlasEntry {
+  if (!t) return base;
+  return {
+    ...base,
+    fullName: t.fullName ?? base.fullName,
+    disorders: base.disorders.map((d) => {
+      const dt = t.disorders?.[d.id];
+      if (!dt) return d;
+      return {
+        ...d,
+        name: dt.name ?? d.name,
+        oneLine: dt.oneLine ?? d.oneLine,
+      };
+    }),
+    anatomyAndLandmarks: t.anatomyAndLandmarks ?? base.anatomyAndLandmarks,
+    functionSection: t.functionSection ?? base.functionSection,
+    cellTypesSection: t.cellTypesSection ?? base.cellTypesSection,
+    connectionsSection: t.connectionsSection ?? base.connectionsSection,
+    clinicalContext: t.clinicalContext ?? base.clinicalContext,
+    historyOfDiscovery: t.historyOfDiscovery ?? base.historyOfDiscovery,
+  };
+}
+
+/**
+ * Locale-aware AtlasEntry lookup. Falls back to English per field
+ * when the locale lacks a translation.
+ */
+export function atlasEntryForLocale(id: RegionId, locale: string): AtlasEntry {
+  const base = atlasEntries[id];
+  return mergeTranslation(base, translationsByLocale[locale]?.[id]);
+}
+
+/** Locale-aware version of `atlasEntries`. */
+export function atlasEntriesForLocale(
+  locale: string,
+): Record<RegionId, AtlasEntry> {
+  const out: Record<RegionId, AtlasEntry> = {} as Record<RegionId, AtlasEntry>;
+  for (const id of Object.keys(atlasEntries) as RegionId[]) {
+    out[id] = atlasEntryForLocale(id, locale);
+  }
+  return out;
+}
+
+/** Legacy English-only lookup. New code should prefer the locale-aware variant. */
 export function atlasEntryFor(id: RegionId): AtlasEntry {
   return atlasEntries[id];
 }
