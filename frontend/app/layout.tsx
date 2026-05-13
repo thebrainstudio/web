@@ -10,9 +10,8 @@ import SmoothScroll from "@/components/motion/SmoothScroll";
 import BrainStage from "@/components/brain/BrainStage";
 import RegionAnnouncer from "@/components/brain/RegionAnnouncer";
 import SiteHeader from "@/components/nav/SiteHeader";
-import CursorFollower from "@/components/motion/CursorFollower";
-import AmbientDrone from "@/components/audio/AmbientDrone";
 import FilmGrain from "@/components/atmospheric/FilmGrain";
+import DeferredClient from "@/components/client/DeferredClient";
 import { Caption } from "@/components/typography/Typography";
 
 export const metadata: Metadata = {
@@ -70,8 +69,7 @@ export default function RootLayout({
             {children}
           </main>
           <RegionAnnouncer />
-          <CursorFollower />
-          <AmbientDrone />
+          <DeferredClient />
           <FilmGrain />
         </SmoothScroll>
       </body>
