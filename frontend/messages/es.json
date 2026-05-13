@@ -124,6 +124,118 @@
       "about": "Acerca"
     }
   },
+  "about": {
+    "opening": {
+      "label": "Acerca · Fase 9",
+      "heading": "Una versión del siglo XXI de una pregunta más antigua.",
+      "body": "Este sitio es un experimento para ver la mente a través de un modelo codificador del cerebro. Lo que sigue es lo que el modelo es, lo que no es, y las personas sobre cuyo trabajo se construye."
+    },
+    "what": {
+      "step1": {
+        "label": "Qué es TRIBE · I",
+        "heading": "Un modelo que aprendió el mapa del estímulo a la fMRI.",
+        "body": "TRIBE v2 de Meta fue entrenado con miles de horas de registros en los que los participantes escuchaban, miraban o leían material dentro de un escáner de resonancia magnética. Aprende a predecir dónde, en la corteza, tiende a activarse un estímulo dado — no en una persona en concreto, sino en promedio."
+      },
+      "step2": {
+        "label": "Qué es TRIBE · II",
+        "heading": "Un codificador, no un decodificador.",
+        "body": "Mapea entradas a respuestas cerebrales. No lee tu cerebro. No invierte la respuesta para devolverla a un pensamiento. La flecha apunta hacia donde apunta; el sitio la usa así."
+      },
+      "step3": {
+        "label": "Qué es TRIBE · III",
+        "heading": "Un eco ponderado de los participantes.",
+        "body": "La activación predicha se aproxima a la respuesta cerebral promedio para esa entrada. La distancia entre ese promedio y el tuyo es parte de lo que este sitio busca mostrar, nunca esconder."
+      }
+    },
+    "isnt": {
+      "label": "Lo que no hace",
+      "heading": "Límites honestos, expuestos sin disculpa.",
+      "body1": "El modelo está entrenado en inglés. La sala Transcultural muestra qué ocurre cuando se le da tailandés: las regiones del lenguaje responden menos, la predicción se degrada y el silencio es real. Un modelo que no puede sostener una lengua sostiene menos mentes.",
+      "body2": "La fMRI misma es lenta. La respuesta hemodinámica va detrás de la neural unos cinco segundos. Cualquier cosa que veas aquí es, por diseño, una predicción de una medición que va retrasada respecto al pensamiento.",
+      "body3": "Las etiquetas de las regiones son un vocabulario de trabajo, no anatomía. El cerebro está en red; las funciones están distribuidas; mapear un sentimiento a un único punto brillante es una historia que contamos porque resulta útil. El modelo no cree en la historia. Tú tampoco deberías.",
+      "body4": "Las advertencias anteriores son la arquitectura. El sitio sólo funciona si las mantienes a la vista mientras miras."
+    },
+    "jung": {
+      "label": "Una idea más antigua",
+      "body": "A principios del siglo XX, Carl Jung nos dio un vocabulario para partes de la mente que no hablan. Un siglo después, los modelos codificadores del cerebro tratan de hacer visibles esas partes. Lenguaje distinto, proyecto emparentado.",
+      "footnote": "— una nota al pie, ligera"
+    },
+    "twoLanguages": {
+      "label": "Sostener dos lenguas a la vez",
+      "heading": "Neurociencia y psicología profunda, sostenidas en paralelo.",
+      "body1": "Carl Jung construyó una fenomenología de la experiencia interior — un vocabulario para los patrones que observó en los sueños, el arte, el mito y el trabajo clínico. No hacía neurociencia. Nombraba la estructura sentida de la psique, con el rigor que la observación cuidadosa permite cuando el mecanismo queda fuera de alcance.",
+      "body2": "Este sitio no afirma que las regiones cerebrales SEAN conceptos junguianos. No afirma que los neurotransmisores se correspondan con los arquetipos. No afirma que la sincronicidad, el inconsciente colectivo como depósito literal, o la imaginación activa, tengan un fundamento neurocientífico directo. Algo de lo que Jung vio era acertado en otro idioma; algo era erróneo; mucho vive en un registro donde ninguno de los dos lados puede reclamar la totalidad del territorio. Sostener la tensión con honestidad es el trabajo.",
+      "body3": "Un pequeño número de pensadores contemporáneos hace este trabajo de puente con cuidado. The Hidden Spring de Mark Solms argumenta a favor de una base afectiva de la conciencia que toca tanto el neuropsicoanálisis como el marco somático de Damasio. The Master and His Emissary de Iain McGilchrist, a pesar de la apropiación pop que ha sido peor que el libro mismo, es riguroso sobre la especialización hemisférica sin sobreafirmar. La neurología clínica de Oliver Sacks es el ejemplo de tomar en serio tanto mecanismo como sentido. Esa es la compañía que el sitio guarda.",
+      "body4": "La tentación de mistificar es real. Energía, frecuencias, vibración, manifestación — palabras que han causado daño tanto a la neurociencia como al proyecto real de Jung. La disciplina de rechazarlas es parte del sitio.",
+      "body5": "La tentación opuesta — reducir — también es real. 'El cerebro' como la única explicación legítima, con todo lo que no puede reducirse a mecanismo tratado como ilusión o como mecanismo aún-por-descubrir. La disciplina de rechazar esto también es parte del sitio. Hay preguntas más grandes que cualquier vocabulario que las nombre.",
+      "body6": "No eres tu cerebro. No eres tu inconsciente. Eres aquello que se pregunta cuál de los dos es."
+    },
+    "balance": {
+      "label": "Dónde acertó Jung, dónde se equivocó",
+      "heading": "Era una persona, trabajando con lo que tenía al alcance.",
+      "intro": "Este sitio toma en serio el trabajo de Jung sin tratarlo como oráculo. Era una persona — brillante, prolífica, equivocada en cosas concretas, acertada en otras, como suele ocurrir a quienes lo intentan con fuerza durante mucho tiempo. Honrar su trabajo es ser honestos respecto a ambas columnas.",
+      "rightLabel": "Donde acertó",
+      "right1": "Que la conciencia es la parte pequeña de la mente, y que la mayor parte de lo que produce pensamiento, sentimiento y acción ocurre fuera de ella. El procesamiento predictivo, el trabajo sobre la red por defecto, la memoria implícita y la evaluación automática han hecho visible esa escala.",
+      "right2": "Que la memoria es reconstrucción, no recuperación, y que el pasado se reescribe continuamente al servicio del significado presente. La investigación sobre reconsolidación le ha dado un mecanismo.",
+      "right3": "Que el contenido desconocido no desaparece — se proyecta sobre otros, a menudo con una intensidad extraña, y el coste de no verlo crece. La investigación sobre inhibición y supresión describe el mecanismo de mantenerlo fuera; el coste converge.",
+      "right4": "Que la cognición simbólica y figural no es una capa primitiva bajo el pensamiento racional, sino un modo paralelo de hacer sentido con legitimidad propia. El trabajo narrativo y figural del hemisferio derecho es real.",
+      "right5": "Que las imágenes recurrentes entre culturas — círculo, cuaternidad, héroe, sombra, madre — apuntan a rasgos estructurales de cómo las mentes se organizan, no a coincidencias.",
+      "wrongLabel": "Donde se equivocó, o se extralimitó",
+      "wrong1": "El inconsciente colectivo como un depósito literalmente heredado de contenido ancestral. La biología contemporánea no respalda la memoria heredada en este sentido. La convergencia de imaginería entre culturas se explica mejor por primitivos cognitivos compartidos que por un reservorio transgeneracional.",
+      "wrong2": "La sincronicidad como un principio conector acausal y con sentido, equiparable a la causalidad. La fenomenología de la coincidencia significativa es real — la gente la experimenta — pero la afirmación metafísica que Jung hizo al respecto no tiene asidero científico.",
+      "wrong3": "El binarismo estricto masculino/femenino que organizaba su teoría anima/animus. La observación de fondo sobre una figura interior contrasexual sobrevive en forma más débil; el binario que la enmarcó ha envejecido mal, y el trabajo contemporáneo de psicología profunda ha corregido el vocabulario.",
+      "wrong4": "Algunas de sus lecturas de tradiciones no occidentales — el pensamiento oriental en particular — hablaban más de Jung que de las tradiciones. Lo reconoció en partes de su obra y lo pasó por alto en otras. Su alcance cultural era real pero no ilimitado.",
+      "wrong5": "Figuras arquetípicas específicas (anciano sabio, ánima, ánimus, embaucador) como constantes psicológicas universales. Las figuras recurren, pero la intensidad de la especificidad transcultural que él afirmaba no es lo que la antropología contemporánea respalda en realidad.",
+      "closing": "Ambas columnas forman parte de lo que lo hace todavía digno de lectura. Un teórico que hubiera acertado en todo no habría estado lo bastante cerca de la textura real de la mente como para ser útil. Jung estaba cerca. A veces estaba demasiado cerca para ver con claridad. Era, en eso, una persona."
+    },
+    "reading": {
+      "label": "Lecturas adicionales",
+      "heading": "Ocho libros que informaron este sitio.",
+      "neuroLabel": "Neurociencia que toma la fenomenología en serio",
+      "solmsDesc": "La base afectiva de la conciencia, desde el neuropsicoanálisis.",
+      "damasioDesc": "Marcadores somáticos, el yo sentido, el cuerpo en el cerebro.",
+      "sacksDesc": "Neurología clínica escrita con voz humana.",
+      "kandelDesc": "La base molecular de la memoria como reconstrucción.",
+      "jungLabel": "Fuentes primarias de Jung",
+      "mdrDesc": "Registrado por Aniela Jaffé. La entrada más clara a su pensamiento.",
+      "cw9Desc": "La formulación técnica de los arquetipos.",
+      "contemporaryLabel": "Pensadores contemporáneos en la costura",
+      "mcgilchristDesc": "Perspectivas hemisféricas. Mejor de lo que sugiere su recepción pop.",
+      "sethDesc": "Procesamiento predictivo y la alucinación controlada de ser un yo."
+    },
+    "citations": {
+      "label": "Citas",
+      "heading": "De pie sobre los hombros de gigantes bien citados.",
+      "body": "Cada afirmación fuerte en este sitio apunta a uno de estos artículos. Cuando leas una frase sobre la región de Broca, la red por defecto o la amígdala que no te resulte segura, esto es de donde viene la seguridad."
+    },
+    "credits": {
+      "label": "Créditos",
+      "modelLabel": "Modelo",
+      "modelTitle": "Meta AI / FAIR",
+      "modelBody": "Codificador cerebral TRIBE v2. El sitio usa sólo el checkpoint en caché; ningún dato específico de Meta sale de la página.",
+      "builtLabel": "Construido con",
+      "builtTitle": "Anthropic Claude",
+      "builtBody": "La estructura, el sistema tipográfico, las atmósferas, esta sala — todo diseñado en colaboración.",
+      "homeLabel": "Hogar",
+      "homeTitle": "JIPP de Chulalongkorn",
+      "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences. Bangkok y las parejas de estímulos tailandeses vienen de aquí."
+    },
+    "roadmap": {
+      "label": "Hoja de ruta",
+      "heading": "Lo que aún pide construirse.",
+      "phase10": "Inferencia real de TRIBE conectada a un backend FastAPI (en este momento el predictor funciona localmente sobre rasgos léxicos).",
+      "phase11": "Formulario de envío de pares, licencias de audio de la Fase 11, mejora de rendimiento.",
+      "phase12": "Auditoría final de accesibilidad + una capa de anotación de largo aliento sobre las citas.",
+      "phaseLabel": "Fase"
+    },
+    "closing": {
+      "display": "Lo que estamos construyendo es pequeño. La intención no lo es.",
+      "hand": "— más pronto"
+    },
+    "footer": {
+      "line": "The Brain Studio · 2026"
+    }
+  },
   "notFound": {
     "label": "Fuera de la distribución de entrenamiento",
     "title": "No aprendimos esa página.",

@@ -124,6 +124,118 @@
       "about": "Sobre el projecte"
     }
   },
+  "about": {
+    "opening": {
+      "label": "Sobre el projecte · Fase 9",
+      "heading": "Una versió del segle XXI d'una pregunta més antiga.",
+      "body": "Aquest lloc és un experiment per veure la ment a través d'un model codificador del cervell. El que segueix és el que el model és, el que no és, i les persones sobre el treball de les quals es construeix."
+    },
+    "what": {
+      "step1": {
+        "label": "Què és TRIBE · I",
+        "heading": "Un model que va aprendre el mapa de l'estímul a la fMRI.",
+        "body": "TRIBE v2 de Meta va ser entrenat amb milers d'hores de registres en què els participants escoltaven, miraven o llegien material dins d'un escàner de ressonància magnètica. Aprèn a predir on, a la còrtex, tendeix a activar-se un estímul donat — no en una persona en concret, sinó en mitjana."
+      },
+      "step2": {
+        "label": "Què és TRIBE · II",
+        "heading": "Un codificador, no un descodificador.",
+        "body": "Mapeja entrades a respostes cerebrals. No llegeix el teu cervell. No inverteix la resposta per tornar-la a un pensament. La fletxa apunta cap on apunta; aquest lloc la fa servir així."
+      },
+      "step3": {
+        "label": "Què és TRIBE · III",
+        "heading": "Un eco ponderat dels participants.",
+        "body": "L'activació predita s'aproxima a la resposta cerebral mitjana per a aquesta entrada. La distància entre aquesta mitjana i la teva és part del que aquest lloc vol mostrar, mai amagar."
+      }
+    },
+    "isnt": {
+      "label": "El que no fa",
+      "heading": "Límits honestos, exposats sense disculpa.",
+      "body1": "El model està entrenat en anglès. La sala Transcultural mostra què passa quan se li dona tailandès: les regions del llenguatge responen menys, la predicció es degrada i el silenci és real. Un model que no pot sostenir una llengua sosté menys ments.",
+      "body2": "La fMRI mateixa és lenta. La resposta hemodinàmica va al darrere de la neural uns cinc segons. Qualsevol cosa que vegis aquí és, per disseny, una predicció d'una mesura que va endarrerida respecte al pensament.",
+      "body3": "Les etiquetes de les regions són un vocabulari de treball, no anatomia. El cervell està en xarxa; les funcions estan distribuïdes; mapar un sentiment a un únic punt brillant és una història que expliquem perquè resulta útil. El model no creu en la història. Tu tampoc no hi hauries de creure.",
+      "body4": "Els advertiments anteriors són l'arquitectura. El lloc només funciona si els mantens a la vista mentre mires."
+    },
+    "jung": {
+      "label": "Una idea més antiga",
+      "body": "A principis del segle XX, Carl Jung ens va donar un vocabulari per a parts de la ment que no parlen. Un segle després, els models codificadors del cervell intenten fer visibles aquestes parts. Llenguatge diferent, projecte emparentat.",
+      "footnote": "— una nota a peu, lleugera"
+    },
+    "twoLanguages": {
+      "label": "Sostenir dues llengües alhora",
+      "heading": "Neurociència i psicologia profunda, sostingudes en paral·lel.",
+      "body1": "Carl Jung va construir una fenomenologia de l'experiència interior — un vocabulari per als patrons que va observar en somnis, art, mite i treball clínic. No feia neurociència. Anomenava l'estructura sentida de la psique, amb el rigor que l'observació atenta permet quan el mecanisme queda fora d'abast.",
+      "body2": "Aquest lloc no afirma que les regions cerebrals SIGUIN conceptes jungians. No afirma que els neurotransmissors es corresponguin amb els arquetips. No afirma que la sincronicitat, l'inconscient col·lectiu com a dipòsit literal, o la imaginació activa, tinguin un fonament neurocientífic directe. Quelcom del que Jung va veure era encertat en un altre idioma; quelcom era erroni; molt viu en un registre on cap dels dos costats no pot reclamar tot el territori. Sostenir la tensió amb honestedat és la feina.",
+      "body3": "Un nombre petit de pensadors contemporanis fa aquest treball de pont amb cura. The Hidden Spring de Mark Solms argumenta a favor d'una base afectiva de la consciència que toca tant la neuropsicoanàlisi com el marc somàtic de Damasio. The Master and His Emissary de Iain McGilchrist, malgrat l'apropiació pop que ha estat pitjor que el llibre mateix, és rigorós sobre l'especialització hemisfèrica sense sobreafirmar. La neurologia clínica d'Oliver Sacks és l'exemple de prendre's seriosament tant mecanisme com sentit. Aquesta és la companyia que el lloc guarda.",
+      "body4": "La temptació de mistificar és real. Energia, freqüències, vibració, manifestació — paraules que han fet mal tant a la neurociència com al projecte real de Jung. La disciplina de refusar-les és part del lloc.",
+      "body5": "La temptació oposada — reduir — també és real. 'El cervell' com l'única explicació legítima, amb tot allò que no es pot reduir a mecanisme tractat com a il·lusió o com a mecanisme encara-per-descobrir. La disciplina de refusar això també és part del lloc. Hi ha preguntes més grans que qualsevol vocabulari que les anomeni.",
+      "body6": "No ets el teu cervell. No ets el teu inconscient. Ets allò que es pregunta quin dels dos és."
+    },
+    "balance": {
+      "label": "On va encertar Jung, on es va equivocar",
+      "heading": "Era una persona, treballant amb el que tenia a l'abast.",
+      "intro": "Aquest lloc pren seriosament la feina de Jung sense tractar-lo com a oracle. Era una persona — brillant, prolífica, equivocada en coses concretes, encertada en altres, com sol passar a qui ho intenta amb força durant molt de temps. Honorar el seu treball és ser honestos respecte de totes dues columnes.",
+      "rightLabel": "On va encertar",
+      "right1": "Que la consciència és la part petita de la ment, i que la major part del que produeix pensament, sentiment i acció passa fora d'ella. El processament predictiu, el treball sobre la xarxa per defecte, la memòria implícita i l'avaluació automàtica han fet visible aquesta escala.",
+      "right2": "Que la memòria és reconstrucció, no recuperació, i que el passat es reescriu contínuament al servei del significat present. La recerca sobre reconsolidació li ha donat un mecanisme.",
+      "right3": "Que el contingut desconegut no desapareix — es projecta sobre els altres, sovint amb una intensitat estranya, i el cost de no veure'l creix. La recerca sobre inhibició i supressió descriu el mecanisme de mantenir-lo fora; el cost convergeix.",
+      "right4": "Que la cognició simbòlica i figural no és una capa primitiva sota el pensament racional, sinó una manera paral·lela de fer sentit amb legitimitat pròpia. El treball narratiu i figural de l'hemisferi dret és real.",
+      "right5": "Que les imatges recurrents entre cultures — cercle, quaternitat, heroi, ombra, mare — apunten a trets estructurals de com les ments s'organitzen, no a coincidències.",
+      "wrongLabel": "On es va equivocar, o es va sobrepassar",
+      "wrong1": "L'inconscient col·lectiu com a dipòsit literalment heretat de contingut ancestral. La biologia contemporània no recolza la memòria heretada en aquest sentit. La convergència d'imatgeria entre cultures s'explica millor per primitius cognitius compartits que per un reservori transgeneracional.",
+      "wrong2": "La sincronicitat com a principi connector acausal i amb sentit, equiparable a la causalitat. La fenomenologia de la coincidència significativa és real — la gent l'experimenta — però l'afirmació metafísica que Jung va fer al respecte no té base científica.",
+      "wrong3": "El binarisme estricte masculí/femení que organitzava la seva teoria ànima/ànimus. L'observació de fons sobre una figura interior contrasexual sobreviu en forma més feble; el binari que la enmarcava ha envellit malament, i el treball contemporani de psicologia profunda ha corregit el vocabulari.",
+      "wrong4": "Algunes de les seves lectures de tradicions no occidentals — el pensament oriental en particular — parlaven més de Jung que de les tradicions. Ho va reconèixer en parts de la seva obra i ho va deixar passar en altres. El seu abast cultural era real però no il·limitat.",
+      "wrong5": "Figures arquetípiques específiques (vell savi, ànima, ànimus, embaucador) com a constants psicològiques universals. Les figures recorren, però la intensitat de l'especificitat transcultural que ell afirmava no és el que l'antropologia contemporània recolza en realitat.",
+      "closing": "Totes dues columnes formen part del que el fa encara digne de lectura. Un teòric que hagués encertat en tot no hauria estat prou a prop de la textura real de la ment per ser útil. Jung estava a prop. De vegades estava massa a prop per veure-hi clar. Era, en això, una persona."
+    },
+    "reading": {
+      "label": "Lectures addicionals",
+      "heading": "Vuit llibres que han informat aquest lloc.",
+      "neuroLabel": "Neurociència que pren la fenomenologia seriosament",
+      "solmsDesc": "La base afectiva de la consciència, des de la neuropsicoanàlisi.",
+      "damasioDesc": "Marcadors somàtics, el jo sentit, el cos al cervell.",
+      "sacksDesc": "Neurologia clínica escrita amb veu humana.",
+      "kandelDesc": "La base molecular de la memòria com a reconstrucció.",
+      "jungLabel": "Fonts primàries de Jung",
+      "mdrDesc": "Registrat per Aniela Jaffé. L'entrada més clara al seu pensament.",
+      "cw9Desc": "La formulació tècnica dels arquetips.",
+      "contemporaryLabel": "Pensadors contemporanis a la costura",
+      "mcgilchristDesc": "Perspectives hemisfèriques. Millor del que suggereix la seva recepció pop.",
+      "sethDesc": "Processament predictiu i l'al·lucinació controlada de ser un jo."
+    },
+    "citations": {
+      "label": "Citacions",
+      "heading": "Dempeus sobre les espatlles de gegants ben citats.",
+      "body": "Cada afirmació forta en aquest lloc apunta a un d'aquests articles. Quan llegeixis una frase sobre la regió de Broca, la xarxa per defecte o l'amígdala que no et resulti segura, és d'aquí d'on ve la seguretat."
+    },
+    "credits": {
+      "label": "Crèdits",
+      "modelLabel": "Model",
+      "modelTitle": "Meta AI / FAIR",
+      "modelBody": "Codificador cerebral TRIBE v2. El lloc fa servir només el checkpoint en cache; cap dada específica de Meta no surt de la pàgina.",
+      "builtLabel": "Construït amb",
+      "builtTitle": "Anthropic Claude",
+      "builtBody": "L'estructura, el sistema tipogràfic, les atmosferes, aquesta sala — tot dissenyat en col·laboració.",
+      "homeLabel": "Llar",
+      "homeTitle": "JIPP de Chulalongkorn",
+      "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences. Bangkok i les parelles d'estímuls tailandesos vénen d'aquí."
+    },
+    "roadmap": {
+      "label": "Full de ruta",
+      "heading": "El que encara demana ser construït.",
+      "phase10": "Inferència real de TRIBE connectada a un backend FastAPI (de moment el predictor funciona localment sobre trets lèxics).",
+      "phase11": "Formulari d'enviament de parelles, llicències d'àudio de la Fase 11, millora de rendiment.",
+      "phase12": "Auditoria final d'accessibilitat + una capa d'anotació de llarg alè sobre les citacions.",
+      "phaseLabel": "Fase"
+    },
+    "closing": {
+      "display": "El que estem construint és petit. La intenció no ho és.",
+      "hand": "— ben aviat"
+    },
+    "footer": {
+      "line": "The Brain Studio · 2026"
+    }
+  },
   "notFound": {
     "label": "Fora de la distribució d'entrenament",
     "title": "No vam aprendre aquesta pàgina.",

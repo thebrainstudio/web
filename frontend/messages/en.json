@@ -124,6 +124,118 @@
       "about": "About"
     }
   },
+  "about": {
+    "opening": {
+      "label": "About · Phase 9",
+      "heading": "A 21st-century version of an older question.",
+      "body": "This site is an experiment in seeing the mind through a brain-encoding model. What follows is what the model is, what it isn't, and the people whose work it builds on."
+    },
+    "what": {
+      "step1": {
+        "label": "What TRIBE is · I",
+        "heading": "A model that learned the map from stimulus to fMRI.",
+        "body": "Meta's TRIBE v2 was trained on thousands of hours of recordings in which participants listened to, watched, or read material while inside an MRI scanner. It learns to predict where in the cortex a given stimulus tends to light up — not in any one person, but on average."
+      },
+      "step2": {
+        "label": "What TRIBE is · II",
+        "heading": "An encoder, not a decoder.",
+        "body": "It maps inputs to brain responses. It does not read your brain. It does not invert the response back into a thought. The arrow points the way it points; this site uses it that way."
+      },
+      "step3": {
+        "label": "What TRIBE is · III",
+        "heading": "A weighted echo of the participants.",
+        "body": "The predicted activation is something like the average brain's response to that input. The gap between that average and yours is part of what this site means to surface, never to hide."
+      }
+    },
+    "isnt": {
+      "label": "What it does not do",
+      "heading": "Honest limitations, surfaced unapologetically.",
+      "body1": "The model is trained on English. Cross-cultural Brain shows what happens when you feed it Thai: the language regions respond less, the prediction degrades, and the silence is real. A model that can't carry a language carries fewer minds.",
+      "body2": "fMRI itself is slow. The hemodynamic response trails the neural one by roughly five seconds. Anything you see here is, by design, a prediction of a measurement that lags behind the thought.",
+      "body3": "Region labels are a working vocabulary, not anatomy. The brain is networked; functions are distributed; mapping a feeling to a single bright spot is a story we tell because the story is useful. The model does not believe in the story. Neither should you.",
+      "body4": "The disclaimers above are the architecture. The site only works if you keep them in view while you watch."
+    },
+    "jung": {
+      "label": "One older idea",
+      "body": "In the early 20th century, Carl Jung gave us a vocabulary for parts of the mind that don't speak. A century later, brain-encoding models are trying to render those parts visible. Different language, related project.",
+      "footnote": "— a footnote, lightly"
+    },
+    "twoLanguages": {
+      "label": "On holding two languages",
+      "heading": "Neuroscience and depth psychology, held in parallel.",
+      "body1": "Carl Jung built a phenomenology of inner experience — a vocabulary for patterns he observed in dreams, art, myth, and clinical work. He was not doing neuroscience. He was naming the felt structure of the psyche, with the rigor that careful observation allows when mechanism is out of reach.",
+      "body2": "This site does not claim that brain regions ARE Jungian concepts. It does not claim that neurotransmitters correspond to archetypes. It does not claim that synchronicity, the collective unconscious as literal storehouse, or active imagination have direct neuroscience grounding. Some of what Jung saw was right in different language; some was wrong; much lives in a register where neither side can fully claim the territory. Holding the tension honestly is the work.",
+      "body3": "A small number of contemporary thinkers do this bridge work with care. Mark Solms' The Hidden Spring argues for an affective basis of consciousness that touches both neuropsychoanalysis and Damasio's somatic-marker framework. Iain McGilchrist's The Master and His Emissary, despite a pop appropriation that has been worse than the book itself, is rigorous about hemispheric specialization without overclaiming. Oliver Sacks' clinical neurology is what it looks like to take both mechanism and meaning seriously. These are the company this site keeps.",
+      "body4": "The temptation to mystify is real. Energy, frequencies, vibration, manifestation — words that have done damage to both neuroscience and to Jung's actual project. The discipline of refusing them is part of the site.",
+      "body5": "The opposite temptation — to reduce — is also real. 'The brain' as the only legitimate explanation, with everything that can't be reduced to mechanism treated as illusion or as not-yet-mechanism. The discipline of refusing this is also part of the site. Some questions are larger than any one vocabulary for them.",
+      "body6": "You are not your brain. You are not your unconscious. You are whatever it is that gets to wonder which of those it is."
+    },
+    "balance": {
+      "label": "Where Jung was right, where he was wrong",
+      "heading": "He was a person, working with what was in reach.",
+      "intro": "This site holds Jung's work seriously without treating him as an oracle. He was a person — brilliant, prolific, wrong about specific things, right about other specific things, the way people who try hard for a long time generally are. Honoring his work means being honest about both columns.",
+      "rightLabel": "Where he was right",
+      "right1": "That consciousness is the small part of mind, and most of what produces thought, feeling, and action happens outside it. Predictive processing, default-mode work, implicit memory, and automatic appraisal have made the scale visible.",
+      "right2": "That memory is reconstruction, not retrieval, and that the past is continuously rewritten in service of present meaning. Reconsolidation research has given this a mechanism.",
+      "right3": "That disowned content does not vanish — it gets projected onto others, often with strange intensity, and the cost of not seeing it grows. Inhibition and suppression research describes the mechanism for holding it out; the cost is convergent.",
+      "right4": "That symbolic and figural cognition is not a primitive layer beneath rational thought but a parallel mode of meaning-making with its own legitimacy. Right-hemisphere narrative + figural work is real.",
+      "right5": "That recurring images across cultures — circle, quaternity, hero, shadow, mother — point at structural features of how minds organize themselves, not at coincidence.",
+      "wrongLabel": "Where he was wrong, or overreached",
+      "wrong1": "The collective unconscious as a literal inherited storehouse of ancestral content. Contemporary biology does not support inherited memory in this sense. The convergence of imagery across cultures is better explained by shared cognitive primitives than by a transgenerational reservoir.",
+      "wrong2": "Synchronicity as a meaningful acausal connecting principle, on a par with causation. The phenomenology of meaningful coincidence is real — people do experience it — but the metaphysical claim he made around it has no scientific foothold.",
+      "wrong3": "The strict male/female binary that organized his anima/animus theory. The underlying observation about a contrasexual interior figure survives in weaker form; the binary that framed it has aged poorly, and contemporary depth-psychological work has corrected the vocabulary.",
+      "wrong4": "Some of his readings of non-Western traditions — Eastern thought especially — were more about Jung than about the traditions. He acknowledged this in parts of his work and missed it in others. His cultural reach was real but not unlimited.",
+      "wrong5": "Specific archetypal figures (wise old man, anima, animus, trickster) as universal psychological constants. The figures recur, but the strength of cross-cultural specificity he claimed is not what contemporary anthropology actually supports.",
+      "closing": "Both columns are part of what makes him still worth reading. A theorist who was right about everything would not have been close enough to the actual texture of mind to be useful. Jung was close. He was sometimes too close to see clearly. He was, in this respect, a person."
+    },
+    "reading": {
+      "label": "Further reading",
+      "heading": "Eight books that informed this site.",
+      "neuroLabel": "Neuroscience that takes phenomenology seriously",
+      "solmsDesc": "The affective basis of consciousness, from neuropsychoanalysis.",
+      "damasioDesc": "Somatic markers, the felt self, the body in the brain.",
+      "sacksDesc": "Clinical neurology written in a humane voice.",
+      "kandelDesc": "The molecular basis of memory as reconstruction.",
+      "jungLabel": "Jung primary sources",
+      "mdrDesc": "Recorded by Aniela Jaffé. The clearest entry to his thought.",
+      "cw9Desc": "The technical statement of the archetypes.",
+      "contemporaryLabel": "Contemporary thinkers at the seam",
+      "mcgilchristDesc": "Hemispheric perspectives. Better than its pop reception suggests.",
+      "sethDesc": "Predictive processing and the controlled hallucination of being a self."
+    },
+    "citations": {
+      "label": "Citations",
+      "heading": "Standing on the shoulders of well-cited giants.",
+      "body": "Every strong claim in this site points at one of these papers. When you read a line about Broca's region or the default-mode network or the amygdala that doesn't feel confident, this is where the confidence comes from."
+    },
+    "credits": {
+      "label": "Credits",
+      "modelLabel": "Model",
+      "modelTitle": "Meta AI / FAIR",
+      "modelBody": "TRIBE v2 brain encoder. The site uses the cached checkpoint only; no Meta-specific data leaves the page.",
+      "builtLabel": "Built with",
+      "builtTitle": "Anthropic Claude",
+      "builtBody": "The scaffolding, the typography system, the atmospherics, this room — all collaboratively engineered.",
+      "homeLabel": "Home",
+      "homeTitle": "Chulalongkorn JIPP",
+      "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences. Bangkok and the Thai stimulus pairs come from here."
+    },
+    "roadmap": {
+      "label": "Roadmap",
+      "heading": "What still wants building.",
+      "phase10": "Real TRIBE inference wired to a FastAPI backend (currently the predictor runs locally on lexical features).",
+      "phase11": "Pair submission form, Phase-11 audio licensing, performance pass.",
+      "phase12": "Final accessibility audit + a long-form annotation layer over the citations.",
+      "phaseLabel": "Phase"
+    },
+    "closing": {
+      "display": "What we're building is small. The intention is not.",
+      "hand": "— more soon"
+    },
+    "footer": {
+      "line": "The Brain Studio · 2026"
+    }
+  },
   "notFound": {
     "label": "Out of the training distribution",
     "title": "We didn't learn that page.",

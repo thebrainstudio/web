@@ -12,6 +12,7 @@ import {
   Hand,
   Heading,
 } from "@/components/typography/Typography";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 /**
  * Phase 9 — About.
@@ -21,12 +22,23 @@ import {
  *   2  What TRIBE is (pinned three steps)
  *   3  What TRIBE does not do (the honest limitations)
  *   4  The Jung reference, once, in context
+ *   4b On holding two languages
+ *   4b-2 Where Jung was right, where he was wrong
+ *   4c Further reading
  *   5  Citations (pulled from lib/citations.ts)
  *   6  Credits
  *   7  Roadmap
- *   8  Closing line with amber-lamp glow (the existing approved placement)
+ *   8  Closing line with amber-lamp glow
  */
-export default function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "about" });
+
   return (
     <>
       {/* 1 — Opening */}
@@ -44,15 +56,13 @@ export default function AboutPage() {
       >
         <div className="mx-auto max-w-[44rem]">
           <Caption uppercase className="text-brass">
-            About · Phase 9
+            {t("opening.label")}
           </Caption>
           <Display italic className="mt-10">
-            A 21st-century version of an older question.
+            {t("opening.heading")}
           </Display>
           <Body className="text-bone-cream/65 mt-10 max-w-[34rem]">
-            This site is an experiment in seeing the mind through a
-            brain-encoding model. What follows is what the model is,
-            what it isn&apos;t, and the people whose work it builds on.
+            {t("opening.body")}
           </Body>
         </div>
       </ScrollScene>
@@ -75,49 +85,39 @@ export default function AboutPage() {
             <PinnedStep>
               <div className="max-w-[34rem]">
                 <Caption uppercase className="text-brass">
-                  What TRIBE is · I
+                  {t("what.step1.label")}
                 </Caption>
                 <Heading className="mt-6">
-                  A model that learned the map from stimulus to fMRI.
+                  {t("what.step1.heading")}
                 </Heading>
                 <Body className="text-bone-cream/70 mt-6">
-                  Meta&apos;s TRIBE v2 was trained on thousands of hours
-                  of recordings in which participants listened to, watched,
-                  or read material while inside an MRI scanner. It learns
-                  to predict where in the cortex a given stimulus tends
-                  to light up — not in any one person, but on average.
+                  {t("what.step1.body")}
                 </Body>
               </div>
             </PinnedStep>
             <PinnedStep>
               <div className="max-w-[34rem]">
                 <Caption uppercase className="text-brass">
-                  What TRIBE is · II
+                  {t("what.step2.label")}
                 </Caption>
                 <Heading italic className="mt-6">
-                  An encoder, not a decoder.
+                  {t("what.step2.heading")}
                 </Heading>
                 <Body className="text-bone-cream/70 mt-6">
-                  It maps inputs to brain responses. It does not read your
-                  brain. It does not invert the response back into a
-                  thought. The arrow points the way it points; this site
-                  uses it that way.
+                  {t("what.step2.body")}
                 </Body>
               </div>
             </PinnedStep>
             <PinnedStep>
               <div className="max-w-[34rem]">
                 <Caption uppercase className="text-brass">
-                  What TRIBE is · III
+                  {t("what.step3.label")}
                 </Caption>
                 <Heading className="mt-6">
-                  A weighted echo of the participants.
+                  {t("what.step3.heading")}
                 </Heading>
                 <Body className="text-bone-cream/70 mt-6">
-                  The predicted activation is something like the average
-                  brain&apos;s response to that input. The gap between
-                  that average and yours is part of what this site means
-                  to surface, never to hide.
+                  {t("what.step3.body")}
                 </Body>
               </div>
             </PinnedStep>
@@ -139,45 +139,33 @@ export default function AboutPage() {
       >
         <div className="mx-auto max-w-[44rem]">
           <Caption uppercase className="text-brass">
-            What it does not do
+            {t("isnt.label")}
           </Caption>
           <Heading className="mt-6">
-            Honest limitations, surfaced unapologetically.
+            {t("isnt.heading")}
           </Heading>
 
           <ParallaxLayer speed={0.92}>
             <Body className="text-bone-cream/70 mt-10">
-              The model is trained on English. Cross-cultural Brain shows
-              what happens when you feed it Thai: the language regions
-              respond less, the prediction degrades, and the silence is
-              real. A model that can&apos;t carry a language carries
-              fewer minds.
+              {t("isnt.body1")}
             </Body>
           </ParallaxLayer>
 
           <ParallaxLayer speed={1.05}>
             <Body className="text-bone-cream/70 mt-8">
-              fMRI itself is slow. The hemodynamic response trails the
-              neural one by roughly five seconds. Anything you see here
-              is, by design, a prediction of a measurement that lags
-              behind the thought.
+              {t("isnt.body2")}
             </Body>
           </ParallaxLayer>
 
           <ParallaxLayer speed={0.96}>
             <Body className="text-bone-cream/70 mt-8">
-              Region labels are a working vocabulary, not anatomy. The
-              brain is networked; functions are distributed; mapping a
-              feeling to a single bright spot is a story we tell because
-              the story is useful. The model does not believe in the
-              story. Neither should you.
+              {t("isnt.body3")}
             </Body>
           </ParallaxLayer>
 
           <ParallaxLayer speed={1.02}>
             <Body italic className="text-bone-cream/55 mt-10">
-              The disclaimers above are the architecture. The site only
-              works if you keep them in view while you watch.
+              {t("isnt.body4")}
             </Body>
           </ParallaxLayer>
         </div>
@@ -187,16 +175,13 @@ export default function AboutPage() {
       <section className="relative px-6 py-32 md:px-10 md:py-48">
         <div className="mx-auto max-w-[40rem]">
           <Caption uppercase className="text-brass">
-            One older idea
+            {t("jung.label")}
           </Caption>
           <Body className="text-bone-cream/80 mt-10 text-balance text-lg leading-[1.7]">
-            In the early 20th century, Carl Jung gave us a vocabulary for
-            parts of the mind that don&apos;t speak. A century later,
-            brain-encoding models are trying to render those parts
-            visible. Different language, related project.
+            {t("jung.body")}
           </Body>
           <p className="mt-10">
-            <Hand className="text-cyan-glow">— a footnote, lightly</Hand>
+            <Hand className="text-cyan-glow">{t("jung.footnote")}</Hand>
           </p>
         </div>
       </section>
@@ -205,61 +190,19 @@ export default function AboutPage() {
       <section className="relative px-6 py-32 md:px-10 md:py-48">
         <div className="mx-auto max-w-[40rem]">
           <Caption uppercase className="text-brass">
-            On holding two languages
+            {t("twoLanguages.label")}
           </Caption>
           <Heading className="mt-6 font-[200]">
-            Neuroscience and depth psychology, held in parallel.
+            {t("twoLanguages.heading")}
           </Heading>
           <div className="mt-12 space-y-6">
-            <Body className="text-bone-cream/85">
-              Carl Jung built a phenomenology of inner experience — a
-              vocabulary for patterns he observed in dreams, art, myth,
-              and clinical work. He was not doing neuroscience. He was
-              naming the felt structure of the psyche, with the rigor
-              that careful observation allows when mechanism is out of
-              reach.
-            </Body>
-            <Body className="text-bone-cream/85">
-              This site does not claim that brain regions <em>are</em>
-              {" "}Jungian concepts. It does not claim that neurotransmitters
-              correspond to archetypes. It does not claim that
-              synchronicity, the collective unconscious as literal
-              storehouse, or active imagination have direct neuroscience
-              grounding. Some of what Jung saw was right in different
-              language; some was wrong; much lives in a register where
-              neither side can fully claim the territory. Holding the
-              tension honestly is the work.
-            </Body>
-            <Body className="text-bone-cream/85">
-              A small number of contemporary thinkers do this bridge work
-              with care. Mark Solms&apos; <em>The Hidden Spring</em> argues
-              for an affective basis of consciousness that touches both
-              neuropsychoanalysis and Damasio&apos;s somatic-marker
-              framework. Iain McGilchrist&apos;s <em>The Master and His
-              Emissary</em>, despite a pop appropriation that has been
-              worse than the book itself, is rigorous about hemispheric
-              specialization without overclaiming. Oliver Sacks&apos;
-              clinical neurology is what it looks like to take both
-              mechanism and meaning seriously. These are the company this
-              site keeps.
-            </Body>
-            <Body className="text-bone-cream/85">
-              The temptation to mystify is real. Energy, frequencies,
-              vibration, manifestation — words that have done damage to
-              both neuroscience and to Jung&apos;s actual project. The
-              discipline of refusing them is part of the site.
-            </Body>
-            <Body className="text-bone-cream/85">
-              The opposite temptation — to reduce — is also real.
-              &ldquo;The brain&rdquo; as the only legitimate explanation,
-              with everything that can&apos;t be reduced to mechanism
-              treated as illusion or as not-yet-mechanism. The discipline
-              of refusing this is also part of the site. Some questions
-              are larger than any one vocabulary for them.
-            </Body>
+            <Body className="text-bone-cream/85">{t("twoLanguages.body1")}</Body>
+            <Body className="text-bone-cream/85">{t("twoLanguages.body2")}</Body>
+            <Body className="text-bone-cream/85">{t("twoLanguages.body3")}</Body>
+            <Body className="text-bone-cream/85">{t("twoLanguages.body4")}</Body>
+            <Body className="text-bone-cream/85">{t("twoLanguages.body5")}</Body>
             <Body italic className="text-bone-cream/80 mt-2">
-              You are not your brain. You are not your unconscious. You
-              are whatever it is that gets to wonder which of those it is.
+              {t("twoLanguages.body6")}
             </Body>
           </div>
         </div>
@@ -269,133 +212,53 @@ export default function AboutPage() {
       <section className="relative px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[40rem]">
           <Caption uppercase className="text-brass">
-            Where Jung was right, where he was wrong
+            {t("balance.label")}
           </Caption>
           <Heading className="mt-6 font-[200]">
-            He was a person, working with what was in reach.
+            {t("balance.heading")}
           </Heading>
           <Body className="text-bone-cream/85 mt-10">
-            This site holds Jung&apos;s work seriously without treating
-            him as an oracle. He was a person — brilliant, prolific,
-            wrong about specific things, right about other specific
-            things, the way people who try hard for a long time generally
-            are. Honoring his work means being honest about both columns.
+            {t("balance.intro")}
           </Body>
 
           <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-10">
             <div>
               <Caption uppercase className="text-brass">
-                Where he was right
+                {t("balance.rightLabel")}
               </Caption>
               <ul className="mt-6 space-y-5">
-                <li>
-                  <Body className="text-bone-cream/85">
-                    That consciousness is the small part of mind, and
-                    most of what produces thought, feeling, and action
-                    happens outside it. Predictive processing,
-                    default-mode work, implicit memory, and automatic
-                    appraisal have made the scale visible.
-                  </Body>
-                </li>
-                <li>
-                  <Body className="text-bone-cream/85">
-                    That memory is reconstruction, not retrieval, and
-                    that the past is continuously rewritten in service
-                    of present meaning. Reconsolidation research has
-                    given this a mechanism.
-                  </Body>
-                </li>
-                <li>
-                  <Body className="text-bone-cream/85">
-                    That disowned content does not vanish — it gets
-                    projected onto others, often with strange intensity,
-                    and the cost of not seeing it grows. Inhibition and
-                    suppression research describes the mechanism for
-                    holding it out; the cost is convergent.
-                  </Body>
-                </li>
-                <li>
-                  <Body className="text-bone-cream/85">
-                    That symbolic and figural cognition is not a
-                    primitive layer beneath rational thought but a
-                    parallel mode of meaning-making with its own
-                    legitimacy. Right-hemisphere narrative + figural
-                    work is real.
-                  </Body>
-                </li>
-                <li>
-                  <Body className="text-bone-cream/85">
-                    That recurring images across cultures — circle,
-                    quaternity, hero, shadow, mother — point at
-                    structural features of how minds organize themselves,
-                    not at coincidence.
-                  </Body>
-                </li>
+                {(["right1", "right2", "right3", "right4", "right5"] as const).map(
+                  (key) => (
+                    <li key={key}>
+                      <Body className="text-bone-cream/85">
+                        {t(`balance.${key}`)}
+                      </Body>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
 
             <div>
               <Caption uppercase className="text-brass">
-                Where he was wrong, or overreached
+                {t("balance.wrongLabel")}
               </Caption>
               <ul className="mt-6 space-y-5">
-                <li>
-                  <Body className="text-bone-cream/85">
-                    The collective unconscious as a literal inherited
-                    storehouse of ancestral content. Contemporary
-                    biology does not support inherited memory in this
-                    sense. The convergence of imagery across cultures
-                    is better explained by shared cognitive primitives
-                    than by a transgenerational reservoir.
-                  </Body>
-                </li>
-                <li>
-                  <Body className="text-bone-cream/85">
-                    Synchronicity as a meaningful acausal connecting
-                    principle, on a par with causation. The phenomenology
-                    of meaningful coincidence is real — people do
-                    experience it — but the metaphysical claim he made
-                    around it has no scientific foothold.
-                  </Body>
-                </li>
-                <li>
-                  <Body className="text-bone-cream/85">
-                    The strict male/female binary that organized his
-                    anima/animus theory. The underlying observation
-                    about a contrasexual interior figure survives in
-                    weaker form; the binary that framed it has aged
-                    poorly, and contemporary depth-psychological work
-                    has corrected the vocabulary.
-                  </Body>
-                </li>
-                <li>
-                  <Body className="text-bone-cream/85">
-                    Some of his readings of non-Western traditions —
-                    Eastern thought especially — were more about Jung
-                    than about the traditions. He acknowledged this in
-                    parts of his work and missed it in others. His
-                    cultural reach was real but not unlimited.
-                  </Body>
-                </li>
-                <li>
-                  <Body className="text-bone-cream/85">
-                    Specific archetypal figures (wise old man, anima,
-                    animus, trickster) as universal psychological
-                    constants. The figures recur, but the strength of
-                    cross-cultural specificity he claimed is not what
-                    contemporary anthropology actually supports.
-                  </Body>
-                </li>
+                {(["wrong1", "wrong2", "wrong3", "wrong4", "wrong5"] as const).map(
+                  (key) => (
+                    <li key={key}>
+                      <Body className="text-bone-cream/85">
+                        {t(`balance.${key}`)}
+                      </Body>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           </div>
 
           <Body italic className="text-bone-cream/80 mt-12 text-lg leading-[1.6]">
-            Both columns are part of what makes him still worth reading.
-            A theorist who was right about everything would not have
-            been close enough to the actual texture of mind to be useful.
-            Jung was close. He was sometimes too close to see
-            clearly. He was, in this respect, a person.
+            {t("balance.closing")}
           </Body>
         </div>
       </section>
@@ -404,22 +267,22 @@ export default function AboutPage() {
       <section className="relative px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[40rem]">
           <Caption uppercase className="text-brass">
-            Further reading
+            {t("reading.label")}
           </Caption>
           <Heading className="mt-6 font-[200]">
-            Eight books that informed this site.
+            {t("reading.heading")}
           </Heading>
 
           <div className="mt-12">
             <Caption uppercase className="text-bone-cream/55">
-              Neuroscience that takes phenomenology seriously
+              {t("reading.neuroLabel")}
             </Caption>
             <ul className="mt-4 space-y-4">
               <li>
                 <Body className="text-bone-cream/85">
                   Solms, M. <em>The Hidden Spring.</em> 2021.
                   <Body italic className="text-bone-cream/55 mt-1">
-                    The affective basis of consciousness, from neuropsychoanalysis.
+                    {t("reading.solmsDesc")}
                   </Body>
                 </Body>
               </li>
@@ -427,7 +290,7 @@ export default function AboutPage() {
                 <Body className="text-bone-cream/85">
                   Damasio, A. <em>The Feeling of What Happens.</em> 1999.
                   <Body italic className="text-bone-cream/55 mt-1">
-                    Somatic markers, the felt self, the body in the brain.
+                    {t("reading.damasioDesc")}
                   </Body>
                 </Body>
               </li>
@@ -435,7 +298,7 @@ export default function AboutPage() {
                 <Body className="text-bone-cream/85">
                   Sacks, O. <em>The Man Who Mistook His Wife for a Hat.</em> 1985.
                   <Body italic className="text-bone-cream/55 mt-1">
-                    Clinical neurology written in a humane voice.
+                    {t("reading.sacksDesc")}
                   </Body>
                 </Body>
               </li>
@@ -443,7 +306,7 @@ export default function AboutPage() {
                 <Body className="text-bone-cream/85">
                   Kandel, E. R. <em>In Search of Memory.</em> 2006.
                   <Body italic className="text-bone-cream/55 mt-1">
-                    The molecular basis of memory as reconstruction.
+                    {t("reading.kandelDesc")}
                   </Body>
                 </Body>
               </li>
@@ -452,14 +315,14 @@ export default function AboutPage() {
 
           <div className="mt-12">
             <Caption uppercase className="text-bone-cream/55">
-              Jung primary sources
+              {t("reading.jungLabel")}
             </Caption>
             <ul className="mt-4 space-y-4">
               <li>
                 <Body className="text-bone-cream/85">
                   Jung, C. G. <em>Memories, Dreams, Reflections.</em> 1963.
                   <Body italic className="text-bone-cream/55 mt-1">
-                    Recorded by Aniela Jaffé. The clearest entry to his thought.
+                    {t("reading.mdrDesc")}
                   </Body>
                 </Body>
               </li>
@@ -467,7 +330,7 @@ export default function AboutPage() {
                 <Body className="text-bone-cream/85">
                   Jung, C. G. <em>The Archetypes and the Collective Unconscious.</em> CW 9i. 1959.
                   <Body italic className="text-bone-cream/55 mt-1">
-                    The technical statement of the archetypes.
+                    {t("reading.cw9Desc")}
                   </Body>
                 </Body>
               </li>
@@ -476,14 +339,14 @@ export default function AboutPage() {
 
           <div className="mt-12">
             <Caption uppercase className="text-bone-cream/55">
-              Contemporary thinkers at the seam
+              {t("reading.contemporaryLabel")}
             </Caption>
             <ul className="mt-4 space-y-4">
               <li>
                 <Body className="text-bone-cream/85">
                   McGilchrist, I. <em>The Master and His Emissary.</em> 2009.
                   <Body italic className="text-bone-cream/55 mt-1">
-                    Hemispheric perspectives. Better than its pop reception suggests.
+                    {t("reading.mcgilchristDesc")}
                   </Body>
                 </Body>
               </li>
@@ -491,7 +354,7 @@ export default function AboutPage() {
                 <Body className="text-bone-cream/85">
                   Seth, A. <em>Being You.</em> 2021.
                   <Body italic className="text-bone-cream/55 mt-1">
-                    Predictive processing and the controlled hallucination of being a self.
+                    {t("reading.sethDesc")}
                   </Body>
                 </Body>
               </li>
@@ -504,16 +367,13 @@ export default function AboutPage() {
       <section className="relative px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[920px]">
           <Caption uppercase className="text-brass">
-            Citations
+            {t("citations.label")}
           </Caption>
           <Heading className="mt-6">
-            Standing on the shoulders of well-cited giants.
+            {t("citations.heading")}
           </Heading>
           <Body className="text-bone-cream/65 mt-6 max-w-[36rem]">
-            Every strong claim in this site points at one of these papers.
-            When you read a line about Broca&apos;s region or the
-            default-mode network or the amygdala that doesn&apos;t feel
-            confident, this is where the confidence comes from.
+            {t("citations.body")}
           </Body>
           <CitationList />
         </div>
@@ -523,44 +383,40 @@ export default function AboutPage() {
       <section className="relative px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[920px]">
           <Caption uppercase className="text-brass">
-            Credits
+            {t("credits.label")}
           </Caption>
           <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-4">
               <Caption uppercase className="text-bone-cream/55">
-                Model
+                {t("credits.modelLabel")}
               </Caption>
               <Heading as="h3" className="mt-3 font-[200]">
-                Meta&nbsp;AI / FAIR
+                {t("credits.modelTitle")}
               </Heading>
               <Body className="text-bone-cream/60 mt-3">
-                TRIBE v2 brain encoder. The site uses the cached checkpoint
-                only; no Meta-specific data leaves the page.
+                {t("credits.modelBody")}
               </Body>
             </div>
             <div className="md:col-span-4">
               <Caption uppercase className="text-bone-cream/55">
-                Built with
+                {t("credits.builtLabel")}
               </Caption>
               <Heading as="h3" className="mt-3 font-[200]">
-                Anthropic Claude
+                {t("credits.builtTitle")}
               </Heading>
               <Body className="text-bone-cream/60 mt-3">
-                The scaffolding, the typography system, the atmospherics,
-                this room — all collaboratively engineered.
+                {t("credits.builtBody")}
               </Body>
             </div>
             <div className="md:col-span-4">
               <Caption uppercase className="text-bone-cream/55">
-                Home
+                {t("credits.homeLabel")}
               </Caption>
               <Heading as="h3" className="mt-3 font-[200]">
-                Chulalongkorn JIPP
+                {t("credits.homeTitle")}
               </Heading>
               <Body className="text-bone-cream/60 mt-3">
-                Joint International Postgraduate Programme in Cognitive
-                Sciences. Bangkok and the Thai stimulus pairs come from
-                here.
+                {t("credits.homeBody")}
               </Body>
             </div>
           </div>
@@ -571,18 +427,20 @@ export default function AboutPage() {
       <section className="relative px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[920px]">
           <Caption uppercase className="text-brass">
-            Roadmap
+            {t("roadmap.label")}
           </Caption>
-          <Heading className="mt-6">What still wants building.</Heading>
+          <Heading className="mt-6">{t("roadmap.heading")}</Heading>
           <ul className="mt-10 space-y-4">
-            {[
-              ["10", "Real TRIBE inference wired to a FastAPI backend (currently the predictor runs locally on lexical features)."],
-              ["11", "Pair submission form, Phase-11 audio licensing, performance pass."],
-              ["12", "Final accessibility audit + a long-form annotation layer over the citations."],
-            ].map(([n, body]) => (
+            {(
+              [
+                ["10", t("roadmap.phase10")],
+                ["11", t("roadmap.phase11")],
+                ["12", t("roadmap.phase12")],
+              ] as const
+            ).map(([n, body]) => (
               <li key={n} className="flex items-baseline gap-5">
                 <Caption uppercase className="text-brass shrink-0">
-                  Phase {n}
+                  {t("roadmap.phaseLabel")} {n}
                 </Caption>
                 <Body className="text-bone-cream/70">{body}</Body>
               </li>
@@ -611,18 +469,16 @@ export default function AboutPage() {
           animate
         />
         <div className="mx-auto max-w-[40rem] text-center">
-          <Display italic>
-            What we&apos;re building is small. The intention is not.
-          </Display>
+          <Display italic>{t("closing.display")}</Display>
           <p className="mt-12">
-            <Hand className="text-bone-cream/55">— more soon</Hand>
+            <Hand className="text-bone-cream/55">{t("closing.hand")}</Hand>
           </p>
         </div>
       </ScrollScene>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
         <Caption uppercase className="text-bone-cream/40">
-          The Brain Studio · 2026
+          {t("footer.line")}
         </Caption>
       </footer>
     </>
