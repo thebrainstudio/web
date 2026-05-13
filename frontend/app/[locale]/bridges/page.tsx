@@ -12,7 +12,7 @@ import {
 import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BRIDGE_SECTIONS, BRIDGE_STRENGTHS } from "@/lib/bridges";
-import { bridgeSectionContent } from "@/content/bridges/sections";
+import { bridgeSectionContentForLocale } from "@/content/bridges";
 import { citationsForSection } from "@/lib/atlas";
 import { citations } from "@/lib/citations";
 
@@ -38,12 +38,13 @@ export default async function BridgesPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "bridges" });
+  const localizedContent = bridgeSectionContentForLocale(locale);
 
   // Aggregate every citation used in the page, across all sections,
   // preserving order. This drives the page-foot bibliography and the
   // superscript numbering used by <Prose>.
   const sectionEntries = BRIDGE_SECTIONS.map((meta) => {
-    const content = bridgeSectionContent[meta.id];
+    const content = localizedContent[meta.id];
     // Pull every text-block paragraph for citation extraction.
     const paragraphs: string[] = [];
     for (const block of content.blocks) {
