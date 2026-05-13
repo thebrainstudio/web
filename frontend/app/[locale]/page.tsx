@@ -12,6 +12,7 @@ import {
 } from "@/components/typography/Typography";
 import HeroDisplay from "@/components/home/HeroDisplay";
 import { homeScrollChoreography, signaturePatterns } from "@/lib/scrollScenes";
+import { Link } from "@/i18n/navigation";
 
 /**
  * Home page — continuous 5-shot scroll cinema. Persistent brain reads its
@@ -246,27 +247,27 @@ export default function Home() {
             Begin.
           </Display>
           <div className="mt-14 flex flex-wrap justify-center gap-3">
-            <a
+            <Link
               href="/mirror"
               data-hover
               className="border-brass text-brass hover:bg-brass hover:text-navy-deep inline-flex items-center justify-center rounded-sm border px-6 py-3 transition-colors duration-300 font-editorial text-caption uppercase tracking-[0.28em]"
             >
               Brain Mirror
-            </a>
-            <a
+            </Link>
+            <Link
               href="/music"
               data-hover
               className="border-brass text-brass hover:bg-brass hover:text-navy-deep inline-flex items-center justify-center rounded-sm border px-6 py-3 transition-colors duration-300 font-editorial text-caption uppercase tracking-[0.28em]"
             >
               NeuroMusic Lab
-            </a>
-            <a
+            </Link>
+            <Link
               href="/crosscultural"
               data-hover
               className="border-brass text-brass hover:bg-brass hover:text-navy-deep inline-flex items-center justify-center rounded-sm border px-6 py-3 transition-colors duration-300 font-editorial text-caption uppercase tracking-[0.28em]"
             >
               Cross-Cultural Brain
-            </a>
+            </Link>
           </div>
         </div>
       </ScrollScene>
@@ -284,14 +285,14 @@ export default function Home() {
         <Caption uppercase className="text-bone-cream/40 mx-3" aria-hidden>
           ·
         </Caption>
-        <a
+        <Link
           href="/about"
           className="hover:text-bone-cream/80 transition-colors duration-200"
         >
           <Caption uppercase className="text-bone-cream/40">
             About
           </Caption>
-        </a>
+        </Link>
       </footer>
     </>
   );

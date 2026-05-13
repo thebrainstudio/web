@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "locale": "en",
+    "tier1Status": "canonical",
+    "tier1Reviewed": true,
+    "lastUpdated": "2026-05-13",
+    "reviewNotes": "English is the canonical source for this site."
+  },
+  "nav": {
+    "siteTitle": "THE BRAIN STUDIO",
+    "mirror": "Mirror",
+    "music": "Music",
+    "crosscultural": "Cross-Cultural",
+    "threshold": "Threshold",
+    "archetypes": "Archetypes",
+    "cellular": "Cellular",
+    "fieldNotes": "Field Notes",
+    "about": "About",
+    "muteAria": "Mute ambient",
+    "unmuteAria": "Unmute ambient",
+    "githubAria": "Source on GitHub",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content",
+    "languageSelector": "Language",
+    "languageSelectorFooter": "Translations in review for some content. English is the canonical version."
+  },
+  "common": {
+    "loading": "Loading…",
+    "tryAgain": "Try again",
+    "returnHome": "Return home",
+    "more": "More",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "share": "Share",
+    "save": "Save",
+    "close": "Close"
+  },
+  "translationStatus": {
+    "underReviewBanner": "This page was machine-translated from English. A native reviewer has not yet approved this translation. The English original is canonical.",
+    "approvedBanner": "This translation has been reviewed by a native speaker.",
+    "dismiss": "Dismiss",
+    "feedbackPrompt": "If you are a native speaker and notice issues, you can suggest corrections by opening an issue on the project repository."
+  },
+  "notFound": {
+    "label": "Out of the training distribution",
+    "title": "We didn't learn that page.",
+    "body": "The address you tried isn't one of the rooms we built. The three that exist — Mirror, Music, Cross-Cultural — are linked below.",
+    "linkMirror": "Brain Mirror",
+    "linkMusic": "NeuroMusic Lab",
+    "linkCrosscultural": "Cross-Cultural Brain",
+    "linkHome": "Home"
+  },
+  "error": {
+    "label": "Something didn't resolve",
+    "title": "The model lost its line for a moment.",
+    "body": "A part of the page failed to render. The persistent brain is still here, in the background, breathing. Try the room again — or step into another one.",
+    "tryAgain": "Try again",
+    "returnHome": "Return home",
+    "digestLabel": "digest"
+  }
+}

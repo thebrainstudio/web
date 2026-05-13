@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "locale": "zh-CN",
+    "tier1Status": "machine_assisted",
+    "tier1Reviewed": false,
+    "lastUpdated": "2026-05-13",
+    "reviewNotes": "Awaiting review by a native Mandarin (Simplified) speaker."
+  },
+  "nav": {
+    "siteTitle": "THE BRAIN STUDIO",
+    "mirror": "镜像",
+    "music": "音乐",
+    "crosscultural": "跨文化",
+    "threshold": "阈值",
+    "archetypes": "原型",
+    "cellular": "细胞层面",
+    "fieldNotes": "田野笔记",
+    "about": "关于",
+    "muteAria": "静音环境声",
+    "unmuteAria": "打开环境声",
+    "githubAria": "在 GitHub 查看源代码",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "skipToContent": "跳到正文",
+    "languageSelector": "语言",
+    "languageSelectorFooter": "部分翻译仍在审阅中。英文版为本站的标准版本。"
+  },
+  "common": {
+    "loading": "加载中…",
+    "tryAgain": "重试",
+    "returnHome": "返回首页",
+    "more": "更多",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "share": "分享",
+    "save": "保存",
+    "close": "关闭"
+  },
+  "translationStatus": {
+    "underReviewBanner": "这篇文章由人工智能辅助翻译，尚未经过母语者审阅。英文原版为本网站的标准版本。",
+    "approvedBanner": "本翻译已由母语者审阅。",
+    "dismiss": "关闭",
+    "feedbackPrompt": "若您是母语者并发现错误，欢迎在项目仓库提交 issue 提出修订建议。"
+  },
+  "notFound": {
+    "label": "超出训练分布",
+    "title": "我们没有学到这个页面。",
+    "body": "您尝试访问的地址不属于我们搭建的任何房间。现存的三个房间 — 镜像、音乐、跨文化 — 的链接如下。",
+    "linkMirror": "大脑镜像",
+    "linkMusic": "神经音乐实验室",
+    "linkCrosscultural": "跨文化大脑",
+    "linkHome": "首页"
+  },
+  "error": {
+    "label": "出现了一处未能解决的问题",
+    "title": "模型短暂地丢失了线索。",
+    "body": "页面的一部分未能渲染。背景中那颗常驻的大脑仍在轻轻呼吸。请再次尝试这个房间——或进入另一个。",
+    "tryAgain": "重试",
+    "returnHome": "返回首页",
+    "digestLabel": "标识"
+  }
+}

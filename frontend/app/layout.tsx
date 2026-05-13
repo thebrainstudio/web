@@ -1,18 +1,28 @@
 import type { Metadata } from "next";
-import {
-  fraunces,
-  jetbrainsMono,
-  caveat,
-  notoSerifThai,
-} from "./fonts";
+import { fontVariables } from "./fonts";
 import "./globals.css";
 import SmoothScroll from "@/components/motion/SmoothScroll";
 import BrainStage from "@/components/brain/BrainStage";
 import RegionAnnouncer from "@/components/brain/RegionAnnouncer";
-import SiteHeader from "@/components/nav/SiteHeader";
 import FilmGrain from "@/components/atmospheric/FilmGrain";
 import DeferredClient from "@/components/client/DeferredClient";
-import { Caption } from "@/components/typography/Typography";
+
+/**
+ * Root layout. Hosts the persistent shell that must survive every
+ * navigation, including switching locales:
+ *
+ *   - <html>/<body> tags
+ *   - font CSS variables (declared once; only the ones referenced by the
+ *     active locale's html[lang] block actually render)
+ *   - BrainStage (the persistent macro brain — one WebGL canvas for the
+ *     life of the session)
+ *   - RegionAnnouncer, FilmGrain, DeferredClient — all persistent shell
+ *
+ * SiteHeader and <main> live inside `app/[locale]/layout.tsx` because they
+ * read translations from NextIntlClientProvider. Test pages (app/test-*)
+ * stay outside [locale] and don't get the header — that's acceptable for
+ * dev-only routes.
+ */
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brain-studio-kappa.vercel.app"),
@@ -40,34 +50,17 @@ export const metadata: Metadata = {
   category: "experiment",
 };
 
-const fontClass = [
-  fraunces.variable,
-  jetbrainsMono.variable,
-  caveat.variable,
-  notoSerifThai.variable,
-].join(" ");
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fontClass} h-full`}>
+    <html lang="en" className={`${fontVariables} h-full`} suppressHydrationWarning>
       <body className="text-bone-cream min-h-full antialiased">
-        {/* Skip link — keyboard users jump straight to <main>. */}
-        <a
-          href="#main"
-          className="focus:bg-brass focus:text-navy-deep sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[1100] focus:rounded-sm focus:px-4 focus:py-2"
-        >
-          <Caption uppercase>Skip to content</Caption>
-        </a>
         <SmoothScroll>
           <BrainStage />
-          <SiteHeader />
-          <main id="main" className="relative z-10">
-            {children}
-          </main>
+          {children}
           <RegionAnnouncer />
           <DeferredClient />
           <FilmGrain />

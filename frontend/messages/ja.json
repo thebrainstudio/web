@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "locale": "ja",
+    "tier1Status": "machine_assisted",
+    "tier1Reviewed": false,
+    "lastUpdated": "2026-05-13",
+    "reviewNotes": "Awaiting review by a native Japanese speaker."
+  },
+  "nav": {
+    "siteTitle": "THE BRAIN STUDIO",
+    "mirror": "ミラー",
+    "music": "音楽",
+    "crosscultural": "異文化",
+    "threshold": "閾値",
+    "archetypes": "元型",
+    "cellular": "細胞レベル",
+    "fieldNotes": "フィールドノート",
+    "about": "このサイトについて",
+    "muteAria": "環境音を消音",
+    "unmuteAria": "環境音を有効化",
+    "githubAria": "GitHub のソースコード",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる",
+    "skipToContent": "本文へスキップ",
+    "languageSelector": "言語",
+    "languageSelectorFooter": "一部のコンテンツは校閲中です。英語版が正典です。"
+  },
+  "common": {
+    "loading": "読み込み中…",
+    "tryAgain": "もう一度試す",
+    "returnHome": "ホームへ戻る",
+    "more": "もっと見る",
+    "back": "戻る",
+    "next": "次へ",
+    "previous": "前へ",
+    "share": "共有",
+    "save": "保存",
+    "close": "閉じる"
+  },
+  "translationStatus": {
+    "underReviewBanner": "このページはAIによって翻訳されており、ネイティブスピーカーによる校閲はまだ行われていません。英語版が正典です。",
+    "approvedBanner": "この翻訳はネイティブスピーカーによって校閲済みです。",
+    "dismiss": "閉じる",
+    "feedbackPrompt": "ネイティブスピーカーで誤りに気づいた方は、プロジェクトのリポジトリで Issue を開いて修正を提案してください。"
+  },
+  "notFound": {
+    "label": "訓練分布の外側",
+    "title": "そのページは学習していません。",
+    "body": "入力されたアドレスは、私たちが用意した部屋のいずれでもありません。存在する3つの部屋 — ミラー、音楽、異文化 — へのリンクは下にあります。",
+    "linkMirror": "ブレイン・ミラー",
+    "linkMusic": "ニューロ・ミュージック・ラボ",
+    "linkCrosscultural": "異文化の脳",
+    "linkHome": "ホーム"
+  },
+  "error": {
+    "label": "うまく解決できませんでした",
+    "title": "モデルが一瞬、線を見失いました。",
+    "body": "ページの一部が描画できませんでした。背景には常駐する脳が静かに息づいています。もう一度この部屋を試すか、別の部屋へどうぞ。",
+    "tryAgain": "もう一度試す",
+    "returnHome": "ホームへ戻る",
+    "digestLabel": "ダイジェスト"
+  }
+}

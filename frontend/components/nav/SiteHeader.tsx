@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Caption } from "@/components/typography/Typography";
 import { easeStandard } from "@/lib/animations";
+import LanguageSelector from "@/components/nav/LanguageSelector";
 
 function GithubMark({ size = 18 }: { size?: number }) {
   return (
@@ -77,14 +78,20 @@ function MenuIcon({ open, size = 18 }: { open: boolean; size?: number }) {
   );
 }
 
-type NavItem = { href: string; label: string };
+type NavItem = { href: string; labelKey: NavLabelKey };
+type NavLabelKey =
+  | "mirror"
+  | "music"
+  | "crosscultural"
+  | "cellular"
+  | "about";
 
 const navItems: NavItem[] = [
-  { href: "/mirror", label: "Mirror" },
-  { href: "/music", label: "Music" },
-  { href: "/crosscultural", label: "Cross-Cultural" },
-  { href: "/cellular", label: "Cellular" },
-  { href: "/about", label: "About" },
+  { href: "/mirror", labelKey: "mirror" },
+  { href: "/music", labelKey: "music" },
+  { href: "/crosscultural", labelKey: "crosscultural" },
+  { href: "/cellular", labelKey: "cellular" },
+  { href: "/about", labelKey: "about" },
 ];
 
 function NavLink({
@@ -93,7 +100,9 @@ function NavLink({
   active,
   className = "",
   onClick,
-}: NavItem & {
+}: {
+  href: string;
+  label: string;
   active: boolean;
   className?: string;
   onClick?: () => void;
@@ -132,6 +141,7 @@ function NavLink({
  */
 export default function SiteHeader() {
   const pathname = usePathname();
+  const t = useTranslations("nav");
   const [muted, setMuted] = useState(true);
   const [open, setOpen] = useState(false);
 
@@ -163,7 +173,7 @@ export default function SiteHeader() {
           aria-label="The Brain Studio — home"
         >
           <Caption uppercase className="text-brass tracking-[0.22em]">
-            The Brain Studio
+            {t("siteTitle")}
           </Caption>
         </Link>
 
@@ -176,15 +186,18 @@ export default function SiteHeader() {
                 : pathname === item.href || pathname.startsWith(item.href + "/");
             return (
               <li key={item.href}>
-                <NavLink {...item} active={active} />
+                <NavLink href={item.href} label={t(item.labelKey)} active={active} />
               </li>
             );
           })}
           <li>
+            <LanguageSelector />
+          </li>
+          <li>
             <button
               type="button"
               onClick={toggleAmbient}
-              aria-label={muted ? "Unmute ambient" : "Mute ambient"}
+              aria-label={muted ? t("unmuteAria") : t("muteAria")}
               aria-pressed={!muted}
               className="text-bone-cream/70 transition-colors duration-200 hover:text-brass"
             >
@@ -196,7 +209,7 @@ export default function SiteHeader() {
               href="https://github.com/dreamsmanifested6666-dotcom/brain-studio"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Source on GitHub"
+              aria-label={t("githubAria")}
               className="text-bone-cream/70 transition-colors duration-200 hover:text-brass"
             >
               <GithubMark />
@@ -204,12 +217,13 @@ export default function SiteHeader() {
           </li>
         </ul>
 
-        {/* Mobile: mute + menu */}
-        <div className="flex items-center gap-4 md:hidden">
+        {/* Mobile: language + mute + menu */}
+        <div className="flex items-center gap-3 md:hidden">
+          <LanguageSelector compact />
           <button
             type="button"
             onClick={toggleAmbient}
-            aria-label={muted ? "Unmute ambient" : "Mute ambient"}
+            aria-label={muted ? t("unmuteAria") : t("muteAria")}
             aria-pressed={!muted}
             className="text-bone-cream/70"
           >
@@ -218,7 +232,7 @@ export default function SiteHeader() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? t("closeMenu") : t("openMenu")}
             aria-expanded={open}
             className="text-bone-cream/85"
           >
@@ -249,7 +263,8 @@ export default function SiteHeader() {
             return (
               <li key={item.href}>
                 <NavLink
-                  {...item}
+                  href={item.href}
+                  label={t(item.labelKey)}
                   active={active}
                   className="block py-1"
                   onClick={() => setOpen(false)}

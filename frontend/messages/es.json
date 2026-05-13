@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "locale": "es",
+    "tier1Status": "machine_assisted",
+    "tier1Reviewed": false,
+    "lastUpdated": "2026-05-13",
+    "reviewNotes": "Awaiting review by a native Spanish speaker."
+  },
+  "nav": {
+    "siteTitle": "THE BRAIN STUDIO",
+    "mirror": "Espejo",
+    "music": "Música",
+    "crosscultural": "Transcultural",
+    "threshold": "El Umbral",
+    "archetypes": "Arquetipos",
+    "cellular": "Celular",
+    "fieldNotes": "Cuaderno de Campo",
+    "about": "Acerca",
+    "muteAria": "Silenciar el ambiente",
+    "unmuteAria": "Activar el ambiente",
+    "githubAria": "Código fuente en GitHub",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "skipToContent": "Saltar al contenido",
+    "languageSelector": "Idioma",
+    "languageSelectorFooter": "Algunas traducciones aún están en revisión. La versión inglesa es la canónica."
+  },
+  "common": {
+    "loading": "Cargando…",
+    "tryAgain": "Intentar de nuevo",
+    "returnHome": "Volver al inicio",
+    "more": "Más",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "share": "Compartir",
+    "save": "Guardar",
+    "close": "Cerrar"
+  },
+  "translationStatus": {
+    "underReviewBanner": "Este texto fue traducido con asistencia de IA y aún no ha sido revisado por un hablante nativo. La versión inglesa es la canónica.",
+    "approvedBanner": "Esta traducción ha sido revisada por un hablante nativo.",
+    "dismiss": "Descartar",
+    "feedbackPrompt": "Si eres hablante nativo y detectas algún error, puedes proponer correcciones abriendo una incidencia en el repositorio del proyecto."
+  },
+  "notFound": {
+    "label": "Fuera de la distribución de entrenamiento",
+    "title": "No aprendimos esa página.",
+    "body": "La dirección que probaste no es una de las salas que construimos. Las tres que existen — Espejo, Música, Transcultural — están enlazadas abajo.",
+    "linkMirror": "Espejo Cerebral",
+    "linkMusic": "Laboratorio de NeuroMúsica",
+    "linkCrosscultural": "Cerebro Transcultural",
+    "linkHome": "Inicio"
+  },
+  "error": {
+    "label": "Algo no se resolvió",
+    "title": "El modelo perdió la línea por un instante.",
+    "body": "Una parte de la página no se cargó. El cerebro persistente sigue ahí, al fondo, respirando. Vuelve a intentar la sala — o entra en otra.",
+    "tryAgain": "Intentar de nuevo",
+    "returnHome": "Volver al inicio",
+    "digestLabel": "código"
+  }
+}

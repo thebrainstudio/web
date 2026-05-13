@@ -10,7 +10,7 @@ import {
   Heading,
   Mono,
 } from "@/components/typography/Typography";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 /**
  * The Threshold — a contemplative essay room between the macro and the

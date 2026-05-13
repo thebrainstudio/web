@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Mandala from "@/components/decoration/Mandala";
 import {
   Body,

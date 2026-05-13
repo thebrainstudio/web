@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "locale": "ca",
+    "tier1Status": "machine_assisted",
+    "tier1Reviewed": false,
+    "lastUpdated": "2026-05-13",
+    "reviewNotes": "Translated directly from English (not via Spanish). Awaiting native review."
+  },
+  "nav": {
+    "siteTitle": "THE BRAIN STUDIO",
+    "mirror": "Mirall",
+    "music": "Música",
+    "crosscultural": "Transcultural",
+    "threshold": "El Llindar",
+    "archetypes": "Arquetips",
+    "cellular": "Cel·lular",
+    "fieldNotes": "Notes de Camp",
+    "about": "Sobre el projecte",
+    "muteAria": "Silenciar l'ambient",
+    "unmuteAria": "Activar l'ambient",
+    "githubAria": "Codi font a GitHub",
+    "openMenu": "Obrir el menú",
+    "closeMenu": "Tancar el menú",
+    "skipToContent": "Salta al contingut",
+    "languageSelector": "Idioma",
+    "languageSelectorFooter": "Algunes traduccions encara estan en revisió. La versió anglesa és la canònica."
+  },
+  "common": {
+    "loading": "Carregant…",
+    "tryAgain": "Torna-ho a provar",
+    "returnHome": "Tornar a l'inici",
+    "more": "Més",
+    "back": "Enrere",
+    "next": "Següent",
+    "previous": "Anterior",
+    "share": "Compartir",
+    "save": "Desa",
+    "close": "Tanca"
+  },
+  "translationStatus": {
+    "underReviewBanner": "Aquest text va ser traduït amb assistència d'IA i encara no ha estat revisat per un parlant natiu. La versió anglesa és la canònica.",
+    "approvedBanner": "Aquesta traducció ha estat revisada per un parlant natiu.",
+    "dismiss": "Descarta",
+    "feedbackPrompt": "Si ets parlant natiu i detectes alguna errada, pots proposar correccions obrint una incidència al repositori del projecte."
+  },
+  "notFound": {
+    "label": "Fora de la distribució d'entrenament",
+    "title": "No vam aprendre aquesta pàgina.",
+    "body": "L'adreça que has provat no és una de les sales que vam construir. Les tres que existeixen — Mirall, Música, Transcultural — tenen enllaços a sota.",
+    "linkMirror": "Mirall Cerebral",
+    "linkMusic": "Laboratori de NeuroMúsica",
+    "linkCrosscultural": "Cervell Transcultural",
+    "linkHome": "Inici"
+  },
+  "error": {
+    "label": "Alguna cosa no s'ha resolt",
+    "title": "El model ha perdut el fil un moment.",
+    "body": "Una part de la pàgina no s'ha pogut renderitzar. El cervell persistent encara hi és, al fons, respirant. Torna a provar la sala — o entra a una altra.",
+    "tryAgain": "Torna-ho a provar",
+    "returnHome": "Tornar a l'inici",
+    "digestLabel": "codi"
+  }
+}
