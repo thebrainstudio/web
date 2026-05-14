@@ -143,6 +143,13 @@ export default function MirrorInspector({ text, settledActivations }: Props) {
   // Word-hover → brain spotlight.
   // On enter: temporarily push the brain toward this word's top-3
   // regions. On leave: restore the settled prediction.
+  //
+  // Spotlight contrast is intentionally dramatic — hovered regions
+  // saturate at 1.0, others drop to 0.04 (nearly idle). The user's
+  // settled TRIBE prediction has many regions in the 0.4-0.7 band, so
+  // a subtle spotlight reads as "barely moved." High contrast makes
+  // the swing read at a glance, which is the whole point of the
+  // hover affordance.
   const enterWord = useCallback(
     (wordIdx: number) => {
       if (!impressionistic) return;
@@ -150,11 +157,17 @@ export default function MirrorInspector({ text, settledActivations }: Props) {
       const word = impressionistic.contributions[wordIdx];
       if (!word) return;
       const tops = topRegionsForWord(word, 3);
-      if (tops.length === 0) return;
-      // Spotlight pattern: hovered regions go hot, others dim.
+      if (tops.length === 0) {
+        // Word has no lexicon match (e.g. "remembering"). Don't replace
+        // the brain activations — let the user see the settled
+        // prediction without a misleading "this word means nothing"
+        // signal. But still mark the word as hovered so the visual
+        // feedback (brass tint) confirms the input was registered.
+        return;
+      }
       const spotlight: Partial<Record<RegionId, number>> = {};
-      for (const r of REGION_ORDER) spotlight[r] = 0.15;
-      for (const t of tops) spotlight[t.id] = Math.max(0.85, t.weight);
+      for (const r of REGION_ORDER) spotlight[r] = 0.04;
+      for (const t of tops) spotlight[t.id] = 1.0;
       setActivations(spotlight as Record<string, number>);
     },
     [impressionistic, setActivations],
@@ -201,12 +214,18 @@ export default function MirrorInspector({ text, settledActivations }: Props) {
         below underlines the words that contributed.
       */}
       <Body
-        className="text-bone-cream/85 leading-[1.7]"
+        className="text-bone-cream/85 leading-[1.85]"
         as="p"
       >
         {tokens.map((tok, i) => {
           const isHovered = hoveredWord === i;
           const isUnderlinedByRegion = wordsHighlightedByRegion.has(i);
+          // Words with no lexicon match still get a hover indicator
+          // (so the user knows their hover was registered) but no brain
+          // swing. Slightly muted accent so it's clear it's an
+          // "inert" hover.
+          const word = impressionistic.contributions[i];
+          const hasContribution = Object.keys(word?.regions ?? {}).length > 0;
           return (
             <span key={i}>
               <span
@@ -220,10 +239,12 @@ export default function MirrorInspector({ text, settledActivations }: Props) {
                 onTouchStart={() =>
                   hoveredWord === i ? leaveWord() : enterWord(i)
                 }
-                className={`relative inline-block cursor-pointer transition-colors duration-[220ms] ${
+                className={`relative inline-block cursor-pointer rounded-sm px-1 transition-all duration-[220ms] ${
                   isHovered
-                    ? "text-brass"
-                    : "text-bone-cream/85 hover:text-bone-cream"
+                    ? hasContribution
+                      ? "bg-brass/25 text-bone-cream ring-1 ring-brass/60"
+                      : "bg-bone-cream/10 text-bone-cream/70 ring-1 ring-bone-cream/20"
+                    : "text-bone-cream/85 hover:text-bone-cream hover:bg-bone-cream/5"
                 }`}
                 data-hover
               >
@@ -234,10 +255,10 @@ export default function MirrorInspector({ text, settledActivations }: Props) {
                 */}
                 <motion.span
                   aria-hidden
-                  className="bg-brass pointer-events-none absolute -bottom-0.5 left-0 right-0 h-[1px]"
+                  className="bg-brass pointer-events-none absolute -bottom-0.5 left-1 right-1 h-[1px]"
                   initial={false}
                   animate={{
-                    opacity: isUnderlinedByRegion ? 0.6 : 0,
+                    opacity: isUnderlinedByRegion ? 0.7 : 0,
                   }}
                   transition={{
                     duration: 0.22,
@@ -250,6 +271,58 @@ export default function MirrorInspector({ text, settledActivations }: Props) {
           );
         })}
       </Body>
+
+      {/*
+        Live "inspecting" feedback. When a word is hovered, show which
+        regions the brain is swinging toward (or a "no lexicon match"
+        message for inert words). Gives the user immediate visual
+        confirmation that their hover was registered, separate from the
+        brain swing itself (which can be subtle in busy patterns).
+      */}
+      <div className="mt-3 min-h-[1.5rem]">
+        <AnimatePresence mode="wait">
+          {hoveredWord !== null && impressionistic.contributions[hoveredWord] && (
+            <motion.div
+              key={hoveredWord}
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.22, ease: easeImportant }}
+            >
+              {(() => {
+                const word = impressionistic.contributions[hoveredWord];
+                const tops = topRegionsForWord(word, 3);
+                if (tops.length === 0) {
+                  return (
+                    <Caption
+                      uppercase
+                      className="text-bone-cream/45 tracking-[0.18em] italic"
+                    >
+                      &quot;{word.word}&quot; — no lexicon match · brain holds steady
+                    </Caption>
+                  );
+                }
+                return (
+                  <Caption
+                    uppercase
+                    className="text-brass tracking-[0.18em]"
+                  >
+                    &quot;{word.word}&quot; →{" "}
+                    {tops
+                      .map((t) =>
+                        regionById[t.id].displayName.replace(
+                          /\s*\([LR]\)\s*$/i,
+                          "",
+                        ),
+                      )
+                      .join(" · ")}
+                  </Caption>
+                );
+              })()}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
       {/* Region label — only when a region is being hovered. */}
       <div className="mt-6 min-h-[1.5rem]">
