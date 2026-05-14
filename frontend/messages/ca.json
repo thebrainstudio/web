@@ -1223,5 +1223,11 @@
     "title": "Un índex per a tot el lloc.",
     "intro": "Tres columnes. Sales, regions, assaigs de forma llarga. Passa el cursor per una targeta i les referències creuades a les altres columnes s'il·luminen. La pàgina està pensada per llegir-se en ordre — un catàleg que pots fullejar, no un diagrama de xarxa que hagis de desxifrar.",
     "footerNote": "Les etiquetes de regió es col·lapsen a quatre identificadors per targeta; entra en una sala o assaig per veure la llista completa. Les etiquetes de secció-pont sota cada regió són el patró canònic en què aquesta regió més participa — les mateixes etiquetes que utilitza la pàgina de Ponts."
+  },
+  "footer": {
+    "built": "Construït a Chulalongkorn JIPP",
+    "encoder": "Encoder TRIBE v2",
+    "version": "v1.0 · última revisió 2026-05-14",
+    "github": "Codi font a GitHub"
   }
 }

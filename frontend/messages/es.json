@@ -1223,5 +1223,11 @@
     "title": "Un índice para todo el sitio.",
     "intro": "Tres columnas. Salas, regiones, ensayos de forma larga. Pasa el cursor por una tarjeta y las referencias cruzadas en las otras columnas se iluminan. La página está pensada para leerse en orden — un catálogo que puedes hojear, no un diagrama de red que tengas que descifrar.",
     "footerNote": "Las etiquetas de región se colapsan a cuatro identificadores por tarjeta; entra en una sala o ensayo para ver la lista completa. Las etiquetas de sección-puente bajo cada región son el patrón canónico en el que esa región más participa — las mismas etiquetas que usa la página de Puentes."
+  },
+  "footer": {
+    "built": "Construido en Chulalongkorn JIPP",
+    "encoder": "Encoder TRIBE v2",
+    "version": "v1.0 · última revisión 2026-05-14",
+    "github": "Código fuente en GitHub"
   }
 }

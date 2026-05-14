@@ -395,28 +395,9 @@ export default async function Home({
         </div>
       </ScrollScene>
 
-      <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/65">
-          {t("footer.built")}
-        </Caption>
-        <Caption uppercase className="text-bone-cream/40 mx-3" aria-hidden>
-          ·
-        </Caption>
-        <Caption uppercase className="text-bone-cream/65">
-          {t("footer.encoder")}
-        </Caption>
-        <Caption uppercase className="text-bone-cream/40 mx-3" aria-hidden>
-          ·
-        </Caption>
-        <Link
-          href="/about"
-          className="hover:text-bone-cream/80 transition-colors duration-200"
-        >
-          <Caption uppercase className="text-bone-cream/65">
-            {t("footer.about")}
-          </Caption>
-        </Link>
-      </footer>
+      {/* PR 9: inline home footer removed — the shared <SiteFooter>
+          now lives in app/[locale]/layout.tsx and renders on every
+          page including this one. */}
     </>
   );
 }

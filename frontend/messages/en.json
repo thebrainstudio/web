@@ -1223,5 +1223,11 @@
     "title": "An index for the whole site.",
     "intro": "Three columns. Rooms, regions, long-form essays. Hover a card and the cross-references in the other columns light up. The page is meant to read in order — a catalogue you can scan, not a network diagram you have to decode.",
     "footerNote": "Region labels collapse to four IDs per card; click into a room or essay for the full list. Bridge-section labels under each region are the canonical pattern that region most participates in — the same labels used on the Bridges page."
+  },
+  "footer": {
+    "built": "Built at Chulalongkorn JIPP",
+    "encoder": "TRIBE v2 encoder",
+    "version": "v1.0 · last reviewed 2026-05-14",
+    "github": "Source on GitHub"
   }
 }
