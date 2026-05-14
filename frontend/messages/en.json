@@ -912,7 +912,7 @@
       "modelBody": "TRIBE v2 brain encoder. The site uses the cached checkpoint only; no Meta-specific data leaves the page.",
       "builtLabel": "Built with",
       "builtTitle": "Anthropic Claude",
-      "builtBody": "The scaffolding, the typography system, the atmospherics, this room — all collaboratively engineered.",
+      "builtBody": "Engineering scaffolding and prose drafting were produced with Claude (Anthropic, model versions across 2025–2026) under anonymous editorial direction and final review. All factual claims, citations, region attributions, and editorial decisions were human-verified. The site's voice and structural choices are the author's; the implementation labor was shared with the model.",
       "homeLabel": "Home",
       "homeTitle": "Chulalongkorn JIPP",
       "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences. Bangkok and the Thai stimulus pairs come from here."

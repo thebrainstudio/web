@@ -912,7 +912,7 @@
       "modelBody": "脳エンコーダ TRIBE v2。本サイトはキャッシュ済みのチェックポイントのみを使い、Meta 固有のデータはページから外に出ません。",
       "builtLabel": "共に作ったもの",
       "builtTitle": "Anthropic Claude",
-      "builtBody": "足場、タイポグラフィのシステム、空気感、この部屋 — すべて共同で設計・実装しました。",
+      "builtBody": "工学的な足場と散文の下書きは、Claude（Anthropic、2025〜2026年にわたるモデルバージョン群）によって、匿名の編集ディレクションと最終レビューのもとで作成された。事実主張、引用、脳領域の帰属、そして編集判断はすべて人による検証を経ている。サイトの声と構造的選択は著者のものであり、実装の労働はモデルと共有された。",
       "homeLabel": "ホーム",
       "homeTitle": "チュラーロンコーン大学 JIPP",
       "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences。バンコクと、タイ語の刺激対はここから来ています。"
