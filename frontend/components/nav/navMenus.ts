@@ -87,6 +87,9 @@ export const navMenus: NavMenuGroup[] = [
     items: [
       { href: "/atlas", labelKey: "atlas", blurbKey: "atlas" },
       { href: "/tours", labelKey: "tours", blurbKey: "tours" },
+      // PR 7: the /map page sits in the Instrument group — same
+      // register as Atlas + Tours, the reference layer.
+      { href: "/map", labelKey: "siteMap", blurbKey: "siteMap" },
     ],
   },
 ];

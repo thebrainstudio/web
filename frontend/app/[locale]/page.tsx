@@ -257,7 +257,7 @@ export default async function Home({
               {t("instrument.body")}
             </Body>
           </div>
-          <div className="mt-20 grid grid-cols-1 gap-14 md:mt-24 md:grid-cols-3 md:gap-10">
+          <div className="mt-20 grid grid-cols-1 gap-12 md:mt-24 md:grid-cols-2 md:gap-10 lg:grid-cols-4">
             <RoomCard
               index={0}
               title={t("rooms.atlas.title")}
@@ -278,6 +278,14 @@ export default async function Home({
               description={t("rooms.tours.description")}
               href="/tours"
               pattern={signaturePatterns.tours}
+            />
+            {/* PR 7: site-map card joins the Instrument row. */}
+            <RoomCard
+              index={3}
+              title={t("rooms.map.title")}
+              description={t("rooms.map.description")}
+              href="/map"
+              pattern={signaturePatterns.map}
             />
           </div>
         </div>

@@ -408,7 +408,8 @@ export const signaturePatterns: Record<
   | "bridges"
   | "tours"
   | "depthPsychology"
-  | "fieldNotes",
+  | "fieldNotes"
+  | "map",
   Partial<Record<RegionId, number>>
 > = {
   mirror: {
@@ -523,5 +524,29 @@ export const signaturePatterns: Record<
     vmpfc: 0.55,
     mtg_left: 0.5,
     amyg_left: 0.35,
+  },
+  // Map: the index page. Even, low-to-mid activation across every
+  // region in pairs, mirroring the catalogue character of the page.
+  map: {
+    ifg_left: 0.4,
+    ifg_right: 0.4,
+    pstg_left: 0.4,
+    pstg_right: 0.4,
+    mtg_left: 0.4,
+    mtg_right: 0.4,
+    atl_left: 0.4,
+    atl_right: 0.4,
+    agl_left: 0.4,
+    agl_right: 0.4,
+    hg_left: 0.35,
+    hg_right: 0.35,
+    vmpfc: 0.45,
+    dmpfc: 0.4,
+    pcc: 0.45,
+    precuneus: 0.4,
+    amyg_left: 0.3,
+    amyg_right: 0.3,
+    hipp_left: 0.4,
+    hipp_right: 0.4,
   },
 };

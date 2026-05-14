@@ -72,10 +72,12 @@
         "tagline": "Reference layer — twenty regions, six guided walks.",
         "blurbs": {
           "atlas": "Twenty regions catalogued one by one with anatomy + function.",
-          "tours": "Six guided walks, eight to fifteen minutes each."
+          "tours": "Six guided walks, eight to fifteen minutes each.",
+          "siteMap": "Three columns showing how rooms, regions, and long-form cross-reference."
         }
       }
-    }
+    },
+    "siteMap": "Site Map"
   },
   "common": {
     "loading": "Loading…",
@@ -175,6 +177,10 @@
       "fieldNotes": {
         "title": "Field Notes",
         "description": "Short pieces from the seams between disciplines — hippocampus, time, what the brain knows."
+      },
+      "map": {
+        "title": "Site Map",
+        "description": "Three columns showing how rooms, regions, and long-form essays cross-reference."
       }
     },
     "insights": {
@@ -1211,5 +1217,11 @@
     "words": "words",
     "minutesShort": "min",
     "minRead": "min read"
+  },
+  "map": {
+    "label": "Site map",
+    "title": "An index for the whole site.",
+    "intro": "Three columns. Rooms, regions, long-form essays. Hover a card and the cross-references in the other columns light up. The page is meant to read in order — a catalogue you can scan, not a network diagram you have to decode.",
+    "footerNote": "Region labels collapse to four IDs per card; click into a room or essay for the full list. Bridge-section labels under each region are the canonical pattern that region most participates in — the same labels used on the Bridges page."
   }
 }
