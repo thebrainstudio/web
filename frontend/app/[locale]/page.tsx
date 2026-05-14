@@ -37,7 +37,7 @@ export default async function Home({
       {/* Shot 1 — Cold open. Amber lamp glow + animated. */}
       <ScrollScene
         {...shot1}
-        className="relative flex min-h-[110vh] items-center justify-center px-6"
+        className="relative flex min-h-[90vh] items-center justify-center px-6"
       >
         <AtmosphericGlow
           preset="amber-lamp"
@@ -91,7 +91,7 @@ export default async function Home({
       {/* Shot 2 — Brain glides left. Pinned 3-step TRIBE explanation. */}
       <ScrollScene
         {...shot2}
-        className="relative grid min-h-[120vh] grid-cols-1 px-6 md:grid-cols-12 md:px-10"
+        className="relative grid min-h-[100vh] grid-cols-1 px-6 md:grid-cols-12 md:px-10"
       >
         <div aria-hidden className="md:col-span-5" />
         <div className="md:col-span-7">
@@ -142,7 +142,7 @@ export default async function Home({
       {/* Shot 3 — Six rooms grid. Cool-cathedral glow (subtle, no position). */}
       <ScrollScene
         {...shot3}
-        className="relative flex min-h-[120vh] items-center px-6 md:px-10"
+        className="relative flex min-h-[95vh] items-center px-6 md:px-10"
       >
         <AtmosphericGlow preset="cool-cathedral" intensity="subtle" />
         <div className="mx-auto w-full max-w-[1280px]">
@@ -227,13 +227,13 @@ export default async function Home({
       {/* Shot 4 — Insight cards with parallax */}
       <ScrollScene
         {...shot4}
-        className="relative px-6 py-32 md:px-10 md:py-48"
+        className="relative px-6 py-20 md:px-10 md:py-28"
       >
         <div className="mx-auto max-w-[1100px]">
           <Caption uppercase as="p" className="text-brass">
             {t("insights.section")}
           </Caption>
-          <div className="mt-16 space-y-32 md:space-y-48">
+          <div className="mt-12 space-y-20 md:space-y-28">
             <ParallaxLayer speed={0.95}>
               <InsightCard
                 index={0}
@@ -262,7 +262,7 @@ export default async function Home({
       {/* Shot 5 — Begin */}
       <ScrollScene
         {...shot5}
-        className="relative flex min-h-[100vh] items-center justify-center px-6"
+        className="relative flex min-h-[80vh] items-center justify-center px-6"
       >
         <div className="mx-auto max-w-[36rem] text-center">
           <Display italic as="h2" className="text-bone-cream">

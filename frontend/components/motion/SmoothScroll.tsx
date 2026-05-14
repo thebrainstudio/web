@@ -25,9 +25,16 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       return;
     }
 
+    // Scroll feel tuning. The previous values (lerp 0.1, duration 1.2)
+    // made every wheel tick coast for ~1.2s, which on long pages
+    // (the home has ~700vh of stacked sections) compounded into the
+    // "stuck scrolling" feel users reported. New values keep enough
+    // easing to dampen trackpad inertia but settle in ~700ms so the
+    // page feels responsive to the user's input, not the other way
+    // round.
     const lenis = new Lenis({
-      lerp: 0.1,
-      duration: 1.2,
+      lerp: 0.16,
+      duration: 0.85,
       smoothWheel: true,
     });
 

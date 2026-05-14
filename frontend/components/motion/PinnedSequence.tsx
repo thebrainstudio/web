@@ -37,7 +37,12 @@ type PinnedSequenceProps = {
  */
 export default function PinnedSequence({
   steps,
-  stepDuration = 0.7,
+  // Pin distance per step. Previous default 0.7 felt fine for short
+  // 1-2 step pins but compounded on multi-step sequences (the home's
+  // 3-step "How it works" used 3 × 0.7 = 210vh of pinned scroll just
+  // for one section). 0.55 still gives each step enough viewport-
+  // time to read comfortably while cutting ~45vh per 3-step pin.
+  stepDuration = 0.55,
   children,
   className,
 }: PinnedSequenceProps) {
