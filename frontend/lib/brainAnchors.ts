@@ -149,6 +149,24 @@ export const brainAnchors: Record<RoomId, BrainAnchor> = {
     meshResolution: "fsaverage5",
     visible: true,
   },
+  faust: {
+    // Faust — same posture as the other long-form prose rooms; the
+    // brain holds in the upper-right as a reference figure.
+    position: [1.15, 0.5, 0],
+    scale: 0.3,
+    rotation: [0, -0.2, 0],
+    lighting: "warm",
+    meshResolution: "fsaverage5",
+    visible: true,
+  },
+  dante: {
+    position: [1.15, 0.5, 0],
+    scale: 0.3,
+    rotation: [0, -0.18, 0],
+    lighting: "warm",
+    meshResolution: "fsaverage5",
+    visible: true,
+  },
 };
 
 export function anchorFor(room: RoomId): BrainAnchor {

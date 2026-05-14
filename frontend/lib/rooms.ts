@@ -31,7 +31,9 @@ export type RoomId =
   | "atlas"
   | "bridges"
   | "tours"
-  | "depth-psychology";
+  | "depth-psychology"
+  | "faust"
+  | "dante";
 
 export const ALL_ROOM_IDS: readonly RoomId[] = [
   "home",
@@ -47,6 +49,8 @@ export const ALL_ROOM_IDS: readonly RoomId[] = [
   "bridges",
   "tours",
   "depth-psychology",
+  "faust",
+  "dante",
 ];
 
 /**
@@ -87,6 +91,12 @@ export const ROOM_DEPTH: Record<RoomId, number> = {
   "depth-psychology": 1,
   threshold: 2,
   archetypes: 2,
+  // Literary rooms — sit at the same depth as Threshold and Archetypes
+  // because they're the same contemplative register: long-form essays
+  // staging mind through a third language (literature) alongside the
+  // existing two (neuroscience, depth psychology).
+  faust: 2,
+  dante: 2,
   cellular: 3,
 };
 
@@ -122,4 +132,6 @@ export const ROOM_HREF: Record<RoomId, string> = {
   bridges: "/bridges",
   tours: "/tours",
   "depth-psychology": "/depth-psychology",
+  faust: "/faust",
+  dante: "/dante",
 };

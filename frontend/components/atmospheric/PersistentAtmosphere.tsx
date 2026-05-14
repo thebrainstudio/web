@@ -125,6 +125,21 @@ const ROOM_ATMOSPHERE: Record<RoomId, RoomAtmosphere> = {
       "radial-gradient(ellipse 1300px 1000px at 35% -5%, rgba(232, 160, 74, 0.10) 0%, rgba(201, 169, 97, 0.04) 40%, transparent 72%)",
     opacity: 0.9,
   },
+  faust: {
+    // Faust — sustained warm sepia, with a faint counter-glow at the
+    // lower-right to suggest the shadow without naming it.
+    backgroundImage:
+      "radial-gradient(ellipse 1300px 1000px at 40% -5%, rgba(232, 160, 74, 0.10) 0%, rgba(201, 169, 97, 0.04) 40%, transparent 72%), radial-gradient(ellipse 700px 500px at 85% 95%, rgba(139, 58, 58, 0.05) 0%, transparent 60%)",
+    opacity: 0.9,
+  },
+  dante: {
+    // Dante — three-stop gradient suggesting the architecture: warm
+    // amber pole (Paradiso) at the top, cooler middle (Purgatorio),
+    // a faint red-tinged pool at the bottom (Inferno).
+    backgroundImage:
+      "radial-gradient(ellipse 1300px 900px at 50% -5%, rgba(232, 160, 74, 0.10) 0%, transparent 50%), radial-gradient(ellipse 1100px 700px at 50% 50%, rgba(201, 169, 97, 0.05) 0%, transparent 60%), radial-gradient(ellipse 900px 500px at 50% 100%, rgba(139, 58, 58, 0.06) 0%, transparent 60%)",
+    opacity: 0.92,
+  },
 };
 
 function prefersReducedMotion(): boolean {

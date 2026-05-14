@@ -700,6 +700,64 @@ export const citations: Record<string, Citation> = {
     journal: "Cortex",
     doi: "10.1016/j.cortex.2008.05.004",
   },
+
+  // --- Literary rooms (Faust & Dante) ---------------------------------
+  // Foundational papers for the neuroscience movements in /faust and
+  // /dante. Friston 2010 and Berridge & Robinson 1998 underpin
+  // Faustian striving (the prediction-error account of selfhood;
+  // wanting/liking distinction). Mar 2011, Speer et al. 2009, and
+  // Wallentin et al. 2011 underpin Dante (default-mode role in
+  // extended narrative; embodied cognition of described motion;
+  // amygdala-autonomic onset preceding conscious comprehension).
+  // Panksepp 1998 covers SEEKING and is referenced by both rooms.
+  "friston-2010-free-energy": {
+    id: "friston-2010-free-energy",
+    authors: "Friston, K.",
+    year: 2010,
+    title: "The free-energy principle: a unified brain theory?",
+    journal: "Nature Reviews Neuroscience",
+    doi: "10.1038/nrn2787",
+  },
+  "berridge-robinson-1998-wanting-liking": {
+    id: "berridge-robinson-1998-wanting-liking",
+    authors: "Berridge, K. C., & Robinson, T. E.",
+    year: 1998,
+    title:
+      "What is the role of dopamine in reward: hedonic impact, reward learning, or incentive salience?",
+    journal: "Brain Research Reviews",
+    doi: "10.1016/S0165-0173(98)00019-8",
+  },
+  "mar-2011-neural-bases-narrative": {
+    id: "mar-2011-neural-bases-narrative",
+    authors: "Mar, R. A.",
+    year: 2011,
+    title:
+      "The neural bases of social cognition and story comprehension.",
+    journal: "Annual Review of Psychology",
+    doi: "10.1146/annurev-psych-120709-145406",
+  },
+  "speer-2009-reading-stories-embodied": {
+    id: "speer-2009-reading-stories-embodied",
+    authors: "Speer, N. K., Reynolds, J. R., Swallow, K. M., & Zacks, J. M.",
+    year: 2009,
+    title:
+      "Reading stories activates neural representations of visual and motor experiences.",
+    journal: "Psychological Science",
+    doi: "10.1111/j.1467-9280.2009.02397.x",
+  },
+  "wallentin-2011-amygdala-story": {
+    id: "wallentin-2011-amygdala-story",
+    authors:
+      "Wallentin, M., Nielsen, A. H., Vuust, P., Dohn, A., Roepstorff, A., & Lund, T. E.",
+    year: 2011,
+    title:
+      "Amygdala and heart rate variability responses from listening to emotionally intense parts of a story.",
+    journal: "NeuroImage",
+    doi: "10.1016/j.neuroimage.2011.01.077",
+  },
+  // Panksepp's SEEKING system is also cited by the Faust room — the
+  // entry already lives above under `panksepp-1998-affective-neuroscience`
+  // (see depth-psychology / affective-neuroscience section).
 };
 
 export function getCitation(id: string): Citation | undefined {

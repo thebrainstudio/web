@@ -132,6 +132,12 @@
 [data-room="about"] {
   --plate-url: url("/plates/vesalius_fabrica.webp");
 }
+[data-room="faust"] {
+  --plate-url: url("/plates/delacroix_faust.webp");
+}
+[data-room="dante"] {
+  --plate-url: url("/plates/blake_dante.webp");
+}
 /* New / orphan routes inherit the home Fludd plate at 0.04 — they
    feel like extensions of the home, not orphans. */
 [data-room="field-notes"],

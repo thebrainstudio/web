@@ -183,36 +183,51 @@ export default async function Home({
             />
           </div>
 
-          {/* Depth-psychology rooms — quieter middle row, indented */}
-          <div className="mt-20 grid grid-cols-1 gap-12 md:mt-20 md:grid-cols-12 md:gap-10">
-            <div aria-hidden className="hidden md:col-span-2 md:block" />
-            <div className="md:col-span-4">
-              <RoomCard
-                index={3}
-                title={t("rooms.threshold.title")}
-                description={t("rooms.threshold.description")}
-                href="/threshold"
-                pattern={signaturePatterns.mirror}
-              />
-            </div>
-            <div className="md:col-span-4">
-              <RoomCard
-                index={4}
-                title={t("rooms.archetypes.title")}
-                description={t("rooms.archetypes.description")}
-                href="/archetypes"
-                pattern={signaturePatterns.crosscultural}
-              />
-            </div>
-            <div aria-hidden className="hidden md:col-span-2 md:block" />
+          {/* Depth-psychology rooms — middle row (Threshold, Archetypes) */}
+          <div className="mt-20 grid grid-cols-1 gap-12 md:mt-20 md:grid-cols-2 md:gap-10">
+            <RoomCard
+              index={3}
+              title={t("rooms.threshold.title")}
+              description={t("rooms.threshold.description")}
+              href="/threshold"
+              pattern={signaturePatterns.mirror}
+            />
+            <RoomCard
+              index={4}
+              title={t("rooms.archetypes.title")}
+              description={t("rooms.archetypes.description")}
+              href="/archetypes"
+              pattern={signaturePatterns.crosscultural}
+            />
           </div>
 
-          {/* Deepest descent */}
+          {/* Literary rooms — Faust and Dante, the third language.
+              Sit on the same horizontal as Threshold/Archetypes, in
+              their own row, to mark them as the contemplative
+              tier's literary extension rather than a sub-grouping. */}
+          <div className="mt-20 grid grid-cols-1 gap-12 md:mt-20 md:grid-cols-2 md:gap-10">
+            <RoomCard
+              index={5}
+              title={t("rooms.faust.title")}
+              description={t("rooms.faust.description")}
+              href="/faust"
+              pattern={signaturePatterns.mirror}
+            />
+            <RoomCard
+              index={6}
+              title={t("rooms.dante.title")}
+              description={t("rooms.dante.description")}
+              href="/dante"
+              pattern={signaturePatterns.crosscultural}
+            />
+          </div>
+
+          {/* Deepest descent — Cellular alone */}
           <div className="mt-20 grid grid-cols-1 gap-10 md:mt-20 md:grid-cols-12">
             <div aria-hidden className="hidden md:col-span-4 md:block" />
             <div className="md:col-span-4">
               <RoomCard
-                index={5}
+                index={7}
                 title={t("rooms.cellular.title")}
                 description={t("rooms.cellular.description")}
                 href="/cellular"

@@ -107,6 +107,8 @@ type NavLabelKey =
   | "tours"
   | "threshold"
   | "archetypes"
+  | "faust"
+  | "dante"
   | "depthPsychology"
   | "fieldNotes"
   | "cellular"
@@ -148,6 +150,8 @@ const sectionGroups: SectionGroup[] = [
     items: [
       { href: "/threshold", labelKey: "threshold" },
       { href: "/archetypes", labelKey: "archetypes" },
+      { href: "/faust", labelKey: "faust" },
+      { href: "/dante", labelKey: "dante" },
       { href: "/depth-psychology", labelKey: "depthPsychology" },
       { href: "/field-notes", labelKey: "fieldNotes" },
     ],
