@@ -56,14 +56,19 @@ export default function MirrorPage() {
           header — the user couldn't actually see what the brain looks
           like. 0.42 keeps the brain in the upper portion of the page
           (visually framing the editorial title + textarea below) while
-          showing the full top of both hemispheres. */}
+          showing the full top of both hemispheres.
+
+          activations: only set to {} (idle) BEFORE the user has typed.
+          Once `latest` is non-null, omit it so MirrorInput's settled
+          prediction survives scroll-back-up to this section. Before:
+          scrolling back to the top wiped the user's TRIBE prediction. */}
       <ScrollScene
         id="mirror-entry"
         brain={{
           position: [0, 0.42, 0],
           scale: 0.78,
           rotation: [0, 0.18, 0],
-          activations: {},
+          ...(latest === null ? { activations: {} } : {}),
         }}
         lighting="warm"
         className="relative min-h-screen px-6 pb-24 pt-36 md:px-10 md:pt-44"
@@ -121,14 +126,24 @@ export default function MirrorPage() {
           layout: each step takes its natural height (~half a viewport)
           and scrolls naturally past the camera, while the brain stays
           left-anchored throughout the section. Total scroll length
-          for the section drops from ~300vh to ~150vh. */}
+          for the section drops from ~300vh to ~150vh.
+
+          activations: previously hard-coded to signaturePatterns.mirror
+          which OVERWROTE the user's TRIBE prediction every time they
+          scrolled into this section — no matter what they typed, the
+          essay reset the brain to the same demo pattern. Now we only
+          apply the demo pattern BEFORE the user has typed; once they
+          have a real prediction (latest !== null), the brain mirrors
+          THEIR text through the entire essay section. */}
       <ScrollScene
         id="mirror-essay"
         brain={{
           position: [-0.95, 0, 0],
           scale: 0.7,
           rotation: [0, 0.4, 0],
-          activations: signaturePatterns.mirror,
+          ...(latest === null
+            ? { activations: signaturePatterns.mirror }
+            : {}),
         }}
         lighting="warm"
         className="relative grid grid-cols-1 px-6 py-24 md:grid-cols-12 md:gap-x-10 md:px-10 md:py-32"
@@ -163,14 +178,18 @@ export default function MirrorPage() {
 
       {/* Shot 3 — curated examples. Padding tightened from py-48 to
           py-24 — the essay above now flows naturally into the examples
-          rather than parking the user in dead space between sections. */}
+          rather than parking the user in dead space between sections.
+
+          activations: same conditional fix — only reset to {} when the
+          user hasn't typed yet. After they have a prediction, the
+          brain holds their pattern while they browse the examples. */}
       <ScrollScene
         id="mirror-examples"
         brain={{
           position: [0, 0, 0],
           scale: 0.95,
           rotation: [0, 0, 0],
-          activations: {},
+          ...(latest === null ? { activations: {} } : {}),
         }}
         lighting="cinematic"
         className="relative px-6 py-20 md:px-10 md:py-28"
