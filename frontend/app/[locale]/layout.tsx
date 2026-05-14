@@ -5,6 +5,7 @@ import { locales } from "@/i18n/locales";
 import LocaleLangSync from "@/components/i18n/LocaleLangSync";
 import TranslationStatusBanner from "@/components/i18n/TranslationStatusBanner";
 import SiteHeader from "@/components/nav/SiteHeader";
+import DeferredLocaleClient from "@/components/client/DeferredLocaleClient";
 import { Caption } from "@/components/typography/Typography";
 
 /**
@@ -56,6 +57,9 @@ export default async function LocaleLayout({
       <main id="main" className="relative z-10">
         {children}
       </main>
+      {/* SearchPalette + any other locale-aware deferred clients live
+          here so they sit under NextIntlClientProvider. */}
+      <DeferredLocaleClient />
     </NextIntlClientProvider>
   );
 }

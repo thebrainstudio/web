@@ -10,6 +10,11 @@ import dynamic from "next/dynamic";
  *
  * Wrapped in one client component so the root layout (a server component)
  * can stay clean.
+ *
+ * NOTE: SearchPalette lives in `[locale]/layout.tsx` via DeferredLocaleClient
+ * because it calls `useRouter` from `@/i18n/navigation`, which requires the
+ * NextIntlClientProvider context — that provider is mounted in the locale
+ * layout, not the root layout.
  */
 
 const CursorFollower = dynamic(
@@ -22,17 +27,11 @@ const AmbientDrone = dynamic(
   { ssr: false, loading: () => null },
 );
 
-const SearchPalette = dynamic(
-  () => import("@/components/search/SearchPalette"),
-  { ssr: false, loading: () => null },
-);
-
 export default function DeferredClient() {
   return (
     <>
       <CursorFollower />
       <AmbientDrone />
-      <SearchPalette />
     </>
   );
 }
