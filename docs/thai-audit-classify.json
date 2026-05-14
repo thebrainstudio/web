@@ -1,0 +1,3205 @@
+{
+  "total_counts": {
+    "GOOD": 259,
+    "MISSING": 18,
+    "NEEDS-REVIEW": 297,
+    "WEAK": 15,
+    "ESSAY-NEEDS-HUMAN": 10,
+    "WRONG": 1,
+    "POETIC-NEEDS-HUMAN": 18
+  },
+  "per_namespace": {
+    "_meta": {
+      "GOOD": 2,
+      "MISSING": 1,
+      "NEEDS-REVIEW": 1
+    },
+    "nav": {
+      "MISSING": 1,
+      "GOOD": 15,
+      "NEEDS-REVIEW": 2
+    },
+    "common": {
+      "GOOD": 10
+    },
+    "translationStatus": {
+      "NEEDS-REVIEW": 3,
+      "GOOD": 1
+    },
+    "home": {
+      "GOOD": 23,
+      "NEEDS-REVIEW": 20
+    },
+    "mirror": {
+      "GOOD": 15,
+      "WEAK": 1,
+      "MISSING": 4,
+      "NEEDS-REVIEW": 11
+    },
+    "music": {
+      "GOOD": 7,
+      "NEEDS-REVIEW": 11,
+      "WEAK": 1
+    },
+    "essays": {
+      "ESSAY-NEEDS-HUMAN": 10
+    },
+    "atlas": {
+      "GOOD": 29,
+      "NEEDS-REVIEW": 7,
+      "MISSING": 1
+    },
+    "bridges": {
+      "GOOD": 10,
+      "NEEDS-REVIEW": 8,
+      "MISSING": 1
+    },
+    "tours": {
+      "GOOD": 11,
+      "NEEDS-REVIEW": 4
+    },
+    "depthPsychology": {
+      "GOOD": 18,
+      "NEEDS-REVIEW": 10
+    },
+    "fieldNotes": {
+      "GOOD": 4,
+      "NEEDS-REVIEW": 3,
+      "WRONG": 1
+    },
+    "regions": {
+      "GOOD": 17,
+      "NEEDS-REVIEW": 28,
+      "WEAK": 12,
+      "POETIC-NEEDS-HUMAN": 18,
+      "MISSING": 5
+    },
+    "mandalas": {
+      "NEEDS-REVIEW": 19,
+      "GOOD": 8
+    },
+    "archetypes": {
+      "GOOD": 19,
+      "NEEDS-REVIEW": 30
+    },
+    "threshold": {
+      "GOOD": 5,
+      "NEEDS-REVIEW": 21
+    },
+    "cellular": {
+      "GOOD": 22,
+      "NEEDS-REVIEW": 41,
+      "MISSING": 2
+    },
+    "crosscultural": {
+      "NEEDS-REVIEW": 10,
+      "GOOD": 4
+    },
+    "about": {
+      "GOOD": 30,
+      "NEEDS-REVIEW": 64,
+      "WEAK": 1,
+      "MISSING": 3
+    },
+    "notFound": {
+      "NEEDS-REVIEW": 2,
+      "GOOD": 5
+    },
+    "error": {
+      "GOOD": 4,
+      "NEEDS-REVIEW": 2
+    }
+  },
+  "rows": {
+    "_meta.locale": {
+      "en": "en",
+      "th": "th",
+      "class": "GOOD"
+    },
+    "_meta.tier1Status": {
+      "en": "canonical",
+      "th": "machine_assisted",
+      "class": "GOOD"
+    },
+    "_meta.lastUpdated": {
+      "en": "2026-05-13",
+      "th": "2026-05-13",
+      "class": "MISSING"
+    },
+    "_meta.reviewNotes": {
+      "en": "English is the canonical source for this site.",
+      "th": "Awaiting personal review by site author (Thai-fluent JIPP student).",
+      "class": "NEEDS-REVIEW"
+    },
+    "nav.siteTitle": {
+      "en": "THE BRAIN STUDIO",
+      "th": "THE BRAIN STUDIO",
+      "class": "MISSING"
+    },
+    "nav.mirror": {
+      "en": "Mirror",
+      "th": "กระจกสมอง",
+      "class": "GOOD"
+    },
+    "nav.music": {
+      "en": "Music",
+      "th": "ดนตรี",
+      "class": "GOOD"
+    },
+    "nav.crosscultural": {
+      "en": "Cross-Cultural",
+      "th": "ข้ามวัฒนธรรม",
+      "class": "GOOD"
+    },
+    "nav.threshold": {
+      "en": "Threshold",
+      "th": "ธรณีประตู",
+      "class": "GOOD"
+    },
+    "nav.archetypes": {
+      "en": "Archetypes",
+      "th": "แม่แบบจิต",
+      "class": "GOOD"
+    },
+    "nav.cellular": {
+      "en": "Cellular",
+      "th": "ระดับเซลล์",
+      "class": "GOOD"
+    },
+    "nav.fieldNotes": {
+      "en": "Field Notes",
+      "th": "บันทึกภาคสนาม",
+      "class": "GOOD"
+    },
+    "nav.about": {
+      "en": "About",
+      "th": "เกี่ยวกับ",
+      "class": "GOOD"
+    },
+    "nav.muteAria": {
+      "en": "Mute ambient",
+      "th": "ปิดเสียงบรรยากาศ",
+      "class": "GOOD"
+    },
+    "nav.unmuteAria": {
+      "en": "Unmute ambient",
+      "th": "เปิดเสียงบรรยากาศ",
+      "class": "GOOD"
+    },
+    "nav.searchAria": {
+      "en": "Search The Brain Studio (Ctrl-K)",
+      "th": "ค้นหาใน The Brain Studio (Ctrl-K)",
+      "class": "NEEDS-REVIEW"
+    },
+    "nav.githubAria": {
+      "en": "Source on GitHub",
+      "th": "ดูซอร์สโค้ดบน GitHub",
+      "class": "GOOD"
+    },
+    "nav.openMenu": {
+      "en": "Open menu",
+      "th": "เปิดเมนู",
+      "class": "GOOD"
+    },
+    "nav.closeMenu": {
+      "en": "Close menu",
+      "th": "ปิดเมนู",
+      "class": "GOOD"
+    },
+    "nav.skipToContent": {
+      "en": "Skip to content",
+      "th": "ข้ามไปยังเนื้อหา",
+      "class": "GOOD"
+    },
+    "nav.languageSelector": {
+      "en": "Language",
+      "th": "ภาษา",
+      "class": "GOOD"
+    },
+    "nav.languageSelectorFooter": {
+      "en": "Translations in review for some content. English is the canonical version.",
+      "th": "เนื้อหาบางส่วนยังอยู่ในระหว่างการตรวจทาน ฉบับภาษาอังกฤษคือฉบับมาตรฐาน",
+      "class": "NEEDS-REVIEW"
+    },
+    "common.loading": {
+      "en": "Loading…",
+      "th": "กำลังโหลด…",
+      "class": "GOOD"
+    },
+    "common.tryAgain": {
+      "en": "Try again",
+      "th": "ลองอีกครั้ง",
+      "class": "GOOD"
+    },
+    "common.returnHome": {
+      "en": "Return home",
+      "th": "กลับหน้าแรก",
+      "class": "GOOD"
+    },
+    "common.more": {
+      "en": "More",
+      "th": "เพิ่มเติม",
+      "class": "GOOD"
+    },
+    "common.back": {
+      "en": "Back",
+      "th": "ย้อนกลับ",
+      "class": "GOOD"
+    },
+    "common.next": {
+      "en": "Next",
+      "th": "ถัดไป",
+      "class": "GOOD"
+    },
+    "common.previous": {
+      "en": "Previous",
+      "th": "ก่อนหน้า",
+      "class": "GOOD"
+    },
+    "common.share": {
+      "en": "Share",
+      "th": "แบ่งปัน",
+      "class": "GOOD"
+    },
+    "common.save": {
+      "en": "Save",
+      "th": "บันทึก",
+      "class": "GOOD"
+    },
+    "common.close": {
+      "en": "Close",
+      "th": "ปิด",
+      "class": "GOOD"
+    },
+    "translationStatus.underReviewBanner": {
+      "en": "This page was machine-translated from English. A native reviewer has not yet approved this translation. The English original is canonical.",
+      "th": "งานเขียนชิ้นนี้แปลด้วยปัญญาประดิษฐ์ และยังไม่ผ่านการตรวจทานโดยเจ้าของภาษา ต้นฉบับภาษาอังกฤษคือฉบับมาตรฐาน",
+      "class": "NEEDS-REVIEW"
+    },
+    "translationStatus.approvedBanner": {
+      "en": "This translation has been reviewed by a native speaker.",
+      "th": "ฉบับแปลนี้ได้รับการตรวจทานโดยเจ้าของภาษาแล้ว",
+      "class": "NEEDS-REVIEW"
+    },
+    "translationStatus.dismiss": {
+      "en": "Dismiss",
+      "th": "ปิด",
+      "class": "GOOD"
+    },
+    "translationStatus.feedbackPrompt": {
+      "en": "If you are a native speaker and notice issues, you can suggest corrections by opening an issue on the project repository.",
+      "th": "หากคุณเป็นเจ้าของภาษาและพบข้อผิดพลาด สามารถเสนอแก้ไขได้โดยเปิด issue ในที่เก็บโค้ดของโปรเจกต์",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.openingCaption": {
+      "en": "The Brain Studio",
+      "th": "THE BRAIN STUDIO",
+      "class": "GOOD"
+    },
+    "home.hero.line1": {
+      "en": "There is a model",
+      "th": "มีโมเดลหนึ่ง",
+      "class": "GOOD"
+    },
+    "home.hero.line2": {
+      "en": "that predicts",
+      "th": "ที่ทำนาย",
+      "class": "GOOD"
+    },
+    "home.hero.line3": {
+      "en": "what your brain will do.",
+      "th": "สิ่งที่สมองของคุณจะทำ",
+      "class": "GOOD"
+    },
+    "home.scrollPrompt": {
+      "en": "Scroll to see",
+      "th": "เลื่อนลงเพื่อดู",
+      "class": "GOOD"
+    },
+    "home.howItWorks.step1.label": {
+      "en": "How it works · I",
+      "th": "หลักการทำงาน · I",
+      "class": "GOOD"
+    },
+    "home.howItWorks.step1.heading": {
+      "en": "TRIBE is a brain-encoding model.",
+      "th": "TRIBE คือโมเดลเข้ารหัสกิจกรรมสมอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.howItWorks.step1.body": {
+      "en": "Trained on thousands of hours of fMRI recordings, it learns the map from a stimulus — a sentence, a passage, a piece of music — to the brain's response. Then it predicts.",
+      "th": "ฝึกฝนจากบันทึก fMRI หลายพันชั่วโมง โมเดลเรียนรู้แผนที่จากสิ่งเร้า — ประโยค ข้อความ บทเพลง — ไปยังการตอบสนองของสมอง แล้วจึงทำนายผล",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.howItWorks.step2.label": {
+      "en": "How it works · II",
+      "th": "หลักการทำงาน · II",
+      "class": "GOOD"
+    },
+    "home.howItWorks.step2.heading": {
+      "en": "It is a model of the average brain.",
+      "th": "เป็นโมเดลของสมองโดยเฉลี่ย",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.howItWorks.step2.body": {
+      "en": "Not your brain. Not yet anyone's. A weighted echo of the participants who lay still in scanners while sentences played. What you see is the model's best guess about how a brain like theirs would respond.",
+      "th": "ไม่ใช่สมองของคุณ ไม่ใช่ของใครคนใดคนหนึ่ง เป็นเสียงสะท้อนเฉลี่ยถ่วงน้ำหนักจากผู้ร่วมการทดลองที่นอนนิ่งในเครื่องสแกนเนอร์ขณะที่มีประโยคเล่นอยู่ สิ่งที่คุณเห็นคือคำเดาที่ดีที่สุดของโมเดลว่าสมองแบบนั้นจะตอบสนองอย่างไร",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.howItWorks.step3.label": {
+      "en": "How it works · III",
+      "th": "หลักการทำงาน · III",
+      "class": "GOOD"
+    },
+    "home.howItWorks.step3.heading": {
+      "en": "That gap — between model and you — is part of the show.",
+      "th": "ช่องว่างระหว่างโมเดลกับคุณนั้นเป็นส่วนหนึ่งของการแสดง",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.howItWorks.step3.body": {
+      "en": "We'll surface it. The site keeps the limits of TRIBE visible, in every room, so you can use the predictions as a mirror without mistaking them for a portrait.",
+      "th": "เราจะเปิดเผยมัน เว็บไซต์นี้รักษาขอบเขตของ TRIBE ให้มองเห็นได้ในทุกห้อง คุณจึงสามารถใช้คำทำนายเป็นกระจกได้ โดยไม่เข้าใจผิดว่าเป็นภาพเหมือนของคุณ",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.rooms.section": {
+      "en": "Six rooms",
+      "th": "หกห้อง",
+      "class": "GOOD"
+    },
+    "home.rooms.heading": {
+      "en": "We built six rooms to show you.",
+      "th": "เราสร้างหกห้องไว้ให้คุณได้เห็น",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.rooms.body": {
+      "en": "Hover a doorway to see the pattern. Step inside when you're ready.",
+      "th": "วางเมาส์เหนือประตูเพื่อดูรูปแบบการทำงาน เข้าไปข้างในเมื่อพร้อม",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.rooms.mirror.title": {
+      "en": "Brain Mirror",
+      "th": "กระจกสมอง",
+      "class": "GOOD"
+    },
+    "home.rooms.mirror.description": {
+      "en": "Paste any text. Watch what your writing looks like underneath.",
+      "th": "วางข้อความใดก็ได้ ดูว่าสิ่งที่คุณเขียนเป็นอย่างไรเมื่อมองจากภายในสมอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.rooms.music.title": {
+      "en": "NeuroMusic Lab",
+      "th": "ห้องปฏิบัติการนิวโรมิวสิก",
+      "class": "GOOD"
+    },
+    "home.rooms.music.description": {
+      "en": "Hear how sound moves the same regions that move you.",
+      "th": "ฟังว่าเสียงเคลื่อนไหวบริเวณสมองส่วนเดียวกับที่เคลื่อนไหวความรู้สึกของคุณอย่างไร",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.rooms.crosscultural.title": {
+      "en": "Cross-Cultural Brain",
+      "th": "สมองข้ามวัฒนธรรม",
+      "class": "GOOD"
+    },
+    "home.rooms.crosscultural.description": {
+      "en": "Where the model breaks down across languages — and what the silence reveals.",
+      "th": "จุดที่โมเดลล้มเหลวเมื่อข้ามภาษา — และสิ่งที่ความเงียบนั้นเปิดเผย",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.rooms.threshold.title": {
+      "en": "The Threshold",
+      "th": "ธรณีประตู",
+      "class": "GOOD"
+    },
+    "home.rooms.threshold.description": {
+      "en": "An essay in three movements about the seam between mind and brain.",
+      "th": "บทความสามท่อนเกี่ยวกับรอยต่อระหว่างจิตใจและสมอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.rooms.archetypes.title": {
+      "en": "The Archetypes",
+      "th": "แม่แบบจิต",
+      "class": "GOOD"
+    },
+    "home.rooms.archetypes.description": {
+      "en": "Patterns old enough to have names, illustrated from the visual tradition Jung drew on.",
+      "th": "รูปแบบเก่าแก่จนมีชื่อเรียก แสดงผ่านงานทัศนศิลป์ที่จุงใช้อ้างอิง",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.rooms.cellular.title": {
+      "en": "Cellular View",
+      "th": "ระดับเซลล์",
+      "class": "GOOD"
+    },
+    "home.rooms.cellular.description": {
+      "en": "Descend into real neuron reconstructions and watch a synapse fire.",
+      "th": "ลงลึกไปสู่ภาพจำลองเซลล์ประสาทจริง และดูจุดประสานประสาททำงาน",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.insights.section": {
+      "en": "What you'll learn",
+      "th": "สิ่งที่คุณจะได้เรียนรู้",
+      "class": "GOOD"
+    },
+    "home.insights.card1.headline": {
+      "en": "Language is a brain event before it is a sentence.",
+      "th": "ภาษาคือเหตุการณ์ในสมองก่อนจะเป็นประโยค",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.insights.card1.body": {
+      "en": "Watch the inferior frontal gyrus warm before a word is found. The model lets us see meaning under construction — the half-second when a thought is still gathering itself.",
+      "th": "ดูคอร์เทกซ์หน้าผากส่วนล่างอุ่นขึ้นก่อนคำหนึ่งคำจะถูกค้นพบ โมเดลช่วยให้เราเห็นความหมายระหว่างก่อตัว — เสี้ยววินาทีที่ความคิดยังกำลังประมวลตัวเอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.insights.card2.headline": {
+      "en": "Music moves the same regions that move you.",
+      "th": "ดนตรีเคลื่อนไหวบริเวณเดียวกับที่ทำให้คุณเคลื่อนไหว",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.insights.card2.body": {
+      "en": "Sigur Rós, Coltrane, and a Thai luk thung lullaby all bring different fingerprints to the auditory cortex — and to the default-mode network, the part of you that's still you when you stop trying.",
+      "th": "Sigur Rós, Coltrane และเพลงกล่อมเด็กลูกทุ่งไทย ต่างทิ้งรอยนิ้วมือคนละแบบไว้บนคอร์เทกซ์การได้ยิน — และบนเครือข่ายโหมดเริ่มต้น ซึ่งเป็นส่วนของคุณที่ยังคงเป็นคุณแม้เมื่อหยุดพยายาม",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.insights.card3.headline": {
+      "en": "What a model can't translate is itself a kind of knowledge.",
+      "th": "สิ่งที่โมเดลแปลไม่ได้เองก็เป็นความรู้รูปแบบหนึ่ง",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.insights.card3.body": {
+      "en": "TRIBE was trained on English. The Thai prompts are not just a different input — they reveal the shape of what the model never learned. The silence is part of the finding.",
+      "th": "TRIBE ได้รับการฝึกด้วยภาษาอังกฤษ ข้อความภาษาไทยจึงไม่ใช่แค่ข้อมูลรูปแบบอื่น — มันเปิดเผยรูปทรงของสิ่งที่โมเดลไม่เคยเรียน ความเงียบนั้นก็เป็นส่วนหนึ่งของผลการค้นพบ",
+      "class": "NEEDS-REVIEW"
+    },
+    "home.begin.heading": {
+      "en": "Begin.",
+      "th": "เริ่มกันเลย",
+      "class": "GOOD"
+    },
+    "home.begin.mirror": {
+      "en": "Brain Mirror",
+      "th": "กระจกสมอง",
+      "class": "GOOD"
+    },
+    "home.begin.music": {
+      "en": "NeuroMusic Lab",
+      "th": "ห้องปฏิบัติการนิวโรมิวสิก",
+      "class": "GOOD"
+    },
+    "home.begin.crosscultural": {
+      "en": "Cross-Cultural Brain",
+      "th": "สมองข้ามวัฒนธรรม",
+      "class": "GOOD"
+    },
+    "home.footer.built": {
+      "en": "Built at Chulalongkorn JIPP",
+      "th": "สร้างที่ JIPP จุฬาลงกรณ์มหาวิทยาลัย",
+      "class": "GOOD"
+    },
+    "home.footer.encoder": {
+      "en": "TRIBE v2 encoder",
+      "th": "ตัวเข้ารหัส TRIBE v2",
+      "class": "GOOD"
+    },
+    "home.footer.about": {
+      "en": "About",
+      "th": "เกี่ยวกับ",
+      "class": "GOOD"
+    },
+    "mirror.label": {
+      "en": "Brain Mirror · Phase 5",
+      "th": "กระจกสมอง · ระยะที่ 5",
+      "class": "GOOD"
+    },
+    "mirror.title": {
+      "en": "Type something. Anything.",
+      "th": "พิมพ์อะไรก็ได้",
+      "class": "GOOD"
+    },
+    "mirror.intro": {
+      "en": "The brain above is the model thinking — predicted activation across twenty regions, lerping toward what your writing recruits. Paste a sentence, a paragraph, a fragment. Watch what warms.",
+      "th": "สมองด้านบนคือโมเดลกำลังคิด — การกระตุ้นที่ทำนายในยี่สิบบริเวณ ค่อย ๆ เคลื่อนไปยังสิ่งที่งานเขียนของคุณเรียกออกมา วางประโยค ย่อหน้า หรือเศษข้อความ ดูว่าอะไรอุ่นขึ้น",
+      "class": "WEAK"
+    },
+    "mirror.exportLabel": {
+      "en": "PNG · 1080 × 1080",
+      "th": "PNG · 1080 × 1080",
+      "class": "MISSING"
+    },
+    "mirror.revealLabel": {
+      "en": "What your writing reveals",
+      "th": "สิ่งที่งานเขียนของคุณเปิดเผย",
+      "class": "GOOD"
+    },
+    "mirror.revealIntro": {
+      "en": "Predictions in this preview are simulated locally; real TRIBE inference comes in Phase 10.",
+      "th": "คำทำนายในตัวอย่างนี้จำลองภายในเครื่อง การอนุมาน TRIBE จริงจะมาถึงในระยะที่ 10",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.predictedActivation": {
+      "en": "Predicted activation",
+      "th": "การกระตุ้นที่ทำนาย",
+      "class": "GOOD"
+    },
+    "mirror.step1.label": {
+      "en": "Step · I",
+      "th": "ขั้น · I",
+      "class": "GOOD"
+    },
+    "mirror.step1.heading": {
+      "en": "The brain doesn't read words. It reconstructs meaning.",
+      "th": "สมองไม่ได้อ่านคำ มันสร้างความหมายขึ้นใหม่",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.step1.body": {
+      "en": "TRIBE predicts where in the cortex a sentence lights up — not because the brain stores dictionaries, but because meaning is built across regions, each carrying some part of what a word is.",
+      "th": "TRIBE ทำนายว่าจุดใดในคอร์เทกซ์ติดสว่างเมื่ออ่านประโยคหนึ่ง — ไม่ใช่เพราะสมองเก็บพจนานุกรม แต่เพราะความหมายถูกสร้างขึ้นข้ามบริเวณ แต่ละบริเวณรับส่วนหนึ่งของสิ่งที่คำเป็น",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.step2.label": {
+      "en": "Step · II",
+      "th": "ขั้น · II",
+      "class": "GOOD"
+    },
+    "mirror.step2.heading": {
+      "en": "What you just saw is a prediction — not your brain.",
+      "th": "สิ่งที่คุณเพิ่งเห็นคือคำทำนาย — ไม่ใช่สมองของคุณ",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.step2.body": {
+      "en": "A model of the average brain, trained on participants who lay still in scanners while sentences played. The gap between that average and yours is part of the show.",
+      "th": "เป็นโมเดลของสมองโดยเฉลี่ย ฝึกจากผู้เข้าร่วมที่นอนนิ่งในเครื่องสแกนเนอร์ขณะที่ประโยคเล่นอยู่ ช่องว่างระหว่างค่าเฉลี่ยนั้นกับสมองของคุณคือส่วนหนึ่งของการแสดง",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.step3.label": {
+      "en": "Step · III",
+      "th": "ขั้น · III",
+      "class": "GOOD"
+    },
+    "mirror.step3.heading": {
+      "en": "Here are some texts that surprised us.",
+      "th": "นี่คือข้อความบางส่วนที่ทำให้เราประหลาดใจ",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.step3.body": {
+      "en": "Hover one to feel the pattern. Click to load it into the mirror above.",
+      "th": "วางเมาส์เพื่อรู้สึกถึงรูปแบบ คลิกเพื่อโหลดเข้าสู่กระจกด้านบน",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.examplesHeading": {
+      "en": "Three texts that surprised us",
+      "th": "ข้อความสามชิ้นที่ทำให้เราประหลาดใจ",
+      "class": "GOOD"
+    },
+    "mirror.openInAtlas": {
+      "en": "Open in atlas",
+      "th": "เปิดในแอตลาส",
+      "class": "GOOD"
+    },
+    "mirror.footerStudio": {
+      "en": "The Brain Studio",
+      "th": "The Brain Studio",
+      "class": "MISSING"
+    },
+    "mirror.footerNote": {
+      "en": "Predictions simulated locally",
+      "th": "คำทำนายจำลองภายในเครื่อง",
+      "class": "GOOD"
+    },
+    "mirror.predicting": {
+      "en": "Predicting…",
+      "th": "กำลังทำนาย…",
+      "class": "GOOD"
+    },
+    "mirror.charCounter": {
+      "en": "{used} / {max}",
+      "th": "{used} / {max}",
+      "class": "MISSING"
+    },
+    "mirror.disclaimer": {
+      "en": "Predicted activation. Not your brain. The model's best guess about how a brain like its training set would respond.",
+      "th": "การทำนายการกระตุ้น ไม่ใช่สมองของคุณ เป็นเพียงการคาดเดาที่ดีที่สุดของโมเดลว่าสมองแบบที่มีในชุดข้อมูลฝึกของมันจะตอบสนองอย่างไร",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.attribution.tribeLive": {
+      "en": "Predicted by TRIBE v2 (Meta FAIR, d'Ascoli et al., 2026) — model card · paper · CC-BY-NC-4.0 · text-only, average-subject",
+      "th": "ทำนายโดย TRIBE v2 (Meta FAIR, d'Ascoli et al., 2026) — บัตรโมเดล · บทความ · CC-BY-NC-4.0 · ข้อความอย่างเดียว ผู้ทดลองเฉลี่ย",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.attribution.tribeOffline": {
+      "en": "Running on baseline (semantic proxy) — TRIBE engine offline",
+      "th": "กำลังใช้โมเดลพื้นฐาน (พร็อกซีเชิงความหมาย) — เครื่องยนต์ TRIBE ออฟไลน์",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.attribution.baseline": {
+      "en": "Predicted by an embedding baseline (BGE-small) — TRIBE inference unavailable on this build",
+      "th": "ทำนายโดยโมเดลพื้นฐานแบบเอ็มเบดดิง (BGE-small) — การอนุมานของ TRIBE ไม่สามารถใช้ได้ในรุ่นนี้",
+      "class": "NEEDS-REVIEW"
+    },
+    "mirror.attribution.modelCard": {
+      "en": "model card",
+      "th": "บัตรโมเดล",
+      "class": "GOOD"
+    },
+    "mirror.attribution.paper": {
+      "en": "paper",
+      "th": "บทความ",
+      "class": "GOOD"
+    },
+    "mirror.attribution.license": {
+      "en": "CC-BY-NC-4.0",
+      "th": "CC-BY-NC-4.0",
+      "class": "MISSING"
+    },
+    "mirror.attribution.statusLive": {
+      "en": "TRIBE engine online",
+      "th": "เครื่องยนต์ TRIBE ออนไลน์",
+      "class": "GOOD"
+    },
+    "mirror.attribution.statusOffline": {
+      "en": "Baseline (TRIBE offline)",
+      "th": "พื้นฐาน (TRIBE ออฟไลน์)",
+      "class": "GOOD"
+    },
+    "music.label": {
+      "en": "NeuroMusic Lab · Phase 6",
+      "th": "ห้องปฏิบัติการนิวโรมิวสิก · ระยะที่ 6",
+      "class": "GOOD"
+    },
+    "music.title": {
+      "en": "Hearing is the oldest of the senses to fully form.",
+      "th": "การได้ยินคือประสาทสัมผัสที่เก่าแก่ที่สุดที่ก่อตัวเต็มที่",
+      "class": "NEEDS-REVIEW"
+    },
+    "music.intro": {
+      "en": "It begins in the womb. Below: three tracks, each accompanied by a 60-second region timeline. Scrub a player and watch the brain follow the music in real time — Heschl's gyrus on the attack, posterior STG holding the melody, default-mode regions stepping in when the piece stops trying.",
+      "th": "เริ่มต้นในครรภ์ ด้านล่าง: สามแทร็ก แต่ละแทร็กมาพร้อมเส้นเวลาบริเวณสมองยาว 60 วินาที ลากเครื่องเล่นแล้วดูสมองตามดนตรีไปตามเวลาจริง — Heschl's gyrus จับการกระแทกของเสียง, posterior STG ถือทำนอง, บริเวณ default-mode เข้ามาเมื่อท่อนเพลงเลิกพยายาม",
+      "class": "NEEDS-REVIEW"
+    },
+    "music.modes.library": {
+      "en": "Library",
+      "th": "คลังแทร็ก",
+      "class": "GOOD"
+    },
+    "music.modes.compare": {
+      "en": "Compare",
+      "th": "เปรียบเทียบ",
+      "class": "GOOD"
+    },
+    "music.modes.upload": {
+      "en": "Upload",
+      "th": "อัปโหลด",
+      "class": "GOOD"
+    },
+    "music.essay1.headline": {
+      "en": "Sigur Rós and the default-mode network.",
+      "th": "Sigur Rós และเครือข่ายโหมดเริ่มต้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "music.essay1.body": {
+      "en": "The PCC and precuneus warm not because there's a 'meditation circuit,' but because the listener stops trying to follow. Default-mode is shorthand for the part of you that's still you when you stop trying.",
+      "th": "PCC และ precuneus อุ่นขึ้น ไม่ใช่เพราะมี 'วงจรการนั่งสมาธิ' แต่เพราะผู้ฟังเลิกพยายามตาม Default-mode คือคำเรียกย่อสำหรับส่วนของคุณที่ยังเป็นคุณเมื่อคุณหยุดพยายาม",
+      "class": "NEEDS-REVIEW"
+    },
+    "music.essay2.headline": {
+      "en": "Coltrane and the limbic warmth.",
+      "th": "Coltrane และความอบอุ่นของระบบ limbic",
+      "class": "NEEDS-REVIEW"
+    },
+    "music.essay2.body": {
+      "en": "Naima was written as a love letter. The amygdala isn't sounding a fear alarm here — it's weighting salience, marking the lines that matter. Feeling and form arriving on the same beat.",
+      "th": "Naima เขียนขึ้นเป็นจดหมายรัก อะมิกดาลาไม่ได้กำลังส่งเสียงเตือนภัยที่นี่ — มันถ่วงน้ำหนักความสำคัญ ทำเครื่องหมายเส้นที่สำคัญ ความรู้สึกและรูปทรงมาถึงในจังหวะเดียวกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "music.essay3.headline": {
+      "en": "The lullaby remembered first by the body.",
+      "th": "เพลงกล่อมเด็กที่ร่างกายจดจำก่อน",
+      "class": "NEEDS-REVIEW"
+    },
+    "music.essay3.body": {
+      "en": "The hippocampus carries the scene before the language regions arrive at the lyrics. We learn what a kitchen smells like through music; we learn it again every time we hear the song.",
+      "th": "ฮิปโปแคมปัสอุ้มฉากไว้ก่อนที่บริเวณภาษาจะมาถึงเนื้อร้อง เราเรียนรู้กลิ่นของห้องครัวผ่านดนตรี และเรียนรู้อีกครั้งทุกครั้งที่ได้ยินเพลง",
+      "class": "NEEDS-REVIEW"
+    },
+    "music.footerNote": {
+      "en": "NeuroMusic Lab · timelines simulated locally",
+      "th": "ห้องปฏิบัติการนิวโรมิวสิก · เส้นเวลาจำลองภายในเครื่อง",
+      "class": "NEEDS-REVIEW"
+    },
+    "music.tracks.sigur-ros-meditation.era": {
+      "en": "Post-rock · ambient",
+      "th": "Post-rock · บรรยากาศ",
+      "class": "GOOD"
+    },
+    "music.tracks.sigur-ros-meditation.framing": {
+      "en": "A slow drone in falsetto. The default-mode network warms the way it does in meditation — not because there's a 'meditation circuit,' but because the listener stops trying to follow.",
+      "th": "เสียงโดรนช้าในฟอลเซตโต เครือข่ายโหมดเริ่มต้นอุ่นขึ้นแบบเดียวกับในการนั่งสมาธิ — ไม่ใช่เพราะมี 'วงจรการนั่งสมาธิ' แต่เพราะผู้ฟังเลิกพยายามตาม",
+      "class": "WEAK"
+    },
+    "music.tracks.coltrane-naima.era": {
+      "en": "Modal jazz",
+      "th": "แจ๊สโมดอล",
+      "class": "GOOD"
+    },
+    "music.tracks.coltrane-naima.framing": {
+      "en": "Built on a love letter. Auditory cortex tracks the melody; the amygdala and orbitofrontal regions weight the warmth — feeling and form arriving on the same beat.",
+      "th": "สร้างขึ้นบนจดหมายรัก คอร์เทกซ์การได้ยินติดตามทำนอง อะมิกดาลาและบริเวณ orbitofrontal ถ่วงน้ำหนักความอบอุ่น — ความรู้สึกและรูปทรงมาถึงในจังหวะเดียวกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "music.tracks.thai-lullaby.era": {
+      "en": "Thai folk · pentatonic",
+      "th": "พื้นบ้านไทย · เพนตาโทนิก",
+      "class": "GOOD"
+    },
+    "music.tracks.thai-lullaby.framing": {
+      "en": "Pentatonic, low-tempo, sung close to the ear. The hippocampus carries the scene before the language regions arrive at the lyrics — the body remembers the song first.",
+      "th": "เพนตาโทนิก จังหวะช้า ร้องใกล้หู ฮิปโปแคมปัสอุ้มฉากไว้ก่อนบริเวณภาษาจะมาถึงเนื้อร้อง — ร่างกายจดจำเพลงก่อน",
+      "class": "NEEDS-REVIEW"
+    },
+    "essays.fieldNote": {
+      "en": "Field Note",
+      "th": "บันทึกภาคสนาม",
+      "class": "ESSAY-NEEDS-HUMAN"
+    },
+    "essays.endOfNote": {
+      "en": "— end of the note",
+      "th": "— จบบันทึก",
+      "class": "ESSAY-NEEDS-HUMAN"
+    },
+    "essays.relatedBridgeLabel": {
+      "en": "Related bridge",
+      "th": "สะพานที่เกี่ยวข้อง",
+      "class": "ESSAY-NEEDS-HUMAN"
+    },
+    "essays.relatedBridgeOpen": {
+      "en": "Continue in the Bridges page",
+      "th": "อ่านต่อในหน้าสะพาน",
+      "class": "ESSAY-NEEDS-HUMAN"
+    },
+    "essays.moreFieldNotes": {
+      "en": "More field notes",
+      "th": "บันทึกภาคสนามอื่น ๆ",
+      "class": "ESSAY-NEEDS-HUMAN"
+    },
+    "essays.returnThreshold": {
+      "en": "Return to the threshold",
+      "th": "กลับไปยังธรณีประตู",
+      "class": "ESSAY-NEEDS-HUMAN"
+    },
+    "essays.hippocampus.title": {
+      "en": "The hippocampus and the act of remembering",
+      "th": "ฮิปโปแคมปัสกับการกระทำของการระลึก",
+      "class": "ESSAY-NEEDS-HUMAN"
+    },
+    "essays.hippocampus.summary": {
+      "en": "Memory is not stored and retrieved. It is reconstructed, and the reconstruction reshapes the trace. Both neuroscience and depth psychology converge on this. The cost is real.",
+      "th": "ความทรงจำไม่ใช่การเก็บแล้วเรียกคืน เป็นการสร้างใหม่ และการสร้างใหม่นั้นปรับรอยจำให้เปลี่ยนรูป ทั้งประสาทวิทยาและจิตวิทยาเชิงลึกบรรจบกันที่จุดนี้ ต้นทุนของมันมีจริง",
+      "class": "ESSAY-NEEDS-HUMAN"
+    },
+    "essays.whatBrainKnows.title": {
+      "en": "What the brain knows before you do",
+      "th": "สิ่งที่สมองรู้ก่อนคุณ",
+      "class": "ESSAY-NEEDS-HUMAN"
+    },
+    "essays.whatBrainKnows.summary": {
+      "en": "Motor cortex commits to decisions hundreds of milliseconds before subjects report deciding. Jung said the unconscious is ahead of consciousness in many domains. The findings touch; the conclusions do not collapse into each other.",
+      "th": "คอร์เทกซ์มอเตอร์ผูกมัดกับการตัดสินใจหลายร้อยมิลลิวินาทีก่อนผู้ทดลองจะรายงานว่าตัดสินใจแล้ว จุงกล่าวว่าจิตไร้สำนึกนำหน้าจิตสำนึกในหลายเรื่อง ผลที่ค้นพบสัมผัสกัน ข้อสรุปไม่ยุบเข้าหากัน",
+      "class": "ESSAY-NEEDS-HUMAN"
+    },
+    "atlas.label": {
+      "en": "Region Atlas",
+      "th": "แอตลาสบริเวณสมอง",
+      "class": "GOOD"
+    },
+    "atlas.title": {
+      "en": "The brain, room by room.",
+      "th": "สมอง, ทีละห้อง",
+      "class": "GOOD"
+    },
+    "atlas.intro": {
+      "en": "Twenty regions, written carefully. Each page holds the anatomy, the function as the literature currently tells it, the cell types underneath, the connections that route the signal, the clinical context, the history of who first noticed, and the thread of meaning the depth-psychological reading wants nearby.",
+      "th": "ยี่สิบบริเวณ เขียนอย่างพิถีพิถัน แต่ละหน้าถือกายวิภาคศาสตร์ ฟังก์ชันตามที่วรรณกรรมปัจจุบันบรรยายไว้ ชนิดของเซลล์ที่อยู่ข้างใต้ การเชื่อมต่อที่ส่งสัญญาณ บริบททางคลินิก ประวัติของผู้สังเกตเห็นเป็นคนแรก และเส้นด้ายของความหมายที่การอ่านจากจิตวิทยาเชิงลึกอยากให้อยู่ใกล้",
+      "class": "NEEDS-REVIEW"
+    },
+    "atlas.statusNote": {
+      "en": "{complete} of {total} pages are complete. The others render their architecture while their prose is written.",
+      "th": "{complete} จาก {total} หน้าเสร็จสมบูรณ์แล้ว หน้าที่เหลือแสดงสถาปัตยกรรมไว้ในระหว่างที่งานเขียนกำลังถูกร่างขึ้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "atlas.inProgress": {
+      "en": "Under review",
+      "th": "อยู่ระหว่างการตรวจทาน",
+      "class": "GOOD"
+    },
+    "atlas.openCard": {
+      "en": "Open",
+      "th": "เปิด",
+      "class": "GOOD"
+    },
+    "atlas.previewCard": {
+      "en": "Preview",
+      "th": "ดูตัวอย่าง",
+      "class": "GOOD"
+    },
+    "atlas.emptySection": {
+      "en": "This section is being written. The architecture below — sidebar metadata, citation discipline, network membership — is in place.",
+      "th": "ส่วนนี้กำลังถูกเขียน สถาปัตยกรรมด้านล่าง — ข้อมูลแถบข้าง ระเบียบการอ้างอิง การเป็นสมาชิกของเครือข่าย — อยู่ในที่ของมันแล้ว",
+      "class": "NEEDS-REVIEW"
+    },
+    "atlas.inProgressBanner.label": {
+      "en": "Under careful review",
+      "th": "อยู่ระหว่างการตรวจทานอย่างพิถีพิถัน",
+      "class": "GOOD"
+    },
+    "atlas.inProgressBanner.body": {
+      "en": "This page's prose hasn't been written yet. Architecture and metadata are in place; full sections are forthcoming.",
+      "th": "งานเขียนของหน้านี้ยังไม่ได้เขียน สถาปัตยกรรมและข้อมูลกำกับอยู่ในที่แล้ว ส่วนเนื้อหาเต็มจะตามมา",
+      "class": "NEEDS-REVIEW"
+    },
+    "atlas.breadcrumb.studio": {
+      "en": "The Brain Studio",
+      "th": "The Brain Studio",
+      "class": "MISSING"
+    },
+    "atlas.breadcrumb.atlas": {
+      "en": "Atlas",
+      "th": "แอตลาส",
+      "class": "GOOD"
+    },
+    "atlas.sections.anatomy": {
+      "en": "Anatomy & landmarks",
+      "th": "กายวิภาคและจุดสังเกต",
+      "class": "GOOD"
+    },
+    "atlas.sections.function": {
+      "en": "Function",
+      "th": "ฟังก์ชัน",
+      "class": "GOOD"
+    },
+    "atlas.sections.cells": {
+      "en": "Cell types",
+      "th": "ชนิดของเซลล์",
+      "class": "GOOD"
+    },
+    "atlas.sections.connections": {
+      "en": "Connections",
+      "th": "การเชื่อมต่อ",
+      "class": "GOOD"
+    },
+    "atlas.sections.clinical": {
+      "en": "In clinical context",
+      "th": "ในบริบททางคลินิก",
+      "class": "GOOD"
+    },
+    "atlas.sections.discovery": {
+      "en": "History of discovery",
+      "th": "ประวัติการค้นพบ",
+      "class": "GOOD"
+    },
+    "atlas.sections.thread": {
+      "en": "The thread",
+      "th": "เส้นด้าย",
+      "class": "GOOD"
+    },
+    "atlas.sidebar.network": {
+      "en": "Network",
+      "th": "เครือข่าย",
+      "class": "GOOD"
+    },
+    "atlas.sidebar.adjacent": {
+      "en": "Adjacent regions",
+      "th": "บริเวณที่อยู่ติดกัน",
+      "class": "GOOD"
+    },
+    "atlas.sidebar.disorders": {
+      "en": "Implicated in",
+      "th": "เกี่ยวข้องกับ",
+      "class": "GOOD"
+    },
+    "atlas.sidebar.cells": {
+      "en": "Cell types here",
+      "th": "ชนิดของเซลล์ที่นี่",
+      "class": "GOOD"
+    },
+    "atlas.sidebar.descend": {
+      "en": "Descend to cellular view",
+      "th": "ลงสู่ระดับเซลล์",
+      "class": "GOOD"
+    },
+    "atlas.sidebar.sources": {
+      "en": "Sources",
+      "th": "แหล่งอ้างอิง",
+      "class": "GOOD"
+    },
+    "atlas.sidebar.lastReviewed": {
+      "en": "Last reviewed {date}",
+      "th": "ตรวจทานครั้งล่าสุด {date}",
+      "class": "GOOD"
+    },
+    "atlas.sidebar.wordCount": {
+      "en": "{count} words",
+      "th": "{count} คำ",
+      "class": "GOOD"
+    },
+    "atlas.sidebar.connectome": {
+      "en": "Connectome",
+      "th": "คอนเนกโทม",
+      "class": "GOOD"
+    },
+    "atlas.connectome.connectedIntro": {
+      "en": "White-matter tracts with an endpoint in this region. Toggle one to see it inside the brain above.",
+      "th": "เส้นใยเนื้อขาวที่มีปลายอยู่ในบริเวณนี้ เปิดดูเส้นหนึ่งเพื่อเห็นมันภายในสมองด้านบน",
+      "class": "NEEDS-REVIEW"
+    },
+    "atlas.connectome.unconnectedIntro": {
+      "en": "No canonical tract has this region as one of its endpoints in our 8-tract set. Use \"Show all\" to view the wider connectome anyway.",
+      "th": "ไม่มีเส้นใยมาตรฐานเส้นใดที่มีบริเวณนี้เป็นหนึ่งในปลายของชุดเส้นใย 8 เส้นของเรา ใช้ \"แสดงทั้งหมด\" เพื่อดูคอนเนกโทมที่กว้างขึ้นอยู่ดี",
+      "class": "NEEDS-REVIEW"
+    },
+    "atlas.connectome.showAll": {
+      "en": "Show all tracts",
+      "th": "แสดงเส้นใยทั้งหมด",
+      "class": "GOOD"
+    },
+    "atlas.connectome.hideAll": {
+      "en": "Hide all tracts",
+      "th": "ซ่อนเส้นใยทั้งหมด",
+      "class": "GOOD"
+    },
+    "atlas.connectome.clear": {
+      "en": "Clear",
+      "th": "ล้าง",
+      "class": "GOOD"
+    },
+    "atlas.connectome.disclosure": {
+      "en": "Geometry is stylized — quadratic Bezier curves between region positions, not real diffusion-MRI tractography. Endpoints, function, and discovery credits are faithful to the literature.",
+      "th": "เรขาคณิตเป็นแบบประยุกต์ — เส้นโค้ง Bézier กำลังสองระหว่างตำแหน่งของบริเวณ ไม่ใช่ tractography จาก diffusion-MRI จริง ปลาย ฟังก์ชัน และเครดิตการค้นพบยึดตามวรรณกรรม",
+      "class": "NEEDS-REVIEW"
+    },
+    "atlas.footerNote": {
+      "en": "Region Atlas · cite or omit",
+      "th": "แอตลาสบริเวณสมอง · อ้างอิงหรือเว้น",
+      "class": "GOOD"
+    },
+    "atlas.bridgeCard.label": {
+      "en": "Bridge to depth psychology",
+      "th": "สะพานสู่จิตวิทยาเชิงลึก",
+      "class": "GOOD"
+    },
+    "atlas.bridgeCard.open": {
+      "en": "Open in the Bridges page",
+      "th": "เปิดในหน้าสะพาน",
+      "class": "GOOD"
+    },
+    "bridges.label": {
+      "en": "Bridges",
+      "th": "สะพาน",
+      "class": "GOOD"
+    },
+    "bridges.title": {
+      "en": "Where neuroscience and depth psychology touch — and where they don't.",
+      "th": "จุดที่ประสาทวิทยาและจิตวิทยาเชิงลึกสัมผัสกัน — และจุดที่ไม่สัมผัส",
+      "class": "NEEDS-REVIEW"
+    },
+    "bridges.subtitle": {
+      "en": "Eleven sections mapping the bridges between mechanism and meaning. Some are tight; some are partial; some do not exist at all. Naming each honestly is the page's discipline.",
+      "th": "สิบเอ็ดส่วนทำแผนที่สะพานระหว่างกลไกและความหมาย บางสะพานใกล้ชิด บางสะพานก็เพียงบางส่วน และบางสะพานไม่มีเลย การเรียกชื่อแต่ละสะพานอย่างซื่อตรงคือระเบียบของหน้านี้",
+      "class": "NEEDS-REVIEW"
+    },
+    "bridges.legendLabel": {
+      "en": "Strength legend",
+      "th": "คำอธิบายความเข้ม",
+      "class": "GOOD"
+    },
+    "bridges.breadcrumb.studio": {
+      "en": "The Brain Studio",
+      "th": "The Brain Studio",
+      "class": "MISSING"
+    },
+    "bridges.breadcrumb.bridges": {
+      "en": "Bridges",
+      "th": "สะพาน",
+      "class": "GOOD"
+    },
+    "bridges.bibliographyLabel": {
+      "en": "Bibliography",
+      "th": "บรรณานุกรม",
+      "class": "GOOD"
+    },
+    "bridges.bibliographyHeading": {
+      "en": "Every empirical claim, traceable.",
+      "th": "ทุกข้ออ้างเชิงประจักษ์ ตรวจสอบย้อนได้",
+      "class": "NEEDS-REVIEW"
+    },
+    "bridges.bibliographyIntro": {
+      "en": "Each citation here was confirmed against PubMed or its original journal record. Hover any superscript in the prose above to see its source; this list is the full set, in order of first mention.",
+      "th": "การอ้างอิงทุกชิ้นที่นี่ได้รับการยืนยันกับ PubMed หรือบันทึกต้นฉบับของวารสาร วางเมาส์เหนือเลขยกใดก็ได้ในงานเขียนด้านบนเพื่อดูแหล่งที่มา รายการนี้คือชุดเต็ม เรียงตามลำดับที่กล่าวถึงครั้งแรก",
+      "class": "NEEDS-REVIEW"
+    },
+    "bridges.network.label": {
+      "en": "The network at a glance",
+      "th": "เครือข่ายในภาพรวม",
+      "class": "GOOD"
+    },
+    "bridges.network.heading": {
+      "en": "Every region, every bridge, on one page.",
+      "th": "ทุกบริเวณ ทุกสะพาน บนหน้าเดียว",
+      "class": "NEEDS-REVIEW"
+    },
+    "bridges.network.intro": {
+      "en": "Twenty regions on the left, the Bridges sections that any region points into on the right. Brass lines are tight bridges; bone lines are partial; dashed lines are distant. The page below expands every line in detail; this diagram is the index.",
+      "th": "ยี่สิบบริเวณอยู่ทางซ้าย ส่วนของสะพานที่บริเวณใดก็ตามชี้ไปอยู่ทางขวา เส้นทองเหลืองคือสะพานใกล้ชิด เส้นกระดูกคือสะพานบางส่วน เส้นประคือสะพานห่างไกล หน้าด้านล่างขยายทุกเส้นโดยละเอียด แผนภาพนี้เป็นดัชนี",
+      "class": "NEEDS-REVIEW"
+    },
+    "bridges.network.compactIntro": {
+      "en": "Twenty regions, the bridge each points into, the empirical strength of each connection. Hover any line to read it; click to land in the corresponding Bridges section.",
+      "th": "ยี่สิบบริเวณ สะพานที่แต่ละบริเวณชี้ไป ความเข้มเชิงประจักษ์ของการเชื่อมโยงแต่ละเส้น วางเมาส์เหนือเส้นใดก็ได้เพื่ออ่าน คลิกเพื่อไปยังส่วนสะพานที่เกี่ยวข้อง",
+      "class": "NEEDS-REVIEW"
+    },
+    "bridges.network.svgLabel": {
+      "en": "Diagram: 20 brain regions connected by lines to the Bridges page sections they engage, weighted by empirical bridge strength.",
+      "th": "แผนภาพ: 20 บริเวณสมองเชื่อมด้วยเส้นไปยังส่วนของหน้าสะพานที่เกี่ยวข้อง ถ่วงน้ำหนักตามความเข้มเชิงประจักษ์ของสะพาน",
+      "class": "NEEDS-REVIEW"
+    },
+    "bridges.network.filter.all": {
+      "en": "All",
+      "th": "ทั้งหมด",
+      "class": "GOOD"
+    },
+    "bridges.network.filter.tightOnly": {
+      "en": "Tight only",
+      "th": "ใกล้ชิดเท่านั้น",
+      "class": "GOOD"
+    },
+    "bridges.network.filter.tightAndPartial": {
+      "en": "Tight + partial",
+      "th": "ใกล้ชิด + บางส่วน",
+      "class": "GOOD"
+    },
+    "bridges.network.filter.distantOnly": {
+      "en": "Distant only",
+      "th": "ห่างไกลเท่านั้น",
+      "class": "GOOD"
+    },
+    "bridges.footerNote": {
+      "en": "Bridges · cite or omit",
+      "th": "สะพาน · อ้างอิงหรือเว้น",
+      "class": "GOOD"
+    },
+    "tours.label": {
+      "en": "Guided Tours",
+      "th": "ทัวร์นำชม",
+      "class": "GOOD"
+    },
+    "tours.title": {
+      "en": "Choreographed brain experiences.",
+      "th": "ประสบการณ์สมองที่ออกแบบไว้",
+      "class": "NEEDS-REVIEW"
+    },
+    "tours.intro": {
+      "en": "Two- to three-minute tours in which the brain animates through a sequence of activations while a calm narration walks beside it. Watch, don't navigate — the tour unfolds at its own pace.",
+      "th": "ทัวร์สองถึงสามนาทีที่สมองค่อย ๆ เคลื่อนไหวผ่านลำดับการกระตุ้น โดยมีคำบรรยายอันสงบนิ่งเดินเคียงข้าง ดู ไม่ต้องเดินไปไหน — ทัวร์ทอดตัวออกตามจังหวะของมันเอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "tours.tour": {
+      "en": "Tour",
+      "th": "ทัวร์",
+      "class": "GOOD"
+    },
+    "tours.duration": {
+      "en": "Duration",
+      "th": "ระยะเวลา",
+      "class": "GOOD"
+    },
+    "tours.openTour": {
+      "en": "Open the tour",
+      "th": "เปิดทัวร์",
+      "class": "GOOD"
+    },
+    "tours.scene": {
+      "en": "Scene",
+      "th": "ฉาก",
+      "class": "GOOD"
+    },
+    "tours.pause": {
+      "en": "Pause",
+      "th": "หยุดชั่วคราว",
+      "class": "GOOD"
+    },
+    "tours.play": {
+      "en": "Play",
+      "th": "เล่น",
+      "class": "GOOD"
+    },
+    "tours.restart": {
+      "en": "Restart",
+      "th": "เริ่มใหม่",
+      "class": "GOOD"
+    },
+    "tours.ended": {
+      "en": "Tour complete.",
+      "th": "ทัวร์จบแล้ว",
+      "class": "GOOD"
+    },
+    "tours.continueLabel": {
+      "en": "Continue exploring",
+      "th": "สำรวจต่อ",
+      "class": "GOOD"
+    },
+    "tours.emptyState": {
+      "en": "No tours available yet.",
+      "th": "ยังไม่มีทัวร์",
+      "class": "GOOD"
+    },
+    "tours.comingSoon": {
+      "en": "More tours are forthcoming: how you read this sentence (language network), when something matters (salience), what's still you when you stop trying (default mode), how a face becomes someone you know (face processing), and hearing music (auditory and reward).",
+      "th": "ทัวร์อื่น ๆ กำลังจะมาถึง: คุณอ่านประโยคนี้อย่างไร (เครือข่ายภาษา) เมื่อบางสิ่งสำคัญ (ความสำคัญ) อะไรที่ยังเป็นคุณเมื่อคุณหยุดพยายาม (default mode) ใบหน้ากลายเป็นคนที่คุณรู้จักได้อย่างไร (การประมวลใบหน้า) และการได้ยินดนตรี (การได้ยินและรางวัล)",
+      "class": "NEEDS-REVIEW"
+    },
+    "tours.footerNote": {
+      "en": "Guided Tours · the brain in motion",
+      "th": "ทัวร์นำชม · สมองในการเคลื่อนไหว",
+      "class": "NEEDS-REVIEW"
+    },
+    "depthPsychology.label": {
+      "en": "Depth Psychology",
+      "th": "จิตวิทยาเชิงลึก",
+      "class": "GOOD"
+    },
+    "depthPsychology.title": {
+      "en": "The other half of the conversation.",
+      "th": "อีกครึ่งหนึ่งของบทสนทนา",
+      "class": "NEEDS-REVIEW"
+    },
+    "depthPsychology.intro": {
+      "en": "Neuroscience gives us mechanism. Depth psychology gives us meaning. The pages in this section take the depth-psychological tradition seriously without losing the empirical discipline the rest of the site keeps. Where the bridges hold, they are named. Where they don't, the page says so.",
+      "th": "ประสาทวิทยาให้กลไก จิตวิทยาเชิงลึกให้ความหมาย หน้าทั้งหลายในส่วนนี้ถือธรรมเนียมของจิตวิทยาเชิงลึกอย่างจริงจัง โดยไม่ละทิ้งระเบียบเชิงประจักษ์ที่ส่วนอื่นของเว็บไซต์ยึดถือ จุดที่สะพานยึดได้ ก็เรียกชื่อมัน จุดที่สะพานยึดไม่ได้ หน้านี้ก็พูดอย่างนั้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "depthPsychology.minRead": {
+      "en": "min read",
+      "th": "นาทีอ่าน",
+      "class": "GOOD"
+    },
+    "depthPsychology.words": {
+      "en": "words",
+      "th": "คำ",
+      "class": "GOOD"
+    },
+    "depthPsychology.openPage": {
+      "en": "Open",
+      "th": "เปิด",
+      "class": "GOOD"
+    },
+    "depthPsychology.backToIndex": {
+      "en": "Back to Depth Psychology",
+      "th": "กลับไปยังจิตวิทยาเชิงลึก",
+      "class": "GOOD"
+    },
+    "depthPsychology.featured.label": {
+      "en": "Featured · the synthesizing index",
+      "th": "บทเด่น · ดัชนีสังเคราะห์",
+      "class": "NEEDS-REVIEW"
+    },
+    "depthPsychology.featured.title": {
+      "en": "Bridges",
+      "th": "สะพาน",
+      "class": "GOOD"
+    },
+    "depthPsychology.featured.subtitle": {
+      "en": "Where neuroscience and depth psychology touch — and where they don't.",
+      "th": "จุดที่ประสาทวิทยาและจิตวิทยาเชิงลึกสัมผัสกัน — และจุดที่ไม่สัมผัส",
+      "class": "NEEDS-REVIEW"
+    },
+    "depthPsychology.featured.blurb": {
+      "en": "Eleven sections rating the empirical correspondence between specific neural mechanisms and specific depth-psychological concepts. Tight, partial, distant, none — each bridge named honestly. Read this first.",
+      "th": "สิบเอ็ดส่วนประเมินความสอดคล้องเชิงประจักษ์ระหว่างกลไกประสาทเฉพาะกับแนวคิดจิตวิทยาเชิงลึกเฉพาะ ใกล้ชิด บางส่วน ห่างไกล ไม่มี — แต่ละสะพานถูกเรียกชื่ออย่างซื่อตรง อ่านส่วนนี้ก่อน",
+      "class": "NEEDS-REVIEW"
+    },
+    "depthPsychology.featured.open": {
+      "en": "Open the Bridges page",
+      "th": "เปิดหน้าสะพาน",
+      "class": "GOOD"
+    },
+    "depthPsychology.longForm.label": {
+      "en": "Long-form",
+      "th": "งานเขียนยาว",
+      "class": "GOOD"
+    },
+    "depthPsychology.longForm.heading": {
+      "en": "Jung, Reich, Perls — written for the careful reader.",
+      "th": "จุง ไรช์ เพิร์ลส — เขียนให้แก่ผู้อ่านที่ใส่ใจ",
+      "class": "NEEDS-REVIEW"
+    },
+    "depthPsychology.existing.label": {
+      "en": "Adjacent essays",
+      "th": "บทความที่อยู่ใกล้เคียง",
+      "class": "GOOD"
+    },
+    "depthPsychology.existing.heading": {
+      "en": "The contemplative layer.",
+      "th": "ชั้นแห่งการพินิจ",
+      "class": "GOOD"
+    },
+    "depthPsychology.existing.threshold.label": {
+      "en": "Essay",
+      "th": "บทความ",
+      "class": "GOOD"
+    },
+    "depthPsychology.existing.threshold.title": {
+      "en": "The Threshold",
+      "th": "ธรณีประตู",
+      "class": "GOOD"
+    },
+    "depthPsychology.existing.threshold.blurb": {
+      "en": "A contemplative essay that sits between the macro and the cellular views of the site. Three movements; about ten minutes.",
+      "th": "บทความเชิงพินิจที่อยู่ระหว่างมุมมองภาพรวมและมุมมองระดับเซลล์ของเว็บไซต์ สามท่อน ประมาณสิบนาที",
+      "class": "NEEDS-REVIEW"
+    },
+    "depthPsychology.existing.archetypes.label": {
+      "en": "Essay + gallery",
+      "th": "บทความ + แกลเลอรี",
+      "class": "GOOD"
+    },
+    "depthPsychology.existing.archetypes.title": {
+      "en": "The Archetypes",
+      "th": "แม่แบบจิต",
+      "class": "GOOD"
+    },
+    "depthPsychology.existing.archetypes.blurb": {
+      "en": "Jungian images paired with anatomical neuroscience. A reading of how the inherited symbolic vocabulary of culture meets the cortical machinery that received it.",
+      "th": "ภาพแบบจุงคู่กับประสาทวิทยาทางกายวิภาค การอ่านว่าคำศัพท์เชิงสัญลักษณ์ที่วัฒนธรรมสืบทอดมาพบกับเครื่องจักรของคอร์เทกซ์ที่รับมันไว้ได้อย่างไร",
+      "class": "NEEDS-REVIEW"
+    },
+    "depthPsychology.existing.fieldNotes.label": {
+      "en": "Essay collection",
+      "th": "ชุดบทความ",
+      "class": "GOOD"
+    },
+    "depthPsychology.existing.fieldNotes.title": {
+      "en": "Field Notes",
+      "th": "บันทึกภาคสนาม",
+      "class": "GOOD"
+    },
+    "depthPsychology.existing.fieldNotes.blurb": {
+      "en": "Long-form pieces from the seam between mind and brain. The hippocampus and the act of remembering. What the brain knows before you do.",
+      "th": "งานเขียนยาวจากรอยต่อระหว่างจิตใจกับสมอง ฮิปโปแคมปัสกับการกระทำของการระลึก สิ่งที่สมองรู้ก่อนคุณ",
+      "class": "NEEDS-REVIEW"
+    },
+    "depthPsychology.sidebar.bridges": {
+      "en": "Related Bridges sections",
+      "th": "ส่วนของสะพานที่เกี่ยวข้อง",
+      "class": "GOOD"
+    },
+    "depthPsychology.sidebar.atlas": {
+      "en": "Related Atlas regions",
+      "th": "บริเวณในแอตลาสที่เกี่ยวข้อง",
+      "class": "GOOD"
+    },
+    "depthPsychology.footerNote": {
+      "en": "Depth Psychology · the careful register",
+      "th": "จิตวิทยาเชิงลึก · ระดับเสียงอันพิถีพิถัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "fieldNotes.label": {
+      "en": "Field Notes",
+      "th": "บันทึกภาคสนาม",
+      "class": "GOOD"
+    },
+    "fieldNotes.display": {
+      "en": "Essays from the seam between mind and brain.",
+      "th": "บทความจากรอยต่อระหว่างจิตใจกับสมอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "fieldNotes.intro": {
+      "en": "Longer pieces of writing, hedged carefully, intended to be read rather than skimmed. Each essay holds two languages — neuroscience and depth psychology — in parallel, without collapsing one into the other.",
+      "th": "งานเขียนยาวขึ้น ระมัดระวังในการเว้นที่ ตั้งใจให้อ่านมากกว่าผ่านตา แต่ละบทถือสองภาษา — ประสาทวิทยาและจิตวิทยาเชิงลึก — ขนานกัน โดยไม่ยุบฝั่งใดเข้ากับอีกฝั่ง",
+      "class": "WRONG"
+    },
+    "fieldNotes.words": {
+      "en": "words",
+      "th": "คำ",
+      "class": "GOOD"
+    },
+    "fieldNotes.minRead": {
+      "en": "min read",
+      "th": "นาทีอ่าน",
+      "class": "GOOD"
+    },
+    "fieldNotes.forthcoming": {
+      "en": "Forthcoming",
+      "th": "เร็ว ๆ นี้",
+      "class": "GOOD"
+    },
+    "fieldNotes.essay3.title": {
+      "en": "Sound and the salience network",
+      "th": "เสียงกับเครือข่ายความสำคัญ",
+      "class": "NEEDS-REVIEW"
+    },
+    "fieldNotes.essay3.summary": {
+      "en": "Why particular pieces of music seem to arrive with weight — auditory cortex, default-mode involvement, and what Jung called the numinous.",
+      "th": "เหตุใดเพลงบางเพลงจึงดูเหมือนมาถึงพร้อมน้ำหนัก — คอร์เทกซ์การได้ยิน การมีส่วนของ default-mode และสิ่งที่จุงเรียกว่า numinous",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.ifg_left.displayName": {
+      "en": "Broca's region (L)",
+      "th": "บริเวณบรอกา (ซ้าย)",
+      "class": "GOOD"
+    },
+    "regions.ifg_left.anatomyName": {
+      "en": "Inferior frontal gyrus, BA 44/45 (left)",
+      "th": "อินฟีเรียร์ฟรอนทอลไจรัส BA 44/45 (ซ้าย)",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.ifg_left.scienceGloss": {
+      "en": "Involved in syntactic processing and articulation. Damage here disrupts speech production while comprehension can remain partly intact.",
+      "th": "เกี่ยวข้องกับการประมวลผลไวยากรณ์และการออกเสียง การบาดเจ็บที่นี่รบกวนการพูด แต่ความเข้าใจอาจยังคงอยู่บางส่วน",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.ifg_left.poeticGloss": {
+      "en": "The part of you that finds the next word — and the part that catches its own tongue when the word isn't quite right.",
+      "th": "ส่วนของคุณที่ค้นหาคำถัดไป — และส่วนที่จับลิ้นตัวเองเมื่อคำที่พบไม่ถูกต้องเสียทีเดียว",
+      "class": "WEAK"
+    },
+    "regions.ifg_right.displayName": {
+      "en": "IFG (R)",
+      "th": "IFG (ขวา)",
+      "class": "GOOD"
+    },
+    "regions.ifg_right.anatomyName": {
+      "en": "Inferior frontal gyrus (right)",
+      "th": "อินฟีเรียร์ฟรอนทอลไจรัส (ขวา)",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.ifg_right.scienceGloss": {
+      "en": "Involved in prosody, semantic integration of figurative speech, and inhibitory control of language.",
+      "th": "เกี่ยวข้องกับน้ำเสียง การบูรณาการความหมายเชิงเปรียบเทียบ และการควบคุมยับยั้งทางภาษา",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.ifg_right.poeticGloss": {
+      "en": "The hemisphere that listens for tone — for what someone means underneath what they said.",
+      "th": "ซีกสมองที่ฟังน้ำเสียง — ฟังสิ่งที่คนหมายถึงใต้สิ่งที่พวกเขาพูด",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.pstg_left.displayName": {
+      "en": "Posterior STG (L)",
+      "th": "Posterior STG (ซ้าย)",
+      "class": "WEAK"
+    },
+    "regions.pstg_left.anatomyName": {
+      "en": "Posterior superior temporal gyrus (left)",
+      "th": "Posterior superior temporal gyrus (ซ้าย)",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.pstg_left.scienceGloss": {
+      "en": "Implicated in phonological and lexical processing. Sometimes referred to (contestedly) as 'Wernicke's area.'",
+      "th": "เกี่ยวข้องกับการประมวลผลทางเสียงและคำ บางครั้งถูกอ้าง (โดยถกเถียง) ว่าเป็น 'พื้นที่ Wernicke'",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.pstg_left.poeticGloss": {
+      "en": "Where sounds become words. Where the river of breath starts to look like meaning.",
+      "th": "ที่ที่เสียงกลายเป็นคำ ที่ที่กระแสลมหายใจเริ่มดูเหมือนความหมาย",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.pstg_right.displayName": {
+      "en": "Posterior STG (R)",
+      "th": "Posterior STG (ขวา)",
+      "class": "WEAK"
+    },
+    "regions.pstg_right.anatomyName": {
+      "en": "Posterior superior temporal gyrus (right)",
+      "th": "Posterior superior temporal gyrus (ขวา)",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.pstg_right.scienceGloss": {
+      "en": "Implicated in tonal and prosodic processing, including melody perception and the affective side of speech.",
+      "th": "เกี่ยวข้องกับการประมวลผลโทนและน้ำเสียง รวมถึงการรับรู้ทำนองและด้านอารมณ์ของคำพูด",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.pstg_right.poeticGloss": {
+      "en": "The room in which music and feeling first meet. The room a sentence cannot enter alone.",
+      "th": "ห้องที่ดนตรีและความรู้สึกพบกันครั้งแรก ห้องที่ประโยคเดียวเข้าไปไม่ได้",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.mtg_left.displayName": {
+      "en": "Middle Temporal (L)",
+      "th": "Middle Temporal (ซ้าย)",
+      "class": "WEAK"
+    },
+    "regions.mtg_left.anatomyName": {
+      "en": "Middle temporal gyrus (left)",
+      "th": "Middle temporal gyrus (ซ้าย)",
+      "class": "GOOD"
+    },
+    "regions.mtg_left.scienceGloss": {
+      "en": "Involved in lexical semantics and word retrieval. Activity here scales with sentence meaning, not just sound.",
+      "th": "เกี่ยวข้องกับความหมายเชิงศัพท์และการดึงคำ กิจกรรมที่นี่สัมพันธ์กับความหมายของประโยค ไม่ใช่แค่เสียง",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.mtg_left.poeticGloss": {
+      "en": "Where a word and its weight meet. Where 'mother' is not just a noun.",
+      "th": "ที่ที่คำและน้ำหนักของมันพบกัน ที่ที่ 'แม่' ไม่ใช่แค่คำนาม",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.mtg_right.displayName": {
+      "en": "Middle Temporal (R)",
+      "th": "Middle Temporal (ขวา)",
+      "class": "WEAK"
+    },
+    "regions.mtg_right.anatomyName": {
+      "en": "Middle temporal gyrus (right)",
+      "th": "Middle temporal gyrus (ขวา)",
+      "class": "GOOD"
+    },
+    "regions.mtg_right.scienceGloss": {
+      "en": "Implicated in figurative meaning, narrative comprehension, and biological-motion perception.",
+      "th": "เกี่ยวข้องกับความหมายเชิงเปรียบเทียบ ความเข้าใจเรื่องเล่า และการรับรู้การเคลื่อนไหวทางชีวภาพ",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.mtg_right.poeticGloss": {
+      "en": "The hemisphere that handles metaphor without flinching. Where stories live before they have endings.",
+      "th": "ซีกสมองที่รับมือกับการเปรียบเทียบโดยไม่ครั่นคร้าม ที่ที่เรื่องราวอยู่ก่อนมีตอนจบ",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.atl_left.displayName": {
+      "en": "Anterior Temporal (L)",
+      "th": "Anterior Temporal (ซ้าย)",
+      "class": "WEAK"
+    },
+    "regions.atl_left.anatomyName": {
+      "en": "Anterior temporal lobe (left)",
+      "th": "Anterior temporal lobe (ซ้าย)",
+      "class": "GOOD"
+    },
+    "regions.atl_left.scienceGloss": {
+      "en": "A semantic hub: involved in integrating multimodal conceptual knowledge into meaning.",
+      "th": "ฮับเชิงความหมาย: เกี่ยวข้องกับการบูรณาการความรู้เชิงแนวคิดจากหลายโมดอลเข้าเป็นความหมาย",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.atl_left.poeticGloss": {
+      "en": "The part of you that knows what a thing is, not just what it's called.",
+      "th": "ส่วนของคุณที่รู้ว่าสิ่งหนึ่ง คือ อะไร ไม่ใช่แค่ที่เรียกว่าอะไร",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.atl_right.displayName": {
+      "en": "Anterior Temporal (R)",
+      "th": "Anterior Temporal (ขวา)",
+      "class": "WEAK"
+    },
+    "regions.atl_right.anatomyName": {
+      "en": "Anterior temporal lobe (right)",
+      "th": "Anterior temporal lobe (ขวา)",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.atl_right.scienceGloss": {
+      "en": "Implicated in person-knowledge, social semantics, and the meanings carried by faces.",
+      "th": "เกี่ยวข้องกับความรู้เกี่ยวกับบุคคล ความหมายทางสังคม และความหมายที่ใบหน้าพกพา",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.atl_right.poeticGloss": {
+      "en": "Where a face is not yet a name — but already a feeling.",
+      "th": "ที่ที่ใบหน้ายังไม่เป็นชื่อ — แต่เป็นความรู้สึกอยู่แล้ว",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.agl_left.displayName": {
+      "en": "Angular Gyrus (L)",
+      "th": "Angular Gyrus (ซ้าย)",
+      "class": "WEAK"
+    },
+    "regions.agl_left.anatomyName": {
+      "en": "Angular gyrus (left)",
+      "th": "Angular gyrus (ซ้าย)",
+      "class": "GOOD"
+    },
+    "regions.agl_left.scienceGloss": {
+      "en": "A heteromodal hub: involved in semantic integration, metaphor, and the default-mode network.",
+      "th": "ฮับ heteromodal: เกี่ยวข้องกับการบูรณาการเชิงความหมาย การเปรียบเทียบ และเครือข่ายโหมดเริ่มต้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.agl_left.poeticGloss": {
+      "en": "The crossing where senses translate into ideas. Where 'red' can mean a color or a country.",
+      "th": "ทางแยกที่ประสาทสัมผัสแปลเป็นความคิด ที่ที่ 'แดง' อาจหมายถึงสีหรือประเทศ",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.agl_right.displayName": {
+      "en": "Angular Gyrus (R)",
+      "th": "Angular Gyrus (ขวา)",
+      "class": "WEAK"
+    },
+    "regions.agl_right.anatomyName": {
+      "en": "Angular gyrus (right)",
+      "th": "Angular gyrus (ขวา)",
+      "class": "GOOD"
+    },
+    "regions.agl_right.scienceGloss": {
+      "en": "Implicated in numeracy, spatial cognition, and the default-mode network's right component.",
+      "th": "เกี่ยวข้องกับการประมวลผลตัวเลข ความรู้คิดเชิงพื้นที่ และส่วนขวาของเครือข่ายโหมดเริ่มต้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.agl_right.poeticGloss": {
+      "en": "Where number, body, and self meet — the way a room knows it is a room.",
+      "th": "ที่ที่ตัวเลข ร่างกาย และตัวตนพบกัน — แบบที่ห้องรู้ว่าตัวเองเป็นห้อง",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.hg_left.displayName": {
+      "en": "Heschl's Gyrus (L)",
+      "th": "Heschl's Gyrus (ซ้าย)",
+      "class": "WEAK"
+    },
+    "regions.hg_left.anatomyName": {
+      "en": "Heschl's gyrus / primary auditory cortex (left)",
+      "th": "Heschl's gyrus / primary auditory cortex (ซ้าย)",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.hg_left.scienceGloss": {
+      "en": "Primary auditory cortex: receives the first cortical signal from the ear. Tonotopically organized.",
+      "th": "Primary auditory cortex: รับสัญญาณคอร์ติคัลแรกจากหู จัดระเบียบแบบ tonotopic",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.hg_left.poeticGloss": {
+      "en": "The doorway sound walks through to become a thought. The earliest room in the house of hearing.",
+      "th": "ประตูที่เสียงเดินผ่านเพื่อกลายเป็นความคิด ห้องแรกสุดในบ้านของการได้ยิน",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.hg_right.displayName": {
+      "en": "Heschl's Gyrus (R)",
+      "th": "Heschl's Gyrus (ขวา)",
+      "class": "WEAK"
+    },
+    "regions.hg_right.anatomyName": {
+      "en": "Heschl's gyrus / primary auditory cortex (right)",
+      "th": "Heschl's gyrus / primary auditory cortex (ขวา)",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.hg_right.scienceGloss": {
+      "en": "Primary auditory cortex (right). More fine-grained spectral processing than its left counterpart.",
+      "th": "Primary auditory cortex (ขวา) ประมวลผลสเปกตรัมละเอียดกว่าฝั่งซ้าย",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.hg_right.poeticGloss": {
+      "en": "The ear that hears the difference between a violin and someone crying.",
+      "th": "หูที่ได้ยินความต่างระหว่างไวโอลินกับคนกำลังร้องไห้",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.vmpfc.displayName": {
+      "en": "vmPFC",
+      "th": "vmPFC",
+      "class": "MISSING"
+    },
+    "regions.vmpfc.anatomyName": {
+      "en": "Ventromedial prefrontal cortex",
+      "th": "คอร์เทกซ์ prefrontal ventromedial",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.vmpfc.scienceGloss": {
+      "en": "Involved in valuation, self-referential thought, and the default-mode network. Not a 'self center' — a node.",
+      "th": "เกี่ยวข้องกับการประเมินคุณค่า ความคิดที่อ้างอิงตัวเอง และเครือข่ายโหมดเริ่มต้น ไม่ใช่ 'ศูนย์ตัวตน' — เป็นโหนด",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.vmpfc.poeticGloss": {
+      "en": "The part of you that knows what is good for you — and is sometimes wrong.",
+      "th": "ส่วนของคุณที่รู้ว่าอะไรดีกับคุณ — และบางครั้งผิด",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.dmpfc.displayName": {
+      "en": "dmPFC",
+      "th": "dmPFC",
+      "class": "MISSING"
+    },
+    "regions.dmpfc.anatomyName": {
+      "en": "Dorsomedial prefrontal cortex",
+      "th": "คอร์เทกซ์ prefrontal dorsomedial",
+      "class": "GOOD"
+    },
+    "regions.dmpfc.scienceGloss": {
+      "en": "Implicated in mentalizing — modeling the mental states of others — and in self-reflection.",
+      "th": "เกี่ยวข้องกับการนึกถึงจิตของผู้อื่น — การจำลองสภาวะจิตของคนอื่น — และการพิจารณาตนเอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.dmpfc.poeticGloss": {
+      "en": "The part of you that wonders what someone else is thinking. The part that, sometimes, is wrong about that too.",
+      "th": "ส่วนของคุณที่สงสัยว่าคนอื่นกำลังคิดอะไร ส่วนที่บางครั้งก็ผิดเรื่องนั้นเช่นกัน",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.pcc.displayName": {
+      "en": "PCC",
+      "th": "PCC",
+      "class": "MISSING"
+    },
+    "regions.pcc.anatomyName": {
+      "en": "Posterior cingulate cortex",
+      "th": "คอร์เทกซ์ cingulate ส่วนหลัง",
+      "class": "GOOD"
+    },
+    "regions.pcc.scienceGloss": {
+      "en": "A core node of the default-mode network. Active in memory, mind-wandering, and self-related thought.",
+      "th": "โหนดหลักของเครือข่ายโหมดเริ่มต้น ทำงานในความทรงจำ การเดินทางของจิต และความคิดเกี่ยวกับตนเอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.pcc.poeticGloss": {
+      "en": "The part of you that's still you when you stop trying. The room that's lit when the others aren't.",
+      "th": "ส่วนของคุณที่ยังเป็นคุณเมื่อหยุดพยายาม ห้องที่เปิดไฟไว้เมื่อห้องอื่น ๆ ไม่เปิด",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.precuneus.displayName": {
+      "en": "Precuneus",
+      "th": "Precuneus",
+      "class": "MISSING"
+    },
+    "regions.precuneus.anatomyName": {
+      "en": "Precuneus",
+      "th": "Precuneus",
+      "class": "MISSING"
+    },
+    "regions.precuneus.scienceGloss": {
+      "en": "Implicated in autobiographical memory, mental imagery, and visual-spatial integration.",
+      "th": "เกี่ยวข้องกับความทรงจำอัตชีวประวัติ ภาพในจิต และการบูรณาการเชิงทัศน-มิติ",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.precuneus.poeticGloss": {
+      "en": "Where you go when you remember the smell of your grandmother's kitchen.",
+      "th": "ที่ที่คุณไปเมื่อนึกถึงกลิ่นห้องครัวของยาย",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.amyg_left.displayName": {
+      "en": "Amygdala (L)",
+      "th": "อะมิกดาลา (ซ้าย)",
+      "class": "GOOD"
+    },
+    "regions.amyg_left.anatomyName": {
+      "en": "Amygdala (left)",
+      "th": "Amygdala (ซ้าย)",
+      "class": "GOOD"
+    },
+    "regions.amyg_left.scienceGloss": {
+      "en": "Involved in salience and emotional learning — including positive emotions. Not a 'fear center.'",
+      "th": "เกี่ยวข้องกับความสำคัญและการเรียนรู้ทางอารมณ์ — รวมถึงอารมณ์เชิงบวก ไม่ใช่ 'ศูนย์ความกลัว'",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.amyg_left.poeticGloss": {
+      "en": "The part of you that notices what matters before you have words for why.",
+      "th": "ส่วนของคุณที่สังเกตว่าอะไรสำคัญก่อนคุณจะมีคำสำหรับเหตุผล",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.amyg_right.displayName": {
+      "en": "Amygdala (R)",
+      "th": "อะมิกดาลา (ขวา)",
+      "class": "GOOD"
+    },
+    "regions.amyg_right.anatomyName": {
+      "en": "Amygdala (right)",
+      "th": "Amygdala (ขวา)",
+      "class": "GOOD"
+    },
+    "regions.amyg_right.scienceGloss": {
+      "en": "Involved in salience and emotional learning. Activates during reward as well as threat.",
+      "th": "เกี่ยวข้องกับความสำคัญและการเรียนรู้ทางอารมณ์ ทำงานทั้งช่วงรางวัลและคุกคาม",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.amyg_right.poeticGloss": {
+      "en": "Where the body decides this is real, before the mind has caught up.",
+      "th": "ที่ที่ร่างกายตัดสินว่านี่จริงก่อนใจจะตามทัน",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "regions.hipp_left.displayName": {
+      "en": "Hippocampus (L)",
+      "th": "ฮิปโปแคมปัส (ซ้าย)",
+      "class": "GOOD"
+    },
+    "regions.hipp_left.anatomyName": {
+      "en": "Hippocampus (left)",
+      "th": "Hippocampus (ซ้าย)",
+      "class": "GOOD"
+    },
+    "regions.hipp_left.scienceGloss": {
+      "en": "Involved in episodic memory encoding and the construction of spatial cognitive maps.",
+      "th": "เกี่ยวข้องกับการเข้ารหัสความทรงจำเชิงเหตุการณ์และการสร้างแผนที่ปัญญาเชิงพื้นที่",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.hipp_left.poeticGloss": {
+      "en": "The part of you that knits experience into a story you can return to.",
+      "th": "ส่วนของคุณที่ถักประสบการณ์เข้าเป็นเรื่องราวที่คุณกลับไปได้",
+      "class": "WEAK"
+    },
+    "regions.hipp_right.displayName": {
+      "en": "Hippocampus (R)",
+      "th": "ฮิปโปแคมปัส (ขวา)",
+      "class": "GOOD"
+    },
+    "regions.hipp_right.anatomyName": {
+      "en": "Hippocampus (right)",
+      "th": "Hippocampus (ขวา)",
+      "class": "GOOD"
+    },
+    "regions.hipp_right.scienceGloss": {
+      "en": "Involved in spatial memory and the imagining of possible futures, as well as the recall of past scenes.",
+      "th": "เกี่ยวข้องกับความทรงจำเชิงพื้นที่และการจินตนาการอนาคตที่เป็นไปได้ รวมทั้งการเรียกคืนฉากในอดีต",
+      "class": "NEEDS-REVIEW"
+    },
+    "regions.hipp_right.poeticGloss": {
+      "en": "Where you walk through rooms that haven't been built yet.",
+      "th": "ที่ที่คุณเดินผ่านห้องที่ยังไม่ถูกสร้างขึ้น",
+      "class": "POETIC-NEEDS-HUMAN"
+    },
+    "mandalas.viewerLabel": {
+      "en": "What looking at a mandala does to the brain",
+      "th": "การมองมณฑลทำอะไรกับสมอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.viewerIntro": {
+      "en": "Pick any mandala below. The brain above (persistent across this site) shifts to the activation pattern published research on contemplative looking would predict for an image of that kind. Not a scan of you. Not a TRIBE prediction. A literature-informed synthesis — pedagogical, not personal.",
+      "th": "เลือกมณฑลใดก็ได้ด้านล่าง สมองด้านบน (คงอยู่ตลอดเว็บไซต์) จะเลื่อนไปสู่รูปแบบการกระตุ้นที่งานวิจัยตีพิมพ์เกี่ยวกับการมองเชิงสมาธิจะทำนายสำหรับภาพชนิดนั้น ไม่ใช่สแกนของคุณ ไม่ใช่คำทำนายของ TRIBE การประมวลผลที่อาศัยวรรณกรรม — เพื่อการเรียนรู้ ไม่ใช่ส่วนบุคคล",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.jungianReadingLabel": {
+      "en": "A Jungian reading",
+      "th": "การอ่านแบบจุง",
+      "class": "GOOD"
+    },
+    "mandalas.regionsLabel": {
+      "en": "Regions predicted to lift while viewing",
+      "th": "บริเวณที่ทำนายว่าจะลิฟต์ขณะมอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.regionsIntro": {
+      "en": "The macro brain above is now displaying the literature-informed pattern below. Predicted, not measured. Composed pedagogically from contemplative-attention and visual-symmetry studies — not from TRIBE, which doesn't take images of mandalas as input.",
+      "th": "สมองด้านบนกำลังแสดงรูปแบบที่อาศัยวรรณกรรมด้านล่าง ทำนาย ไม่ใช่วัดผล ประกอบขึ้นเชิงสอนจากการศึกษาความสนใจเชิงสมาธิและความสมมาตรทางสายตา — ไม่ใช่จาก TRIBE ซึ่งไม่รับภาพมณฑลเป็นอินพุต",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.whyComposition": {
+      "en": "Why this composition, briefly: contemplative looking quiets the amygdala's salience pull, lifts the precuneus and PCC (default-mode integration, visuospatial), engages the angular gyri (heteromodal hub), and gently recruits the dmPFC for self-referential processing without strong emotional load. The lowness of the amygdala is part of why this kind of attention feels different from arousal.",
+      "th": "เหตุใดการประกอบนี้ โดยย่อ: การมองเชิงสมาธิทำให้อะมิกดาลาดึงดูดความสำคัญน้อยลง ลิฟต์ precuneus และ PCC (การบูรณาการ default-mode, ทักษะมิติสัมพันธ์) กระตุ้น angular gyri (ฮับ heteromodal) และเรียก dmPFC อย่างนุ่มนวลสำหรับการประมวลผลที่อ้างอิงตัวเองโดยไม่มีน้ำหนักทางอารมณ์สูง ความต่ำของอะมิกดาลาคือส่วนหนึ่งของเหตุผลที่ความสนใจชนิดนี้รู้สึกต่างจากการตื่นตัว",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.fludd.tradition": {
+      "en": "European alchemy",
+      "th": "เล่นแร่แปรธาตุยุโรป",
+      "class": "GOOD"
+    },
+    "mandalas.items.fludd.description": {
+      "en": "Robert Fludd's engraving correlates the human microcosm with the cosmic macrocosm. Concentric rings of elements and faculties radiate from a central figure who is both contained by the cosmos and figured as its mirror. Fludd was a 17th-century English physician working in the hermetic-Paracelsian tradition; this image is one of many in his Utriusque Cosmi Historia diagramming the same intuition.",
+      "th": "ภาพแกะของ Robert Fludd เชื่อมโยงจุลภพมนุษย์กับมหภพจักรวาล วงแหวนศูนย์กลางร่วมของธาตุและความสามารถแผ่ออกจากร่างกลาง ผู้ซึ่งทั้งถูกบรรจุโดยจักรวาลและถูกแสดงเป็นกระจกของมัน Fludd เป็นแพทย์ชาวอังกฤษในศตวรรษที่ 17 ทำงานในประเพณีเฮอร์เมติก-พาราเซลซัส ภาพนี้คือหนึ่งในหลายภาพใน Utriusque Cosmi Historia ของเขาที่แผนผังความเข้าใจเดียวกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.fludd.jungian": {
+      "en": "Jung admired Fludd. He read the alchemical tradition as a record of psychological work — the philosopher's stone as a symbol for the integrated Self. The microcosm-macrocosm framing in particular maps onto his claim that the individual psyche and the larger collective patterns are continuous in structure. Fludd's engraving, in Jung's reading, is one of the clearest visual statements that the self being worked on is also a self that already contains the cosmos in miniature.",
+      "th": "จุงชื่นชม Fludd เขาอ่านประเพณีเล่นแร่แปรธาตุเป็นบันทึกของงานทางจิตวิทยา — ศิลาแห่งนักปราชญ์เป็นสัญลักษณ์สำหรับอัตตาภายที่บูรณาการ การจัดกรอบจุลภพ-มหภพโดยเฉพาะตรงกับข้ออ้างของเขาว่าจิตแต่ละคนและรูปแบบส่วนรวมที่ใหญ่กว่าต่อเนื่องในโครงสร้าง ภาพแกะของ Fludd ในการอ่านของจุงคือหนึ่งในคำกล่าวที่ชัดที่สุดเชิงสายตาว่าตัวตนที่กำลังทำงานก็เป็นตัวตนที่บรรจุจักรวาลในขนาดย่อยอยู่แล้ว",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.hildegard.tradition": {
+      "en": "Medieval Christian",
+      "th": "คริสเตียนยุคกลาง",
+      "class": "GOOD"
+    },
+    "mandalas.items.hildegard.description": {
+      "en": "A 12th-century illumination from the Hildegard codex, made centuries before Jung was born. The figure of humanity is contained within concentric circles of cosmos. Hildegard's writing accompanied images like this one — visionary texts in which the structure of the world and the structure of the soul were treated as the same diagram seen at different scales.",
+      "th": "ภาพประกอบจากศตวรรษที่ 12 จากต้นฉบับฮิลเดการ์ด สร้างขึ้นหลายศตวรรษก่อนจุงเกิด ร่างของมนุษยชาติถูกบรรจุในวงกลมศูนย์กลางร่วมของจักรวาล งานเขียนของฮิลเดการ์ดประกอบภาพเช่นนี้ — งานเชิงนิมิตที่โครงสร้างของโลกและโครงสร้างของจิตวิญญาณถูกปฏิบัติเป็นแผนผังเดียวกันที่เห็นในสเกลที่ต่าง",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.hildegard.jungian": {
+      "en": "Jung gave Hildegard credit. Her vision of humanity-in-the-cosmos is, for him, an earlier intuition of what he later named the Self — the whole field within which the conscious ego is one figure among many. The center of the image is not 'the human'; the center is the whole arrangement. Jung's individuation, in this language, is the slow work of recognizing that the cosmos was always already the larger frame.",
+      "th": "จุงให้เครดิตฮิลเดการ์ด นิมิตของมนุษยชาติในจักรวาลของเธอ สำหรับเขา คือสัญชาตญาณก่อนหน้าของสิ่งที่เขาเรียกในภายหลังว่าอัตตาภาย — สนามทั้งหมดที่อีโก้ที่รับรู้เป็นร่างหนึ่งในหลายร่าง ศูนย์กลางของภาพไม่ใช่ 'มนุษย์' ศูนย์กลางคือการจัดเรียงทั้งหมด การเป็นปัจเจกอย่างเต็มที่ของจุง ในภาษานี้ คืองานช้า ๆ ของการรู้จักว่าจักรวาลเป็นกรอบที่ใหญ่กว่าอยู่แล้วเสมอ",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.bhavachakra.tradition": {
+      "en": "Tibetan Buddhist",
+      "th": "พุทธทิเบต",
+      "class": "GOOD"
+    },
+    "mandalas.items.bhavachakra.description": {
+      "en": "The Bhavachakra — sometimes rendered as 'the wheel of life,' though 'the wheel of becoming' is closer — depicts the six realms of conditioned existence in its inner ring and the twelve links of dependent origination around its outer rim. Yama, the lord of death, holds the whole wheel; the Buddha stands outside it, pointing the way out. The image is traditionally painted at the entrance of Tibetan monasteries as a teaching device — not as a metaphysical diagram but as a map for what the meditative life is attempting.",
+      "th": "ภวจักร — บางครั้งแปลว่า 'วงล้อชีวิต' แม้ 'วงล้อการก่อตัว' จะใกล้กว่า — แสดงหกภพแห่งการดำรงเงื่อนไขในวงในและสิบสองห่วงปฏิจจสมุปบาทรอบขอบนอก ยมราชเจ้าแห่งความตายถือวงล้อทั้งหมด พระพุทธเจ้ายืนอยู่นอก ชี้ทางออก ภาพถูกวาดดั้งเดิมที่ทางเข้าวัดพุทธทิเบตเป็นอุปกรณ์การสอน — ไม่ใช่ในฐานะแผนผังอภิปรัชญาแต่เป็นแผนที่สำหรับสิ่งที่ชีวิตทางสมาธิกำลังพยายาม",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.bhavachakra.jungian": {
+      "en": "Jung was careful about Eastern thought — he both admired it and warned against the Western tendency to appropriate it as decoration. The Bhavachakra is one of the images he read carefully. The wheel as a structure containing all realms of experience, with a center (the three poisons) and a quaternity-multiplied (six realms × twelve links), is recognizable to his framework as a mandala in the strict sense: an organization of psychic territory under a single contained form. What he hedged about was direction. The Bhavachakra suggests an exit — the Buddha pointing out. Jung's individuation suggests integration rather than escape. Different orientations within a shared visual logic.",
+      "th": "จุงระมัดระวังเกี่ยวกับความคิดตะวันออก — เขาทั้งชื่นชมและเตือนต่อแนวโน้มตะวันตกที่จะฉวยเป็นเครื่องประดับ ภวจักรคือหนึ่งในภาพที่เขาอ่านอย่างระมัดระวัง วงล้อในฐานะโครงสร้างที่บรรจุภพประสบการณ์ทั้งหมด มีศูนย์กลาง (อกุศลมูลสาม) และจตุภาคคูณ (หกภพ × สิบสองห่วง) จดจำได้ในกรอบของเขาในฐานะมณฑลในความหมายเข้มงวด: การจัดระเบียบดินแดนจิตภายใต้รูปทรงบรรจุเดียว สิ่งที่เขาระมัดระวังคือทิศทาง ภวจักรชี้ทางออก — พระพุทธเจ้าชี้ออก การเป็นปัจเจกอย่างเต็มที่ของจุงชี้การบูรณาการมากกว่าการหลบหนี การเอียงต่างกันภายในตรรกะภาพร่วม",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.sri_yantra.tradition": {
+      "en": "Hindu (Shri Vidya tradition)",
+      "th": "ฮินดู (ประเพณีศรีวิทยา)",
+      "class": "GOOD"
+    },
+    "mandalas.items.sri_yantra.description": {
+      "en": "The Sri Yantra is among the most precisely constructed diagrams in any visual tradition. Nine interlocking triangles — four pointing upward, five pointing downward — generate forty-three smaller triangles around a central bindu, the point. The yantra is used in Shri Vidya tantric practice as both meditative focus and ritual diagram. Its geometric construction is technically demanding; getting the nine triangles to intersect cleanly at the bindu is a non-trivial problem in plane geometry.",
+      "th": "Sri Yantra คือหนึ่งในแผนผังที่สร้างอย่างแม่นยำที่สุดในประเพณีทัศนศิลป์ใด ๆ สามเหลี่ยมเก้าตัวขัดกัน — สี่ชี้ขึ้น ห้าชี้ลง — สร้างสามเหลี่ยมเล็ก 43 ตัวรอบ bindu กลาง จุด ยันต์ใช้ในการปฏิบัติตันตระศรีวิทยาเป็นทั้งจุดสมาธิและแผนผังพิธีกรรม การสร้างทางเรขาคณิตทำได้ยากเชิงเทคนิค การให้สามเหลี่ยมเก้าตัวตัดกันสะอาดที่ bindu เป็นปัญหาไม่ใช่เล่น ๆ ในเรขาคณิตระนาบ",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.sri_yantra.jungian": {
+      "en": "The Sri Yantra reads, in Jung's language, as one of the clearest visual statements of his coniunctio — the union of opposites. Triangles upward and triangles downward, in a single resolved figure. He referenced Eastern yantras explicitly when writing about mandalas and was struck by the convergence between this geometric statement of integrated polarity and the spontaneous mandalas his patients were producing in central Europe a thousand years later. Same shape. Different vocabulary. He hedged, again, about whether the convergence meant something metaphysical or whether it meant only that the psyche reaches for the same forms when working on the same problem.",
+      "th": "Sri Yantra อ่านได้ ในภาษาของจุง เป็นหนึ่งในคำกล่าวที่ชัดที่สุดเชิงสายตาของ coniunctio ของเขา — การรวมของสิ่งตรงข้าม สามเหลี่ยมขึ้นและสามเหลี่ยมลง ในร่างที่แก้ปัญหาเดียว เขาอ้างอิงยันต์ตะวันออกอย่างชัดเจนเมื่อเขียนเกี่ยวกับมณฑลและประหลาดใจกับการบรรจบระหว่างคำกล่าวเชิงเรขาคณิตของขั้วที่บูรณาการนี้และมณฑลที่ผู้ป่วยของเขาผลิตขึ้นเองในยุโรปกลางหนึ่งพันปีต่อมา รูปทรงเดียวกัน คำศัพท์ต่าง เขาระมัดระวังอีกครั้งเกี่ยวกับว่าการบรรจบหมายถึงบางสิ่งเชิงอภิปรัชญาหรือหมายถึงเพียงว่าจิตยื่นมือไปหารูปทรงเดียวกันเมื่อทำงานกับปัญหาเดียวกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.aztec_sun_stone.tradition": {
+      "en": "Mexica (Aztec)",
+      "th": "เม็กซิกา (แอซเท็ก)",
+      "class": "GOOD"
+    },
+    "mandalas.items.aztec_sun_stone.description": {
+      "en": "The Piedra del Sol — sometimes called the Aztec Calendar Stone, though it is not strictly a calendar — is a 24-ton basalt monolith carved by Mexica sculptors in the last decades before Spanish contact. Its central face is the god Tonatiuh or the earth-monster Tlaltecuhtli, depending on interpretation. Four directional ages surround the center; an outer ring of glyphs and serpents contains the whole. The stone was buried after the Conquest and rediscovered in Mexico City in 1790; it has been the object of careful scholarly disagreement ever since.",
+      "th": "Piedra del Sol — บางครั้งเรียกว่า Aztec Calendar Stone แม้จะไม่ใช่ปฏิทินอย่างเข้มงวด — คือก้อนหินบะซอลต์ 24 ตันที่ถูกแกะสลักโดยช่างเม็กซิกาในทศวรรษสุดท้ายก่อนการติดต่อสเปน ใบหน้าศูนย์กลางคือเทพ Tonatiuh หรือสัตว์ประหลาดดิน Tlaltecuhtli ขึ้นอยู่กับการตีความ ยุคทิศทางสี่ยุคล้อมศูนย์กลาง วงนอกของอักษรและงูบรรจุทั้งหมด หินถูกฝังหลังการพิชิตและถูกค้นพบใหม่ในเม็กซิโกซิตี้ในปี 1790 มันเป็นวัตถุของความไม่เห็นด้วยทางวิชาการอย่างระมัดระวังตั้งแต่นั้นมา",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.aztec_sun_stone.jungian": {
+      "en": "Jung did not write about Mesoamerican imagery with the same depth he gave to alchemy or Tibetan thought; he was honest about the limits of his cultural reach. But the Sun Stone is unmistakably a mandala in his structural sense — a center, a quaternity (the four previous suns), a containment (the cosmic ring of glyphs), a break in symmetry where the cardinal directions disrupt the radial pattern. Whether Jung's framework is the right one for reading a Mexica object is a real question. The structural recognition is honest; the cultural translation requires more care than Jung himself always brought to it. Both can be true.",
+      "th": "จุงไม่ได้เขียนเกี่ยวกับภาพเมโสอเมริกันด้วยความลึกเดียวกับที่เขาให้แก่การเล่นแร่แปรธาตุหรือความคิดทิเบต เขาซื่อสัตย์เกี่ยวกับขีดจำกัดของระยะเอื้อมทางวัฒนธรรมของเขา แต่หินดวงอาทิตย์ไม่ผิดพลาดเป็นมณฑลในความหมายเชิงโครงสร้างของเขา — ศูนย์กลาง จตุภาค (สี่ดวงอาทิตย์ก่อนหน้า) การล้อม (วงจักรวาลของอักษร) รอยแตกของความสมมาตรที่ทิศหลักก่อกวนรูปแบบรัศมี กรอบของจุงเป็นกรอบที่ถูกสำหรับอ่านวัตถุเม็กซิกาหรือไม่เป็นคำถามจริง การรู้จักเชิงโครงสร้างซื่อสัตย์ การแปลทางวัฒนธรรมต้องการความระมัดระวังมากกว่าที่จุงเองนำมาเสมอ ทั้งคู่อาจเป็นจริง",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.chartres_rose.tradition": {
+      "en": "Gothic Christian",
+      "th": "คริสเตียนโกธิก",
+      "class": "GOOD"
+    },
+    "mandalas.items.chartres_rose.description": {
+      "en": "The North Transept rose window at Chartres, donated by Blanche of Castile c. 1235. Mary occupies the center. The first ring is the four doves of the Holy Spirit and the seven gifts; the next is the kings of Judah; the outermost rings are prophets, angels, and the fleur-de-lis of the donor's house. The whole composition is exactly twelve meters across. It is one of three rose windows at Chartres and is widely held to be among the most theologically and geometrically considered objects of the high medieval period.",
+      "th": "หน้าต่างกุหลาบทางเหนือที่ Chartres บริจาคโดย Blanche of Castile ราว 1235 แมรี่ครอบครองศูนย์กลาง วงแรกคือนกพิราบสี่ตัวของพระวิญญาณบริสุทธิ์และของขวัญเจ็ดประการ ถัดไปคือกษัตริย์แห่งยูดาห์ วงนอกสุดคือศาสดา ทูตสวรรค์ และเฟลอร์เดอลีของบ้านผู้บริจาค การประกอบทั้งหมดมีขนาดสิบสองเมตรพอดี เป็นหนึ่งในสามหน้าต่างกุหลาบที่ Chartres และถือกันโดยทั่วไปว่าเป็นหนึ่งในวัตถุที่พิจารณาเชิงเทววิทยาและเรขาคณิตมากที่สุดในยุคกลางตอนสูง",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.chartres_rose.jungian": {
+      "en": "Jung read rose windows as Christian mandalas in the strict sense. A center, four (or twelve, the four tripled), a containment, an ordering of figures that places the divine and the human in fixed structural relation. For him the medieval rose window was an extraordinary example of how the same mandala impulse he was observing in his patients had already been articulated, with full theological intent, by twelfth- and thirteenth-century master glassworkers and their patrons. The image is the same shape the unconscious reaches for when it is reorganizing — except here, it has been organized deliberately, by people who knew what they were doing.",
+      "th": "จุงอ่านหน้าต่างกุหลาบเป็นมณฑลคริสเตียนในความหมายเข้มงวด ศูนย์กลาง สี่ (หรือสิบสอง สี่คูณสาม) การล้อม การจัดระเบียบรูปร่างที่วางพระเจ้าและมนุษย์ในความสัมพันธ์เชิงโครงสร้างที่คงที่ สำหรับเขา หน้าต่างกุหลาบยุคกลางคือตัวอย่างพิเศษว่ามณฑลแรงเดียวกันที่เขาสังเกตในผู้ป่วยของเขาได้ถูกประกาศ ด้วยเจตนาทางเทววิทยาเต็มที่ โดยช่างแก้วผู้เชี่ยวชาญและผู้อุปถัมภ์ของศตวรรษที่ 12 และ 13 แล้ว ภาพคือรูปทรงเดียวกับที่จิตไร้สำนึกยื่นมือไปหาเมื่อกำลังจัดระเบียบใหม่ — เว้นแต่ที่นี่ถูกจัดระเบียบอย่างจงใจ โดยคนที่รู้ว่ากำลังทำอะไร",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.splendor_solis.tradition": {
+      "en": "European alchemy",
+      "th": "เล่นแร่แปรธาตุยุโรป",
+      "class": "GOOD"
+    },
+    "mandalas.items.splendor_solis.description": {
+      "en": "From the Splendor Solis, a 22-plate alchemical manuscript attributed to Salomon Trismosin and illuminated in the late sixteenth century. The drowning king — also called the dissolution or solutio in alchemical literature — is one of the canonical stages of the great work. The crowned ruling principle sinks into water so that something new can form. Each plate of the Splendor Solis is bordered by intricate marginalia; the central image is always doing work, not decoration.",
+      "th": "จาก Splendor Solis ต้นฉบับเล่นแร่แปรธาตุ 22 แผ่นที่อ้างให้ Salomon Trismosin และประดับในปลายศตวรรษที่สิบหก กษัตริย์จมน้ำ — เรียกอีกอย่างว่า dissolution หรือ solutio ในวรรณกรรมเล่นแร่แปรธาตุ — คือหนึ่งในขั้นตามแบบของงานใหญ่ หลักการปกครองที่สวมมงกุฎจมในน้ำเพื่อให้บางสิ่งใหม่ก่อตัวได้ แต่ละแผ่นของ Splendor Solis ขอบล้อมด้วย marginalia ละเอียด ภาพศูนย์กลางทำงานเสมอ ไม่ใช่ประดับ",
+      "class": "NEEDS-REVIEW"
+    },
+    "mandalas.items.splendor_solis.jungian": {
+      "en": "Jung devoted volumes 12, 13, 14, and 16 of his Collected Works to alchemy. He read the manuscripts as the most extensive surviving record of psychological work in the West before the term 'psychological' existed. The drowning king, in his reading, is a precise image: the conscious ego — the ruling principle — has to dissolve, partly and temporarily, for individuation to proceed. The image is not metaphysical chemistry. It is the alchemists trying to say something about transformation that they did not yet have psychological language for. Jung's project, in many ways, was to give them that language while preserving what they had already correctly seen.",
+      "th": "จุงอุทิศเล่ม 12, 13, 14 และ 16 ของผลงานรวมของเขาให้กับเล่นแร่แปรธาตุ เขาอ่านต้นฉบับเป็นบันทึกที่กว้างที่สุดของงานทางจิตวิทยาในตะวันตกที่รอดมา ก่อนคำว่า 'จิตวิทยา' จะมี กษัตริย์จมน้ำ ในการอ่านของเขา คือภาพแม่นยำ: อีโก้ที่รับรู้ — หลักการปกครอง — ต้องละลาย บางส่วนและชั่วคราว เพื่อให้การเป็นปัจเจกอย่างเต็มที่ดำเนินต่อ ภาพไม่ใช่เคมีเชิงอภิปรัชญา มันคือนักเล่นแร่แปรธาตุพยายามพูดบางสิ่งเกี่ยวกับการเปลี่ยนแปลงที่พวกเขายังไม่มีภาษาจิตวิทยาให้ โครงการของจุง ในหลายทาง คือการให้ภาษานั้นแก่พวกเขาในขณะที่รักษาสิ่งที่พวกเขาเห็นแล้วอย่างถูกต้อง",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.label": {
+      "en": "The Archetypes",
+      "th": "แม่แบบจิต",
+      "class": "GOOD"
+    },
+    "archetypes.opening": {
+      "en": "There are figures in the psyche that are not you.",
+      "th": "ในจิตมีรูปร่างที่ไม่ใช่ตัวคุณ",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.openingBody": {
+      "en": "Carl Jung gave them names. Six are shown here, each illustrated with a real artifact from the visual tradition Jung drew on — paintings and manuscripts whose creators died long before he did. None of the images are Jung's own work.",
+      "th": "คาร์ล จุง ตั้งชื่อให้พวกมัน หกตัวแสดงไว้ที่นี่ แต่ละตัวประกอบกับวัตถุจริงจากประเพณีทัศนศิลป์ที่จุงใช้อ้างอิง — ภาพวาดและต้นฉบับที่ผู้สร้างเสียชีวิตก่อนเขามาเป็นเวลานาน ไม่มีภาพใดเป็นผลงานของจุงเอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.upcomingLabel": {
+      "en": "Coming to this room",
+      "th": "กำลังจะมาถึงห้องนี้",
+      "class": "GOOD"
+    },
+    "archetypes.upcomingHeading": {
+      "en": "Three more archetypes are scheduled.",
+      "th": "แม่แบบจิตอีกสามตัวอยู่ในกำหนดการ",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.upcomingBody": {
+      "en": "Each of the following needs a verified public-domain artwork sourced before it can ship. The discipline of this room is that no archetype enters without an artifact whose provenance is documented and visible.",
+      "th": "แต่ละตัวต่อไปนี้ต้องการผลงานสาธารณสมบัติที่ได้รับการยืนยันแหล่งที่มาก่อนจึงจะเผยแพร่ได้ วินัยของห้องนี้คือไม่มีแม่แบบจิตใดเข้ามาโดยไม่มีวัตถุที่ที่มาเป็นเอกสารและมองเห็นได้",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.todoImage": {
+      "en": "TODO_IMAGE",
+      "th": "TODO_ภาพ",
+      "class": "GOOD"
+    },
+    "archetypes.mandalasLabel": {
+      "en": "On mandalas",
+      "th": "ว่าด้วยมณฑล",
+      "class": "GOOD"
+    },
+    "archetypes.mandalasDisplay": {
+      "en": "How to look at a circle that is also a portrait of a psyche.",
+      "th": "วิธีมองวงกลมที่เป็นภาพเหมือนของจิตด้วย",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.mandalasBody1": {
+      "en": "Jung started painting mandalas before he had a theory of them. Through the years of his break with Freud and his slow descent into what he later called his confrontation with the unconscious, circular images appeared in his notebooks — first as something he was compelled to draw, then as something his patients independently produced during periods of psychic upheaval, and finally as something he recognized across the visual traditions of medieval Europe, Tibetan Buddhism, alchemical manuscripts, Hindu yantras, Hildegard's illuminations, and the rose windows of cathedrals he had never planned to study.",
+      "th": "จุงเริ่มวาดมณฑลก่อนที่เขาจะมีทฤษฎีเกี่ยวกับมัน ตลอดหลายปีของการแยกตัวจากฟรอยด์และการลงลึกอย่างช้า ๆ ไปสู่สิ่งที่เขาเรียกในภายหลังว่า การเผชิญหน้ากับจิตไร้สำนึก ภาพวงกลมปรากฏในสมุดบันทึกของเขา — ในตอนแรกเป็นสิ่งที่เขารู้สึกถูกบังคับให้วาด จากนั้นเป็นสิ่งที่ผู้ป่วยของเขาผลิตขึ้นโดยอิสระในช่วงที่จิตปั่นป่วน และในที่สุดเป็นสิ่งที่เขารู้จักข้ามประเพณีทัศนศิลป์ของยุโรปยุคกลาง พุทธทิเบต ต้นฉบับเล่นแร่แปรธาตุ ยันต์ฮินดู ภาพประกอบของฮิลเดการ์ด และหน้าต่างกุหลาบของมหาวิหารที่เขาไม่เคยวางแผนจะศึกษา",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.mandalasBody2": {
+      "en": "What he came to believe, with appropriate hedging, was that the mandala is the symbolic expression of what he called the Self — the whole psyche of which the conscious ego is a small part. Not the metaphysical Self of any one tradition, but a pattern the psyche reaches for when it needs to organize itself: a center, a containment, a quaternity, an integration of opposites held in a single field.",
+      "th": "สิ่งที่เขามาเชื่ออย่างระมัดระวังคือ มณฑลคือการแสดงออกเชิงสัญลักษณ์ของสิ่งที่เขาเรียกว่า อัตตาภาย (Self) — จิตทั้งหมดที่อีโก้เป็นเพียงส่วนเล็ก ๆ ไม่ใช่อัตตาภายเชิงอภิปรัชญาของประเพณีใดประเพณีหนึ่ง แต่เป็นรูปแบบที่จิตยื่นมือไปหาเมื่อจำเป็นต้องจัดระเบียบตัวเอง: ศูนย์กลาง การล้อม จตุภาค การบูรณาการสิ่งตรงข้ามไว้ในสนามเดียว",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.howToLookHeading": {
+      "en": "How to look at one.",
+      "th": "วิธีมองมณฑลหนึ่ง",
+      "class": "GOOD"
+    },
+    "archetypes.howToLookBody": {
+      "en": "Jung had a practical method for looking at a mandala, his patients' or his own. The point was not interpretation in the usual sense — not a key that decodes the image — but a slower attending that lets the image do its work. Four questions, asked roughly in order:",
+      "th": "จุงมีวิธีปฏิบัติในการมองมณฑล ไม่ว่าของผู้ป่วยหรือของเขาเอง จุดสำคัญไม่ใช่การตีความตามแบบทั่วไป — ไม่ใช่กุญแจที่ถอดรหัสภาพ — แต่เป็นการตั้งใจช้า ๆ ที่ปล่อยให้ภาพทำงาน มีสี่คำถาม ถามตามลำดับโดยประมาณ:",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.look1Title": {
+      "en": "What is at the center?",
+      "th": "อะไรอยู่ตรงกลาง?",
+      "class": "GOOD"
+    },
+    "archetypes.look1": {
+      "en": "Sometimes a figure, sometimes a flame, sometimes an empty point, sometimes nothing identifiable at all. The center is what the rest of the image is organized around. Whether it is occupied or empty, occupied by what, empty in what way — these matter.",
+      "th": "บางครั้งเป็นรูป บางครั้งเป็นเปลวไฟ บางครั้งเป็นจุดว่างเปล่า บางครั้งไม่มีอะไรระบุได้เลย ศูนย์กลางคือสิ่งที่ภาพที่เหลือถูกจัดระเบียบรอบ ไม่ว่ามันจะถูกครอบครองหรือว่างเปล่า ถูกครอบครองโดยอะไร ว่างเปล่าในแบบใด — สิ่งเหล่านี้สำคัญ",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.look2Title": {
+      "en": "What four things are around the center?",
+      "th": "อะไรสี่อย่างอยู่รอบศูนย์กลาง?",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.look2": {
+      "en": "Mandalas across traditions tend toward quaternity — four directions, four elements, four evangelists, four functions of consciousness in Jung's own typology. The four are not arbitrary; they are the rhythm by which the center is mapped into the field. Notice whether the four are balanced or one is heavier, whether one is missing, whether they repeat into eight or sixteen.",
+      "th": "มณฑลข้ามประเพณีมักโน้มเอียงไปทางจตุภาค — สี่ทิศ สี่ธาตุ สี่ผู้นิพนธ์พระคัมภีร์ สี่หน้าที่ของจิตสำนึกในแบบของจุงเอง สี่สิ่งนั้นไม่ใช่เรื่องสุ่ม แต่เป็นจังหวะที่ศูนย์กลางถูกแมปลงในสนาม สังเกตว่าทั้งสี่สมดุลกันหรือบ้างหนักกว่า บ้างหายไป หรือซ้ำเป็นแปดหรือสิบหก",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.look3Title": {
+      "en": "What contains it?",
+      "th": "อะไรล้อมมันไว้?",
+      "class": "GOOD"
+    },
+    "archetypes.look3": {
+      "en": "Mandalas have boundaries — circles, walls, gates, sacred precincts. The boundary holds energy that would otherwise disperse. In the felt experience of looking, the containment is what makes the center possible. Without edge there is no center.",
+      "th": "มณฑลมีขอบเขต — วงกลม กำแพง ประตู เขตศักดิ์สิทธิ์ ขอบเขตเก็บพลังงานที่ไม่เช่นนั้นจะกระจัดกระจาย ในประสบการณ์ของการมอง การล้อมเป็นสิ่งที่ทำให้ศูนย์กลางเป็นไปได้ ปราศจากขอบไม่มีศูนย์กลาง",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.look4Title": {
+      "en": "Where does it break?",
+      "th": "มันแตกตรงไหน?",
+      "class": "GOOD"
+    },
+    "archetypes.look4": {
+      "en": "A working mandala is almost never perfectly symmetric. A crack in the boundary, a missing quadrant, a figure pulling sideways out of the frame. Jung paid close attention to these — not as flaws but as the place where the integration is incomplete and where the next work is waiting.",
+      "th": "มณฑลที่ทำงานได้แทบไม่เคยสมมาตรเป็นเป๊ะ รอยร้าวในขอบเขต ส่วนหนึ่งของจตุภาคที่หายไป รูปที่ดึงออกข้างกรอบ จุงให้ความสนใจอย่างใกล้ชิดกับสิ่งเหล่านี้ — ไม่ใช่ในฐานะข้อบกพร่อง แต่ในฐานะจุดที่การบูรณาการยังไม่สมบูรณ์ และที่งานต่อไปกำลังรออยู่",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.whyHeading": {
+      "en": "Why Jung kept coming back.",
+      "th": "เหตุใดจุงกลับมาอยู่เสมอ",
+      "class": "GOOD"
+    },
+    "archetypes.whyBody1": {
+      "en": "What Jung claimed about mandalas, and what he hedged about them, are worth separating. He claimed that mandalas appear spontaneously when the psyche is reorganizing itself — that they are part of the actual work of individuation, not just illustrations of it. He claimed that drawing them was a way to participate in that reorganization. He claimed the quaternity structure was not random but expressed something structural about how consciousness orients itself.",
+      "th": "สิ่งที่จุงอ้างเกี่ยวกับมณฑล และสิ่งที่เขาระมัดระวังไม่อ้าง ควรแยกออกจากกัน เขาอ้างว่ามณฑลปรากฏขึ้นเองเมื่อจิตกำลังจัดระเบียบใหม่ — ว่ามันเป็นส่วนหนึ่งของงานการเป็นปัจเจกอย่างเต็มที่จริง ไม่ใช่เพียงภาพประกอบของมัน เขาอ้างว่าการวาดมณฑลคือวิธีร่วมในการจัดระเบียบนั้น เขาอ้างว่าโครงสร้างจตุภาคไม่ใช่เรื่องสุ่ม แต่แสดงออกบางสิ่งที่เป็นโครงสร้างเกี่ยวกับวิธีที่จิตสำนึกหันทิศทาง",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.whyBody2": {
+      "en": "What he hedged was metaphysics. He did not claim the mandala was a portal to anything. He did not claim it was magical, or that drawing one would heal you. He treated mandalas as clinical data — observed reliably enough across patients and traditions to deserve careful description, and reserved judgment about anything beyond that. The wellness industry, in its appropriation, has dropped the hedge and kept the mystery, which is the wrong half to keep.",
+      "th": "สิ่งที่เขาระมัดระวังคืออภิปรัชญา เขาไม่ได้อ้างว่ามณฑลเป็นประตูสู่อะไร เขาไม่ได้อ้างว่ามันมีเวทมนตร์ หรือการวาดมันจะรักษาคุณ เขาปฏิบัติต่อมณฑลในฐานะข้อมูลคลินิก — สังเกตได้น่าเชื่อถือพอข้ามผู้ป่วยและประเพณีจนสมควรได้รับคำอธิบายอย่างละเอียด และสงวนการตัดสินเกี่ยวกับสิ่งใดที่อยู่นอกเหนือจากนั้น อุตสาหกรรมเวลเนสในการครอบครองของมันได้ทิ้งความระมัดระวังและเก็บความลึกลับไว้ ซึ่งเป็นครึ่งที่ผิดที่จะเก็บ",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.whyBody3": {
+      "en": "Looking at Fludd's engraving above or the Hildegard codex beside it, both made centuries before Jung was born, you can see what he was pointing at without endorsing the cosmologies they came from. A center. A quaternity. A containment. A break in the symmetry somewhere that lets the life of the image stay alive. The work of looking is real even when the metaphysics is contested.",
+      "th": "เมื่อมองภาพแกะของฟลัดด์ข้างบนหรือต้นฉบับของฮิลเดการ์ดข้าง ๆ ซึ่งทั้งคู่สร้างขึ้นหลายศตวรรษก่อนจุงเกิด คุณสามารถเห็นสิ่งที่เขาชี้ไปโดยไม่ต้องรับรองจักรวาลวิทยาที่ภาพเหล่านั้นมาจาก ศูนย์กลาง จตุภาค การล้อม รอยแตกของความสมมาตรที่ใดที่หนึ่งซึ่งปล่อยให้ชีวิตของภาพยังคงมีชีวิตอยู่ งานของการมองมีจริงแม้เมื่ออภิปรัชญายังเป็นที่ถกเถียง",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.mandalasItalic": {
+      "en": "A mandala is not a picture of a finished self. It is a picture of a self being worked on, sometimes by hands that did not know what they were drawing until it was drawn.",
+      "th": "มณฑลไม่ใช่ภาพของอัตตาภายที่สำเร็จแล้ว มันคือภาพของอัตตาภายที่กำลังถูกทำงาน บางครั้งโดยมือที่ไม่รู้ว่ากำลังวาดอะไรจนกระทั่งวาดเสร็จ",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.mandalasMeta": {
+      "en": "On Mandalas · ~700 words · 4 min read",
+      "th": "ว่าด้วยมณฑล · ~700 คำ · อ่าน 4 นาที",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.manyLabel": {
+      "en": "Mandalas from many traditions",
+      "th": "มณฑลจากหลายประเพณี",
+      "class": "GOOD"
+    },
+    "archetypes.manyHeading": {
+      "en": "Same shape, different vocabularies.",
+      "th": "รูปทรงเดียวกัน คำศัพท์ต่างกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.manyBody": {
+      "en": "Jung observed that mandalic forms recur across cultures with no plausible chain of transmission between them. Medieval Christian rose windows. Tibetan dependent-origination wheels. The Sri Yantra. The Mexica Sun Stone. European alchemical engravings. Same shape, organized differently, used for different work. The convergence interested him for the rest of his life. Below are seven, with what depth psychology sees in each — and what published neuroimaging literature would predict your brain to do while looking at them.",
+      "th": "จุงสังเกตว่ารูปแบบมณฑลกลับมาซ้ำข้ามวัฒนธรรมโดยไม่มีลูกโซ่การถ่ายทอดที่น่าเชื่อระหว่างพวกมัน หน้าต่างกุหลาบคริสเตียนยุคกลาง วงล้อปฏิจจสมุปบาทของทิเบต ศรียันตรา หินดวงอาทิตย์เม็กซิกา ภาพแกะเล่นแร่แปรธาตุยุโรป รูปทรงเดียวกัน จัดระเบียบต่างกัน ใช้สำหรับงานต่างกัน การบรรจบนี้น่าสนใจสำหรับเขาตลอดชีวิตที่เหลือ ด้านล่างคือเจ็ดมณฑล พร้อมสิ่งที่จิตวิทยาเชิงลึกเห็นในแต่ละ — และสิ่งที่วรรณกรรมนิวโรอิเมจจิงที่ตีพิมพ์จะทำนายว่าสมองของคุณจะทำขณะมองภาพเหล่านั้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.closing1": {
+      "en": "These are not parts of the brain. They are not regions on a scan. They are patterns in the felt life of being a self — patterns old enough to have shown up in every culture's mythology, recurring enough to have made one psychologist try to give them names.",
+      "th": "เหล่านี้ไม่ใช่ส่วนของสมอง พวกมันไม่ใช่บริเวณบนภาพสแกน พวกมันคือรูปแบบในชีวิตที่รู้สึกได้ของการเป็นตัวตน — รูปแบบที่เก่าแก่พอจะปรากฏในตำนานของทุกวัฒนธรรม ซ้ำพอจนทำให้นักจิตวิทยาคนหนึ่งพยายามตั้งชื่อให้",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.closing2": {
+      "en": "Some of what Jung saw has been confirmed in different language by neuroscience. Some has not. Much of it lives in a register where neither neuroscience nor depth psychology can fully claim the territory.",
+      "th": "สิ่งที่จุงเห็นบางส่วนได้รับการยืนยันในภาษาอื่นโดยประสาทวิทยา บางส่วนยัง สิ่งจำนวนมากอยู่ในระดับที่ทั้งประสาทวิทยาและจิตวิทยาเชิงลึกไม่อาจอ้างครอบครองดินแดนได้ทั้งหมด",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.closingItalic": {
+      "en": "This is what makes them worth keeping both languages alive for.",
+      "th": "นี่คือสิ่งที่ทำให้พวกมันคุ้มค่าแก่การรักษาทั้งสองภาษาให้มีชีวิตอยู่",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.linkThreshold": {
+      "en": "Return to the threshold",
+      "th": "กลับไปที่ธรณีประตู",
+      "class": "GOOD"
+    },
+    "archetypes.linkFieldNotes": {
+      "en": "Read the field notes",
+      "th": "อ่านบันทึกภาคสนาม",
+      "class": "GOOD"
+    },
+    "archetypes.linkHome": {
+      "en": "Return to the surface",
+      "th": "กลับไปยังพื้นผิว",
+      "class": "GOOD"
+    },
+    "archetypes.footer": {
+      "en": "Sources · all artworks public domain · provenance under each ⓘ",
+      "th": "แหล่งที่มา · ผลงานทั้งหมดเป็นสาธารณสมบัติ · ที่มาอยู่ใต้แต่ละ ⓘ",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.prose.persona.title": {
+      "en": "The Persona",
+      "th": "บุคลิกหน้า (Persona)",
+      "class": "GOOD"
+    },
+    "archetypes.prose.persona.subtitle": {
+      "en": "The face you wear, the face you forget you're wearing.",
+      "th": "ใบหน้าที่คุณสวม ใบหน้าที่คุณลืมว่ากำลังสวม",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.prose.shadow.title": {
+      "en": "The Shadow",
+      "th": "เงา (Shadow)",
+      "class": "GOOD"
+    },
+    "archetypes.prose.shadow.subtitle": {
+      "en": "What you have refused to know about yourself.",
+      "th": "สิ่งที่คุณปฏิเสธจะรู้เกี่ยวกับตัวเอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.prose.anima.title": {
+      "en": "The Anima",
+      "th": "อนิมะ (Anima)",
+      "class": "GOOD"
+    },
+    "archetypes.prose.anima.subtitle": {
+      "en": "The interior figure of the gender you are not.",
+      "th": "ร่างภายในของเพศที่คุณไม่ใช่",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.prose.self.title": {
+      "en": "The Self",
+      "th": "อัตตาภาย (Self)",
+      "class": "GOOD"
+    },
+    "archetypes.prose.self.subtitle": {
+      "en": "The whole of which the conscious self is a small part.",
+      "th": "ทั้งหมดที่ตัวตนที่รับรู้เป็นเพียงส่วนเล็ก",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.prose.wise.title": {
+      "en": "The Wise Old Man",
+      "th": "ชายชราผู้ปราดเปรื่อง",
+      "class": "GOOD"
+    },
+    "archetypes.prose.wise.subtitle": {
+      "en": "The interior guide. Not always old. Not always a man.",
+      "th": "ผู้นำทางภายใน ไม่เสมอเป็นชราภาพ ไม่เสมอเป็นชาย",
+      "class": "NEEDS-REVIEW"
+    },
+    "archetypes.prose.trickster.title": {
+      "en": "The Trickster",
+      "th": "เจ้าเล่ห์ (Trickster)",
+      "class": "GOOD"
+    },
+    "archetypes.prose.trickster.subtitle": {
+      "en": "The boundary-crosser. The destroyer who clears the way.",
+      "th": "ผู้ข้ามขอบ ผู้ทำลายที่เปิดทาง",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.label": {
+      "en": "The Threshold",
+      "th": "ธรณีประตู",
+      "class": "GOOD"
+    },
+    "threshold.openingDisplay": {
+      "en": "Two languages name what cannot be fully named in one.",
+      "th": "สองภาษาเรียกขานสิ่งที่ภาษาเดียวเรียกไม่ครบถ้วน",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.openingBody": {
+      "en": "What follows is an essay in three movements about the seam between neuroscience and depth psychology — the languages this site holds in parallel, and why it holds both.",
+      "th": "สิ่งที่ตามมาคือบทความสามท่อนเกี่ยวกับรอยต่อระหว่างประสาทวิทยาและจิตวิทยาเชิงลึก — สองภาษาที่เว็บไซต์นี้ถือไว้ขนานกัน และเหตุผลที่เราถือทั้งสอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m1.heading": {
+      "en": "Movement one — the scale problem.",
+      "th": "ท่อนที่หนึ่ง — ปัญหาของสเกล",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m1.body1": {
+      "en": "A real continuous zoom from the cortical surface to a single synapse would cross roughly ten million-fold magnification. There is no honest visualization of that descent. Every site that pretends otherwise — every animation that swoops from a whole brain into a glowing neuron in one continuous take — is lying about something specific: that scales connect smoothly, and that to look closer is to keep looking at the same thing.",
+      "th": "การซูมต่อเนื่องจริงจากพื้นผิวคอร์เทกซ์ไปยังจุดประสานประสาทเดียวต้องข้ามกำลังขยายราวสิบล้านเท่า ไม่มีภาพแสดงการลงสเกลนั้นที่ซื่อตรง เว็บไซต์ใดก็ตามที่แสร้งทำเช่นนั้น — แอนิเมชันที่พุ่งจากสมองทั้งใบเข้าสู่นิวรอนที่เรืองแสงในเทคเดียว — ล้วนโกหกในสิ่งหนึ่ง: ว่าสเกลเชื่อมต่อกันอย่างราบรื่น และการมองใกล้ขึ้นคือการมองสิ่งเดียวกันต่อไป",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m1.body2": {
+      "en": "What you actually have, when you look closer, is a different object. The cortical-surface prediction TRIBE produces and the single-cell reconstruction NeuroMorpho holds are not stages of one inquiry. They are different inquiries. The interesting work happens at the seams, not in the false continuity.",
+      "th": "สิ่งที่คุณมีจริง ๆ เมื่อมองใกล้ขึ้น คือวัตถุที่ต่างออกไป คำทำนายพื้นผิวคอร์เทกซ์ที่ TRIBE สร้างขึ้น และภาพเซลล์เดี่ยวที่ NeuroMorpho เก็บไว้ ไม่ใช่ขั้นตอนของการสอบถามเดียวกัน เป็นการสอบถามคนละเรื่อง งานที่น่าสนใจเกิดขึ้นที่รอยต่อ ไม่ใช่ในความต่อเนื่องเทียม",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m1.body3": {
+      "en": "The same is true between languages of mind. Neuroscience speaks of regions and networks and neurotransmitters and timescales of milliseconds. Depth psychology speaks of the unconscious, the shadow, individuation, the slow work of integrating disowned parts over decades. They do not zoom into each other either. The temptation to make them do so is understandable: a single explanatory frame is easier to live with than two. But the easier frame is not the more honest one.",
+      "th": "เช่นเดียวกันระหว่างสองภาษาของจิตใจ ประสาทวิทยาพูดถึงบริเวณและเครือข่ายและสารสื่อประสาทและช่วงเวลาในระดับมิลลิวินาที จิตวิทยาเชิงลึกพูดถึงจิตไร้สำนึก เงา การเป็นปัจเจกอย่างเต็มที่ งานเชื่องช้าในการบูรณาการส่วนที่ถูกปฏิเสธตลอดหลายทศวรรษ ทั้งสองไม่ซูมเข้าหากันเช่นกัน ความล่อใจที่จะให้มันทำเช่นนั้นเป็นเรื่องเข้าใจได้: กรอบอธิบายเดียวอยู่ด้วยง่ายกว่าสองกรอบ แต่กรอบที่ง่ายกว่าไม่ใช่กรอบที่ซื่อตรงกว่า",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m1.italic": {
+      "en": "Holding two languages is not a failure of synthesis. It is the recognition that some questions are bigger than any one language for them.",
+      "th": "การถือสองภาษาไว้ไม่ใช่ความล้มเหลวของการสังเคราะห์ มันคือการรับรู้ว่าคำถามบางคำถามใหญ่กว่าภาษาใดภาษาหนึ่งที่ใช้พูดถึงมัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m1.meta": {
+      "en": "Movement one · ~290 words · 2 min read",
+      "th": "ท่อนที่หนึ่ง · ~290 คำ · อ่าน 2 นาที",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m2.heading": {
+      "en": "Movement two — what the unconscious is, in two languages.",
+      "th": "ท่อนที่สอง — จิตไร้สำนึกคืออะไร ในสองภาษา",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m2.body1": {
+      "en": "In neuroscience, the unconscious is the larger fact about how brains work. The conscious window is small. Almost everything the brain does — predicting, comparing, deciding, classifying, preparing — happens below awareness. The default-mode network hums even when no task is asked of it. Implicit memory organizes recognition before recall reaches words. Automatic affective appraisal flags significance milliseconds before any deliberative system catches up. The arithmetic of attention and the architecture of perception are mostly invisible to the perceiver.",
+      "th": "ในประสาทวิทยา จิตไร้สำนึกคือข้อเท็จจริงที่ใหญ่กว่าเกี่ยวกับวิธีที่สมองทำงาน หน้าต่างของจิตสำนึกนั้นเล็ก สมองทำเกือบทุกอย่าง — ทำนาย เปรียบเทียบ ตัดสินใจ จำแนก เตรียมการ — ใต้การรับรู้ เครือข่ายโหมดเริ่มต้นยังคงครางอยู่แม้ไม่มีงานใดถูกร้องขอ ความจำโดยปริยายจัดการการจำได้ก่อนการเรียกคืนจะถึงคำพูด การประเมินอารมณ์อัตโนมัติทำเครื่องหมายความสำคัญในระดับมิลลิวินาทีก่อนระบบไตร่ตรองตามทัน คณิตศาสตร์ของความสนใจและสถาปัตยกรรมของการรับรู้ส่วนใหญ่มองไม่เห็นจากผู้รับรู้",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m2.body2": {
+      "en": "In Jung, the unconscious is also the larger fact, but the language is different. The unconscious there is not just a statistical statement about how much of mind is below awareness. It is closer to a territory — with structure, with patterns repeating across cultures and across centuries, with something like its own intent. Individuation, Jung's term for the lifelong work of integrating the disowned, was a process with a direction: toward a wholeness that is not the same as the ego's idea of itself.",
+      "th": "ในจุง จิตไร้สำนึกก็เป็นข้อเท็จจริงที่ใหญ่กว่าเช่นกัน แต่ภาษาต่างออกไป จิตไร้สำนึกของจุงไม่ใช่เพียงคำกล่าวเชิงสถิติว่าจิตใจอยู่ใต้การรับรู้มากเพียงใด แต่ใกล้เคียงดินแดน — ที่มีโครงสร้าง มีรูปแบบซ้ำข้ามวัฒนธรรมและศตวรรษ มีสิ่งที่คล้ายเจตจำนงของตัวเอง การเป็นปัจเจกอย่างเต็มที่ (individuation) — คำของจุงที่ใช้กับงานตลอดชีวิตในการบูรณาการส่วนที่ถูกปฏิเสธ — เป็นกระบวนการที่มีทิศทาง: ไปสู่ความบริบูรณ์ที่ไม่ใช่สิ่งเดียวกับความคิดของอีโก้เกี่ยวกับตัวเอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m2.body3": {
+      "en": "Where the two frameworks touch: both agree consciousness is the small part. Both agree that something deeper is doing most of the work, and that ignoring it produces predictable kinds of harm — to the person, to the people around them, to the relationships and decisions that get made on the basis of self-knowledge that isn't.",
+      "th": "จุดที่ทั้งสองกรอบสัมผัสกัน: ทั้งคู่เห็นด้วยว่าจิตสำนึกเป็นส่วนเล็ก ทั้งคู่เห็นด้วยว่าสิ่งที่อยู่ลึกกว่ากำลังทำงานส่วนใหญ่ และการเพิกเฉยต่อมันก่อให้เกิดความเสียหายที่คาดเดาได้ — ต่อบุคคล ต่อคนรอบข้าง ต่อความสัมพันธ์และการตัดสินใจที่กระทำบนพื้นฐานของความรู้ตัวที่ไม่ใช่",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m2.body4": {
+      "en": "Where they diverge: Jung's unconscious has direction and structure that neuroscience doesn't claim. The Self, the archetypes, the symbolic life of the psyche — these are phenomenological observations, not neural facts. Neuroscience has not endorsed them, and there is no honest move that says it has. They live in a register where what matters is the felt shape of inner experience, not its mechanism.",
+      "th": "จุดที่ทั้งสองแยกออกจากกัน: จิตไร้สำนึกของจุงมีทิศทางและโครงสร้างที่ประสาทวิทยาไม่ได้อ้าง อัตตาภาย (Self) แม่แบบจิต ชีวิตเชิงสัญลักษณ์ของจิต — เหล่านี้คือการสังเกตเชิงปรากฏการณ์ ไม่ใช่ข้อเท็จจริงของระบบประสาท ประสาทวิทยาไม่ได้รับรอง และไม่มีการเคลื่อนไหวที่ซื่อตรงที่จะกล่าวว่ารับรอง พวกมันอยู่ในระดับที่สิ่งที่สำคัญคือรูปทรงที่รู้สึกของประสบการณ์ภายใน ไม่ใช่กลไกของมัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m2.italic": {
+      "en": "Both languages are true. Neither is sufficient. The interesting work, again, happens at the seams.",
+      "th": "ทั้งสองภาษาเป็นจริง ทั้งสองไม่เพียงพอ งานที่น่าสนใจ อีกครั้ง เกิดขึ้นที่รอยต่อ",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m2.meta": {
+      "en": "Movement two · ~440 words · 3 min read",
+      "th": "ท่อนที่สอง · ~440 คำ · อ่าน 3 นาที",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m3.heading": {
+      "en": "Movement three — why both languages.",
+      "th": "ท่อนที่สาม — เหตุใดทั้งสองภาษา",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m3.body1": {
+      "en": "Neuroscience is rigorous about mechanism and weak about meaning. It can tell you with extraordinary precision how quickly the visual system parses an edge, what cells fire when you recognize a face, where in the cortex a sentence is assembled. It cannot tell you what the face meant to you, or what the sentence was for. The mechanism is exposed; the meaning is left to the person living it.",
+      "th": "ประสาทวิทยาเข้มงวดเรื่องกลไกและอ่อนเรื่องความหมาย มันสามารถบอกคุณด้วยความแม่นยำพิเศษว่าระบบการมองเห็นแยกแยะเส้นขอบได้เร็วเพียงใด เซลล์ไหนยิงสัญญาณเมื่อคุณจำหน้าได้ ที่ใดในคอร์เทกซ์ที่ประกอบประโยคขึ้น มันไม่สามารถบอกได้ว่าใบหน้านั้นมีความหมายอย่างไรกับคุณ หรือประโยคนั้นมีไว้เพื่ออะไร กลไกถูกเปิดเผย ความหมายถูกปล่อยให้คนที่กำลังใช้ชีวิตอยู่ในนั้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m3.body2": {
+      "en": "Depth psychology is rigorous about meaning and weak about mechanism. It has a century of careful phenomenology — careful attention to what people actually report about dreams, symptoms, transferences, the felt sense of being moved or stopped or addressed by something. It does not always know what is making any of that happen at the level of cells. It does know what it is to live inside it.",
+      "th": "จิตวิทยาเชิงลึกเข้มงวดเรื่องความหมายและอ่อนเรื่องกลไก มันมีปรากฏการณ์วิทยาที่ระมัดระวังนานหนึ่งศตวรรษ — ความใส่ใจอย่างละเอียดต่อสิ่งที่ผู้คนรายงานจริง ๆ เกี่ยวกับความฝัน อาการ การส่งผ่านอารมณ์ ความรู้สึกถึงการถูกเคลื่อนไหว ถูกหยุด หรือถูกเรียกขานโดยบางสิ่ง มันไม่ได้รู้เสมอว่าอะไรเป็นเหตุของสิ่งนั้นในระดับเซลล์ มันรู้แต่ว่าการใช้ชีวิตอยู่ภายในนั้นเป็นอย่างไร",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m3.body3": {
+      "en": "A site that holds both is doing what neither can do alone. It is letting the question of mind be larger than any one vocabulary for it. It is refusing to collapse felt experience into machinery, and refusing to dissolve machinery into metaphor. It is acknowledging that the same person is, at the same time, a cortical surface predicting the next word and someone wondering, at 3 a.m., why a particular sentence still hurts.",
+      "th": "เว็บไซต์ที่ถือทั้งสองไว้กำลังทำสิ่งที่ทั้งสองทำคนเดียวไม่ได้ มันยอมให้คำถามเรื่องจิตใจใหญ่กว่าคำศัพท์ใด ๆ ที่ใช้พูดถึงมัน มันปฏิเสธที่จะยุบประสบการณ์ที่รู้สึกได้ลงเป็นกลไก และปฏิเสธที่จะละลายกลไกเป็นการเปรียบเทียบ มันยอมรับว่าคนคนเดียวกัน ในเวลาเดียวกัน เป็นทั้งพื้นผิวคอร์เทกซ์ที่กำลังทำนายคำต่อไป และเป็นคนที่ในเวลาตีสามยังคงสงสัยว่าทำไมประโยคหนึ่งยังคงเจ็บ",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m3.italic": {
+      "en": "You are not your brain. You are not your unconscious. You are whatever it is that gets to wonder which of those it is.",
+      "th": "คุณไม่ใช่สมองของคุณ คุณไม่ใช่จิตไร้สำนึกของคุณ คุณเป็นสิ่งใดก็ตามที่ได้ตั้งคำถามว่าตนเป็นสิ่งใดในสองสิ่งนั้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.m3.meta": {
+      "en": "Movement three · ~310 words · 2 min read",
+      "th": "ท่อนที่สาม · ~310 คำ · อ่าน 2 นาที",
+      "class": "NEEDS-REVIEW"
+    },
+    "threshold.closing.hand": {
+      "en": "— end of the threshold",
+      "th": "— จบที่ธรณีประตู",
+      "class": "GOOD"
+    },
+    "threshold.closing.linkHome": {
+      "en": "Return to the surface",
+      "th": "กลับไปยังพื้นผิว",
+      "class": "GOOD"
+    },
+    "threshold.closing.linkFieldNotes": {
+      "en": "Read more field notes",
+      "th": "อ่านบันทึกภาคสนามเพิ่มเติม",
+      "class": "GOOD"
+    },
+    "threshold.closing.linkCellular": {
+      "en": "Descend into cellular view",
+      "th": "ลงไปสู่ระดับเซลล์",
+      "class": "GOOD"
+    },
+    "cellular.label": {
+      "en": "Cellular View",
+      "th": "ระดับเซลล์",
+      "class": "GOOD"
+    },
+    "cellular.title": {
+      "en": "Where activation becomes biology.",
+      "th": "จุดที่การกระตุ้นกลายเป็นชีววิทยา",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.intro": {
+      "en": "We are about to descend. The brain you see on every other page is the cortical surface — TRIBE's prediction is on that scale. The neurons below are something else: real reconstructions from NeuroMorpho.org, contributed by labs around the world. Same brain. Different scales. Different ways of seeing.",
+      "th": "เรากำลังจะลงไปข้างล่าง สมองที่คุณเห็นในทุกหน้าที่ผ่านมาคือพื้นผิวของคอร์เทกซ์ — คำทำนายของ TRIBE อยู่ในสเกลนั้น เซลล์ประสาทด้านล่างเป็นอีกอย่างหนึ่ง: ภาพจำลองจริงจาก NeuroMorpho.org ที่ห้องปฏิบัติการทั่วโลกร่วมสนับสนุน สมองเดียวกัน สเกลต่างกัน วิธีมองต่างกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.introItalic": {
+      "en": "A real continuous zoom from cortex to synapse would cross ten million-fold magnification. We don't pretend to show that. We show different scales as different ways of looking.",
+      "th": "การซูมต่อเนื่องจริงจากคอร์เทกซ์ไปยังจุดประสานประสาทจะข้ามกำลังขยายสิบล้านเท่า เราไม่แสร้งทำว่าเราแสดงสิ่งนั้น เราแสดงสเกลต่างกันเป็นวิธีมองต่างกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.oneOfThese": {
+      "en": "One of these",
+      "th": "หนึ่งในเซลล์เหล่านี้",
+      "class": "GOOD"
+    },
+    "cellular.neuronDefault": {
+      "en": "Neuron",
+      "th": "เซลล์ประสาท",
+      "class": "GOOD"
+    },
+    "cellular.labSuffix": {
+      "en": "lab",
+      "th": "ห้องปฏิบัติการ",
+      "class": "GOOD"
+    },
+    "cellular.pmid": {
+      "en": "PMID",
+      "th": "PMID",
+      "class": "MISSING"
+    },
+    "cellular.neuroMorphoLink": {
+      "en": "NeuroMorpho ↗",
+      "th": "NeuroMorpho ↗",
+      "class": "MISSING"
+    },
+    "cellular.colorKey": {
+      "en": "Color key:",
+      "th": "รหัสสี:",
+      "class": "GOOD"
+    },
+    "cellular.colorKeyBrass": {
+      "en": "brass",
+      "th": "ทอง",
+      "class": "GOOD"
+    },
+    "cellular.colorKeyApical": {
+      "en": "apical dendrite (the iconic trunk)",
+      "th": "เดนไดรต์เอพิคัล (ลำต้นเด่น)",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.colorKeyBone": {
+      "en": "bone",
+      "th": "ครีม",
+      "class": "GOOD"
+    },
+    "cellular.colorKeyBasal": {
+      "en": "basal dendrites",
+      "th": "เดนไดรต์เบซัล",
+      "class": "GOOD"
+    },
+    "cellular.colorKeyCyan": {
+      "en": "cyan",
+      "th": "ฟ้า",
+      "class": "GOOD"
+    },
+    "cellular.colorKeyAxon": {
+      "en": "axon",
+      "th": "แอกซอน",
+      "class": "GOOD"
+    },
+    "cellular.colorKeyYellow": {
+      "en": "yellow",
+      "th": "เหลือง",
+      "class": "GOOD"
+    },
+    "cellular.colorKeySoma": {
+      "en": "soma",
+      "th": "เนื้อเซลล์",
+      "class": "GOOD"
+    },
+    "cellular.transition": {
+      "en": "And one of its ten thousand connections.",
+      "th": "และหนึ่งในการเชื่อมต่อนับหมื่น",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.triggerButton": {
+      "en": "Trigger action potential",
+      "th": "กระตุ้น Action Potential",
+      "class": "GOOD"
+    },
+    "cellular.speedLabel": {
+      "en": "Speed",
+      "th": "ความเร็ว",
+      "class": "GOOD"
+    },
+    "cellular.hand": {
+      "en": "same mechanics, different transmitters, very different downstream effects",
+      "th": "กลไกเดียวกัน สารสื่อต่างกัน ผลปลายทางต่างกันมาก",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.footer": {
+      "en": "Cellular View · neurons from NeuroMorpho.org · synapse animation illustrative",
+      "th": "ระดับเซลล์ · เซลล์ประสาทจาก NeuroMorpho.org · ภาพเคลื่อนไหวจุดประสานประสาทเป็นการประกอบเชิงสาธิต",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.glutamate.label": {
+      "en": "Glutamate",
+      "th": "กลูตาเมต",
+      "class": "GOOD"
+    },
+    "cellular.transmitters.glutamate.effect": {
+      "en": "Excitatory. Binds AMPA / NMDA. Fast, depolarizing.",
+      "th": "กระตุ้น จับกับ AMPA / NMDA เร็ว ทำให้เกิดการดีโพลาไรเซชัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.glutamate.step1": {
+      "en": "Action potential arriving at the presynaptic bouton…",
+      "th": "Action potential มาถึงโบตันก่อนไซแนปส์…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.glutamate.step2": {
+      "en": "Calcium influx triggering vesicle fusion…",
+      "th": "แคลเซียมไหลเข้า กระตุ้นเวสิเคิลให้รวมตัว…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.glutamate.step3": {
+      "en": "Glutamate crossing the synaptic cleft…",
+      "th": "กลูตาเมตข้ามช่องว่างไซแนปส์…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.glutamate.step4": {
+      "en": "Binding to AMPA and NMDA receptors…",
+      "th": "จับกับตัวรับ AMPA และ NMDA…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.glutamate.step5": {
+      "en": "Excitatory postsynaptic potential generated.",
+      "th": "เกิดศักย์โพสไซแนปติกแบบกระตุ้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.gaba.label": {
+      "en": "GABA",
+      "th": "กาบา",
+      "class": "GOOD"
+    },
+    "cellular.transmitters.gaba.effect": {
+      "en": "Inhibitory. Binds GABA-A. Fast, hyperpolarizing.",
+      "th": "ยับยั้ง จับกับ GABA-A เร็ว ทำให้เกิดไฮเปอร์โพลาไรเซชัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.gaba.step1": {
+      "en": "Action potential arriving at the inhibitory terminal…",
+      "th": "Action potential มาถึงปลายประสาทยับยั้ง…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.gaba.step2": {
+      "en": "Calcium-triggered fusion of GABA vesicles…",
+      "th": "แคลเซียมกระตุ้นเวสิเคิล GABA ให้รวมตัว…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.gaba.step3": {
+      "en": "GABA crossing the cleft…",
+      "th": "GABA ข้ามช่องว่าง…",
+      "class": "GOOD"
+    },
+    "cellular.transmitters.gaba.step4": {
+      "en": "Binding to GABA-A receptors, opening chloride channels…",
+      "th": "จับกับตัวรับ GABA-A เปิดช่องคลอไรด์…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.gaba.step5": {
+      "en": "Inhibitory postsynaptic potential — the cell is now harder to fire.",
+      "th": "เกิดศักย์โพสไซแนปติกแบบยับยั้ง — เซลล์ยิงสัญญาณยากขึ้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.dopamine.label": {
+      "en": "Dopamine",
+      "th": "โดปามีน",
+      "class": "GOOD"
+    },
+    "cellular.transmitters.dopamine.effect": {
+      "en": "Neuromodulator. Volume transmission; slower, broader spread.",
+      "th": "ตัวปรับ. การส่งแบบ volume; ช้ากว่า กระจายกว้างกว่า",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.dopamine.step1": {
+      "en": "Burst from a midbrain dopamine neuron…",
+      "th": "การปะทุจากเซลล์โดปามีนกลางสมอง…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.dopamine.step2": {
+      "en": "Volume release into the extracellular space…",
+      "th": "ปล่อยแบบ volume ออกสู่ช่องนอกเซลล์…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.dopamine.step3": {
+      "en": "Dopamine diffusing slowly, reaching many synapses at once…",
+      "th": "โดปามีนแพร่ช้า ๆ ถึงไซแนปส์จำนวนมากพร้อมกัน…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.dopamine.step4": {
+      "en": "Modulating D1 / D2 receptors over hundreds of milliseconds…",
+      "th": "ปรับตัวรับ D1 / D2 หลายร้อยมิลลิวินาที…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.dopamine.step5": {
+      "en": "A signal less like a switch, more like a tide.",
+      "th": "สัญญาณที่ไม่เหมือนสวิตช์ แต่เหมือนกระแสน้ำ",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.serotonin.label": {
+      "en": "Serotonin",
+      "th": "เซโรโทนิน",
+      "class": "GOOD"
+    },
+    "cellular.transmitters.serotonin.effect": {
+      "en": "Neuromodulator. Steady release; receptor diversity matters.",
+      "th": "ตัวปรับ. ปล่อยอย่างคงที่; ความหลากหลายของตัวรับสำคัญ",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.serotonin.step1": {
+      "en": "Slow release from a raphe terminal…",
+      "th": "ปล่อยช้า ๆ จากปลายประสาท raphe…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.serotonin.step2": {
+      "en": "Steady efflux rather than a burst…",
+      "th": "ไหลออกคงที่ ไม่ใช่การปะทุ…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.serotonin.step3": {
+      "en": "Diverse receptor families respond — 5-HT1A, 5-HT2A, more…",
+      "th": "ตัวรับหลายตระกูลตอบสนอง — 5-HT1A, 5-HT2A และอื่น ๆ…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.serotonin.step4": {
+      "en": "Modulating mood, sleep, sensory gating…",
+      "th": "ปรับอารมณ์ การนอน การกรองการรับรู้…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.serotonin.step5": {
+      "en": "The same molecule says different things in different rooms.",
+      "th": "โมเลกุลเดียวกันพูดต่างกันในห้องต่างกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.norepinephrine.label": {
+      "en": "Norepinephrine",
+      "th": "นอร์เอพิเนฟริน",
+      "class": "GOOD"
+    },
+    "cellular.transmitters.norepinephrine.effect": {
+      "en": "Arousal / vigilance. Sparse but salient.",
+      "th": "การตื่นตัว / เฝ้าระวัง ปล่อยน้อยแต่เด่น",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.norepinephrine.step1": {
+      "en": "Arousal signal from locus coeruleus…",
+      "th": "สัญญาณการตื่นตัวจาก locus coeruleus…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.norepinephrine.step2": {
+      "en": "Sparse but salient release across cortex…",
+      "th": "ปล่อยน้อยแต่เด่นทั่วคอร์เทกซ์…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.norepinephrine.step3": {
+      "en": "Binding to α / β adrenergic receptors…",
+      "th": "จับกับตัวรับ α / β อะดรีเนอร์จิก…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.norepinephrine.step4": {
+      "en": "Sharpening signal-to-noise on the receiving cell…",
+      "th": "ลดสัญญาณรบกวนของเซลล์รับ…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.norepinephrine.step5": {
+      "en": "Attention as a chemical, briefly.",
+      "th": "ความสนใจในรูปแบบสารเคมี ชั่วขณะ",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.acetylcholine.label": {
+      "en": "Acetylcholine",
+      "th": "อะเซทิลโคลีน",
+      "class": "GOOD"
+    },
+    "cellular.transmitters.acetylcholine.effect": {
+      "en": "Attention, plasticity. Balanced release.",
+      "th": "ความสนใจ ความยืดหยุ่นของระบบประสาท ปล่อยอย่างสมดุล",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.acetylcholine.step1": {
+      "en": "Cholinergic terminal activates…",
+      "th": "ปลายประสาทโคลีเนอร์จิกเริ่มทำงาน…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.acetylcholine.step2": {
+      "en": "Acetylcholine release…",
+      "th": "อะเซทิลโคลีนถูกปล่อยออกมา…",
+      "class": "GOOD"
+    },
+    "cellular.transmitters.acetylcholine.step3": {
+      "en": "Binding nicotinic and muscarinic receptors…",
+      "th": "จับกับตัวรับนิโคตินิกและมัสคารินิก…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.acetylcholine.step4": {
+      "en": "Gating attention and plasticity…",
+      "th": "ควบคุมความสนใจและความยืดหยุ่นของระบบประสาท…",
+      "class": "NEEDS-REVIEW"
+    },
+    "cellular.transmitters.acetylcholine.step5": {
+      "en": "The transmitter that helps the brain decide what to keep.",
+      "th": "สารสื่อที่ช่วยให้สมองตัดสินใจว่าจะเก็บอะไรไว้",
+      "class": "NEEDS-REVIEW"
+    },
+    "crosscultural.label": {
+      "en": "Cross-Cultural Brain · Phase 7",
+      "th": "สมองข้ามวัฒนธรรม · ระยะที่ 7",
+      "class": "NEEDS-REVIEW"
+    },
+    "crosscultural.entry1": {
+      "en": "This model was trained on English.",
+      "th": "โมเดลนี้ถูกฝึกด้วยภาษาอังกฤษ",
+      "class": "NEEDS-REVIEW"
+    },
+    "crosscultural.label2": {
+      "en": "The honest finding",
+      "th": "การค้นพบที่ซื่อตรง",
+      "class": "GOOD"
+    },
+    "crosscultural.entry2": {
+      "en": "What it cannot translate is the most honest finding.",
+      "th": "สิ่งที่มันแปลไม่ได้คือการค้นพบที่ซื่อตรงที่สุด",
+      "class": "NEEDS-REVIEW"
+    },
+    "crosscultural.entry3": {
+      "en": "Begin.",
+      "th": "เริ่ม",
+      "class": "GOOD"
+    },
+    "crosscultural.pairLabel": {
+      "en": "Pair selector",
+      "th": "ตัวเลือกคู่ข้อความ",
+      "class": "GOOD"
+    },
+    "crosscultural.pairHeading": {
+      "en": "Three pairs the model carries unevenly.",
+      "th": "สามคู่ที่โมเดลถือไม่เท่ากัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "crosscultural.pairBody": {
+      "en": "Each pair shows an English sentence and a Thai sentence that circle the same feeling. The English prediction is plausible; the Thai prediction is the model trying to find a foothold outside its training distribution.",
+      "th": "แต่ละคู่แสดงประโยคภาษาอังกฤษและประโยคภาษาไทยที่วนรอบความรู้สึกเดียวกัน คำทำนายภาษาอังกฤษพอเชื่อถือได้ คำทำนายภาษาไทยคือโมเดลพยายามหาที่ยืนนอกการกระจายตัวที่ฝึกมา",
+      "class": "NEEDS-REVIEW"
+    },
+    "crosscultural.closingLabel": {
+      "en": "Closing",
+      "th": "ปิดท้าย",
+      "class": "GOOD"
+    },
+    "crosscultural.closingDisplay": {
+      "en": "What stays untranslated is the anima of a language.",
+      "th": "สิ่งที่ยังไม่ถูกแปลคืออนิมะของภาษา",
+      "class": "NEEDS-REVIEW"
+    },
+    "crosscultural.closingBody": {
+      "en": "The layer below grammar that knows things in its own way. The model's silence is also a kind of knowledge — what it cannot say is itself a measurement.",
+      "th": "ชั้นที่อยู่ใต้ไวยากรณ์ที่รู้สิ่งต่าง ๆ ในแบบของมันเอง ความเงียบของโมเดลก็เป็นความรู้รูปแบบหนึ่ง — สิ่งที่มันพูดไม่ได้ คือการวัดผลในตัวเอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "crosscultural.closingHand": {
+      "en": "(send us a pair the model should hear — soon)",
+      "th": "(ส่งคู่ข้อความที่คุณคิดว่าโมเดลควรได้ยินมาให้เรา — เร็ว ๆ นี้)",
+      "class": "NEEDS-REVIEW"
+    },
+    "crosscultural.submissionForm": {
+      "en": "Pair submission form · Phase 11",
+      "th": "ฟอร์มส่งคู่ข้อความ · ระยะที่ 11",
+      "class": "NEEDS-REVIEW"
+    },
+    "crosscultural.footerNote": {
+      "en": "Cross-Cultural Brain · predictions simulated locally",
+      "th": "สมองข้ามวัฒนธรรม · คำทำนายจำลองภายในเครื่อง",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.opening.label": {
+      "en": "About · Phase 9",
+      "th": "เกี่ยวกับ · ระยะที่ 9",
+      "class": "GOOD"
+    },
+    "about.opening.heading": {
+      "en": "A 21st-century version of an older question.",
+      "th": "คำถามเก่าแก่ในเวอร์ชันของศตวรรษที่ 21",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.opening.body": {
+      "en": "This site is an experiment in seeing the mind through a brain-encoding model. What follows is what the model is, what it isn't, and the people whose work it builds on.",
+      "th": "เว็บไซต์นี้เป็นการทดลองมองจิตใจผ่านโมเดลเข้ารหัสสมอง สิ่งที่ตามมาคือสิ่งที่โมเดลเป็น สิ่งที่โมเดลไม่ใช่ และบุคคลที่งานของพวกเขาเป็นรากฐานของงานนี้",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.what.step1.label": {
+      "en": "What TRIBE is · I",
+      "th": "TRIBE คืออะไร · I",
+      "class": "GOOD"
+    },
+    "about.what.step1.heading": {
+      "en": "A model that learned the map from stimulus to fMRI.",
+      "th": "โมเดลที่เรียนรู้แผนที่จากสิ่งเร้าสู่ fMRI",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.what.step1.body": {
+      "en": "Meta's TRIBE v2 was trained on thousands of hours of recordings in which participants listened to, watched, or read material while inside an MRI scanner. It learns to predict where in the cortex a given stimulus tends to light up — not in any one person, but on average.",
+      "th": "TRIBE v2 ของ Meta ได้รับการฝึกฝนจากบันทึกหลายพันชั่วโมงที่ผู้ร่วมการทดลองฟัง ดู หรืออ่านเนื้อหาขณะอยู่ในเครื่อง MRI โมเดลเรียนรู้ที่จะทำนายว่าจุดไหนในคอร์เทกซ์จะมีกิจกรรมเพิ่มขึ้นจากสิ่งเร้าหนึ่ง ๆ — ไม่ใช่ในตัวบุคคลใดบุคคลหนึ่ง แต่เป็นค่าเฉลี่ย",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.what.step2.label": {
+      "en": "What TRIBE is · II",
+      "th": "TRIBE คืออะไร · II",
+      "class": "GOOD"
+    },
+    "about.what.step2.heading": {
+      "en": "An encoder, not a decoder.",
+      "th": "เป็นเครื่องเข้ารหัส ไม่ใช่ตัวถอดรหัส",
+      "class": "GOOD"
+    },
+    "about.what.step2.body": {
+      "en": "It maps inputs to brain responses. It does not read your brain. It does not invert the response back into a thought. The arrow points the way it points; this site uses it that way.",
+      "th": "มันแมปอินพุตไปยังการตอบสนองของสมอง มันไม่ได้อ่านสมองของคุณ มันไม่ได้แปลงการตอบสนองกลับเป็นความคิด ลูกศรชี้ทางที่มันชี้ และเว็บไซต์นี้ใช้มันในทิศทางนั้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.what.step3.label": {
+      "en": "What TRIBE is · III",
+      "th": "TRIBE คืออะไร · III",
+      "class": "GOOD"
+    },
+    "about.what.step3.heading": {
+      "en": "A weighted echo of the participants.",
+      "th": "เสียงสะท้อนที่ถ่วงน้ำหนักจากผู้เข้าร่วม",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.what.step3.body": {
+      "en": "The predicted activation is something like the average brain's response to that input. The gap between that average and yours is part of what this site means to surface, never to hide.",
+      "th": "การกระตุ้นที่ทำนายได้คือสิ่งที่คล้ายกับการตอบสนองของสมองโดยเฉลี่ยต่ออินพุตนั้น ช่องว่างระหว่างค่าเฉลี่ยนั้นกับสมองของคุณคือสิ่งที่เว็บไซต์นี้ตั้งใจจะแสดงออกมา ไม่ใช่ปกปิด",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.isnt.label": {
+      "en": "What it does not do",
+      "th": "สิ่งที่มันไม่ได้ทำ",
+      "class": "GOOD"
+    },
+    "about.isnt.heading": {
+      "en": "Honest limitations, surfaced unapologetically.",
+      "th": "ขีดจำกัดที่เปิดเผยอย่างตรงไปตรงมา",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.isnt.body1": {
+      "en": "The model is trained on English. Cross-cultural Brain shows what happens when you feed it Thai: the language regions respond less, the prediction degrades, and the silence is real. A model that can't carry a language carries fewer minds.",
+      "th": "โมเดลถูกฝึกด้วยภาษาอังกฤษ ห้อง 'สมองข้ามวัฒนธรรม' แสดงสิ่งที่เกิดขึ้นเมื่อป้อนภาษาไทยให้: บริเวณภาษาของสมองตอบสนองน้อยลง การทำนายเริ่มเสื่อม และความเงียบนั้นมีอยู่จริง โมเดลที่ไม่อาจอุ้มภาษาหนึ่งได้ ก็อุ้มจิตใจได้น้อยลง",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.isnt.body2": {
+      "en": "fMRI itself is slow. The hemodynamic response trails the neural one by roughly five seconds. Anything you see here is, by design, a prediction of a measurement that lags behind the thought.",
+      "th": "fMRI เองก็ช้า การตอบสนองทางหลอดเลือดตามหลังการตอบสนองทางประสาทประมาณห้าวินาที สิ่งใดก็ตามที่คุณเห็นที่นี่ โดยการออกแบบ คือการทำนายของการวัดที่ตามหลังความคิดอยู่แล้ว",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.isnt.body3": {
+      "en": "Region labels are a working vocabulary, not anatomy. The brain is networked; functions are distributed; mapping a feeling to a single bright spot is a story we tell because the story is useful. The model does not believe in the story. Neither should you.",
+      "th": "ป้ายชื่อบริเวณสมองเป็นคำศัพท์ใช้งาน ไม่ใช่กายวิภาค สมองเป็นเครือข่าย หน้าที่กระจายตัว การแมปความรู้สึกหนึ่งกับจุดสว่างจุดเดียวเป็นเรื่องเล่าที่เราเล่าเพราะมันเป็นประโยชน์ โมเดลไม่ได้เชื่อในเรื่องเล่านั้น คุณก็ไม่ควรเช่นกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.isnt.body4": {
+      "en": "The disclaimers above are the architecture. The site only works if you keep them in view while you watch.",
+      "th": "ข้อจำกัดความข้างต้นคือสถาปัตยกรรม เว็บไซต์ทำงานได้ก็ต่อเมื่อคุณรักษามันไว้ในสายตาในขณะที่ดู",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.jung.label": {
+      "en": "One older idea",
+      "th": "ความคิดเก่าแก่หนึ่งความคิด",
+      "class": "GOOD"
+    },
+    "about.jung.body": {
+      "en": "In the early 20th century, Carl Jung gave us a vocabulary for parts of the mind that don't speak. A century later, brain-encoding models are trying to render those parts visible. Different language, related project.",
+      "th": "ในช่วงต้นศตวรรษที่ 20 คาร์ล จุง มอบคำศัพท์ให้เราใช้พูดถึงส่วนของจิตใจที่ไม่พูด อีกหนึ่งศตวรรษต่อมา โมเดลเข้ารหัสสมองพยายามทำให้ส่วนเหล่านั้นมองเห็นได้ ภาษาต่างกัน โครงการเกี่ยวเนื่องกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.jung.footnote": {
+      "en": "— a footnote, lightly",
+      "th": "— เชิงอรรถ เบา ๆ",
+      "class": "GOOD"
+    },
+    "about.twoLanguages.label": {
+      "en": "On holding two languages",
+      "th": "ว่าด้วยการถือสองภาษาไว้พร้อมกัน",
+      "class": "GOOD"
+    },
+    "about.twoLanguages.heading": {
+      "en": "Neuroscience and depth psychology, held in parallel.",
+      "th": "ประสาทวิทยาและจิตวิทยาเชิงลึก ถือไว้ขนานกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.twoLanguages.body1": {
+      "en": "Carl Jung built a phenomenology of inner experience — a vocabulary for patterns he observed in dreams, art, myth, and clinical work. He was not doing neuroscience. He was naming the felt structure of the psyche, with the rigor that careful observation allows when mechanism is out of reach.",
+      "th": "คาร์ล จุง สร้างปรากฏการณ์วิทยาของประสบการณ์ภายใน — คำศัพท์สำหรับรูปแบบที่เขาสังเกตในความฝัน ศิลปะ ตำนาน และงานคลินิก เขาไม่ได้กำลังทำประสาทวิทยา เขากำลังตั้งชื่อโครงสร้างความรู้สึกของจิต ด้วยความเข้มงวดที่การสังเกตอย่างละเอียดอนุญาตได้ในยามที่กลไกยังเอื้อมไม่ถึง",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.twoLanguages.body2": {
+      "en": "This site does not claim that brain regions ARE Jungian concepts. It does not claim that neurotransmitters correspond to archetypes. It does not claim that synchronicity, the collective unconscious as literal storehouse, or active imagination have direct neuroscience grounding. Some of what Jung saw was right in different language; some was wrong; much lives in a register where neither side can fully claim the territory. Holding the tension honestly is the work.",
+      "th": "เว็บไซต์นี้ไม่อ้างว่าบริเวณสมอง เท่ากับ แนวคิดของจุง ไม่อ้างว่าสารสื่อประสาทตรงกับแม่แบบจิต ไม่อ้างว่า synchronicity ความไร้สำนึกร่วมในความหมายของคลังเก็บที่แท้จริง หรือจินตนาการที่กระตือรือร้น มีรากฐานทางประสาทวิทยาโดยตรง บางสิ่งที่จุงเห็นนั้นถูกต้องในอีกภาษาหนึ่ง บางสิ่งผิด สิ่งจำนวนมากอยู่ในระดับที่ทั้งสองฝั่งไม่อาจอ้างครอบครองดินแดนได้ทั้งหมด การถือความตึงเครียดนั้นไว้อย่างซื่อตรงคือเนื้องาน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.twoLanguages.body3": {
+      "en": "A small number of contemporary thinkers do this bridge work with care. Mark Solms' The Hidden Spring argues for an affective basis of consciousness that touches both neuropsychoanalysis and Damasio's somatic-marker framework. Iain McGilchrist's The Master and His Emissary, despite a pop appropriation that has been worse than the book itself, is rigorous about hemispheric specialization without overclaiming. Oliver Sacks' clinical neurology is what it looks like to take both mechanism and meaning seriously. These are the company this site keeps.",
+      "th": "นักคิดร่วมสมัยจำนวนน้อยทำงานสะพานนี้ด้วยความระมัดระวัง 'The Hidden Spring' ของ Mark Solms เสนอรากฐานเชิงอารมณ์ของจิตสำนึก ซึ่งเชื่อมโยงทั้งจิตวิเคราะห์ทางประสาทและกรอบ somatic-marker ของ Damasio 'The Master and His Emissary' ของ Iain McGilchrist แม้จะถูกฉวยเอาไปใช้แบบ pop ที่แย่กว่าตัวหนังสือ ก็ยังเข้มงวดเรื่องความเฉพาะของสองซีกสมองโดยไม่อ้างเกินจริง ประสาทวิทยาคลินิกของ Oliver Sacks คือภาพของการถือกลไกและความหมายไว้ด้วยความจริงจังในเวลาเดียวกัน เหล่านี้คือเพื่อนร่วมทางที่เว็บไซต์นี้คบหา",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.twoLanguages.body4": {
+      "en": "The temptation to mystify is real. Energy, frequencies, vibration, manifestation — words that have done damage to both neuroscience and to Jung's actual project. The discipline of refusing them is part of the site.",
+      "th": "สิ่งล่อใจให้คลุมเครือไว้นั้นมีจริง พลังงาน ความถี่ การสั่นสะเทือน manifestation — คำที่ทำลายทั้งประสาทวิทยาและโครงการที่แท้จริงของจุง วินัยในการปฏิเสธคำเหล่านั้นคือส่วนหนึ่งของเว็บไซต์",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.twoLanguages.body5": {
+      "en": "The opposite temptation — to reduce — is also real. 'The brain' as the only legitimate explanation, with everything that can't be reduced to mechanism treated as illusion or as not-yet-mechanism. The discipline of refusing this is also part of the site. Some questions are larger than any one vocabulary for them.",
+      "th": "สิ่งล่อใจตรงกันข้าม — การลดทอน — ก็มีจริงเช่นกัน 'สมอง' เป็นคำอธิบายเดียวที่ถูกต้อง ทุกสิ่งที่ลดทอนเป็นกลไกไม่ได้ถูกถือว่าเป็นภาพลวงตาหรือ ยังไม่ใช่กลไก วินัยในการปฏิเสธสิ่งนี้ก็เป็นส่วนหนึ่งของเว็บไซต์เช่นกัน คำถามบางคำถามใหญ่กว่าคำศัพท์ใด ๆ ที่ใช้พูดถึงมัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.twoLanguages.body6": {
+      "en": "You are not your brain. You are not your unconscious. You are whatever it is that gets to wonder which of those it is.",
+      "th": "คุณไม่ใช่สมองของคุณ คุณไม่ใช่จิตไร้สำนึกของคุณ คุณเป็นสิ่งใดก็ตามที่ได้ตั้งคำถามว่าตนเป็นสิ่งใดในสองสิ่งนั้น",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.label": {
+      "en": "Where Jung was right, where he was wrong",
+      "th": "จุงถูกตรงไหน และผิดตรงไหน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.heading": {
+      "en": "He was a person, working with what was in reach.",
+      "th": "เขาเป็นคนหนึ่งคน ทำงานกับสิ่งที่อยู่ในมือ",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.intro": {
+      "en": "This site holds Jung's work seriously without treating him as an oracle. He was a person — brilliant, prolific, wrong about specific things, right about other specific things, the way people who try hard for a long time generally are. Honoring his work means being honest about both columns.",
+      "th": "เว็บไซต์นี้ถืองานของจุงอย่างจริงจัง โดยไม่ปฏิบัติกับเขาเหมือนคำพยากรณ์ เขาเป็นคน — เก่งกาจ ผลงานมาก ผิดในเรื่องเฉพาะ ถูกในเรื่องเฉพาะอื่น ๆ แบบที่คนซึ่งพยายามอย่างหนักเป็นเวลานานมักเป็นกัน การให้เกียรติงานของเขาคือการซื่อตรงต่อทั้งสองคอลัมน์",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.rightLabel": {
+      "en": "Where he was right",
+      "th": "ตรงที่เขาถูก",
+      "class": "GOOD"
+    },
+    "about.balance.right1": {
+      "en": "That consciousness is the small part of mind, and most of what produces thought, feeling, and action happens outside it. Predictive processing, default-mode work, implicit memory, and automatic appraisal have made the scale visible.",
+      "th": "ที่ว่าจิตสำนึกเป็นเพียงส่วนเล็กของจิตใจ และสิ่งที่ผลิตความคิด ความรู้สึก และการกระทำส่วนใหญ่เกิดขึ้นนอกจิตสำนึก งานด้านการประมวลผลเชิงทำนาย, default-mode, ความจำโดยปริยาย และการประเมินโดยอัตโนมัติ ได้ทำให้ขนาดสัดส่วนนี้มองเห็นได้",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.right2": {
+      "en": "That memory is reconstruction, not retrieval, and that the past is continuously rewritten in service of present meaning. Reconsolidation research has given this a mechanism.",
+      "th": "ที่ว่าความจำคือการสร้างใหม่ ไม่ใช่การดึงข้อมูล และอดีตถูกเขียนใหม่อย่างต่อเนื่องเพื่อรับใช้ความหมายปัจจุบัน งานวิจัย reconsolidation ได้ให้กลไกแก่เรื่องนี้",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.right3": {
+      "en": "That disowned content does not vanish — it gets projected onto others, often with strange intensity, and the cost of not seeing it grows. Inhibition and suppression research describes the mechanism for holding it out; the cost is convergent.",
+      "th": "ที่ว่าสิ่งที่ถูกปฏิเสธไม่หายไป — มันถูกฉายไปยังผู้อื่น มักด้วยความเข้มข้นแปลกประหลาด และต้นทุนของการไม่เห็นมันก็เพิ่มขึ้น งานวิจัยด้าน inhibition และ suppression อธิบายกลไกของการกดเก็บไว้ ต้นทุนของมันบรรจบกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.right4": {
+      "en": "That symbolic and figural cognition is not a primitive layer beneath rational thought but a parallel mode of meaning-making with its own legitimacy. Right-hemisphere narrative + figural work is real.",
+      "th": "ที่ว่าการรู้คิดเชิงสัญลักษณ์และเชิงรูป ไม่ใช่ชั้นดั้งเดิมที่อยู่ใต้ความคิดเชิงเหตุผล แต่เป็นโหมดสร้างความหมายคู่ขนานที่มีความชอบธรรมของตัวเอง งานของซีกขวาเชิงเรื่องเล่า + เชิงรูปนั้นมีอยู่จริง",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.right5": {
+      "en": "That recurring images across cultures — circle, quaternity, hero, shadow, mother — point at structural features of how minds organize themselves, not at coincidence.",
+      "th": "ที่ว่าภาพซ้ำข้ามวัฒนธรรม — วงกลม รูปสี่ทิศ วีรบุรุษ เงา มารดา — ชี้ไปยังลักษณะเชิงโครงสร้างที่จิตจัดระเบียบตัวเอง ไม่ใช่เรื่องบังเอิญ",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.wrongLabel": {
+      "en": "Where he was wrong, or overreached",
+      "th": "ตรงที่เขาผิด หรือเอื้อมเกิน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.wrong1": {
+      "en": "The collective unconscious as a literal inherited storehouse of ancestral content. Contemporary biology does not support inherited memory in this sense. The convergence of imagery across cultures is better explained by shared cognitive primitives than by a transgenerational reservoir.",
+      "th": "การยกจิตไร้สำนึกร่วมให้เป็นคลังเก็บเนื้อหาบรรพบุรุษที่ถ่ายทอดได้จริง ๆ ชีววิทยาร่วมสมัยไม่สนับสนุนความจำที่ถ่ายทอดทางพันธุกรรมในความหมายนี้ การบรรจบของภาพข้ามวัฒนธรรมอธิบายได้ดีกว่าด้วยพื้นฐานความรู้คิดร่วม มากกว่าด้วยอ่างเก็บข้ามรุ่น",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.wrong2": {
+      "en": "Synchronicity as a meaningful acausal connecting principle, on a par with causation. The phenomenology of meaningful coincidence is real — people do experience it — but the metaphysical claim he made around it has no scientific foothold.",
+      "th": "Synchronicity ในฐานะหลักการเชื่อมโยงเชิงความหมายที่ไม่ใช่เหตุผล เทียบเท่ากับความเป็นเหตุเป็นผล ปรากฏการณ์วิทยาของเรื่องบังเอิญที่มีความหมายนั้นจริง — ผู้คนประสบกับมัน — แต่ข้อกล่าวอ้างเชิงอภิปรัชญาที่จุงให้ไว้ไม่มีรากในวิทยาศาสตร์",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.wrong3": {
+      "en": "The strict male/female binary that organized his anima/animus theory. The underlying observation about a contrasexual interior figure survives in weaker form; the binary that framed it has aged poorly, and contemporary depth-psychological work has corrected the vocabulary.",
+      "th": "การจัดทฤษฎี anima/animus ภายใต้ทวินิยมชายหญิงที่เข้มงวด การสังเกตพื้นฐานเรื่องตัวตนเพศตรงข้ามภายในยังคงอยู่ในรูปแบบที่อ่อนแอกว่า แต่ทวินิยมที่ครอบมันได้ผ่านอายุไม่งดงาม งานจิตวิทยาเชิงลึกร่วมสมัยได้ปรับคำศัพท์แล้ว",
+      "class": "WEAK"
+    },
+    "about.balance.wrong4": {
+      "en": "Some of his readings of non-Western traditions — Eastern thought especially — were more about Jung than about the traditions. He acknowledged this in parts of his work and missed it in others. His cultural reach was real but not unlimited.",
+      "th": "การอ่านบางส่วนของเขาเกี่ยวกับประเพณีนอกตะวันตก — โดยเฉพาะอย่างยิ่งความคิดตะวันออก — เกี่ยวกับจุงเองมากกว่าประเพณีเหล่านั้น เขายอมรับเรื่องนี้ในบางส่วนของงาน และพลาดในส่วนอื่น ระยะเอื้อมทางวัฒนธรรมของเขามีจริง แต่ไม่ไร้ขีดจำกัด",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.wrong5": {
+      "en": "Specific archetypal figures (wise old man, anima, animus, trickster) as universal psychological constants. The figures recur, but the strength of cross-cultural specificity he claimed is not what contemporary anthropology actually supports.",
+      "th": "รูปแบบแม่แบบจิตเฉพาะ (ชายชราผู้ปราดเปรื่อง อนิมะ อนิมัส trickster) ในฐานะค่าคงที่ทางจิตวิทยาที่เป็นสากล รูปเหล่านี้ปรากฏซ้ำจริง แต่ความเข้มของความเฉพาะเจาะจงข้ามวัฒนธรรมที่เขาอ้างไว้ ไม่ใช่สิ่งที่มานุษยวิทยาร่วมสมัยรองรับ",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.balance.closing": {
+      "en": "Both columns are part of what makes him still worth reading. A theorist who was right about everything would not have been close enough to the actual texture of mind to be useful. Jung was close. He was sometimes too close to see clearly. He was, in this respect, a person.",
+      "th": "ทั้งสองคอลัมน์เป็นส่วนหนึ่งของสิ่งที่ทำให้เขายังคุ้มค่าแก่การอ่าน นักทฤษฎีที่ถูกในทุกเรื่องคงไม่อยู่ใกล้พื้นผิวที่แท้จริงของจิตใจมากพอที่จะเป็นประโยชน์ จุงอยู่ใกล้ เขาบางครั้งใกล้เกินไปจนมองไม่ชัด เขาเป็นคนหนึ่งคน ในแง่นี้",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.label": {
+      "en": "Further reading",
+      "th": "อ่านต่อ",
+      "class": "GOOD"
+    },
+    "about.reading.heading": {
+      "en": "Eight books that informed this site.",
+      "th": "แปดเล่มที่เป็นพื้นฐานของเว็บไซต์นี้",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.neuroLabel": {
+      "en": "Neuroscience that takes phenomenology seriously",
+      "th": "ประสาทวิทยาที่ถือปรากฏการณ์วิทยาอย่างจริงจัง",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.solmsDesc": {
+      "en": "The affective basis of consciousness, from neuropsychoanalysis.",
+      "th": "รากฐานเชิงอารมณ์ของจิตสำนึก จากจิตวิเคราะห์ทางประสาท",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.damasioDesc": {
+      "en": "Somatic markers, the felt self, the body in the brain.",
+      "th": "Somatic marker, ตัวตนที่รู้สึกได้, ร่างกายในสมอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.sacksDesc": {
+      "en": "Clinical neurology written in a humane voice.",
+      "th": "ประสาทวิทยาคลินิกที่เขียนด้วยน้ำเสียงเป็นมนุษย์",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.kandelDesc": {
+      "en": "The molecular basis of memory as reconstruction.",
+      "th": "รากฐานโมเลกุลของความจำในฐานะการสร้างใหม่",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.jungLabel": {
+      "en": "Jung primary sources",
+      "th": "ต้นฉบับของจุง",
+      "class": "GOOD"
+    },
+    "about.reading.mdrDesc": {
+      "en": "Recorded by Aniela Jaffé. The clearest entry to his thought.",
+      "th": "บันทึกโดย Aniela Jaffé ทางเข้าที่ชัดที่สุดสู่ความคิดของเขา",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.cw9Desc": {
+      "en": "The technical statement of the archetypes.",
+      "th": "คำชี้แจงเชิงเทคนิคของแม่แบบจิต",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.contemporaryLabel": {
+      "en": "Contemporary thinkers at the seam",
+      "th": "นักคิดร่วมสมัยที่รอยต่อ",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.mcgilchristDesc": {
+      "en": "Hemispheric perspectives. Better than its pop reception suggests.",
+      "th": "มุมมองแบบสองซีกสมอง ดีกว่าที่ภาพรับ pop เสนอ",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.reading.sethDesc": {
+      "en": "Predictive processing and the controlled hallucination of being a self.",
+      "th": "การประมวลผลเชิงทำนาย และภาพหลอนที่ควบคุมได้ของการเป็นตัวตน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.citations.label": {
+      "en": "Citations",
+      "th": "การอ้างอิง",
+      "class": "GOOD"
+    },
+    "about.citations.heading": {
+      "en": "Standing on the shoulders of well-cited giants.",
+      "th": "ยืนบนไหล่ของยักษ์ที่มีการอ้างอิงดี",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.citations.body": {
+      "en": "Every strong claim in this site points at one of these papers. When you read a line about Broca's region or the default-mode network or the amygdala that doesn't feel confident, this is where the confidence comes from.",
+      "th": "ทุกข้ออ้างที่หนักแน่นในเว็บไซต์นี้ชี้ไปยังหนึ่งในงานวิจัยเหล่านี้ เมื่อคุณอ่านประโยคเกี่ยวกับบริเวณ Broca หรือ default-mode network หรืออะมิกดาลาแล้วยังไม่มั่นใจ ที่นี่คือต้นทางของความมั่นใจ",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.credits.label": {
+      "en": "Credits",
+      "th": "เครดิต",
+      "class": "GOOD"
+    },
+    "about.credits.modelLabel": {
+      "en": "Model",
+      "th": "โมเดล",
+      "class": "GOOD"
+    },
+    "about.credits.modelTitle": {
+      "en": "Meta AI / FAIR",
+      "th": "Meta AI / FAIR",
+      "class": "MISSING"
+    },
+    "about.credits.modelBody": {
+      "en": "TRIBE v2 brain encoder. The site uses the cached checkpoint only; no Meta-specific data leaves the page.",
+      "th": "ตัวเข้ารหัสสมอง TRIBE v2 เว็บไซต์ใช้เพียง checkpoint ที่แคชไว้ ข้อมูลเฉพาะของ Meta ไม่ออกจากหน้าเว็บ",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.credits.builtLabel": {
+      "en": "Built with",
+      "th": "สร้างด้วย",
+      "class": "GOOD"
+    },
+    "about.credits.builtTitle": {
+      "en": "Anthropic Claude",
+      "th": "Anthropic Claude",
+      "class": "MISSING"
+    },
+    "about.credits.builtBody": {
+      "en": "The scaffolding, the typography system, the atmospherics, this room — all collaboratively engineered.",
+      "th": "โครงสร้าง ระบบตัวอักษร บรรยากาศ และห้องนี้ — ออกแบบและพัฒนาร่วมกัน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.credits.homeLabel": {
+      "en": "Home",
+      "th": "บ้าน",
+      "class": "GOOD"
+    },
+    "about.credits.homeTitle": {
+      "en": "Chulalongkorn JIPP",
+      "th": "จุฬาลงกรณ์ JIPP",
+      "class": "GOOD"
+    },
+    "about.credits.homeBody": {
+      "en": "Joint International Postgraduate Programme in Cognitive Sciences. Bangkok and the Thai stimulus pairs come from here.",
+      "th": "Joint International Postgraduate Programme in Cognitive Sciences กรุงเทพฯ และข้อความไทยที่ใช้คู่กันมาจากที่นี่",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.howToUse.label": {
+      "en": "How to use this brain",
+      "th": "วิธีใช้สมองนี้",
+      "class": "GOOD"
+    },
+    "about.howToUse.heading": {
+      "en": "A short guide to the affordances.",
+      "th": "คู่มือสั้นสำหรับตัวเลือกการใช้งาน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.howToUse.intro": {
+      "en": "The site has more entry points than the home page suggests. The list below names the discoverable ones — the small affordances that turn a beautiful piece into a navigable research instrument.",
+      "th": "เว็บไซต์มีจุดเข้าหลายแห่งกว่าที่หน้าแรกบอก รายการด้านล่างเรียกชื่อตัวเลือกที่ค้นพบได้ — ตัวเลือกเล็ก ๆ ที่เปลี่ยนผลงานชิ้นงดงามให้กลายเป็นเครื่องมือวิจัยที่ใช้สำรวจได้",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.howToUse.search.label": {
+      "en": "Search",
+      "th": "ค้นหา",
+      "class": "GOOD"
+    },
+    "about.howToUse.search.body": {
+      "en": "Press Cmd-K (or Ctrl-K on Windows / Linux) anywhere on the site to open a keyboard-first search palette. It indexes every region, every Bridges section, every tour, every long-form essay, and a small set of cross-cutting concepts. Type a researcher's surname, a disorder, a Jungian concept, a brain region — the palette finds it.",
+      "th": "กด Cmd-K (หรือ Ctrl-K บน Windows / Linux) ที่ใดก็ได้บนเว็บไซต์เพื่อเปิดแถบค้นหาที่ใช้คีย์บอร์ดเป็นหลัก แถบนี้ทำดัชนีของทุกบริเวณ ทุกส่วนของสะพาน ทุกทัวร์ บทความยาวทุกชิ้น และชุดเล็ก ๆ ของแนวคิดที่ตัดข้ามกัน พิมพ์นามสกุลของนักวิจัย ชื่อโรค แนวคิดของจุง หรือบริเวณของสมอง — แถบนี้จะหาเจอ",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.howToUse.atlas.label": {
+      "en": "Atlas",
+      "th": "แอตลาส",
+      "class": "GOOD"
+    },
+    "about.howToUse.atlas.body": {
+      "en": "The Region Atlas has twenty pages, one per region we surface. Each page carries seven sections: anatomy, function, cell types, connections, clinical context, history of discovery, and the depth-psychological thread. Every functional claim cites a peer-reviewed primary source; hover any superscript in the prose to see the reference.",
+      "th": "แอตลาสบริเวณสมองมียี่สิบหน้า หน้าละหนึ่งบริเวณที่เราเปิดออก แต่ละหน้าถือเจ็ดส่วน: กายวิภาค ฟังก์ชัน ชนิดของเซลล์ การเชื่อมต่อ บริบททางคลินิก ประวัติการค้นพบ และเส้นด้ายจากจิตวิทยาเชิงลึก ทุกข้ออ้างเกี่ยวกับฟังก์ชันอ้างอิงแหล่งปฐมภูมิที่ผ่านการตรวจทาน วางเมาส์เหนือเลขยกใด ๆ ในงานเขียนเพื่อดูเอกสารอ้างอิง",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.howToUse.bridges.label": {
+      "en": "Bridges",
+      "th": "สะพาน",
+      "class": "GOOD"
+    },
+    "about.howToUse.bridges.body": {
+      "en": "Where neuroscience and depth psychology touch, the Bridges page rates the empirical correspondence — tight, partial, distant, or none. Each Atlas page's Thread section carries a bridge-strength card linking to the matching Bridges section. Following the cards is the cleanest way to see how the two layers of the site interlock.",
+      "th": "ในจุดที่ประสาทวิทยาและจิตวิทยาเชิงลึกสัมผัสกัน หน้าสะพานประเมินความสอดคล้องเชิงประจักษ์ — ใกล้ชิด บางส่วน ห่างไกล หรือไม่มี ส่วนเส้นด้ายของแต่ละหน้าในแอตลาสมีการ์ดบอกความเข้มของสะพานที่เชื่อมไปยังส่วนของสะพานที่ตรงกัน การเดินตามการ์ดคือทางที่สะอาดที่สุดในการเห็นว่าสองชั้นของเว็บไซต์ประสานกันอย่างไร",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.howToUse.connectome.label": {
+      "en": "Connectome",
+      "th": "คอนเนกโทม",
+      "class": "GOOD"
+    },
+    "about.howToUse.connectome.body": {
+      "en": "Each Atlas page has a Connectome panel in the sidebar listing the white-matter tracts that have an endpoint in this region. Toggle a tract and it appears inside the persistent brain as a glowing curve. The geometry is stylized; the endpoints, function, and discovery credits are faithful to the literature.",
+      "th": "แต่ละหน้าในแอตลาสมีแถบคอนเนกโทมในแถบข้างที่แสดงรายการเส้นใยเนื้อขาวซึ่งมีปลายอยู่ในบริเวณนั้น เปิดเส้นใย และมันจะปรากฏภายในสมองที่อยู่ค้างในฐานะเส้นโค้งเรืองแสง เรขาคณิตเป็นแบบประยุกต์ ส่วนปลาย ฟังก์ชัน และเครดิตการค้นพบยึดตามวรรณกรรม",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.howToUse.cellular.label": {
+      "en": "Cellular descent",
+      "th": "การลงสู่ระดับเซลล์",
+      "class": "GOOD"
+    },
+    "about.howToUse.cellular.body": {
+      "en": "The Cellular View is the deepest scale on the site — reconstructed individual neurons and a frame-by-frame synapse simulation with selectable neurotransmitter. The macro brain is hidden while you are there so the cellular canvases own the visual field; clicking back into any room restores it.",
+      "th": "มุมมองระดับเซลล์คือสเกลที่ลึกที่สุดของเว็บไซต์ — เซลล์ประสาทเดี่ยวที่สร้างขึ้นใหม่ และการจำลองจุดประสานประสาทเฟรมต่อเฟรม โดยเลือกสารสื่อประสาทได้ สมองในภาพรวมถูกซ่อนขณะที่คุณอยู่ที่นั่น เพื่อให้ผืนผ้าใบระดับเซลล์ครอบครองสายตา การคลิกกลับเข้าห้องใดก็ตามจะคืนสมองให้กลับมา",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.howToUse.tours.label": {
+      "en": "Guided Tours",
+      "th": "ทัวร์นำชม",
+      "class": "GOOD"
+    },
+    "about.howToUse.tours.body": {
+      "en": "Six choreographed two-to-three-minute experiences in which the brain animates through a sequence of activations with synchronized narration. Watch them rather than navigate them — the pacing is deliberate. Each tour links into the Bridges page or the relevant Atlas region at the end.",
+      "th": "หกประสบการณ์ที่ออกแบบไว้ ยาวสองถึงสามนาที สมองค่อย ๆ เคลื่อนไหวผ่านลำดับการกระตุ้นพร้อมคำบรรยายที่ซิงโครไนซ์ ดูพวกมัน ไม่ต้องเดินผ่าน — จังหวะเป็นไปอย่างจงใจ ทัวร์แต่ละอันเชื่อมเข้ากับหน้าสะพานหรือบริเวณในแอตลาสที่เกี่ยวข้องในตอนจบ",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.howToUse.depthPsychology.label": {
+      "en": "Depth Psychology",
+      "th": "จิตวิทยาเชิงลึก",
+      "class": "GOOD"
+    },
+    "about.howToUse.depthPsychology.body": {
+      "en": "A separate section for the depth-psychological layer of the site: Bridges as the synthesizing index, long-form pages on Aion, the Red Book, and Gestalt therapy, and adjacent essays in Field Notes, Threshold, and Archetypes. The voice is restrained and the cross-references back to the empirical side are explicit.",
+      "th": "ส่วนแยกสำหรับชั้นจิตวิทยาเชิงลึกของเว็บไซต์: สะพานในฐานะดัชนีสังเคราะห์ หน้างานเขียนยาวเกี่ยวกับ Aion, Red Book, และ Gestalt therapy รวมทั้งบทความที่อยู่ใกล้เคียงในบันทึกภาคสนาม ธรณีประตู และแม่แบบจิต น้ำเสียงสำรวม และการอ้างอิงข้ามกลับไปยังฝั่งเชิงประจักษ์เป็นไปอย่างชัดเจน",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.howToUse.closing": {
+      "en": "None of this is hidden. None of it is gamified. The affordances are here for the reader who wants them; the reader who doesn't can ignore them and have the cinematic version of the site instead.",
+      "th": "ไม่มีสิ่งใดในนี้ที่ถูกซ่อน ไม่มีสิ่งใดถูกทำให้เป็นเกม ตัวเลือกเหล่านี้อยู่ที่นี่สำหรับผู้อ่านที่ต้องการ ผู้อ่านที่ไม่ต้องการสามารถมองข้ามและรับเว็บไซต์ในเวอร์ชันภาพยนตร์แทนได้",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.roadmap.label": {
+      "en": "Roadmap",
+      "th": "แผนทาง",
+      "class": "GOOD"
+    },
+    "about.roadmap.heading": {
+      "en": "What still wants building.",
+      "th": "สิ่งที่ยังรอการสร้าง",
+      "class": "GOOD"
+    },
+    "about.roadmap.phase10": {
+      "en": "Real TRIBE inference wired to a FastAPI backend (currently the predictor runs locally on lexical features).",
+      "th": "เชื่อม TRIBE inference จริงเข้ากับ FastAPI backend (ปัจจุบันตัวทำนายทำงานภายในเครื่องบนคุณสมบัติด้านศัพท์)",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.roadmap.phase11": {
+      "en": "Pair submission form, Phase-11 audio licensing, performance pass.",
+      "th": "ฟอร์มส่งคู่ข้อความ การออกใบอนุญาตเสียงของระยะที่ 11 และการปรับปรุงประสิทธิภาพ",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.roadmap.phase12": {
+      "en": "Final accessibility audit + a long-form annotation layer over the citations.",
+      "th": "การตรวจสอบการเข้าถึงครั้งสุดท้าย + ชั้นคำอธิบายยาวเหนือการอ้างอิง",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.roadmap.phaseLabel": {
+      "en": "Phase",
+      "th": "ระยะ",
+      "class": "GOOD"
+    },
+    "about.closing.display": {
+      "en": "What we're building is small. The intention is not.",
+      "th": "สิ่งที่เรากำลังสร้างมีขนาดเล็ก เจตนาไม่ใช่",
+      "class": "NEEDS-REVIEW"
+    },
+    "about.closing.hand": {
+      "en": "— more soon",
+      "th": "— เร็ว ๆ นี้",
+      "class": "GOOD"
+    },
+    "about.footer.line": {
+      "en": "The Brain Studio · 2026",
+      "th": "The Brain Studio · 2026",
+      "class": "MISSING"
+    },
+    "notFound.label": {
+      "en": "Out of the training distribution",
+      "th": "อยู่นอกขอบเขตการฝึกของแบบจำลอง",
+      "class": "NEEDS-REVIEW"
+    },
+    "notFound.title": {
+      "en": "We didn't learn that page.",
+      "th": "เราไม่ได้เรียนรู้หน้านี้",
+      "class": "GOOD"
+    },
+    "notFound.body": {
+      "en": "The address you tried isn't one of the rooms we built. The six that exist — Mirror, Music, Cross-Cultural, Threshold, Archetypes, Cellular — are reachable from the nav; quick links below.",
+      "th": "ที่อยู่ที่คุณลองเข้าไม่ใช่หนึ่งในห้องที่เราสร้างขึ้น หกห้องที่มีอยู่ — กระจกสมอง ดนตรี ข้ามวัฒนธรรม ธรณีประตู แม่แบบจิต เซลล์ — เข้าถึงได้จากเมนู ลิงก์ด่วนอยู่ด้านล่าง",
+      "class": "NEEDS-REVIEW"
+    },
+    "notFound.linkMirror": {
+      "en": "Brain Mirror",
+      "th": "กระจกสมอง",
+      "class": "GOOD"
+    },
+    "notFound.linkMusic": {
+      "en": "NeuroMusic Lab",
+      "th": "ห้องปฏิบัติการนิวโรมิวสิก",
+      "class": "GOOD"
+    },
+    "notFound.linkCrosscultural": {
+      "en": "Cross-Cultural Brain",
+      "th": "สมองข้ามวัฒนธรรม",
+      "class": "GOOD"
+    },
+    "notFound.linkHome": {
+      "en": "Home",
+      "th": "หน้าแรก",
+      "class": "GOOD"
+    },
+    "error.label": {
+      "en": "Something didn't resolve",
+      "th": "มีบางอย่างไม่สำเร็จ",
+      "class": "GOOD"
+    },
+    "error.title": {
+      "en": "The model lost its line for a moment.",
+      "th": "แบบจำลองคลาดสายไปสักครู่",
+      "class": "NEEDS-REVIEW"
+    },
+    "error.body": {
+      "en": "A part of the page failed to render. The persistent brain is still here, in the background, breathing. Try the room again — or step into another one.",
+      "th": "ส่วนหนึ่งของหน้านี้แสดงผลไม่สำเร็จ สมองที่อยู่เบื้องหลังยังคงหายใจอยู่ ลองห้องนี้อีกครั้ง — หรือเข้าไปในห้องอื่น",
+      "class": "NEEDS-REVIEW"
+    },
+    "error.tryAgain": {
+      "en": "Try again",
+      "th": "ลองอีกครั้ง",
+      "class": "GOOD"
+    },
+    "error.returnHome": {
+      "en": "Return home",
+      "th": "กลับหน้าแรก",
+      "class": "GOOD"
+    },
+    "error.digestLabel": {
+      "en": "digest",
+      "th": "รหัส",
+      "class": "GOOD"
+    }
+  }
+}
