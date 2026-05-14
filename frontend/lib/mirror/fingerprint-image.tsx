@@ -234,70 +234,180 @@ export function renderFingerprintImage(args: {
             <div
               style={{
                 display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
                 width: "100%",
-                gap: 16,
-                justifyContent: "center",
-                alignItems: "flex-start",
               }}
             >
-              {VIEW_ORDER.map((key) => {
-                const url = brainsByKey.get(key);
-                if (!url) return null;
-                return (
+              {/* Row of four anatomical brain views */}
+              <div
+                style={{
+                  display: "flex",
+                  width: "100%",
+                  gap: 16,
+                  justifyContent: "center",
+                  alignItems: "flex-start",
+                }}
+              >
+                {VIEW_ORDER.map((key) => {
+                  const url = brainsByKey.get(key);
+                  if (!url) return null;
+                  return (
+                    <div
+                      key={key}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        width: 215,
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          width: 215,
+                          height: 215,
+                          borderRadius: 4,
+                          border: `1px solid ${PALETTE.brassMuted}`,
+                          background: PALETTE.navyDeep,
+                          overflow: "hidden",
+                        }}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={url}
+                          alt={VIEW_LABELS[key]}
+                          width={215}
+                          height={215}
+                          style={{
+                            width: 215,
+                            height: 215,
+                            objectFit: "cover",
+                          }}
+                        />
+                      </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          fontSize: 13,
+                          fontFamily: "Menlo, monospace",
+                          letterSpacing: "0.18em",
+                          textTransform: "uppercase",
+                          color: "rgba(240, 232, 216, 0.7)",
+                          marginTop: 12,
+                        }}
+                      >
+                        {VIEW_LABELS[key]}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/*
+                Brain colour key — same five-stop fMRI ramp used by the
+                live brain renders (IDLE → COLD → COOL → WARM → HOT).
+                Compact form: idle/hot endpoints flanking a horizontal
+                gradient bar, with the five named stops listed in mono
+                tracking-wide below. Same legend the user sees on the
+                page in `BrainColorLegend.tsx`.
+              */}
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  width: 720,
+                  marginTop: 32,
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 14,
+                    width: "100%",
+                  }}
+                >
                   <div
-                    key={key}
                     style={{
                       display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      width: 235,
+                      fontSize: 12,
+                      fontFamily: "Menlo, monospace",
+                      letterSpacing: "0.20em",
+                      textTransform: "uppercase",
+                      color: "rgba(240, 232, 216, 0.7)",
                     }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        width: 235,
-                        height: 235,
-                        borderRadius: 4,
-                        border: `1px solid ${PALETTE.brassMuted}`,
-                        background: PALETTE.navyDeep,
-                        overflow: "hidden",
-                      }}
-                    >
-                      {/*
-                        Embed the captured WebGL canvas as a data URL
-                        image. Satori will rasterize it into the final
-                        PNG composition.
-                      */}
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={url}
-                        alt={VIEW_LABELS[key]}
-                        width={235}
-                        height={235}
-                        style={{
-                          width: 235,
-                          height: 235,
-                          objectFit: "cover",
-                        }}
-                      />
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        fontSize: 13,
-                        fontFamily: "Menlo, monospace",
-                        letterSpacing: "0.18em",
-                        textTransform: "uppercase",
-                        color: "rgba(240, 232, 216, 0.7)",
-                        marginTop: 12,
-                      }}
-                    >
-                      {VIEW_LABELS[key]}
-                    </div>
+                    Idle
                   </div>
-                );
-              })}
+                  <div
+                    style={{
+                      display: "flex",
+                      flex: 1,
+                      height: 12,
+                      borderRadius: 2,
+                      border: `1px solid ${PALETTE.brassMuted}`,
+                      background: `linear-gradient(to right, ${RAMP.map(
+                        (s, i) =>
+                          `${s.color} ${Math.round(
+                            (i / (RAMP.length - 1)) * 100,
+                          )}%`,
+                      ).join(", ")})`,
+                    }}
+                  />
+                  <div
+                    style={{
+                      display: "flex",
+                      fontSize: 12,
+                      fontFamily: "Menlo, monospace",
+                      letterSpacing: "0.20em",
+                      textTransform: "uppercase",
+                      color: "rgba(240, 232, 216, 0.7)",
+                    }}
+                  >
+                    Hot
+                  </div>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "100%",
+                    marginTop: 8,
+                    paddingLeft: 44,
+                    paddingRight: 44,
+                  }}
+                >
+                  {["low", "rising", "peak"].map((label) => (
+                    <div
+                      key={label}
+                      style={{
+                        display: "flex",
+                        fontSize: 10,
+                        fontFamily: "Menlo, monospace",
+                        letterSpacing: "0.20em",
+                        textTransform: "uppercase",
+                        color: "rgba(240, 232, 216, 0.45)",
+                      }}
+                    >
+                      {label}
+                    </div>
+                  ))}
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    fontSize: 11,
+                    fontFamily: "Georgia, serif",
+                    fontStyle: "italic",
+                    color: "rgba(240, 232, 216, 0.45)",
+                    marginTop: 10,
+                  }}
+                >
+                  Standard fMRI ramp · cool to warm · informational, not clinical
+                </div>
+              </div>
             </div>
           ) : (
             <svg
