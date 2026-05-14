@@ -30,7 +30,52 @@
     "tours": "Recorreguts",
     "depthPsychology": "Psicologia profunda",
     "faust": "Faust",
-    "dante": "Dante"
+    "dante": "Dante",
+    "aion": "Aion",
+    "redBook": "El Llibre Vermell",
+    "gestalt": "Gestalt",
+    "menus": {
+      "rooms": {
+        "label": "Sales",
+        "tagline": "Quatre experiències codificadores amb el cervell reaccionant en directe.",
+        "blurbs": {
+          "mirror": "Enganxa qualsevol text; mira com es veu la teva escriptura per sota.",
+          "music": "Escolta com el so mou les mateixes regions que et commouen.",
+          "crosscultural": "On el model es trenca en creuar llengües.",
+          "cellular": "Baixa a reconstruccions neuronals reals; mira disparar una sinapsi."
+        }
+      },
+      "literature": {
+        "label": "Literatura",
+        "tagline": "Quatre sales contemplatives — psicologia profunda + literatura canònica.",
+        "blurbs": {
+          "threshold": "Un assaig en tres moviments sobre la costura entre ment i cervell.",
+          "archetypes": "Set mandales, una xarxa neuronal per defecte persistent.",
+          "faust": "La pregunta de seixanta anys de Goethe al costat de l'error de predicció.",
+          "dante": "La Commedia com a arquitectura per a la xarxa neuronal per defecte."
+        }
+      },
+      "depth": {
+        "label": "Profunditat",
+        "tagline": "Assaigs llargs + els ponts entre regions.",
+        "blurbs": {
+          "bridges": "Onze patrons anomenats de cooperació entre regions.",
+          "fieldNotes": "Assaigs breus des de les costures entre disciplines.",
+          "depthPsychology": "Tres lectures de Jung amb la neurociència — índex.",
+          "aion": "El llibre tardà de Jung sobre el Si-mateix, llegit contra la DMN.",
+          "redBook": "Confrontació amb l'inconscient; imaginació activa com a dada.",
+          "gestalt": "Com el cervell completa la figura — el tancament com a predicció."
+        }
+      },
+      "instrument": {
+        "label": "Instrument",
+        "tagline": "Capa de referència — vint regions, sis recorreguts guiats.",
+        "blurbs": {
+          "atlas": "Vint regions catalogades una a una amb anatomia + funció.",
+          "tours": "Sis recorreguts guiats, de vuit a quinze minuts cadascun."
+        }
+      }
+    }
   },
   "common": {
     "loading": "Carregant…",

@@ -30,7 +30,52 @@
     "tours": "Recorridos",
     "depthPsychology": "Psicología profunda",
     "faust": "Fausto",
-    "dante": "Dante"
+    "dante": "Dante",
+    "aion": "Aion",
+    "redBook": "El Libro Rojo",
+    "gestalt": "Gestalt",
+    "menus": {
+      "rooms": {
+        "label": "Salas",
+        "tagline": "Cuatro experiencias codificadoras con el cerebro reaccionando en vivo.",
+        "blurbs": {
+          "mirror": "Pega cualquier texto; mira cómo se ve tu escritura por debajo.",
+          "music": "Escucha cómo el sonido mueve las mismas regiones que te conmueven.",
+          "crosscultural": "Donde el modelo se rompe al cruzar idiomas.",
+          "cellular": "Desciende a reconstrucciones neuronales reales; mira disparar una sinapsis."
+        }
+      },
+      "literature": {
+        "label": "Literatura",
+        "tagline": "Cuatro salas contemplativas — psicología profunda + literatura canónica.",
+        "blurbs": {
+          "threshold": "Un ensayo en tres movimientos sobre la costura entre mente y cerebro.",
+          "archetypes": "Siete mandalas, una red neuronal por defecto persistente.",
+          "faust": "La pregunta de sesenta años de Goethe junto al error de predicción.",
+          "dante": "La Commedia como arquitectura para la red neuronal por defecto."
+        }
+      },
+      "depth": {
+        "label": "Profundidad",
+        "tagline": "Ensayos largos + los puentes entre regiones.",
+        "blurbs": {
+          "bridges": "Once patrones nombrados de cooperación entre regiones.",
+          "fieldNotes": "Ensayos breves desde las costuras entre disciplinas.",
+          "depthPsychology": "Tres lecturas de Jung con la neurociencia — índice.",
+          "aion": "El libro tardío de Jung sobre el Sí-mismo, leído contra la DMN.",
+          "redBook": "Confrontación con el inconsciente; imaginación activa como dato.",
+          "gestalt": "Cómo el cerebro completa la figura — el cierre como predicción."
+        }
+      },
+      "instrument": {
+        "label": "Instrumento",
+        "tagline": "Capa de referencia — veinte regiones, seis recorridos guiados.",
+        "blurbs": {
+          "atlas": "Veinte regiones catalogadas una por una con anatomía + función.",
+          "tours": "Seis recorridos guiados, de ocho a quince minutos cada uno."
+        }
+      }
+    }
   },
   "common": {
     "loading": "Cargando…",

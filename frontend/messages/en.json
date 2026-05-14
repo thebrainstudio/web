@@ -30,7 +30,52 @@
     "tours": "Tours",
     "depthPsychology": "Depth Psychology",
     "faust": "Faust",
-    "dante": "Dante"
+    "dante": "Dante",
+    "aion": "Aion",
+    "redBook": "The Red Book",
+    "gestalt": "Gestalt",
+    "menus": {
+      "rooms": {
+        "label": "Rooms",
+        "tagline": "Four encoder experiences with the brain reacting live.",
+        "blurbs": {
+          "mirror": "Paste any text; watch what your writing looks like underneath.",
+          "music": "Hear how sound moves the same regions that move you.",
+          "crosscultural": "Where the model breaks down across languages.",
+          "cellular": "Descend into real neuron reconstructions; watch a synapse fire."
+        }
+      },
+      "literature": {
+        "label": "Literature",
+        "tagline": "Four contemplative rooms — depth psychology + canonical literature.",
+        "blurbs": {
+          "threshold": "An essay in three movements about the seam between mind and brain.",
+          "archetypes": "Seven mandalas, one persistent default network.",
+          "faust": "Goethe's sixty-year question read alongside prediction error.",
+          "dante": "The Commedia as architecture for the default-mode network."
+        }
+      },
+      "depth": {
+        "label": "Depth",
+        "tagline": "Long-form essays + the bridges between regions.",
+        "blurbs": {
+          "bridges": "Eleven named patterns of cross-region cooperation.",
+          "fieldNotes": "Short essays from the seams between disciplines.",
+          "depthPsychology": "Three Jung-with-neuroscience readings — index.",
+          "aion": "Jung's late book on the Self, read against the DMN.",
+          "redBook": "Confrontation with the unconscious; active imagination as data.",
+          "gestalt": "How the brain completes the figure — closure as prediction."
+        }
+      },
+      "instrument": {
+        "label": "Instrument",
+        "tagline": "Reference layer — twenty regions, six guided walks.",
+        "blurbs": {
+          "atlas": "Twenty regions catalogued one by one with anatomy + function.",
+          "tours": "Six guided walks, eight to fifteen minutes each."
+        }
+      }
+    }
   },
   "common": {
     "loading": "Loading…",

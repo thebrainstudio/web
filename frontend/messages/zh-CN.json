@@ -30,7 +30,52 @@
     "tours": "导览",
     "depthPsychology": "深度心理学",
     "faust": "浮士德",
-    "dante": "但丁"
+    "dante": "但丁",
+    "aion": "埃永",
+    "redBook": "红书",
+    "gestalt": "格式塔",
+    "menus": {
+      "rooms": {
+        "label": "房间",
+        "tagline": "四种编码体验，大脑实时回应。",
+        "blurbs": {
+          "mirror": "粘贴任何文本，看你的书写在其下方的模样。",
+          "music": "听声音如何调动那些会触动你的同一批脑区。",
+          "crosscultural": "模型在跨语言时崩塌的地方。",
+          "cellular": "下沉到真实的神经元重建中，看突触放电。"
+        }
+      },
+      "literature": {
+        "label": "文学",
+        "tagline": "四间冥想房间 —— 深度心理学 + 经典文学。",
+        "blurbs": {
+          "threshold": "三个乐章的随笔，关于心智与大脑之间的接缝。",
+          "archetypes": "七个曼荼罗，一个持续的默认网络。",
+          "faust": "歌德六十年的提问，与预测误差并读。",
+          "dante": "《神曲》作为默认模式网络的建筑。"
+        }
+      },
+      "depth": {
+        "label": "深度",
+        "tagline": "长篇随笔 + 脑区之间的桥。",
+        "blurbs": {
+          "bridges": "十一种命名的跨脑区协作模式。",
+          "fieldNotes": "从学科接缝处写出的短篇随笔。",
+          "depthPsychology": "三种荣格与神经科学对话的读法 —— 索引。",
+          "aion": "荣格晚期关于自性的书，与 DMN 对照阅读。",
+          "redBook": "与无意识的对质；主动想象作为数据。",
+          "gestalt": "大脑如何补完图形 —— 闭合即预测。"
+        }
+      },
+      "instrument": {
+        "label": "仪器",
+        "tagline": "参照层 —— 二十个脑区，六场导览。",
+        "blurbs": {
+          "atlas": "二十个脑区，逐一附有解剖与功能。",
+          "tours": "六场导览，每场八到十五分钟。"
+        }
+      }
+    }
   },
   "common": {
     "loading": "加载中…",

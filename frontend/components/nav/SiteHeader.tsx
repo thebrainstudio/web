@@ -1,12 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { Caption } from "@/components/typography/Typography";
 import { easeStandard } from "@/lib/animations";
 import LanguageSelector from "@/components/nav/LanguageSelector";
+import NavMenu from "@/components/nav/NavMenu";
+import { useDismissable } from "@/components/nav/useDismissable";
+import { navMenus, allMenuItems } from "@/components/nav/navMenus";
 
 function GithubMark({ size = 18 }: { size?: number }) {
   return (
@@ -97,74 +100,6 @@ function MenuIcon({ open, size = 18 }: { open: boolean; size?: number }) {
   );
 }
 
-type NavItem = { href: string; labelKey: NavLabelKey };
-type NavLabelKey =
-  | "mirror"
-  | "music"
-  | "crosscultural"
-  | "atlas"
-  | "bridges"
-  | "tours"
-  | "threshold"
-  | "archetypes"
-  | "faust"
-  | "dante"
-  | "depthPsychology"
-  | "fieldNotes"
-  | "cellular"
-  | "about";
-
-// Primary nav: kept short so the top bar reads as a single
-// editorial line, not a sitemap. The three TRIBE-driven rooms +
-// About + the Sections dropdown.
-const navItems: NavItem[] = [
-  { href: "/mirror", labelKey: "mirror" },
-  { href: "/music", labelKey: "music" },
-  { href: "/crosscultural", labelKey: "crosscultural" },
-  { href: "/about", labelKey: "about" },
-];
-
-// Sections dropdown — everything else, grouped so the menu reads
-// as a layered map of the site rather than an alphabetical dump:
-//   The reference layer (Atlas, Bridges, Tours)
-//   The contemplative layer (Threshold, Archetypes, Depth Psychology, Field Notes)
-//   The deep scale (Cellular)
-type SectionGroup = {
-  /** Translation key in `nav` for the group heading, or null for an
-   *  ungrouped trailing item. */
-  headingKey: string | null;
-  items: NavItem[];
-};
-
-const sectionGroups: SectionGroup[] = [
-  {
-    headingKey: null,
-    items: [
-      { href: "/atlas", labelKey: "atlas" },
-      { href: "/bridges", labelKey: "bridges" },
-      { href: "/tours", labelKey: "tours" },
-    ],
-  },
-  {
-    headingKey: null,
-    items: [
-      { href: "/threshold", labelKey: "threshold" },
-      { href: "/archetypes", labelKey: "archetypes" },
-      { href: "/faust", labelKey: "faust" },
-      { href: "/dante", labelKey: "dante" },
-      { href: "/depth-psychology", labelKey: "depthPsychology" },
-      { href: "/field-notes", labelKey: "fieldNotes" },
-    ],
-  },
-  {
-    headingKey: null,
-    items: [{ href: "/cellular", labelKey: "cellular" }],
-  },
-];
-
-// Flattened version for the mobile sheet (one vertical list).
-const allSecondaryItems: NavItem[] = sectionGroups.flatMap((g) => g.items);
-
 function NavLink({
   href,
   label,
@@ -203,54 +138,40 @@ function NavLink({
 
 /**
  * Sticky persistent nav.
- *  - Brass Fraunces wordmark, top-left
- *  - Active-route underline animates between items via Framer Motion's
- *    layoutId (the underline glides from old to new active item)
- *  - Mobile: a hamburger toggle reveals a full-width sheet with the same
- *    items (Cross-Cultural is no longer hidden on small screens)
- *  - Mute + GitHub icons remain on the right
+ *
+ * PR 4 — restructured into a mega-menu: four panel groups (Rooms,
+ * Literature, Depth, Instrument) replace the old single "Sections"
+ * dropdown. Each panel is its own `<NavMenu>` and they share an
+ * `openId` so only one is open at a time. Dismissal (Escape +
+ * click-outside) lives in `useDismissable`.
+ *
+ * The trio of primary buttons (Mirror, Music, Cross-Cultural) is
+ * gone — those rooms moved into the Rooms panel along with
+ * Cellular. About remains visible as the meta page; LanguageSelector,
+ * search, mute, GitHub stay on the right.
+ *
+ * Mobile sheet keeps the flat-list architecture, with group-heading
+ * separators between the four sections so the order is legible.
  */
 export default function SiteHeader() {
   const pathname = usePathname();
   const t = useTranslations("nav");
   const [muted, setMuted] = useState(true);
   const [open, setOpen] = useState(false);
-  // Sections dropdown — small popover under the "Sections" trigger.
-  const [sectionsOpen, setSectionsOpen] = useState(false);
+  // The mega-menu shares a single openId so only one panel is open
+  // at a time. `null` means everything closed.
+  const [openId, setOpenId] = useState<string | null>(null);
 
-  // Close mobile sheet whenever the route changes.
+  // Close mobile sheet + any open panel whenever the route changes.
   useEffect(() => {
     setOpen(false);
-    setSectionsOpen(false);
+    setOpenId(null);
   }, [pathname]);
 
-  // Close sections dropdown on Escape or click-outside.
-  useEffect(() => {
-    if (!sectionsOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSectionsOpen(false);
-    };
-    const onClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement | null;
-      if (target && !target.closest("[data-sections-menu]")) {
-        setSectionsOpen(false);
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    window.addEventListener("mousedown", onClick);
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      window.removeEventListener("mousedown", onClick);
-    };
-  }, [sectionsOpen]);
-
-  // Compute whether any secondary route is currently active so the
-  // Sections button reads as the "current page" indicator when the
-  // reader is somewhere inside one of those pages.
-  const sectionsActive = allSecondaryItems.some((item) => {
-    if (item.href === "/") return pathname === "/";
-    return pathname === item.href || pathname.startsWith(item.href + "/");
-  });
+  // One dismissal listener for all four panels — each NavMenu marks
+  // itself with `data-nav-panel` so clicks inside any of them count
+  // as "inside".
+  useDismissable(openId !== null, () => setOpenId(null));
 
   useEffect(() => {
     const sync = (e: Event) => {
@@ -264,6 +185,9 @@ export default function SiteHeader() {
 
   const toggleAmbient = () =>
     window.dispatchEvent(new CustomEvent("brain-studio:toggle-ambient"));
+
+  const aboutActive =
+    pathname === "/about" || pathname.startsWith("/about/");
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 backdrop-blur-md">
@@ -279,120 +203,22 @@ export default function SiteHeader() {
           </Caption>
         </Link>
 
-        {/* Desktop nav — three primary rooms + a Sections dropdown
-            that holds the rest, so the top bar reads as a single
-            editorial line rather than a sitemap dump. */}
+        {/* Desktop nav — four grouped panels + About + utilities. */}
         <ul className="ml-auto hidden items-center gap-x-7 md:flex">
-          {navItems.slice(0, 3).map((item) => {
-            const active =
-              pathname === item.href || pathname.startsWith(item.href + "/");
-            return (
-              <li key={item.href}>
-                <NavLink href={item.href} label={t(item.labelKey)} active={active} />
-              </li>
-            );
-          })}
-
-          {/* Sections dropdown trigger */}
-          <li className="relative" data-sections-menu>
-            <button
-              type="button"
-              data-hover
-              onClick={() => setSectionsOpen((v) => !v)}
-              aria-expanded={sectionsOpen}
-              aria-haspopup="menu"
-              className={`group relative inline-flex items-center gap-1.5 transition-colors duration-200 ${
-                sectionsActive
-                  ? "text-bone-cream"
-                  : "text-bone-cream/70 hover:text-bone-cream"
-              }`}
-            >
-              <Caption>Sections</Caption>
-              <span
-                aria-hidden
-                className={`text-[0.6em] transition-transform duration-200 ${
-                  sectionsOpen ? "rotate-180" : ""
-                }`}
-              >
-                ▾
-              </span>
-              {sectionsActive && (
-                <motion.span
-                  layoutId="nav-underline"
-                  aria-hidden
-                  className="bg-brass absolute -bottom-1 left-0 h-px w-full"
-                  transition={{ duration: 0.35, ease: easeStandard }}
-                />
-              )}
-            </button>
-
-            <AnimatePresence>
-              {sectionsOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.22, ease: easeStandard }}
-                  role="menu"
-                  className="bg-navy-deep/95 border-bone-cream/10 absolute right-0 top-full mt-3 w-[15rem] rounded-sm border px-1.5 py-2 shadow-lg backdrop-blur"
-                >
-                  {sectionGroups.map((group, gi) => (
-                    <div
-                      key={gi}
-                      className={
-                        gi > 0
-                          ? "border-bone-cream/10 mt-1 border-t pt-1"
-                          : ""
-                      }
-                    >
-                      {group.items.map((item) => {
-                        const active =
-                          pathname === item.href ||
-                          pathname.startsWith(item.href + "/");
-                        return (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            prefetch
-                            onClick={() => setSectionsOpen(false)}
-                            role="menuitem"
-                            data-hover
-                            className={`block rounded-sm px-3 py-2 transition-colors duration-150 ${
-                              active
-                                ? "text-brass bg-bone-cream/5"
-                                : "text-bone-cream/80 hover:text-brass hover:bg-bone-cream/5"
-                            }`}
-                          >
-                            <Caption uppercase className="tracking-[0.14em]">
-                              {t(item.labelKey)}
-                            </Caption>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </li>
+          {navMenus.map((group) => (
+            <NavMenu
+              key={group.id}
+              group={group}
+              openId={openId}
+              setOpenId={setOpenId}
+            />
+          ))}
 
           {/* About — kept visible because it's the meta page anyone
               new to the site will hit first. */}
-          {(() => {
-            const aboutItem = navItems[3];
-            const active =
-              pathname === aboutItem.href ||
-              pathname.startsWith(aboutItem.href + "/");
-            return (
-              <li>
-                <NavLink
-                  href={aboutItem.href}
-                  label={t(aboutItem.labelKey)}
-                  active={active}
-                />
-              </li>
-            );
-          })()}
+          <li>
+            <NavLink href="/about" label={t("about")} active={aboutActive} />
+          </li>
 
           <li className="ml-2">
             <LanguageSelector />
@@ -468,9 +294,9 @@ export default function SiteHeader() {
         </div>
       </nav>
 
-      {/* Mobile sheet — shows the full route map as a vertical list,
-          grouped the same way the desktop Sections dropdown groups
-          them. The sheet has scroll room; clutter isn't an issue here. */}
+      {/* Mobile sheet — flat list of every menu item, with group
+          heading separators between the four panels. The sheet has
+          scroll room; clutter isn't an issue here. */}
       <motion.div
         id="mobile-nav"
         initial={false}
@@ -482,60 +308,48 @@ export default function SiteHeader() {
         transition={{ duration: 0.22, ease: easeStandard }}
         className="md:hidden"
       >
-        <ul className="bg-navy-deep/95 border-bone-cream/10 mx-6 mb-4 mt-2 max-h-[80vh] space-y-1.5 overflow-y-auto rounded-sm border px-6 py-5 backdrop-blur">
-          {/* Primary trio */}
-          {navItems.slice(0, 3).map((item) => {
-            const active =
-              pathname === item.href ||
-              pathname.startsWith(item.href + "/");
-            return (
-              <li key={item.href}>
-                <NavLink
-                  href={item.href}
-                  label={t(item.labelKey)}
-                  active={active}
-                  className="block py-2"
-                  onClick={() => setOpen(false)}
-                />
+        <ul className="bg-navy-deep/95 border-bone-cream/10 mx-6 mb-4 mt-2 max-h-[80vh] space-y-1 overflow-y-auto rounded-sm border px-6 py-5 backdrop-blur">
+          {navMenus.map((group, gi) => (
+            <div key={group.id}>
+              <li
+                className={
+                  gi === 0
+                    ? ""
+                    : "border-bone-cream/10 mt-3 border-t pt-3"
+                }
+              >
+                <Caption
+                  uppercase
+                  className="text-brass mb-2 block tracking-[0.18em]"
+                >
+                  {t(`menus.${group.id}.label`)}
+                </Caption>
               </li>
-            );
-          })}
+              {group.items.map((item) => {
+                const active =
+                  pathname === item.href ||
+                  pathname.startsWith(item.href + "/");
+                return (
+                  <li key={item.href}>
+                    <NavLink
+                      href={item.href}
+                      label={t(item.labelKey)}
+                      active={active}
+                      className="block py-2"
+                      onClick={() => setOpen(false)}
+                    />
+                  </li>
+                );
+              })}
+            </div>
+          ))}
 
-          {/* Sections — flat list with a small heading separator */}
-          <li className="border-bone-cream/10 mt-3 border-t pt-3">
-            <Caption
-              uppercase
-              className="text-bone-cream/40 mb-2 block tracking-[0.18em]"
-            >
-              Sections
-            </Caption>
-          </li>
-          {allSecondaryItems.map((item) => {
-            const active =
-              pathname === item.href ||
-              pathname.startsWith(item.href + "/");
-            return (
-              <li key={item.href}>
-                <NavLink
-                  href={item.href}
-                  label={t(item.labelKey)}
-                  active={active}
-                  className="block py-2"
-                  onClick={() => setOpen(false)}
-                />
-              </li>
-            );
-          })}
-
-          {/* About + GitHub */}
+          {/* About + GitHub trailing */}
           <li className="border-bone-cream/10 mt-3 border-t pt-3">
             <NavLink
-              href={navItems[3].href}
-              label={t(navItems[3].labelKey)}
-              active={
-                pathname === navItems[3].href ||
-                pathname.startsWith(navItems[3].href + "/")
-              }
+              href="/about"
+              label={t("about")}
+              active={aboutActive}
               className="block py-2"
               onClick={() => setOpen(false)}
             />
@@ -556,3 +370,9 @@ export default function SiteHeader() {
     </header>
   );
 }
+
+/** Kept in module scope so external consumers can introspect the
+ *  current menu surface — used by the Cmd-K palette indexer in
+ *  PR 11. Right now unused, but importing this from the search
+ *  component is cheaper than re-deriving the route list. */
+export { allMenuItems };
