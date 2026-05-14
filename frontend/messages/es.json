@@ -153,7 +153,17 @@
     "footerStudio": "The Brain Studio",
     "footerNote": "Predicciones simuladas localmente",
     "predicting": "Prediciendo…",
-    "charCounter": "{used} / {max}"
+    "charCounter": "{used} / {max}",
+    "attribution": {
+      "tribeLive": "Predicción de TRIBE v2 (Meta FAIR, d'Ascoli et al., 2026) — ficha del modelo · artículo · CC-BY-NC-4.0 · solo texto, sujeto promedio",
+      "tribeOffline": "Ejecutando el modelo de referencia (proxy semántico) — motor TRIBE fuera de línea",
+      "baseline": "Predicción por modelo de referencia con incrustaciones (BGE-small) — inferencia TRIBE no disponible en este despliegue",
+      "modelCard": "ficha del modelo",
+      "paper": "artículo",
+      "license": "CC-BY-NC-4.0",
+      "statusLive": "Motor TRIBE en línea",
+      "statusOffline": "Referencia (TRIBE fuera de línea)"
+    }
   },
   "music": {
     "label": "Laboratorio de NeuroMúsica · Fase 6",

@@ -153,7 +153,17 @@
     "footerStudio": "The Brain Studio",
     "footerNote": "Prediccions simulades localment",
     "predicting": "Predient…",
-    "charCounter": "{used} / {max}"
+    "charCounter": "{used} / {max}",
+    "attribution": {
+      "tribeLive": "Predit per TRIBE v2 (Meta FAIR, d'Ascoli et al., 2026) — fitxa del model · article · CC-BY-NC-4.0 · només text, subjecte mitjà",
+      "tribeOffline": "Executant el model de referència (proxy semàntic) — motor TRIBE fora de línia",
+      "baseline": "Predicció per model de referència amb incrustacions (BGE-small) — inferència TRIBE no disponible en aquest desplegament",
+      "modelCard": "fitxa del model",
+      "paper": "article",
+      "license": "CC-BY-NC-4.0",
+      "statusLive": "Motor TRIBE en línia",
+      "statusOffline": "Referència (TRIBE fora de línia)"
+    }
   },
   "music": {
     "label": "Laboratori de NeuroMúsica · Fase 6",

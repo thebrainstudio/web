@@ -83,12 +83,15 @@ class RotaryEmbedding(nn.Module):
     Partial RoPE: rotates the first `rot_dim` dimensions of each head and
     leaves the remainder unchanged. The checkpoint's inv_freq has 36
     entries → rot_dim = 72 (out of head_dim = 144).
+
+    inv_freq is deterministic (1/10000^(2i/d)) so it does NOT live in
+    the checkpoint — persistent=False keeps strict-loading happy.
     """
 
     def __init__(self, rot_dim: int) -> None:
         super().__init__()
         inv_freq = 1.0 / (10000 ** (torch.arange(0, rot_dim, 2).float() / rot_dim))
-        self.register_buffer("inv_freq", inv_freq, persistent=True)
+        self.register_buffer("inv_freq", inv_freq, persistent=False)
         self.rot_dim = rot_dim
 
     def forward(self, seq_len: int, device: torch.device) -> tuple[torch.Tensor, torch.Tensor]:
@@ -163,18 +166,32 @@ class FeedForward(nn.Module):
         return self.ff(x)
 
 
-class TransformerBlock(nn.Module):
-    """One pre-norm sub-layer: `[ScaleNorm, sublayer, ResidualScale]`."""
+class TransformerBlock(nn.Sequential):
+    """
+    One pre-norm sub-layer with residual: ``x + scale(sublayer(norm(x)))``.
+
+    Subclasses ``nn.Sequential`` so the three children are addressed as
+    positional indices in the state_dict, matching Meta's checkpoint
+    naming exactly:
+
+        encoder.layers.<L>.0.0.g          ← norm: ScaleNorm wrapped in Sequential
+        encoder.layers.<L>.1.<param>      ← sublayer: Attention or FeedForward
+        encoder.layers.<L>.2.residual_scale ← ResidualScale
+
+    The forward pass is overridden to apply the residual connection
+    (default Sequential.forward would just chain the three).
+    """
 
     def __init__(self, dim: int, sublayer: nn.Module) -> None:
-        super().__init__()
-        # Module list to match key naming `<layer>.0.0` / `.1` / `.2`.
-        self.norm = nn.Sequential(ScaleNorm())  # `<layer>.0.0`
-        self.sublayer = sublayer  # `<layer>.1`
-        self.scale = ResidualScale(dim)  # `<layer>.2`
+        super().__init__(
+            nn.Sequential(ScaleNorm()),  # index 0 (norm group, ScaleNorm at 0.0)
+            sublayer,                     # index 1
+            ResidualScale(dim),           # index 2
+        )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        return x + self.scale(self.sublayer(self.norm(x)))
+        norm, sublayer, scale = self[0], self[1], self[2]
+        return x + scale(sublayer(norm(x)))
 
 
 class TribeEncoder(nn.Module):
@@ -336,8 +353,16 @@ def load_tribe_brain_encoder(
 
     # state_dict keys are prefixed with `model.`; strip it.
     sd = {k.removeprefix("model."): v for k, v in sd.items()}
+
+    # Drop deterministically-computed RoPE inverse frequencies — our
+    # RotaryEmbedding registers inv_freq with persistent=False so it
+    # isn't a "missing" state_dict entry, but the checkpoint stores it.
+    # Filtering avoids the noisy "unexpected key" warning under strict.
+    DROP_CHECKPOINT_KEYS = {"encoder.rotary_pos_emb.inv_freq"}
+    sd = {k: v for k, v in sd.items() if k not in DROP_CHECKPOINT_KEYS}
+
     missing, unexpected = model.load_state_dict(sd, strict=False)
-    if strict and (missing or unexpected):
+    if missing or unexpected:
         # Report verbose diff so future maintainers can pin the architecture.
         msg = "checkpoint key diff:"
         if missing:
@@ -347,7 +372,8 @@ def load_tribe_brain_encoder(
                 f"\n  unexpected ({len(unexpected)}): "
                 f"{unexpected[:6]}{'…' if len(unexpected)>6 else ''}"
             )
-        # We don't raise — the model still runs; we just warn.
+        if strict:
+            raise RuntimeError(f"[tribe.model] {msg}")
         print(f"[tribe.model] {msg}")
     model.to(device).eval()
     return model

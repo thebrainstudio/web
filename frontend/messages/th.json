@@ -153,7 +153,17 @@
     "footerStudio": "The Brain Studio",
     "footerNote": "คำทำนายจำลองภายในเครื่อง",
     "predicting": "กำลังทำนาย…",
-    "charCounter": "{used} / {max}"
+    "charCounter": "{used} / {max}",
+    "attribution": {
+      "tribeLive": "ทำนายโดย TRIBE v2 (Meta FAIR, d'Ascoli et al., 2026) — บัตรโมเดล · บทความ · CC-BY-NC-4.0 · ข้อความอย่างเดียว ผู้ทดลองเฉลี่ย",
+      "tribeOffline": "กำลังใช้โมเดลพื้นฐาน (พร็อกซีเชิงความหมาย) — เครื่องยนต์ TRIBE ออฟไลน์",
+      "baseline": "ทำนายโดยโมเดลพื้นฐานแบบเอ็มเบดดิง (BGE-small) — การอนุมานของ TRIBE ไม่สามารถใช้ได้ในรุ่นนี้",
+      "modelCard": "บัตรโมเดล",
+      "paper": "บทความ",
+      "license": "CC-BY-NC-4.0",
+      "statusLive": "เครื่องยนต์ TRIBE ออนไลน์",
+      "statusOffline": "พื้นฐาน (TRIBE ออฟไลน์)"
+    }
   },
   "music": {
     "label": "ห้องปฏิบัติการนิวโรมิวสิก · ระยะที่ 6",

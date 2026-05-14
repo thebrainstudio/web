@@ -1,0 +1,12 @@
+# Local Python venvs — never commit
+.venv-tribe/
+.venv/
+__pycache__/
+*.pyc
+
+# Cloudflare tunnel state (per-machine)
+tunnel_url.txt
+*.pem
+
+# Nilearn dataset cache local to this machine (downloaded on first run)
+~/.nilearn_cache/

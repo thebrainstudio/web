@@ -1,21 +1,38 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { easeCinematic } from "@/lib/animations";
 import { useBrainStageStore } from "@/store/useBrainStageStore";
 import { fakePredict, type Prediction } from "@/lib/fakePredictor";
-import { inferText } from "@/lib/tribeClient";
+import {
+  isRealTribe,
+  predictWithFallback,
+  type EncoderResult,
+} from "@/lib/api/brain-encoder";
 import { Caption } from "@/components/typography/Typography";
 import MirrorLoadingMessage from "./MirrorLoadingMessage";
+import AttributionChip, {
+  type AttributionState,
+} from "./AttributionChip";
 
 // audit-fix: Task 10. Soft cap on textarea content — keeps prediction
 // requests bounded and prevents accidental long-paste failures.
 const MAX_LENGTH = 5000;
-// audit-fix: Task 10. Live-update debounce (was 300ms). 350ms matches
-// the audit brief's recommendation for input → prediction trigger.
+// phase-10: Settle debounce — 400 ms is "the thought is finishing"
+// per the design-critic brief. Earlier audit had 350 ms for the live
+// pre-update; we keep that too so the brain breathes as the user types.
 const LIVE_DEBOUNCE_MS = 350;
+const SETTLE_DEBOUNCE_MS = 400;
+
+/**
+ * If NEXT_PUBLIC_TRIBE_API_BASE is configured at build time, the site
+ * was deployed pointing at a tunneled TRIBE backend. That state
+ * determines whether the attribution chip's "TRIBE engine online"
+ * status is even reachable.
+ */
+const TRIBE_BACKEND_CONFIGURED = Boolean(process.env.NEXT_PUBLIC_TRIBE_API_BASE);
 
 type Props = {
   /** Receive every settled prediction. */
@@ -37,13 +54,22 @@ type Props = {
  */
 export default function MirrorInput({ onPrediction, initial = "" }: Props) {
   const t = useTranslations("mirror");
+  const locale = useLocale();
   const [value, setValue] = useState(initial);
   const [settling, setSettling] = useState(false);
+  // phase-10: track which engine produced the last settled response so
+  // the AttributionChip can show TRIBE vs baseline honestly.
+  const [attribution, setAttribution] = useState<AttributionState>(
+    TRIBE_BACKEND_CONFIGURED ? "tribe-live" : "baseline-only",
+  );
   const setActivations = useBrainStageStore((s) => s.setActivations);
   const resetIdle = useBrainStageStore((s) => s.resetIdle);
 
   const liveTimer = useRef<number | null>(null);
   const settleTimer = useRef<number | null>(null);
+  // phase-10: in-flight request controller so rapid typing cancels the
+  // previous request before firing a new one.
+  const inflightController = useRef<AbortController | null>(null);
 
   useEffect(() => {
     if (liveTimer.current) window.clearTimeout(liveTimer.current);
@@ -52,6 +78,10 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
     if (value.trim().length < 3) {
       resetIdle();
       setSettling(false);
+      if (inflightController.current) {
+        inflightController.current.abort();
+        inflightController.current = null;
+      }
       return;
     }
 
@@ -62,25 +92,65 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
       setActivations(pred.activations as Record<string, number>);
     }, LIVE_DEBOUNCE_MS);
 
-    const controller = new AbortController();
     settleTimer.current = window.setTimeout(async () => {
-      // Try real TRIBE inference first; fall back to the local predictor.
-      const remote = await inferText(value, { signal: controller.signal });
+      // Abort any in-flight inference from a previous keystroke and
+      // start a new one.
+      if (inflightController.current) {
+        inflightController.current.abort();
+      }
+      const controller = new AbortController();
+      inflightController.current = controller;
+
       const local = fakePredict(value);
+      let remote: EncoderResult | null = null;
+      try {
+        remote = await predictWithFallback(value, locale, {
+          signal: controller.signal,
+        });
+      } catch (err) {
+        // predictWithFallback never throws under normal operation, but
+        // guard anyway so the experience continues to work.
+        console.debug("[mirror] predict failed, using fakePredict", err);
+      }
+
+      // If the request was aborted by a newer keystroke, do nothing.
+      if (controller.signal.aborted) return;
+
       const merged: Prediction = remote
-        ? { activations: remote.regions, features: local.features }
+        ? {
+            activations: remote.activations as Record<string, number>,
+            features: local.features,
+          }
         : local;
       setActivations(merged.activations as Record<string, number>);
       onPrediction(value, merged);
       setSettling(false);
-    }, 900);
+
+      // phase-10: update attribution chip with honesty.
+      if (remote && isRealTribe(remote.model_version)) {
+        setAttribution("tribe-live");
+      } else if (TRIBE_BACKEND_CONFIGURED) {
+        setAttribution("baseline-fallback");
+      } else {
+        setAttribution("baseline-only");
+      }
+
+      // Clear the controller if it's still the one we own (a later
+      // request may have replaced it).
+      if (inflightController.current === controller) {
+        inflightController.current = null;
+      }
+    }, SETTLE_DEBOUNCE_MS);
 
     return () => {
-      controller.abort();
       if (liveTimer.current) window.clearTimeout(liveTimer.current);
       if (settleTimer.current) window.clearTimeout(settleTimer.current);
+      if (inflightController.current) {
+        inflightController.current.abort();
+        inflightController.current = null;
+      }
     };
-  }, [value, setActivations, resetIdle, onPrediction]);
+  }, [value, setActivations, resetIdle, onPrediction, locale]);
 
   // Pre-fill on mount with initial (used for example clicks)
   useEffect(() => {
@@ -149,6 +219,14 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
         {settling ? t("predicting") : ""}
       </div>
       <MirrorLoadingMessage active={settling} />
+      {/*
+        phase-10: honest attribution chip. License CC-BY-NC-4.0 §3.a.1
+        requires retaining creator + paper + model-card + license URL
+        whenever the licensed material is shared. The chip surfaces all
+        four when TRIBE is live, and degrades honestly to "running on
+        baseline" otherwise.
+      */}
+      <AttributionChip state={attribution} />
     </motion.div>
   );
 }

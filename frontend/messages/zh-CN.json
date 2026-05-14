@@ -153,7 +153,17 @@
     "footerStudio": "The Brain Studio",
     "footerNote": "预测在本地模拟运行",
     "predicting": "正在预测…",
-    "charCounter": "{used} / {max}"
+    "charCounter": "{used} / {max}",
+    "attribution": {
+      "tribeLive": "由 TRIBE v2 预测 (Meta FAIR, d'Ascoli et al., 2026) — 模型卡 · 论文 · CC-BY-NC-4.0 · 仅文本输入，平均被试",
+      "tribeOffline": "正在运行基线模型 (语义代理) — TRIBE 引擎离线",
+      "baseline": "由嵌入基线模型 (BGE-small) 预测 — 此构建版本不支持 TRIBE 推理",
+      "modelCard": "模型卡",
+      "paper": "论文",
+      "license": "CC-BY-NC-4.0",
+      "statusLive": "TRIBE 引擎在线",
+      "statusOffline": "基线 (TRIBE 离线)"
+    }
   },
   "music": {
     "label": "神经音乐实验室 · 阶段 6",
