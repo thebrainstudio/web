@@ -180,13 +180,13 @@ export default function MirrorPage() {
       </ScrollScene>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footerStudio")}
         </Caption>
         <Caption uppercase aria-hidden className="text-bone-cream/40 mx-3">
           ·
         </Caption>
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footerNote")}
         </Caption>
       </footer>

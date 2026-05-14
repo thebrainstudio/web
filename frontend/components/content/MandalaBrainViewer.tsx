@@ -129,7 +129,7 @@ export default function MandalaBrainViewer() {
           />
         </div>
         <div className="md:col-span-6">
-          <Caption uppercase className="text-bone-cream/55">
+          <Caption uppercase className="text-bone-cream/70">
             {tradition} · {selected.date}
           </Caption>
           <Body className="text-bone-cream/85 mt-6">{description}</Body>
@@ -147,7 +147,7 @@ export default function MandalaBrainViewer() {
         <Caption uppercase className="text-brass">
           {t("regionsLabel")}
         </Caption>
-        <Body italic className="text-bone-cream/55 mt-2 max-w-[40rem]">
+        <Body italic className="text-bone-cream/70 mt-2 max-w-[40rem]">
           {t("regionsIntro")}
         </Body>
         <ul className="mt-8 space-y-4">

@@ -141,12 +141,12 @@ export default async function BridgesPage({
               className="border-bone-cream/10 border-t pt-12 first:border-t-0 first:pt-0"
             >
               <div className="flex flex-wrap items-baseline gap-4">
-                <Mono variant="label" className="text-bone-cream/40">
+                <Mono variant="label" className="text-bone-cream/65">
                   {String(sectionIdx + 1).padStart(2, "0")}
                 </Mono>
                 <BridgeStrengthBadge strength={meta.strength} />
                 {meta.subtitle && (
-                  <Caption className="text-bone-cream/55 italic">
+                  <Caption className="text-bone-cream/70 italic">
                     {meta.subtitle}
                   </Caption>
                 )}
@@ -219,7 +219,7 @@ export default async function BridgesPage({
             <Heading className="mt-6 font-[200]">
               {t("bibliographyHeading")}
             </Heading>
-            <Body italic className="text-bone-cream/55 mt-4 max-w-[36rem]">
+            <Body italic className="text-bone-cream/70 mt-4 max-w-[36rem]">
               {t("bibliographyIntro")}
             </Body>
             <ol className="mt-10 space-y-5">
@@ -233,14 +233,14 @@ export default async function BridgesPage({
                     </Mono>
                     <div>
                       <Caption className="text-bone-cream/80 block">
-                        {c.authors} <span className="text-bone-cream/55">({c.year})</span>
+                        {c.authors} <span className="text-bone-cream/70">({c.year})</span>
                       </Caption>
                       {c.doi ? (
                         <a
                           href={`https://doi.org/${c.doi}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-bone-cream/55 hover:text-brass transition-colors duration-150"
+                          className="text-bone-cream/70 hover:text-brass transition-colors duration-150"
                           data-hover
                         >
                           <Caption className="block italic">{c.title}</Caption>
@@ -248,10 +248,10 @@ export default async function BridgesPage({
                         </a>
                       ) : (
                         <>
-                          <Caption className="text-bone-cream/55 block italic">
+                          <Caption className="text-bone-cream/70 block italic">
                             {c.title}
                           </Caption>
-                          <Caption className="text-bone-cream/55 mt-0.5 block">
+                          <Caption className="text-bone-cream/70 mt-0.5 block">
                             {c.journal}
                           </Caption>
                         </>
@@ -266,7 +266,7 @@ export default async function BridgesPage({
       )}
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footerNote")}
         </Caption>
       </footer>

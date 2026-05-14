@@ -43,7 +43,7 @@ export default function CitationList() {
             <Body className="text-bone-cream/80">
               {c.authors} ({c.year}).{" "}
               <span className="italic">{c.title}</span>{" "}
-              <Caption className="text-bone-cream/55">{c.journal}.</Caption>
+              <Caption className="text-bone-cream/70">{c.journal}.</Caption>
             </Body>
             {c.doi && (
               <a

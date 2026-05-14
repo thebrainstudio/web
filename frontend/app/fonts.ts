@@ -13,40 +13,25 @@ import {
 /**
  * Multi-script font system.
  *
- * Latin (default — en, es, ca):
- *   --font-editorial   PP Editorial New (shimmed with Fraunces). Single
- *                      content typeface for display / heading / body /
- *                      caption. Variable axes: opsz, SOFT. Weights
- *                      200–500. Italic style requested in the same
- *                      family so we don't need a separate italic font.
+ * Universal three (always mounted on <html> — Latin + numeric + marginalia):
+ *   --font-editorial   Fraunces. Single content typeface for display /
+ *                      heading / body / caption.
  *   --font-mono        JetBrains Mono — numerical / technical only.
- *   --font-hand        Caveat — marginalia only (Hand component, 10
- *                      instance cap per page).
+ *   --font-hand        Caveat — marginalia only (Hand component).
  *
- * Thai (th):
- *   --font-thai        Noto Serif Thai — automatic glyph fallback in the
- *                      same paragraph as Latin content.
- *   --font-thai-hand   Sriracha — Caveat-equivalent for Thai (Caveat
- *                      has no Thai glyphs).
+ * Locale-specific fonts are only mounted on <html> for matching locales
+ * (audit-fix: Task 6). The CSS in globals.css's `html[lang="th"]`,
+ * `html[lang="ja"]`, `html[lang="zh-CN"]` blocks reads `var(--font-thai)`
+ * etc. — those vars only resolve when the corresponding font's variable
+ * className is on <html>, so non-matching locales never engage the
+ * @font-face declaration and the .woff2 file is never requested.
  *
- * Japanese (ja):
- *   --font-jp          Noto Serif JP — primary serif.
- *   --font-jp-hand     Yusei Magic — Caveat-equivalent for Japanese.
- *
- * Chinese Simplified (zh-CN):
- *   --font-sc          Noto Serif SC — primary serif.
- *   --font-sc-hand     Long Cang — brush-calligraphy approximation.
- *
- * All variables are declared on the <html> element. The active locale's
- * html[lang] block in globals.css selects which to read into --font-serif
- * / --font-hand, so a paragraph of mixed scripts renders each glyph in
- * the right font automatically.
- *
- * Loading note: every locale's font is in the page weight. For locales
- * we expect to grow into (CJK), this trades a small payload increase
- * for the ability to switch languages without a roundtrip.
+ *   th       → Noto Serif Thai (--font-thai)  + Sriracha (--font-thai-hand)
+ *   ja       → Noto Serif JP   (--font-jp)    + Yusei Magic (--font-jp-hand)
+ *   zh-CN    → Noto Serif SC   (--font-sc)    + Long Cang (--font-sc-hand)
  */
 
+// audit-fix: Task 6. Universal three keep preload: true.
 export const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
@@ -65,7 +50,7 @@ export const jetbrainsMono = JetBrains_Mono({
   display: "swap",
   variable: "--font-mono",
   weight: ["400", "500"],
-  preload: false,
+  preload: true,
 });
 
 export const caveat = Caveat({
@@ -73,9 +58,11 @@ export const caveat = Caveat({
   display: "swap",
   variable: "--font-hand-loaded",
   weight: ["400"],
-  preload: false,
+  preload: true,
 });
 
+// audit-fix: Task 6. Locale-specific fonts — preload: false, only mounted
+// when the active locale matches.
 export const notoSerifThai = Noto_Serif_Thai({
   subsets: ["thai"],
   display: "swap",
@@ -122,6 +109,56 @@ export const longCang = Long_Cang({
   preload: false,
 });
 
+/** Always-mounted font variable classNames. */
+const universalFontVariables = [
+  fraunces.variable,
+  jetbrainsMono.variable,
+  caveat.variable,
+].join(" ");
+
+/**
+ * Returns the font variable classNames to apply to <html> for a given
+ * locale: universal three + the script-specific fonts the locale needs.
+ *
+ * audit-fix: Task 6. The previous `fontVariables` constant always
+ * applied all 9 fonts to <html>, which caused the locale-specific
+ * @font-face declarations to be engaged by the CSS even on locales
+ * that didn't need them. Now non-matching locales don't get the
+ * className, so the `var(--font-thai)` (etc.) references in
+ * globals.css evaluate to undefined and the browser never fetches
+ * the corresponding .woff2.
+ */
+export function fontVariablesForLocale(locale: string): string {
+  switch (locale) {
+    case "th":
+      return [
+        universalFontVariables,
+        notoSerifThai.variable,
+        sriracha.variable,
+      ].join(" ");
+    case "ja":
+      return [
+        universalFontVariables,
+        notoSerifJP.variable,
+        yuseiMagic.variable,
+      ].join(" ");
+    case "zh-CN":
+      return [
+        universalFontVariables,
+        notoSerifSC.variable,
+        longCang.variable,
+      ].join(" ");
+    default:
+      // en, es, ca — Latin only.
+      return universalFontVariables;
+  }
+}
+
+/**
+ * Legacy: every variable. Kept exported for backwards compat in case
+ * other code references it, but the root layout now uses
+ * `fontVariablesForLocale(locale)`.
+ */
 export const fontVariables = [
   fraunces.variable,
   jetbrainsMono.variable,

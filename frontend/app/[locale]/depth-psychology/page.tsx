@@ -149,7 +149,7 @@ export default async function DepthPsychologyLanding({
                 className="group block"
                 data-hover
               >
-                <Mono variant="label" className="text-bone-cream/40 block">
+                <Mono variant="label" className="text-bone-cream/65 block">
                   {page.readMinutes} {t("minRead")}
                 </Mono>
                 <Heading
@@ -197,7 +197,7 @@ export default async function DepthPsychologyLanding({
                 className="group block"
                 data-hover
               >
-                <Mono variant="label" className="text-bone-cream/40 block">
+                <Mono variant="label" className="text-bone-cream/65 block">
                   {page.label}
                 </Mono>
                 <Heading
@@ -235,7 +235,7 @@ export default async function DepthPsychologyLanding({
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footerNote")}
         </Caption>
       </footer>

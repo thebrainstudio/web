@@ -44,7 +44,7 @@ export default function MirrorReveal({ topRegions }: Props) {
       <Caption uppercase className="text-brass">
         {tr(tMirror, "revealLabel", "What your writing reveals")}
       </Caption>
-      <Body italic className="text-bone-cream/55 mt-2 max-w-[34rem]">
+      <Body italic className="text-bone-cream/70 mt-2 max-w-[34rem]">
         {tr(tMirror, "revealIntro", "Predictions in this preview are simulated locally; real TRIBE inference comes in Phase 10.")}
       </Body>
 

@@ -75,7 +75,7 @@ export default async function FieldNotesIndex({
         <ol className="mt-20 space-y-14">
           {essays.map((e, i) => (
             <li key={e.slug}>
-              <div className="text-bone-cream/40">
+              <div className="text-bone-cream/65">
                 <Mono variant="label">0{i + 1}</Mono>
               </div>
               {e.shipped ? (
@@ -92,7 +92,7 @@ export default async function FieldNotesIndex({
                   </Heading>
                 </Link>
               ) : (
-                <Heading as="h2" className="mt-4 text-bone-cream/55">
+                <Heading as="h2" className="mt-4 text-bone-cream/70">
                   {e.title}
                 </Heading>
               )}

@@ -230,12 +230,12 @@ export default function SearchPalette() {
               className="max-h-[60vh] overflow-y-auto px-2 py-3"
             >
               {query.trim().length === 0 ? (
-                <Caption uppercase className="text-bone-cream/40 px-3 py-2 block tracking-[0.18em]">
+                <Caption uppercase className="text-bone-cream/65 px-3 py-2 block tracking-[0.18em]">
                   Suggestions
                 </Caption>
               ) : flat.length === 0 ? (
                 <div className="px-4 py-10 text-center">
-                  <Caption className="text-bone-cream/55 italic block">
+                  <Caption className="text-bone-cream/70 italic block">
                     Nothing matches that yet. Try a researcher's surname, a region
                     name, or a Jungian concept.
                   </Caption>
@@ -251,7 +251,7 @@ export default function SearchPalette() {
                     {query.trim().length > 0 && (
                       <Caption
                         uppercase
-                        className="text-bone-cream/40 px-3 py-1 block tracking-[0.18em]"
+                        className="text-bone-cream/65 px-3 py-1 block tracking-[0.18em]"
                       >
                         {KIND_LABEL[kind]}
                       </Caption>
@@ -276,7 +276,7 @@ export default function SearchPalette() {
                               <Mono
                                 variant="label"
                                 className={`shrink-0 ${
-                                  isActive ? "text-brass" : "text-bone-cream/40"
+                                  isActive ? "text-brass" : "text-bone-cream/65"
                                 }`}
                               >
                                 {KIND_LABEL[entry.kind].toUpperCase()}
@@ -286,14 +286,14 @@ export default function SearchPalette() {
                                   <span
                                     className={`truncate ${
                                       entry.inProgress
-                                        ? "text-bone-cream/55"
+                                        ? "text-bone-cream/70"
                                         : ""
                                     }`}
                                   >
                                     {entry.title}
                                   </span>
                                   {entry.inProgress && (
-                                    <Mono variant="label" className="text-bone-cream/40 shrink-0">
+                                    <Mono variant="label" className="text-bone-cream/65 shrink-0">
                                       Under review
                                     </Mono>
                                   )}

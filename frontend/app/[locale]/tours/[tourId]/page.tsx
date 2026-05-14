@@ -176,7 +176,7 @@ export default function TourPlayerPage({
               </Mono>
 
               {previousScene && (
-                <Body className="text-bone-cream/30 mt-6 max-w-[28rem]">
+                <Body className="text-bone-cream/60 mt-6 max-w-[28rem]">
                   {previousScene.narration}
                 </Body>
               )}
@@ -209,7 +209,7 @@ export default function TourPlayerPage({
                     </Caption>
                   </button>
                 ) : (
-                  <Caption className="text-bone-cream/55 italic">
+                  <Caption className="text-bone-cream/70 italic">
                     {t("ended")}
                   </Caption>
                 )}
@@ -217,7 +217,7 @@ export default function TourPlayerPage({
                   type="button"
                   onClick={restart}
                   data-hover
-                  className="text-bone-cream/55 hover:text-brass inline-flex items-center justify-center px-3 py-2 transition-colors duration-200"
+                  className="text-bone-cream/70 hover:text-brass inline-flex items-center justify-center px-3 py-2 transition-colors duration-200"
                 >
                   <Caption uppercase className="tracking-[0.22em]">
                     {t("restart")}

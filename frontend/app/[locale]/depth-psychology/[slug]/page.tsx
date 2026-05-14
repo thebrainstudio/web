@@ -112,7 +112,7 @@ export default async function DepthPsychologyPage({
           <Body italic className="text-bone-cream/70 mt-6 max-w-[40rem]">
             {entry.subtitle}
           </Body>
-          <Mono variant="label" className="text-bone-cream/40 mt-8 block">
+          <Mono variant="label" className="text-bone-cream/65 mt-8 block">
             {entry.wordCount.toLocaleString()} {t("words")} · {entry.readMinutes}{" "}
             {t("minRead")} · {entry.publishedAt}
           </Mono>
@@ -221,7 +221,7 @@ export default async function DepthPsychologyPage({
               <div className="border-bone-cream/10 border-t pt-6">
                 <Link
                   href="/depth-psychology"
-                  className="text-bone-cream/55 hover:text-brass border-bone-cream/15 hover:border-brass inline-flex items-center gap-2 border-b transition-colors duration-200"
+                  className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass inline-flex items-center gap-2 border-b transition-colors duration-200"
                 >
                   <Caption className="italic">{t("backToIndex")}</Caption>
                 </Link>
@@ -232,7 +232,7 @@ export default async function DepthPsychologyPage({
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footerNote")}
         </Caption>
       </footer>

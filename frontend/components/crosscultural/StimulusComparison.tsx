@@ -42,7 +42,7 @@ export default function StimulusComparison() {
     <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-10">
       {/* Pair selector */}
       <div className="md:col-span-12">
-        <Caption uppercase className="text-bone-cream/55">
+        <Caption uppercase className="text-bone-cream/70">
           Stimulus pair
         </Caption>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -80,7 +80,7 @@ export default function StimulusComparison() {
       >
         <Caption
           uppercase
-          className={focused === "english" ? "text-brass" : "text-bone-cream/55"}
+          className={focused === "english" ? "text-brass" : "text-bone-cream/70"}
         >
           English · TRIBE training distribution
         </Caption>
@@ -106,7 +106,7 @@ export default function StimulusComparison() {
       >
         <Caption
           uppercase
-          className={focused === "thai" ? "text-brass" : "text-bone-cream/55"}
+          className={focused === "thai" ? "text-brass" : "text-bone-cream/70"}
         >
           Thai · outside training distribution
         </Caption>
@@ -136,12 +136,12 @@ export default function StimulusComparison() {
                 / 100
               </Caption>
             </div>
-            <Body italic className="text-bone-cream/55 mt-4 max-w-[28rem]">
+            <Body italic className="text-bone-cream/70 mt-4 max-w-[28rem]">
               {pair.thaiGloss}
             </Body>
           </div>
           <div className="md:col-span-8">
-            <Caption uppercase className="text-bone-cream/55">
+            <Caption uppercase className="text-bone-cream/70">
               Top diverging regions
             </Caption>
             <ul className="mt-4 space-y-2">
@@ -163,7 +163,7 @@ export default function StimulusComparison() {
                       <Caption className="text-bone-cream/80">
                         {trReg(`${d.id}.displayName`, r.displayName)}
                       </Caption>{" "}
-                      <Caption className="text-bone-cream/40">
+                      <Caption className="text-bone-cream/65">
                         · {trReg(`${d.id}.anatomyName`, r.anatomyName)}
                       </Caption>
                     </span>

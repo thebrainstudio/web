@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { fontVariables } from "./fonts";
+import { getLocale } from "next-intl/server";
+import { fontVariablesForLocale } from "./fonts";
 import "./globals.css";
 import SmoothScroll from "@/components/motion/SmoothScroll";
 import BrainStage from "@/components/brain/BrainStage";
@@ -52,13 +53,22 @@ export const metadata: Metadata = {
   category: "experiment",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // audit-fix: lang attribute per locale. next-intl resolves the active
+  // locale from the request URL (set up by proxy.ts middleware) so SSR
+  // produces the correct <html lang> on first paint for screen readers
+  // and search engines, instead of falling back to "en" everywhere.
+  const locale = await getLocale();
+  // audit-fix: Task 6. Only mount the font variables the active locale
+  // actually needs, so non-matching scripts don't trigger their @font-face
+  // engagement.
+  const fonts = fontVariablesForLocale(locale);
   return (
-    <html lang="en" className={`${fontVariables} h-full`} suppressHydrationWarning>
+    <html lang={locale} className={`${fonts} h-full`} suppressHydrationWarning>
       <body className="text-bone-cream min-h-full antialiased">
         <SmoothScroll>
           {/* Persistent atmosphere paints first so the brain canvas

@@ -50,7 +50,7 @@ export default function BridgeStrengthBadge({
         </Mono>
       </span>
       {showDescription ? (
-        <Caption className="text-bone-cream/55 ml-3 italic">
+        <Caption className="text-bone-cream/70 ml-3 italic">
           {info.description}
         </Caption>
       ) : (

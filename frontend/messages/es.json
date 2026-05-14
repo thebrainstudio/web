@@ -151,7 +151,9 @@
     "examplesHeading": "Tres textos que nos sorprendieron",
     "openInAtlas": "Abrir en el atlas",
     "footerStudio": "The Brain Studio",
-    "footerNote": "Predicciones simuladas localmente"
+    "footerNote": "Predicciones simuladas localmente",
+    "predicting": "Prediciendo…",
+    "charCounter": "{used} / {max}"
   },
   "music": {
     "label": "Laboratorio de NeuroMúsica · Fase 6",

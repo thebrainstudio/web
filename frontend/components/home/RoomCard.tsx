@@ -165,7 +165,7 @@ export default function RoomCard({
         className="group relative block"
         data-hover
       >
-        <Mono variant="label" className="text-bone-cream/40 block">
+        <Mono variant="label" className="text-bone-cream/65 block">
           0{index + 1}
         </Mono>
         <Heading as="h3" className="mt-4 font-[200]">

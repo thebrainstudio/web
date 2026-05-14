@@ -55,7 +55,7 @@ export default async function Home({
             line3={t("hero.line3")}
             className="mt-10"
           />
-          <Caption uppercase as="p" className="text-bone-cream/55 mt-12">
+          <Caption uppercase as="p" className="text-bone-cream/70 mt-12">
             {t("scrollPrompt")}
           </Caption>
           <p
@@ -118,7 +118,7 @@ export default async function Home({
         </div>
       </ScrollScene>
 
-      {/* Shot 3 — Three rooms. Cool-cathedral glow (subtle, no position). */}
+      {/* Shot 3 — Six rooms grid. Cool-cathedral glow (subtle, no position). */}
       <ScrollScene
         {...shot3}
         className="relative flex min-h-[120vh] items-center px-6 md:px-10"
@@ -274,13 +274,13 @@ export default async function Home({
       </ScrollScene>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footer.built")}
         </Caption>
         <Caption uppercase className="text-bone-cream/40 mx-3" aria-hidden>
           ·
         </Caption>
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footer.encoder")}
         </Caption>
         <Caption uppercase className="text-bone-cream/40 mx-3" aria-hidden>
@@ -290,7 +290,7 @@ export default async function Home({
           href="/about"
           className="hover:text-bone-cream/80 transition-colors duration-200"
         >
-          <Caption uppercase className="text-bone-cream/40">
+          <Caption uppercase className="text-bone-cream/65">
             {t("footer.about")}
           </Caption>
         </Link>

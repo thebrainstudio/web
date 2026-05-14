@@ -82,7 +82,7 @@ export default function CompareMode() {
               : "md:border-r md:border-bone-cream/10"
           }`}
         >
-          <Caption uppercase className={focused === "left" ? "text-brass" : "text-bone-cream/55"}>
+          <Caption uppercase className={focused === "left" ? "text-brass" : "text-bone-cream/70"}>
             Left channel
           </Caption>
           <div className="mt-2">
@@ -105,7 +105,7 @@ export default function CompareMode() {
           transition={{ duration: 0.6, ease: easeCinematic, delay: 0.1 }}
           className="md:pl-10"
         >
-          <Caption uppercase className={focused === "right" ? "text-brass" : "text-bone-cream/55"}>
+          <Caption uppercase className={focused === "right" ? "text-brass" : "text-bone-cream/70"}>
             Right channel
           </Caption>
           <div className="mt-2">

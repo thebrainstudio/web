@@ -103,7 +103,7 @@ export default function AttributedImage({
       <figcaption>
         <Mono
           variant="label"
-          className="text-bone-cream/55 mt-3 block"
+          className="text-bone-cream/70 mt-3 block"
         >
           {prov.artist} · {prov.title} · {prov.date} · {prov.institution}
         </Mono>

@@ -1,7 +1,19 @@
 import { promises as fs } from "fs";
 import path from "path";
+import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { generateRoomMetadata } from "@/lib/seo";
+
+// audit-fix: Task 4. Per-page og:url + canonical + alternates.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return generateRoomMetadata({ locale, slug: "archetypes" });
+}
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import Mandala from "@/components/decoration/Mandala";
 import AttributedImage from "@/components/content/AttributedImage";
@@ -238,7 +250,7 @@ export default async function ArchetypesPage({
           <Body italic className="text-bone-cream/80 mt-10 text-lg leading-[1.6]">
             {t("mandalasItalic")}
           </Body>
-          <Mono variant="label" className="text-bone-cream/40 mt-14 block">
+          <Mono variant="label" className="text-bone-cream/65 mt-14 block">
             {t("mandalasMeta")}
           </Mono>
         </div>
@@ -310,7 +322,7 @@ export default async function ArchetypesPage({
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footer")}
         </Caption>
       </footer>

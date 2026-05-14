@@ -12,7 +12,30 @@ import {
   Hand,
   Heading,
 } from "@/components/typography/Typography";
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { generateRoomMetadata } from "@/lib/seo";
+
+// audit-fix: Task 4. Per-page og:url + canonical + alternates. About
+// isn't in home.rooms, so we pass an English fallback that's still
+// canonical for the en page; non-English locales get the same OG since
+// the SEO title is brand-level rather than per-locale here.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return generateRoomMetadata({
+    locale,
+    slug: "about",
+    fallback: {
+      title: "About · The Brain Studio",
+      description:
+        "Who built this, what TRIBE is and isn't, citations, and the editorial decisions that shape the rooms.",
+    },
+  });
+}
 
 /**
  * Phase 9 — About.
@@ -164,7 +187,7 @@ export default async function AboutPage({
           </ParallaxLayer>
 
           <ParallaxLayer speed={1.02}>
-            <Body italic className="text-bone-cream/55 mt-10">
+            <Body italic className="text-bone-cream/70 mt-10">
               {t("isnt.body4")}
             </Body>
           </ParallaxLayer>
@@ -274,14 +297,14 @@ export default async function AboutPage({
           </Heading>
 
           <div className="mt-12">
-            <Caption uppercase className="text-bone-cream/55">
+            <Caption uppercase className="text-bone-cream/70">
               {t("reading.neuroLabel")}
             </Caption>
             <ul className="mt-4 space-y-4">
               <li>
                 <Body className="text-bone-cream/85">
                   Solms, M. <em>The Hidden Spring.</em> 2021.
-                  <Body italic className="text-bone-cream/55 mt-1">
+                  <Body italic className="text-bone-cream/70 mt-1">
                     {t("reading.solmsDesc")}
                   </Body>
                 </Body>
@@ -289,7 +312,7 @@ export default async function AboutPage({
               <li>
                 <Body className="text-bone-cream/85">
                   Damasio, A. <em>The Feeling of What Happens.</em> 1999.
-                  <Body italic className="text-bone-cream/55 mt-1">
+                  <Body italic className="text-bone-cream/70 mt-1">
                     {t("reading.damasioDesc")}
                   </Body>
                 </Body>
@@ -297,7 +320,7 @@ export default async function AboutPage({
               <li>
                 <Body className="text-bone-cream/85">
                   Sacks, O. <em>The Man Who Mistook His Wife for a Hat.</em> 1985.
-                  <Body italic className="text-bone-cream/55 mt-1">
+                  <Body italic className="text-bone-cream/70 mt-1">
                     {t("reading.sacksDesc")}
                   </Body>
                 </Body>
@@ -305,7 +328,7 @@ export default async function AboutPage({
               <li>
                 <Body className="text-bone-cream/85">
                   Kandel, E. R. <em>In Search of Memory.</em> 2006.
-                  <Body italic className="text-bone-cream/55 mt-1">
+                  <Body italic className="text-bone-cream/70 mt-1">
                     {t("reading.kandelDesc")}
                   </Body>
                 </Body>
@@ -314,14 +337,14 @@ export default async function AboutPage({
           </div>
 
           <div className="mt-12">
-            <Caption uppercase className="text-bone-cream/55">
+            <Caption uppercase className="text-bone-cream/70">
               {t("reading.jungLabel")}
             </Caption>
             <ul className="mt-4 space-y-4">
               <li>
                 <Body className="text-bone-cream/85">
                   Jung, C. G. <em>Memories, Dreams, Reflections.</em> 1963.
-                  <Body italic className="text-bone-cream/55 mt-1">
+                  <Body italic className="text-bone-cream/70 mt-1">
                     {t("reading.mdrDesc")}
                   </Body>
                 </Body>
@@ -329,7 +352,7 @@ export default async function AboutPage({
               <li>
                 <Body className="text-bone-cream/85">
                   Jung, C. G. <em>The Archetypes and the Collective Unconscious.</em> CW 9i. 1959.
-                  <Body italic className="text-bone-cream/55 mt-1">
+                  <Body italic className="text-bone-cream/70 mt-1">
                     {t("reading.cw9Desc")}
                   </Body>
                 </Body>
@@ -338,14 +361,14 @@ export default async function AboutPage({
           </div>
 
           <div className="mt-12">
-            <Caption uppercase className="text-bone-cream/55">
+            <Caption uppercase className="text-bone-cream/70">
               {t("reading.contemporaryLabel")}
             </Caption>
             <ul className="mt-4 space-y-4">
               <li>
                 <Body className="text-bone-cream/85">
                   McGilchrist, I. <em>The Master and His Emissary.</em> 2009.
-                  <Body italic className="text-bone-cream/55 mt-1">
+                  <Body italic className="text-bone-cream/70 mt-1">
                     {t("reading.mcgilchristDesc")}
                   </Body>
                 </Body>
@@ -353,7 +376,7 @@ export default async function AboutPage({
               <li>
                 <Body className="text-bone-cream/85">
                   Seth, A. <em>Being You.</em> 2021.
-                  <Body italic className="text-bone-cream/55 mt-1">
+                  <Body italic className="text-bone-cream/70 mt-1">
                     {t("reading.sethDesc")}
                   </Body>
                 </Body>
@@ -387,7 +410,7 @@ export default async function AboutPage({
           </Caption>
           <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-4">
-              <Caption uppercase className="text-bone-cream/55">
+              <Caption uppercase className="text-bone-cream/70">
                 {t("credits.modelLabel")}
               </Caption>
               <Heading as="h3" className="mt-3 font-[200]">
@@ -398,7 +421,7 @@ export default async function AboutPage({
               </Body>
             </div>
             <div className="md:col-span-4">
-              <Caption uppercase className="text-bone-cream/55">
+              <Caption uppercase className="text-bone-cream/70">
                 {t("credits.builtLabel")}
               </Caption>
               <Heading as="h3" className="mt-3 font-[200]">
@@ -409,7 +432,7 @@ export default async function AboutPage({
               </Body>
             </div>
             <div className="md:col-span-4">
-              <Caption uppercase className="text-bone-cream/55">
+              <Caption uppercase className="text-bone-cream/70">
                 {t("credits.homeLabel")}
               </Caption>
               <Heading as="h3" className="mt-3 font-[200]">
@@ -467,7 +490,7 @@ export default async function AboutPage({
             ))}
           </ul>
 
-          <Body italic className="text-bone-cream/55 mt-12 max-w-[36rem]">
+          <Body italic className="text-bone-cream/70 mt-12 max-w-[36rem]">
             {t("howToUse.closing")}
           </Body>
         </div>
@@ -521,13 +544,13 @@ export default async function AboutPage({
         <div className="mx-auto max-w-[40rem] text-center">
           <Display italic>{t("closing.display")}</Display>
           <p className="mt-12">
-            <Hand className="text-bone-cream/55">{t("closing.hand")}</Hand>
+            <Hand className="text-bone-cream/70">{t("closing.hand")}</Hand>
           </p>
         </div>
       </ScrollScene>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footer.line")}
         </Caption>
       </footer>

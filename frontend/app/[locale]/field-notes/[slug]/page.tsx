@@ -107,7 +107,7 @@ export default function FieldNoteReader({
         <Body italic className="text-bone-cream/60 mt-6">
           {t(`${meta.key}.summary`)}
         </Body>
-        <Mono variant="label" className="text-bone-cream/40 mt-8 block">
+        <Mono variant="label" className="text-bone-cream/65 mt-8 block">
           {meta.wordCount.toLocaleString()} {tField("words")} · {meta.readMinutes} {tField("minRead")} ·{" "}
           {meta.publishedAt}
         </Mono>

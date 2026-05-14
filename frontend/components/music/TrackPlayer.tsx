@@ -63,13 +63,13 @@ export default function TrackPlayer({
 
   return (
     <div className="w-full">
-      <Caption uppercase className={primary ? "text-brass" : "text-bone-cream/55"}>
+      <Caption uppercase className={primary ? "text-brass" : "text-bone-cream/70"}>
         {era}
       </Caption>
       <Heading as="h3" className="mt-3 font-[200]">
         {track.title}
       </Heading>
-      <Caption className="text-bone-cream/55 mt-2 block">
+      <Caption className="text-bone-cream/70 mt-2 block">
         {track.attribution}
       </Caption>
       <Body italic className="text-bone-cream/65 mt-6 max-w-[34rem]">
@@ -88,7 +88,7 @@ export default function TrackPlayer({
       </div>
 
       {!track.src && (
-        <Caption className="text-bone-cream/40 mt-4 block">
+        <Caption className="text-bone-cream/65 mt-4 block">
           Silent preview · licensed audio comes in Phase 11
         </Caption>
       )}

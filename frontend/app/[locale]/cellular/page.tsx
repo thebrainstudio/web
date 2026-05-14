@@ -121,7 +121,7 @@ export default function CellularPage() {
           <Body className="text-bone-cream/70 mt-10 max-w-[36rem]">
             {t("intro")}
           </Body>
-          <Body italic className="text-bone-cream/55 mt-8 max-w-[34rem]">
+          <Body italic className="text-bone-cream/70 mt-8 max-w-[34rem]">
             {t("introItalic")}
           </Body>
         </div>
@@ -191,7 +191,7 @@ export default function CellularPage() {
             </Heading>
             {selected && (
               <>
-                <Caption className="text-bone-cream/55 mt-2 block">
+                <Caption className="text-bone-cream/70 mt-2 block">
                   {selected.species} · {selected.archive} {t("labSuffix")} ·{" "}
                   {Array.isArray(selected.neuromorpho_region)
                     ? selected.neuromorpho_region.join(", ")
@@ -316,7 +316,7 @@ export default function CellularPage() {
                 <Caption uppercase>{t("triggerButton")}</Caption>
               </button>
               <div className="flex items-center gap-3 text-bone-cream/60">
-                <Caption uppercase className="text-bone-cream/40">
+                <Caption uppercase className="text-bone-cream/65">
                   {t("speedLabel")}
                 </Caption>
                 {[0.25, 0.5, 1, 2].map((s) => (
@@ -327,7 +327,7 @@ export default function CellularPage() {
                     className={`rounded-sm px-2 py-1 transition-colors duration-200 ${
                       speed === s
                         ? "bg-brass text-navy-deep"
-                        : "text-bone-cream/55 hover:text-bone-cream"
+                        : "text-bone-cream/70 hover:text-bone-cream"
                     }`}
                   >
                     <Mono variant="label">{s}×</Mono>
@@ -369,7 +369,7 @@ export default function CellularPage() {
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footer")}
         </Caption>
       </footer>

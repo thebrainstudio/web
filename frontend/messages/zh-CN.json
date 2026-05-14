@@ -151,7 +151,9 @@
     "examplesHeading": "让我们意外的三段文字",
     "openInAtlas": "在图谱中打开",
     "footerStudio": "The Brain Studio",
-    "footerNote": "预测在本地模拟运行"
+    "footerNote": "预测在本地模拟运行",
+    "predicting": "正在预测…",
+    "charCounter": "{used} / {max}"
   },
   "music": {
     "label": "神经音乐实验室 · 阶段 6",

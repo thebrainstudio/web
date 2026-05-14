@@ -23,7 +23,7 @@ export default function UploadMode() {
           feeds them through the same timeline interpolation the Library
           tracks use.
         </Body>
-        <Body italic className="text-bone-cream/55 mt-6 max-w-[34rem]">
+        <Body italic className="text-bone-cream/70 mt-6 max-w-[34rem]">
           Until then, drag a file here and the page will respond as
           honestly as it can: by telling you what it doesn&apos;t yet do.
         </Body>
@@ -34,7 +34,7 @@ export default function UploadMode() {
           aria-disabled
           className="border-bone-cream/15 hover:border-bone-cream/30 flex h-72 items-center justify-center border border-dashed px-6 text-center transition-colors duration-300"
         >
-          <Body italic className="text-bone-cream/40">
+          <Body italic className="text-bone-cream/65">
             Drag & drop · Phase 11
           </Body>
         </div>

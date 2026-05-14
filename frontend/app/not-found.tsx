@@ -6,8 +6,14 @@ import {
 } from "@/components/typography/Typography";
 
 /**
- * 404. Same atmospheric chrome as the rest of the site — persistent brain
- * still mounted in the layout above.
+ * Root-level 404. audit-fix: Task 5. In practice proxy.ts redirects
+ * every URL into a locale prefix, so the locale-aware 404 at
+ * app/[locale]/not-found.tsx is the page users actually see. This
+ * file exists as a hard fallback for pathways that escape the proxy
+ * (e.g. direct requests for paths that shouldn't be routed).
+ *
+ * Kept intentionally minimal and locale-agnostic — no room list, just
+ * a way home. The locale 404 carries the editorial copy.
  */
 export default function NotFound() {
   return (
@@ -20,27 +26,17 @@ export default function NotFound() {
           We didn&apos;t learn that page.
         </Display>
         <Body className="text-bone-cream/65 mt-8">
-          The address you tried isn&apos;t one of the rooms we built. The
-          three that exist — Mirror, Music, Cross-Cultural — are linked
-          below.
+          That address isn&apos;t one of the rooms we built.
         </Body>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
-          {[
-            ["/mirror", "Brain Mirror"],
-            ["/music", "NeuroMusic Lab"],
-            ["/crosscultural", "Cross-Cultural Brain"],
-            ["/", "Home"],
-          ].map(([href, label]) => (
-            <Link
-              key={href}
-              href={href}
-              prefetch
-              data-hover
-              className="border-brass text-brass hover:bg-brass hover:text-navy-deep inline-flex items-center justify-center rounded-sm border px-5 py-2.5 transition-colors duration-300"
-            >
-              <Caption uppercase>{label}</Caption>
-            </Link>
-          ))}
+          <Link
+            href="/"
+            prefetch
+            data-hover
+            className="border-brass text-brass hover:bg-brass hover:text-navy-deep inline-flex items-center justify-center rounded-sm border px-5 py-2.5 transition-colors duration-300"
+          >
+            <Caption uppercase>Home</Caption>
+          </Link>
         </div>
       </div>
     </main>

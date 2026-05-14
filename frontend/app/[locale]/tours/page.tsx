@@ -64,7 +64,7 @@ export default async function ToursIndex({
       <section className="relative px-6 pb-32 pt-16 md:px-10 md:pb-40 md:pt-20">
         <div className="mx-auto max-w-[1100px]">
           {tours.length === 0 ? (
-            <Body italic className="text-bone-cream/55">
+            <Body italic className="text-bone-cream/70">
               {t("emptyState")}
             </Body>
           ) : (
@@ -83,7 +83,7 @@ export default async function ToursIndex({
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-4">
                       <div>
-                        <Mono variant="label" className="text-bone-cream/40 block">
+                        <Mono variant="label" className="text-bone-cream/65 block">
                           {t("tour")}
                         </Mono>
                         <Heading
@@ -130,7 +130,7 @@ export default async function ToursIndex({
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/40">
+        <Caption uppercase className="text-bone-cream/65">
           {t("footerNote")}
         </Caption>
       </footer>

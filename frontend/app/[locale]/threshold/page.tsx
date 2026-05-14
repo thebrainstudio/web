@@ -10,8 +10,20 @@ import {
   Heading,
   Mono,
 } from "@/components/typography/Typography";
+import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { generateRoomMetadata } from "@/lib/seo";
+
+// audit-fix: Task 4. Per-page og:url + canonical + alternates.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return generateRoomMetadata({ locale, slug: "threshold" });
+}
 
 /**
  * The Threshold — a contemplative essay room between the macro and the

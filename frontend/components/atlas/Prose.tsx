@@ -101,12 +101,12 @@ function CitationMarker({
               [{number}]
             </Mono>
             <Caption className="text-bone-cream/85 mt-1 block">
-              {citation.authors} <span className="text-bone-cream/55">({citation.year})</span>
+              {citation.authors} <span className="text-bone-cream/70">({citation.year})</span>
             </Caption>
             <Caption className="text-bone-cream/85 mt-1 block italic">
               {citation.title}
             </Caption>
-            <Caption className="text-bone-cream/55 mt-1 block">
+            <Caption className="text-bone-cream/70 mt-1 block">
               {citation.journal}
               {citation.doi ? ` · doi:${citation.doi}` : null}
             </Caption>

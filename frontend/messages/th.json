@@ -151,7 +151,9 @@
     "examplesHeading": "ข้อความสามชิ้นที่ทำให้เราประหลาดใจ",
     "openInAtlas": "เปิดในแอตลาส",
     "footerStudio": "The Brain Studio",
-    "footerNote": "คำทำนายจำลองภายในเครื่อง"
+    "footerNote": "คำทำนายจำลองภายในเครื่อง",
+    "predicting": "กำลังทำนาย…",
+    "charCounter": "{used} / {max}"
   },
   "music": {
     "label": "ห้องปฏิบัติการนิวโรมิวสิก · ระยะที่ 6",

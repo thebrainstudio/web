@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next";
 
 /**
- * Robots policy for crawlers. Allows all user agents to crawl every
- * route except the dev-only `/test-*` sandboxes; points crawlers at
- * the generated sitemap.
+ * Robots policy for crawlers. Allows everything; points at the sitemap.
+ *
+ * audit-fix: Task 9. The previous policy disallowed three /test-*
+ * sandbox routes that no longer exist (the test pages were deleted
+ * in this same change). Listing them was reconnaissance bait.
  */
 
 const BASE = "https://brain-studio-kappa.vercel.app";
@@ -14,7 +16,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/test-atmospherics", "/test-brain", "/test-scroll"],
       },
     ],
     sitemap: `${BASE}/sitemap.xml`,
