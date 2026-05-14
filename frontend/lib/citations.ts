@@ -758,6 +758,72 @@ export const citations: Record<string, Citation> = {
   // Panksepp's SEEKING system is also cited by the Faust room — the
   // entry already lives above under `panksepp-1998-affective-neuroscience`
   // (see depth-psychology / affective-neuroscience section).
+
+  // -----------------------------------------------------------------
+  // PR-G — citations for the v1.0 real-fMRI pipeline. The brain
+  // visualizations across every room (Atlas, Bridges, Faust, Dante,
+  // Music, Mandalas, Cross-Cultural) load precomputed activation
+  // maps from these data sources, projected onto the parcellation
+  // below.
+  // -----------------------------------------------------------------
+  "yarkoni-2011-neurosynth": {
+    id: "yarkoni-2011-neurosynth",
+    authors:
+      "Yarkoni, T., Poldrack, R. A., Nichols, T. E., Van Essen, D. C., & Wager, T. D.",
+    year: 2011,
+    title:
+      "Large-scale automated synthesis of human functional neuroimaging data.",
+    journal: "Nature Methods",
+    doi: "10.1038/nmeth.1635",
+  },
+  "glasser-2016-hcp-mmp": {
+    id: "glasser-2016-hcp-mmp",
+    authors:
+      "Glasser, M. F., Coalson, T. S., Robinson, E. C., Hacker, C. D., Harwell, J., Yacoub, E., et al.",
+    year: 2016,
+    title: "A multi-modal parcellation of human cerebral cortex.",
+    journal: "Nature",
+    doi: "10.1038/nature18933",
+  },
+  "van-essen-2013-hcp-overview": {
+    id: "van-essen-2013-hcp-overview",
+    authors:
+      "Van Essen, D. C., Smith, S. M., Barch, D. M., Behrens, T. E. J., Yacoub, E., & Ugurbil, K. (for the WU-Minn HCP Consortium)",
+    year: 2013,
+    title: "The WU-Minn Human Connectome Project: an overview.",
+    journal: "NeuroImage",
+    doi: "10.1016/j.neuroimage.2013.05.041",
+  },
+  "destrieux-2010-surface-atlas": {
+    id: "destrieux-2010-surface-atlas",
+    authors:
+      "Destrieux, C., Fischl, B., Dale, A., & Halgren, E.",
+    year: 2010,
+    title:
+      "Automatic parcellation of human cortical gyri and sulci using standard anatomical nomenclature.",
+    journal: "NeuroImage",
+    doi: "10.1016/j.neuroimage.2010.06.010",
+  },
+  "ji-2019-cab-np": {
+    id: "ji-2019-cab-np",
+    authors:
+      "Ji, J. L., Spronk, M., Kulkarni, K., Repovš, G., Anticevic, A., & Cole, M. W.",
+    year: 2019,
+    title:
+      "Mapping the human brain's cortical-subcortical functional network organization.",
+    journal: "NeuroImage",
+    doi: "10.1016/j.neuroimage.2018.10.006",
+  },
+  "lariviere-2021-enigma-toolbox": {
+    id: "lariviere-2021-enigma-toolbox",
+    authors:
+      "Larivière, S., Paquola, C., Park, B.-Y., Royer, J., Wang, Y., Benkarim, O., et al.",
+    year: 2021,
+    title:
+      "The ENIGMA Toolbox: multiscale neural contextualization of multisite neuroimaging datasets.",
+    journal: "Nature Methods",
+    doi: "10.1038/s41592-021-01186-4",
+  },
 };
 
 export function getCitation(id: string): Citation | undefined {

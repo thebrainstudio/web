@@ -1044,6 +1044,13 @@
     },
     "footer": {
       "line": "The Brain Studio · 2026"
+    },
+    "pipeline": {
+      "label": "Lo que realmente se ejecuta",
+      "heading": "Neurosynth + HCP-MMP-360 debajo, un pequeño backend para el Espejo.",
+      "body": "Detrás de cada visualización cerebral en este sitio hay un mapa de activación precalculado de Neurosynth — un metaanálisis de más de 14 000 estudios de fMRI publicados — proyectado sobre la parcelación HCP-MMP-360 (Glasser 2016). Cada sala carga su propia composición: la página del Atlas para el IFG lee el mapa del término 'language'; el pasaje de Fausto sobre el pacto lee una mezcla ponderada de 'reward anticipation', 'value', 'reward' y 'self referential'. La composición se nombra bajo cada visualización del sitio, de modo que lo que produjo el patrón nunca queda oculto.",
+      "mirrorBody": "La sala del Espejo Cerebral es la excepción. Su predictor se ejecuta en un backend serverless de capa gratuita (fastembed BGE-small) que toma el texto del visitante y devuelve un perfil de activación de 20 regiones por similitud de incrustación contra una caché de anclas regionales. Cuando el backend duerme, el Espejo vuelve a una predicción en caché. Ambas rutas alimentan la misma visualización HCP-MMP-360 por debajo.",
+      "disclaimer": "Estas no son mediciones de ningún cerebro individual. Son lo que la investigación publicada y los metaanálisis indican sobre el cerebro promedio bajo el estímulo correspondiente. El modelo no es la mente."
     }
   },
   "notFound": {

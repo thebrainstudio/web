@@ -148,6 +148,44 @@ export default async function AboutPage({
         </div>
       </ScrollScene>
 
+      {/* PR-G — What actually runs (Neurosynth + HCP-MMP + small
+          Mirror backend). Sits between the TRIBE-as-model-class
+          explanation (about.what) and the limits (about.isnt) so
+          a reader gets a clean handoff from "the model class" to
+          "the concrete pipeline" to "what neither pipeline nor
+          model class can do." */}
+      <ScrollScene
+        id="about-pipeline"
+        brain={{
+          position: [0.9, 0.1, 0],
+          scale: 0.5,
+          rotation: [0, -0.32, 0],
+          activations: {},
+        }}
+        lighting="cinematic"
+        className="relative px-6 py-24 md:px-10 md:py-32"
+      >
+        <div className="mx-auto max-w-[44rem]">
+          <Caption uppercase className="text-brass">
+            {t("pipeline.label")}
+          </Caption>
+          <Heading className="mt-6">
+            {t("pipeline.heading")}
+          </Heading>
+          <ParallaxLayer speed={0.95}>
+            <Body className="text-bone-cream/75 mt-10">
+              {t("pipeline.body")}
+            </Body>
+          </ParallaxLayer>
+          <Body className="text-bone-cream/70 mt-8">
+            {t("pipeline.mirrorBody")}
+          </Body>
+          <Body italic className="text-bone-cream/55 mt-10">
+            {t("pipeline.disclaimer")}
+          </Body>
+        </div>
+      </ScrollScene>
+
       {/* 3 — What it doesn't do */}
       <ScrollScene
         id="about-isnt"

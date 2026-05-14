@@ -1044,6 +1044,13 @@
     },
     "footer": {
       "line": "The Brain Studio · 2026"
+    },
+    "pipeline": {
+      "label": "Què s'executa realment",
+      "heading": "Neurosynth + HCP-MMP-360 a sota, un petit backend per al Mirall.",
+      "body": "Darrere de cada visualització cerebral d'aquest lloc hi ha un mapa d'activació precalculat de Neurosynth — una metaanàlisi de més de 14 000 estudis d'fMRI publicats — projectat sobre la parcel·lació HCP-MMP-360 (Glasser 2016). Cada sala carrega la seva pròpia composició: la pàgina de l'Atles per a l'IFG llegeix el mapa del terme 'language'; el passatge de Faust sobre el pacte llegeix una barreja ponderada de 'reward anticipation', 'value', 'reward' i 'self referential'. La composició s'anomena sota cada visualització del lloc, perquè allò que va produir el patró mai resti ocult.",
+      "mirrorBody": "La sala del Mirall Cerebral és l'excepció. El seu predictor s'executa en un backend serverless de capa gratuïta (fastembed BGE-small) que pren el text del visitant i retorna un perfil d'activació de 20 regions per similitud d'incrustació contra una memòria cau d'àncores regionals. Quan el backend dorm, el Mirall recau en una predicció en memòria cau. Les dues vies alimenten la mateixa visualització HCP-MMP-360 a sota.",
+      "disclaimer": "Aquestes no són mesures de cap cervell individual. Són el que la recerca publicada i les metaanàlisis indiquen sobre el cervell mitjà sota l'estímul corresponent. El model no és la ment."
     }
   },
   "notFound": {

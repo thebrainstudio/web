@@ -1044,6 +1044,13 @@
     },
     "footer": {
       "line": "The Brain Studio · 2026"
+    },
+    "pipeline": {
+      "label": "实际在运行的内容",
+      "heading": "下面是 Neurosynth + HCP-MMP-360，上面有一个为镜室服务的小后端。",
+      "body": "本站每个脑可视化背后都是来自 Neurosynth 的预先计算的激活图 —— 一项对 14,000 多项已发表 fMRI 研究的元分析 —— 投射到 HCP-MMP-360 分区（Glasser 2016）。每个房间加载各自的组合：图谱页的 IFG 读取 'language' 项的图；浮士德赌约的段落读取 'reward anticipation'、'value'、'reward' 与 'self referential' 的加权组合。每幅脑图下方都会写明组合内容，正在看的图样的成因从不被隐藏。",
+      "mirrorBody": "脑镜房间是例外。它的预测器运行在一个免费层无服务后端（fastembed BGE-small）上：它接收访客文本，并通过与区域锚点缓存的嵌入相似度返回一个 20 区激活轮廓。后端休眠时，镜室会回退到缓存的预测。两条路径在下层都驱动同一个 HCP-MMP-360 可视化。",
+      "disclaimer": "这些并不是任何个体脑部的测量。它们是已发表研究与元分析所揭示的、平均脑在相关刺激下的反应。模型不是心智。"
     }
   },
   "notFound": {

@@ -1044,6 +1044,13 @@
     },
     "footer": {
       "line": "The Brain Studio · 2026"
+    },
+    "pipeline": {
+      "label": "What actually runs",
+      "heading": "Neurosynth + HCP-MMP-360 underneath, a small backend for Mirror.",
+      "body": "Behind every brain visualization on this site sits a precomputed activation map from Neurosynth — a meta-analysis of more than 14,000 published fMRI studies — projected onto the HCP-MMP-360 parcellation (Glasser 2016). Each room loads its own composition: the Atlas page for IFG reads the 'language' term map; the Faust passage on the wager reads a weighted blend of 'reward anticipation', 'value', 'reward', and 'self referential'. The composition is named under every brain visualization on the site, so what drove the pattern you're looking at is never hidden.",
+      "mirrorBody": "The Brain Mirror room is the exception. Its predictor runs on a free-tier serverless backend (fastembed BGE-small) that takes the visitor's text and returns a 20-region activation profile via embedding similarity against a region-anchor cache. When the backend is asleep, the Mirror falls back to a cached prediction. Both paths feed the same HCP-MMP-360 visualization underneath.",
+      "disclaimer": "These are not measurements of any individual brain. They are what published research and meta-analysis indicate about the average brain under the relevant stimulus. The model is not the mind."
     }
   },
   "notFound": {
