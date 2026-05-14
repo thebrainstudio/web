@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { fontVariablesForLocale } from "./fonts";
 import "./globals.css";
 import SmoothScroll from "@/components/motion/SmoothScroll";
@@ -82,6 +84,10 @@ export default async function RootLayout({
           <DeferredClient />
           <FilmGrain />
         </SmoothScroll>
+        {/* Vercel Analytics + Speed Insights — minimal, privacy-aware,
+            captures page views + Core Web Vitals. No cookies, no PII. */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

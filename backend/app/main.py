@@ -150,10 +150,30 @@ def get_embedding() -> EmbeddingBaselineEngine | None:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Probe engines at startup so /healthz can answer truthfully."""
+    """
+    Probe engines at startup so /healthz can answer truthfully.
+
+    Phase C.2: if TRIBE_PRELOAD=1 (or env not set and engine is real),
+    fire a synthetic prediction at boot so Llama-3.2-3B + the TRIBE
+    checkpoint are warm in VRAM before the first real request. Cuts
+    first-request latency from ~60 s (Llama cold-load) to ~300 ms.
+    """
     logger.info("brain_studio backend starting")
     get_tribe()
     get_embedding()
+
+    preload = os.environ.get("TRIBE_PRELOAD", "1") not in ("0", "false", "no")
+    tribe = _tribe_predictor
+    if preload and tribe is not None and tribe.engine == "real":
+        try:
+            logger.info("preloading TRIBE+Llama into VRAM (synthetic predict)")
+            tribe.predict(
+                "Preloading the model so the first user request is fast."
+            )
+            logger.info("preload complete; engine warm")
+        except Exception:  # noqa: BLE001 — keep boot resilient
+            logger.exception("preload failed; falling back to lazy load")
+
     yield
     logger.info("brain_studio backend stopping")
 
