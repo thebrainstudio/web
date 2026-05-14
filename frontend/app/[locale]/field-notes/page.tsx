@@ -7,6 +7,7 @@ import {
   Heading,
   Mono,
 } from "@/components/typography/Typography";
+import ReadingTime from "@/components/typography/ReadingTime";
 import { essayHippocampus } from "@/content/field-notes/hippocampus";
 import { essayWhatBrainKnows } from "@/content/field-notes/what-the-brain-knows";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -99,11 +100,18 @@ export default async function FieldNotesIndex({
               <Body italic className="text-bone-cream/65 mt-3 max-w-[36rem]">
                 {e.summary}
               </Body>
-              <div className="mt-4">
-                <Mono variant="label" className="text-bone-cream/45">
-                  {e.wordCount.toLocaleString()} {t("words")} · {e.readMinutes} {t("minRead")} ·{" "}
-                  {e.publishedAt}
-                </Mono>
+              <div className="mt-4 text-bone-cream/45">
+                {/* PR 5: shared <ReadingTime kind="meta" /> render.
+                    Reads `reading.words` / `reading.minutesShort`
+                    from the shared namespace instead of the local
+                    `fieldNotes` keys, so the chip is consistent
+                    everywhere it appears on the site. */}
+                <ReadingTime
+                  kind="meta"
+                  wordCount={e.wordCount}
+                  minutes={e.readMinutes}
+                  publishedAt={e.publishedAt}
+                />
               </div>
               {/* PR 1 / 4b: the duplicate <Mono>{t("forthcoming")}</Mono>
                   that used to sit here is removed. `e.publishedAt`

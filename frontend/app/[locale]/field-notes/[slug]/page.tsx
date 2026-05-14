@@ -12,8 +12,8 @@ import {
   Display,
   Hand,
   Heading,
-  Mono,
 } from "@/components/typography/Typography";
+import ReadingTime from "@/components/typography/ReadingTime";
 import { essayHippocampus } from "@/content/field-notes/hippocampus";
 import { essayWhatBrainKnows } from "@/content/field-notes/what-the-brain-knows";
 
@@ -107,10 +107,15 @@ export default function FieldNoteReader({
         <Body italic className="text-bone-cream/60 mt-6">
           {t(`${meta.key}.summary`)}
         </Body>
-        <Mono variant="label" className="text-bone-cream/65 mt-8 block">
-          {meta.wordCount.toLocaleString()} {tField("words")} · {meta.readMinutes} {tField("minRead")} ·{" "}
-          {meta.publishedAt}
-        </Mono>
+        <div className="text-bone-cream/65 mt-8 block">
+          {/* PR 5: shared ReadingTime component. */}
+          <ReadingTime
+            kind="meta"
+            wordCount={meta.wordCount}
+            minutes={meta.readMinutes}
+            publishedAt={meta.publishedAt}
+          />
+        </div>
 
         <div className="mt-14 space-y-6">
           {paragraphs.map((p, i) => (

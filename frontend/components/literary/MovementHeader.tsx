@@ -1,8 +1,8 @@
 import {
   Caption,
   Display,
-  Mono,
 } from "@/components/typography/Typography";
+import ReadingTime from "@/components/typography/ReadingTime";
 
 /**
  * Section header for one of the five movements in a literary room.
@@ -13,6 +13,10 @@ import {
  * registers the site holds, plus the image. This component renders
  * the brass roman numeral, the movement title in italic Display
  * typography, and a small reading-time chip.
+ *
+ * PR 5: the chip used to read a hardcoded "N min" — now it routes
+ * through ReadingTime kind="movement" so the "min" suffix
+ * translates with the rest of the reading-time vocabulary.
  */
 export default function MovementHeader({
   number,
@@ -36,9 +40,13 @@ export default function MovementHeader({
           {label} {number}
         </Caption>
         <span aria-hidden className="bg-bone-cream/15 h-px flex-1" />
-        <Mono variant="label" className="text-bone-cream/45 tracking-[0.18em]">
-          {readingMinutes} min
-        </Mono>
+        <span className="text-bone-cream/45 tracking-[0.18em]">
+          <ReadingTime
+            kind="movement"
+            numberLabel=""
+            minutes={readingMinutes}
+          />
+        </span>
       </div>
       <Display italic as="h2" className="mt-6 max-w-[36rem] !text-[2.6rem] !leading-[1.1]">
         {title}

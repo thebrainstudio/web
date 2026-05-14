@@ -7,6 +7,7 @@ import {
   Heading,
   Mono,
 } from "@/components/typography/Typography";
+import ReadingTime from "@/components/typography/ReadingTime";
 import { Link } from "@/i18n/navigation";
 import { depthPsychologyPagesForLocale } from "@/content/depth-psychology";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -149,9 +150,12 @@ export default async function DepthPsychologyLanding({
                 className="group block"
                 data-hover
               >
-                <Mono variant="label" className="text-bone-cream/65 block">
-                  {page.readMinutes} {t("minRead")}
-                </Mono>
+                {/* PR 5: shared ReadingTime essay variant. */}
+                <ReadingTime
+                  kind="essay"
+                  minutes={page.readMinutes}
+                  className="text-bone-cream/65 block"
+                />
                 <Heading
                   as="h3"
                   className="mt-3 font-[200] group-hover:text-brass transition-colors duration-200"

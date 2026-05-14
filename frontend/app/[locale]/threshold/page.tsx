@@ -10,6 +10,7 @@ import {
   Heading,
   Mono,
 } from "@/components/typography/Typography";
+import ReadingTime from "@/components/typography/ReadingTime";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -96,9 +97,18 @@ export default async function ThresholdPage({
           <ParallaxLayer speed={0.95}>
             <Body italic className="text-bone-cream/60 mt-10">{t("m1.italic")}</Body>
           </ParallaxLayer>
-          <Mono variant="label" className="text-bone-cream/35 mt-12 block">
-            {t("m1.meta")}
-          </Mono>
+          {/* PR 5: ReadingTime kind="movement". The meta string used
+              to read "Movement one · ~290 words · 2 min read" — the
+              word count came from an early draft and never updated
+              as the prose moved. Now: label-only string + numeric
+              minutes hardcoded per movement here. */}
+          <div className="text-bone-cream/35 mt-12 block">
+            <ReadingTime
+              kind="movement"
+              numberLabel={t("m1.meta")}
+              minutes={2}
+            />
+          </div>
         </div>
       </ScrollScene>
 
@@ -123,9 +133,13 @@ export default async function ThresholdPage({
           <Body className="text-bone-cream/85 mt-6">{t("m2.body3")}</Body>
           <Body className="text-bone-cream/85 mt-6">{t("m2.body4")}</Body>
           <Body italic className="text-bone-cream/80 mt-8">{t("m2.italic")}</Body>
-          <Mono variant="label" className="text-bone-cream/35 mt-12 block">
-            {t("m2.meta")}
-          </Mono>
+          <div className="text-bone-cream/35 mt-12 block">
+            <ReadingTime
+              kind="movement"
+              numberLabel={t("m2.meta")}
+              minutes={3}
+            />
+          </div>
         </div>
       </ScrollScene>
 
@@ -151,9 +165,13 @@ export default async function ThresholdPage({
           <Body italic className="text-bone-cream/85 mt-8 text-lg leading-[1.6]">
             {t("m3.italic")}
           </Body>
-          <Mono variant="label" className="text-bone-cream/35 mt-12 block">
-            {t("m3.meta")}
-          </Mono>
+          <div className="text-bone-cream/35 mt-12 block">
+            <ReadingTime
+              kind="movement"
+              numberLabel={t("m3.meta")}
+              minutes={2}
+            />
+          </div>
         </div>
       </ScrollScene>
 

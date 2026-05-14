@@ -773,7 +773,7 @@
       "body2": "もっと近づいたとき、実際に手にしているのは別の対象です。TRIBE が生み出す皮質表面の予測と、NeuroMorpho が保管する単一細胞の再構成は、ひとつの探究の段階ではありません。別々の探究です。面白い仕事は継ぎ目に起こります — 偽の連続性の中ではなく。",
       "body3": "心の言語のあいだでも同じです。神経科学は、領野とネットワークと神経伝達物質とミリ秒の時間スケールを語ります。深層心理学は、無意識、影、個性化、否認された部分を数十年かけて統合する遅い仕事を語ります。互いにズームインし合うわけではない。両者を強引にズームし合わせたくなる気持ちは分かります — 説明の枠が一つで済めば、二つよりずっと楽です。ですが、より楽な枠が、より正直な枠とは限らない。",
       "italic": "二つの言語を手にすることは、総合の失敗ではありません。ある種の問いが、それを語るどんな一つの言語よりも大きい、という認識です。",
-      "meta": "第一楽章 · 約290語 · 2分で読める"
+      "meta": "第一楽章"
     },
     "m2": {
       "heading": "第二楽章 — 無意識とは何か、二つの言語で。",
@@ -782,7 +782,7 @@
       "body3": "二つの枠が触れ合う場所:いずれも、意識は小さな部分だと同意します。いずれも、何かより深いものが大半の仕事をしていると同意します。そしてそれを無視することは、本人にも、周りの人にも、誤った自己理解の上で結ばれる関係や決定にも、予測可能な種類の害をもたらすと同意します。",
       "body4": "二つが分岐する場所:ユングの無意識は、神経科学が主張しない方向と構造を持ちます。自己(Self)、元型、心の象徴的な生 — これらは現象学的な観察であって、神経の事実ではありません。神経科学はそれらを支持していませんし、支持していると言える正直な手はありません。それらは、内的経験の感じられる形が問題になるレジスタに住んでいます — その仕組みではなく。",
       "italic": "両方の言語が真実です。どちらも十分ではありません。面白い仕事は、もう一度、継ぎ目に起こります。",
-      "meta": "第二楽章 · 約440語 · 3分で読める"
+      "meta": "第二楽章"
     },
     "m3": {
       "heading": "第三楽章 — なぜ両方の言語を。",
@@ -790,7 +790,7 @@
       "body2": "深層心理学は意味について厳密で、仕組みについて弱い。それは一世紀にわたる丹念な現象学を持っています — 人々が夢、症状、転移、何かに動かされたり止められたり呼びかけられたりする感覚について、実際に何を報告するかへの注意深い目です。細胞のレベルで何がそれを起こしているかを、いつも知っているわけではありません。けれど、その内側で生きるとはどういうことかは知っています。",
       "body3": "両者を手にするサイトは、どちらか一方ではできないことをしています。心という問いを、それを語るどの語彙よりも大きく保つこと。感じられる経験を機械に押し潰すことを拒み、機械を比喩に溶かすことを拒む。同じ一人が、同じ瞬間に、次の言葉を予測している皮質表面でありつつ、午前3時にある特定の一文がなぜまだ痛いのかと問う者でもある、と認めること。",
       "italic": "あなたはあなたの脳ではありません。あなたはあなたの無意識でもありません。あなたは、そのどちらかと自らに問いかけるそれです。 そして第三の言語 — 文学的言語 — が他の二つにはまったくできないことを行っているところでは、本サイトはそれをも保持する。",
-      "meta": "第三楽章 · 約310語 · 2分で読める"
+      "meta": "第三楽章"
     },
     "closing": {
       "hand": "— 閾値の終わりに",
@@ -1206,5 +1206,10 @@
       "p2": "What Blake saw and chose to render was the prosody. The Whirlwind of Lovers does not show Paolo and Francesca as figures; it shows the wind that carries them, in a single sweeping line that doubles back on itself with the same forward-and-back motion the terza rima has on the page. What Blake chose to leave unrenderable is the conversation. Francesca's speech in Canto V is the most famous monologue in the Inferno, and Blake gives her no mouth. The image is what happens after the words have been said and the wind has them again.",
       "p3": "The image, in this room's argument, is the fourth register. The brain encoding model receives the words. The depth-psychological reading interprets the figures. The language work hears the terza rima. Blake's watercolour offers the wind as something a body has actually felt. Four registers, one poem, more remaining."
     }
+  },
+  "reading": {
+    "words": "語",
+    "minutesShort": "分",
+    "minRead": "分で読了"
   }
 }

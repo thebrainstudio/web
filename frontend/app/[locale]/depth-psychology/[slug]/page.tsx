@@ -6,8 +6,8 @@ import {
   Caption,
   Display,
   Heading,
-  Mono,
 } from "@/components/typography/Typography";
+import ReadingTime from "@/components/typography/ReadingTime";
 import {
   depthPsychologyPages,
   depthPsychologyPageBySlugAndLocale,
@@ -112,10 +112,15 @@ export default async function DepthPsychologyPage({
           <Body italic className="text-bone-cream/70 mt-6 max-w-[40rem]">
             {entry.subtitle}
           </Body>
-          <Mono variant="label" className="text-bone-cream/65 mt-8 block">
-            {entry.wordCount.toLocaleString()} {t("words")} · {entry.readMinutes}{" "}
-            {t("minRead")} · {entry.publishedAt}
-          </Mono>
+          <div className="text-bone-cream/65 mt-8 block">
+            {/* PR 5: shared ReadingTime meta variant. */}
+            <ReadingTime
+              kind="meta"
+              wordCount={entry.wordCount}
+              minutes={entry.readMinutes}
+              publishedAt={entry.publishedAt}
+            />
+          </div>
         </div>
       </section>
 

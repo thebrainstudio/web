@@ -773,7 +773,7 @@
       "body2": "El que realment tens, quan mires més de prop, és un objecte diferent. La predicció de superfície cortical que produeix TRIBE i la reconstrucció de cèl·lula única que guarda NeuroMorpho no són etapes d'una mateixa indagació. Són indagacions diferents. La feina interessant passa a les costures, no en la falsa continuïtat.",
       "body3": "El mateix passa entre les llengües de la ment. La neurociència parla de regions i xarxes i neurotransmissors i escales de mil·lisegons. La psicologia profunda parla de l'inconscient, de l'ombra, de la individuació, del treball lent d'integrar parts desconegudes al llarg de dècades. Tampoc fan zoom l'una a l'altra. La temptació de forçar-les a fer-ho és comprensible: un sol marc explicatiu és més fàcil de portar que dos. Però el marc més fàcil no és el més honest.",
       "italic": "Sostenir dues llengües no és un fracàs de la síntesi. És el reconeixement que algunes preguntes són més grans que qualsevol llengua per a elles.",
-      "meta": "Moviment u · ~290 paraules · 2 min de lectura"
+      "meta": "Moviment u"
     },
     "m2": {
       "heading": "Moviment dos — què és l'inconscient, en dues llengües.",
@@ -782,7 +782,7 @@
       "body3": "On els dos marcs es toquen: tots dos coincideixen que la consciència és la part petita. Tots dos coincideixen que alguna cosa més profunda fa la major part del treball, i que ignorar-ho produeix danys previsibles — a la persona, als qui l'envolten, a les relacions i decisions que es prenen a partir d'un autoconeixement que no ho és.",
       "body4": "On divergeixen: l'inconscient de Jung té direcció i estructura que la neurociència no reclama. El Si Mateix, els arquetips, la vida simbòlica de la psique — són observacions fenomenològiques, no fets neurals. La neurociència no els ha avalat, i no hi ha cap maniobra honesta que digui que sí. Viuen en un registre on el que importa és la forma sentida de l'experiència interior, no el seu mecanisme.",
       "italic": "Totes dues llengües són veritables. Cap no és suficient. La feina interessant, una altra vegada, passa a les costures.",
-      "meta": "Moviment dos · ~440 paraules · 3 min de lectura"
+      "meta": "Moviment dos"
     },
     "m3": {
       "heading": "Moviment tres — per què les dues llengües.",
@@ -790,7 +790,7 @@
       "body2": "La psicologia profunda és rigorosa amb el significat i feble amb el mecanisme. Té un segle de fenomenologia atenta — atenció acurada al que la gent realment explica sobre somnis, símptomes, transferències, la sensació de ser mogut o aturat o interpel·lat per alguna cosa. No sempre sap què fa que això passi a nivell de cèl·lules. Sap, però, què és viure-hi a dins.",
       "body3": "Un lloc que sosté totes dues està fent allò que cap pot fer tota sola. Està deixant que la pregunta per la ment sigui més gran que qualsevol vocabulari per a ella. Està rebutjant col·lapsar l'experiència sentida en maquinària, i rebutjant dissoldre la maquinària en metàfora. Està reconeixent que la mateixa persona és, alhora, una superfície cortical predint la pròxima paraula i algú que es pregunta, a les 3 de la matinada, per què una frase concreta encara fa mal.",
       "italic": "No ets el teu cervell. No ets el teu inconscient. Ets allò que es pregunta quin dels dos és. I allà on un tercer llenguatge — el literari — està fent allò que els altres dos no poden fer en absolut, el lloc també ho sosté.",
-      "meta": "Moviment tres · ~310 paraules · 2 min de lectura"
+      "meta": "Moviment tres"
     },
     "closing": {
       "hand": "— fi del llindar",
@@ -1206,5 +1206,10 @@
       "p2": "What Blake saw and chose to render was the prosody. The Whirlwind of Lovers does not show Paolo and Francesca as figures; it shows the wind that carries them, in a single sweeping line that doubles back on itself with the same forward-and-back motion the terza rima has on the page. What Blake chose to leave unrenderable is the conversation. Francesca's speech in Canto V is the most famous monologue in the Inferno, and Blake gives her no mouth. The image is what happens after the words have been said and the wind has them again.",
       "p3": "The image, in this room's argument, is the fourth register. The brain encoding model receives the words. The depth-psychological reading interprets the figures. The language work hears the terza rima. Blake's watercolour offers the wind as something a body has actually felt. Four registers, one poem, more remaining."
     }
+  },
+  "reading": {
+    "words": "paraules",
+    "minutesShort": "min",
+    "minRead": "min de lectura"
   }
 }

@@ -773,7 +773,7 @@
       "body2": "你靠得更近时，其实拥有的是一种不同的对象。TRIBE 产出的皮层表面预测，与 NeuroMorpho 保管的单细胞重建，并不是同一次探究的两个阶段。它们是不同的探究。有趣的工作发生在缝隙处，而非那种伪造的连续性中。",
       "body3": "心智的语言之间也是如此。神经科学谈论区域、网络、神经递质和毫秒级的时间尺度。深度心理学谈论无意识、阴影、个性化、把那些被否认的部分用数十年慢慢整合在一起。两者也不会相互放大。想要强行让它们相互放大的诱惑可以理解：一个解释框架比两个更好过日子。但更好过日子的框架，未必是更诚实的那个。",
       "italic": "同时持守两种语言，并不是综合的失败。它是承认有些问题大于任何一种用来谈论它们的语言。",
-      "meta": "第一乐章 · 约 290 词 · 阅读约 2 分钟"
+      "meta": "第一乐章"
     },
     "m2": {
       "heading": "第二乐章——无意识是什么，用两种语言说。",
@@ -782,7 +782,7 @@
       "body3": "两个框架接触之处：双方都同意意识是那小小的部分。双方都同意，是更深的东西在做大部分工作；忽略它会带来可预测的种种伤害——对人本身，对身边的人，对那些基于「不算自知」的自知所做出的关系与决定。",
       "body4": "两者分歧之处：荣格的无意识具有神经科学并不声称的方向与结构。自性（Self）、原型、心灵的象征生活——这些是现象学的观察，而非神经事实。神经科学没有为之背书，也没有任何诚实的论证方式可以说它背书过了。它们活在另一种语域里——在那里，重要的是内在经验被感受到的形状，而非其机制。",
       "italic": "两种语言都为真。哪一种也不够。有趣的工作，再一次，发生在缝隙处。",
-      "meta": "第二乐章 · 约 440 词 · 阅读约 3 分钟"
+      "meta": "第二乐章"
     },
     "m3": {
       "heading": "第三乐章——为什么是两种语言。",
@@ -790,7 +790,7 @@
       "body2": "深度心理学在意义上严谨，在机制上薄弱。它有一个世纪之久的、细致的现象学——对人们关于梦、症状、移情、被某物打动、被阻止或被点名的那种感觉所实际报告的内容，保持仔细的注意。它并不总是知道这些事情在细胞层面上是被什么造成的。但它知道在那里面生活是什么样子。",
       "body3": "同时持守两者的网站，做的是任何一方单独都做不到的事。它让心智之问大于任何一种谈论它的词汇。它拒绝把被感受到的经验压扁为机器，也拒绝把机器溶解为隐喻。它承认同一个人，在同一时刻，既是一个正在预测下一个词的皮层表面，又是凌晨三点醒来、追问为什么某句话仍然让自己疼的那一个。",
       "italic": "你不是你的大脑。你也不是你的无意识。你是那个能够追问自己究竟是哪一个的那一者。 而在第三种语言 —— 文学的语言 —— 正在做另外两者完全做不到的事情之处，本站亦将其承载。",
-      "meta": "第三乐章 · 约 310 词 · 阅读约 2 分钟"
+      "meta": "第三乐章"
     },
     "closing": {
       "hand": "—— 阈值至此结束",
@@ -1206,5 +1206,10 @@
       "p2": "What Blake saw and chose to render was the prosody. The Whirlwind of Lovers does not show Paolo and Francesca as figures; it shows the wind that carries them, in a single sweeping line that doubles back on itself with the same forward-and-back motion the terza rima has on the page. What Blake chose to leave unrenderable is the conversation. Francesca's speech in Canto V is the most famous monologue in the Inferno, and Blake gives her no mouth. The image is what happens after the words have been said and the wind has them again.",
       "p3": "The image, in this room's argument, is the fourth register. The brain encoding model receives the words. The depth-psychological reading interprets the figures. The language work hears the terza rima. Blake's watercolour offers the wind as something a body has actually felt. Four registers, one poem, more remaining."
     }
+  },
+  "reading": {
+    "words": "字",
+    "minutesShort": "分钟",
+    "minRead": "分钟阅读"
   }
 }
