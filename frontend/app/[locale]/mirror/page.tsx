@@ -9,6 +9,9 @@ import MirrorReveal from "@/components/mirror/MirrorReveal";
 import MirrorCaption from "@/components/mirror/MirrorCaption";
 import MirrorInspector from "@/components/mirror/MirrorInspector";
 import BrainViews from "@/components/brain/BrainViews";
+import PinnedPredictionCard, {
+  type PinnedPrediction,
+} from "@/components/mirror/PinnedPredictionCard";
 import SavedExampleCard from "@/components/mirror/SavedExampleCard";
 import SaveInsightButton from "@/components/mirror/SaveInsightButton";
 import {
@@ -41,6 +44,8 @@ export default function MirrorPage() {
     text: string;
     prediction: Prediction;
   } | null>(null);
+  // Move 4 — pinned prediction (session-scoped, no backend).
+  const [pinned, setPinned] = useState<PinnedPrediction | null>(null);
 
   const onPrediction = useCallback((text: string, prediction: Prediction) => {
     setLatest({ text, prediction });
@@ -49,6 +54,27 @@ export default function MirrorPage() {
   const top = latest ? topRegions(latest.prediction.activations, 3) : [];
   const topFirst = top[0];
   const hasResult = top.length > 0;
+
+  // Pin the current prediction. The pinned card is session-scoped —
+  // never written to localStorage; clears on reload.
+  const pinCurrent = useCallback(() => {
+    if (!latest) return;
+    setPinned({
+      text: latest.text,
+      activations: latest.prediction.activations,
+      topRegions: top,
+    });
+  }, [latest, top]);
+  const clearPin = useCallback(() => setPinned(null), []);
+
+  // Compare-mode "current" snapshot, only used by the card.
+  const currentPredictionForCard: PinnedPrediction | null = latest
+    ? {
+        text: latest.text,
+        activations: latest.prediction.activations,
+        topRegions: top,
+      }
+    : null;
 
   return (
     <>
@@ -146,6 +172,19 @@ export default function MirrorPage() {
               <MirrorReveal topRegions={top} />
               <div className="mt-16 flex flex-wrap items-center gap-4 md:mt-20">
                 <SaveInsightButton text={latest?.text ?? ""} topRegion={topFirst} />
+                {/* Move 4 — Pin this prediction. Session-scoped; clears
+                    on reload. When pinned, the next typed prediction
+                    auto-enters compare mode against the pin. */}
+                <button
+                  type="button"
+                  onClick={pinCurrent}
+                  data-hover
+                  className="border-brass text-brass hover:bg-brass hover:text-navy-deep inline-flex items-center justify-center rounded-sm border px-4 py-2 font-editorial text-caption uppercase tracking-[0.18em] transition-colors duration-300"
+                >
+                  {pinned && pinned.text === latest?.text
+                    ? "Pinned"
+                    : "Pin this prediction"}
+                </button>
                 <Caption uppercase className="text-bone-cream/45">
                   {t("exportLabel")}
                 </Caption>
@@ -262,6 +301,17 @@ export default function MirrorPage() {
           {t("footerNote")}
         </Caption>
       </footer>
+
+      {/* Move 4 — pinned prediction card. Fixed bottom-left when
+          present; compares current vs pinned automatically once the
+          user keeps typing past the pin point. */}
+      {pinned && (
+        <PinnedPredictionCard
+          pinned={pinned}
+          current={currentPredictionForCard}
+          onClear={clearPin}
+        />
+      )}
     </>
   );
 }
