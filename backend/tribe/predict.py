@@ -13,7 +13,11 @@ import torch
 
 from .model import TribeBrainEncoder, load_tribe_brain_encoder
 from .text_features import TextFeatureExtractor
-from .region_mapping import project_to_20_regions
+# Phase 10: switched from the old approximate vertex-range mapping in
+# `region_mapping.py` to the principled Destrieux 2009 surface-atlas
+# mapping in `region_mapping_destrieux.py`. The old file is kept on
+# disk for reference but no longer imported anywhere.
+from .region_mapping_destrieux import project_to_20_regions
 
 
 class RealTribeEngine:
