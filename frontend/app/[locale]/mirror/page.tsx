@@ -52,11 +52,17 @@ export default function MirrorPage() {
 
   return (
     <>
-      {/* Shot 1 — entry: brain upper-third, input rises */}
+      {/* Shot 1 — entry: brain upper-third, input rises.
+          Y was 0.9 which pushed the brain center above the visible
+          viewport and only let a thin slice bleed in below the page
+          header — the user couldn't actually see what the brain looks
+          like. 0.42 keeps the brain in the upper portion of the page
+          (visually framing the editorial title + textarea below) while
+          showing the full top of both hemispheres. */}
       <ScrollScene
         id="mirror-entry"
         brain={{
-          position: [0, 0.9, 0],
+          position: [0, 0.42, 0],
           scale: 0.78,
           rotation: [0, 0.18, 0],
           activations: {},

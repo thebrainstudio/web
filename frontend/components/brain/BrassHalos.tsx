@@ -1,10 +1,14 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { regions, type RegionId } from "@/lib/regions";
 import { useBrainStageStore } from "@/store/useBrainStageStore";
+import {
+  getCachedRegionCentroids,
+  getRegionCentroids,
+} from "@/lib/brain/regionCentroids";
 
 /**
  * Brass halos for the top-N most-active regions.
@@ -31,9 +35,11 @@ import { useBrainStageStore } from "@/store/useBrainStageStore";
 const HALO_COUNT = 3;
 // Soft brass (#c9a961 with linear-light → sRGB shift).
 const HALO_COLOR = new THREE.Color("#c9a961");
-// Sprite size in world units. The brain's bounding radius is ~1, so
-// 0.34 reads as a "small but visible" aura.
-const HALO_SIZE = 0.36;
+// Sprite size in mesh-local units. Centroids live in the actual
+// fsaverage5 mesh's local space (roughly ±1 from origin after GLB
+// normalization). 0.22 reads as a soft halo on the cortical surface
+// without occluding the underlying activation colour.
+const HALO_SIZE = 0.22;
 // Activation threshold below which a region never gets a halo, even
 // if it's nominally in the top N. Keeps the halos honest about what
 // "active" means.
@@ -82,6 +88,28 @@ export default function BrassHalos({
   count = HALO_COUNT,
 }: { threshold?: number; count?: number } = {}) {
   const targetActivations = useBrainStageStore((s) => s.targetActivations);
+
+  // Region centroids in mesh-local space (computed from the actual
+  // fsaverage5 GLB). Loaded once and cached at module level; null
+  // until the mesh arrives. Without these the halos would float at
+  // stylized atlas-nav coordinates that don't match the rendered mesh.
+  const [centroids, setCentroids] = useState<Map<RegionId, THREE.Vector3> | null>(
+    () => getCachedRegionCentroids(),
+  );
+  useEffect(() => {
+    if (centroids) return;
+    let cancelled = false;
+    getRegionCentroids()
+      .then((map) => {
+        if (!cancelled) setCentroids(map);
+      })
+      .catch((err) => {
+        console.warn("[BrassHalos] failed to compute centroids", err);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [centroids]);
 
   const texture = useMemo(makeHaloTexture, []);
   const material = useMemo(
@@ -192,20 +220,31 @@ export default function BrassHalos({
       m.opacity = slot.opacity;
       const sp = spriteRefs.current[i];
       if (sp) {
-        sp.visible = true;
-        const region = regions.find((r) => r.id === slot.regionId);
-        if (region) {
-          sp.position.set(
-            region.position[0],
-            region.position[1],
-            region.position[2],
-          );
-          // Subtle pulse — the halo breathes 4% in scale at 0.7 Hz.
+        // Centroids come from the actual fsaverage5 mesh — anchored
+        // where each region's vertices live, NOT the stylized atlas-nav
+        // coordinates from `lib/regions.ts`. Until centroids load we
+        // keep the halo hidden rather than placing it at (0,0,0) and
+        // looking broken.
+        const centroid = centroids?.get(slot.regionId) ?? null;
+        if (centroid) {
+          sp.visible = true;
+          sp.position.copy(centroid);
+          // Lift the sprite a hair along its centroid's outward normal
+          // (away from brain origin) so it sits on the cortical surface
+          // rather than inside the mesh. Magnitude is in mesh-local
+          // units; tuned to be visible without floating off.
+          const radius = centroid.length() || 1;
+          const lift = 0.02 * radius; // ~2% outward
+          sp.position.addScaledVector(centroid, lift / radius);
+
+          // Subtle pulse — halo breathes 4 % in scale at 0.7 Hz.
           // Anchored to slot index so the three halos pulse out of
           // phase with one another.
           const t = performance.now() / 1000;
           const pulse = 1 + 0.04 * Math.sin(t * 0.7 * 2 * Math.PI + i * 1.5);
           sp.scale.set(HALO_SIZE * pulse, HALO_SIZE * pulse, 1);
+        } else {
+          sp.visible = false;
         }
       }
     }
