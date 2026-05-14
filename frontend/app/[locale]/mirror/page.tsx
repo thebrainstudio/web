@@ -3,9 +3,6 @@
 import { useCallback, useState } from "react";
 import { useTranslations } from "next-intl";
 import ScrollScene from "@/components/motion/ScrollScene";
-import PinnedSequence, {
-  PinnedStep,
-} from "@/components/motion/PinnedSequence";
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import MirrorInput from "@/components/mirror/MirrorInput";
 import MirrorReveal from "@/components/mirror/MirrorReveal";
@@ -118,7 +115,13 @@ export default function MirrorPage() {
         </div>
       </ScrollScene>
 
-      {/* Shot 2 — pinned essay */}
+      {/* Shot 2 — essay. Was a 300vh pinned 3-step sequence; readers
+          reported feeling "stuck" because three short paragraphs
+          demanded three full screen-scrolls. Now a stacked vertical
+          layout: each step takes its natural height (~half a viewport)
+          and scrolls naturally past the camera, while the brain stays
+          left-anchored throughout the section. Total scroll length
+          for the section drops from ~300vh to ~150vh. */}
       <ScrollScene
         id="mirror-essay"
         brain={{
@@ -128,43 +131,39 @@ export default function MirrorPage() {
           activations: signaturePatterns.mirror,
         }}
         lighting="warm"
-        className="relative grid min-h-[120vh] grid-cols-1 px-6 md:grid-cols-12 md:px-10"
+        className="relative grid grid-cols-1 px-6 py-24 md:grid-cols-12 md:gap-x-10 md:px-10 md:py-32"
       >
         <div aria-hidden className="md:col-span-5" />
         <div className="md:col-span-7">
-          <PinnedSequence steps={3}>
-            <PinnedStep>
-              <div className="max-w-[34rem]">
-                <Caption uppercase className="text-brass">
-                  {t("step1.label")}
-                </Caption>
-                <Heading className="mt-6">{t("step1.heading")}</Heading>
-                <Body className="text-bone-cream/70 mt-6">{t("step1.body")}</Body>
-              </div>
-            </PinnedStep>
-            <PinnedStep>
-              <div className="max-w-[34rem]">
-                <Caption uppercase className="text-brass">
-                  {t("step2.label")}
-                </Caption>
-                <Heading italic className="mt-6">{t("step2.heading")}</Heading>
-                <Body className="text-bone-cream/70 mt-6">{t("step2.body")}</Body>
-              </div>
-            </PinnedStep>
-            <PinnedStep>
-              <div className="max-w-[34rem]">
-                <Caption uppercase className="text-brass">
-                  {t("step3.label")}
-                </Caption>
-                <Heading className="mt-6">{t("step3.heading")}</Heading>
-                <Body italic className="text-bone-cream/70 mt-6">{t("step3.body")}</Body>
-              </div>
-            </PinnedStep>
-          </PinnedSequence>
+          <div className="space-y-24 md:space-y-28">
+            <article className="max-w-[34rem]">
+              <Caption uppercase className="text-brass">
+                {t("step1.label")}
+              </Caption>
+              <Heading className="mt-6">{t("step1.heading")}</Heading>
+              <Body className="text-bone-cream/70 mt-6">{t("step1.body")}</Body>
+            </article>
+            <article className="max-w-[34rem]">
+              <Caption uppercase className="text-brass">
+                {t("step2.label")}
+              </Caption>
+              <Heading italic className="mt-6">{t("step2.heading")}</Heading>
+              <Body className="text-bone-cream/70 mt-6">{t("step2.body")}</Body>
+            </article>
+            <article className="max-w-[34rem]">
+              <Caption uppercase className="text-brass">
+                {t("step3.label")}
+              </Caption>
+              <Heading className="mt-6">{t("step3.heading")}</Heading>
+              <Body italic className="text-bone-cream/70 mt-6">{t("step3.body")}</Body>
+            </article>
+          </div>
         </div>
       </ScrollScene>
 
-      {/* Shot 3 — curated examples */}
+      {/* Shot 3 — curated examples. Padding tightened from py-48 to
+          py-24 — the essay above now flows naturally into the examples
+          rather than parking the user in dead space between sections. */}
       <ScrollScene
         id="mirror-examples"
         brain={{
@@ -174,7 +173,7 @@ export default function MirrorPage() {
           activations: {},
         }}
         lighting="cinematic"
-        className="relative px-6 py-32 md:px-10 md:py-48"
+        className="relative px-6 py-20 md:px-10 md:py-28"
       >
         <div className="mx-auto max-w-[1080px]">
           <Caption uppercase className="text-brass">

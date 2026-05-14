@@ -14,19 +14,30 @@ import { motion, AnimatePresence } from "framer-motion";
 import { easeCinematic } from "@/lib/animations";
 
 type PinnedSequenceProps = {
-  /** Number of pinned steps. Each step is one screen-height of scroll. */
+  /** Number of pinned steps. */
   steps: number;
+  /**
+   * How much vertical scroll (in viewport-heights) each step consumes.
+   * Default 0.7 = roughly 2/3 of a screen height per step. The old
+   * default was 1.0 which felt sticky — readers reported feeling
+   * "stuck" on the essay section because three steps demanded three
+   * full screen-scrolls. 0.7 stays long enough to read a short step
+   * without straining wrists.
+   */
+  stepDuration?: number;
   children: ReactNode;
   className?: string;
 };
 
 /**
- * Pins a section for `steps × 100vh` of scroll and reveals each PinnedStep
- * child in turn as scroll progresses. Reduced motion bypasses the pin and
- * crossfades the steps as the section scrolls naturally.
+ * Pins a section for `steps × stepDuration × 100vh` of scroll and
+ * reveals each PinnedStep child in turn as scroll progresses. Reduced
+ * motion bypasses the pin and crossfades the steps as the section
+ * scrolls naturally.
  */
 export default function PinnedSequence({
   steps,
+  stepDuration = 0.7,
   children,
   className,
 }: PinnedSequenceProps) {
@@ -52,7 +63,7 @@ export default function PinnedSequence({
       trigger: ref.current,
       pin: innerRef.current,
       start: "top top",
-      end: () => `+=${window.innerHeight * steps}`,
+      end: () => `+=${window.innerHeight * steps * stepDuration}`,
       scrub: true,
       onUpdate: (self) => setProgress(self.progress),
     });
@@ -60,7 +71,7 @@ export default function PinnedSequence({
     return () => {
       trigger.kill();
     };
-  }, [steps, prefersReduced]);
+  }, [steps, stepDuration, prefersReduced]);
 
   // Reduced motion: passive crossfade based on which step's window we're in.
   useEffect(() => {
@@ -96,7 +107,7 @@ export default function PinnedSequence({
       ref={ref}
       className={className}
       style={{
-        height: prefersReduced ? "auto" : `${steps * 100}vh`,
+        height: prefersReduced ? "auto" : `${steps * stepDuration * 100}vh`,
       }}
     >
       <div
