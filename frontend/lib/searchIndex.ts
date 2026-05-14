@@ -197,6 +197,50 @@ const roomEntries: SearchEntry[] = [
       "active imagination",
     ],
   },
+  // PR 11: Faust + Dante + /map added to the Cmd-K palette so the
+  // literary rooms and the site map are reachable from anywhere.
+  {
+    id: "room:faust",
+    kind: "room",
+    title: "Faust",
+    subtitle: "Goethe's pact, read against prediction error",
+    href: "/faust",
+    keywords: [
+      "faust",
+      "goethe",
+      "literature",
+      "prediction error",
+      "berridge",
+      "panksepp",
+      "wanting",
+      "moment",
+    ],
+  },
+  {
+    id: "room:dante",
+    kind: "room",
+    title: "Dante",
+    subtitle: "The Commedia as DMN architecture",
+    href: "/dante",
+    keywords: [
+      "dante",
+      "commedia",
+      "inferno",
+      "purgatorio",
+      "paradiso",
+      "default-mode network",
+      "moral attention",
+      "literature",
+    ],
+  },
+  {
+    id: "room:map",
+    kind: "room",
+    title: "Site Map",
+    subtitle: "Rooms, regions, long-form — cross-referenced",
+    href: "/map",
+    keywords: ["map", "sitemap", "index", "catalogue", "cross-reference"],
+  },
 ];
 
 function buildTractEntries(): SearchEntry[] {
