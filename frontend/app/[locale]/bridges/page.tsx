@@ -1,6 +1,8 @@
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import BridgeStrengthBadge from "@/components/bridges/BridgeStrengthBadge";
 import BridgesNetwork from "@/components/bridges/BridgesNetwork";
+import BridgesActivationScroller from "@/components/brain/BridgesActivationScroller";
+import ProvenanceFooter from "@/components/brain/ProvenanceFooter";
 import Prose from "@/components/atlas/Prose";
 import {
   Body,
@@ -15,6 +17,8 @@ import { BRIDGE_SECTIONS, BRIDGE_STRENGTHS } from "@/lib/bridges";
 import { bridgeSectionContentForLocale } from "@/content/bridges";
 import { citationsForSection } from "@/lib/atlas";
 import { citations } from "@/lib/citations";
+import { loadBridgeActivationServer } from "@/lib/loadActivationsServer";
+import type { ParcelActivationFile } from "@/lib/loadActivations";
 
 /**
  * The Bridges page — the synthesizing index between the site's
@@ -68,8 +72,27 @@ export default async function BridgesPage({
     }
   }
 
+  // PR-B: load every bridge section's precomputed Neurosynth-derived
+  // parcel activation at SSR time. The client-side scroller picks
+  // the visible section and pushes its map into the persistent
+  // brain store as the reader scrolls down the page.
+  const activationFiles: Record<string, ParcelActivationFile | null> = {};
+  for (const meta of BRIDGE_SECTIONS) {
+    activationFiles[meta.id] = loadBridgeActivationServer(meta.id);
+  }
+  // Pick a representative file for the hero provenance footer —
+  // dmn-and-self-system is the page's canonical anchor.
+  const heroProvenance =
+    activationFiles["dmn-and-self-system"] ??
+    Object.values(activationFiles).find((f) => f != null) ??
+    null;
+
   return (
     <>
+      {/* PR-B: scroll-driven activation driver. Pushes the most-
+          visible bridge section's parcel map into the brain
+          store. */}
+      <BridgesActivationScroller activationFiles={activationFiles} />
       {/* Breadcrumb */}
       <section className="relative px-6 pt-36 md:px-10 md:pt-44">
         <div className="mx-auto max-w-[1100px]">
@@ -123,6 +146,17 @@ export default async function BridgesPage({
               ))}
             </div>
           </div>
+
+          {/* PR-B: provenance footer for the hero. The brain
+              visualization starts on the canonical DMN section
+              and shifts per-section as the reader scrolls; this
+              footer carries the methodology + citation for the
+              opening frame. */}
+          {heroProvenance && (
+            <div className="mt-12 max-w-[44rem]">
+              <ProvenanceFooter file={heroProvenance} />
+            </div>
+          )}
         </div>
       </section>
 
@@ -138,6 +172,7 @@ export default async function BridgesPage({
             <article
               key={meta.id}
               id={meta.id}
+              data-bridge-section={meta.id}
               className="border-bone-cream/10 border-t pt-12 first:border-t-0 first:pt-0"
             >
               <div className="flex flex-wrap items-baseline gap-4">
