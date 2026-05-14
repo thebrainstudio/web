@@ -11,6 +11,7 @@ import {
 import AttributedImage from "@/components/content/AttributedImage";
 import { mandalas, type Mandala } from "@/content/archetypes/mandalas";
 import { regionById } from "@/lib/regions";
+import { loadMandalaActivation } from "@/lib/loadActivations";
 
 /**
  * "Looking at a mandala" interactive.
@@ -32,8 +33,15 @@ export default function MandalaBrainViewer() {
   const tRegions = useTranslations("regions");
   const [selectedId, setSelectedId] = useState<string>(mandalas[0].id);
   const setActivations = useBrainStageStore((s) => s.setActivations);
+  const setParcelActivations = useBrainStageStore(
+    (s) => s.setParcelActivations,
+  );
   const resetIdle = useBrainStageStore((s) => s.resetIdle);
   const setTransform = useBrainStageStore((s) => s.setTransform);
+  // PR-D: per-mandala cache of precomputed Neurosynth parcel maps.
+  const [parcelCache, setParcelCache] = useState<
+    Record<string, Record<string, number>>
+  >({});
 
   const selected = mandalas.find((m) => m.id === selectedId)!;
   const tradition = (() => {
@@ -71,6 +79,27 @@ export default function MandalaBrainViewer() {
       resetIdle();
     };
   }, [selected, setActivations, resetIdle, setTransform]);
+
+  // PR-D: load the real Neurosynth-derived parcel map for the
+  // selected mandala (contemplative-attention composite) and push
+  // to the persistent brain. The 20-region `selected.activation`
+  // above stays as the editorial layer that drives the side-panel
+  // "top regions" listing.
+  useEffect(() => {
+    if (parcelCache[selected.id]) {
+      setParcelActivations(parcelCache[selected.id]);
+      return;
+    }
+    let cancelled = false;
+    loadMandalaActivation(selected.id).then((file) => {
+      if (cancelled || !file) return;
+      setParcelCache((prev) => ({ ...prev, [selected.id]: file.parcel_activations }));
+      setParcelActivations(file.parcel_activations);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [selected, parcelCache, setParcelActivations]);
 
   const topRegions = Object.entries(selected.activation)
     .map(([id, v]) => ({ id, v: v ?? 0 }))

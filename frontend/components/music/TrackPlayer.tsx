@@ -9,6 +9,7 @@ import {
   Heading,
 } from "@/components/typography/Typography";
 import { sampleTimeline, type MusicTrack } from "@/lib/musicTracks";
+import { loadMusicActivation } from "@/lib/loadActivations";
 import Scrubber from "./Scrubber";
 
 type Props = {
@@ -33,7 +34,26 @@ export default function TrackPlayer({
   const [time, setTime] = useState(0);
   const [playing, setPlaying] = useState(false);
   const setActivations = useBrainStageStore((s) => s.setActivations);
+  const setParcelActivations = useBrainStageStore(
+    (s) => s.setParcelActivations,
+  );
   const resetIdle = useBrainStageStore((s) => s.resetIdle);
+
+  // PR-D: load this track's precomputed Neurosynth parcel map once
+  // the player mounts (or when the track changes). The persistent
+  // brain renders the real meta-analytic activation underneath the
+  // 20-region per-frame timeline that drives the editorial diff.
+  useEffect(() => {
+    if (!driveBrain) return;
+    let cancelled = false;
+    loadMusicActivation(track.id).then((file) => {
+      if (cancelled || !file) return;
+      setParcelActivations(file.parcel_activations);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [track.id, driveBrain, setParcelActivations]);
   const era = (() => { try { return t(`tracks.${track.id}.era`); } catch { return track.era; } })();
   const framing = (() => { try { return t(`tracks.${track.id}.framing`); } catch { return track.framing; } })();
 

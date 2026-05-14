@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useBrainStageStore } from "@/store/useBrainStageStore";
@@ -13,7 +13,16 @@ import {
 import { regionById } from "@/lib/regions";
 import { easeCinematic, staggerLoose } from "@/lib/animations";
 import { stimulusPairs } from "@/lib/stimulusPairs";
+import { loadCrossCulturalActivation } from "@/lib/loadActivations";
 import BrainMap2D from "./BrainMap2D";
+
+// PR-D: pair-id (kebab-case) -> activation-json prefix used in
+// frontend/public/activations/crosscultural/ filenames.
+const PAIR_ID_TO_ACTIVATION_PREFIX: Record<string, string> = {
+  "loneliness-ngao": "loneliness",
+  "mother-mae": "mother",
+  "beautiful-suay": "beautiful",
+};
 
 /**
  * Stimulus comparison surface. Three pairs cycle through. For each pair:
@@ -31,12 +40,46 @@ export default function StimulusComparison() {
 
   const pair = stimulusPairs[pairIndex];
   const setActivations = useBrainStageStore((s) => s.setActivations);
+  const setParcelActivations = useBrainStageStore(
+    (s) => s.setParcelActivations,
+  );
 
+  // PR-D: client-side cache of precomputed Neurosynth parcel maps
+  // per (pair-id, language). Fetched lazily on first selection
+  // and reused on subsequent selections.
+  const [parcelCache, setParcelCache] = useState<
+    Record<string, Record<string, number>>
+  >({});
+
+  // Push 20-region targets so the editorial divergence-score and
+  // BrainMap2D component (which still consume 20-region) keep
+  // working unchanged.
   useEffect(() => {
     const target =
       focused === "english" ? pair.englishActivations : pair.thaiActivations;
     setActivations(target as Record<string, number>);
   }, [pair, focused, setActivations]);
+
+  // Push the real Neurosynth parcel map for the persistent brain
+  // (cortex-level visualization).
+  useEffect(() => {
+    const prefix = PAIR_ID_TO_ACTIVATION_PREFIX[pair.id];
+    if (!prefix) return;
+    const key = `${prefix}_${focused}`;
+    if (parcelCache[key]) {
+      setParcelActivations(parcelCache[key]);
+      return;
+    }
+    let cancelled = false;
+    loadCrossCulturalActivation(prefix, focused).then((file) => {
+      if (cancelled || !file) return;
+      setParcelCache((prev) => ({ ...prev, [key]: file.parcel_activations }));
+      setParcelActivations(file.parcel_activations);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [pair, focused, parcelCache, setParcelActivations]);
 
   return (
     <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-10">
