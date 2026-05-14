@@ -70,8 +70,8 @@
       }
     },
     "rooms": {
-      "section": "Tres sales",
-      "heading": "Hem construït tres sales per mostrar-t'ho.",
+      "section": "Sis sales",
+      "heading": "Hem construït sis sales per mostrar-t'ho.",
       "body": "Passa el cursor per sobre d'una porta per veure el patró. Entra quan estiguis a punt.",
       "mirror": {
         "title": "Mirall Cerebral",
@@ -941,7 +941,7 @@
   "notFound": {
     "label": "Fora de la distribució d'entrenament",
     "title": "No vam aprendre aquesta pàgina.",
-    "body": "L'adreça que has provat no és una de les sales que vam construir. Les tres que existeixen — Mirall, Música, Transcultural — tenen enllaços a sota.",
+    "body": "L'adreça que has provat no és una de les sales que vam construir. Les sis que existeixen — Mirall, Música, Transcultural, Llindar, Arquetips, Cel·lular — són al menú; enllaços ràpids a sota.",
     "linkMirror": "Mirall Cerebral",
     "linkMusic": "Laboratori de NeuroMúsica",
     "linkCrosscultural": "Cervell Transcultural",

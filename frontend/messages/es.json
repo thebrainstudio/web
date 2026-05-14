@@ -70,8 +70,8 @@
       }
     },
     "rooms": {
-      "section": "Tres salas",
-      "heading": "Construimos tres salas para enseñártelo.",
+      "section": "Seis salas",
+      "heading": "Construimos seis salas para enseñártelo.",
       "body": "Pasa el cursor sobre una puerta para ver el patrón. Entra cuando estés listo.",
       "mirror": {
         "title": "Espejo Cerebral",
@@ -941,7 +941,7 @@
   "notFound": {
     "label": "Fuera de la distribución de entrenamiento",
     "title": "No aprendimos esa página.",
-    "body": "La dirección que probaste no es una de las salas que construimos. Las tres que existen — Espejo, Música, Transcultural — están enlazadas abajo.",
+    "body": "La dirección que probaste no es una de las salas que construimos. Las seis que existen — Espejo, Música, Transcultural, Umbral, Arquetipos, Celular — están en el menú; enlaces rápidos abajo.",
     "linkMirror": "Espejo Cerebral",
     "linkMusic": "Laboratorio de NeuroMúsica",
     "linkCrosscultural": "Cerebro Transcultural",

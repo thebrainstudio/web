@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s · The Brain Studio",
   },
   description:
-    "A cinematic experiment in seeing the mind through a brain-encoding model. Three rooms — language, music, and the limits of translation.",
+    "A cinematic experiment in seeing the mind through a brain-encoding model. Six rooms — from language and music to the cellular machinery below.",
   openGraph: {
     title: "The Brain Studio",
     description:

@@ -70,8 +70,8 @@
       }
     },
     "rooms": {
-      "section": "Three rooms",
-      "heading": "We built three rooms to show you.",
+      "section": "Six rooms",
+      "heading": "We built six rooms to show you.",
       "body": "Hover a doorway to see the pattern. Step inside when you're ready.",
       "mirror": {
         "title": "Brain Mirror",
@@ -941,7 +941,7 @@
   "notFound": {
     "label": "Out of the training distribution",
     "title": "We didn't learn that page.",
-    "body": "The address you tried isn't one of the rooms we built. The three that exist — Mirror, Music, Cross-Cultural — are linked below.",
+    "body": "The address you tried isn't one of the rooms we built. The six that exist — Mirror, Music, Cross-Cultural, Threshold, Archetypes, Cellular — are reachable from the nav; quick links below.",
     "linkMirror": "Brain Mirror",
     "linkMusic": "NeuroMusic Lab",
     "linkCrosscultural": "Cross-Cultural Brain",
