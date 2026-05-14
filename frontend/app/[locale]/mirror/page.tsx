@@ -7,6 +7,7 @@ import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import MirrorInput from "@/components/mirror/MirrorInput";
 import MirrorReveal from "@/components/mirror/MirrorReveal";
 import MirrorCaption from "@/components/mirror/MirrorCaption";
+import MirrorInspector from "@/components/mirror/MirrorInspector";
 import BrainViews from "@/components/brain/BrainViews";
 import SavedExampleCard from "@/components/mirror/SavedExampleCard";
 import SaveInsightButton from "@/components/mirror/SaveInsightButton";
@@ -121,6 +122,23 @@ export default function MirrorPage() {
                 }
               />
             </div>
+          )}
+
+          {/* Move 2 — hover-coupled mirror.
+              Hover a word: brain swings toward its top-3 contribution
+              regions (impressionistic predictor's accounting).
+              Hover a region pill: words that contributed to it
+              underline. Both directions use the same per-word
+              contribution map. */}
+          {hasResult && latest && (
+            <MirrorInspector
+              text={latest.text}
+              settledActivations={
+                latest.prediction.activations as Partial<
+                  Record<RegionId, number>
+                >
+              }
+            />
           )}
 
           {hasResult && (
