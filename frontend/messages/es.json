@@ -154,6 +154,7 @@
     "footerNote": "Predicciones simuladas localmente",
     "predicting": "Prediciendo…",
     "charCounter": "{used} / {max}",
+    "disclaimer": "Activación predicha. No es tu cerebro. Es la mejor suposición del modelo sobre cómo respondería un cerebro como los de su conjunto de entrenamiento.",
     "attribution": {
       "tribeLive": "Predicción de TRIBE v2 (Meta FAIR, d'Ascoli et al., 2026) — ficha del modelo · artículo · CC-BY-NC-4.0 · solo texto, sujeto promedio",
       "tribeOffline": "Ejecutando el modelo de referencia (proxy semántico) — motor TRIBE fuera de línea",

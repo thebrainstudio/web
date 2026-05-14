@@ -154,6 +154,7 @@
     "footerNote": "Predictions simulated locally",
     "predicting": "Predicting…",
     "charCounter": "{used} / {max}",
+    "disclaimer": "Predicted activation. Not your brain. The model's best guess about how a brain like its training set would respond.",
     "attribution": {
       "tribeLive": "Predicted by TRIBE v2 (Meta FAIR, d'Ascoli et al., 2026) — model card · paper · CC-BY-NC-4.0 · text-only, average-subject",
       "tribeOffline": "Running on baseline (semantic proxy) — TRIBE engine offline",

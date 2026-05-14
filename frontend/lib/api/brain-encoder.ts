@@ -148,21 +148,73 @@ export async function predictBrainActivation(
 }
 
 /**
+ * Discovered tunnel URL — fetched from the auto-discovery endpoint
+ * (/api/tunnel) at runtime. Cached for the lifetime of the page session
+ * to avoid hitting the discovery endpoint on every prediction.
+ */
+let _discoveredTunnelUrl: string | null | undefined = undefined;
+let _discoveryPromise: Promise<string | null> | null = null;
+
+async function discoverTunnelUrl(): Promise<string | null> {
+  if (_discoveredTunnelUrl !== undefined) return _discoveredTunnelUrl;
+  if (_discoveryPromise) return _discoveryPromise;
+  _discoveryPromise = (async () => {
+    try {
+      const res = await fetch("/api/tunnel", {
+        method: "GET",
+        cache: "no-store",
+      });
+      if (!res.ok) {
+        _discoveredTunnelUrl = null;
+        return null;
+      }
+      const data = (await res.json()) as { url?: string; valid?: boolean };
+      _discoveredTunnelUrl = data.valid && data.url ? data.url : null;
+      return _discoveredTunnelUrl;
+    } catch {
+      _discoveredTunnelUrl = null;
+      return null;
+    }
+  })();
+  return _discoveryPromise;
+}
+
+/**
  * Three-tier predict: tunneled TRIBE first, then Vercel embedding
  * baseline, then null. Caller handles null by using fakePredict.
+ *
+ * The tunnel URL comes from one of three sources, in priority order:
+ *   1. NEXT_PUBLIC_TRIBE_API_BASE env var (compile-time pin — useful
+ *      when the user has a stable Cloudflare-named tunnel or a
+ *      dedicated TRIBE host).
+ *   2. /api/tunnel discovery endpoint (runtime — the local backend
+ *      self-publishes its current trycloudflare.com URL there on
+ *      startup, so the frontend doesn't need rebuilding when the
+ *      tunnel URL changes after a laptop reboot).
+ *   3. (skipped — fall through to Tier 2 same-origin baseline).
  */
 export async function predictWithFallback(
   text: string,
   locale: string,
   opts?: { signal?: AbortSignal },
 ): Promise<EncoderResult | null> {
-  // Tier 1: tunneled TRIBE (only if NEXT_PUBLIC_TRIBE_API_BASE is set).
+  // Tier 1: compile-pinned tunnel (NEXT_PUBLIC_TRIBE_API_BASE).
   if (REMOTE_BASE) {
     const remote = await predictBrainActivation(text, locale, {
       signal: opts?.signal,
       baseOverride: REMOTE_BASE,
     });
     if (remote) return remote;
+  } else {
+    // Tier 1.5: runtime-discovered tunnel.
+    const discovered = await discoverTunnelUrl();
+    if (discovered) {
+      const remote = await predictBrainActivation(text, locale, {
+        signal: opts?.signal,
+        baseOverride: discovered,
+      });
+      if (remote) return remote;
+    }
   }
   // Tier 2: Vercel embedding baseline (same-origin /api/v1/predict).
   const baseline = await predictBrainActivation(text, locale, {

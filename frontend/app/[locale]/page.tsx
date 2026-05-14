@@ -64,6 +64,27 @@ export default async function Home({
           >
             ↓
           </p>
+          {/* Phase D.1: a small editorial pointer telling first-time
+              visitors that the Mirror is where they can actually do
+              something. Lives below the scroll prompt; sits at /55
+              opacity so it doesn't compete with the hero. */}
+          <div className="mt-16 flex justify-center">
+            <Link
+              href="/mirror"
+              data-hover
+              className="text-bone-cream/55 hover:text-brass group inline-flex items-center gap-2 transition-colors duration-300"
+            >
+              <Caption uppercase className="tracking-[0.18em]">
+                Or skip ahead — type into the Mirror
+              </Caption>
+              <span
+                aria-hidden
+                className="text-brass transition-transform duration-300 group-hover:translate-x-0.5"
+              >
+                →
+              </span>
+            </Link>
+          </div>
         </div>
       </ScrollScene>
 

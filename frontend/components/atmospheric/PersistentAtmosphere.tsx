@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { pathToRoomId, type RoomId } from "@/lib/rooms";
 import { easeCinematic } from "@/lib/animations";
@@ -19,7 +19,25 @@ import { easeCinematic } from "@/lib/animations";
  *
  * Reduced motion: morph crossfade is shortened but still happens, so
  * the room-id-coded color cue is preserved as information.
+ *
+ * Phase 11 — Move 1.2: listens for `brain-studio:keystroke-pulse`
+ * events and emits a brief opacity bump (idle → idle+0.04 over 180 ms,
+ * then idle+0.04 → idle over 440 ms). The pulse is global to this
+ * persistent layer, not scoped to the textarea — an ambient signal
+ * that *something is being received*. Reduced-motion users get no
+ * pulse (the room-transition cue is still preserved as information).
  */
+
+/** Public event name. Dispatched from MirrorInput on every keystroke. */
+export const KEYSTROKE_PULSE_EVENT = "brain-studio:keystroke-pulse";
+
+/** Amplitude of the pulse, added to the current room's idle opacity. */
+const PULSE_AMPLITUDE = 0.04;
+const PULSE_UP_MS = 180;
+const PULSE_DOWN_MS = 440;
+/** Coalesce pulses fired within this window to one — prevents a runaway
+ * pulse train under fast typing. */
+const PULSE_COALESCE_MS = 60;
 
 type RoomAtmosphere = {
   /** A CSS `background-image` value — typically one or more radial-gradients. */
@@ -118,12 +136,56 @@ export default function PersistentAtmosphere() {
   const pathname = usePathname();
   const room = pathToRoomId(pathname);
   const [reduced, setReduced] = useState(false);
+  const controls = useAnimation();
+  // Coalesce keystroke bursts so we don't ramp into a permanent overdrive.
+  const lastPulseAt = useRef(0);
+  const pulseInFlight = useRef(false);
 
   useEffect(() => {
     setReduced(prefersReducedMotion());
   }, []);
 
   const target = ROOM_ATMOSPHERE[room];
+
+  // Phase 11 — Move 1.2: ambient pulse on keystroke.
+  useEffect(() => {
+    if (reduced) return; // reduced-motion users get no pulse
+    const idle = target.opacity;
+    const peak = Math.min(1, idle + PULSE_AMPLITUDE);
+
+    const onPulse = () => {
+      const now =
+        typeof performance !== "undefined" ? performance.now() : Date.now();
+      // Coalesce: ignore pulses fired within the coalesce window of the
+      // previous one. Keeps fast typists from stacking the up-ramp.
+      if (now - lastPulseAt.current < PULSE_COALESCE_MS) return;
+      lastPulseAt.current = now;
+      // If another pulse is already animating, let it finish; the next
+      // event will pick up after the coalesce window.
+      if (pulseInFlight.current) return;
+      pulseInFlight.current = true;
+      void (async () => {
+        await controls.start({
+          opacity: peak,
+          transition: { duration: PULSE_UP_MS / 1000, ease: easeCinematic },
+        });
+        await controls.start({
+          opacity: idle,
+          transition: { duration: PULSE_DOWN_MS / 1000, ease: easeCinematic },
+        });
+        pulseInFlight.current = false;
+      })();
+    };
+
+    window.addEventListener(KEYSTROKE_PULSE_EVENT, onPulse);
+    return () => window.removeEventListener(KEYSTROKE_PULSE_EVENT, onPulse);
+  }, [controls, target.opacity, reduced]);
+
+  // Keep the controls in sync with the room's idle opacity whenever the
+  // pathname changes (so the pulse animation ends at the *new* idle).
+  useEffect(() => {
+    controls.set({ opacity: target.opacity });
+  }, [controls, target.opacity, pathname]);
 
   return (
     <motion.div
@@ -140,14 +202,29 @@ export default function PersistentAtmosphere() {
         backgroundImage: target.backgroundImage,
         opacity: target.opacity,
       }}
-      animate={{
-        backgroundImage: target.backgroundImage,
-        opacity: target.opacity,
-      }}
+      animate={controls}
+      // backgroundImage transitions stay on the standard room-morph
+      // timing — pulse only touches opacity via the imperative controls.
       transition={{
         duration: reduced ? 0.2 : 1.4,
         ease: easeCinematic,
       }}
+      initial={{
+        backgroundImage: target.backgroundImage,
+        opacity: target.opacity,
+      }}
     />
   );
+}
+
+/**
+ * Dispatch a keystroke pulse. Safe to call from any client component;
+ * the PersistentAtmosphere listener handles coalescing internally.
+ *
+ * Reduced-motion users never see the pulse, by design — the listener
+ * exits early in that case.
+ */
+export function dispatchKeystrokePulse(): void {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent(KEYSTROKE_PULSE_EVENT));
 }

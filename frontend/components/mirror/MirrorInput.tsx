@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { easeCinematic } from "@/lib/animations";
@@ -11,6 +11,12 @@ import {
   predictWithFallback,
   type EncoderResult,
 } from "@/lib/api/brain-encoder";
+import {
+  applyConfidence,
+  impressionisticPredict,
+  type ImpressionisticPrediction,
+} from "@/lib/mirror/impressionistic";
+import { dispatchKeystrokePulse } from "@/components/atmospheric/PersistentAtmosphere";
 import { Caption } from "@/components/typography/Typography";
 import MirrorLoadingMessage from "./MirrorLoadingMessage";
 import AttributionChip, {
@@ -20,11 +26,23 @@ import AttributionChip, {
 // audit-fix: Task 10. Soft cap on textarea content — keeps prediction
 // requests bounded and prevents accidental long-paste failures.
 const MAX_LENGTH = 5000;
-// phase-10: Settle debounce — 400 ms is "the thought is finishing"
-// per the design-critic brief. Earlier audit had 350 ms for the live
-// pre-update; we keep that too so the brain breathes as the user types.
-const LIVE_DEBOUNCE_MS = 350;
+
+// Phase 11 — Move 1:
+//   IMPRESSIONIST_DEBOUNCE_MS  60 ms — coalesce keystroke bursts for the
+//                              local impressionistic predictor. No
+//                              network call so we can run at full speed,
+//                              but a 60 ms coalesce keeps state churn
+//                              reasonable for fast typists.
+//   SETTLE_DEBOUNCE_MS         400 ms — the pause that signals
+//                              "the thought is finishing." Fires the
+//                              real prediction (TRIBE → baseline →
+//                              fakePredict).
+const IMPRESSIONIST_DEBOUNCE_MS = 60;
 const SETTLE_DEBOUNCE_MS = 400;
+// Phase 11 — Move 1.3: confidence multipliers.
+// Impressionistic predictions render at 55% amplitude vs settled.
+const IMPRESSIONIST_CONFIDENCE = 0.55;
+const SETTLED_CONFIDENCE = 1.0;
 
 /**
  * If NEXT_PUBLIC_TRIBE_API_BASE is configured at build time, the site
@@ -33,6 +51,19 @@ const SETTLE_DEBOUNCE_MS = 400;
  * status is even reachable.
  */
 const TRIBE_BACKEND_CONFIGURED = Boolean(process.env.NEXT_PUBLIC_TRIBE_API_BASE);
+
+function usePrefersReducedMotion(): boolean {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduced(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReduced(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return reduced;
+}
 
 type Props = {
   /** Receive every settled prediction. */
@@ -55,6 +86,7 @@ type Props = {
 export default function MirrorInput({ onPrediction, initial = "" }: Props) {
   const t = useTranslations("mirror");
   const locale = useLocale();
+  const reducedMotion = usePrefersReducedMotion();
   const [value, setValue] = useState(initial);
   const [settling, setSettling] = useState(false);
   // phase-10: track which engine produced the last settled response so
@@ -62,21 +94,78 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
   const [attribution, setAttribution] = useState<AttributionState>(
     TRIBE_BACKEND_CONFIGURED ? "tribe-live" : "baseline-only",
   );
+  // phase-11 Move 2 prep: keep the latest impressionistic prediction
+  // (which includes per-word contributions) available to children. Move 2
+  // will read this from a context; for now it just lives in state.
+  const [, setImpressionistic] =
+    useState<ImpressionisticPrediction | null>(null);
   const setActivations = useBrainStageStore((s) => s.setActivations);
   const resetIdle = useBrainStageStore((s) => s.resetIdle);
 
-  const liveTimer = useRef<number | null>(null);
+  const impressionistTimer = useRef<number | null>(null);
   const settleTimer = useRef<number | null>(null);
   // phase-10: in-flight request controller so rapid typing cancels the
   // previous request before firing a new one.
   const inflightController = useRef<AbortController | null>(null);
 
+  // Pulse + impressionistic update are dispatched separately from the
+  // main settle-cycle effect so they don't recompute when callbacks
+  // change (preventing redundant pulses on parent re-renders).
+  const handleValueChange = useCallback(
+    (next: string) => {
+      setValue(next);
+      // Move 1.2: ambient pulse on every keystroke. The atmosphere
+      // listener coalesces internally, so a flurry of keys produces a
+      // single soft signal rather than a strobe.
+      if (!reducedMotion && next.length > 0) {
+        dispatchKeystrokePulse();
+      }
+    },
+    [reducedMotion],
+  );
+
+  // Phase 11 Move 1.1: impressionistic predictor on every keystroke
+  // (60 ms coalesce). Updates the brain *while* the user types — well
+  // before the settled predictor fires.
   useEffect(() => {
-    if (liveTimer.current) window.clearTimeout(liveTimer.current);
+    if (impressionistTimer.current) window.clearTimeout(impressionistTimer.current);
+
+    if (value.trim().length < 1) {
+      // Idle: the brain stage's resetIdle clears activations entirely.
+      // The breathing wave in BrainAnatomy.tsx fills the visual silence.
+      resetIdle();
+      setImpressionistic(null);
+      return;
+    }
+
+    // Reduced motion: skip the per-keystroke update entirely. The brain
+    // only changes when the settled prediction lands. This satisfies the
+    // brief's "no movement" reduced-motion requirement for Move 1 while
+    // preserving the cue (room-level + settled lerp) as information.
+    if (reducedMotion) {
+      return;
+    }
+
+    impressionistTimer.current = window.setTimeout(() => {
+      const pred = impressionisticPredict(value);
+      setImpressionistic(pred);
+      // Move 1.3: confidence-scaled brightness. Impressionistic peaks at
+      // ~55 % vs settled at 100 %, so the lerp from rough → finished
+      // reads as the model "settling."
+      const scaled = applyConfidence(pred.activations, IMPRESSIONIST_CONFIDENCE);
+      setActivations(scaled as Record<string, number>);
+    }, IMPRESSIONIST_DEBOUNCE_MS);
+
+    return () => {
+      if (impressionistTimer.current) window.clearTimeout(impressionistTimer.current);
+    };
+  }, [value, reducedMotion, resetIdle, setActivations]);
+
+  // Settle-cycle: fire the real predictor 400 ms after typing pauses.
+  useEffect(() => {
     if (settleTimer.current) window.clearTimeout(settleTimer.current);
 
     if (value.trim().length < 3) {
-      resetIdle();
       setSettling(false);
       if (inflightController.current) {
         inflightController.current.abort();
@@ -86,11 +175,6 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
     }
 
     setSettling(true);
-
-    liveTimer.current = window.setTimeout(() => {
-      const pred = fakePredict(value);
-      setActivations(pred.activations as Record<string, number>);
-    }, LIVE_DEBOUNCE_MS);
 
     settleTimer.current = window.setTimeout(async () => {
       // Abort any in-flight inference from a previous keystroke and
@@ -122,7 +206,17 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
             features: local.features,
           }
         : local;
-      setActivations(merged.activations as Record<string, number>);
+      // Settled predictions render at full confidence (1.0). The
+      // BrainAnatomy's per-region exponential smoothing handles the
+      // visual lerp from the impressionistic 55 %-amplitude state to
+      // here — about 1.2 s to settle visually with the existing
+      // τ = 400 ms smoother (matches the design-critic brief's
+      // 1200 ms cubic-bezier(0.16, 1, 0.3, 1) timing closely).
+      const scaled = applyConfidence(
+        merged.activations as Record<string, number>,
+        SETTLED_CONFIDENCE,
+      );
+      setActivations(scaled as Record<string, number>);
       onPrediction(value, merged);
       setSettling(false);
 
@@ -143,14 +237,13 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
     }, SETTLE_DEBOUNCE_MS);
 
     return () => {
-      if (liveTimer.current) window.clearTimeout(liveTimer.current);
       if (settleTimer.current) window.clearTimeout(settleTimer.current);
       if (inflightController.current) {
         inflightController.current.abort();
         inflightController.current = null;
       }
     };
-  }, [value, setActivations, resetIdle, onPrediction, locale]);
+  }, [value, setActivations, onPrediction, locale]);
 
   // Pre-fill on mount with initial (used for example clicks)
   useEffect(() => {
@@ -169,7 +262,7 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
       <textarea
         id="mirror-input"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => handleValueChange(e.target.value)}
         // audit-fix: Task 10. Placeholder from i18n bundle so it
         // localizes with the rest of the room copy.
         placeholder={t("title")}

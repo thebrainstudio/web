@@ -154,6 +154,7 @@
     "footerNote": "予測はローカルでシミュレートされています",
     "predicting": "予測中…",
     "charCounter": "{used} / {max}",
+    "disclaimer": "予測された活性化です。あなたの脳ではありません。学習データに含まれるような脳がどう応答するかについての、モデルの最良の推測です。",
     "attribution": {
       "tribeLive": "TRIBE v2 による予測 (Meta FAIR, d'Ascoli et al., 2026) — モデルカード · 論文 · CC-BY-NC-4.0 · テキストのみ・平均被験者",
       "tribeOffline": "ベースライン (意味プロキシ) で実行中 — TRIBE エンジンはオフラインです",
