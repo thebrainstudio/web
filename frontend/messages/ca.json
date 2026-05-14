@@ -154,6 +154,7 @@
     "footerNote": "Prediccions simulades localment",
     "predicting": "Predient…",
     "charCounter": "{used} / {max}",
+    "disclaimer": "Activació predita. No és el teu cervell. És la millor suposició del model sobre com respondria un cervell com els del seu conjunt d'entrenament.",
     "attribution": {
       "tribeLive": "Predit per TRIBE v2 (Meta FAIR, d'Ascoli et al., 2026) — fitxa del model · article · CC-BY-NC-4.0 · només text, subjecte mitjà",
       "tribeOffline": "Executant el model de referència (proxy semàntic) — motor TRIBE fora de línia",

@@ -33,8 +33,12 @@ import {
  */
 
 const HALO_COUNT = 3;
-// Soft brass (#c9a961 with linear-light → sRGB shift).
-const HALO_COLOR = new THREE.Color("#c9a961");
+// `--color-cyan-glow` from globals.css — the site's brand-adjacent
+// cool counterpoint to brass. Brass clashed against the brain's
+// warm activation ramp (yellow → orange → red); a luminous cyan
+// reads cleanly on hot regions without competing with the colour
+// information underneath.
+const HALO_COLOR = new THREE.Color("#5cc8d6");
 // Sprite size in mesh-local units. Centroids live in the actual
 // fsaverage5 mesh's local space (roughly ±1 from origin after GLB
 // normalization). 0.22 reads as a soft halo on the cortical surface
@@ -54,7 +58,7 @@ type HaloState = {
 };
 
 function makeHaloTexture(): THREE.Texture {
-  // Soft radial gradient: brass core fading to transparent at the edge.
+  // Soft radial gradient: pale-cyan core fading to transparent.
   const size = 256;
   const canvas = document.createElement("canvas");
   canvas.width = canvas.height = size;
@@ -67,13 +71,13 @@ function makeHaloTexture(): THREE.Texture {
     size / 2,
     size / 2,
   );
-  // The colour stops give a thin bright core, a wider brass halo, and
-  // a soft fall-off to transparent. Hand-tuned to read on the navy
-  // backdrop without clipping the brain.
-  grad.addColorStop(0.0, "rgba(255, 230, 175, 0.95)");
-  grad.addColorStop(0.18, "rgba(201, 169, 97, 0.65)");
-  grad.addColorStop(0.45, "rgba(201, 169, 97, 0.18)");
-  grad.addColorStop(1.0, "rgba(201, 169, 97, 0.0)");
+  // Thin bright cool-white core, a wider cyan-glow body, and a soft
+  // fall-off to transparent. Hand-tuned to pop against warm activation
+  // colours without overpowering them.
+  grad.addColorStop(0.0, "rgba(220, 250, 255, 0.95)");
+  grad.addColorStop(0.18, "rgba(92, 200, 214, 0.7)");
+  grad.addColorStop(0.45, "rgba(92, 200, 214, 0.2)");
+  grad.addColorStop(1.0, "rgba(92, 200, 214, 0.0)");
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, size, size);
   const tex = new THREE.CanvasTexture(canvas);

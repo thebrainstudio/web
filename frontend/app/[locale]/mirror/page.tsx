@@ -9,6 +9,7 @@ import PinnedSequence, {
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import MirrorInput from "@/components/mirror/MirrorInput";
 import MirrorReveal from "@/components/mirror/MirrorReveal";
+import MirrorCaption from "@/components/mirror/MirrorCaption";
 import SavedExampleCard from "@/components/mirror/SavedExampleCard";
 import SaveInsightButton from "@/components/mirror/SaveInsightButton";
 import {
@@ -90,6 +91,18 @@ export default function MirrorPage() {
           <div className="mt-12">
             <MirrorInput initial={seedText} onPrediction={onPrediction} />
           </div>
+
+          {/* Move 3 — the "what just happened" caption.
+              Names the top-3 regions + their functional summary in
+              editorial voice, plus the honest disclaimer. Appears
+              when the settled prediction lands; hides otherwise. */}
+          {hasResult && latest && (
+            <div className="mt-12 md:mt-16">
+              <MirrorCaption
+                activations={latest.prediction.activations}
+              />
+            </div>
+          )}
 
           {hasResult && (
             <>

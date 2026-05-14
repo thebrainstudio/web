@@ -154,6 +154,7 @@
     "footerNote": "预测在本地模拟运行",
     "predicting": "正在预测…",
     "charCounter": "{used} / {max}",
+    "disclaimer": "预测的激活。不是你的大脑。这是模型对其训练集中类似大脑可能如何响应的最佳猜测。",
     "attribution": {
       "tribeLive": "由 TRIBE v2 预测 (Meta FAIR, d'Ascoli et al., 2026) — 模型卡 · 论文 · CC-BY-NC-4.0 · 仅文本输入，平均被试",
       "tribeOffline": "正在运行基线模型 (语义代理) — TRIBE 引擎离线",
