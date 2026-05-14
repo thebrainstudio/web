@@ -22,8 +22,14 @@
 
 import type { RegionId } from "./regions";
 
-const BASE =
-  process.env.NEXT_PUBLIC_TRIBE_API_BASE ?? "http://127.0.0.1:8000";
+// Default: empty base → same-origin relative path. In production this
+// resolves to brain-studio-kappa.vercel.app/api/v1/predict (a Vercel
+// Python serverless function shipped alongside the frontend). Override
+// with NEXT_PUBLIC_TRIBE_API_BASE to point at a dedicated backend
+// (e.g. a Render or Fly.io service running the full embedding/TRIBE
+// stack). Local dev: set it to http://127.0.0.1:8000 to talk to the
+// local FastAPI server under backend/.
+const BASE = process.env.NEXT_PUBLIC_TRIBE_API_BASE ?? "";
 
 /**
  * Response envelope shared by every engine. `engine` distinguishes
@@ -54,7 +60,10 @@ export async function inferText(
 ): Promise<TribeApiPrediction | null> {
   if (!text.trim()) return null;
 
-  const path = opts?.pathOverride ?? "/api/infer/text";
+  // /api/v1/predict matches the Vercel Python serverless function
+  // under frontend/api/v1/predict.py. The same path is also served
+  // by the standalone FastAPI backend (alias for /api/infer/text).
+  const path = opts?.pathOverride ?? "/api/v1/predict";
   try {
     const res = await fetch(`${BASE}${path}`, {
       method: "POST",
