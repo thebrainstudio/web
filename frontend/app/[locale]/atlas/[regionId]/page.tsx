@@ -3,7 +3,10 @@ import { Link } from "@/i18n/navigation";
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import Prose from "@/components/atlas/Prose";
 import BridgeStrengthBadge from "@/components/bridges/BridgeStrengthBadge";
+import BrainActivationDriver from "@/components/brain/BrainActivationDriver";
 import ConnectomePanel from "@/components/brain/ConnectomePanel";
+import ProvenanceFooter from "@/components/brain/ProvenanceFooter";
+import { loadAtlasActivationServer } from "@/lib/loadActivationsServer";
 import {
   Body,
   Caption,
@@ -67,6 +70,13 @@ export default async function AtlasRegionPage({
   const entry = atlasEntryForLocale(region.id, locale);
   const localizedThread = theThreadForLocale(region.id, locale);
 
+  // PR-A: load this region's precomputed Neurosynth-derived parcel
+  // activation (HCP-MMP-360). When present, the persistent brain
+  // visualization renders the real meta-analytic pattern; when
+  // absent (file missing, region without a Neurosynth term match),
+  // the brain falls back to the 20-region path.
+  const activationFile = loadAtlasActivationServer(region.id);
+
   const t = await getTranslations({ locale, namespace: "atlas" });
   const tRegions = await getTranslations({ locale, namespace: "regions" });
 
@@ -113,6 +123,16 @@ export default async function AtlasRegionPage({
 
   return (
     <>
+      {/* PR-A: real-fMRI driver. When a precomputed activation file
+          exists for this region the persistent brain renders the
+          Neurosynth meta-analytic pattern (HCP-MMP-360 parcels);
+          otherwise the brain falls back to the 20-region idle path. */}
+      {activationFile && (
+        <BrainActivationDriver
+          parcelActivations={activationFile.parcel_activations}
+        />
+      )}
+
       {/* Breadcrumb */}
       <section className="relative px-6 pt-36 md:px-10 md:pt-44">
         <div className="mx-auto max-w-[1180px]">
@@ -179,6 +199,10 @@ export default async function AtlasRegionPage({
               </Body>
             </div>
           )}
+          {/* PR-A: provenance/methodology footer for the persistent
+              brain visualization. Renders only when a precomputed
+              Neurosynth activation is loaded for this region. */}
+          {activationFile && <ProvenanceFooter file={activationFile} />}
         </div>
       </section>
 

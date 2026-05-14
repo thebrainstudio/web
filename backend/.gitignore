@@ -10,3 +10,12 @@ tunnel_url.txt
 
 # Nilearn dataset cache local to this machine (downloaded on first run)
 ~/.nilearn_cache/
+
+# PR-A: build-script caches. All reproducible from
+# `backend/scripts/build_parcellation.py` and
+# `backend/scripts/build_neurosynth_activations.py`. Excluded from
+# git because they are large and rebuildable.
+data/neurosynth/
+data/term_zmaps/
+data/glasser_360_fsa5.csv
+data/cabnp_labelkey.txt

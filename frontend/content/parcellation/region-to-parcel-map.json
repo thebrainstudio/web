@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "description": "Editorial bridge between the site's 20-region vocabulary (lib/regions.ts) and the HCP-MMP-360 parcellation (Glasser 2016) used by the brain visualization underneath. Each RegionId maps to a curated list of Glasser parcels; the visualization uses the parcel granularity, the editorial copy keeps speaking the 20-region vocabulary.",
+    "atlas": "HCP-MMP-360 (Glasser 2016)",
+    "vocabulary_source": "frontend/lib/regions.ts RegionId union",
+    "subcortical_note": "Glasser HCP-MMP is cortical only. amyg_left, amyg_right have no parcel proxy and map to an empty array; pages with amygdala in their signature fall back to the 20-region rendering path. hipp_left, hipp_right are approximated by parahippocampal + entorhinal + presubiculum + Glasser's H (hippocampal complex)."
+  },
+  "ifg_left": ["44_L", "45_L", "47l_L", "IFJa_L", "IFJp_L", "IFSp_L", "IFSa_L"],
+  "ifg_right": ["44_R", "45_R", "47l_R", "IFJa_R", "IFJp_R", "IFSp_R", "IFSa_R"],
+  "pstg_left": ["A5_L", "PBelt_L", "STSdp_L", "STSda_L", "PSL_L", "STV_L"],
+  "pstg_right": ["A5_R", "PBelt_R", "STSdp_R", "STSda_R", "PSL_R", "STV_R"],
+  "mtg_left": ["TE1a_L", "TE1m_L", "TE1p_L", "TE2a_L", "TE2p_L"],
+  "mtg_right": ["TE1a_R", "TE1m_R", "TE1p_R", "TE2a_R", "TE2p_R"],
+  "atl_left": ["TGd_L", "TGv_L", "STGa_L"],
+  "atl_right": ["TGd_R", "TGv_R", "STGa_R"],
+  "agl_left": ["PGi_L", "PGs_L", "PFm_L", "TPOJ1_L"],
+  "agl_right": ["PGi_R", "PGs_R", "PFm_R", "TPOJ1_R"],
+  "hg_left": ["A1_L", "MBelt_L", "LBelt_L", "RI_L"],
+  "hg_right": ["A1_R", "MBelt_R", "LBelt_R", "RI_R"],
+  "vmpfc": ["10v_L", "10v_R", "10r_L", "10r_R", "25_L", "25_R", "OFC_L", "OFC_R", "pOFC_L", "pOFC_R"],
+  "dmpfc": ["9m_L", "9m_R", "8BM_L", "8BM_R", "8Ad_L", "8Ad_R", "p32_L", "p32_R", "a24_L", "a24_R"],
+  "pcc": ["v23ab_L", "v23ab_R", "d23ab_L", "d23ab_R", "23d_L", "23d_R", "31a_L", "31a_R", "31pd_L", "31pd_R", "31pv_L", "31pv_R"],
+  "precuneus": ["7m_L", "7m_R", "POS1_L", "POS1_R", "POS2_L", "POS2_R", "PCV_L", "PCV_R"],
+  "amyg_left": [],
+  "amyg_right": [],
+  "hipp_left": ["H_L", "PreS_L", "EC_L", "PHA1_L", "PHA2_L", "PHA3_L", "PeEc_L"],
+  "hipp_right": ["H_R", "PreS_R", "EC_R", "PHA1_R", "PHA2_R", "PHA3_R", "PeEc_R"]
+}

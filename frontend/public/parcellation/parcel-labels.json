@@ -1,0 +1,2162 @@
+{
+  "1": {
+    "label": "V1_L",
+    "hemisphere": "L",
+    "network": "Visual1",
+    "networkKey": 1
+  },
+  "2": {
+    "label": "MST_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "3": {
+    "label": "V6_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "4": {
+    "label": "V2_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "5": {
+    "label": "V3_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "6": {
+    "label": "V4_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "7": {
+    "label": "V8_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "8": {
+    "label": "4_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "9": {
+    "label": "3b_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "10": {
+    "label": "FEF_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "11": {
+    "label": "PEF_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "12": {
+    "label": "55b_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "13": {
+    "label": "V3A_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "14": {
+    "label": "RSC_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "15": {
+    "label": "POS2_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "16": {
+    "label": "V7_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "17": {
+    "label": "IPS1_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "18": {
+    "label": "FFC_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "19": {
+    "label": "V3B_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "20": {
+    "label": "LO1_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "21": {
+    "label": "LO2_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "22": {
+    "label": "PIT_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "23": {
+    "label": "MT_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "24": {
+    "label": "A1_L",
+    "hemisphere": "L",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "25": {
+    "label": "PSL_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "26": {
+    "label": "SFL_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "27": {
+    "label": "PCV_L",
+    "hemisphere": "L",
+    "network": "Posterior-Multimodal",
+    "networkKey": 10
+  },
+  "28": {
+    "label": "STV_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "29": {
+    "label": "7Pm_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "30": {
+    "label": "7m_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "31": {
+    "label": "POS1_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "32": {
+    "label": "23d_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "33": {
+    "label": "v23ab_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "34": {
+    "label": "d23ab_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "35": {
+    "label": "31pv_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "36": {
+    "label": "5m_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "37": {
+    "label": "5mv_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "38": {
+    "label": "23c_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "39": {
+    "label": "5L_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "40": {
+    "label": "24dd_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "41": {
+    "label": "24dv_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "42": {
+    "label": "7AL_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "43": {
+    "label": "SCEF_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "44": {
+    "label": "6ma_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "45": {
+    "label": "7Am_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "46": {
+    "label": "7PL_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "47": {
+    "label": "7PC_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "48": {
+    "label": "LIPv_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "49": {
+    "label": "VIP_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "50": {
+    "label": "MIP_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "51": {
+    "label": "1_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "52": {
+    "label": "2_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "53": {
+    "label": "3a_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "54": {
+    "label": "6d_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "55": {
+    "label": "6mp_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "56": {
+    "label": "6v_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "57": {
+    "label": "p24pr_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "58": {
+    "label": "33pr_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "59": {
+    "label": "a24pr_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "60": {
+    "label": "p32pr_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "61": {
+    "label": "a24_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "62": {
+    "label": "d32_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "63": {
+    "label": "8BM_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "64": {
+    "label": "p32_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "65": {
+    "label": "10r_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "66": {
+    "label": "47m_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "67": {
+    "label": "8Av_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "68": {
+    "label": "8Ad_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "69": {
+    "label": "9m_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "70": {
+    "label": "8BL_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "71": {
+    "label": "9p_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "72": {
+    "label": "10d_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "73": {
+    "label": "8C_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "74": {
+    "label": "44_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "75": {
+    "label": "45_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "76": {
+    "label": "47l_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "77": {
+    "label": "a47r_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "78": {
+    "label": "6r_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "79": {
+    "label": "IFJa_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "80": {
+    "label": "IFJp_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "81": {
+    "label": "IFSp_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "82": {
+    "label": "IFSa_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "83": {
+    "label": "p9-46v_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "84": {
+    "label": "46_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "85": {
+    "label": "a9-46v_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "86": {
+    "label": "9-46d_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "87": {
+    "label": "9a_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "88": {
+    "label": "10v_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "89": {
+    "label": "a10p_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "90": {
+    "label": "10pp_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "91": {
+    "label": "11l_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "92": {
+    "label": "13l_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "93": {
+    "label": "OFC_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "94": {
+    "label": "47s_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "95": {
+    "label": "LIPd_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "96": {
+    "label": "6a_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "97": {
+    "label": "i6-8_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "98": {
+    "label": "s6-8_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "99": {
+    "label": "43_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "100": {
+    "label": "OP4_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "101": {
+    "label": "OP1_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "102": {
+    "label": "OP2-3_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "103": {
+    "label": "52_L",
+    "hemisphere": "L",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "104": {
+    "label": "RI_L",
+    "hemisphere": "L",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "105": {
+    "label": "PFcm_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "106": {
+    "label": "PoI2_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "107": {
+    "label": "TA2_L",
+    "hemisphere": "L",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "108": {
+    "label": "FOP4_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "109": {
+    "label": "MI_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "110": {
+    "label": "Pir_L",
+    "hemisphere": "L",
+    "network": "Orbito-Affective",
+    "networkKey": 12
+  },
+  "111": {
+    "label": "AVI_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "112": {
+    "label": "AAIC_L",
+    "hemisphere": "L",
+    "network": "Orbito-Affective",
+    "networkKey": 12
+  },
+  "113": {
+    "label": "FOP1_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "114": {
+    "label": "FOP3_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "115": {
+    "label": "FOP2_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "116": {
+    "label": "PFt_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "117": {
+    "label": "AIP_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "118": {
+    "label": "EC_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "119": {
+    "label": "PreS_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "120": {
+    "label": "H_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "121": {
+    "label": "ProS_L",
+    "hemisphere": "L",
+    "network": "Visual1",
+    "networkKey": 1
+  },
+  "122": {
+    "label": "PeEc_L",
+    "hemisphere": "L",
+    "network": "Ventral-Multimodal",
+    "networkKey": 11
+  },
+  "123": {
+    "label": "STGa_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "124": {
+    "label": "PBelt_L",
+    "hemisphere": "L",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "125": {
+    "label": "A5_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "126": {
+    "label": "PHA1_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "127": {
+    "label": "PHA3_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "128": {
+    "label": "STSda_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "129": {
+    "label": "STSdp_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "130": {
+    "label": "STSvp_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "131": {
+    "label": "TGd_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "132": {
+    "label": "TE1a_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "133": {
+    "label": "TE1p_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "134": {
+    "label": "TE2a_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "135": {
+    "label": "TF_L",
+    "hemisphere": "L",
+    "network": "Ventral-Multimodal",
+    "networkKey": 11
+  },
+  "136": {
+    "label": "TE2p_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "137": {
+    "label": "PHT_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "138": {
+    "label": "PH_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "139": {
+    "label": "TPOJ1_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "140": {
+    "label": "TPOJ2_L",
+    "hemisphere": "L",
+    "network": "Posterior-Multimodal",
+    "networkKey": 10
+  },
+  "141": {
+    "label": "TPOJ3_L",
+    "hemisphere": "L",
+    "network": "Posterior-Multimodal",
+    "networkKey": 10
+  },
+  "142": {
+    "label": "DVT_L",
+    "hemisphere": "L",
+    "network": "Visual1",
+    "networkKey": 1
+  },
+  "143": {
+    "label": "PGp_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "144": {
+    "label": "IP2_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "145": {
+    "label": "IP1_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "146": {
+    "label": "IP0_L",
+    "hemisphere": "L",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "147": {
+    "label": "PFop_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "148": {
+    "label": "PF_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "149": {
+    "label": "PFm_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "150": {
+    "label": "PGi_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "151": {
+    "label": "PGs_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "152": {
+    "label": "V6A_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "153": {
+    "label": "VMV1_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "154": {
+    "label": "VMV3_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "155": {
+    "label": "PHA2_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "156": {
+    "label": "V4t_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "157": {
+    "label": "FST_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "158": {
+    "label": "V3CD_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "159": {
+    "label": "LO3_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "160": {
+    "label": "VMV2_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "161": {
+    "label": "31pd_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "162": {
+    "label": "31a_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "163": {
+    "label": "VVC_L",
+    "hemisphere": "L",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "164": {
+    "label": "25_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "165": {
+    "label": "s32_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "166": {
+    "label": "pOFC_L",
+    "hemisphere": "L",
+    "network": "Orbito-Affective",
+    "networkKey": 12
+  },
+  "167": {
+    "label": "PoI1_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "168": {
+    "label": "Ig_L",
+    "hemisphere": "L",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "169": {
+    "label": "FOP5_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "170": {
+    "label": "p10p_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "171": {
+    "label": "p47r_L",
+    "hemisphere": "L",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "172": {
+    "label": "TGv_L",
+    "hemisphere": "L",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "173": {
+    "label": "MBelt_L",
+    "hemisphere": "L",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "174": {
+    "label": "LBelt_L",
+    "hemisphere": "L",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "175": {
+    "label": "A4_L",
+    "hemisphere": "L",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "176": {
+    "label": "STSva_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "177": {
+    "label": "TE1m_L",
+    "hemisphere": "L",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "178": {
+    "label": "PI_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "179": {
+    "label": "a32pr_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "180": {
+    "label": "p24_L",
+    "hemisphere": "L",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "181": {
+    "label": "V1_R",
+    "hemisphere": "R",
+    "network": "Visual1",
+    "networkKey": 1
+  },
+  "182": {
+    "label": "MST_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "183": {
+    "label": "V6_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "184": {
+    "label": "V2_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "185": {
+    "label": "V3_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "186": {
+    "label": "V4_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "187": {
+    "label": "V8_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "188": {
+    "label": "4_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "189": {
+    "label": "3b_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "190": {
+    "label": "FEF_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "191": {
+    "label": "PEF_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "192": {
+    "label": "55b_R",
+    "hemisphere": "R",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "193": {
+    "label": "V3A_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "194": {
+    "label": "RSC_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "195": {
+    "label": "POS2_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "196": {
+    "label": "V7_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "197": {
+    "label": "IPS1_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "198": {
+    "label": "FFC_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "199": {
+    "label": "V3B_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "200": {
+    "label": "LO1_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "201": {
+    "label": "LO2_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "202": {
+    "label": "PIT_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "203": {
+    "label": "MT_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "204": {
+    "label": "A1_R",
+    "hemisphere": "R",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "205": {
+    "label": "PSL_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "206": {
+    "label": "SFL_R",
+    "hemisphere": "R",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "207": {
+    "label": "PCV_R",
+    "hemisphere": "R",
+    "network": "Posterior-Multimodal",
+    "networkKey": 10
+  },
+  "208": {
+    "label": "STV_R",
+    "hemisphere": "R",
+    "network": "Posterior-Multimodal",
+    "networkKey": 10
+  },
+  "209": {
+    "label": "7Pm_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "210": {
+    "label": "7m_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "211": {
+    "label": "POS1_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "212": {
+    "label": "23d_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "213": {
+    "label": "v23ab_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "214": {
+    "label": "d23ab_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "215": {
+    "label": "31pv_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "216": {
+    "label": "5m_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "217": {
+    "label": "5mv_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "218": {
+    "label": "23c_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "219": {
+    "label": "5L_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "220": {
+    "label": "24dd_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "221": {
+    "label": "24dv_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "222": {
+    "label": "7AL_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "223": {
+    "label": "SCEF_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "224": {
+    "label": "6ma_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "225": {
+    "label": "7Am_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "226": {
+    "label": "7PL_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "227": {
+    "label": "7PC_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "228": {
+    "label": "LIPv_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "229": {
+    "label": "VIP_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "230": {
+    "label": "MIP_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "231": {
+    "label": "1_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "232": {
+    "label": "2_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "233": {
+    "label": "3a_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "234": {
+    "label": "6d_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "235": {
+    "label": "6mp_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "236": {
+    "label": "6v_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "237": {
+    "label": "p24pr_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "238": {
+    "label": "33pr_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "239": {
+    "label": "a24pr_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "240": {
+    "label": "p32pr_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "241": {
+    "label": "a24_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "242": {
+    "label": "d32_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "243": {
+    "label": "8BM_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "244": {
+    "label": "p32_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "245": {
+    "label": "10r_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "246": {
+    "label": "47m_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "247": {
+    "label": "8Av_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "248": {
+    "label": "8Ad_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "249": {
+    "label": "9m_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "250": {
+    "label": "8BL_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "251": {
+    "label": "9p_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "252": {
+    "label": "10d_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "253": {
+    "label": "8C_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "254": {
+    "label": "44_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "255": {
+    "label": "45_R",
+    "hemisphere": "R",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "256": {
+    "label": "47l_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "257": {
+    "label": "a47r_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "258": {
+    "label": "6r_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "259": {
+    "label": "IFJa_R",
+    "hemisphere": "R",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "260": {
+    "label": "IFJp_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "261": {
+    "label": "IFSp_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "262": {
+    "label": "IFSa_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "263": {
+    "label": "p9-46v_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "264": {
+    "label": "46_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "265": {
+    "label": "a9-46v_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "266": {
+    "label": "9-46d_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "267": {
+    "label": "9a_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "268": {
+    "label": "10v_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "269": {
+    "label": "a10p_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "270": {
+    "label": "10pp_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "271": {
+    "label": "11l_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "272": {
+    "label": "13l_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "273": {
+    "label": "OFC_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "274": {
+    "label": "47s_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "275": {
+    "label": "LIPd_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "276": {
+    "label": "6a_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "277": {
+    "label": "i6-8_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "278": {
+    "label": "s6-8_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "279": {
+    "label": "43_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "280": {
+    "label": "OP4_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "281": {
+    "label": "OP1_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "282": {
+    "label": "OP2-3_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "283": {
+    "label": "52_R",
+    "hemisphere": "R",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "284": {
+    "label": "RI_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "285": {
+    "label": "PFcm_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "286": {
+    "label": "PoI2_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "287": {
+    "label": "TA2_R",
+    "hemisphere": "R",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "288": {
+    "label": "FOP4_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "289": {
+    "label": "MI_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "290": {
+    "label": "Pir_R",
+    "hemisphere": "R",
+    "network": "Orbito-Affective",
+    "networkKey": 12
+  },
+  "291": {
+    "label": "AVI_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "292": {
+    "label": "AAIC_R",
+    "hemisphere": "R",
+    "network": "Orbito-Affective",
+    "networkKey": 12
+  },
+  "293": {
+    "label": "FOP1_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "294": {
+    "label": "FOP3_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "295": {
+    "label": "FOP2_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "296": {
+    "label": "PFt_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "297": {
+    "label": "AIP_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "298": {
+    "label": "EC_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "299": {
+    "label": "PreS_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "300": {
+    "label": "H_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "301": {
+    "label": "ProS_R",
+    "hemisphere": "R",
+    "network": "Visual1",
+    "networkKey": 1
+  },
+  "302": {
+    "label": "PeEc_R",
+    "hemisphere": "R",
+    "network": "Ventral-Multimodal",
+    "networkKey": 11
+  },
+  "303": {
+    "label": "STGa_R",
+    "hemisphere": "R",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "304": {
+    "label": "PBelt_R",
+    "hemisphere": "R",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "305": {
+    "label": "A5_R",
+    "hemisphere": "R",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "306": {
+    "label": "PHA1_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "307": {
+    "label": "PHA3_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "308": {
+    "label": "STSda_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "309": {
+    "label": "STSdp_R",
+    "hemisphere": "R",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "310": {
+    "label": "STSvp_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "311": {
+    "label": "TGd_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "312": {
+    "label": "TE1a_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "313": {
+    "label": "TE1p_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "314": {
+    "label": "TE2a_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "315": {
+    "label": "TF_R",
+    "hemisphere": "R",
+    "network": "Ventral-Multimodal",
+    "networkKey": 11
+  },
+  "316": {
+    "label": "TE2p_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "317": {
+    "label": "PHT_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "318": {
+    "label": "PH_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "319": {
+    "label": "TPOJ1_R",
+    "hemisphere": "R",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "320": {
+    "label": "TPOJ2_R",
+    "hemisphere": "R",
+    "network": "Posterior-Multimodal",
+    "networkKey": 10
+  },
+  "321": {
+    "label": "TPOJ3_R",
+    "hemisphere": "R",
+    "network": "Posterior-Multimodal",
+    "networkKey": 10
+  },
+  "322": {
+    "label": "DVT_R",
+    "hemisphere": "R",
+    "network": "Visual1",
+    "networkKey": 1
+  },
+  "323": {
+    "label": "PGp_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "324": {
+    "label": "IP2_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "325": {
+    "label": "IP1_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "326": {
+    "label": "IP0_R",
+    "hemisphere": "R",
+    "network": "Dorsal-Attention",
+    "networkKey": 5
+  },
+  "327": {
+    "label": "PFop_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "328": {
+    "label": "PF_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "329": {
+    "label": "PFm_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "330": {
+    "label": "PGi_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "331": {
+    "label": "PGs_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "332": {
+    "label": "V6A_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "333": {
+    "label": "VMV1_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "334": {
+    "label": "VMV3_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "335": {
+    "label": "PHA2_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "336": {
+    "label": "V4t_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "337": {
+    "label": "FST_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "338": {
+    "label": "V3CD_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "339": {
+    "label": "LO3_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "340": {
+    "label": "VMV2_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "341": {
+    "label": "31pd_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "342": {
+    "label": "31a_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "343": {
+    "label": "VVC_R",
+    "hemisphere": "R",
+    "network": "Visual2",
+    "networkKey": 2
+  },
+  "344": {
+    "label": "25_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "345": {
+    "label": "s32_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "346": {
+    "label": "pOFC_R",
+    "hemisphere": "R",
+    "network": "Orbito-Affective",
+    "networkKey": 12
+  },
+  "347": {
+    "label": "PoI1_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "348": {
+    "label": "Ig_R",
+    "hemisphere": "R",
+    "network": "Somatomotor",
+    "networkKey": 3
+  },
+  "349": {
+    "label": "FOP5_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "350": {
+    "label": "p10p_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "351": {
+    "label": "p47r_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "352": {
+    "label": "TGv_R",
+    "hemisphere": "R",
+    "network": "Language",
+    "networkKey": 6
+  },
+  "353": {
+    "label": "MBelt_R",
+    "hemisphere": "R",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "354": {
+    "label": "LBelt_R",
+    "hemisphere": "R",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "355": {
+    "label": "A4_R",
+    "hemisphere": "R",
+    "network": "Auditory",
+    "networkKey": 8
+  },
+  "356": {
+    "label": "STSva_R",
+    "hemisphere": "R",
+    "network": "Default",
+    "networkKey": 9
+  },
+  "357": {
+    "label": "TE1m_R",
+    "hemisphere": "R",
+    "network": "Frontoparietal",
+    "networkKey": 7
+  },
+  "358": {
+    "label": "PI_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "359": {
+    "label": "a32pr_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  },
+  "360": {
+    "label": "p24_R",
+    "hemisphere": "R",
+    "network": "Cingulo-Opercular",
+    "networkKey": 4
+  }
+}

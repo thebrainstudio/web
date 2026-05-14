@@ -118,6 +118,35 @@ function loadCorrespondence(): Promise<Correspondence> {
   return _correspondencePromise;
 }
 
+// PR-A: HCP-MMP-360 parcel-id-per-vertex lookups. Two arrays of 10242
+// integers (left + right hemisphere); 0 = medial wall, 1..180 = left
+// parcels, 181..360 = right parcels. Built offline by
+// `backend/scripts/build_parcellation.py` and committed to
+// `frontend/public/parcellation/`.
+let _parcelsLeft: number[] | null = null;
+let _parcelsRight: number[] | null = null;
+let _parcelsPromise: Promise<{ left: number[]; right: number[] }> | null = null;
+
+function loadParcels(): Promise<{ left: number[]; right: number[] }> {
+  if (_parcelsLeft && _parcelsRight) {
+    return Promise.resolve({ left: _parcelsLeft, right: _parcelsRight });
+  }
+  if (_parcelsPromise) return _parcelsPromise;
+  _parcelsPromise = Promise.all([
+    fetch("/parcellation/hcp_mmp_left.json").then(
+      (r) => r.json() as Promise<number[]>,
+    ),
+    fetch("/parcellation/hcp_mmp_right.json").then(
+      (r) => r.json() as Promise<number[]>,
+    ),
+  ]).then(([left, right]) => {
+    _parcelsLeft = left;
+    _parcelsRight = right;
+    return { left, right };
+  });
+  return _parcelsPromise;
+}
+
 type VertexRegionAssignment = (RegionId | null)[];
 
 async function buildVertexAssignments(
@@ -152,6 +181,46 @@ async function buildVertexAssignments(
   return out;
 }
 
+// PR-A: HCP-MMP-360 parcel-id-per-vertex array. 0 = medial wall (no
+// parcel). For fsaverage5 this maps directly to the
+// `hcp_mmp_{left,right}.json` arrays the build script wrote. For
+// fsaverage6 we follow the same dominant-neighbor strategy the
+// region path uses, because parcel IDs are discrete and shouldn't be
+// blended.
+async function buildVertexParcels(
+  resolution: MeshResolution,
+  nVerts: number,
+): Promise<Int16Array> {
+  const { left, right } = await loadParcels();
+  if (resolution === "fsaverage5") {
+    const out = new Int16Array(nVerts);
+    // The fsaverage5 GLB lists left-hem vertices first (10242), then
+    // right-hem (10242). Match that ordering.
+    const split = Math.min(left.length, nVerts);
+    for (let i = 0; i < split; i++) out[i] = left[i];
+    for (let i = split; i < nVerts; i++) out[i] = right[i - split] ?? 0;
+    return out;
+  }
+  const corr = await loadCorrespondence();
+  const out = new Int16Array(nVerts);
+  // Build a fsaverage5-vertex → parcel-id lookup once.
+  const fs5Parcels = new Int16Array(left.length + right.length);
+  for (let i = 0; i < left.length; i++) fs5Parcels[i] = left[i];
+  for (let i = 0; i < right.length; i++)
+    fs5Parcels[left.length + i] = right[i];
+  for (const [k, v] of Object.entries(corr.direct)) {
+    const i = parseInt(k, 10);
+    if (i >= nVerts) continue;
+    out[i] = fs5Parcels[v] ?? 0;
+  }
+  for (const [k, entry] of Object.entries(corr.interpolated)) {
+    const i = parseInt(k, 10);
+    if (i >= nVerts) continue;
+    out[i] = fs5Parcels[entry.neighbors[0]] ?? 0;
+  }
+  return out;
+}
+
 function findFirstMesh(scene: THREE.Object3D): THREE.Mesh | null {
   let found: THREE.Mesh | null = null;
   scene.traverse((child) => {
@@ -171,6 +240,9 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
   const [assignments, setAssignments] = useState<VertexRegionAssignment | null>(
     null,
   );
+  // PR-A: per-vertex HCP-MMP-360 parcel IDs. Loaded lazily after the
+  // mesh mounts so the cheaper region path lights up first.
+  const [parcelIds, setParcelIds] = useState<Int16Array | null>(null);
 
   const source = useMemo(() => findFirstMesh(gltf.scene), [gltf]);
 
@@ -203,11 +275,29 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
     };
   }, [resolution, geometry]);
 
+  // PR-A: lazy-load the vertex→parcel-id assignment. Cheaper than
+  // the region assignment (just an int per vertex, no Record lookup)
+  // but loaded second so the 20-region path renders first.
+  useEffect(() => {
+    if (!geometry) return;
+    let cancelled = false;
+    const n = geometry.attributes.position.count;
+    buildVertexParcels(resolution, n).then((p) => {
+      if (!cancelled) setParcelIds(p);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [resolution, geometry]);
+
   // Smoothed per-region activation values.
   const smoothed = useRef<Map<RegionId, number>>(new Map());
+  // PR-A: smoothed per-parcel activation values (HCP-MMP-360).
+  const smoothedParcels = useRef<Map<number, number>>(new Map());
   const tmpColor = useMemo(() => new THREE.Color(), []);
 
   const targetActivations = useBrainStageStore((s) => s.targetActivations);
+  const parcelActivations = useBrainStageStore((s) => s.parcelActivations);
 
   const elapsed = useRef(0);
 
@@ -228,6 +318,10 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
     elapsed.current += delta;
 
     const reads: Record<string, number> = targetActivations as Record<string, number>;
+    const parcelReads: Record<string, number> =
+      parcelActivations as Record<string, number>;
+    const hasParcels =
+      parcelIds !== null && Object.keys(parcelReads).length > 0;
     const hasExplicit = Object.values(reads).some((v) => (v ?? 0) > 0.02);
 
     // phase 2: time-based smoothing with a deliberate ~1200 ms window.
@@ -249,14 +343,64 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
       // arrives so it doesn't dilute the signal.
       const phase = elapsed.current * 0.18 * Math.PI * 2 + i * 0.38;
       const breathDepth = 0.05 + Math.max(0, Math.sin(phase)) * 0.11;
-      const ambient = hasExplicit ? 0 : breathDepth;
+      // PR-A: when real parcel data is driving the brain, the
+      // 20-region ambient breathing is overridden by the parcel path
+      // so the two ambient layers don't compete.
+      const ambient = hasExplicit || hasParcels ? 0 : breathDepth;
       const explicit = reads[r] ?? 0;
       const tgt = Math.max(explicit, ambient);
       const cur = smoothed.current.get(r) ?? 0;
       smoothed.current.set(r, cur + (tgt - cur) * lerp);
     }
 
-    if (assignments) {
+    // PR-A: smooth parcel activations the same way. Only the parcels
+    // present in the incoming map are lerped; missing parcels fade
+    // back toward zero so transitions read cleanly when the page
+    // changes its precomputed JSON.
+    if (hasParcels) {
+      const seen = new Set<number>();
+      for (const [k, v] of Object.entries(parcelReads)) {
+        const pid = parseInt(k, 10);
+        if (!Number.isFinite(pid) || pid <= 0) continue;
+        seen.add(pid);
+        const cur = smoothedParcels.current.get(pid) ?? 0;
+        smoothedParcels.current.set(pid, cur + (v - cur) * lerp);
+      }
+      // Decay any previously-active parcels that are no longer in the
+      // map.
+      for (const pid of Array.from(smoothedParcels.current.keys())) {
+        if (seen.has(pid)) continue;
+        const cur = smoothedParcels.current.get(pid) ?? 0;
+        const next = cur * (1 - lerp);
+        if (next < 0.005) smoothedParcels.current.delete(pid);
+        else smoothedParcels.current.set(pid, next);
+      }
+    }
+
+    if (hasParcels && parcelIds) {
+      // PR-A: parcel path. Color each vertex from its parcel's
+      // smoothed activation. This is the new authoritative render
+      // path; the region path stays alive for pages that haven't
+      // been wired to load precomputed Neurosynth JSON yet.
+      const colors = geometry.attributes.color as THREE.BufferAttribute;
+      const arr = colors.array as Float32Array;
+      let dirty = false;
+      for (let i = 0; i < parcelIds.length; i++) {
+        const pid = parcelIds[i];
+        if (pid === 0) continue; // medial wall
+        const a = smoothedParcels.current.get(pid) ?? 0;
+        activationColor(a, tmpColor);
+        const o = i * 3;
+        if (Math.abs(arr[o] - tmpColor.r) > 0.002) {
+          arr[o] = tmpColor.r;
+          arr[o + 1] = tmpColor.g;
+          arr[o + 2] = tmpColor.b;
+          dirty = true;
+        }
+      }
+      if (dirty) colors.needsUpdate = true;
+    } else if (assignments) {
+      // 20-region fallback path (unchanged from pre-PR-A behavior).
       const colors = geometry.attributes.color as THREE.BufferAttribute;
       const arr = colors.array as Float32Array;
       let dirty = false;
