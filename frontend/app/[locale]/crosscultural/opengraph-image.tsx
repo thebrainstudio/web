@@ -5,8 +5,8 @@ export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt = "Cross-Cultural Brain — where the model breaks down across languages.";
 
-export default function OG() {
-  return renderRoomOgCard({
+export default async function OG({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; return renderRoomOgCard({locale,
     eyebrow: "Cross-Cultural · 03",
     title: "What it can't translate is itself a finding.",
     subtitle: "Where the model breaks down across languages.",

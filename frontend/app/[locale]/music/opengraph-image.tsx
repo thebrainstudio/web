@@ -5,8 +5,8 @@ export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt = "NeuroMusic Lab — hear how sound moves the same regions that move you.";
 
-export default function OG() {
-  return renderRoomOgCard({
+export default async function OG({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; return renderRoomOgCard({locale,
     eyebrow: "NeuroMusic Lab · 02",
     title: "Hear what your brain hears.",
     subtitle: "How sound moves the same regions that move you.",

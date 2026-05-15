@@ -5,8 +5,8 @@ export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt = "The Archetypes — patterns old enough to have names.";
 
-export default function OG() {
-  return renderRoomOgCard({
+export default async function OG({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; return renderRoomOgCard({locale,
     eyebrow: "The Archetypes · 05",
     title: "Patterns old enough to have names.",
     subtitle: "Illustrated from the visual tradition Jung drew on.",

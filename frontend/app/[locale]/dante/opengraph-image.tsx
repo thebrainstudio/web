@@ -5,8 +5,8 @@ export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt = "Dante — the Commedia as an architecture built for the default-mode network.";
 
-export default function OG() {
-  return renderRoomOgCard({
+export default async function OG({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; return renderRoomOgCard({locale,
     eyebrow: "Dante · The second literary room",
     title: "An architecture for the default-mode network.",
     subtitle: "The Commedia, read alongside embodied cognition and moral attention.",

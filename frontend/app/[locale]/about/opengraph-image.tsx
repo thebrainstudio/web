@@ -5,8 +5,8 @@ export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt = "About The Brain Studio — who built this and what TRIBE is.";
 
-export default function OG() {
-  return renderRoomOgCard({
+export default async function OG({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; return renderRoomOgCard({locale,
     eyebrow: "About",
     title: "About The Brain Studio.",
     subtitle: "Who built this, what TRIBE is, and the editorial decisions behind the rooms.",

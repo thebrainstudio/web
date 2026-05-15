@@ -5,8 +5,8 @@ export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt = "Site map — three columns showing how rooms, regions, and long-form essays cross-reference.";
 
-export default function OG() {
-  return renderRoomOgCard({
+export default async function OG({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; return renderRoomOgCard({locale,
     eyebrow: "Site map · An index",
     title: "An index for the whole site.",
     subtitle: "Rooms, regions, long-form. Three columns of cross-references.",

@@ -5,8 +5,8 @@ export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt = "Faust — Goethe's sixty-year question read alongside the contemporary neuroscience of prediction error.";
 
-export default function OG() {
-  return renderRoomOgCard({
+export default async function OG({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; return renderRoomOgCard({locale,
     eyebrow: "Faust · The first literary room",
     title: "The pact that cannot be paid in money.",
     subtitle: "Goethe's sixty-year question, read alongside prediction error.",

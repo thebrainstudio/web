@@ -5,8 +5,8 @@ export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt = "Brain Mirror — paste any text and watch the predicted activation.";
 
-export default function OG() {
-  return renderRoomOgCard({
+export default async function OG({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; return renderRoomOgCard({locale,
     eyebrow: "Brain Mirror · 01",
     title: "Paste any text.",
     subtitle: "Watch what your writing looks like underneath.",
