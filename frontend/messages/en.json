@@ -1280,5 +1280,43 @@
         "framing": "A person speaking on camera. Face perception (FFA), speech and language regions, and mentalizing networks all engage — the editorial weighting tracks listener cognition more than the speaker's articulation."
       }
     }
+  },
+  "provenance": {
+    "labels": {
+      "neurosynth": {
+        "text": "Neurosynth meta-analysis",
+        "aria": "Neurosynth meta-analysis: brain visualization derived from peer-reviewed fMRI literature aggregation projected onto the HCP-MMP-360 parcellation."
+      },
+      "embedding-baseline": {
+        "text": "Embedding baseline · BGE-small",
+        "aria": "Embedding-baseline predictor: a sentence-embedding model running on a free-tier backend, projected to 20 regions. Not a TRIBE inference."
+      },
+      "lexical-heuristic": {
+        "text": "Lexical heuristic",
+        "aria": "Lexical-heuristic fallback: when the embedding backend is asleep, a small set of word-feature scores fills in. Not a model prediction."
+      },
+      "literature-informed": {
+        "text": "Literature-informed synthesis",
+        "aria": "Literature-informed synthesis: this visualization is a hand-authored animation drawn from published research, not the output of a model."
+      },
+      "tribe-inference": {
+        "text": "TRIBE inference",
+        "aria": "TRIBE inference: prediction served by a real TRIBE checkpoint. Reserved badge state."
+      }
+    }
+  },
+  "activation": {
+    "bands": {
+      "strongest": "strongest response",
+      "moderate": "moderate response",
+      "minimal": "minimal response",
+      "near-silence": "near silence"
+    },
+    "divergence": {
+      "strongest": "strongest divergence",
+      "moderate": "moderate divergence",
+      "minimal": "minimal divergence",
+      "near-silence": "near silence"
+    }
   }
 }

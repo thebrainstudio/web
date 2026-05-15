@@ -1280,5 +1280,43 @@
         "framing": "一个对着镜头说话的人。面孔知觉（FFA）、语言与言语区域、以及心智化网络都参与其中 —— 编辑性的组合追随的是听者的认知，而不是说话者的发音。"
       }
     }
+  },
+  "provenance": {
+    "labels": {
+      "neurosynth": {
+        "text": "Neurosynth 元分析",
+        "aria": "Neurosynth 元分析：可视化由经过同行评审的 fMRI 文献聚合得出，投射到 HCP-MMP-360 分区上。"
+      },
+      "embedding-baseline": {
+        "text": "嵌入基线 · BGE-small",
+        "aria": "嵌入基线预测器：在免费层后端上运行的句嵌入模型，投射到 20 个脑区。不是 TRIBE 推理。"
+      },
+      "lexical-heuristic": {
+        "text": "词法启发式",
+        "aria": "词法启发式回退：当后端休眠时，由一小组词法特征评分代替。不是模型预测。"
+      },
+      "literature-informed": {
+        "text": "基于文献的合成",
+        "aria": "基于文献的合成：本可视化是从已发表研究手工制作的动画，不是模型输出。"
+      },
+      "tribe-inference": {
+        "text": "TRIBE 推理",
+        "aria": "TRIBE 推理：由真实 TRIBE 检查点提供的预测。保留的徽章状态。"
+      }
+    }
+  },
+  "activation": {
+    "bands": {
+      "strongest": "最强响应",
+      "moderate": "中等响应",
+      "minimal": "微弱响应",
+      "near-silence": "近乎沉默"
+    },
+    "divergence": {
+      "strongest": "最强差异",
+      "moderate": "中等差异",
+      "minimal": "微弱差异",
+      "near-silence": "近乎沉默"
+    }
   }
 }

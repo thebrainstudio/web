@@ -1280,5 +1280,43 @@
         "framing": "Una persona parlant a la càmera. La percepció facial (FFA), les regions de la parla i el llenguatge, i les xarxes de mentalització s'activen — la composició editorial segueix la cognició de l'oient més que l'articulació del parlant."
       }
     }
+  },
+  "provenance": {
+    "labels": {
+      "neurosynth": {
+        "text": "Metaanàlisi Neurosynth",
+        "aria": "Metaanàlisi Neurosynth: visualització derivada de l'agregació de literatura fMRI revisada per parells, projectada sobre la parcel·lació HCP-MMP-360."
+      },
+      "embedding-baseline": {
+        "text": "Línia base d'embeddings · BGE-small",
+        "aria": "Predictor de línia base per embeddings: un model d'incrustació de frases sobre un backend gratuït, projectat a 20 regions. No és inferència TRIBE."
+      },
+      "lexical-heuristic": {
+        "text": "Heurística lèxica",
+        "aria": "Suport heurístic lèxic: quan el backend dorm, un conjunt petit de puntuacions de trets lèxics omple. No és una predicció de model."
+      },
+      "literature-informed": {
+        "text": "Síntesi basada en literatura",
+        "aria": "Síntesi basada en literatura: aquesta visualització és una animació feta a mà a partir de recerca publicada, no la sortida d'un model."
+      },
+      "tribe-inference": {
+        "text": "Inferència TRIBE",
+        "aria": "Inferència TRIBE: predicció servida per un checkpoint TRIBE real. Estat d'insígnia reservat."
+      }
+    }
+  },
+  "activation": {
+    "bands": {
+      "strongest": "resposta més forta",
+      "moderate": "resposta moderada",
+      "minimal": "resposta mínima",
+      "near-silence": "gairebé silenci"
+    },
+    "divergence": {
+      "strongest": "divergència més forta",
+      "moderate": "divergència moderada",
+      "minimal": "divergència mínima",
+      "near-silence": "gairebé silenci"
+    }
   }
 }

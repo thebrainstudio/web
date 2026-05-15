@@ -1280,5 +1280,43 @@
         "framing": "Una persona hablando a la cámara. La percepción facial (FFA), las regiones del habla y el lenguaje, y las redes de mentalización se activan — la composición editorial sigue la cognición del oyente más que la articulación del hablante."
       }
     }
+  },
+  "provenance": {
+    "labels": {
+      "neurosynth": {
+        "text": "Metaanálisis Neurosynth",
+        "aria": "Metaanálisis Neurosynth: visualización derivada de la agregación de literatura fMRI revisada por pares, proyectada sobre la parcelación HCP-MMP-360."
+      },
+      "embedding-baseline": {
+        "text": "Línea base de embeddings · BGE-small",
+        "aria": "Predictor de línea base por embeddings: un modelo de incrustación de oraciones sobre un backend gratuito, proyectado a 20 regiones. No es inferencia TRIBE."
+      },
+      "lexical-heuristic": {
+        "text": "Heurística léxica",
+        "aria": "Respaldo heurístico léxico: cuando el backend está dormido, un conjunto pequeño de puntuaciones de rasgos léxicos rellena. No es una predicción de modelo."
+      },
+      "literature-informed": {
+        "text": "Síntesis basada en literatura",
+        "aria": "Síntesis basada en literatura: esta visualización es una animación hecha a mano a partir de investigaciones publicadas, no la salida de un modelo."
+      },
+      "tribe-inference": {
+        "text": "Inferencia TRIBE",
+        "aria": "Inferencia TRIBE: predicción servida por un checkpoint TRIBE real. Estado de insignia reservado."
+      }
+    }
+  },
+  "activation": {
+    "bands": {
+      "strongest": "respuesta más fuerte",
+      "moderate": "respuesta moderada",
+      "minimal": "respuesta mínima",
+      "near-silence": "casi silencio"
+    },
+    "divergence": {
+      "strongest": "divergencia más fuerte",
+      "moderate": "divergencia moderada",
+      "minimal": "divergencia mínima",
+      "near-silence": "casi silencio"
+    }
   }
 }
