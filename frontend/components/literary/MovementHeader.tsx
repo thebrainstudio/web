@@ -40,7 +40,7 @@ export default function MovementHeader({
           {label} {number}
         </Caption>
         <span aria-hidden className="bg-bone-cream/15 h-px flex-1" />
-        <span className="text-bone-cream/45 tracking-[0.18em]">
+        <span className="text-bone-cream/70 tracking-[0.18em]">
           <ReadingTime
             kind="movement"
             numberLabel=""

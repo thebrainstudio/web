@@ -48,7 +48,7 @@ export default function NavMenu({ group, openId, setOpenId }: Props) {
         className={`group relative inline-flex items-center gap-1.5 transition-colors duration-200 ${
           groupActive
             ? "text-bone-cream"
-            : "text-bone-cream/70 hover:text-bone-cream"
+            : "text-bone-cream/85 hover:text-bone-cream"
         }`}
       >
         <Caption>{t(`menus.${group.id}.label`)}</Caption>
@@ -90,7 +90,7 @@ export default function NavMenu({ group, openId, setOpenId }: Props) {
               >
                 {t(`menus.${group.id}.label`)}
               </Caption>
-              <span className="font-editorial text-caption text-bone-cream/55 block leading-snug">
+              <span className="font-editorial text-caption text-bone-cream/75 block leading-snug">
                 {t(`menus.${group.id}.tagline`)}
               </span>
             </div>

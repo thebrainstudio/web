@@ -56,7 +56,7 @@ export default async function Home({
             line3={t("hero.line3")}
             className="mt-10"
           />
-          <Caption uppercase as="p" className="text-bone-cream/70 mt-12">
+          <Caption uppercase as="p" className="text-bone-cream/85 mt-12">
             {t("scrollPrompt")}
           </Caption>
           <p
@@ -73,7 +73,7 @@ export default async function Home({
             <Link
               href="/mirror"
               data-hover
-              className="text-bone-cream/55 hover:text-brass group inline-flex items-center gap-2 transition-colors duration-300"
+              className="text-bone-cream/75 hover:text-brass group inline-flex items-center gap-2 transition-colors duration-300"
             >
               <Caption uppercase className="tracking-[0.18em]">
                 Or skip ahead — type into the Mirror
@@ -105,7 +105,7 @@ export default async function Home({
                 <Heading className="mt-6">
                   {t("howItWorks.step1.heading")}
                 </Heading>
-                <Body className="text-bone-cream/70 mt-6 max-w-[30rem]">
+                <Body className="text-bone-cream/85 mt-6 max-w-[30rem]">
                   {t("howItWorks.step1.body")}
                 </Body>
               </div>
@@ -118,7 +118,7 @@ export default async function Home({
                 <Heading italic className="mt-6">
                   {t("howItWorks.step2.heading")}
                 </Heading>
-                <Body className="text-bone-cream/70 mt-6 max-w-[30rem]">
+                <Body className="text-bone-cream/85 mt-6 max-w-[30rem]">
                   {t("howItWorks.step2.body")}
                 </Body>
               </div>
@@ -131,7 +131,7 @@ export default async function Home({
                 <Heading className="mt-6">
                   {t("howItWorks.step3.heading")}
                 </Heading>
-                <Body italic className="text-bone-cream/70 mt-6 max-w-[30rem]">
+                <Body italic className="text-bone-cream/85 mt-6 max-w-[30rem]">
                   {t("howItWorks.step3.body")}
                 </Body>
               </div>
@@ -154,7 +154,7 @@ export default async function Home({
             <Heading className="mt-8 md:text-display md:font-[200]">
               {t("rooms.heading")}
             </Heading>
-            <Body className="text-bone-cream/65 mt-6">
+            <Body className="text-bone-cream/80 mt-6">
               {t("rooms.body")}
             </Body>
           </div>
@@ -254,7 +254,7 @@ export default async function Home({
             <Heading className="mt-8 md:text-display md:font-[200]">
               {t("instrument.heading")}
             </Heading>
-            <Body className="text-bone-cream/65 mt-6">
+            <Body className="text-bone-cream/80 mt-6">
               {t("instrument.body")}
             </Body>
           </div>
@@ -303,7 +303,7 @@ export default async function Home({
             <Heading className="mt-8 md:text-display md:font-[200]">
               {t("longform.heading")}
             </Heading>
-            <Body className="text-bone-cream/65 mt-6">
+            <Body className="text-bone-cream/80 mt-6">
               {t("longform.body")}
             </Body>
           </div>

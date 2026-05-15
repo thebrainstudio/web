@@ -58,7 +58,7 @@ export default function SiteFooter() {
     <footer className="border-bone-cream/10 relative border-t px-6 py-14 text-center md:px-10">
       <div className="mx-auto max-w-[1100px] space-y-5">
         {/* Row 1 — 8 rooms */}
-        <div className="text-bone-cream/65">
+        <div className="text-bone-cream/80">
           {ROOM_LINKS.map((link, i) => (
             <span key={link.href}>
               <Link
@@ -74,7 +74,7 @@ export default function SiteFooter() {
         </div>
 
         {/* Row 2 — reference layer + longform + about */}
-        <div className="text-bone-cream/55">
+        <div className="text-bone-cream/75">
           {REFERENCE_LINKS.map((link, i) => (
             <span key={link.href}>
               <Link

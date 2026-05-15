@@ -86,7 +86,7 @@ export default async function DepthPsychologyLanding({
           <Display italic className="mt-8">
             {t("title")}
           </Display>
-          <Body className="text-bone-cream/65 mt-8 max-w-[40rem]">
+          <Body className="text-bone-cream/80 mt-8 max-w-[40rem]">
             {t("intro")}
           </Body>
         </div>
@@ -154,7 +154,7 @@ export default async function DepthPsychologyLanding({
                 <ReadingTime
                   kind="essay"
                   minutes={page.readMinutes}
-                  className="text-bone-cream/65 block"
+                  className="text-bone-cream/80 block"
                 />
                 <Heading
                   as="h3"
@@ -162,7 +162,7 @@ export default async function DepthPsychologyLanding({
                 >
                   {page.title}
                 </Heading>
-                <Body italic className="text-bone-cream/70 mt-3 max-w-[28rem]">
+                <Body italic className="text-bone-cream/85 mt-3 max-w-[28rem]">
                   {page.subtitle}
                 </Body>
                 <Caption
@@ -201,7 +201,7 @@ export default async function DepthPsychologyLanding({
                 className="group block"
                 data-hover
               >
-                <Mono variant="label" className="text-bone-cream/65 block">
+                <Mono variant="label" className="text-bone-cream/80 block">
                   {page.label}
                 </Mono>
                 <Heading
@@ -239,7 +239,7 @@ export default async function DepthPsychologyLanding({
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/65">
+        <Caption uppercase className="text-bone-cream/80">
           {t("footerNote")}
         </Caption>
       </footer>

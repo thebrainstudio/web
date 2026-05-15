@@ -42,7 +42,7 @@ export default async function LocaleNotFound() {
         <Display italic className="mt-10">
           {t("title")}
         </Display>
-        <Body className="text-bone-cream/65 mt-8">{t("body")}</Body>
+        <Body className="text-bone-cream/80 mt-8">{t("body")}</Body>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
           {links.map(({ href, label }) => (
             <Link

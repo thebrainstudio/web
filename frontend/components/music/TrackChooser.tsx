@@ -45,7 +45,7 @@ export default function TrackChooser({ tracks, activeId, onSelect }: Props) {
             className={`rounded-sm px-3 py-1.5 transition-colors duration-200 ${
               active
                 ? "bg-brass text-navy-deep"
-                : "text-bone-cream/70 hover:text-bone-cream"
+                : "text-bone-cream/85 hover:text-bone-cream"
             }`}
           >
             <Caption uppercase>{(() => { try { return tt(`tracks.${t.id}.era`); } catch { return t.era; } })()}</Caption>

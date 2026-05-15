@@ -306,7 +306,7 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
           className={`tracking-[0.18em] tabular-nums ${
             value.length / MAX_LENGTH >= 0.9
               ? "text-brass"
-              : "text-bone-cream/55"
+              : "text-bone-cream/75"
           }`}
         >
           {t("charCounter", { used: value.length, max: MAX_LENGTH })}

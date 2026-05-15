@@ -90,10 +90,10 @@ export default async function EncoderLabPage({
         <Display italic className="mt-10">
           {t("title")}
         </Display>
-        <Body className="text-bone-cream/65 mt-10 max-w-[42rem]">
+        <Body className="text-bone-cream/80 mt-10 max-w-[42rem]">
           {t("intro")}
         </Body>
-        <Body italic className="text-bone-cream/55 mt-6 max-w-[42rem]">
+        <Body italic className="text-bone-cream/75 mt-6 max-w-[42rem]">
           {t("modeledOn")}
         </Body>
 
@@ -108,7 +108,7 @@ export default async function EncoderLabPage({
           >
             {t("disclaimerLabel")}
           </Caption>
-          <Body italic className="text-bone-cream/55 leading-relaxed">
+          <Body italic className="text-bone-cream/75 leading-relaxed">
             {t("disclaimerBody")}
           </Body>
         </div>

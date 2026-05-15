@@ -61,7 +61,7 @@ export default async function ToursIndex({
           <Display italic className="mt-8">
             {t("title")}
           </Display>
-          <Body className="text-bone-cream/65 mt-8 max-w-[36rem]">
+          <Body className="text-bone-cream/80 mt-8 max-w-[36rem]">
             {t("intro")}
           </Body>
         </div>
@@ -81,7 +81,7 @@ export default async function ToursIndex({
       <section className="relative px-6 pb-32 pt-16 md:px-10 md:pb-40 md:pt-20">
         <div className="mx-auto max-w-[1100px]">
           {tours.length === 0 ? (
-            <Body italic className="text-bone-cream/70">
+            <Body italic className="text-bone-cream/85">
               {t("emptyState")}
             </Body>
           ) : (
@@ -100,7 +100,7 @@ export default async function ToursIndex({
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-4">
                       <div>
-                        <Mono variant="label" className="text-bone-cream/65 block">
+                        <Mono variant="label" className="text-bone-cream/80 block">
                           {t("tour")}
                         </Mono>
                         <Heading
@@ -114,12 +114,12 @@ export default async function ToursIndex({
                         <Mono variant="value" className="text-brass leading-none">
                           {mins}:{String(secs).padStart(2, "0")}
                         </Mono>
-                        <Caption uppercase className="text-bone-cream/45 mt-1 block tracking-[0.18em]">
+                        <Caption uppercase className="text-bone-cream/70 mt-1 block tracking-[0.18em]">
                           {t("duration")}
                         </Caption>
                       </div>
                     </div>
-                    <Body italic className="text-bone-cream/70 mt-6">
+                    <Body italic className="text-bone-cream/85 mt-6">
                       {tour.subtitle}
                     </Body>
                     <Body className="text-bone-cream/60 mt-4 max-w-[42rem]">
@@ -140,14 +140,14 @@ export default async function ToursIndex({
             </div>
           )}
 
-          <Body italic className="text-bone-cream/45 mt-16 max-w-[36rem]">
+          <Body italic className="text-bone-cream/70 mt-16 max-w-[36rem]">
             {t("comingSoon")}
           </Body>
         </div>
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/65">
+        <Caption uppercase className="text-bone-cream/80">
           {t("footerNote")}
         </Caption>
       </footer>

@@ -102,7 +102,7 @@ export default function CrossCulturalPage() {
               {t("pairLabel")}
             </Caption>
             <Heading className="mt-6">{t("pairHeading")}</Heading>
-            <Body className="text-bone-cream/65 mt-6 max-w-[34rem]">
+            <Body className="text-bone-cream/80 mt-6 max-w-[34rem]">
               {t("pairBody")}
             </Body>
           </div>
@@ -146,20 +146,20 @@ export default function CrossCulturalPage() {
           <Display italic className="mt-8">
             {t("closingDisplay")}
           </Display>
-          <Body className="text-bone-cream/70 mt-10">
+          <Body className="text-bone-cream/85 mt-10">
             {t("closingBody")}
           </Body>
           <p className="mt-10">
             <Hand className="text-cyan-glow">{t("closingHand")}</Hand>
           </p>
-          <Caption uppercase className="text-bone-cream/45 mt-10 block">
+          <Caption uppercase className="text-bone-cream/70 mt-10 block">
             {t("submissionForm")}
           </Caption>
         </div>
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/65">
+        <Caption uppercase className="text-bone-cream/80">
           {t("footerNote")}
         </Caption>
       </footer>

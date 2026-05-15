@@ -108,7 +108,7 @@ export default function PinnedPredictionCard({
             type="button"
             onClick={onClear}
             data-hover
-            className="text-bone-cream/55 hover:text-brass transition-colors duration-200"
+            className="text-bone-cream/75 hover:text-brass transition-colors duration-200"
             aria-label="Clear pinned prediction"
           >
             <Caption uppercase className="tracking-[0.18em]">
@@ -131,7 +131,7 @@ export default function PinnedPredictionCard({
                 ? pinned.text.slice(0, 60).trimEnd() + "…"
                 : pinned.text}
             </Body>
-            <div className="text-bone-cream/55 mt-3 flex flex-wrap gap-x-3 gap-y-1">
+            <div className="text-bone-cream/75 mt-3 flex flex-wrap gap-x-3 gap-y-1">
               {pinned.topRegions.slice(0, 3).map((r) => (
                 <span
                   key={r.id}
@@ -169,7 +169,7 @@ export default function PinnedPredictionCard({
             >
               <Caption
                 uppercase
-                className="text-bone-cream/55 mb-2 block tracking-[0.18em]"
+                className="text-bone-cream/75 mb-2 block tracking-[0.18em]"
               >
                 vs pinned
               </Caption>
@@ -196,7 +196,7 @@ export default function PinnedPredictionCard({
                       <Mono
                         variant="label"
                         className={
-                          d.delta > 0 ? "text-brass" : "text-bone-cream/55"
+                          d.delta > 0 ? "text-brass" : "text-bone-cream/75"
                         }
                       >
                         {sign}

@@ -176,7 +176,7 @@ export default function ToursIndexHero({ tour, labels }: Props) {
           </Caption>
           <Caption className="text-bone-cream/85">{tour.title}</Caption>
         </div>
-        <Mono variant="label" className="text-bone-cream/55 tracking-[0.18em]">
+        <Mono variant="label" className="text-bone-cream/75 tracking-[0.18em]">
           {labels.scene} {String(sceneIndex + 1).padStart(2, "0")} /{" "}
           {String(tour.scenes.length).padStart(2, "0")}
         </Mono>
@@ -191,7 +191,7 @@ export default function ToursIndexHero({ tour, labels }: Props) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.55, ease: easeImportant }}
-            className="text-bone-cream/70 font-editorial max-w-[44rem] text-[1.05rem] italic leading-relaxed"
+            className="text-bone-cream/85 font-editorial max-w-[44rem] text-[1.05rem] italic leading-relaxed"
           >
             {currentScene.narration}
           </motion.p>

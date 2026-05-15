@@ -24,7 +24,7 @@ export default function ProvenanceFooter({
       <summary className="cursor-pointer list-none">
         <Mono
           variant="label"
-          className="text-bone-cream/55 tracking-[0.18em] group-hover:text-bone-cream/85 transition-colors"
+          className="text-bone-cream/75 tracking-[0.18em] group-hover:text-bone-cream/85 transition-colors"
         >
           {file.source} · {file.parcellation} · {file.license}{" "}
           <span aria-hidden className="text-brass/70 ml-1 inline-block transition-transform group-open:rotate-90">
@@ -32,7 +32,7 @@ export default function ProvenanceFooter({
           </span>
         </Mono>
       </summary>
-      <div className="mt-3 max-w-[42rem] space-y-2 text-bone-cream/55">
+      <div className="mt-3 max-w-[42rem] space-y-2 text-bone-cream/75">
         <Caption className="block leading-relaxed">
           <span className="text-bone-cream/75">Composition: </span>
           {compositionStr}
@@ -45,10 +45,10 @@ export default function ProvenanceFooter({
         <Caption className="block leading-relaxed">
           {file.methodology}
         </Caption>
-        <Caption className="block leading-relaxed text-bone-cream/45">
+        <Caption className="block leading-relaxed text-bone-cream/70">
           {file.citation}
         </Caption>
-        <Caption italic className="block leading-relaxed text-bone-cream/45">
+        <Caption italic className="block leading-relaxed text-bone-cream/70">
           Not a measurement of any individual brain. What you're
           seeing is the activation pattern published meta-analysis
           associates with the term composition above.

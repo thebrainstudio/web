@@ -106,7 +106,7 @@ export default function LanguageSelector({ compact = false }: { compact?: boolea
                       <span className="font-editorial text-[0.95rem] leading-none">
                         {meta.native}
                       </span>
-                      <span className="text-bone-cream/45 mt-1 text-[0.7rem] uppercase tracking-[0.12em]">
+                      <span className="text-bone-cream/70 mt-1 text-[0.7rem] uppercase tracking-[0.12em]">
                         {meta.english}
                       </span>
                     </span>
@@ -126,7 +126,7 @@ export default function LanguageSelector({ compact = false }: { compact?: boolea
               );
             })}
           </ul>
-          <p className="text-bone-cream/45 mt-2 border-t border-bone-cream/10 px-3 pt-2 text-[0.68rem] italic leading-snug">
+          <p className="text-bone-cream/70 mt-2 border-t border-bone-cream/10 px-3 pt-2 text-[0.68rem] italic leading-snug">
             {t("languageSelectorFooter")}
           </p>
         </div>

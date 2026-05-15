@@ -125,16 +125,16 @@ export default function TrackPlayer({
 
   return (
     <div className="w-full">
-      <Caption uppercase className={primary ? "text-brass" : "text-bone-cream/70"}>
+      <Caption uppercase className={primary ? "text-brass" : "text-bone-cream/85"}>
         {era}
       </Caption>
       <Heading as="h3" className="mt-3 font-[200]">
         {track.title}
       </Heading>
-      <Caption className="text-bone-cream/70 mt-2 block">
+      <Caption className="text-bone-cream/85 mt-2 block">
         {track.attribution}
       </Caption>
-      <Body italic className="text-bone-cream/65 mt-6 max-w-[34rem]">
+      <Body italic className="text-bone-cream/80 mt-6 max-w-[34rem]">
         {framing}
       </Body>
 
@@ -174,11 +174,11 @@ export default function TrackPlayer({
           silent slots get an honest "audio in development" note. */}
       <div className="mt-4">
         {track.src && track.licenseAttribution ? (
-          <Caption className="text-bone-cream/55 block leading-relaxed">
+          <Caption className="text-bone-cream/75 block leading-relaxed">
             {track.licenseAttribution}
           </Caption>
         ) : (
-          <Caption className="text-bone-cream/55 block leading-relaxed">
+          <Caption className="text-bone-cream/75 block leading-relaxed">
             Silent preview — this slot is awaiting a contributed
             recording. The brain timeline above is hand-authored so
             the visualization works without audio.

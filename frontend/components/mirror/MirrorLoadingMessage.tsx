@@ -36,7 +36,7 @@ export default function MirrorLoadingMessage({
   if (!active) return null;
 
   return (
-    <div className="text-bone-cream/70 mt-6 flex items-center gap-3">
+    <div className="text-bone-cream/85 mt-6 flex items-center gap-3">
       <span
         aria-hidden
         className="bg-brass inline-block h-1.5 w-1.5 animate-pulse rounded-full"

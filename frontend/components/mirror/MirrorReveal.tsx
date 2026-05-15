@@ -46,7 +46,7 @@ export default function MirrorReveal({ topRegions }: Props) {
       <Caption uppercase className="text-brass">
         {tr(tMirror, "revealLabel", "What your writing reveals")}
       </Caption>
-      <Body italic className="text-bone-cream/70 mt-2 max-w-[34rem]">
+      <Body italic className="text-bone-cream/85 mt-2 max-w-[34rem]">
         {tr(tMirror, "revealIntro", "Predictions in this preview are simulated locally; real TRIBE inference comes in Phase 10.")}
       </Body>
 
@@ -106,7 +106,7 @@ export default function MirrorReveal({ topRegions }: Props) {
                   >
                     {tActivation(activationBandKey(entry.activation))}
                   </Mono>
-                  <Caption uppercase className="text-bone-cream/45 mt-2 block">
+                  <Caption uppercase className="text-bone-cream/70 mt-2 block">
                     {tr(tMirror, "predictedActivation", "Predicted activation")}
                   </Caption>
                 </div>

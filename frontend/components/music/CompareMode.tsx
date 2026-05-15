@@ -55,7 +55,7 @@ export default function CompareMode() {
             className={`rounded-sm px-2.5 py-1 transition-colors duration-200 ${
               active
                 ? "bg-brass text-navy-deep"
-                : "text-bone-cream/65 hover:text-bone-cream"
+                : "text-bone-cream/80 hover:text-bone-cream"
             }`}
           >
             <Caption uppercase>{(() => { try { return tt(`tracks.${t.id}.era`).split(" ·")[0]; } catch { return t.era.split(" ·")[0]; } })()}</Caption>
@@ -82,7 +82,7 @@ export default function CompareMode() {
               : "md:border-r md:border-bone-cream/10"
           }`}
         >
-          <Caption uppercase className={focused === "left" ? "text-brass" : "text-bone-cream/70"}>
+          <Caption uppercase className={focused === "left" ? "text-brass" : "text-bone-cream/85"}>
             Left channel
           </Caption>
           <div className="mt-2">
@@ -105,7 +105,7 @@ export default function CompareMode() {
           transition={{ duration: 0.6, ease: easeCinematic, delay: 0.1 }}
           className="md:pl-10"
         >
-          <Caption uppercase className={focused === "right" ? "text-brass" : "text-bone-cream/70"}>
+          <Caption uppercase className={focused === "right" ? "text-brass" : "text-bone-cream/85"}>
             Right channel
           </Caption>
           <div className="mt-2">
@@ -119,7 +119,7 @@ export default function CompareMode() {
         </motion.section>
       </AnimatePresence>
 
-      <Body italic className="text-bone-cream/45 col-span-full max-w-[40rem]">
+      <Body italic className="text-bone-cream/70 col-span-full max-w-[40rem]">
         The brain follows the channel under your cursor — hover the other
         side to hand it over.
       </Body>

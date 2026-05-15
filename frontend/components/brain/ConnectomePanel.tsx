@@ -85,7 +85,7 @@ export default function ConnectomePanel({ regionId }: { regionId: RegionId }) {
       <Caption uppercase className="text-brass tracking-[0.18em]">
         {t("sidebar.connectome")}
       </Caption>
-      <Caption className="text-bone-cream/70 mt-2 block max-w-[18rem]">
+      <Caption className="text-bone-cream/85 mt-2 block max-w-[18rem]">
         {hasConnected
           ? t("connectome.connectedIntro")
           : t("connectome.unconnectedIntro")}
@@ -145,7 +145,7 @@ export default function ConnectomePanel({ regionId }: { regionId: RegionId }) {
             type="button"
             onClick={() => clearTracts()}
             data-hover
-            className="text-bone-cream/70 hover:text-brass inline-flex items-center gap-2 transition-colors duration-150"
+            className="text-bone-cream/85 hover:text-brass inline-flex items-center gap-2 transition-colors duration-150"
           >
             <Caption uppercase className="tracking-[0.18em]">
               {t("connectome.clear")}
@@ -154,7 +154,7 @@ export default function ConnectomePanel({ regionId }: { regionId: RegionId }) {
         )}
       </div>
 
-      <Caption className="text-bone-cream/65 mt-5 block max-w-[20rem] italic">
+      <Caption className="text-bone-cream/80 mt-5 block max-w-[20rem] italic">
         {t("connectome.disclosure")}
       </Caption>
     </div>
@@ -170,7 +170,7 @@ function TractDetail({ tract }: { tract: Tract }) {
       </Body>
       {tract.discoveredBy && (
         <Caption className="text-bone-cream/50 block">
-          <Mono variant="label" className="text-bone-cream/45 mr-2">
+          <Mono variant="label" className="text-bone-cream/70 mr-2">
             CREDIT
           </Mono>
           {tract.discoveredBy}

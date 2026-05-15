@@ -30,7 +30,7 @@ export default function InsightCard({ index, headline, body }: Props) {
       <Heading as="h3" className="md:col-span-6 md:font-[200] md:text-display md:leading-[1.1]">
         {headline}
       </Heading>
-      <Body className="text-bone-cream/65 max-w-[34rem] md:col-span-5">
+      <Body className="text-bone-cream/80 max-w-[34rem] md:col-span-5">
         {body}
       </Body>
     </motion.article>

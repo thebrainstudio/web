@@ -511,7 +511,11 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
       // [0.95, 1.05] when breathing, → 1.0 otherwise.
       const breathMul = 1.0 + (breathing ? breathSine * 0.05 : 0);
 
-      m.emissiveIntensity = (0.22 + wakeShaped * 0.15) * breathMul;
+      // Readability hotfix: idle emissive dropped to 0.10 so the
+      // brain doesn't compete with the hero text on /en. Active
+      // regions still bloom via the wake ramp (+0.20 over 800 ms),
+      // so the cinematic read on activation is preserved.
+      m.emissiveIntensity = (0.1 + wakeShaped * 0.2) * breathMul;
     }
   });
 

@@ -351,7 +351,7 @@ export default function BrainViews({
     <div className={className}>
       <Caption
         uppercase
-        className="text-bone-cream/55 mb-4 block tracking-[0.18em]"
+        className="text-bone-cream/75 mb-4 block tracking-[0.18em]"
       >
         Every angle of your prediction
       </Caption>
@@ -366,7 +366,7 @@ export default function BrainViews({
             </div>
             <Caption
               uppercase
-              className="text-bone-cream/55 mt-2 block text-center tracking-[0.16em]"
+              className="text-bone-cream/75 mt-2 block text-center tracking-[0.16em]"
             >
               {labels[view.labelKey]}
             </Caption>

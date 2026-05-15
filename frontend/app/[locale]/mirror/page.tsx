@@ -116,7 +116,7 @@ export default function MirrorPage() {
           <Display italic className="mt-8">
             {t("title")}
           </Display>
-          <Body className="text-bone-cream/65 mt-8 max-w-[34rem]">
+          <Body className="text-bone-cream/80 mt-8 max-w-[34rem]">
             {t("intro")}
           </Body>
 
@@ -246,21 +246,21 @@ export default function MirrorPage() {
                 {t("step1.label")}
               </Caption>
               <Heading className="mt-6">{t("step1.heading")}</Heading>
-              <Body className="text-bone-cream/70 mt-6">{t("step1.body")}</Body>
+              <Body className="text-bone-cream/85 mt-6">{t("step1.body")}</Body>
             </article>
             <article className="max-w-[34rem]">
               <Caption uppercase className="text-brass">
                 {t("step2.label")}
               </Caption>
               <Heading italic className="mt-6">{t("step2.heading")}</Heading>
-              <Body className="text-bone-cream/70 mt-6">{t("step2.body")}</Body>
+              <Body className="text-bone-cream/85 mt-6">{t("step2.body")}</Body>
             </article>
             <article className="max-w-[34rem]">
               <Caption uppercase className="text-brass">
                 {t("step3.label")}
               </Caption>
               <Heading className="mt-6">{t("step3.heading")}</Heading>
-              <Body italic className="text-bone-cream/70 mt-6">{t("step3.body")}</Body>
+              <Body italic className="text-bone-cream/85 mt-6">{t("step3.body")}</Body>
             </article>
           </div>
         </div>
@@ -307,13 +307,13 @@ export default function MirrorPage() {
       </ScrollScene>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/65">
+        <Caption uppercase className="text-bone-cream/80">
           {t("footerStudio")}
         </Caption>
         <Caption uppercase aria-hidden className="text-bone-cream/40 mx-3">
           ·
         </Caption>
-        <Caption uppercase className="text-bone-cream/65">
+        <Caption uppercase className="text-bone-cream/80">
           {t("footerNote")}
         </Caption>
       </footer>

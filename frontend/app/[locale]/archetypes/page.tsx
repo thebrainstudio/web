@@ -111,7 +111,7 @@ export default async function ArchetypesPage({
           <Display italic className="mt-10">
             {t("opening")}
           </Display>
-          <Body className="text-bone-cream/65 mt-10">
+          <Body className="text-bone-cream/80 mt-10">
             {t("openingBody")}
           </Body>
         </div>
@@ -142,7 +142,7 @@ export default async function ArchetypesPage({
               {t("upcomingLabel")}
             </Caption>
             <Heading className="mt-6 font-[200]">{t("upcomingHeading")}</Heading>
-            <Body className="text-bone-cream/65 mt-6">
+            <Body className="text-bone-cream/80 mt-6">
               {t("upcomingBody")}
             </Body>
             <ul className="mt-10 space-y-8">
@@ -154,7 +154,7 @@ export default async function ArchetypesPage({
                   <Body italic className="text-bone-cream/75 mt-2">
                     {a.subtitle}
                   </Body>
-                  <Mono variant="label" className="text-bone-cream/45 mt-3 block">
+                  <Mono variant="label" className="text-bone-cream/70 mt-3 block">
                     {t("todoImage")} · {a.todo_note}
                   </Mono>
                 </li>
@@ -254,7 +254,7 @@ export default async function ArchetypesPage({
           <Body italic className="text-bone-cream/80 mt-10 text-lg leading-[1.6]">
             {t("mandalasItalic")}
           </Body>
-          <Mono variant="label" className="text-bone-cream/65 mt-14 block">
+          <Mono variant="label" className="text-bone-cream/80 mt-14 block">
             {t("mandalasMeta")}
           </Mono>
         </div>
@@ -269,7 +269,7 @@ export default async function ArchetypesPage({
           <Heading className="mt-6 font-[200]">
             {t("manyHeading")}
           </Heading>
-          <Body className="text-bone-cream/65 mt-6 max-w-[42rem]">
+          <Body className="text-bone-cream/80 mt-6 max-w-[42rem]">
             {t("manyBody")}
           </Body>
 
@@ -300,7 +300,7 @@ export default async function ArchetypesPage({
             <div>
               <Link
                 href="/threshold"
-                className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
+                className="text-bone-cream/85 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
               >
                 <Body italic>{t("linkThreshold")}</Body>
               </Link>
@@ -308,7 +308,7 @@ export default async function ArchetypesPage({
             <div>
               <Link
                 href="/field-notes"
-                className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
+                className="text-bone-cream/85 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
               >
                 <Body italic>{t("linkFieldNotes")}</Body>
               </Link>
@@ -316,7 +316,7 @@ export default async function ArchetypesPage({
             <div>
               <Link
                 href="/"
-                className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
+                className="text-bone-cream/85 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
               >
                 <Body italic>{t("linkHome")}</Body>
               </Link>
@@ -326,7 +326,7 @@ export default async function ArchetypesPage({
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/65">
+        <Caption uppercase className="text-bone-cream/80">
           {t("footer")}
         </Caption>
       </footer>

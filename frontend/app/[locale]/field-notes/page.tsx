@@ -69,14 +69,14 @@ export default async function FieldNotesIndex({
         <Display italic className="mt-10">
           {t("display")}
         </Display>
-        <Body className="text-bone-cream/65 mt-10 max-w-[36rem]">
+        <Body className="text-bone-cream/80 mt-10 max-w-[36rem]">
           {t("intro")}
         </Body>
 
         <ol className="mt-20 space-y-14">
           {essays.map((e, i) => (
             <li key={e.slug}>
-              <div className="text-bone-cream/65">
+              <div className="text-bone-cream/80">
                 <Mono variant="label">0{i + 1}</Mono>
               </div>
               {e.shipped ? (
@@ -93,14 +93,14 @@ export default async function FieldNotesIndex({
                   </Heading>
                 </Link>
               ) : (
-                <Heading as="h2" className="mt-4 text-bone-cream/70">
+                <Heading as="h2" className="mt-4 text-bone-cream/85">
                   {e.title}
                 </Heading>
               )}
-              <Body italic className="text-bone-cream/65 mt-3 max-w-[36rem]">
+              <Body italic className="text-bone-cream/80 mt-3 max-w-[36rem]">
                 {e.summary}
               </Body>
-              <div className="mt-4 text-bone-cream/45">
+              <div className="mt-4 text-bone-cream/70">
                 {/* PR 5: shared <ReadingTime kind="meta" /> render.
                     Reads `reading.words` / `reading.minutesShort`
                     from the shared namespace instead of the local

@@ -47,7 +47,7 @@ const STATE_CLASSES: Record<ProvenanceState, { dot: string; text: string }> = {
   // Neutral gray — neither a model claim nor a meta-analytic one.
   "literature-informed": {
     dot: "bg-bone-cream/50",
-    text: "text-bone-cream/55",
+    text: "text-bone-cream/75",
   },
   // Reserved.
   "tribe-inference": {

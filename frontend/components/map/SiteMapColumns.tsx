@@ -128,7 +128,7 @@ export default function SiteMapColumns() {
                   </Caption>
                   <Mono
                     variant="label"
-                    className={`mt-1 block ${lit ? "text-brass/80" : "text-bone-cream/45"}`}
+                    className={`mt-1 block ${lit ? "text-brass/80" : "text-bone-cream/70"}`}
                   >
                     {room.regionIds.slice(0, 4).join(" · ")}
                     {room.regionIds.length > 4 ? " · …" : ""}
@@ -174,7 +174,7 @@ export default function SiteMapColumns() {
                   {bridgeLink && (
                     <Mono
                       variant="label"
-                      className={`mt-1 block ${lit ? "text-brass/80" : "text-bone-cream/45"}`}
+                      className={`mt-1 block ${lit ? "text-brass/80" : "text-bone-cream/70"}`}
                     >
                       → {bridgeLink.section} ({bridgeLink.strength})
                     </Mono>
@@ -213,7 +213,7 @@ export default function SiteMapColumns() {
                   </Caption>
                   <Mono
                     variant="label"
-                    className={`mt-1 block ${lit ? "text-brass/80" : "text-bone-cream/45"}`}
+                    className={`mt-1 block ${lit ? "text-brass/80" : "text-bone-cream/70"}`}
                   >
                     {page.regionIds.slice(0, 4).join(" · ")}
                     {page.regionIds.length > 4 ? " · …" : ""}

@@ -92,7 +92,7 @@ export default function StimulusComparison() {
     <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-10">
       {/* Pair selector */}
       <div className="md:col-span-12">
-        <Caption uppercase className="text-bone-cream/70">
+        <Caption uppercase className="text-bone-cream/85">
           Stimulus pair
         </Caption>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -110,7 +110,7 @@ export default function StimulusComparison() {
                 className={`rounded-sm px-3 py-1.5 transition-colors duration-200 ${
                   sel
                     ? "bg-brass text-navy-deep"
-                    : "text-bone-cream/65 hover:text-bone-cream"
+                    : "text-bone-cream/80 hover:text-bone-cream"
                 }`}
               >
                 <Caption uppercase>{p.id.replace(/-/g, " · ")}</Caption>
@@ -133,7 +133,7 @@ export default function StimulusComparison() {
       >
         <Caption
           uppercase
-          className={focused === "english" ? "text-brass" : "text-bone-cream/70"}
+          className={focused === "english" ? "text-brass" : "text-bone-cream/85"}
         >
           English · TRIBE training distribution
         </Caption>
@@ -159,7 +159,7 @@ export default function StimulusComparison() {
       >
         <Caption
           uppercase
-          className={focused === "thai" ? "text-brass" : "text-bone-cream/70"}
+          className={focused === "thai" ? "text-brass" : "text-bone-cream/85"}
         >
           Thai · outside training distribution
         </Caption>
@@ -185,16 +185,16 @@ export default function StimulusComparison() {
               <Mono variant="value" className="text-brass leading-none">
                 {Math.round(pair.divergence * 100)}
               </Mono>
-              <Caption uppercase className="text-bone-cream/45">
+              <Caption uppercase className="text-bone-cream/70">
                 / 100
               </Caption>
             </div>
-            <Body italic className="text-bone-cream/70 mt-4 max-w-[28rem]">
+            <Body italic className="text-bone-cream/85 mt-4 max-w-[28rem]">
               {pair.thaiGloss}
             </Body>
           </div>
           <div className="md:col-span-8">
-            <Caption uppercase className="text-bone-cream/70">
+            <Caption uppercase className="text-bone-cream/85">
               Top diverging regions
             </Caption>
             <ul className="mt-4 space-y-2">
@@ -216,7 +216,7 @@ export default function StimulusComparison() {
                       <Caption className="text-bone-cream/80">
                         {trReg(`${d.id}.displayName`, r.displayName)}
                       </Caption>{" "}
-                      <Caption className="text-bone-cream/65">
+                      <Caption className="text-bone-cream/80">
                         · {trReg(`${d.id}.anatomyName`, r.anatomyName)}
                       </Caption>
                     </span>

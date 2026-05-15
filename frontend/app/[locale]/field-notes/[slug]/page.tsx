@@ -107,7 +107,7 @@ export default function FieldNoteReader({
         <Body italic className="text-bone-cream/60 mt-6">
           {t(`${meta.key}.summary`)}
         </Body>
-        <div className="text-bone-cream/65 mt-8 block">
+        <div className="text-bone-cream/80 mt-8 block">
           {/* PR 5: shared ReadingTime component. */}
           <ReadingTime
             kind="meta"
@@ -153,7 +153,7 @@ export default function FieldNoteReader({
           <div>
             <Link
               href="/field-notes"
-              className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
+              className="text-bone-cream/85 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
             >
               <Body italic>{t("moreFieldNotes")}</Body>
             </Link>
@@ -161,7 +161,7 @@ export default function FieldNoteReader({
           <div>
             <Link
               href="/threshold"
-              className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
+              className="text-bone-cream/85 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
             >
               <Body italic>{t("returnThreshold")}</Body>
             </Link>

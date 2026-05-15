@@ -164,7 +164,7 @@ export default function TourPlayerPage({
             <Heading className="mt-4 font-[200] max-w-[34rem]">
               {tour.title}
             </Heading>
-            <Body italic className="text-bone-cream/65 mt-4 max-w-[34rem]">
+            <Body italic className="text-bone-cream/80 mt-4 max-w-[34rem]">
               {tour.subtitle}
             </Body>
           </div>
@@ -221,7 +221,7 @@ export default function TourPlayerPage({
                     </Caption>
                   </button>
                 ) : (
-                  <Caption className="text-bone-cream/70 italic">
+                  <Caption className="text-bone-cream/85 italic">
                     {t("ended")}
                   </Caption>
                 )}
@@ -229,7 +229,7 @@ export default function TourPlayerPage({
                   type="button"
                   onClick={restart}
                   data-hover
-                  className="text-bone-cream/70 hover:text-brass inline-flex items-center justify-center px-3 py-2 transition-colors duration-200"
+                  className="text-bone-cream/85 hover:text-brass inline-flex items-center justify-center px-3 py-2 transition-colors duration-200"
                 >
                   <Caption uppercase className="tracking-[0.22em]">
                     {t("restart")}
@@ -372,7 +372,7 @@ function ActiveRegionsPanel({
                     {pct}%
                   </Mono>
                 </div>
-                <Caption className="text-bone-cream/45 mt-0.5 block text-[0.72rem]">
+                <Caption className="text-bone-cream/70 mt-0.5 block text-[0.72rem]">
                   {localAnatomy(id, r.anatomyName)}
                 </Caption>
                 {/* Strength bar */}

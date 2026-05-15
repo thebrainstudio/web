@@ -66,10 +66,10 @@ export default async function AtlasIndex({
           <Display italic className="mt-8">
             {t("title")}
           </Display>
-          <Body className="text-bone-cream/65 mt-8 max-w-[36rem]">
+          <Body className="text-bone-cream/80 mt-8 max-w-[36rem]">
             {t("intro")}
           </Body>
-          <Caption className="text-bone-cream/45 mt-6 block max-w-[36rem] italic">
+          <Caption className="text-bone-cream/70 mt-6 block max-w-[36rem] italic">
             {t("statusNote", { complete: completeCount, total: regions.length })}
           </Caption>
         </div>
@@ -95,7 +95,7 @@ export default async function AtlasIndex({
                     </Heading>
                   </span>
                 </div>
-                <Caption className="text-bone-cream/70 mt-2 block max-w-[28rem]">
+                <Caption className="text-bone-cream/85 mt-2 block max-w-[28rem]">
                   {info.shortDescription}
                 </Caption>
                 <div className="mt-8 grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
@@ -110,7 +110,7 @@ export default async function AtlasIndex({
                         className="group block"
                         data-hover
                       >
-                        <Mono variant="label" className="text-bone-cream/65 block">
+                        <Mono variant="label" className="text-bone-cream/80 block">
                           {tRegions(`${id}.anatomyName`)}
                         </Mono>
                         <div className="mt-2 flex items-baseline gap-3">
@@ -123,7 +123,7 @@ export default async function AtlasIndex({
                           {entry.status === "in-progress" && (
                             <Caption
                               uppercase
-                              className="text-bone-cream/65 tracking-[0.18em]"
+                              className="text-bone-cream/80 tracking-[0.18em]"
                             >
                               {t("inProgress")}
                             </Caption>
@@ -157,7 +157,7 @@ export default async function AtlasIndex({
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/65">
+        <Caption uppercase className="text-bone-cream/80">
           {t("footerNote")}
         </Caption>
       </footer>

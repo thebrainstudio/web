@@ -119,7 +119,7 @@ function NavLink({
       prefetch
       onClick={onClick}
       className={`group relative inline-flex items-center transition-colors duration-200 ${
-        active ? "text-bone-cream" : "text-bone-cream/70 hover:text-bone-cream"
+        active ? "text-bone-cream" : "text-bone-cream/85 hover:text-bone-cream"
       } ${className}`}
       aria-current={active ? "page" : undefined}
     >
@@ -231,7 +231,7 @@ export default function SiteHeader() {
               }
               aria-label="Search The Brain Studio (Ctrl-K)"
               data-hover
-              className="text-bone-cream/70 transition-colors duration-200 hover:text-brass"
+              className="text-bone-cream/85 transition-colors duration-200 hover:text-brass"
             >
               <SearchIcon />
             </button>
@@ -242,7 +242,7 @@ export default function SiteHeader() {
               onClick={toggleAmbient}
               aria-label={muted ? t("unmuteAria") : t("muteAria")}
               aria-pressed={!muted}
-              className="text-bone-cream/70 transition-colors duration-200 hover:text-brass"
+              className="text-bone-cream/85 transition-colors duration-200 hover:text-brass"
             >
               <MuteIcon muted={muted} />
             </button>
@@ -253,7 +253,7 @@ export default function SiteHeader() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t("githubAria")}
-              className="text-bone-cream/70 transition-colors duration-200 hover:text-brass"
+              className="text-bone-cream/85 transition-colors duration-200 hover:text-brass"
             >
               <GithubMark />
             </a>
@@ -269,7 +269,7 @@ export default function SiteHeader() {
               window.dispatchEvent(new CustomEvent("brain-studio:open-search"))
             }
             aria-label="Search The Brain Studio (Ctrl-K)"
-            className="text-bone-cream/70"
+            className="text-bone-cream/85"
           >
             <SearchIcon />
           </button>
@@ -278,7 +278,7 @@ export default function SiteHeader() {
             onClick={toggleAmbient}
             aria-label={muted ? t("unmuteAria") : t("muteAria")}
             aria-pressed={!muted}
-            className="text-bone-cream/70"
+            className="text-bone-cream/85"
           >
             <MuteIcon muted={muted} />
           </button>
@@ -359,7 +359,7 @@ export default function SiteHeader() {
               href="https://github.com/dreamsmanifested6666-dotcom/brain-studio"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-bone-cream/70 inline-flex items-center gap-2 py-2 transition-colors duration-200 hover:text-brass"
+              className="text-bone-cream/85 inline-flex items-center gap-2 py-2 transition-colors duration-200 hover:text-brass"
             >
               <GithubMark />
               <Caption>GitHub</Caption>

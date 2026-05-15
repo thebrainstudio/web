@@ -60,9 +60,9 @@ export default function AttributionChip({ state }: { state: AttributionState }) 
         className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1"
       >
         <StatusDot live />
-        <Caption className="text-bone-cream/70">
+        <Caption className="text-bone-cream/85">
           {t("statusLive")} ·{" "}
-          <span className="text-bone-cream/55">
+          <span className="text-bone-cream/75">
             TRIBE v2 (Meta FAIR, d&apos;Ascoli et al., 2026){" "}
           </span>
           <a
@@ -73,7 +73,7 @@ export default function AttributionChip({ state }: { state: AttributionState }) 
           >
             {t("modelCard")}
           </a>
-          <span className="text-bone-cream/55"> · </span>
+          <span className="text-bone-cream/75"> · </span>
           <a
             href={PAPER_URL}
             target="_blank"
@@ -82,7 +82,7 @@ export default function AttributionChip({ state }: { state: AttributionState }) 
           >
             {t("paper")}
           </a>
-          <span className="text-bone-cream/55"> · </span>
+          <span className="text-bone-cream/75"> · </span>
           <a
             href={LICENSE_URL}
             target="_blank"
@@ -91,7 +91,7 @@ export default function AttributionChip({ state }: { state: AttributionState }) 
           >
             {t("license")}
           </a>
-          <span className="text-bone-cream/55">
+          <span className="text-bone-cream/75">
             {" "}· text-only · average-subject
           </span>
         </Caption>
@@ -108,7 +108,7 @@ export default function AttributionChip({ state }: { state: AttributionState }) 
       className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1"
     >
       <StatusDot live={false} />
-      <Caption className="text-bone-cream/55 italic">{t(copyKey)}</Caption>
+      <Caption className="text-bone-cream/75 italic">{t(copyKey)}</Caption>
     </div>
   );
 }

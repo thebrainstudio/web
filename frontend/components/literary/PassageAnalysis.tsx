@@ -57,14 +57,14 @@ export default function PassageAnalysis({
       <Caption uppercase className="text-brass tracking-[0.28em] block">
         {index}
       </Caption>
-      <Mono variant="label" className="text-bone-cream/55 mt-3 block tracking-[0.14em]">
+      <Mono variant="label" className="text-bone-cream/75 mt-3 block tracking-[0.14em]">
         {citation}
       </Mono>
 
       {/* Original + translation side-by-side on desktop, stacked on mobile */}
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
         <div>
-          <Caption uppercase className="text-bone-cream/55 tracking-[0.18em]">
+          <Caption uppercase className="text-bone-cream/75 tracking-[0.18em]">
             {originalLabel}
           </Caption>
           <div className="mt-5 font-editorial text-[1.08rem] leading-[1.8]">
@@ -72,7 +72,7 @@ export default function PassageAnalysis({
           </div>
         </div>
         <div>
-          <Caption uppercase className="text-bone-cream/55 tracking-[0.18em]">
+          <Caption uppercase className="text-bone-cream/75 tracking-[0.18em]">
             {translationLabel}
           </Caption>
           <div className="text-bone-cream/85 mt-5 font-editorial text-[1.04rem] leading-[1.8] italic">

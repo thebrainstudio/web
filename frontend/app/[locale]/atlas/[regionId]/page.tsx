@@ -196,7 +196,7 @@ export default async function AtlasRegionPage({
               <ProvenanceBadge state="neurosynth" />
             </div>
           )}
-          <Body italic className="text-bone-cream/65 mt-8 max-w-[40rem]">
+          <Body italic className="text-bone-cream/80 mt-8 max-w-[40rem]">
             {tRegions(`${region.id}.poeticGloss`)}
           </Body>
           {entry.status === "in-progress" && (
@@ -204,7 +204,7 @@ export default async function AtlasRegionPage({
               <Caption uppercase className="text-brass tracking-[0.18em]">
                 {t("inProgressBanner.label")}
               </Caption>
-              <Body italic className="text-bone-cream/70 mt-2">
+              <Body italic className="text-bone-cream/85 mt-2">
                 {t("inProgressBanner.body")}
               </Body>
             </div>
@@ -233,7 +233,7 @@ export default async function AtlasRegionPage({
                     <Heading as="h2" className="font-[200]">
                       {section.title}
                     </Heading>
-                    <Body italic className="text-bone-cream/45 mt-6">
+                    <Body italic className="text-bone-cream/70 mt-6">
                       {t("emptySection")}
                     </Body>
                   </article>
@@ -288,7 +288,7 @@ export default async function AtlasRegionPage({
                       <Body className="text-bone-cream/80 mt-3">
                         {section.heading}
                       </Body>
-                      <Caption className="text-bone-cream/70 mt-2 inline-flex items-center gap-2">
+                      <Caption className="text-bone-cream/85 mt-2 inline-flex items-center gap-2">
                         {t("bridgeCard.open")}
                         <span aria-hidden>→</span>
                       </Caption>
@@ -351,7 +351,7 @@ export default async function AtlasRegionPage({
                     {entry.disorders.map((d) => (
                       <li key={d.id}>
                         <Body className="text-bone-cream/80">{d.name}</Body>
-                        <Caption className="text-bone-cream/70 mt-0.5 block max-w-[18rem]">
+                        <Caption className="text-bone-cream/85 mt-0.5 block max-w-[18rem]">
                           {d.oneLine}
                         </Caption>
                       </li>
@@ -404,14 +404,14 @@ export default async function AtlasRegionPage({
                           </Mono>
                           <div>
                             <Caption className="text-bone-cream/80 block">
-                              {c.authors} <span className="text-bone-cream/70">({c.year})</span>
+                              {c.authors} <span className="text-bone-cream/85">({c.year})</span>
                             </Caption>
                             {c.doi ? (
                               <a
                                 href={`https://doi.org/${c.doi}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-bone-cream/70 hover:text-brass transition-colors duration-150"
+                                className="text-bone-cream/85 hover:text-brass transition-colors duration-150"
                                 data-hover
                               >
                                 <Caption className="block italic">
@@ -423,10 +423,10 @@ export default async function AtlasRegionPage({
                               </a>
                             ) : (
                               <>
-                                <Caption className="text-bone-cream/70 block italic">
+                                <Caption className="text-bone-cream/85 block italic">
                                   {c.title}
                                 </Caption>
-                                <Caption className="text-bone-cream/70 mt-0.5 block">
+                                <Caption className="text-bone-cream/85 mt-0.5 block">
                                   {c.journal}
                                 </Caption>
                               </>
@@ -441,11 +441,11 @@ export default async function AtlasRegionPage({
 
               {/* Meta */}
               <div className="border-bone-cream/10 border-t pt-6">
-                <Caption className="text-bone-cream/65 block">
+                <Caption className="text-bone-cream/80 block">
                   {t("sidebar.lastReviewed", { date: entry.lastUpdated })}
                 </Caption>
                 {entry.status === "complete" && (
-                  <Caption className="text-bone-cream/65 mt-1 block">
+                  <Caption className="text-bone-cream/80 mt-1 block">
                     {t("sidebar.wordCount", { count: totalWords })}
                   </Caption>
                 )}
@@ -456,7 +456,7 @@ export default async function AtlasRegionPage({
       </section>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/65">
+        <Caption uppercase className="text-bone-cream/80">
           {t("footerNote")}
         </Caption>
       </footer>

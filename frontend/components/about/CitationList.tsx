@@ -43,14 +43,14 @@ export default function CitationList() {
             <Body className="text-bone-cream/80">
               {c.authors} ({c.year}).{" "}
               <span className="italic">{c.title}</span>{" "}
-              <Caption className="text-bone-cream/70">{c.journal}.</Caption>
+              <Caption className="text-bone-cream/85">{c.journal}.</Caption>
             </Body>
             {c.doi && (
               <a
                 href={`https://doi.org/${c.doi}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-brass text-bone-cream/45 mt-2 inline-block transition-colors duration-200"
+                className="hover:text-brass text-bone-cream/70 mt-2 inline-block transition-colors duration-200"
               >
                 <Mono variant="label">doi:{c.doi}</Mono>
               </a>

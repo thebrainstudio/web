@@ -20,11 +20,11 @@ import type { RegionId } from "@/lib/regions";
  * the three curated example texts when the pattern matches strongly.
  *
  * Visual treatment:
- *   - Fraunces (Body), opacity `text-bone-cream/70`.
+ *   - Fraunces (Body), opacity `text-bone-cream/85`.
  *   - Fades in over 800 ms with a 12 px upward translate.
  *   - Easing cubic-bezier(0.22, 1, 0.36, 1) (=easeImportant).
  *   - Below the caption: a fixed disclaimer line in Caption typography,
- *     opacity `text-bone-cream/55`. Only its presence is animated, not
+ *     opacity `text-bone-cream/75`. Only its presence is animated, not
  *     its content — keeps the honesty signal stable across updates.
  *   - Re-keys on caption text change so AnimatePresence triggers an
  *     out-in transition (old fades 300 ms, new fades in 600 ms +
@@ -81,7 +81,7 @@ export default function MirrorCaption({ activations, className = "" }: Props) {
             ease: easeImportant,
           }}
         >
-          <Body className="text-bone-cream/70 italic max-w-[34rem]">
+          <Body className="text-bone-cream/85 italic max-w-[34rem]">
             {result.text}
           </Body>
         </motion.div>
@@ -100,7 +100,7 @@ export default function MirrorCaption({ activations, className = "" }: Props) {
       >
         <Caption
           uppercase
-          className="text-bone-cream/55 tracking-[0.18em] mt-4 block max-w-[34rem]"
+          className="text-bone-cream/75 tracking-[0.18em] mt-4 block max-w-[34rem]"
         >
           {t("disclaimer")}
         </Caption>

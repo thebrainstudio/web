@@ -333,7 +333,7 @@ export default async function DantePage({
                 className="object-cover"
               />
             </div>
-            <figcaption className="text-bone-cream/55 mt-4 text-[0.78rem]">
+            <figcaption className="text-bone-cream/75 mt-4 text-[0.78rem]">
               <Mono variant="label" className="tracking-[0.14em]">
                 {t("m5.imageCredit")}
               </Mono>
@@ -349,7 +349,7 @@ export default async function DantePage({
         </section>
 
         <section className="mx-auto mt-32 max-w-[40rem] text-center">
-          <Caption uppercase className="text-bone-cream/45 tracking-[0.18em]">
+          <Caption uppercase className="text-bone-cream/70 tracking-[0.18em]">
             {tCommon("companionLabel")}
           </Caption>
           <div className="mt-6">

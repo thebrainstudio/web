@@ -120,10 +120,10 @@ export default function CellularPage() {
           <Display italic className="mt-8">
             {t("title")}
           </Display>
-          <Body className="text-bone-cream/70 mt-10 max-w-[36rem]">
+          <Body className="text-bone-cream/85 mt-10 max-w-[36rem]">
             {t("intro")}
           </Body>
-          <Body italic className="text-bone-cream/70 mt-8 max-w-[34rem]">
+          <Body italic className="text-bone-cream/85 mt-8 max-w-[34rem]">
             {t("introItalic")}
           </Body>
           {/* Integrity-pass: the synapse animation that follows is
@@ -178,7 +178,7 @@ export default function CellularPage() {
                   className={`rounded-sm border px-3 py-1.5 transition-colors duration-200 ${
                     i === selectedIdx
                       ? "border-brass bg-brass text-navy-deep"
-                      : "border-bone-cream/15 text-bone-cream/70 hover:border-bone-cream/40 hover:text-bone-cream"
+                      : "border-bone-cream/15 text-bone-cream/85 hover:border-bone-cream/40 hover:text-bone-cream"
                   }`}
                 >
                   <Mono variant="label">NMO_{String(m.nmo_id).padStart(5, "0")}</Mono>
@@ -200,7 +200,7 @@ export default function CellularPage() {
             </Heading>
             {selected && (
               <>
-                <Caption className="text-bone-cream/70 mt-2 block">
+                <Caption className="text-bone-cream/85 mt-2 block">
                   {selected.species} · {selected.archive} {t("labSuffix")} ·{" "}
                   {Array.isArray(selected.neuromorpho_region)
                     ? selected.neuromorpho_region.join(", ")
@@ -234,7 +234,7 @@ export default function CellularPage() {
                 </div>
               </>
             )}
-            <Body italic className="text-bone-cream/45 mt-10">
+            <Body italic className="text-bone-cream/70 mt-10">
               {t("colorKey")} <span className="text-brass">{t("colorKeyBrass")}</span>{" "}
               {t("colorKeyApical")}, <span className="text-bone-cream">{t("colorKeyBone")}</span>{" "}
               {t("colorKeyBasal")}, <span className="text-cyan-glow">{t("colorKeyCyan")}</span>{" "}
@@ -318,7 +318,7 @@ export default function CellularPage() {
                     className={`group inline-flex items-center gap-2 rounded-sm border px-3 py-1.5 transition-colors duration-200 ${
                       nt === id
                         ? "border-brass text-brass"
-                        : "border-bone-cream/15 text-bone-cream/70 hover:text-bone-cream"
+                        : "border-bone-cream/15 text-bone-cream/85 hover:text-bone-cream"
                     }`}
                   >
                     <span
@@ -342,7 +342,7 @@ export default function CellularPage() {
                 <Caption uppercase>{t("triggerButton")}</Caption>
               </button>
               <div className="flex items-center gap-3 text-bone-cream/60">
-                <Caption uppercase className="text-bone-cream/65">
+                <Caption uppercase className="text-bone-cream/80">
                   {t("speedLabel")}
                 </Caption>
                 {[0.25, 0.5, 1, 2].map((s) => (
@@ -353,7 +353,7 @@ export default function CellularPage() {
                     className={`rounded-sm px-2 py-1 transition-colors duration-200 ${
                       speed === s
                         ? "bg-brass text-navy-deep"
-                        : "text-bone-cream/70 hover:text-bone-cream"
+                        : "text-bone-cream/85 hover:text-bone-cream"
                     }`}
                   >
                     <Mono variant="label">{s}×</Mono>
@@ -396,7 +396,7 @@ export default function CellularPage() {
       </PinnedCinematic>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/65">
+        <Caption uppercase className="text-bone-cream/80">
           {t("footer")}
         </Caption>
       </footer>

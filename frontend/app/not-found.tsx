@@ -25,7 +25,7 @@ export default function NotFound() {
         <Display italic className="mt-10">
           We didn&apos;t learn that page.
         </Display>
-        <Body className="text-bone-cream/65 mt-8">
+        <Body className="text-bone-cream/80 mt-8">
           That address isn&apos;t one of the rooms we built.
         </Body>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-3">

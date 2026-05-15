@@ -46,7 +46,7 @@ export default function InsightEssay({
         Insight · 0{index + 1}
       </Caption>
       <Heading className="mt-6">{headline}</Heading>
-      <Body italic className="text-bone-cream/70 mt-6">
+      <Body italic className="text-bone-cream/85 mt-6">
         {body}
       </Body>
     </div>

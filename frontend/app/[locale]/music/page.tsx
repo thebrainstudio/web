@@ -70,7 +70,7 @@ export default function MusicPage() {
           <Display italic className="mt-8">
             {t("title")}
           </Display>
-          <Body className="text-bone-cream/65 mt-8 max-w-[34rem]">
+          <Body className="text-bone-cream/80 mt-8 max-w-[34rem]">
             {t("intro")}
           </Body>
           {/* Integrity-pass: badge naming the data source for
@@ -100,7 +100,7 @@ export default function MusicPage() {
                     className={`rounded-sm px-3 py-1.5 transition-colors duration-200 ${
                       sel
                         ? "bg-brass text-navy-deep"
-                        : "text-bone-cream/70 hover:text-bone-cream"
+                        : "text-bone-cream/85 hover:text-bone-cream"
                     }`}
                   >
                     <Caption uppercase>{m.label}</Caption>
@@ -168,7 +168,7 @@ export default function MusicPage() {
       </ScrollScene>
 
       <footer className="relative border-t border-bone-cream/10 px-6 py-12 text-center md:px-10">
-        <Caption uppercase className="text-bone-cream/65">
+        <Caption uppercase className="text-bone-cream/80">
           {t("footerNote")}
         </Caption>
       </footer>

@@ -57,7 +57,7 @@ export default function BrainColorLegend({
     <div className={className}>
       <Caption
         uppercase
-        className="text-bone-cream/55 mb-3 block tracking-[0.18em]"
+        className="text-bone-cream/75 mb-3 block tracking-[0.18em]"
       >
         Brain colour key
       </Caption>
@@ -66,7 +66,7 @@ export default function BrainColorLegend({
       <div className="flex items-center gap-3">
         <Caption
           uppercase
-          className="text-bone-cream/65 shrink-0 tracking-[0.18em]"
+          className="text-bone-cream/80 shrink-0 tracking-[0.18em]"
         >
           {LABELS_EN.idle}
         </Caption>
@@ -77,7 +77,7 @@ export default function BrainColorLegend({
         />
         <Caption
           uppercase
-          className="text-bone-cream/65 shrink-0 tracking-[0.18em]"
+          className="text-bone-cream/80 shrink-0 tracking-[0.18em]"
         >
           {LABELS_EN.hot}
         </Caption>
@@ -99,7 +99,7 @@ export default function BrainColorLegend({
             />
             <Caption
               uppercase
-              className="text-bone-cream/70 shrink-0 w-16 tracking-[0.18em]"
+              className="text-bone-cream/85 shrink-0 w-16 tracking-[0.18em]"
             >
               {LABELS_EN[s.labelKey]}
             </Caption>

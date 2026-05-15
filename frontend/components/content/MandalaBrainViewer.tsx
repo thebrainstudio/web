@@ -137,7 +137,7 @@ export default function MandalaBrainViewer() {
               className={`rounded-sm border px-3 py-1.5 transition-colors duration-200 ${
                 active
                   ? "border-brass bg-brass text-navy-deep"
-                  : "border-bone-cream/15 text-bone-cream/70 hover:border-bone-cream/40 hover:text-bone-cream"
+                  : "border-bone-cream/15 text-bone-cream/85 hover:border-bone-cream/40 hover:text-bone-cream"
               }`}
             >
               <Caption uppercase>{label}</Caption>
@@ -165,7 +165,7 @@ export default function MandalaBrainViewer() {
           />
         </div>
         <div className="md:col-span-6">
-          <Caption uppercase className="text-bone-cream/70">
+          <Caption uppercase className="text-bone-cream/85">
             {tradition} · {selected.date}
           </Caption>
           <Body className="text-bone-cream/85 mt-6">{description}</Body>
@@ -183,7 +183,7 @@ export default function MandalaBrainViewer() {
         <Caption uppercase className="text-brass">
           {t("regionsLabel")}
         </Caption>
-        <Body italic className="text-bone-cream/70 mt-2 max-w-[40rem]">
+        <Body italic className="text-bone-cream/85 mt-2 max-w-[40rem]">
           {t("regionsIntro")}
         </Body>
         <ul className="mt-8 space-y-4">
@@ -199,12 +199,12 @@ export default function MandalaBrainViewer() {
                   <Caption className="text-bone-cream/85">
                     {r ? tr(`${id}.displayName`, r.displayName) : id}
                   </Caption>
-                  <Caption className="text-bone-cream/45 mt-1 block">
+                  <Caption className="text-bone-cream/70 mt-1 block">
                     {r ? tr(`${id}.anatomyName`, r.anatomyName) : ""}
                   </Caption>
                 </div>
                 <div className="md:col-span-6">
-                  <Body italic className="text-bone-cream/70">
+                  <Body italic className="text-bone-cream/85">
                     {r ? tr(`${id}.scienceGloss`, r.scienceGloss) : ""}
                   </Body>
                 </div>
@@ -217,7 +217,7 @@ export default function MandalaBrainViewer() {
             );
           })}
         </ul>
-        <Body italic className="text-bone-cream/45 mt-8">
+        <Body italic className="text-bone-cream/70 mt-8">
           {t("whyComposition")}
         </Body>
       </div>

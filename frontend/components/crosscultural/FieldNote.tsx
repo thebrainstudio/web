@@ -46,7 +46,7 @@ export default function FieldNote({ index, pairId, side = "thai" }: Props) {
       <Heading className="mt-6">
         {pair.id.split("-").join(" / ")}
       </Heading>
-      <Body italic className="text-bone-cream/70 mt-6">
+      <Body italic className="text-bone-cream/85 mt-6">
         {pair.fieldNote}
       </Body>
       <p className="mt-8">

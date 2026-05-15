@@ -72,7 +72,7 @@ export default async function ThresholdPage({
           <Display italic className="mt-10">
             {t("openingDisplay")}
           </Display>
-          <Body className="text-bone-cream/65 mt-10 max-w-[34rem]">
+          <Body className="text-bone-cream/80 mt-10 max-w-[34rem]">
             {t("openingBody")}
           </Body>
         </div>
@@ -193,7 +193,7 @@ export default async function ThresholdPage({
             <div>
               <Link
                 href="/"
-                className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
+                className="text-bone-cream/85 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
               >
                 <Body italic>{t("closing.linkHome")}</Body>
               </Link>
@@ -201,7 +201,7 @@ export default async function ThresholdPage({
             <div>
               <Link
                 href="/field-notes"
-                className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
+                className="text-bone-cream/85 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
               >
                 <Body italic>{t("closing.linkFieldNotes")}</Body>
               </Link>
@@ -209,7 +209,7 @@ export default async function ThresholdPage({
             <div>
               <Link
                 href="/cellular"
-                className="text-bone-cream/70 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
+                className="text-bone-cream/85 hover:text-brass border-bone-cream/15 hover:border-brass border-b transition-colors"
               >
                 <Body italic>{t("closing.linkCellular")}</Body>
               </Link>

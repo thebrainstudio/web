@@ -54,13 +54,13 @@ export default function SavedExampleCard({ example, index, onApply }: Props) {
       <Heading as="h3" className="mt-3 font-[200]">
         {example.label}
       </Heading>
-      <Body italic className="text-bone-cream/70 mt-1">
+      <Body italic className="text-bone-cream/85 mt-1">
         {example.attribution}
       </Body>
       <Body className="text-bone-cream/80 mt-6 max-w-[34rem]">
         {example.body}
       </Body>
-      <Body italic className="text-bone-cream/70 mt-6 max-w-[34rem]">
+      <Body italic className="text-bone-cream/85 mt-6 max-w-[34rem]">
         {example.framing}
       </Body>
       <Caption uppercase className="text-brass mt-6 inline-flex items-center gap-2">

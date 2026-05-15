@@ -203,7 +203,7 @@ export default function MirrorInspector({ text, settledActivations }: Props) {
     <div className="mt-12 md:mt-16">
       <Caption
         uppercase
-        className="text-bone-cream/55 mb-4 block tracking-[0.18em]"
+        className="text-bone-cream/75 mb-4 block tracking-[0.18em]"
       >
         Inspect — hover a word, or a region
       </Caption>
@@ -243,7 +243,7 @@ export default function MirrorInspector({ text, settledActivations }: Props) {
                   isHovered
                     ? hasContribution
                       ? "bg-brass/25 text-bone-cream ring-1 ring-brass/60"
-                      : "bg-bone-cream/10 text-bone-cream/70 ring-1 ring-bone-cream/20"
+                      : "bg-bone-cream/10 text-bone-cream/85 ring-1 ring-bone-cream/20"
                     : "text-bone-cream/85 hover:text-bone-cream hover:bg-bone-cream/5"
                 }`}
                 data-hover
@@ -296,7 +296,7 @@ export default function MirrorInspector({ text, settledActivations }: Props) {
                   return (
                     <Caption
                       uppercase
-                      className="text-bone-cream/45 tracking-[0.18em] italic"
+                      className="text-bone-cream/70 tracking-[0.18em] italic"
                     >
                       &quot;{word.word}&quot; — no lexicon match · brain holds steady
                     </Caption>
@@ -370,7 +370,7 @@ export default function MirrorInspector({ text, settledActivations }: Props) {
                 isHovered
                   ? "border-brass text-brass bg-brass/10"
                   : hasContribution
-                    ? "border-bone-cream/30 text-bone-cream/70 hover:border-brass/60 hover:text-brass"
+                    ? "border-bone-cream/30 text-bone-cream/85 hover:border-brass/60 hover:text-brass"
                     : "border-bone-cream/10 text-bone-cream/35 hover:border-bone-cream/20"
               }`}
             >

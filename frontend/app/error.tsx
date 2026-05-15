@@ -31,7 +31,7 @@ export default function ErrorPage({
         <Display italic className="mt-10">
           The model lost its line for a moment.
         </Display>
-        <Body className="text-bone-cream/65 mt-8">
+        <Body className="text-bone-cream/80 mt-8">
           A part of the page failed to render. The persistent brain is
           still here, in the background, breathing. Try the room again —
           or step into another one.
@@ -48,7 +48,7 @@ export default function ErrorPage({
           <a
             href="/"
             data-hover
-            className="text-bone-cream/70 hover:text-bone-cream inline-flex items-center justify-center px-3 py-3 transition-colors duration-300"
+            className="text-bone-cream/85 hover:text-bone-cream inline-flex items-center justify-center px-3 py-3 transition-colors duration-300"
           >
             <Caption uppercase>Return home</Caption>
           </a>

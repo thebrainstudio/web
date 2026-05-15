@@ -57,7 +57,7 @@ export default async function SiteMapPage({
         <Display italic className="mt-10">
           {t("title")}
         </Display>
-        <Body className="text-bone-cream/65 mt-10 max-w-[40rem]">
+        <Body className="text-bone-cream/80 mt-10 max-w-[40rem]">
           {t("intro")}
         </Body>
 
@@ -66,7 +66,7 @@ export default async function SiteMapPage({
         </div>
 
         <div className="border-bone-cream/10 mt-32 border-t pt-10">
-          <Caption className="text-bone-cream/45 max-w-[36rem] block leading-relaxed">
+          <Caption className="text-bone-cream/70 max-w-[36rem] block leading-relaxed">
             {t("footerNote")}
           </Caption>
         </div>

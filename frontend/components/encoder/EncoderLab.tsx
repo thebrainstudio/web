@@ -108,7 +108,7 @@ export default function EncoderLab({ files }: Props) {
               <Heading as="h3" className="font-[200]">
                 {t(`videos.${activeId}.title`)}
               </Heading>
-              <Body italic className="text-bone-cream/65 mt-3 max-w-[36rem]">
+              <Body italic className="text-bone-cream/80 mt-3 max-w-[36rem]">
                 {t(`videos.${activeId}.framing`)}
               </Body>
               {/* Integrity-pass: badge state auto-detects whether
@@ -126,7 +126,7 @@ export default function EncoderLab({ files }: Props) {
               <summary className="cursor-pointer list-none">
                 <Mono
                   variant="label"
-                  className="text-bone-cream/55 tracking-[0.18em] group-hover:text-bone-cream/85 transition-colors"
+                  className="text-bone-cream/75 tracking-[0.18em] group-hover:text-bone-cream/85 transition-colors"
                 >
                   {sourceIsTribe ? t("provenanceTribe") : t("provenanceNeurosynth")}
                   {" · "}
@@ -139,7 +139,7 @@ export default function EncoderLab({ files }: Props) {
                   </span>
                 </Mono>
               </summary>
-              <div className="mt-3 max-w-[42rem] space-y-3 text-bone-cream/55">
+              <div className="mt-3 max-w-[42rem] space-y-3 text-bone-cream/75">
                 <Caption className="block leading-relaxed">
                   <span className="text-bone-cream/75">
                     {t("clipLabel")}:{" "}
@@ -152,7 +152,7 @@ export default function EncoderLab({ files }: Props) {
                   </span>
                   {activeFile.methodology}
                 </Caption>
-                <Caption className="block leading-relaxed text-bone-cream/45">
+                <Caption className="block leading-relaxed text-bone-cream/70">
                   {activeFile.citation}
                 </Caption>
                 {activeFile.video.notes ? (
@@ -192,7 +192,7 @@ export default function EncoderLab({ files }: Props) {
             </details>
           </>
         ) : (
-          <Body italic className="text-bone-cream/55">
+          <Body italic className="text-bone-cream/75">
             {t("emptyState")}
           </Body>
         )}

@@ -181,7 +181,7 @@ export default function BridgesNetwork({
             <Heading as="h2" className="mt-4 font-[200] max-w-[36rem]">
               {t("network.heading")}
             </Heading>
-            <Caption italic className="text-bone-cream/70 mt-4 block max-w-[42rem]">
+            <Caption italic className="text-bone-cream/85 mt-4 block max-w-[42rem]">
               {t("network.intro")}
             </Caption>
           </>
@@ -191,7 +191,7 @@ export default function BridgesNetwork({
             <Caption uppercase className="text-brass tracking-[0.22em]">
               {t("network.label")}
             </Caption>
-            <Caption italic className="text-bone-cream/70 mt-2 block max-w-[36rem]">
+            <Caption italic className="text-bone-cream/85 mt-2 block max-w-[36rem]">
               {t("network.compactIntro")}
             </Caption>
           </>

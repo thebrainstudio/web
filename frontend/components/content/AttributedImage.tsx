@@ -82,7 +82,7 @@ export default function AttributedImage({
                 <Caption>{prov.institution}</Caption>
               </div>
               <div>
-                <Mono variant="label" className="text-bone-cream/45">
+                <Mono variant="label" className="text-bone-cream/70">
                   {prov.license}
                 </Mono>
               </div>
@@ -103,7 +103,7 @@ export default function AttributedImage({
       <figcaption>
         <Mono
           variant="label"
-          className="text-bone-cream/70 mt-3 block"
+          className="text-bone-cream/85 mt-3 block"
         >
           {prov.artist} · {prov.title} · {prov.date} · {prov.institution}
         </Mono>
