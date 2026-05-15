@@ -31,7 +31,13 @@ export async function generateMetadata({
     locale,
     slug: "about",
     fallback: {
-      title: "About · The Brain Studio",
+      // Plain leaf title — the root layout's metadata.title.template
+      // ("%s · The Brain Studio") wraps it exactly once. The previous
+      // fallback pre-suffixed "About · The Brain Studio", which the
+      // template then wrapped again into "About · The Brain Studio ·
+      // The Brain Studio" — the audit's title double-suffix bug,
+      // localized to this single page.
+      title: "About",
       description:
         "Who built this, what TRIBE is and isn't, citations, and the editorial decisions that shape the rooms.",
     },
