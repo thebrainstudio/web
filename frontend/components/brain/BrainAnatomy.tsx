@@ -9,6 +9,7 @@ import {
   type MeshResolution,
 } from "@/store/useBrainStageStore";
 import type { RegionId } from "@/lib/regions";
+import { regions } from "@/lib/regions";
 import Tracts from "./Tracts";
 import BrassHalos from "./BrassHalos";
 
@@ -335,6 +336,28 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
   const elapsed = useRef(0);
   const breathElapsedMesh = useRef(0);
 
+  // Reactivity-pass Fix 9: smoothed cursor-proximity values per
+  // hemisphere. We track both sides so a cursor that jumps across
+  // the midline decays the prior side smoothly while the new side
+  // ramps up — no discontinuous switch.
+  //
+  // Attack: 400 ms (lerp tau ≈ 0.13 → coefficient k = dt/0.13).
+  // Release: 800 ms (tau ≈ 0.27 → k = dt/0.27). Implemented as two
+  // different exp-lerp tau values in the useFrame body.
+  const smoothedProxL = useRef(0);
+  const smoothedProxR = useRef(0);
+
+  // Region-id → hemisphere sign lookup (negative x is left). Computed
+  // once from the static regions table so the per-frame lift is a
+  // single Map.get.
+  const regionSide = useMemo(() => {
+    const m = new Map<RegionId, "left" | "right">();
+    for (const r of regions) {
+      m.set(r.id, r.position[0] < 0 ? "left" : "right");
+    }
+    return m;
+  }, []);
+
   // 20 regions in a stable order so the ambient phase per-region is consistent
   // across frames. (Object.keys order on Records is insertion order.)
   const allRegionList = useMemo<RegionId[]>(
@@ -398,6 +421,21 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
     // expense of bookkeeping a per-region start-time bezier evaluator.
     const dt = Math.min(0.1, delta);
     const lerp = 1 - Math.exp(-dt / 0.4);
+
+    // Reactivity-pass Fix 9: lerp the per-hemisphere proximity
+    // toward the cursor's live value. Attack tau ≈ 0.13 (400 ms to
+    // ~95%); release tau ≈ 0.27 (800 ms). The brief mandates a
+    // slower release than attack — feels organic instead of snappy.
+    const cur = useBrainStageStore.getState();
+    const liveL = cur.cursorSide === "left" ? cur.cursorIntensity : 0;
+    const liveR = cur.cursorSide === "right" ? cur.cursorIntensity : 0;
+    const lerpAttack = 1 - Math.exp(-dt / 0.13);
+    const lerpRelease = 1 - Math.exp(-dt / 0.27);
+    const kL = liveL > smoothedProxL.current ? lerpAttack : lerpRelease;
+    smoothedProxL.current += (liveL - smoothedProxL.current) * kL;
+    const kR = liveR > smoothedProxR.current ? lerpAttack : lerpRelease;
+    smoothedProxR.current += (liveR - smoothedProxR.current) * kR;
+
     // Always touch every known region so ambient floors update.
     for (let i = 0; i < allRegionList.length; i++) {
       const r = allRegionList[i];
@@ -450,10 +488,16 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
       const colors = geometry.attributes.color as THREE.BufferAttribute;
       const arr = colors.array as Float32Array;
       let dirty = false;
+      // Reactivity-pass Fix 9: HCP-MMP parcels 1..180 are left
+      // hemisphere, 181..360 are right (Glasser 2016 convention).
+      const liftLp = 1 + 0.15 * smoothedProxL.current;
+      const liftRp = 1 + 0.15 * smoothedProxR.current;
       for (let i = 0; i < parcelIds.length; i++) {
         const pid = parcelIds[i];
         if (pid === 0) continue; // medial wall
-        const a = smoothedParcels.current.get(pid) ?? 0;
+        const base = smoothedParcels.current.get(pid) ?? 0;
+        const lift = pid <= 180 ? liftLp : liftRp;
+        const a = Math.min(1, base * lift);
         activationColor(a, tmpColor);
         const o = i * 3;
         if (Math.abs(arr[o] - tmpColor.r) > 0.002) {
@@ -466,13 +510,21 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
       if (dirty) colors.needsUpdate = true;
     } else if (assignments) {
       // 20-region fallback path (unchanged from pre-PR-A behavior).
+      // Reactivity-pass Fix 9: per-vertex activation is lifted by up
+      // to +15% on the hemisphere the cursor is closer to. The
+      // smoothedProxL/R refs already encode attack/release shape.
       const colors = geometry.attributes.color as THREE.BufferAttribute;
       const arr = colors.array as Float32Array;
       let dirty = false;
+      const liftL = 1 + 0.15 * smoothedProxL.current;
+      const liftR = 1 + 0.15 * smoothedProxR.current;
       for (let i = 0; i < assignments.length; i++) {
         const r = assignments[i];
         if (!r) continue;
-        const a = smoothed.current.get(r) ?? 0;
+        const base = smoothed.current.get(r) ?? 0;
+        const side = regionSide.get(r);
+        const lift = side === "left" ? liftL : side === "right" ? liftR : 1;
+        const a = Math.min(1, base * lift);
         activationColor(a, tmpColor);
         const o = i * 3;
         if (Math.abs(arr[o] - tmpColor.r) > 0.002) {

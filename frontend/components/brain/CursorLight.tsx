@@ -49,15 +49,24 @@ export default function CursorLight() {
 
   // Window-level pointermove → world-space target. The Canvas has
   // pointer-events:none so it doesn't capture the event itself.
+  //
+  // Reactivity-pass Fix 9: the same handler also publishes the
+  // cursor's screen-space proximity to the brain's centre. Distance
+  // in normalized viewport-width units; the 0.3 threshold (from the
+  // brief) is where intensity ramps to 1. Side ("left" / "right") is
+  // the hemisphere the cursor is closer to — MeshForResolution uses
+  // this to lift the smoothed activation of regions whose stylized
+  // `position.x` sign matches `side` by up to +15%.
+  const setCursorProximity = useBrainStageStore((s) => s.setCursorProximity);
   useEffect(() => {
     if (!mounted) return;
     if (typeof window === "undefined") return;
     const ndc = new THREE.Vector3();
     const onMove = (e: PointerEvent) => {
       // Normalize to clip space (-1..1 on each axis, Y inverted).
-      ndc.x = (e.clientX / size.width) * 2 - 1;
-      ndc.y = -((e.clientY / size.height) * 2 - 1);
-      ndc.z = 0.5; // pick a plane in front of the brain
+      const nx = (e.clientX / size.width) * 2 - 1;
+      const ny = -((e.clientY / size.height) * 2 - 1);
+      ndc.set(nx, ny, 0.5);
       ndc.unproject(camera);
       // Direction from camera through that point, walked to z=+1.2
       // in world space so the light sits in front of the cortex.
@@ -69,10 +78,30 @@ export default function CursorLight() {
         // Reduced motion: snap, don't glide.
         lightRef.current.position.copy(point);
       }
+
+      // Fix 9: proximity to brain centre in normalized viewport
+      // coords. The brain is centred at screen-space (0, 0); we use
+      // the NDC X/Y we already computed for the light target.
+      const distNorm = Math.sqrt(nx * nx + ny * ny);
+      const intensity = Math.max(0, Math.min(1, 1 - distNorm / 0.3));
+      const side = intensity > 0 ? (nx < 0 ? "left" : "right") : null;
+      setCursorProximity(side, intensity);
     };
     window.addEventListener("pointermove", onMove, { passive: true });
-    return () => window.removeEventListener("pointermove", onMove);
-  }, [mounted, camera, size, reducedMotion]);
+
+    // When the pointer leaves the window entirely, relax cursor
+    // proximity to 0 so the brain settles back. Without this the
+    // last hover-over-region intensification would linger forever.
+    const onLeave = () => setCursorProximity(null, 0);
+    window.addEventListener("blur", onLeave);
+    document.addEventListener("mouseleave", onLeave);
+
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("blur", onLeave);
+      document.removeEventListener("mouseleave", onLeave);
+    };
+  }, [mounted, camera, size, reducedMotion, setCursorProximity]);
 
   useFrame((_, rawDt) => {
     const l = lightRef.current;
