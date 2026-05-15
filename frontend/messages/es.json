@@ -815,6 +815,14 @@
   "cellular": {
     "label": "Visión Celular",
     "title": "Donde la activación se vuelve biología.",
+    "synapsePhase": {
+      "travelling-ap": "Action potential travelling along the axon.",
+      "ca-influx": "Calcium influx at the bouton.",
+      "fusing": "Vesicles fusing with the membrane.",
+      "crossing": "Neurotransmitter crossing the cleft.",
+      "binding": "Receptors binding on the postsynaptic side.",
+      "afterglow": "Afterglow. Post-synaptic potential settling."
+    },
     "intro": "Estamos a punto de bajar. El cerebro que ves en las demás páginas es la superficie cortical — la predicción de TRIBE vive en esa escala. Las neuronas de abajo son otra cosa: reconstrucciones reales de NeuroMorpho.org, aportadas por laboratorios de todo el mundo. Mismo cerebro. Distintas escalas. Distintas formas de ver.",
     "introItalic": "Un zoom continuo real desde la corteza hasta la sinapsis cruzaría diez millones de aumentos. No fingimos mostrarlo. Mostramos escalas distintas como formas distintas de mirar.",
     "oneOfThese": "Una de estas",

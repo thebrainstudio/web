@@ -815,6 +815,14 @@
   "cellular": {
     "label": "Visió Cel·lular",
     "title": "On l'activació es torna biologia.",
+    "synapsePhase": {
+      "travelling-ap": "Action potential travelling along the axon.",
+      "ca-influx": "Calcium influx at the bouton.",
+      "fusing": "Vesicles fusing with the membrane.",
+      "crossing": "Neurotransmitter crossing the cleft.",
+      "binding": "Receptors binding on the postsynaptic side.",
+      "afterglow": "Afterglow. Post-synaptic potential settling."
+    },
     "intro": "Estem a punt de baixar. El cervell que veus a la resta de pàgines és la superfície cortical — la predicció de TRIBE viu en aquesta escala. Les neurones de sota són una altra cosa: reconstruccions reals de NeuroMorpho.org, aportades per laboratoris d'arreu del món. Mateix cervell. Escales diferents. Maneres diferents de veure.",
     "introItalic": "Un zoom continu real des de la còrtex fins a la sinapsi creuaria deu milions d'augments. No fem veure que ho mostrem. Mostrem escales diferents com a maneres diferents de mirar.",
     "oneOfThese": "Una d'aquestes",

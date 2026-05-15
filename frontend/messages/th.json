@@ -815,6 +815,14 @@
   "cellular": {
     "label": "ระดับเซลล์",
     "title": "จุดที่การกระตุ้นกลายเป็นชีววิทยา",
+    "synapsePhase": {
+      "travelling-ap": "Action potential travelling along the axon.",
+      "ca-influx": "Calcium influx at the bouton.",
+      "fusing": "Vesicles fusing with the membrane.",
+      "crossing": "Neurotransmitter crossing the cleft.",
+      "binding": "Receptors binding on the postsynaptic side.",
+      "afterglow": "Afterglow. Post-synaptic potential settling."
+    },
     "intro": "เรากำลังจะลงไปข้างล่าง สมองที่คุณเห็นในทุกหน้าที่ผ่านมาคือพื้นผิวของคอร์เทกซ์ — คำทำนายของ TRIBE อยู่ในสเกลนั้น เซลล์ประสาทด้านล่างเป็นอีกอย่างหนึ่ง: ภาพจำลองจริงจาก NeuroMorpho.org ที่ห้องปฏิบัติการทั่วโลกร่วมสนับสนุน สมองเดียวกัน สเกลต่างกัน วิธีมองต่างกัน",
     "introItalic": "การซูมต่อเนื่องจริงจากคอร์เทกซ์ไปยังจุดประสานประสาทจะข้ามกำลังขยายสิบล้านเท่า เราไม่แสร้งทำว่าเราแสดงสิ่งนั้น เราแสดงสเกลต่างกันเป็นวิธีมองต่างกัน",
     "oneOfThese": "หนึ่งในเซลล์เหล่านี้",

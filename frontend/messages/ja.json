@@ -815,6 +815,14 @@
   "cellular": {
     "label": "細胞レベル",
     "title": "活性が生物学になるところ。",
+    "synapsePhase": {
+      "travelling-ap": "Action potential travelling along the axon.",
+      "ca-influx": "Calcium influx at the bouton.",
+      "fusing": "Vesicles fusing with the membrane.",
+      "crossing": "Neurotransmitter crossing the cleft.",
+      "binding": "Receptors binding on the postsynaptic side.",
+      "afterglow": "Afterglow. Post-synaptic potential settling."
+    },
     "intro": "これから下へ降ります。他のページで見ていた脳は皮質表面 — TRIBE の予測はそのスケールに住んでいます。下のニューロンは別物です:NeuroMorpho.org の実在の再構成で、世界中の研究室が寄せたものです。同じ脳。違うスケール。違う見方。",
     "introItalic": "皮質からシナプスまでの本物の連続ズームは、千万倍の拡大率をまたぎます。私たちはそれを再現するふりはしません。違うスケールを、違う「見方」として並べて示します。",
     "oneOfThese": "そのうちのひとつ",

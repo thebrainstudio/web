@@ -4,6 +4,20 @@ import { create } from "zustand";
 
 export type BrainLightingPreset = "cinematic" | "warm" | "clinical";
 export type MeshResolution = "fsaverage5" | "fsaverage6";
+/**
+ * A11y Fix 8 — the cellular synapse phase machine. Exposed so the
+ * `SynapsePhaseAnnouncer` can read it into a screen-reader live
+ * region; the visual animation in `Synapse.tsx` stays the
+ * authority on the underlying state.
+ */
+export type SynapsePhase =
+  | "idle"
+  | "travelling-ap"
+  | "ca-influx"
+  | "fusing"
+  | "crossing"
+  | "binding"
+  | "afterglow";
 
 export type Vec3 = readonly [number, number, number];
 
@@ -79,6 +93,12 @@ export type BrainStageState = {
    */
   grainOpacity: number;
   /**
+   * A11y Fix 8: current synapse phase, mirrored from Synapse.tsx
+   * so a screen-reader-only aria-live announcer can read it.
+   * `null` when the Cellular page isn't mounted.
+   */
+  synapsePhase: SynapsePhase | null;
+  /**
    * Which fsaverage mesh resolution the BrainAnatomy is currently rendering.
    * 'fsaverage6' (~82k vertices) is used for hero cinematic moments — home
    * and about. 'fsaverage5' (~20k vertices) is the interactive workhorse —
@@ -116,6 +136,8 @@ export type BrainStageState = {
   setCursorProximity: (side: "left" | "right" | null, intensity: number) => void;
   /** Reactivity-pass Fix 21. */
   setMuseumMode: (on: boolean) => void;
+  /** A11y Fix 8 — mirrored from Synapse.tsx phase machine. */
+  setSynapsePhase: (p: SynapsePhase | null) => void;
 };
 
 const idleActivations: RegionActivations = Object.freeze({});
@@ -138,6 +160,7 @@ export const useBrainStageStore = create<BrainStageState>((set) => ({
   cursorIntensity: 0,
   museumMode: false,
   grainOpacity: 0.04,
+  synapsePhase: null,
 
   setTransform: ({ position, scale, rotation }) =>
     set((s) => ({
@@ -182,4 +205,6 @@ export const useBrainStageStore = create<BrainStageState>((set) => ({
     set({ cursorSide: side, cursorIntensity: Math.max(0, Math.min(1, intensity)) }),
 
   setMuseumMode: (on) => set({ museumMode: on }),
+
+  setSynapsePhase: (p) => set({ synapsePhase: p }),
 }));

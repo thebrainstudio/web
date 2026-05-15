@@ -815,6 +815,14 @@
   "cellular": {
     "label": "Cellular View",
     "title": "Where activation becomes biology.",
+    "synapsePhase": {
+      "travelling-ap": "Action potential travelling along the axon.",
+      "ca-influx": "Calcium influx at the bouton.",
+      "fusing": "Vesicles fusing with the membrane.",
+      "crossing": "Neurotransmitter crossing the cleft.",
+      "binding": "Receptors binding on the postsynaptic side.",
+      "afterglow": "Afterglow. Post-synaptic potential settling."
+    },
     "intro": "We are about to descend. The brain you see on every other page is the cortical surface — TRIBE's prediction is on that scale. The neurons below are something else: real reconstructions from NeuroMorpho.org, contributed by labs around the world. Same brain. Different scales. Different ways of seeing.",
     "introItalic": "A real continuous zoom from cortex to synapse would cross ten million-fold magnification. We don't pretend to show that. We show different scales as different ways of looking.",
     "oneOfThese": "One of these",

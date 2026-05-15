@@ -14,6 +14,7 @@ import Synapse, {
   NEUROTRANSMITTERS,
   type Neurotransmitter,
 } from "@/components/cellular/Synapse";
+import SynapsePhaseAnnouncer from "@/components/cellular/SynapsePhaseAnnouncer";
 import {
   Body,
   Caption,
@@ -106,6 +107,11 @@ export default function CellularPage() {
 
   return (
     <>
+      {/* A11y Fix 8: SR-only narration of the synapse phase machine.
+          Mirror of the visual canvas content for users who can't
+          see it. Fires on phase transitions emitted by Synapse.tsx
+          via store.setSynapsePhase. Empty when phase is null/idle. */}
+      <SynapsePhaseAnnouncer />
       {/* Section 1 — entry. Atmospheric glow #7: oxblood-ember. */}
       <section className="relative flex min-h-[80vh] items-center px-6 pt-36 md:px-10 md:pt-44">
         <AtmosphericGlow

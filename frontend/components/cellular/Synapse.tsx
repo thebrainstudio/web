@@ -569,6 +569,9 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
     // Fix 6 — phase transition: idle → travelling-ap. Cue is gated on
     // prefers-reduced-motion inside synapseCues; safe to call freely.
     apTick();
+    // A11y Fix 8 — publish phase to the store so the SR-only
+    // SynapsePhaseAnnouncer reads it into an aria-live region.
+    useBrainStageStore.getState().setSynapsePhase("travelling-ap");
     // Choose which docked vesicles will fuse this round.
     const dockedIdx = vesicles
       .map((v, i) => (v.reserve ? -1 : i))
@@ -690,6 +693,10 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
         });
         // record passing time for refractory dimming shader
         axonUniforms.current.uPulsePassed.value = E;
+        // A11y Fix 8 — phase: travelling-ap → ca-influx (then fusing
+        // follows within a few hundred ms; we collapse the two into
+        // a single 'fusing' announcement after a brief delay below).
+        useBrainStageStore.getState().setSynapsePhase("ca-influx");
       }
       // The pulse fades after it reaches the bouton
       if (pulseT > 1.0) {
@@ -930,6 +937,36 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
     ) {
       epspWashFired.current = true;
       epspWash();
+      // A11y Fix 8 — phase: binding (active receptors). After the
+      // EPSP wash settles (~600 ms), we flip to 'afterglow' below.
+      useBrainStageStore.getState().setSynapsePhase("binding");
+    }
+
+    // A11y Fix 8 — when the burst is over (no more particles in
+    // flight + binding has stopped accumulating), transition to
+    // 'afterglow' so the announcer reads the post-synaptic settling.
+    // Then back to 'idle' once everything has decayed.
+    if (
+      burstStartTime.current !== null &&
+      bindingActivity > 0 &&
+      E > burstStartTime.current + 1.0 &&
+      activeCount === 0
+    ) {
+      const cur = useBrainStageStore.getState().synapsePhase;
+      if (cur === "binding") {
+        useBrainStageStore.getState().setSynapsePhase("afterglow");
+      }
+    }
+    if (
+      burstStartTime.current !== null &&
+      E > burstStartTime.current + 3.0 &&
+      activeCount === 0 &&
+      bindingActivity < 0.05
+    ) {
+      const cur = useBrainStageStore.getState().synapsePhase;
+      if (cur === "afterglow") {
+        useBrainStageStore.getState().setSynapsePhase("idle");
+      }
     }
 
     spineUniforms.current.uHyperpolarize.value = 0;

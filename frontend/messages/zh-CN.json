@@ -815,6 +815,14 @@
   "cellular": {
     "label": "细胞层面",
     "title": "活动在此变成生物学。",
+    "synapsePhase": {
+      "travelling-ap": "Action potential travelling along the axon.",
+      "ca-influx": "Calcium influx at the bouton.",
+      "fusing": "Vesicles fusing with the membrane.",
+      "crossing": "Neurotransmitter crossing the cleft.",
+      "binding": "Receptors binding on the postsynaptic side.",
+      "afterglow": "Afterglow. Post-synaptic potential settling."
+    },
     "intro": "我们即将下沉。在其他页面看到的大脑，是皮层的表面——TRIBE 的预测就生活在那个尺度上。下面这些神经元是另一回事：来自 NeuroMorpho.org 的真实重建，由世界各地的实验室贡献。同一颗大脑，不同的尺度，不同的看法。",
     "introItalic": "从皮层到突触的真正连续放大要跨越一千万倍。我们不假装在演示那个过程。我们把不同尺度并列呈现，作为不同的看法。",
     "oneOfThese": "其中之一",
