@@ -138,27 +138,38 @@ body {
   CJK-appropriate line-break + leading rules.
 */
 
+/* Non-Latin scripts: body in Sans 500 (var(--font-thai|jp|sc)),
+   Serif variant available for editorial accents (Display italic).
+   Line-heights set per brief: Thai 1.78, JP 1.8, ZH 1.75 — non-Latin
+   scripts need more vertical breath than Latin paragraphs do. */
+
 html[lang="th"] {
-  --font-editorial: var(--font-editorial-loaded), var(--font-thai), serif;
+  --font-editorial: var(--font-thai), var(--font-editorial-loaded), serif;
   --font-hand: var(--font-thai-hand), var(--font-hand-loaded), cursive;
-  line-height: 1.5;
+  font-weight: 500;
+  line-height: 1.78;
 }
 
 html[lang="ja"] {
-  --font-editorial: var(--font-jp), var(--font-editorial-loaded), serif;
+  --font-editorial: var(--font-jp), var(--font-editorial-loaded), sans-serif;
   --font-hand: var(--font-jp-hand), var(--font-hand-loaded), cursive;
-  line-height: 1.75;
+  font-weight: 500;
+  line-height: 1.8;
+  /* Improves headline rhythm noticeably — proportional kana. */
+  font-feature-settings: "palt";
 }
 html[lang="ja"] p,
 html[lang="ja"] li,
 html[lang="ja"] blockquote {
   line-break: strict;
   word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 html[lang="zh-CN"] {
-  --font-editorial: var(--font-sc), var(--font-editorial-loaded), serif;
+  --font-editorial: var(--font-sc), var(--font-editorial-loaded), sans-serif;
   --font-hand: var(--font-sc-hand), var(--font-hand-loaded), cursive;
+  font-weight: 500;
   line-height: 1.75;
 }
 html[lang="zh-CN"] p,
@@ -166,6 +177,7 @@ html[lang="zh-CN"] li,
 html[lang="zh-CN"] blockquote {
   line-break: strict;
   word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 /* CJK paragraphs benefit from a slightly wider measure to compensate

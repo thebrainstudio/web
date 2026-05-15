@@ -2,10 +2,13 @@ import {
   Fraunces,
   JetBrains_Mono,
   Caveat,
+  Noto_Sans_Thai,
   Noto_Serif_Thai,
   Sriracha,
+  Noto_Sans_JP,
   Noto_Serif_JP,
   Yusei_Magic,
+  Noto_Sans_SC,
   Noto_Serif_SC,
   Long_Cang,
 } from "next/font/google";
@@ -26,9 +29,16 @@ import {
  * className is on <html>, so non-matching locales never engage the
  * @font-face declaration and the .woff2 file is never requested.
  *
- *   th       → Noto Serif Thai (--font-thai)  + Sriracha (--font-thai-hand)
- *   ja       → Noto Serif JP   (--font-jp)    + Yusei Magic (--font-jp-hand)
- *   zh-CN    → Noto Serif SC   (--font-sc)    + Long Cang (--font-sc-hand)
+ * Each non-Latin locale pairs a body Sans face (500 weight, used for
+ * Body / Caption / Heading equivalents) with a Serif face (used for
+ * literary accent — Display italic only) and a marginalia Hand face.
+ * Sans 500 reads more confidently than Serif 400 at small sizes in
+ * CJK and Thai scripts; the Serif fonts stay loaded so the editorial
+ * register can still call on them.
+ *
+ *   th       → Noto Sans Thai 500 + Noto Serif Thai 500 + Sriracha
+ *   ja       → Noto Sans JP   500 + Noto Serif JP   500 + Yusei Magic
+ *   zh-CN    → Noto Sans SC   500 + Noto Serif SC   500 + Long Cang
  */
 
 // audit-fix: Task 6. Universal three keep preload: true.
@@ -63,10 +73,20 @@ export const caveat = Caveat({
 
 // audit-fix: Task 6. Locale-specific fonts — preload: false, only mounted
 // when the active locale matches.
-export const notoSerifThai = Noto_Serif_Thai({
+//
+// Thai: Sans 500 is the body face; Serif 500 is reserved for the
+// editorial-italic accent (Display).
+export const notoSansThai = Noto_Sans_Thai({
   subsets: ["thai"],
   display: "swap",
   variable: "--font-thai",
+  weight: ["400", "500"],
+  preload: false,
+});
+export const notoSerifThai = Noto_Serif_Thai({
+  subsets: ["thai"],
+  display: "swap",
+  variable: "--font-thai-serif",
   weight: ["400", "500"],
   preload: false,
 });
@@ -79,10 +99,18 @@ export const sriracha = Sriracha({
   preload: false,
 });
 
-export const notoSerifJP = Noto_Serif_JP({
+// Japanese: Sans 500 body, Serif accent slot.
+export const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-jp",
+  weight: ["400", "500", "700"],
+  preload: false,
+});
+export const notoSerifJP = Noto_Serif_JP({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jp-serif",
   weight: ["400", "500", "600"],
   preload: false,
 });
@@ -95,9 +123,16 @@ export const yuseiMagic = Yusei_Magic({
   preload: false,
 });
 
-export const notoSerifSC = Noto_Serif_SC({
+// Simplified Chinese: Sans 500 body, Serif accent slot.
+export const notoSansSC = Noto_Sans_SC({
   display: "swap",
   variable: "--font-sc",
+  weight: ["400", "500", "700"],
+  preload: false,
+});
+export const notoSerifSC = Noto_Serif_SC({
+  display: "swap",
+  variable: "--font-sc-serif",
   weight: ["400", "500", "600"],
   preload: false,
 });
@@ -133,18 +168,21 @@ export function fontVariablesForLocale(locale: string): string {
     case "th":
       return [
         universalFontVariables,
+        notoSansThai.variable,
         notoSerifThai.variable,
         sriracha.variable,
       ].join(" ");
     case "ja":
       return [
         universalFontVariables,
+        notoSansJP.variable,
         notoSerifJP.variable,
         yuseiMagic.variable,
       ].join(" ");
     case "zh-CN":
       return [
         universalFontVariables,
+        notoSansSC.variable,
         notoSerifSC.variable,
         longCang.variable,
       ].join(" ");
@@ -163,10 +201,13 @@ export const fontVariables = [
   fraunces.variable,
   jetbrainsMono.variable,
   caveat.variable,
+  notoSansThai.variable,
   notoSerifThai.variable,
   sriracha.variable,
+  notoSansJP.variable,
   notoSerifJP.variable,
   yuseiMagic.variable,
+  notoSansSC.variable,
   notoSerifSC.variable,
   longCang.variable,
 ].join(" ");
