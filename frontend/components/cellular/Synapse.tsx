@@ -9,6 +9,7 @@ import {
   type NTBehavior,
   devicePerfClass,
 } from "@/lib/neurotransmitters";
+import { apTick, epspWash } from "@/lib/audio/synapseCues";
 
 // Re-export so existing imports keep working.
 export { NEUROTRANSMITTERS };
@@ -552,6 +553,9 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
   const lastBindingTime = useRef(-1);
   const aftershockTimes = useRef<number[]>([]); // for acetylcholine biphasic
   const cameraDriftSeed = useRef(Math.random() * 1000);
+  // Visual-elevation Fix 6 — guards so each AP fires its two audio cues
+  // exactly once: a tick on AP departure, a low wash when binding peaks.
+  const epspWashFired = useRef(false);
 
   useEffect(() => {
     if (triggerCount === lastTrigger.current) return;
@@ -560,6 +564,10 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
     burstStartTime.current = null;
     totalBindings.current = 0;
     aftershockTimes.current = [];
+    epspWashFired.current = false;
+    // Fix 6 — phase transition: idle → travelling-ap. Cue is gated on
+    // prefers-reduced-motion inside synapseCues; safe to call freely.
+    apTick();
     // Choose which docked vesicles will fuse this round.
     const dockedIdx = vesicles
       .map((v, i) => (v.reserve ? -1 : i))
@@ -904,6 +912,20 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
     const bindingActivity = Math.min(1, totalBindings.current / 12);
     const timeSinceLastBind = E - lastBindingTime.current;
     const recencyDecay = Math.max(0, 1 - timeSinceLastBind / 1.2);
+
+    // Fix 6 — phase transition: binding → afterglow. When binding
+    // activity crosses 0.45 (about 5–6 receptors lit), fire the EPSP
+    // wash cue once per burst. Same gating logic the depolarize branch
+    // uses to kick the wave; works for every NT type because the cue
+    // narrates the moment of post-synaptic effect, not the polarity.
+    if (
+      bindingActivity > 0.45 &&
+      !epspWashFired.current &&
+      burstStartTime.current !== null
+    ) {
+      epspWashFired.current = true;
+      epspWash();
+    }
 
     spineUniforms.current.uHyperpolarize.value = 0;
     spineUniforms.current.uRimBoost.value = 0;
