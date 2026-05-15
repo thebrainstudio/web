@@ -75,7 +75,12 @@ export default function HeroDisplay({
                     style={{ animationDelay: `${delay}s` }}
                   >
                     {word}
-                    {last ? "" : " "}
+                    {/* U+00A0 instead of " ": display:inline-block
+                        plus white-space:nowrap was collapsing the
+                        trailing space inside the box and jamming
+                        adjacent words together. NBSP is never
+                        collapsed. */}
+                    {last ? "" : " "}
                   </span>
                 );
               })}
