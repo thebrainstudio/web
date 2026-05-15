@@ -151,9 +151,14 @@ export default function SiteMapColumns() {
             const bridgeLink = REGION_BRIDGE_LINKS[region.id];
             const label = (() => {
               try {
-                return tRegions(`${region.id}.label`);
+                // Key shape in messages/<locale>.json: regions.<id>.displayName
+                // (not `.label` — that name doesn't exist; the previous
+                // lookup fell through to the missing-key fallback in
+                // next-intl, which renders the full dotted key in caps
+                // because the surrounding <Caption uppercase> upcases it.)
+                return tRegions(`${region.id}.displayName`);
               } catch {
-                return region.id;
+                return region.displayName ?? region.id;
               }
             })();
             return (
