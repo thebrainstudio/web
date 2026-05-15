@@ -9,6 +9,7 @@ import SiteFooter from "@/components/nav/SiteFooter";
 import RoomTemperature from "@/components/atmospheric/RoomTemperature";
 import DeferredLocaleClient from "@/components/client/DeferredLocaleClient";
 import ScrollWeight from "@/components/typography/ScrollWeight";
+import MotionSpeedSync from "@/components/motion/MotionSpeedSync";
 import { Caption } from "@/components/typography/Typography";
 
 /**
@@ -68,6 +69,10 @@ export default async function LocaleLayout({
           Heading components consume it via font-variation-settings.
           Reduced-motion users are pinned at wght 400. */}
       <ScrollWeight />
+      {/* Reactivity-pass Fix 17 + 18: mirrors store.motionScale into
+          a CSS var and the GSAP global timeline so Shift-held and
+          Space-toggle propagate across every animation surface. */}
+      <MotionSpeedSync />
       {/* Visual-elevation Fix 5 composes a second filter slot on
           top of Fix 4's per-room temperature: `--scene-saturate`,
           driven by transient PinnedCinematic moments (Threshold

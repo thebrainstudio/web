@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
+import { useBrainStageStore } from "@/store/useBrainStageStore";
 
 /**
  * Visual-elevation Fix 7 — cursor light.
@@ -73,11 +74,14 @@ export default function CursorLight() {
     return () => window.removeEventListener("pointermove", onMove);
   }, [mounted, camera, size, reducedMotion]);
 
-  useFrame((_, dt) => {
+  useFrame((_, rawDt) => {
     const l = lightRef.current;
     if (!l) return;
     if (reducedMotion) return; // snap handled in pointermove
-    // Critically-damped-ish lerp toward target.
+    // Reactivity-pass Fix 17 + 18: scale the lerp rate by motionScale
+    // so the cursor highlight halts under Space-pause and slows under
+    // Shift-hold along with everything else in the scene.
+    const dt = rawDt * useBrainStageStore.getState().motionScale;
     const k = Math.min(1, dt * 8);
     l.position.lerp(target.current, k);
   });

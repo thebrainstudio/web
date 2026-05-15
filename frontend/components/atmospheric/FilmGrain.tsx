@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useBrainStageStore } from "@/store/useBrainStageStore";
 
 /**
  * Global film-grain overlay.
@@ -43,6 +44,8 @@ export default function FilmGrain() {
   // applicable. This avoids a flash on mobile where the canvas path
   // is never going to be used.
   const [animated, setAnimated] = useState(false);
+  // Reactivity-pass Fix 14: deep-night lifts grain 0.04 → 0.06.
+  const grainOpacity = useBrainStageStore((s) => s.grainOpacity);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -66,7 +69,14 @@ export default function FilmGrain() {
     // hash-table-cheap and avoids garbage collection pressure.
     let seed = 1 | 0;
     const tick = (now: number) => {
-      if (now - lastTimeRef.current >= FRAME_MS) {
+      // Reactivity-pass Fix 17 + 18: grain freezes under Space-pause
+      // and slows under Shift-hold along with the rest of the scene.
+      // Sample motionScale via getState() to avoid re-subscribing.
+      const motion = useBrainStageStore.getState().motionScale;
+      // motion 0 → frame interval = ∞ (freeze); motion 0.4 → 10 fps
+      // at the same FRAME_MS; motion 1 → 24 fps.
+      const scaledFrameMs = motion === 0 ? Infinity : FRAME_MS / motion;
+      if (now - lastTimeRef.current >= scaledFrameMs) {
         lastTimeRef.current = now;
         for (let i = 0; i < SIZE * SIZE; i++) {
           // Park–Miller LCG (cheap & non-zero); take top bits as noise.
@@ -113,8 +123,9 @@ export default function FilmGrain() {
       ref={canvasRef}
       width={SIZE}
       height={SIZE}
+      style={{ opacity: grainOpacity }}
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-[1000] h-screen w-screen mix-blend-overlay opacity-[0.04]"
+      className="pointer-events-none fixed inset-0 z-[1000] h-screen w-screen mix-blend-overlay"
     />
   );
 }

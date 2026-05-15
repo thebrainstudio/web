@@ -10,6 +10,7 @@ import {
   devicePerfClass,
 } from "@/lib/neurotransmitters";
 import { apTick, epspWash } from "@/lib/audio/synapseCues";
+import { useBrainStageStore } from "@/store/useBrainStageStore";
 
 // Re-export so existing imports keep working.
 export { NEUROTRANSMITTERS };
@@ -637,7 +638,11 @@ export default function Synapse({ nt, triggerCount, speed = 1 }: Props) {
 
   // ─── animation tick ───
   useFrame((state, dtRaw) => {
-    const dt = dtRaw * speed;
+    // Reactivity-pass Fix 17 + 18: layer global motionScale on top of
+    // the prop-driven `speed` so Space-pause and Shift-slow propagate
+    // into the cleft-firing animation as well.
+    const motion = useBrainStageStore.getState().motionScale;
+    const dt = dtRaw * speed * motion;
     elapsed.current += dt;
     const E = elapsed.current;
 

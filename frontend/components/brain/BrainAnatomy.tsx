@@ -347,8 +347,15 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
     [],
   );
 
-  useFrame((_, delta) => {
+  useFrame((_, rawDelta) => {
     if (!geometry || !meshRef.current) return;
+    // Reactivity-pass Fix 17 + 18: scale every per-frame integration
+    // by store.motionScale so Shift-held (0.4×) and Space-toggle (0×)
+    // propagate through breathing, wake ramps, smoothed lerps. We
+    // sample via getState() rather than subscribing, since the store
+    // selector would re-render the whole BrainAnatomy tree every
+    // time the motion scale ticked.
+    const delta = rawDelta * useBrainStageStore.getState().motionScale;
     elapsed.current += delta;
 
     const reads: Record<string, number> = targetActivations as Record<string, number>;
@@ -583,9 +590,12 @@ export default function BrainAnatomy() {
     return () => mq.removeEventListener?.("change", sync);
   }, []);
 
-  useFrame((_, delta) => {
+  useFrame((_, rawDelta) => {
     const g = groupRef.current;
     if (!g) return;
+    // Reactivity-pass Fix 17 + 18: scale every per-frame integration
+    // by store.motionScale (paired with the inner mesh-shader hook).
+    const delta = rawDelta * useBrainStageStore.getState().motionScale;
     tmpVec.set(targetPos[0], targetPos[1], targetPos[2]);
     g.position.lerp(tmpVec, Math.min(1, delta * 3));
 

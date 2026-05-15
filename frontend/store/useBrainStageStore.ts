@@ -38,6 +38,47 @@ export type BrainStageState = {
   lastInteractionAt: number;
   visible: boolean;
   /**
+   * Reactivity-pass Fix 17 + 18: global motion speed multiplier.
+   *   1.0 — normal
+   *   0.4 — slow-world (Shift held)
+   *   0.0 — paused (Space toggle)
+   * Every useFrame in the scene multiplies its `delta` by this value
+   * before integrating; GSAP timelines tagged `data: "scene"` apply
+   * the same scale via `gsap.globalTimeline.timeScale()`.
+   */
+  motionScale: number;
+  /**
+   * Reactivity-pass Fix 14: deep-night mode toggled by `D`. Drives
+   * the `--deep-night-filter` CSS var, a +20% bloom multiplier, and
+   * a slightly louder grain. Session-scoped — not persisted.
+   */
+  deepNight: boolean;
+  /**
+   * Reactivity-pass Fix 11: 0 = active, 1 = deep idle (no
+   * interaction for 20 s). Drives slower breathing + the 4-group
+   * region cycle in BrainAnatomy.
+   */
+  idleDepth: 0 | 1;
+  /**
+   * Reactivity-pass Fix 9: cursor proximity to the brain's
+   * screen-space centre. `side` is the hemisphere the cursor is
+   * closer to (or null when far). `intensity` ramps 0..1 as the
+   * cursor crosses the 0.3-viewport-width threshold; activation
+   * lift on the near hemisphere is capped at +15%.
+   */
+  cursorSide: "left" | "right" | null;
+  cursorIntensity: number;
+  /**
+   * Reactivity-pass Fix 21: museum mode (Archetypes-only). Chrome
+   * fades, current painting scales 1.4×, prose dims to 0.15.
+   */
+  museumMode: boolean;
+  /**
+   * Reactivity-pass Fix 14: FilmGrain reads this so deep-night
+   * mode can lift grain 0.04 → 0.06 without re-render gymnastics.
+   */
+  grainOpacity: number;
+  /**
    * Which fsaverage mesh resolution the BrainAnatomy is currently rendering.
    * 'fsaverage6' (~82k vertices) is used for hero cinematic moments — home
    * and about. 'fsaverage5' (~20k vertices) is the interactive workhorse —
@@ -64,6 +105,17 @@ export type BrainStageState = {
    */
   markInteraction: () => void;
   resetIdle: () => void;
+  /** Reactivity-pass Fix 17 + 18. */
+  setMotionScale: (m: number) => void;
+  /** Reactivity-pass Fix 14. */
+  toggleDeepNight: () => void;
+  setDeepNight: (on: boolean) => void;
+  /** Reactivity-pass Fix 11. */
+  setIdleDepth: (d: 0 | 1) => void;
+  /** Reactivity-pass Fix 9. */
+  setCursorProximity: (side: "left" | "right" | null, intensity: number) => void;
+  /** Reactivity-pass Fix 21. */
+  setMuseumMode: (on: boolean) => void;
 };
 
 const idleActivations: RegionActivations = Object.freeze({});
@@ -79,6 +131,13 @@ export const useBrainStageStore = create<BrainStageState>((set) => ({
   lastInteractionAt: 0,
   visible: true,
   meshResolution: "fsaverage5",
+  motionScale: 1,
+  deepNight: false,
+  idleDepth: 0,
+  cursorSide: null,
+  cursorIntensity: 0,
+  museumMode: false,
+  grainOpacity: 0.04,
 
   setTransform: ({ position, scale, rotation }) =>
     set((s) => ({
@@ -105,4 +164,22 @@ export const useBrainStageStore = create<BrainStageState>((set) => ({
       parcelActivations: idleParcels,
       lastInteractionAt: 0,
     }),
+
+  setMotionScale: (m) => set({ motionScale: Math.max(0, Math.min(2, m)) }),
+
+  toggleDeepNight: () =>
+    set((s) => ({
+      deepNight: !s.deepNight,
+      grainOpacity: !s.deepNight ? 0.06 : 0.04,
+    })),
+
+  setDeepNight: (on) =>
+    set({ deepNight: on, grainOpacity: on ? 0.06 : 0.04 }),
+
+  setIdleDepth: (d) => set({ idleDepth: d }),
+
+  setCursorProximity: (side, intensity) =>
+    set({ cursorSide: side, cursorIntensity: Math.max(0, Math.min(1, intensity)) }),
+
+  setMuseumMode: (on) => set({ museumMode: on }),
 }));
