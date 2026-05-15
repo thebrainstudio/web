@@ -33,11 +33,13 @@ export default function DeepNightCommand() {
   const toggleDeepNight = useBrainStageStore((s) => s.toggleDeepNight);
 
   // Sync --deep-night-filter on <html> whenever the flag flips.
+  // `brightness(1)` (not `none`) when off — keeps the multi-slot
+  // filter chain on <main> valid.
   useEffect(() => {
     if (typeof document === "undefined") return;
     document.documentElement.style.setProperty(
       "--deep-night-filter",
-      deepNight ? DEEP_NIGHT_FILTER : "none",
+      deepNight ? DEEP_NIGHT_FILTER : "brightness(1)",
     );
   }, [deepNight]);
 

@@ -46,9 +46,12 @@ export default function ThresholdScrollWarm({
 
     const root = document.documentElement;
     const apply = (progress: number) => {
-      // Linear interpolation 0 → 1 from none → sepia(0.06) brightness(0.96).
+      // Linear interpolation 0 → 1.
+      // At progress 0 we write brightness(1) — a valid no-op
+      // filter function. (Plain `none` would invalidate the whole
+      // composed filter chain on <main>.)
       if (progress <= 0.001) {
-        root.style.setProperty("--threshold-warm", "none");
+        root.style.setProperty("--threshold-warm", "brightness(1)");
         return;
       }
       const sepia = (0.06 * progress).toFixed(3);
@@ -71,7 +74,8 @@ export default function ThresholdScrollWarm({
 
     return () => {
       st.kill();
-      root.style.setProperty("--threshold-warm", "none");
+      // Same brightness(1) reasoning as above on unmount.
+      root.style.setProperty("--threshold-warm", "brightness(1)");
     };
   }, [trigger]);
 

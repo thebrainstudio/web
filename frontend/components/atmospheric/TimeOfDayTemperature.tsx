@@ -31,7 +31,10 @@ import { useEffect } from "react";
 const NIGHT = "sepia(0.10) brightness(0.94) saturate(0.95)";
 const EVENING = "sepia(0.04) brightness(0.99)";
 const MORNING = "brightness(1.02)";
-const DAYLIGHT = "none";
+// `brightness(1)` instead of `none` — the keyword `none` inside a
+// multi-function filter chain on <main> invalidates the entire
+// property, so each slot must always be a valid filter function.
+const DAYLIGHT = "brightness(1)";
 
 function bandForHour(hour: number): string {
   if (hour >= 6 && hour < 11) return MORNING;

@@ -34,15 +34,18 @@ export default function RoomTemperature() {
   useEffect(() => {
     if (typeof document === "undefined") return;
     const room = pathToRoomId(pathname);
-    const filter = ROOM_FILTERS[room] ?? "none";
+    // Reactivity-pass note: when the room has no filter (home,
+    // bridges, etc.) write `brightness(1)` rather than `none` —
+    // the keyword `none` inside a multi-function filter chain
+    // invalidates the entire property. brightness(1) is a no-op.
+    const filter = ROOM_FILTERS[room] ?? "brightness(1)";
     document.documentElement.style.setProperty(
       "--temperature-filter",
       filter,
     );
-    // No cleanup that resets to "none" — the next route change
-    // overwrites the value, and unmounting the provider would
-    // leave a stale filter, which is worse than over-applying
-    // briefly on transition.
+    // No cleanup — the next route change overwrites the value,
+    // and unmounting the provider would leave a stale filter,
+    // which is worse than over-applying briefly on transition.
   }, [pathname]);
 
   return null;

@@ -116,8 +116,13 @@ export default async function LocaleLayout({
           //   --deep-night-filter    D toggle (Fix 14)
           //   --threshold-warm       scroll-progress on /threshold (Fix 13)
           //   saturate(--scene-saturate)  transient pin moments (Fix 5)
+          //
+          // Fallbacks are brightness(1) — a no-op filter function —
+          // because the CSS filter property is INVALID if any chain
+          // slot is the keyword `none`. Every position must be a
+          // function call for the whole property to apply.
           filter:
-            "var(--temperature-filter, none) var(--time-temperature, none) var(--deep-night-filter, none) var(--threshold-warm, none) saturate(var(--scene-saturate, 1))",
+            "var(--temperature-filter, brightness(1)) var(--time-temperature, brightness(1)) var(--deep-night-filter, brightness(1)) var(--threshold-warm, brightness(1)) saturate(var(--scene-saturate, 1))",
         }}
       >
         {children}

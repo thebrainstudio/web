@@ -79,14 +79,17 @@
   --scroll-wght: 400;
 
   /* Reactivity-pass — additional filter slots composed onto
-     <main> in the locale layout. Initial values are `none` so
-     missing-component fallbacks evaluate cleanly. Filters that
-     write into these (TimeOfDayTemperature, the D-toggle
-     handler, ThresholdScrollWarm) update the property on
-     `<html>` directly via documentElement.style. */
-  --time-temperature: none;       /* Fix 10 — system clock band */
-  --deep-night-filter: none;      /* Fix 14 — D toggle */
-  --threshold-warm: none;         /* Fix 13 — scroll on /threshold */
+     <main> in the locale layout. Initial value is brightness(1)
+     (a no-op filter FUNCTION, not the `none` keyword) because the
+     CSS `filter` property fails as INVALID if ANY position in the
+     space-separated chain is the keyword `none`. Every slot must
+     be a valid filter function for the whole chain to apply. The
+     three writer components (TimeOfDayTemperature, the D-toggle
+     handler, ThresholdScrollWarm) also write brightness(1) when
+     their feature is off. */
+  --time-temperature: brightness(1);   /* Fix 10 — system clock band */
+  --deep-night-filter: brightness(1);  /* Fix 14 — D toggle */
+  --threshold-warm: brightness(1);     /* Fix 13 — scroll on /threshold */
 
   /* Reactivity-pass — global motion-speed multiplier mirrored
      from store.motionScale by <MotionSpeedSync />. Primary
