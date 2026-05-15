@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Caption } from "@/components/typography/Typography";
+import { GITHUB_URL } from "@/lib/urls";
 
 /**
  * PR 9 — shared site footer.
@@ -104,7 +105,7 @@ export default function SiteFooter() {
           <Caption uppercase>{t("version")}</Caption>
           <Dot />
           <a
-            href="https://github.com/dreamsmanifested6666-dotcom/brain-studio"
+            href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
             data-hover

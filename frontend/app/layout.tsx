@@ -3,6 +3,7 @@ import { getLocale } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { fontVariablesForLocale } from "./fonts";
+import { SITE_URL } from "@/lib/urls";
 import "./globals.css";
 import "./background-system.css";
 import SmoothScroll from "@/components/motion/SmoothScroll";
@@ -32,7 +33,7 @@ import BackgroundSystem from "@/components/atmospheric/BackgroundSystem";
  */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://brain-studio-kappa.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "The Brain Studio",
     template: "%s · The Brain Studio",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     title: "The Brain Studio",
     description:
       "A cinematic experiment in seeing the mind through a brain-encoding model.",
-    url: "https://brain-studio-kappa.vercel.app",
+    url: SITE_URL,
     siteName: "The Brain Studio",
     type: "website",
   },

@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { SITE_URL } from "@/lib/urls";
 
 // 1200×630 OG image, generated at build time. Brass editorial wordmark
 // over deep-navy ground with a faint constellation hint in the lower
@@ -118,7 +119,7 @@ export default function OG() {
             textTransform: "uppercase",
           }}
         >
-          <span>brain-studio-kappa.vercel.app</span>
+          <span>{SITE_URL.replace(/^https?:\/\//, "")}</span>
           <span>TRIBE v2 · 20 regions</span>
         </div>
       </div>

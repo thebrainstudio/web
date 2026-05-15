@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales, defaultLocale } from "@/i18n/locales";
 import { regions } from "@/lib/regions";
 import { tours } from "@/content/tours";
+import { SITE_URL as BASE } from "@/lib/urls";
 
 /**
  * Programmatic sitemap. Emits one entry per page concept with a
@@ -15,8 +16,6 @@ import { tours } from "@/content/tours";
  * Coverage: 13 static routes + 20 atlas regions + 3 depth-psychology
  * essays + 2 field-notes + 4 tours = 42 page concepts × 6 locales.
  */
-
-const BASE = "https://brain-studio-kappa.vercel.app";
 
 /** Static (non-dynamic) routes inside `app/[locale]/`. */
 const STATIC_PATHS = [

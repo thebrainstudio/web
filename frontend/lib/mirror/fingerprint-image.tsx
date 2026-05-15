@@ -25,6 +25,7 @@
 
 import { ImageResponse } from "next/og";
 import type { RegionId } from "@/lib/regions";
+import { SITE_URL } from "@/lib/urls";
 import {
   REGION_IDS,
   REGION_POSITIONS,
@@ -541,7 +542,7 @@ export function renderFingerprintImage(args: {
             }}
           >
             <span>The Brain Studio · Brain Mirror · {locale}</span>
-            <span>brain-studio-kappa.vercel.app</span>
+            <span>{SITE_URL.replace(/^https?:\/\//, "")}</span>
           </div>
         </div>
       </div>

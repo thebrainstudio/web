@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/urls";
 
 /**
  * Robots policy for crawlers. Allows everything; points at the sitemap.
@@ -8,8 +9,6 @@ import type { MetadataRoute } from "next";
  * in this same change). Listing them was reconnaissance bait.
  */
 
-const BASE = "https://brain-studio-kappa.vercel.app";
-
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -18,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: `${BASE}/sitemap.xml`,
-    host: BASE,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

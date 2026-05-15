@@ -9,6 +9,7 @@
 
 import { ImageResponse } from "next/og";
 import { OG_PALETTE } from "@/lib/seo";
+import { SITE_URL } from "@/lib/urls";
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;
 export const OG_CONTENT_TYPE = "image/png";
@@ -131,7 +132,7 @@ export function renderRoomOgCard(args: {
             textTransform: "uppercase",
           }}
         >
-          <span>brain-studio-kappa.vercel.app</span>
+          <span>{SITE_URL.replace(/^https?:\/\//, "")}</span>
           <span>Six rooms · TRIBE v2</span>
         </div>
       </div>

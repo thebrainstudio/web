@@ -10,6 +10,7 @@ import LanguageSelector from "@/components/nav/LanguageSelector";
 import NavMenu from "@/components/nav/NavMenu";
 import { useDismissable } from "@/components/nav/useDismissable";
 import { navMenus, allMenuItems } from "@/components/nav/navMenus";
+import { GITHUB_URL } from "@/lib/urls";
 
 function GithubMark({ size = 18 }: { size?: number }) {
   return (
@@ -252,7 +253,7 @@ export default function SiteHeader() {
           </li>
           <li>
             <a
-              href="https://github.com/dreamsmanifested6666-dotcom/brain-studio"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t("githubAria")}
@@ -359,7 +360,7 @@ export default function SiteHeader() {
           </li>
           <li>
             <a
-              href="https://github.com/dreamsmanifested6666-dotcom/brain-studio"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-bone-cream/85 inline-flex items-center gap-2 py-2 transition-colors duration-200 hover:text-brass"

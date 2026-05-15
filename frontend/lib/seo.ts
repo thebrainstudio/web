@@ -9,8 +9,7 @@
 
 import type { Metadata } from "next";
 import { locales, defaultLocale, type Locale } from "@/i18n/locales";
-
-const SITE_URL = "https://brain-studio-kappa.vercel.app";
+import { SITE_URL } from "@/lib/urls";
 
 /**
  * Canonical URL for a given locale + optional sub-path. Always emits the
