@@ -225,6 +225,21 @@ html[lang="zh-CN"] .max-w-\[36rem\] {
     opacity: 1;
   }
 }
+/* Thai / CJK have no space-separated word tokens, so HeroDisplay's
+   line.split(" ") emits the whole line as one .hero-word. The default
+   `white-space: nowrap` would then force the entire sentence onto a
+   single line and overflow the 18ch container. For these locales we
+   relax nowrap and let the line wrap at character boundaries — the
+   per-word stagger doesn't apply anyway (there's only one "word").
+   Scoped via :lang() so Latin locales keep their per-word stagger. */
+:lang(th) .hero-word,
+:lang(ja) .hero-word,
+:lang(zh-CN) .hero-word,
+:lang(zh) .hero-word {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 
 /* Page-transition fade-up. Applied by app/template.tsx via .route-enter
    so each new route gets the gentle entrance without needing a JS
