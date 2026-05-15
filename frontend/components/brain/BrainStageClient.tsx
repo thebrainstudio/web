@@ -5,6 +5,7 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { Suspense } from "react";
 import BrainAnatomy from "./BrainAnatomy";
 import BrainLighting from "./BrainLighting";
+import CursorLight from "./CursorLight";
 
 /**
  * The persistent R3F canvas. Mounted once at root layout and never
@@ -23,6 +24,11 @@ export default function BrainStageClient() {
       <Suspense fallback={null}>
         <BrainLighting />
         <BrainAnatomy />
+        {/* Visual-elevation Fix 7 — a warm point light that
+            follows the cursor and gives the cortex a specular
+            highlight as the reader moves. Self-gates to null on
+            mobile so phones pay no GPU cost. */}
+        <CursorLight />
         {/* Visual-elevation Fix 1: bloom retuned per brief —
             higher threshold so the IDLE brain doesn't bloom,
             tighter radius so glow reads as a halo around the
