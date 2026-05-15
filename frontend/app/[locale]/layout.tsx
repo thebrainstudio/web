@@ -12,6 +12,7 @@ import DeferredLocaleClient from "@/components/client/DeferredLocaleClient";
 import ScrollWeight from "@/components/typography/ScrollWeight";
 import MotionSpeedSync from "@/components/motion/MotionSpeedSync";
 import DeepIdleDriver from "@/components/brain/DeepIdleDriver";
+import DeepNightCommand from "@/components/reactivity/DeepNightCommand";
 import { Caption } from "@/components/typography/Typography";
 
 /**
@@ -85,6 +86,11 @@ export default async function LocaleLayout({
           from 5 s to 9 s and a slow 4-group region cycle runs.
           Reduced-motion users get only the slower breathing. */}
       <DeepIdleDriver />
+      {/* Reactivity-pass Fix 14: registers the `D` shortcut and
+          mirrors store.deepNight into --deep-night-filter on <html>.
+          The only documented shortcut on the site (About page,
+          first affordance bullet). */}
+      <DeepNightCommand />
       {/* Visual-elevation Fix 5 composes a second filter slot on
           top of Fix 4's per-room temperature: `--scene-saturate`,
           driven by transient PinnedCinematic moments (Threshold

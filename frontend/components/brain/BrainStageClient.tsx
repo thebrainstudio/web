@@ -5,6 +5,7 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { Suspense } from "react";
 import BrainAnatomy from "./BrainAnatomy";
 import BrainLighting from "./BrainLighting";
+import { useBrainStageStore } from "@/store/useBrainStageStore";
 import CursorLight from "./CursorLight";
 
 /**
@@ -15,6 +16,9 @@ import CursorLight from "./CursorLight";
  * store's meshResolution). Bloom postprocessing glows active regions.
  */
 export default function BrainStageClient() {
+  // Reactivity-pass Fix 14: deep-night mode bumps bloom by 20%.
+  const deepNight = useBrainStageStore((s) => s.deepNight);
+  const bloomMul = deepNight ? 1.2 : 1;
   return (
     <Canvas
       camera={{ position: [0, 0, 3.0], fov: 32 }}
@@ -38,11 +42,11 @@ export default function BrainStageClient() {
             consistently than the pre-elevation vertex-paint path. */}
         <EffectComposer enableNormalPass={false}>
           <Bloom
-            intensity={0.7}
+            intensity={0.7 * bloomMul}
             luminanceThreshold={0.52}
             luminanceSmoothing={0.22}
             mipmapBlur
-            radius={0.65}
+            radius={0.65 * bloomMul}
           />
         </EffectComposer>
       </Suspense>

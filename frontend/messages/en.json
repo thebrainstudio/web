@@ -1009,6 +1009,10 @@
       "label": "How to use this brain",
       "heading": "A short guide to the affordances.",
       "intro": "The site has more entry points than the home page suggests. The list below names the discoverable ones — the small affordances that turn a beautiful piece into a navigable research instrument.",
+      "deepNight": {
+        "label": "Deep night",
+        "body": "Press D for deep night."
+      },
       "search": {
         "label": "Search",
         "body": "Press Cmd-K (or Ctrl-K on Windows / Linux) anywhere on the site to open a keyboard-first search palette. It indexes every region, every Bridges section, every tour, every long-form essay, and a small set of cross-cutting concepts. Type a researcher's surname, a disorder, a Jungian concept, a brain region — the palette finds it."

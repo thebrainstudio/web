@@ -1009,6 +1009,10 @@
       "label": "Com fer servir aquest cervell",
       "heading": "Una guia breu dels recursos.",
       "intro": "El lloc té més punts d'entrada dels que suggereix la pàgina d'inici. La llista següent anomena els descobribles — els petits recursos que converteixen una peça bella en un instrument de recerca navegable.",
+      "deepNight": {
+        "label": "Deep night",
+        "body": "Press D for deep night."
+      },
       "search": {
         "label": "Cerca",
         "body": "Prem Cmd-K (o Ctrl-K a Windows / Linux) a qualsevol lloc del web per obrir una paleta de cerca amb prioritat de teclat. Indexa totes les regions, totes les seccions de Ponts, tots els recorreguts, tots els assaigs extensos i un petit conjunt de conceptes transversals. Escriu el cognom d'una investigadora, un trastorn, un concepte junguià, una regió cerebral — la paleta ho trobarà."

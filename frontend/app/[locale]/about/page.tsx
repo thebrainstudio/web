@@ -625,8 +625,14 @@ export default async function AboutPage({
           </Body>
 
           <ul className="mt-12 space-y-8">
+            {/* Reactivity-pass Fix 14: `deepNight` lands as the
+                FIRST affordance — the only keyboard shortcut on the
+                site that gets a documented mention. Everything else
+                (Esc, F, Space, Shift-hold, Alt-hold, arrows, M, the
+                home keystroke sequence) stays discoverable. */}
             {(
               [
+                "deepNight",
                 "search",
                 "atlas",
                 "bridges",

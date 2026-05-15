@@ -1009,6 +1009,10 @@
       "label": "Cómo usar este cerebro",
       "heading": "Una guía breve de los recursos.",
       "intro": "El sitio tiene más puntos de entrada de los que sugiere la página de inicio. La lista siguiente nombra los descubribles — los pequeños recursos que convierten una pieza bella en un instrumento de investigación navegable.",
+      "deepNight": {
+        "label": "Deep night",
+        "body": "Press D for deep night."
+      },
       "search": {
         "label": "Búsqueda",
         "body": "Pulsa Cmd-K (o Ctrl-K en Windows / Linux) en cualquier lugar del sitio para abrir una paleta de búsqueda con prioridad de teclado. Indexa todas las regiones, todas las secciones de Puentes, todos los recorridos, todos los ensayos extensos y un pequeño conjunto de conceptos transversales. Escribe el apellido de una investigadora, un trastorno, un concepto junguiano, una región cerebral — la paleta lo encontrará."
