@@ -23,13 +23,20 @@ export default function BrainStageClient() {
       <Suspense fallback={null}>
         <BrainLighting />
         <BrainAnatomy />
+        {/* Visual-elevation Fix 1: bloom retuned per brief —
+            higher threshold so the IDLE brain doesn't bloom,
+            tighter radius so glow reads as a halo around the
+            active regions instead of a global haze. Intensity
+            dropped a touch (0.85 → 0.8) since the new emissive
+            shader injection contributes more energy than the
+            old per-vertex paint path. */}
         <EffectComposer enableNormalPass={false}>
           <Bloom
-            intensity={0.85}
-            luminanceThreshold={0.42}
+            intensity={0.8}
+            luminanceThreshold={0.6}
             luminanceSmoothing={0.2}
             mipmapBlur
-            radius={0.78}
+            radius={0.4}
           />
         </EffectComposer>
       </Suspense>

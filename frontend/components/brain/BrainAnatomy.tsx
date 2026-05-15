@@ -231,12 +231,33 @@ function findFirstMesh(scene: THREE.Object3D): THREE.Mesh | null {
   return found;
 }
 
+// Visual-elevation Fix 1: detect a small viewport so the GPU-heavier
+// material props (transmission) collapse to 0 on phones without
+// changing the visual contract for desktop. Computed once at module
+// level via `window.matchMedia`; tablet+ devices keep the wet-tissue
+// look.
+function isPhoneViewport(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(max-width: 768px)").matches;
+}
+
 function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
   const url = MESH_URL[resolution];
   const gltf = useLoader(GLTFLoader, url) as unknown as { scene: THREE.Object3D };
   const meshRef = useRef<THREE.Mesh>(null);
-  const matRef = useRef<THREE.MeshStandardMaterial>(null);
+  const matRef = useRef<THREE.MeshPhysicalMaterial>(null);
   const opacity = useRef(0.001); // fades in on mount
+  // Visual-elevation Fix 1: brief 800 ms cubic-out ramp triggered on
+  // every activation change. The existing ~1200 ms colour lerp on
+  // smoothed activations stays (per-region settling); this multiplier
+  // lives in front of `emissiveIntensity` so a freshly-arriving map
+  // brightens then settles, instead of just sliding in.
+  const emissiveWake = useRef(0);
+  const lastActivationSig = useRef<string>("");
+  const isPhone = useRef(false);
+  useEffect(() => {
+    isPhone.current = isPhoneViewport();
+  }, []);
   const [assignments, setAssignments] = useState<VertexRegionAssignment | null>(
     null,
   );
@@ -323,6 +344,30 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
     const hasParcels =
       parcelIds !== null && Object.keys(parcelReads).length > 0;
     const hasExplicit = Object.values(reads).some((v) => (v ?? 0) > 0.02);
+
+    // Visual-elevation Fix 1: when a new activation map arrives,
+    // trigger the 800 ms emissive wake ramp. Signature is a coarse
+    // hash of (count, sum-of-top-3-values, top key) — enough to
+    // catch any meaningful map change without paying O(n) per frame.
+    const sig =
+      hasParcels
+        ? `p:${Object.keys(parcelReads).length}`
+        : hasExplicit
+          ? `r:${Math.round(
+              Object.values(reads).reduce((a, b) => a + (b ?? 0), 0) * 100,
+            )}`
+          : "idle";
+    if (sig !== lastActivationSig.current) {
+      emissiveWake.current = 1;
+      lastActivationSig.current = sig;
+    }
+    if (emissiveWake.current > 0) {
+      // Cubic-out decay over ~800 ms (1/0.8 ≈ 1.25 per second).
+      emissiveWake.current = Math.max(
+        0,
+        emissiveWake.current - delta * 1.25,
+      );
+    }
 
     // phase 2: time-based smoothing with a deliberate ~1200 ms window.
     // The design-critic brief specified `1200ms cubic-bezier(0.16, 1, 0.3, 1)`
@@ -428,22 +473,51 @@ function MeshForResolution({ resolution }: { resolution: MeshResolution }) {
         m.transparent = opacity.current < 1;
       }
     }
+
+    // Visual-elevation Fix 1: apply the wake ramp to emissive
+    // intensity. Base intensity 0.6; wake adds up to +0.7 with a
+    // cubic-out feel (the linear decay above is the time axis;
+    // squaring weights it toward an "ease-out" perceptual shape).
+    const m = matRef.current;
+    if (m) {
+      const wake = emissiveWake.current;
+      const wakeShaped = wake * wake; // ease-out cubic-ish
+      m.emissiveIntensity = 0.6 + wakeShaped * 0.7;
+    }
   });
+
+  // Visual-elevation Fix 1: shader-chunk injection so per-vertex
+  // colours contribute as EMISSIVE radiance rather than diffuse paint.
+  // Replaces three.js's standard `totalEmissiveRadiance` line with one
+  // that adds `vColor.rgb * emissiveIntensity * 1.6`. The vertex
+  // colour update path is unchanged; only the visible read shifts from
+  // "painted" to "glowing from within."
+  const onBeforeCompile = (shader: THREE.WebGLProgramParametersWithUniforms) => {
+    shader.fragmentShader = shader.fragmentShader.replace(
+      "vec3 totalEmissiveRadiance = emissive;",
+      "vec3 totalEmissiveRadiance = emissive + vColor.rgb * emissiveIntensity * 1.6;",
+    );
+  };
 
   if (!geometry) return null;
   return (
     <mesh ref={meshRef} geometry={geometry} castShadow={false} receiveShadow={false}>
-      <meshStandardMaterial
+      <meshPhysicalMaterial
         ref={matRef}
         vertexColors
         roughness={0.42}
         metalness={0.05}
         envMapIntensity={0.5}
-        emissive={"#ffffff"}
-        emissiveIntensity={0.18}
+        emissive={"#000000"}
+        emissiveIntensity={0.6}
+        thickness={0.3}
+        transmission={isPhone.current ? 0 : 0.15}
+        clearcoat={0.4}
+        clearcoatRoughness={0.55}
         transparent
         opacity={0.001}
         side={THREE.DoubleSide}
+        onBeforeCompile={onBeforeCompile}
       />
     </mesh>
   );
