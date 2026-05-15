@@ -19,6 +19,7 @@ import Mandala from "@/components/decoration/Mandala";
 import AttributedImage from "@/components/content/AttributedImage";
 import MandalaBrainViewer from "@/components/content/MandalaBrainViewer";
 import PersonaKenBurns from "@/components/archetypes/PersonaKenBurns";
+import MuseumMode from "@/components/archetypes/MuseumMode";
 import {
   Body,
   Caption,
@@ -91,6 +92,11 @@ export default async function ArchetypesPage({
 
   return (
     <>
+      {/* Reactivity-pass Fix 21: M toggles museum mode (chrome
+          fades, painting scales 1.4×, prose dims to 0.15).
+          Component-scoped to Archetypes — its M handler is
+          predicated on pathToRoomId === "archetypes". */}
+      <MuseumMode />
       {/* Opening — was min-h-[90vh] which parked the user in a near
           full-viewport hero before any archetype prose. Tightened to
           min-h-[70vh] so the scroll has forward momentum and the
@@ -373,7 +379,10 @@ function ArchetypeScene({
           flip ? "md:[direction:rtl]" : ""
         }`}
       >
-        <div className="md:col-span-5 md:[direction:ltr]">
+        <div
+          className="md:col-span-5 md:[direction:ltr]"
+          data-museum-art
+        >
           {/* Visual-elevation Fix 5: only the Persona archetype
               gets the Ken Burns wrapper — pulling from the
               squirrel up to the lady's face across the pinned
@@ -396,7 +405,10 @@ function ArchetypeScene({
             />
           )}
         </div>
-        <div className="md:col-span-7 md:[direction:ltr]">
+        <div
+          className="md:col-span-7 md:[direction:ltr]"
+          data-museum-dim
+        >
           <Caption uppercase className="text-brass">
             {title}
           </Caption>

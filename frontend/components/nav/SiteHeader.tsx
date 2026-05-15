@@ -190,7 +190,10 @@ export default function SiteHeader() {
     pathname === "/about" || pathname.startsWith("/about/");
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 backdrop-blur-md">
+    <header
+      className="fixed inset-x-0 top-0 z-40 backdrop-blur-md"
+      data-museum-chrome
+    >
       <div className="absolute inset-0 -z-10 bg-navy-deep/70" aria-hidden />
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-10">
         <Link

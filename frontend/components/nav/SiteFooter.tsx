@@ -55,7 +55,10 @@ export default function SiteFooter() {
   );
 
   return (
-    <footer className="border-bone-cream/10 relative border-t px-6 py-14 text-center md:px-10">
+    <footer
+      className="border-bone-cream/10 relative border-t px-6 py-14 text-center md:px-10"
+      data-museum-chrome
+    >
       <div className="mx-auto max-w-[1100px] space-y-5">
         {/* Row 1 — 8 rooms */}
         <div className="text-bone-cream/80">
