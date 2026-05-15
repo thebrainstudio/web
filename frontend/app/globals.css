@@ -252,6 +252,23 @@ html[lang="zh-CN"] .max-w-\[36rem\] {
   }
 }
 
+/* text-wrap: pretty on H3 + paragraph-level prose.
+   Display + Heading already use `text-balance` (set in
+   Typography.tsx) which wins over `pretty` for the headlines;
+   `pretty` applies elsewhere and fixes the one-word-last-line
+   widow problem in body and sub-heading prose. Wrapped in
+   @supports so legacy browsers fall through to the default. */
+@supports (text-wrap: pretty) {
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote {
+    text-wrap: pretty;
+  }
+}
+
 /* ---------------------------------------------------------------
    Reactivity-pass Fix 21 — museum mode (Archetypes only).
    Body data-attribute is flipped by components/archetypes/MuseumMode.
