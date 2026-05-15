@@ -18,6 +18,7 @@ import {
 } from "@/lib/mirror/impressionistic";
 import { dispatchKeystrokePulse } from "@/components/atmospheric/PersistentAtmosphere";
 import { Caption } from "@/components/typography/Typography";
+import { regionById, type RegionId } from "@/lib/regions";
 import MirrorLoadingMessage from "./MirrorLoadingMessage";
 import AttributionChip, {
   type AttributionState,
@@ -103,6 +104,12 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
   // will read this from a context; for now it just lives in state.
   const [, setImpressionistic] =
     useState<ImpressionisticPrediction | null>(null);
+  // Screen-reader announcement of the top-3 regions at the moment a
+  // new prediction settled. Distinct from the global RegionAnnouncer
+  // which announces continuous state every 1.6 s; this one fires on
+  // the discrete event "a settled prediction just landed" so the
+  // event semantics reach an SR user via aria-live.
+  const [settledAnnouncement, setSettledAnnouncement] = useState("");
   const setActivations = useBrainStageStore((s) => s.setActivations);
   const resetIdle = useBrainStageStore((s) => s.resetIdle);
   // Visual-elevation Fix 2: pause the idle mesh-scale breathing
@@ -232,6 +239,32 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
       onPrediction(value, merged);
       setSettling(false);
 
+      // Compose the discrete settled-event announcement for screen
+      // readers: name the top-3 regions by displayName. Distinct
+      // from the global RegionAnnouncer (continuous-state, 1.6 s
+      // throttle); this one fires per settle.
+      const top3 = (
+        Object.entries(scaled as Record<RegionId, number>) as [RegionId, number][]
+      )
+        .filter(([, v]) => (v ?? 0) > 0.3)
+        .sort((a, b) => (b[1] ?? 0) - (a[1] ?? 0))
+        .slice(0, 3);
+      if (top3.length > 0) {
+        setSettledAnnouncement(
+          "Prediction settled. " +
+            top3
+              .map(([id, v]) => {
+                const r = regionById[id];
+                const name = r?.displayName ?? id;
+                return `${name}, ${Math.round((v ?? 0) * 100)} percent`;
+              })
+              .join("; ") +
+            ".",
+        );
+      } else {
+        setSettledAnnouncement("");
+      }
+
       // phase-10: update attribution chip with honesty.
       if (remote && isRealTribe(remote.model_version)) {
         setAttribution("tribe-live");
@@ -327,6 +360,24 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
       */}
       <div role="status" aria-live="polite" className="sr-only">
         {settling ? t("predicting") : ""}
+      </div>
+      {/*
+        Mirror-local prediction-settled announcer. Different concern
+        from the global RegionAnnouncer (which announces continuous
+        state changes throttled to 1.6 s): this one announces the
+        DISCRETE EVENT "a new prediction just settled" with the
+        top-3 region names at the moment of settle. Fires once per
+        successful predict cycle; not throttled. Atomic so a screen
+        reader reads the whole message even if the prediction
+        changes again mid-utterance.
+      */}
+      <div
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+      >
+        {settledAnnouncement}
       </div>
       <MirrorLoadingMessage active={settling} />
       {/*
