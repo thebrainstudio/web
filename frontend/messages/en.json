@@ -211,7 +211,7 @@
       "crosscultural": "Cross-Cultural Brain"
     },
     "footer": {
-      "built": "Built at Chulalongkorn JIPP",
+      "built": "Built by a Chulalongkorn student, Faculty of Psychology",
       "encoder": "TRIBE v2 encoder",
       "about": "About"
     },
@@ -1009,9 +1009,9 @@
       "builtLabel": "Built with",
       "builtTitle": "Anthropic Claude",
       "builtBody": "Engineering scaffolding and prose drafting were produced with Claude (Anthropic, model versions across 2025–2026) under anonymous editorial direction and final review. All factual claims, citations, region attributions, and editorial decisions were human-verified. The site's voice and structural choices are the author's; the implementation labor was shared with the model.",
-      "homeLabel": "Home",
-      "homeTitle": "Chulalongkorn JIPP",
-      "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences. Bangkok and the Thai stimulus pairs come from here.",
+      "homeLabel": "Author",
+      "homeTitle": "Chulalongkorn student, Faculty of Psychology",
+      "homeBody": "A Faculty of Psychology student at Chulalongkorn University, Bangkok. The Thai stimulus pairs come from here.",
       "translationsNote": ""
     },
     "howToUse": {
@@ -1255,7 +1255,7 @@
     "footerNote": "Region labels collapse to four IDs per card; click into a room or essay for the full list. Bridge-section labels under each region are the canonical pattern that region most participates in — the same labels used on the Bridges page."
   },
   "footer": {
-    "built": "Built at Chulalongkorn JIPP",
+    "built": "Built by a Chulalongkorn student, Faculty of Psychology",
     "encoder": "TRIBE v2 encoder",
     "version": "v1.0 · last reviewed 2026-05-14",
     "github": "Source on GitHub"

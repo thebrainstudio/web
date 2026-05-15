@@ -211,7 +211,7 @@
       "crosscultural": "異文化の脳"
     },
     "footer": {
-      "built": "チュラーロンコーン大学 JIPP にて制作",
+      "built": "チュラーロンコーン大学・心理学部の学生による制作",
       "encoder": "TRIBE v2 エンコーダ",
       "about": "このサイトについて"
     },
@@ -1009,9 +1009,9 @@
       "builtLabel": "共に作ったもの",
       "builtTitle": "Anthropic Claude",
       "builtBody": "工学的な足場と散文の下書きは、Claude（Anthropic、2025〜2026年にわたるモデルバージョン群）によって、匿名の編集ディレクションと最終レビューのもとで作成された。事実主張、引用、脳領域の帰属、そして編集判断はすべて人による検証を経ている。サイトの声と構造的選択は著者のものであり、実装の労働はモデルと共有された。",
-      "homeLabel": "ホーム",
-      "homeTitle": "チュラーロンコーン大学 JIPP",
-      "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences。バンコクと、タイ語の刺激対はここから来ています。",
+      "homeLabel": "制作者",
+      "homeTitle": "チュラーロンコーン大学・心理学部の学生",
+      "homeBody": "チュラーロンコーン大学心理学部の学生によるバンコク発のプロジェクト。タイ語の刺激対はここから来ています。",
       "translationsNote": "日本語訳は機械支援によるものであり、ネイティブ校閲を待っています。修正は brain-studio リポジトリの GitHub issue で。"
     },
     "howToUse": {
@@ -1255,7 +1255,7 @@
     "footerNote": "領域ラベルはカードあたり四つの ID に畳まれている。完全な一覧は各部屋やエッセイの中で見られる。各領域の下にある橋セクション・ラベルは、その領域が最も関与する正典的パターン — Bridges ページで使われているのと同じラベル。"
   },
   "footer": {
-    "built": "Chulalongkorn JIPP にて構築",
+    "built": "チュラーロンコーン大学・心理学部の学生による制作",
     "encoder": "TRIBE v2 エンコーダ",
     "version": "v1.0 · 最終レビュー 2026-05-14",
     "github": "GitHub のソース"

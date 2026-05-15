@@ -211,7 +211,7 @@
       "crosscultural": "跨文化大脑"
     },
     "footer": {
-      "built": "建于朱拉隆功大学 JIPP",
+      "built": "由朱拉隆功大学心理学院学生开发",
       "encoder": "TRIBE v2 编码器",
       "about": "关于"
     },
@@ -1009,9 +1009,9 @@
       "builtLabel": "共同搭建",
       "builtTitle": "Anthropic Claude",
       "builtBody": "工程脚手架与散文初稿由 Claude（Anthropic，2025–2026 年间的多个模型版本）在匿名编辑指导与最终审校下产出。所有事实陈述、引用、脑区归属与编辑判断均经过人工核验。本站的声音与结构选择属于作者；实现层面的工作则与模型共担。",
-      "homeLabel": "家",
-      "homeTitle": "朱拉隆功大学 JIPP",
-      "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences。曼谷和泰文刺激对都来自这里。",
+      "homeLabel": "作者",
+      "homeTitle": "朱拉隆功大学心理学院学生",
+      "homeBody": "朱拉隆功大学心理学院学生于曼谷开发。泰文刺激对来自这里。",
       "translationsNote": "中文翻译由模型辅助，正在等待母语者审阅。请通过 brain-studio 仓库的 GitHub issue 提交修正。"
     },
     "howToUse": {
@@ -1255,7 +1255,7 @@
     "footerNote": "每张卡上的脑区标签折叠为四个标识；进入某个房间或随笔以查看完整列表。每个脑区下方的桥梁分区标签是该脑区最为参与的规范模式 —— 与桥梁页所用标签相同。"
   },
   "footer": {
-    "built": "于朱拉隆功大学 JIPP 构建",
+    "built": "由朱拉隆功大学心理学院学生开发",
     "encoder": "TRIBE v2 编码器",
     "version": "v1.0 · 最近审阅 2026-05-14",
     "github": "GitHub 源码"

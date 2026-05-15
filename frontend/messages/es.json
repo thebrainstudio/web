@@ -211,7 +211,7 @@
       "crosscultural": "Cerebro Transcultural"
     },
     "footer": {
-      "built": "Hecho en JIPP, Universidad de Chulalongkorn",
+      "built": "Hecho por un estudiante de Chulalongkorn, Facultad de Psicología",
       "encoder": "codificador TRIBE v2",
       "about": "Acerca"
     },
@@ -1009,9 +1009,9 @@
       "builtLabel": "Construido con",
       "builtTitle": "Anthropic Claude",
       "builtBody": "El andamiaje de ingeniería y los borradores de prosa se produjeron con Claude (Anthropic, versiones del modelo a lo largo de 2025–2026) bajo dirección editorial anónima y revisión final. Todas las afirmaciones factuales, las citas, las atribuciones de regiones y las decisiones editoriales se verificaron humanamente. La voz del sitio y sus elecciones estructurales son del autor; el trabajo de implementación se compartió con el modelo.",
-      "homeLabel": "Hogar",
-      "homeTitle": "JIPP de Chulalongkorn",
-      "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences. Bangkok y las parejas de estímulos tailandeses vienen de aquí.",
+      "homeLabel": "Autor",
+      "homeTitle": "Estudiante de Chulalongkorn, Facultad de Psicología",
+      "homeBody": "Un estudiante de la Facultad de Psicología en la Universidad de Chulalongkorn, Bangkok. Las parejas de estímulos en tailandés vienen de aquí.",
       "translationsNote": "Las traducciones al español fueron asistidas por modelo y esperan una revisión nativa. Envía correcciones como GitHub issue al repositorio brain-studio."
     },
     "howToUse": {
@@ -1255,7 +1255,7 @@
     "footerNote": "Las etiquetas de región se colapsan a cuatro identificadores por tarjeta; entra en una sala o ensayo para ver la lista completa. Las etiquetas de sección-puente bajo cada región son el patrón canónico en el que esa región más participa — las mismas etiquetas que usa la página de Puentes."
   },
   "footer": {
-    "built": "Construido en Chulalongkorn JIPP",
+    "built": "Hecho por un estudiante de Chulalongkorn, Facultad de Psicología",
     "encoder": "Encoder TRIBE v2",
     "version": "v1.0 · última revisión 2026-05-14",
     "github": "Código fuente en GitHub"

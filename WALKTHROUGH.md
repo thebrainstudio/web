@@ -62,7 +62,7 @@ Built. Long-form scroll essay.
 3. Three parallax paragraphs: what it doesn't do (training-distribution bias, hemodynamic lag, region labels as anatomy).
 4. The single Jung paragraph.
 5. Live citation list from `lib/citations.ts` with DOI links.
-6. Credits — Meta AI, Anthropic, Chulalongkorn JIPP.
+6. Credits — Meta AI, Anthropic, a Chulalongkorn student from the Faculty of Psychology.
 7. Roadmap — Phases 10, 11, 12 with one-line scope.
 8. Closing line + amber-lamp bottom glow (animated).
 

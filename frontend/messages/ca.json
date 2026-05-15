@@ -211,7 +211,7 @@
       "crosscultural": "Cervell Transcultural"
     },
     "footer": {
-      "built": "Fet al JIPP, Universitat de Chulalongkorn",
+      "built": "Fet per un estudiant de Chulalongkorn, Facultat de Psicologia",
       "encoder": "codificador TRIBE v2",
       "about": "Sobre el projecte"
     },
@@ -1009,9 +1009,9 @@
       "builtLabel": "Construït amb",
       "builtTitle": "Anthropic Claude",
       "builtBody": "La bastida d'enginyeria i els esborranys de prosa es van produir amb Claude (Anthropic, versions del model al llarg de 2025–2026) sota direcció editorial anònima i revisió final. Totes les afirmacions factuals, les citacions, les atribucions de regions i les decisions editorials es van verificar humanament. La veu del lloc i les seves opcions estructurals són de l'autor; la feina d'implementació es va compartir amb el model.",
-      "homeLabel": "Llar",
-      "homeTitle": "JIPP de Chulalongkorn",
-      "homeBody": "Joint International Postgraduate Programme in Cognitive Sciences. Bangkok i les parelles d'estímuls tailandesos vénen d'aquí.",
+      "homeLabel": "Autor",
+      "homeTitle": "Estudiant de Chulalongkorn, Facultat de Psicologia",
+      "homeBody": "Un estudiant de la Facultat de Psicologia de la Universitat de Chulalongkorn, Bangkok. Les parelles d'estímuls en tailandès vénen d'aquí.",
       "translationsNote": "Les traduccions al català van ser assistides per model i esperen una revisió nativa. Envia correccions com a GitHub issue al repositori brain-studio."
     },
     "howToUse": {
@@ -1255,7 +1255,7 @@
     "footerNote": "Les etiquetes de regió es col·lapsen a quatre identificadors per targeta; entra en una sala o assaig per veure la llista completa. Les etiquetes de secció-pont sota cada regió són el patró canònic en què aquesta regió més participa — les mateixes etiquetes que utilitza la pàgina de Ponts."
   },
   "footer": {
-    "built": "Construït a Chulalongkorn JIPP",
+    "built": "Fet per un estudiant de Chulalongkorn, Facultat de Psicologia",
     "encoder": "Encoder TRIBE v2",
     "version": "v1.0 · última revisió 2026-05-14",
     "github": "Codi font a GitHub"
