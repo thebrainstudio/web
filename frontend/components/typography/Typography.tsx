@@ -24,6 +24,18 @@ const editorialClass = "font-editorial";
 
 type CommonRest = Omit<HTMLAttributes<HTMLElement>, "className" | "style">;
 
+/**
+ * Visual-elevation Fix 8 — Display and Heading drive their wght
+ * axis from the scroll-velocity CSS variable, set by
+ * <ScrollWeight />. Body / Caption / Mono / Hand stay at their
+ * book weights. Reduced-motion users get a static --scroll-wght:
+ * 400 (declared in globals.css and re-pinned by ScrollWeight on
+ * mount).
+ */
+const scrollWeightStyle: React.CSSProperties = {
+  fontVariationSettings: '"wght" var(--scroll-wght, 400)',
+};
+
 // --- Display ---------------------------------------------------------------
 
 type DisplayProps = {
@@ -42,10 +54,10 @@ export const Display = forwardRef<HTMLElement, DisplayProps>(
         className: cn(
           editorialClass,
           "text-display text-balance",
-          "font-[200]",
           italic && "italic",
           className,
         ),
+        style: scrollWeightStyle,
         ...rest,
       },
       children,
@@ -75,6 +87,7 @@ export const Heading = forwardRef<HTMLElement, HeadingProps>(
           italic && "italic",
           className,
         ),
+        style: scrollWeightStyle,
         ...rest,
       },
       children,

@@ -8,6 +8,7 @@ import SiteHeader from "@/components/nav/SiteHeader";
 import SiteFooter from "@/components/nav/SiteFooter";
 import RoomTemperature from "@/components/atmospheric/RoomTemperature";
 import DeferredLocaleClient from "@/components/client/DeferredLocaleClient";
+import ScrollWeight from "@/components/typography/ScrollWeight";
 import { Caption } from "@/components/typography/Typography";
 
 /**
@@ -62,6 +63,11 @@ export default async function LocaleLayout({
           it up. Subtle — readers should not consciously notice;
           they should feel they've entered a different room. */}
       <RoomTemperature />
+      {/* Visual-elevation Fix 8: writes --scroll-wght on <html>
+          from a smoothed scroll-velocity tracker. Display and
+          Heading components consume it via font-variation-settings.
+          Reduced-motion users are pinned at wght 400. */}
+      <ScrollWeight />
       {/* Visual-elevation Fix 5 composes a second filter slot on
           top of Fix 4's per-room temperature: `--scene-saturate`,
           driven by transient PinnedCinematic moments (Threshold

@@ -71,6 +71,12 @@
   --page-bg-start: #0a1428;
   --page-bg-mid: #0d162e;
   --page-bg-end: #11192e;
+
+  /* Visual-elevation Fix 8 — wght axis value for the editorial
+     font, written from <ScrollWeight />. Display and Heading
+     read this via font-variation-settings. Reduced-motion
+     users see a static 400. */
+  --scroll-wght: 400;
 }
 
 html,
