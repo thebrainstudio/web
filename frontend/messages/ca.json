@@ -104,7 +104,7 @@
     "hero": {
       "line1": "Hi ha un model",
       "line2": "que prediu",
-      "line3": "què farà el teu cervell."
+      "line3": "el que la recerca publicada diu que fa un cervell mitjà."
     },
     "scrollPrompt": "Desplaça per veure",
     "howItWorks": {
@@ -227,12 +227,12 @@
     }
   },
   "mirror": {
-    "label": "Mirall Cerebral · Fase 5",
+    "label": "Mirall Cerebral",
     "title": "Escriu alguna cosa. El que sigui.",
-    "intro": "El cervell de dalt és el model pensant — activació predita en vint regions, lliscant cap al que recluta la teva escriptura. Enganxa una frase, un paràgraf, un fragment. Mira què s'escalfa.",
+    "intro": "El cervell de dalt mostra el que la recerca publicada associa amb textos semànticament propers al teu — activació predita en vint regions, no una ressonància teva.",
     "exportLabel": "PNG · 1080 × 1080",
     "revealLabel": "El que la teva escriptura revela",
-    "revealIntro": "Les prediccions d'aquesta vista prèvia es simulen localment; la inferència real de TRIBE arriba a la Fase 10.",
+    "revealIntro": "Les prediccions provenen d'un model d'embeddings que s'executa en un backend de capa gratuïta; quan el backend dorm, una heurística lèxica omple el buit. En qualsevol cas: no és una inferència TRIBE.",
     "predictedActivation": "Activació predita",
     "step1": {
       "label": "Pas · I",
@@ -252,7 +252,7 @@
     "examplesHeading": "Tres textos que ens van sorprendre",
     "openInAtlas": "Obrir a l'atlas",
     "footerStudio": "The Brain Studio",
-    "footerNote": "Prediccions simulades localment",
+    "footerNote": "Predictor de línia base d'embeddings · BGE-small",
     "predicting": "Predient…",
     "charCounter": "{used} / {max}",
     "disclaimer": "Activació predita. No és el teu cervell. És la millor suposició del model sobre com respondria un cervell com els del seu conjunt d'entrenament.",
@@ -268,9 +268,9 @@
     }
   },
   "music": {
-    "label": "Laboratori de NeuroMúsica · Fase 6",
-    "title": "L'oïda és el sentit més antic en acabar de formar-se.",
-    "intro": "Comença al ventre. A sota: tres peces, cadascuna amb una línia de temps regional de 60 segons. Mou el reproductor i mira el cervell seguir la música en temps real — el gir de Heschl a l'atac, l'STG posterior sostenint la melodia, les regions per defecte entrant quan la peça deixa d'intentar-ho.",
+    "label": "Laboratori de NeuroMúsica",
+    "title": "L'oïda es forma aviat — al tercer trimestre la còclea ja funciona i l'escorça auditiva ja està sent modelada pel so.",
+    "intro": "Comença abans que les paraules. A sota: tres peces, cadascuna amb una línia de temps regional de 60 segons. Arrossega el reproductor i observa el cervell seguir la música en temps real — la circumvolució de Heschl a l'atac, l'STG posterior sostenint la melodia, les regions per defecte entrant quan la peça deixa d'intentar-ho.",
     "modes": {
       "library": "Biblioteca",
       "compare": "Comparar",
@@ -288,7 +288,7 @@
       "headline": "La cançó de bressol que el cos recorda primer.",
       "body": "L'hipocamp porta l'escena abans que les regions del llenguatge arribin a la lletra. Aprenem a què fa olor una cuina a través de la música; ho tornem a aprendre cada cop que sentim la cançó."
     },
-    "footerNote": "Laboratori de NeuroMúsica · línies de temps simulades localment",
+    "footerNote": "Laboratori de NeuroMúsica · composicions metaanalítiques de Neurosynth",
     "tracks": {
       "thai-lullaby": {
         "era": "Folklore tailandès · pentatònic",
@@ -893,7 +893,7 @@
     }
   },
   "crosscultural": {
-    "label": "Cervell Transcultural · Fase 7",
+    "label": "Cervell Transcultural",
     "entry1": "Aquest model va ser entrenat en anglès.",
     "label2": "La troballa honesta",
     "entry2": "El que no pot traduir és la troballa més honesta.",
@@ -905,12 +905,12 @@
     "closingDisplay": "El que queda sense traduir és l'ànima d'una llengua.",
     "closingBody": "La capa sota la gramàtica que coneix les coses a la seva manera. El silenci del model també és una forma de coneixement — el que no pot dir és, en si mateix, una mesura.",
     "closingHand": "(envia'ns una parella que el model hauria de sentir — aviat)",
-    "submissionForm": "Formulari d'enviament de parelles · Fase 11",
-    "footerNote": "Cervell Transcultural · prediccions simulades localment"
+    "submissionForm": "Formulari d'enviament de parelles",
+    "footerNote": "Cervell Transcultural · composicions metaanalítiques de Neurosynth · HCP-MMP-360"
   },
   "about": {
     "opening": {
-      "label": "Sobre el projecte · Fase 9",
+      "label": "Sobre el projecte",
       "heading": "Una versió del segle XXI d'una pregunta més antiga.",
       "body": "Aquest lloc és un experiment per veure la ment a través d'un model codificador del cervell. El que segueix és el que el model és, el que no és, i les persones sobre el treball de les quals es construeix."
     },

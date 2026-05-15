@@ -104,7 +104,7 @@
     "hero": {
       "line1": "There is a model",
       "line2": "that predicts",
-      "line3": "what your brain will do."
+      "line3": "what published research says an average brain does."
     },
     "scrollPrompt": "Scroll to see",
     "howItWorks": {
@@ -227,12 +227,12 @@
     }
   },
   "mirror": {
-    "label": "Brain Mirror · Phase 5",
+    "label": "Brain Mirror",
     "title": "Type something. Anything.",
-    "intro": "The brain above is the model thinking — predicted activation across twenty regions, lerping toward what your writing recruits. Paste a sentence, a paragraph, a fragment. Watch what warms.",
+    "intro": "The brain above shows what published research associates with text semantically near yours — predicted activation across twenty regions, not a scan of you.",
     "exportLabel": "PNG · 1080 × 1080",
     "revealLabel": "What your writing reveals",
-    "revealIntro": "Predictions in this preview are simulated locally; real TRIBE inference comes in Phase 10.",
+    "revealIntro": "Predictions come from an embedding model running on a free-tier backend; when the backend is asleep, a lexical heuristic fills in. Either way: not a TRIBE inference.",
     "predictedActivation": "Predicted activation",
     "step1": {
       "label": "Step · I",
@@ -252,7 +252,7 @@
     "examplesHeading": "Three texts that surprised us",
     "openInAtlas": "Open in atlas",
     "footerStudio": "The Brain Studio",
-    "footerNote": "Predictions simulated locally",
+    "footerNote": "Embedding-baseline predictor · BGE-small",
     "predicting": "Predicting…",
     "charCounter": "{used} / {max}",
     "disclaimer": "Predicted activation. Not your brain. The model's best guess about how a brain like its training set would respond.",
@@ -268,9 +268,9 @@
     }
   },
   "music": {
-    "label": "NeuroMusic Lab · Phase 6",
-    "title": "Hearing is the oldest of the senses to fully form.",
-    "intro": "It begins in the womb. Below: three tracks, each accompanied by a 60-second region timeline. Scrub a player and watch the brain follow the music in real time — Heschl's gyrus on the attack, posterior STG holding the melody, default-mode regions stepping in when the piece stops trying.",
+    "label": "NeuroMusic Lab",
+    "title": "Hearing forms early — by the third trimester the cochlea is functional and the auditory cortex is already shaped by sound.",
+    "intro": "It begins before words. Below: three tracks, each accompanied by a 60-second region timeline. Scrub a player and watch the brain follow the music in real time — Heschl's gyrus on the attack, posterior STG holding the melody, default-mode regions stepping in when the piece stops trying.",
     "modes": {
       "library": "Library",
       "compare": "Compare",
@@ -288,7 +288,7 @@
       "headline": "The lullaby remembered first by the body.",
       "body": "The hippocampus carries the scene before the language regions arrive at the lyrics. We learn what a kitchen smells like through music; we learn it again every time we hear the song."
     },
-    "footerNote": "NeuroMusic Lab · timelines simulated locally",
+    "footerNote": "NeuroMusic Lab · Neurosynth meta-analytic composites",
     "tracks": {
       "thai-lullaby": {
         "era": "Thai folk · pentatonic",
@@ -893,7 +893,7 @@
     }
   },
   "crosscultural": {
-    "label": "Cross-Cultural Brain · Phase 7",
+    "label": "Cross-Cultural Brain",
     "entry1": "This model was trained on English.",
     "label2": "The honest finding",
     "entry2": "What it cannot translate is the most honest finding.",
@@ -905,12 +905,12 @@
     "closingDisplay": "What stays untranslated is the anima of a language.",
     "closingBody": "The layer below grammar that knows things in its own way. The model's silence is also a kind of knowledge — what it cannot say is itself a measurement.",
     "closingHand": "(send us a pair the model should hear — soon)",
-    "submissionForm": "Pair submission form · Phase 11",
-    "footerNote": "Cross-Cultural Brain · predictions simulated locally"
+    "submissionForm": "Pair submission form",
+    "footerNote": "Cross-Cultural Brain · Neurosynth meta-analytic composites · HCP-MMP-360"
   },
   "about": {
     "opening": {
-      "label": "About · Phase 9",
+      "label": "About",
       "heading": "A 21st-century version of an older question.",
       "body": "This site is an experiment in seeing the mind through a brain-encoding model. What follows is what the model is, what it isn't, and the people whose work it builds on."
     },

@@ -104,7 +104,7 @@
     "hero": {
       "line1": "Existe un modelo",
       "line2": "que predice",
-      "line3": "lo que tu cerebro va a hacer."
+      "line3": "lo que la investigación publicada dice que hace un cerebro promedio."
     },
     "scrollPrompt": "Desliza para ver",
     "howItWorks": {
@@ -227,12 +227,12 @@
     }
   },
   "mirror": {
-    "label": "Espejo Cerebral · Fase 5",
+    "label": "Espejo Cerebral",
     "title": "Escribe algo. Lo que sea.",
-    "intro": "El cerebro de arriba es el modelo pensando — activación predicha en veinte regiones, deslizándose hacia lo que recluta tu escritura. Pega una frase, un párrafo, un fragmento. Mira qué se calienta.",
+    "intro": "El cerebro de arriba muestra lo que la investigación publicada asocia con textos semánticamente cercanos al tuyo — activación predicha en veinte regiones, no una resonancia tuya.",
     "exportLabel": "PNG · 1080 × 1080",
     "revealLabel": "Lo que tu escritura revela",
-    "revealIntro": "Las predicciones de esta vista previa están simuladas localmente; la inferencia real de TRIBE llega en la Fase 10.",
+    "revealIntro": "Las predicciones provienen de un modelo de embeddings ejecutándose en un backend de capa gratuita; cuando el backend duerme, una heurística léxica lo cubre. De cualquier modo: no es una inferencia TRIBE.",
     "predictedActivation": "Activación predicha",
     "step1": {
       "label": "Paso · I",
@@ -252,7 +252,7 @@
     "examplesHeading": "Tres textos que nos sorprendieron",
     "openInAtlas": "Abrir en el atlas",
     "footerStudio": "The Brain Studio",
-    "footerNote": "Predicciones simuladas localmente",
+    "footerNote": "Predictor de línea base por embeddings · BGE-small",
     "predicting": "Prediciendo…",
     "charCounter": "{used} / {max}",
     "disclaimer": "Activación predicha. No es tu cerebro. Es la mejor suposición del modelo sobre cómo respondería un cerebro como los de su conjunto de entrenamiento.",
@@ -268,9 +268,9 @@
     }
   },
   "music": {
-    "label": "Laboratorio de NeuroMúsica · Fase 6",
-    "title": "El oído es el sentido más antiguo en terminar de formarse.",
-    "intro": "Comienza en el útero. Abajo: tres pistas, cada una con una línea de tiempo regional de 60 segundos. Mueve el reproductor y mira al cerebro seguir la música en tiempo real — el giro de Heschl en el ataque, el STG posterior sosteniendo la melodía, las regiones por defecto entrando cuando la pieza deja de intentar.",
+    "label": "Laboratorio de NeuroMúsica",
+    "title": "La audición se forma temprano — en el tercer trimestre la cóclea ya funciona y la corteza auditiva está siendo modelada por el sonido.",
+    "intro": "Empieza antes que las palabras. Abajo: tres pistas, cada una con una línea de tiempo regional de 60 segundos. Arrastra el reproductor y observa al cerebro seguir la música en tiempo real — el giro de Heschl en el ataque, el STG posterior sosteniendo la melodía, las regiones por defecto entrando cuando la pieza deja de intentarlo.",
     "modes": {
       "library": "Biblioteca",
       "compare": "Comparar",
@@ -288,7 +288,7 @@
       "headline": "La nana que el cuerpo recuerda antes.",
       "body": "El hipocampo lleva la escena antes de que las regiones del lenguaje lleguen a la letra. Aprendemos a qué huele una cocina a través de la música; volvemos a aprenderlo cada vez que oímos la canción."
     },
-    "footerNote": "Laboratorio de NeuroMúsica · líneas de tiempo simuladas localmente",
+    "footerNote": "Laboratorio de NeuroMúsica · composiciones meta-analíticas de Neurosynth",
     "tracks": {
       "thai-lullaby": {
         "era": "Folclore tailandés · pentatónico",
@@ -893,7 +893,7 @@
     }
   },
   "crosscultural": {
-    "label": "Cerebro Transcultural · Fase 7",
+    "label": "Cerebro Transcultural",
     "entry1": "Este modelo fue entrenado en inglés.",
     "label2": "El hallazgo honesto",
     "entry2": "Lo que no puede traducir es el hallazgo más honesto.",
@@ -905,12 +905,12 @@
     "closingDisplay": "Lo que queda sin traducir es el ánima de una lengua.",
     "closingBody": "La capa bajo la gramática que conoce las cosas a su manera. El silencio del modelo también es una forma de conocimiento — lo que no puede decir es, en sí mismo, una medida.",
     "closingHand": "(envíanos un par que el modelo debería oír — pronto)",
-    "submissionForm": "Formulario de envío de pares · Fase 11",
-    "footerNote": "Cerebro Transcultural · predicciones simuladas localmente"
+    "submissionForm": "Formulario de envío de pares",
+    "footerNote": "Cerebro Transcultural · composiciones meta-analíticas de Neurosynth · HCP-MMP-360"
   },
   "about": {
     "opening": {
-      "label": "Acerca · Fase 9",
+      "label": "Acerca",
       "heading": "Una versión del siglo XXI de una pregunta más antigua.",
       "body": "Este sitio es un experimento para ver la mente a través de un modelo codificador del cerebro. Lo que sigue es lo que el modelo es, lo que no es, y las personas sobre cuyo trabajo se construye."
     },
