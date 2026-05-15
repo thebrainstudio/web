@@ -2,6 +2,7 @@ import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import BridgeStrengthBadge from "@/components/bridges/BridgeStrengthBadge";
 import BridgesNetwork from "@/components/bridges/BridgesNetwork";
 import BridgesActivationScroller from "@/components/brain/BridgesActivationScroller";
+import ProvenanceBadge from "@/components/brain/ProvenanceBadge";
 import ProvenanceFooter from "@/components/brain/ProvenanceFooter";
 import Prose from "@/components/atlas/Prose";
 import {
@@ -154,6 +155,9 @@ export default async function BridgesPage({
               opening frame. */}
           {heroProvenance && (
             <div className="mt-12 max-w-[44rem]">
+              {/* Integrity-pass: badge + expandable footer paired.
+                  Badge for the glance, footer for the curious. */}
+              <ProvenanceBadge state="neurosynth" />
               <ProvenanceFooter file={heroProvenance} />
             </div>
           )}

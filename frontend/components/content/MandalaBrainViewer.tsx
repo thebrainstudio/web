@@ -9,6 +9,7 @@ import {
   Mono,
 } from "@/components/typography/Typography";
 import AttributedImage from "@/components/content/AttributedImage";
+import ProvenanceBadge from "@/components/brain/ProvenanceBadge";
 import { mandalas, type Mandala } from "@/content/archetypes/mandalas";
 import { regionById } from "@/lib/regions";
 import { loadMandalaActivation } from "@/lib/loadActivations";
@@ -114,6 +115,12 @@ export default function MandalaBrainViewer() {
       <Body italic className="text-bone-cream/60 mt-3 max-w-[36rem]">
         {t("viewerIntro")}
       </Body>
+      {/* Integrity-pass: badge identifies the data source driving
+          the per-mandala brain shift. Each selection loads a
+          contemplative-attention composite from Neurosynth. */}
+      <div className="mt-5">
+        <ProvenanceBadge state="neurosynth" />
+      </div>
 
       {/* Mandala chooser */}
       <div className="mt-10 flex flex-wrap gap-2">

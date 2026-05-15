@@ -8,6 +8,7 @@ import PinnedSequence, {
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
 import StimulusComparison from "@/components/crosscultural/StimulusComparison";
 import FieldNote from "@/components/crosscultural/FieldNote";
+import ProvenanceBadge from "@/components/brain/ProvenanceBadge";
 import {
   Body,
   Caption,
@@ -60,6 +61,12 @@ export default function CrossCulturalPage() {
               <Display italic className="mt-8">
                 {t("entry1")}
               </Display>
+              {/* Integrity-pass: badge sits beneath the entry
+                  display, adjacent to the persistent brain on
+                  this scene. */}
+              <div className="mt-8 inline-flex">
+                <ProvenanceBadge state="neurosynth" />
+              </div>
             </div>
           </PinnedStep>
           <PinnedStep>

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { regionById, type RegionId } from "@/lib/regions";
+import { activationBandKey } from "@/lib/activationBands";
 import {
   Caption,
   Heading,
@@ -34,6 +35,7 @@ type Props = {
 export default function MirrorReveal({ topRegions }: Props) {
   const tRegions = useTranslations("regions");
   const tMirror = useTranslations("mirror");
+  const tActivation = useTranslations("activation");
   if (topRegions.length === 0) return null;
 
   return (
@@ -94,11 +96,15 @@ export default function MirrorReveal({ topRegions }: Props) {
                   </Link>
                 </div>
                 <div className="md:col-span-5 md:text-right">
+                  {/* Integrity-pass: drop the false-precision
+                      decimal. Render the qualitative band the
+                      site's `bandFor` helper resolves the
+                      activation value to. */}
                   <Mono
-                    variant="value"
-                    className="text-brass block leading-none"
+                    variant="label"
+                    className="text-brass block tracking-[0.18em]"
                   >
-                    {(entry.activation * 100).toFixed(0)}
+                    {tActivation(activationBandKey(entry.activation))}
                   </Mono>
                   <Caption uppercase className="text-bone-cream/45 mt-2 block">
                     {tr(tMirror, "predictedActivation", "Predicted activation")}

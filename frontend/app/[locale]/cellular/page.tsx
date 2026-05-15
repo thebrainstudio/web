@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import * as THREE from "three";
 import { useTranslations } from "next-intl";
 import AtmosphericGlow from "@/components/atmospheric/AtmosphericGlow";
+import ProvenanceBadge from "@/components/brain/ProvenanceBadge";
 import NeuronGeometry from "@/components/cellular/NeuronGeometry";
 import Synapse, {
   NEUROTRANSMITTERS,
@@ -124,6 +125,13 @@ export default function CellularPage() {
           <Body italic className="text-bone-cream/70 mt-8 max-w-[34rem]">
             {t("introItalic")}
           </Body>
+          {/* Integrity-pass: the synapse animation that follows is
+              a hand-authored illustrative model — not a real-time
+              simulation, not a meta-analytic aggregate. The badge
+              labels it accordingly. */}
+          <div className="mt-8">
+            <ProvenanceBadge state="literature-informed" />
+          </div>
         </div>
       </section>
 

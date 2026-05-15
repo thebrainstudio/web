@@ -1,7 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { regionById, type RegionId } from "@/lib/regions";
+import { activationBandKey } from "@/lib/activationBands";
 import { Body, Caption, Mono } from "@/components/typography/Typography";
 import { easeImportant } from "@/lib/animations";
 import MiniBrainPreview from "./MiniBrainPreview";
@@ -79,6 +81,7 @@ export default function PinnedPredictionCard({
   current,
   onClear,
 }: Props) {
+  const tActivation = useTranslations("activation");
   const inCompareMode = !!current && current.text !== pinned.text;
   const deltas = inCompareMode
     ? computeDelta(current.activations, pinned.activations)
@@ -134,8 +137,13 @@ export default function PinnedPredictionCard({
                   key={r.id}
                   className="inline-flex items-baseline gap-1.5"
                 >
-                  <Mono variant="label" className="text-brass">
-                    {Math.round(r.activation * 100)}
+                  {/* Integrity-pass: render the qualitative band
+                      label, not a decimal percentage. */}
+                  <Mono
+                    variant="label"
+                    className="text-brass tracking-[0.14em]"
+                  >
+                    {tActivation(activationBandKey(r.activation))}
                   </Mono>
                   <Caption uppercase className="tracking-[0.14em]">
                     {shortDisplayName(r.id)}{" "}

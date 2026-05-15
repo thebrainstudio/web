@@ -22,6 +22,9 @@ import MirrorLoadingMessage from "./MirrorLoadingMessage";
 import AttributionChip, {
   type AttributionState,
 } from "./AttributionChip";
+import ProvenanceBadge, {
+  type ProvenanceState,
+} from "@/components/brain/ProvenanceBadge";
 
 // audit-fix: Task 10. Soft cap on textarea content — keeps prediction
 // requests bounded and prevents accidental long-paste failures.
@@ -318,7 +321,23 @@ export default function MirrorInput({ onPrediction, initial = "" }: Props) {
         whenever the licensed material is shared. The chip surfaces all
         four when TRIBE is live, and degrades honestly to "running on
         baseline" otherwise.
+
+        Integrity-pass: the AttributionChip's "tribe-live" copy is
+        a known overclaim (the live backend is BGE-small embedding
+        similarity, not a TRIBE forward pass). Tracked in TODO.md
+        item 7. The ProvenanceBadge below renders the actually-
+        correct provenance state for the glance reader; the
+        AttributionChip retains its license-display role.
       */}
+      <div className="mt-3">
+        <ProvenanceBadge
+          state={
+            (attribution === "tribe-live"
+              ? "embedding-baseline"
+              : "lexical-heuristic") as ProvenanceState
+          }
+        />
+      </div>
       <AttributionChip state={attribution} />
     </motion.div>
   );

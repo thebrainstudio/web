@@ -14,6 +14,7 @@ import { regionById } from "@/lib/regions";
 import { easeCinematic, staggerLoose } from "@/lib/animations";
 import { stimulusPairs } from "@/lib/stimulusPairs";
 import { loadCrossCulturalActivation } from "@/lib/loadActivations";
+import { divergenceBandKey } from "@/lib/activationBands";
 import BrainMap2D from "./BrainMap2D";
 
 // PR-D: pair-id (kebab-case) -> activation-json prefix used in
@@ -35,6 +36,9 @@ const PAIR_ID_TO_ACTIVATION_PREFIX: Record<string, string> = {
 export default function StimulusComparison() {
   const tRegions = useTranslations("regions");
   const trReg = (key: string, fb: string) => { try { return tRegions(key); } catch { return fb; } };
+  // Integrity-pass: divergence magnitude rendered as a qualitative
+  // band instead of a percentage with false-precision implications.
+  const tActivation = useTranslations("activation");
   const [pairIndex, setPairIndex] = useState(0);
   const [focused, setFocused] = useState<"english" | "thai">("english");
 
@@ -211,7 +215,7 @@ export default function StimulusComparison() {
                       </Caption>
                     </span>
                     <Mono variant="label" className="text-brass">
-                      Δ {(d.delta * 100).toFixed(0)}%
+                      Δ {tActivation(divergenceBandKey(d.delta))}
                     </Mono>
                   </motion.li>
                 );

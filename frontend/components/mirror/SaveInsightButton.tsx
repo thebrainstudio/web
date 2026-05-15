@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Caption } from "@/components/typography/Typography";
 import { regionById, type RegionId } from "@/lib/regions";
+import { activationBandKey } from "@/lib/activationBands";
 
 type Props = {
   text: string;
@@ -21,6 +22,7 @@ type Props = {
 export default function SaveInsightButton({ text, topRegion }: Props) {
   const tMirror = useTranslations("mirror");
   const tRegions = useTranslations("regions");
+  const tActivation = useTranslations("activation");
   const [working, setWorking] = useState(false);
   const tr = (t: ReturnType<typeof useTranslations>, key: string, fb: string) => {
     try { return t(key); } catch { return fb; }
@@ -91,8 +93,12 @@ export default function SaveInsightButton({ text, topRegion }: Props) {
 
         ctx.font = 'italic 14px "Fraunces", Georgia, serif';
         ctx.fillStyle = "#c9a961";
+        // Integrity-pass: shared PNG no longer carries a
+        // false-precision percentage. Band label keeps the readout
+        // honest when the insight gets shared off-site.
+        const band = tActivation(activationBandKey(topRegion.activation));
         ctx.fillText(
-          `${anatomy.toUpperCase()}  ·  ${(topRegion.activation * 100).toFixed(0)}%`,
+          `${anatomy.toUpperCase()}  ·  ${band.toUpperCase()}`,
           margin,
           H - margin - 16,
         );

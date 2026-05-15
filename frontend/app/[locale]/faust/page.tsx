@@ -13,6 +13,7 @@ import MovementHeader from "@/components/literary/MovementHeader";
 import PassageAnalysis from "@/components/literary/PassageAnalysis";
 import TriangulationNote from "@/components/literary/TriangulationNote";
 import PassageActivationScroller from "@/components/brain/PassageActivationScroller";
+import ProvenanceBadge from "@/components/brain/ProvenanceBadge";
 import ProvenanceFooter from "@/components/brain/ProvenanceFooter";
 import { loadPassageActivationServer } from "@/lib/loadActivationsServer";
 import type { ParcelActivationFile } from "@/lib/loadActivations";
@@ -123,6 +124,7 @@ export default async function FaustPage({
               represents the entry-frame composition. */}
           {heroProvenance && (
             <div className="mt-10 max-w-[42rem]">
+              <ProvenanceBadge state="neurosynth" />
               <ProvenanceFooter file={heroProvenance} />
             </div>
           )}

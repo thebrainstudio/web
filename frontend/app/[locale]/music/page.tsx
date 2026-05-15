@@ -12,6 +12,7 @@ import TrackChooser from "@/components/music/TrackChooser";
 import CompareMode from "@/components/music/CompareMode";
 import UploadMode from "@/components/music/UploadMode";
 import InsightEssay from "@/components/music/InsightEssay";
+import ProvenanceBadge from "@/components/brain/ProvenanceBadge";
 import {
   Body,
   Caption,
@@ -72,6 +73,13 @@ export default function MusicPage() {
           <Body className="text-bone-cream/65 mt-8 max-w-[34rem]">
             {t("intro")}
           </Body>
+          {/* Integrity-pass: badge naming the data source for
+              the per-track timelines (Neurosynth meta-analytic
+              composites; see ProvenanceFooter on each player
+              card for the full citation). */}
+          <div className="mt-8">
+            <ProvenanceBadge state="neurosynth" />
+          </div>
         </div>
         <div aria-hidden className="md:col-span-5" />
       </ScrollScene>

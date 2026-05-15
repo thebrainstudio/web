@@ -11,6 +11,7 @@ import {
 import VideoTimelineDriver, {
   type VideoActivationFile,
 } from "@/components/brain/VideoTimelineDriver";
+import ProvenanceBadge from "@/components/brain/ProvenanceBadge";
 
 type Props = {
   files: Record<string, VideoActivationFile | null>;
@@ -110,6 +111,14 @@ export default function EncoderLab({ files }: Props) {
               <Body italic className="text-bone-cream/65 mt-3 max-w-[36rem]">
                 {t(`videos.${activeId}.framing`)}
               </Body>
+              {/* Integrity-pass: badge state auto-detects whether
+                  the JSON came from TRIBE v2 (Colab swap-in) or
+                  the Neurosynth preview path. */}
+              <div className="mt-5">
+                <ProvenanceBadge
+                  state={sourceIsTribe ? "tribe-inference" : "neurosynth"}
+                />
+              </div>
             </div>
 
             {/* Per-video provenance + composition */}

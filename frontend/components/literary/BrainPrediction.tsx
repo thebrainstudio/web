@@ -1,5 +1,9 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { regionById, type RegionId } from "@/lib/regions";
 import { activationColor } from "@/lib/brain/activation-palette";
+import { activationBandKey, bandFor } from "@/lib/activationBands";
 import { Caption, Mono } from "@/components/typography/Typography";
 
 /**
@@ -12,11 +16,22 @@ import { Caption, Mono } from "@/components/typography/Typography";
  * the passage in question. The chip below the readout names it as
  * such; the room's Movement 2 cites the underlying papers.
  *
- * Each entry: region anatomy + activation strength + a thin
- * coloured bar. The dual presentation (original/translation in the
- * literary rooms) is achieved by rendering two of these side-by-
- * side; the parent component handles layout.
+ * Integrity-pass (Commit 3): the per-region readout no longer shows
+ * a two-decimal percentage — the underlying data doesn't support
+ * that precision. Each region renders a qualitative band label
+ * ("strongest response" / "moderate" / "minimal" / "near silence")
+ * via `lib/activationBands`. The thin coloured bar still varies in
+ * width (now per-band, not per-percent) so the visual hierarchy
+ * across regions stays legible.
  */
+// Width of the visual bar by band — quasi-quantitative, no decimal claim.
+const BAND_WIDTH: Record<ReturnType<typeof bandFor>, number> = {
+  strongest: 92,
+  moderate: 58,
+  minimal: 28,
+  "near-silence": 8,
+};
+
 export default function BrainPrediction({
   label,
   activations,
@@ -29,6 +44,8 @@ export default function BrainPrediction({
   /** Honest disclaimer text — usually the same per room. */
   disclaimer: string;
 }) {
+  const t = useTranslations("activation");
+
   const top = (Object.entries(activations) as [RegionId, number][])
     .filter(([, v]) => v > 0.05)
     .sort((a, b) => b[1] - a[1])
@@ -44,7 +61,8 @@ export default function BrainPrediction({
           const r = regionById[id];
           if (!r) return null;
           const color = activationColor(value);
-          const pct = Math.round(value * 100);
+          const band = bandFor(value);
+          const widthPct = BAND_WIDTH[band];
           return (
             <li key={id}>
               <div className="flex items-baseline justify-between gap-3">
@@ -53,9 +71,9 @@ export default function BrainPrediction({
                 </Caption>
                 <Mono
                   variant="label"
-                  className="text-brass tabular-nums tracking-[0.12em]"
+                  className="text-brass tracking-[0.12em]"
                 >
-                  {pct}%
+                  {t(activationBandKey(value))}
                 </Mono>
               </div>
               <div
@@ -65,7 +83,7 @@ export default function BrainPrediction({
                 <div
                   className="h-px"
                   style={{
-                    width: `${pct}%`,
+                    width: `${widthPct}%`,
                     backgroundColor: color,
                     opacity: 0.85,
                   }}

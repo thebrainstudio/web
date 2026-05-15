@@ -5,6 +5,7 @@ import Prose from "@/components/atlas/Prose";
 import BridgeStrengthBadge from "@/components/bridges/BridgeStrengthBadge";
 import BrainActivationDriver from "@/components/brain/BrainActivationDriver";
 import ConnectomePanel from "@/components/brain/ConnectomePanel";
+import ProvenanceBadge from "@/components/brain/ProvenanceBadge";
 import ProvenanceFooter from "@/components/brain/ProvenanceFooter";
 import { loadAtlasActivationServer } from "@/lib/loadActivationsServer";
 import {
@@ -186,6 +187,15 @@ export default async function AtlasRegionPage({
           <Caption uppercase className="text-brass mt-4 block">
             {tRegions(`${region.id}.anatomyName`)}
           </Caption>
+          {/* Integrity-pass: persistent visual badge naming the
+              data source that drives the brain on this page. Sits
+              above the poetic gloss so it's adjacent to the
+              brain stage on first paint. */}
+          {activationFile && (
+            <div className="mt-5">
+              <ProvenanceBadge state="neurosynth" />
+            </div>
+          )}
           <Body italic className="text-bone-cream/65 mt-8 max-w-[40rem]">
             {tRegions(`${region.id}.poeticGloss`)}
           </Body>
