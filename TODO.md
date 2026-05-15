@@ -107,3 +107,77 @@ those cases honestly.
 
 Path B is the brief's preferred direction. Path A unblocks Path B
 by removing the false claim in the meantime.
+
+---
+
+# Cinematic backlog
+
+Items deferred from the visual-elevation PR (commits 1–8 landed
+the emissive glow + bloom, breathing idle, animated grain, room
+temperature, pinned cinematic moments, synapse audio, cursor
+light, and scroll-velocity font weight). The items below are real
+next steps; each is non-trivial and earns its own PR.
+
+## 8 · Subsurface scattering on cortex
+
+The wet-tissue read goes a step further with proper SSS. Today the
+brain uses `meshPhysicalMaterial` with `transmission: 0.15`,
+`clearcoat: 0.4`, and per-vertex emissive injection via
+`onBeforeCompile`. A custom shader with a thickness map baked from
+the mesh would push the cortex from "wet" to "alive" — light
+filtering through the outer cortical layers the way it does
+through skin. Scope of its own (shader work + asset baking +
+mobile-fallback path).
+
+## 9 · Vascular network underlay
+
+Faint pial vasculature visible through the cortex, tinted oxblood
+at ~5 % opacity. Needs an anatomical reference image and a
+low-poly mesh (or a procedurally-generated branching pattern
+mapped to the mesh UVs). Reads as "this organ has a circulatory
+system," which the current cortex-only render leaves implicit.
+
+## 10 · Camera transitions between rooms
+
+Rotate-the-brain navigation: changing rooms is a camera move, not
+a page reload. Today every room change reloads the page (or
+client-side route), which loses the persistent canvas effect.
+Refactor of route transitions to a camera tween that interpolates
+position + rotation between room-specific brain states. Needs its
+own PR.
+
+## 11 · Museum lighting on Archetypes paintings
+
+Each painting in its own light cone. Today the gallery uses the
+locale-level lighting; a single warm directional with bone-cream
+diffuse. The cinematic move: per-painting light cones that pick up
+the dominant colour of each work (oxblood for the Holbein squirrel
+patch, gold for the Della Francesca egg, etc.) and falloff outside
+that cone. Design iteration on the gallery feel.
+
+## 12 · Mandala rotation tied to scroll
+
+Already partially there via the `Mandala` component's
+`rotationSeconds` prop — wire the rotation velocity to scroll
+position instead of a constant per-second cycle. The mandala
+becomes a scroll-driven gauge. After Archetypes design pass so the
+two pages don't compete for the same gesture.
+
+## 13 · Darkness mode (candlelight, ~2400 K reader state)
+
+Whole-site temperature override. The reader can drop the room into
+candlelight mode for late-night reading: page background warms,
+the brain's emissive bias shifts amber, type weight settles to a
+lower wght. Needs UX design — toggle placement, persistence,
+locale handling — and explicit consent (not a default on
+detection of system dark mode; this is its own choice).
+
+## 14 · 30-second idle cycle
+
+Brain cycles through all room activations with the line "this is
+what your brain is doing right now, reading this." Needs
+editorial review of the line (it's a load-bearing claim about the
+mapping) and accessibility consideration: a moving reading surface
+behind static prose is a contraindicated pattern for some readers.
+A reduced-motion default for this animation is mandatory; the
+default state should be "off."
