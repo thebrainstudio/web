@@ -11,6 +11,7 @@ import {
 } from "@/lib/searchIndex";
 import { Caption, Mono } from "@/components/typography/Typography";
 import { easeStandard } from "@/lib/animations";
+import { useKeyboardCommands } from "@/hooks/useKeyboardCommands";
 
 /**
  * Cmd/Ctrl-K search palette. Mounted once at the root shell. Opens on
@@ -67,24 +68,30 @@ export default function SearchPalette() {
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
-  // Global keyboard listener for the Cmd/Ctrl-K shortcut and Escape.
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      const isOpenShortcut =
-        (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k";
-      if (isOpenShortcut) {
-        e.preventDefault();
-        setOpen((v) => !v);
-        return;
-      }
-      if (e.key === "Escape" && open) {
-        e.preventDefault();
-        setOpen(false);
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
+  // Cmd/Ctrl-K and Escape both go through the root keyboard
+  // dispatcher (`hooks/useKeyboardCommands`) so the input-focus guard
+  // and held-key dedupe live in exactly one place across the site.
+  // The palette still owns its `open` state; the hook just dispatches.
+  useKeyboardCommands([
+    {
+      id: "search:toggle",
+      key: "k",
+      mod: "cmd",
+      // Cmd-K must fire even when an input is focused (that's the
+      // whole point of a keyboard-first search palette).
+      allowInInput: true,
+      onPress: () => setOpen((v) => !v),
+    },
+    {
+      id: "search:close",
+      key: "Escape",
+      // Only handle Escape when the palette is open. When closed,
+      // Escape belongs to the navigation handler (Fix 15: route to /en).
+      when: () => open,
+      allowInInput: true,
+      onPress: () => setOpen(false),
+    },
+  ]);
 
   // Custom event so the SiteHeader button can pop the palette without
   // duplicating the open/close state. Trade-off: a single side-effect
