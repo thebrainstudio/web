@@ -510,7 +510,7 @@
   },
   "regions": {
     "ifg_left": {
-      "displayName": "Región de Broca (I)",
+      "displayName": "GFI (I)",
       "anatomyName": "Giro frontal inferior, BA 44/45 (izq.)",
       "scienceGloss": "Implicado en el procesamiento sintáctico y la articulación. Una lesión aquí altera la producción del habla mientras la comprensión puede permanecer parcialmente intacta.",
       "poeticGloss": "La parte de ti que encuentra la siguiente palabra — y la parte que se atasca cuando la palabra no termina de ser la justa."

@@ -510,7 +510,7 @@
   },
   "regions": {
     "ifg_left": {
-      "displayName": "布罗卡区（左）",
+      "displayName": "IFG（左）",
       "anatomyName": "额下回 BA 44/45（左）",
       "scienceGloss": "参与句法处理与构音。此处的损伤会扰乱言语产生，而理解则可能部分保留。",
       "poeticGloss": "你身上那个找出下一个词的部分——和那个在词不太对时自己卡住舌头的部分。"

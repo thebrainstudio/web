@@ -74,7 +74,7 @@ export type Region = {
 export const regions: Region[] = [
   {
     id: "ifg_left",
-    displayName: "Broca's region (L)",
+    displayName: "IFG (L)",
     anatomyName: "Inferior frontal gyrus, BA 44/45 (left)",
     scienceGloss:
       "Involved in syntactic processing and articulation. Damage here disrupts speech production while comprehension can remain partly intact.",

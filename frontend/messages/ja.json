@@ -510,7 +510,7 @@
   },
   "regions": {
     "ifg_left": {
-      "displayName": "ブローカ野(左)",
+      "displayName": "IFG(左)",
       "anatomyName": "下前頭回 BA 44/45(左)",
       "scienceGloss": "統語処理と構音に関与する。ここの損傷は発話の産生を乱す一方で、理解は部分的に保たれることがある。",
       "poeticGloss": "次の語を見つけるあなたの一部 — そして、語がしっくり来ないときに自分の舌をつかまえる一部。"
