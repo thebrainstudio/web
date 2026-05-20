@@ -144,7 +144,7 @@ export default async function Home({
         </div>
       </ScrollScene>
 
-      {/* Shot 3 — Six rooms grid. Cool-cathedral glow (subtle, no position). */}
+      {/* Shot 3 — Eight rooms grid. Cool-cathedral glow (subtle, no position). */}
       <ScrollScene
         {...shot3}
         className="relative flex min-h-[95vh] items-center px-6 md:px-10"

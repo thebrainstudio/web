@@ -9,7 +9,7 @@ import {
 /**
  * Locale-aware 404. audit-fix: Task 5. All strings come from the
  * notFound + home.rooms namespaces in the active locale's messages
- * bundle, so the SSR copy stays in sync with the actual six rooms.
+ * bundle, so the SSR copy stays in sync with the actual eight rooms.
  *
  * The previous app/not-found.tsx hardcoded "three rooms" and linked
  * only to Mirror / Music / Cross-Cultural; it has been replaced with
@@ -21,7 +21,7 @@ export default async function LocaleNotFound() {
   const t = await getTranslations("notFound");
   const tRooms = await getTranslations("home.rooms");
 
-  // All six rooms + Home. Labels come from already-translated keys so
+  // All eight rooms + Home. Labels come from already-translated keys so
   // we don't have to add new i18n entries for this fix.
   const links: Array<{ href: string; label: string }> = [
     { href: "/mirror", label: tRooms("mirror.title") },
@@ -29,6 +29,8 @@ export default async function LocaleNotFound() {
     { href: "/crosscultural", label: tRooms("crosscultural.title") },
     { href: "/threshold", label: tRooms("threshold.title") },
     { href: "/archetypes", label: tRooms("archetypes.title") },
+    { href: "/faust", label: tRooms("faust.title") },
+    { href: "/dante", label: tRooms("dante.title") },
     { href: "/cellular", label: tRooms("cellular.title") },
     { href: "/", label: t("linkHome") },
   ];

@@ -559,7 +559,7 @@ export default async function AboutPage({
               </Caption>
               <Body className="text-bone-cream/80 mt-1">
                 Johann Sebastian Bach, autograph manuscript of cantata
-                <em>&nbsp;Du wahrer Gott und Davids Sohn</em>, BWV 56
+                <em>&nbsp;Ich will den Kreuzstab gerne tragen</em>, BWV 56
                 (1726), first page. Berlin State Library. Public
                 domain. Source: Wikimedia Commons.
               </Body>

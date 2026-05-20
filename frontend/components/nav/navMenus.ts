@@ -39,7 +39,6 @@ export const navMenus: NavMenuGroup[] = [
         labelKey: "crosscultural",
         blurbKey: "crosscultural",
       },
-      { href: "/encoder", labelKey: "encoder", blurbKey: "encoder" },
       { href: "/cellular", labelKey: "cellular", blurbKey: "cellular" },
     ],
   },
@@ -88,6 +87,10 @@ export const navMenus: NavMenuGroup[] = [
     items: [
       { href: "/atlas", labelKey: "atlas", blurbKey: "atlas" },
       { href: "/tours", labelKey: "tours", blurbKey: "tours" },
+      // Encoder Lab is a TRIBE-demo room, not one of the eight numbered
+      // cinematic rooms — it belongs in the reference layer alongside
+      // Atlas + Tours + Site Map.
+      { href: "/encoder", labelKey: "encoder", blurbKey: "encoder" },
       // PR 7: the /map page sits in the Instrument group — same
       // register as Atlas + Tours, the reference layer.
       { href: "/map", labelKey: "siteMap", blurbKey: "siteMap" },

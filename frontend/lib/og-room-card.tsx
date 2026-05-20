@@ -224,7 +224,7 @@ export async function renderRoomOgCard(args: {
           }}
         >
           <span>{SITE_URL.replace(/^https?:\/\//, "")}</span>
-          <span>Six rooms · TRIBE v2</span>
+          <span>Eight rooms · TRIBE v2</span>
         </div>
       </div>
     ),
